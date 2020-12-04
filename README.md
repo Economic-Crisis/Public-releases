@@ -5,10 +5,10 @@
 
 # Section for Russian audience
 
-# Public-releases<br>
+## Public-releases<br>
 Репозиторий для публичных релизов. Здесь вы можете загрузить нашу модификацию и просмотреть файлы.<br>
 
-# Объявление для набора в команду:<br>
+## Объявление для набора в команду:<br>
 **EC Dev TEAM** объявляет набор в команду.<br>
 Наша команда интернациональна, однако, в общении преобладает русский язык. Если вы не боитесь видеть иной язык в чате, а также, активное применение онлайн-переводчиков а также, комментарии кода на русском языке, то можете попытаться попасть в команду.<br>
 На данный момент, нам требуются:<br>
@@ -35,10 +35,10 @@
 ___
 
 # Section for English audience 
-# Public-releases<br>
+## Public-releases<br>
 Repository for public releases. Here you can download our modification and view the files.<br>
 
-# Declaration for recruiting into the team:<br>
+## Declaration for recruiting into the team:<br>
 **EC Dev TEAM** announces recruitment to the team.<br>
 Our team is international, however, communication is dominated by Russian. If you are not afraid to see a different language in the chat, as well as the active use of online translators as well as code comments in Russian, then you can try to get into the team.<br>
 At the moment, we need:<br>
