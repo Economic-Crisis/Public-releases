@@ -27,7 +27,7 @@ Repository for public releases. Here you can download our modification and view 
 
 Может показаться, что какая либо из этих категорий очень проста, но это далеко не так. Мы рассчитываем что поставленная задача будет выполняться не затягиваясь на месяца.<br>
 
-# Declaration for recruiting into the command:<br>
+# Declaration for recruiting into the team:<br>
 **EC Dev TEAM** announces recruitment to the team.<br>
 Our team is international, however, communication is dominated by Russian. If you are not afraid to see a different language in the chat, as well as the active use of online translators as well as code comments in Russian, then you can try to get into the team.<br>
 At the moment, we need:<br>
