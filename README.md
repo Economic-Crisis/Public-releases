@@ -1,6 +1,12 @@
+**Languages**
+- [RU](#Section-for-Russian-audience)
+- [EN](#Section-for-English-audience)
+
+
+# Section for Russian audience
+
 # Public-releases<br>
 Репозиторий для публичных релизов. Здесь вы можете загрузить нашу модификацию и просмотреть файлы.<br>
-Repository for public releases. Here you can download our modification and view the files.<br>
 
 # Объявление для набора в команду:<br>
 **EC Dev TEAM** объявляет набор в команду.<br>
@@ -26,6 +32,11 @@ Repository for public releases. Here you can download our modification and view 
 В обязанности входит: проверять на ошибки (логические, лексические и грамматические) англ. версию игры и допереводить недопереведённую часть русскоязычного контента а также создание новых текстов.<br>
 
 Может показаться, что какая либо из этих категорий очень проста, но это далеко не так. Мы рассчитываем что поставленная задача будет выполняться не затягиваясь на месяца.<br>
+___
+
+# Section for English audience 
+# Public-releases<br>
+Repository for public releases. Here you can download our modification and view the files.<br>
 
 # Declaration for recruiting into the team:<br>
 **EC Dev TEAM** announces recruitment to the team.<br>
