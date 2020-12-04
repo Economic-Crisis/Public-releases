@@ -1,3 +1,5 @@
+<img align="center" src="https://github.com/Economic-Crisis-2013/Public-releases/blob/main/.github/logo-repo.png" alt="economic_crisic-github" border="0">
+
 **Languages**
 - [RU](#Section-for-Russian-audience)
 - [EN](#Section-for-English-audience)
