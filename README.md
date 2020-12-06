@@ -1,5 +1,15 @@
 <img align="center" src="https://github.com/Economic-Crisis-2013/Public-releases/blob/main/.github/logo-repo.png" alt="economic_crisic-github" border="0">
 
+
+ [![Github](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/Economic-Crisis-2013)
+ [![VK](https://img.shields.io/badge/-Steam-171a21?style=flat-square&logo=Steam&logoColor=white)](https://vk.com/ec_hoi_mod)
+ [![Steam](https://img.shields.io/badge/-VK-blue?style=flat-square&logo=VK&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2000532465) 
+ [![Discord](https://img.shields.io/badge/-Discord-2c2f33?style=flat-square&logo=Discord&logoColor=white)](https://discord.gg/jjbue3F)
+ [![Reddit](https://img.shields.io/badge/-Reddit-FF5700?style=flat-square&logo=Reddit&logoColor=white)](https://www.reddit.com/r/EC2013/)
+ [![Youtube](https://img.shields.io/badge/-Youtube-c4302b?style=flat-square&logo=Youtube&logoColor=white)](https://www.youtube.com/c/HeartsofIronIVEconomicCrisis2013)
+ ![Version-Game](https://img.shields.io/badge/Version--Game--HOI4-1.8.2-green?style=flat-square)
+ ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.6-red?style=flat-square)
+
 **Languages**
 - [RU](#Section-for-Russian-audience)
 - [EN](#Section-for-English-audience)
