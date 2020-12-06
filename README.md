@@ -11,8 +11,8 @@
  ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.3.6-red?style=flat-square)
 
 **Languages**
-- [RU](#Section-for-Russian-audience)
-- [EN](#Section-for-English-audience)
+- [RU - Русский](#Section-for-Russian-audience)
+- [EN - English](#Section-for-English-audience)
 
 
 # Section for Russian audience
