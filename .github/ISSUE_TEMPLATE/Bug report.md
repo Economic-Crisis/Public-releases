@@ -2,7 +2,7 @@
 name: Crash&Bug
 about: Assist us in tracking down crashes
 title: Tag of Country, Affected & Summary of Issue
-labels: Crash
+labels: bug/crash
 
 ---
 <!-- 
