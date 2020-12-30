@@ -1,0 +1,121 @@
+# Economic Crisis - only national ideas
+# ministers, military_staff, theorist, industrie - in separate file!
+ideas = {
+	country = {
+	
+		support_Kim_Chen_In = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				POLITICAL_POWER_GAIN = 0.15
+			}
+		}
+		
+		militirisation_north_korea = {
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+			}
+		}
+		
+		military_academy = { #Военная академия
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.1
+			    conscription = 0.015
+				ARMY_MORALE_FACTOR = 0.05
+			}
+		}
+		
+		chuchxe = { #Чучхе
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.5
+			}
+		}
+		
+		people_productions = { #Товары народного потребления
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		mobilisation_army = { #Мобилизация армии
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.1
+			    conscription = 0.015
+				ARMY_CORE_ATTACK_FACTOR = 0.1
+			}
+		}
+		
+		idea_young_officers = { #Молодёжные офицеры
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ARMY_INFANTRY_DEFENCE_FACTOR = 0.1
+				AMPHIBIOUS_INVASION = 0.1
+				ARMY_ARTILLERY_DEFENCE_FACTOR = 0.1
+				MOTORIZED_DEFENCE_FACTOR = 0.1
+			}
+		}
+		
+		idea_economic_effort = { #Экономическое развитие
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				PRODUCTION_FACTORY_MAX_EFFICIENCY_FACTOR = 0.15
+			}
+		}
+	}
+}

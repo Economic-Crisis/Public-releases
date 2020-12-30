@@ -1,0 +1,275 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Divisione di Fanteria"		
+	# Represents nearly all infantry divisions
+	# In later years, CCNN Brigade added to Inf Division (1x2 militia/inf regiment)
+	# Also represent semi-mountain divisions (1st, 2nd, 3rd, 4th, 6th Divisions)
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 } 
+	}
+}
+division_template = {
+	name = "Divisione Alpina"					# Divisione Alpina
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }			# Elite Alpina Regiments
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+		#artillery = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Divisione Coloniale"		
+	# Represents lesser-equipped colonial units
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+
+##### OOB #####
+units = {
+
+	##### Commando Superiore Metropolitana #####
+	### Gruppo d'Armata Ovest ###
+	## 1a Armata ##
+	# II Corpo d'Armata #
+	division= {	
+		name = "4a Divisione di Fanteria 'Livorno'"
+		location = 11721
+		division_template = "Divisione di Fanteria"		# "Semi-Mountain" (less trained & equipped than Alpina)
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "4a Divisione Alpina 'Cuneense'"
+		location = 11721
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3
+	}
+
+	# III Corpo d'Armata #
+	division= {	
+		name = "3a Divisione di Fanteria 'Ravenna'"
+		location = 11891
+		division_template = "Divisione di Fanteria"		# "Semi-Mountain" (less trained & equipped than Alpina)
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "6a Divisione di Fanteria 'Cuneo'"
+		location = 11891
+		division_template = "Divisione di Fanteria"		# "Semi-Mountain" (less trained & equipped than Alpina)
+		start_experience_factor = 0.3
+	}
+	
+	## 4a Armata ##
+	# Corpo d'Armata Alpina #
+	division= {	
+		name = "1a Divisione Alpina 'Taurinense'"
+		location = 9738
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3
+	}
+
+	# I Corpo d'Armata #
+	division= {	
+		name = "1a Divisione di Fanteria 'Superga'"
+		location = 6780
+		division_template = "Divisione di Fanteria"		# "Semi-Mountain" (less trained & equipped than Alpina)
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "2a Divisione Alpina 'Tridentina'"
+		location = 6780
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3
+	}
+
+	# IV Corpo d'Armata #
+	division= {	
+		name = "2a Divisione di Fanteria 'Sforzesca'"
+		location = 611
+		division_template = "Divisione di Fanteria"		# "Semi-Mountain" (less trained & equipped than Alpina)
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "7a Divisione di Fanteria 'Lupi di Toscana'"
+		location = 611
+		division_template = "Divisione di Fanteria"	
+		start_experience_factor = 0.2
+	}
+
+	### Gruppo d'Armata Est ###
+
+	# VI Corpo d'Armata #
+	division= {	
+		name = "8a Divisione di Fanteria 'Po'"
+		location = 628
+		division_template = "Divisione di Fanteria"	
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "3a Divisione Alpina 'Julia'"
+		location = 628
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3
+	}
+
+	### Gruppo d'Armata Sud ###
+	# VII Corpo d'Armata #
+	division= {	
+		name = "20a Divisione di Fanteria 'Friuli'"
+		location = 4159
+		division_template = "Divisione di Fanteria"	
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "25a Divisione di Fanteria 'Bologna'"
+		location = 10074
+		division_template = "Divisione di Fanteria"	
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+}
+
+### Air Wings ###
+air_wings = {
+	### 1a Squadra Aerea -- Milan/Turin
+	158 = { 
+		# 2a Divisione Aerea 'Borea'
+		light_fighter_equipment_0 = {
+			owner = "ITA" 
+			amount = 80
+		}
+		# 4a Divisione Aerea 'Drago'
+		# 6a Divisione Aerea 'Falco'
+		attack_bomber_equipment_1 =  {
+			owner = "ITA" 
+			amount = 128
+		}
+	}
+
+	### 2a Squadra Aerea -- Palermo
+	115 = {
+		# 1a Divisione Aerea 'Aquila'
+		light_fighter_equipment_0 = {
+			owner = "ITA" 
+			amount = 80
+		}
+		# 3a Divisione Aerea 'Centauro'
+		attack_bomber_equipment_1 =  {
+			owner = "ITA" 
+			amount = 32
+		}
+	}
+
+	### 3a Squadra Aerea -- Rome
+	2 = {
+		# 5a Divisione Aerea 'Eolo'
+		attack_bomber_equipment_1 =  {
+			owner = "ITA" 
+			amount = 64
+		}
+		# 8a Divisione Aerea 'Ibis'
+		light_fighter_equipment_0 = {
+			owner = "ITA" 
+			amount = 80
+		}
+	}
+
+	### Commando Aeronautica Libia -- Tripoli
+	448 = {
+		light_fighter_equipment_0 =  {
+			owner = "ITA" 
+			amount = 20
+		}
+		attack_bomber_equipment_1 =  {
+			owner = "ITA" 
+			amount = 32
+		}
+	}
+
+	### Commando Aeronautica Africa Orientale -- Eritrea
+	550 = {
+		light_fighter_equipment_0 =  {
+			owner = "ITA" 
+			amount = 40
+		}
+		attack_bomber_equipment_1 =  {
+			owner = "ITA" 
+			amount = 32
+		}
+		strike_fighter_equipment_1 =  {
+			owner = "ITA" 
+			amount = 48
+		}
+	}
+}
+
+	
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+instant_effect = {
+
+	if = {
+		limit = { is_tutorial = no }
+
+		add_equipment_production = {
+			equipment = {
+				type = army_salw_equipment_1
+				creator = "ITA"
+			}
+			requested_factories = 4
+			progress = 0.1
+			efficiency = 50
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = support_equipment_1
+				creator = "ITA" 
+			}
+			requested_factories = 1
+			progress = 0.3
+			efficiency = 50
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = strike_fighter_equipment_1
+				creator = "ITA" 
+			}
+			requested_factories = 1
+			progress = 0.2
+			efficiency = 50
+		}
+	}
+}
+	#####################

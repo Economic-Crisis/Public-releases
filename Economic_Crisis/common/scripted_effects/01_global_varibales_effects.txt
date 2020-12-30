@@ -1,0 +1,145 @@
+### EC Global Variables
+### Written by SuxrobGM
+
+set_oil_cost = {
+	set_variable = {
+		var = oil_cost
+		value = 2.0
+	}
+}
+
+set_energy_cost = {
+	set_variable = {
+		var = energy_cost
+		value = 2.0
+	}
+}
+
+set_polymers_cost = {
+	set_variable = {
+		var = polymers_cost
+		value = 2.0
+	}
+}
+
+set_bauxite_cost = {
+	set_variable = {
+		var = bauxite_cost
+		value = 1.0
+	}
+}
+
+set_aluminium_cost = {
+	set_variable = {
+		var = aluminium_cost
+		value = 1.0
+	}
+}
+
+set_enr_uran_cost = {
+	set_variable = {
+		var = enr_uran_cost
+		value = 1.5
+	}
+}
+
+set_rare_metals_cost = {
+	set_variable = {
+		var = rare_metals_cost
+		value = 1.5
+	}
+}
+
+set_polymers_cost = {
+	set_variable = {
+		var = polymers_cost
+		value = 1.5
+	}
+}
+
+set_gas_cost = {
+	set_variable = {
+		var = gas_cost
+		value = 1.0
+	}
+}
+
+set_rare_earth_ore_cost = {
+	set_variable = {
+		var = rare_earth_ore_cost
+		value = 1.0
+	}
+}
+
+set_uran_cost = {
+	set_variable = {
+		var = uran_cost
+		value = 1.0
+	}
+}
+
+set_steel_cost = {
+	set_variable = {
+		var = steel_cost
+		value = 0.5
+	}
+}
+
+set_iron_ore_cost = {
+	set_variable = {
+		var = iron_ore_cost
+		value = 0.5
+	}
+}
+
+set_coal_cost = {
+	set_variable = {
+		var = coal_cost
+		value = 0.5
+	}
+}
+
+set_alloy_ore_cost = {
+	set_variable = {
+		var = alloy_ore_cost
+		value = 0.8
+	}
+}
+
+set_alloy_steel_cost = {
+	set_variable = {
+		var = alloy_steel_cost
+		value = 0.8
+	}
+}
+
+set_current_export_value = {
+	set_variable = {
+		var = current_export_value
+		value = 40 #default 40%
+	}
+	add_ideas = change_export_percentage_40
+}
+
+set_tax_percentage = {
+	if = {
+		limit = { has_idea = very_low_taxes }
+		set_variable = { tax_percentage = 0.005 }
+	}
+	else_if = {
+		limit = { has_idea = low_taxes }
+		set_variable = { tax_percentage = 0.01 }
+	}
+	else_if = {
+		limit = { has_idea = normal_taxes }
+		set_variable = { tax_percentage = 0.015 }
+	}
+	else_if = {
+		limit = { has_idea = high_taxes }
+		set_variable = { tax_percentage = 0.025 }
+	}
+	else_if = {
+		limit = { has_idea = very_high_taxes }
+		set_variable = { tax_percentage = 0.035 }
+	}
+}

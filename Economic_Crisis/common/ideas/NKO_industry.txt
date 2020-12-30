@@ -1,0 +1,146 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+		#???
+	}
+	
+	aircraft_manufacturer = {
+		#???
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Korean Ocean Shipping Agency судостроение
+		Korean_Ocean_Shipping_Agency = {
+			
+			picture = Korean_Ocean_Shipping_Agency
+			
+			allowed = {
+				original_tag = NKO
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#Sungri Motor Plant автомобилестроение 
+		Sungri_Motor_Plant = {
+			
+			picture = Sungri_Motor_Plant
+			allowed = {
+				original_tag = NKO
+			}
+			
+			research_bonus = {
+				cat_wheeled_vehicle = 0.1
+			}
+			
+			cost = 750
+			
+			traits = { apc_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#Ryonbong General Corp. машиностроение
+		Ryonbong_General_Corp = {
+			
+			picture = Ryonbong_General_Corp
+			allowed = {
+				original_tag = NKO
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#Korea Ferrous Metals Export & Import горнодобывающая 
+		Korea_Ferrous_Metals_Export_Import = {
+
+			picture = Korea_Ferrous_Metals_Export_Import
+			allowed = {
+				original_tag = NKO
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		#Koryolink электроника
+		Koryolink = {
+
+			picture = Koryolink
+			allowed = {
+				original_tag = NKO
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#SunNet коммуникации интернет АЙТИ
+		SunNet = {
+
+			picture = SunNet
+			allowed = {
+				original_tag = NKO
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+	}
+}	

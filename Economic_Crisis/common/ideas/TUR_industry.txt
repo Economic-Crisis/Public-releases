@@ -1,0 +1,382 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#FNSS автомобиле и танкостроительное предприятие
+		FNSS = {
+
+			picture = FNSS
+			allowed = {
+				original_tag = TUR
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+				
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Tais Shipyards судостроение
+		Tais_Shipyards = {
+			
+			picture = Tais_Shipyards
+			
+			allowed = {
+				original_tag = TUR
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+				
+			}
+		}
+		
+		#ISTANBUL SHIPYARD судостроение
+		ISTANBUL_SHIPYARD = {
+			
+			picture = ISTANBUL_SHIPYARD
+			
+			allowed = {
+				original_tag = TUR
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+				
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#Kale авиастроение
+		Kale = {
+			
+			picture = Kale
+			
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+				
+			}
+		}
+		
+		#TAI авиастроение
+		TAI_concern = {
+			
+			picture = TAI_concern
+			
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				cat_vtol_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 900
+			
+			traits = { 
+				medium_aircraft_development
+			}
+			
+			modifier = {
+				
+			}
+		}
+		
+		#Baykar беспилотники
+		Baykar = {
+			
+			picture = Baykar
+			
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				#cat_air_drone_tech = 0.1
+				cat_fighter_tech = 0.1
+			}
+			
+			available = {
+				#has_tech = 
+			}
+			
+			cost = 750
+			
+			traits = { 
+				CAS_development #??? drone
+			}
+			
+			modifier = {
+				
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#MKEK стрелковое вооружение
+		MKEK = {
+			
+			picture = MKEK
+			allowed = {
+				original_tag = TUR
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+				
+			}
+		}
+		
+		#BMS автомобилестроение
+		BMS = {
+			
+			picture = BMS
+			allowed = {
+				original_tag = TUR
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+				
+			}
+		}
+		
+		#Nurol бронетехника
+		Nurol = {
+			
+			picture = Nurol
+			allowed = {
+				original_tag = TUR
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+				
+			}
+		}
+		
+		#Otokar бронетехника
+		Otokar = {
+			
+			picture = Otokar
+			allowed = {
+				original_tag = TUR
+			}
+			
+			research_bonus = {
+				cat_wheeled_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { apc_manufacturer }
+			
+			modifier = {
+				
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#Borusan оборудование тяжелой промышленности
+		Borusan = {
+
+			picture = Borusan
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				
+			}
+		}
+		
+		#Aselsan радиоэлектроника
+		Aselsan = {
+
+			picture = Aselsan
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+				
+			}
+		}
+		
+		#Vestel радиоэлектроника
+		Vestel = {
+
+			picture = Vestel
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Ulker продукты питания
+		Ulker = {
+
+			picture = Ulker
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		#TPIC - Turkish Petroleum нефтедобывающая организация
+		TPIC_Turkish_Petroleum = {
+
+			picture = TPIC_Turkish_Petroleum
+			allowed = {
+				original_tag = TUR
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 25
+					}
+				}
+			}
+		}
+	}
+}	

@@ -1,0 +1,134 @@
+﻿division_template = {
+	name = "Infanterie-Division"  
+	# Note: Swiss Infantry Divisions included both attached regiments and 
+	#	border/mtn. brigades in their TO&E. This represents all but the 
+	#	attached brigades
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }      # recon_battalion bn mix of cav recon_battalion, ACs, and tankettes
+		airborne_support_company = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "Gebirgs-Division"  
+	# Note: Mountain Divisions are same as Infantry Divisions above, but with mountain regiments
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 2 y = 0 }
+		mountaineers_motorized = { x = 2 y = 1 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }      # recon_battalion bn mix of cav recon_battalion, ACs, and tankettes
+		airborne_support_company = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "Gebirgsbrigade" 	
+	# Independent Mountain Brigade, triangle organization
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Grenzbrigade"  			# Border divisions are garrison units; lower equipment, experience
+	# Independent Border Brigade, binary organization
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	###### Schweizer Armee ######
+	### 1. Armeekorps ###
+	division = {
+		name = "Gebirgsbrigade 10"
+		location = 11590
+		division_template = "Gebirgsbrigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Grenzbrigade 10"
+		location = 3612
+		division_template = "Gebirgsbrigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	# Division 1 Command
+	division = {
+		name = "Division 1"
+		location = 6666
+		division_template = "Grenzbrigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Grenzbrigade 1"
+		location = 6666
+		division_template = "Grenzbrigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	
+}
+
+### Air Wings ###
+air_wings = {
+	##### Schweizer Luftwaffe #####
+	3 = { 
+		# Fliegerregimenter 1 -- Dewotine D.27 fighters
+		light_fighter_equipment_0 = {
+			owner = "SWI" 
+			amount = 36
+			#create_if_missing = yes
+		}
+		# Fliegerregimenter 2 -- EKW C-25 light bombers
+		strike_fighter_equipment_1 = {
+			owner = "SWI" 
+			amount = 12
+			#create_if_missing = yes
+		}
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "SWI"
+		}
+		requested_factories = 1
+		progress = 0.41
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SWI"
+		}
+		requested_factories = 1
+		progress = 0.12
+		efficiency = 100
+	}
+}

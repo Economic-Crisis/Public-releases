@@ -1,0 +1,625 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	minister = { value = 5 }
+
+	# Country reprobated German impact on EU
+	impact_on_eu = {
+		value = -10
+	}
+
+	# Country reprobated German leadership of EU
+	leaded_eu = {
+		value = -20
+	}
+
+	# Country is not member of EU more
+	no_eu_more = {
+		value = -20
+	}
+
+	member_BRICS = {
+		value = 30
+	}
+	
+	hostile_status = { #special used for civil wars that are on hold and blocks faction stuff
+		value = -100
+	}
+
+	ireland_negative = {
+	    value = -100
+		years = 5
+	}
+	
+	unstable_alliance = {
+		value = -10
+	}
+
+	holds_our_cores = {
+		value = -30
+	}
+	holds_our_claims = {
+		value = -15
+	}
+	claims_on_us = { 
+		value = -10
+	}
+	at_war_with_faction = {
+		value = -25
+	}
+	
+	justifying_war_goal = {
+		value = -10
+		min_trust = -10
+		days = 10
+		decay = 1
+	}
+
+	anti_comintern_pact_opinion = {
+		value = 50
+	}
+
+	refused_anti_comintern_pact_opinion= {
+		value = -50
+	}
+
+	anti_soviet_pact_call_refused = {
+		value = -50
+	}
+
+	tripartite_pact_opinion = {
+		value = 75
+	}
+
+	refused_tripartite_pact_opinion = {
+		value = -25
+	}
+
+	pact_against_us= {
+		value = -50
+	}
+
+	worse_pact_against_us= {
+		value = -75
+	}
+
+	protest_action_light = {
+		value = -10
+		months = 12
+		decay = 1
+	}
+
+	protest_action = {
+		value = -25
+		months = 12
+		decay = 1
+	}
+
+	protest_action_strong = {
+		value = -50
+		months = 12
+	}
+	
+	condemn_aggression = {
+		value = -50
+		months = 24
+	}
+	
+	western_betrayal = {
+		value = -50
+	}
+	
+	offered_support = {
+		value = 50
+		months = 24
+	}
+	
+	abandoned_czechs = {
+		value = -20
+		months = 12
+	}
+
+	abandoned_yugoslavia = {
+		value = -20
+		months = 12
+	}
+
+	improve_relation = {
+		value = 0
+		months = 0
+		decay = 3
+		max_trust = 100
+	}
+	
+	attache_sent = {
+		value = 30
+	}
+	
+	attache_sent_to_enemy = {
+		value = -20
+	}
+	guarantee = {
+		value = 0
+	}
+	
+	guarantee = {
+		target = yes
+		value = 75
+	}
+	
+	betrayed_guarantee = {
+		value = -100
+		months = 36
+	}
+	
+	at_war = {
+		value = -75
+	}
+	
+	in_faction = {
+		value = 100
+	}
+	
+	military_access = {
+		value = 30
+	}
+	
+	non_aggression_pact = {
+		value = 25
+	}
+
+	fascists_in_government = {
+		value = 30
+	}
+
+	communists_in_government = {
+		value = 30
+	}
+
+	refused_help = {
+		value = -30
+		months = 36
+		decay = 1
+	}
+
+	took_stand_for_us = {
+		value = 50
+		decay = 1
+	}
+	
+	same_ruling_party = {
+		value = 20
+	}
+	
+	similar_ruling_party = {
+		value = 10
+	}
+	
+	different_party_types = {
+		value = -10
+	}
+	
+	long_term_trade_partner = {
+		value = 1
+	}
+	
+	puppet_opinion = { value = 200 }
+
+	ger_sov_alliance_focus = {
+		value = 50
+	}
+
+	ger_jap_diplomacy_focus = {
+		value = 30
+	}
+
+	withdrew_advisors = {
+		value = -30
+	}
+
+	befriended_the_dutch = {
+		value = -40
+	}
+	
+	bristayLondon = { value = -15 }
+	bristaySkandinav = { value = 15 }
+	claimed_western_yugoslavia = {
+		value = -40
+	}
+
+	ita_supported_spain_civil_war = {
+		value = 30
+	}
+
+	ita_diplomacy_focus = {
+		value = 40
+	}
+
+	pact_of_steel_opinion = {
+		value = 60
+	}
+
+	anti_fascist_diplomacy_focus = {
+		value = 30
+	}
+	anti_fascist_diplomacy_fascists = {
+		value = -40
+	}
+
+	anti_capitalist_diplomacy_focus = {
+		value = 30
+	}
+
+	anti_capitalist_diplomacy_capitalists = {
+		value = -40
+	}
+
+	operation_zet_chi = {
+		value = 40
+	}
+
+	operation_zet_jap = {
+		value = -40
+	}
+
+	middle_east_expansionism = {
+		value = -30
+	}
+
+	border_conflict_reconciled = {
+		value = 40
+	}
+
+	threat_to_baltic = {
+		value = -50
+	}
+
+	claimed_bessarabia = {
+		value = -40
+	}
+
+	claimed_bucovina = {
+		value = -40
+	}
+
+	claimed_eastern_poland = {
+		value = -50
+	}
+
+	war_plan_black = {
+		value = -50
+	}
+
+	war_plan_red = {
+		value = -50
+	}
+
+	war_plan_white = {
+		value = -50
+	}
+
+	war_plan_orange = {
+		value = -50
+	}
+	democratic_leanings_good = {
+		value = 30
+	}
+	democratic_leanings_bad = {
+		value = -30
+	}
+	liberalism_leanings_good = {
+		value = 30
+	}
+	liberalism_leanings_bad = {
+		value = -30
+	}
+	reformism_leanings_good = {
+		value = 30
+	}
+	reformism_leanings_bad = {
+		value = -30
+	}		
+	communism_leanings_good = {
+		value = 30
+	}
+	communism_leanings_bad = {
+		value = -30
+	}
+	fascism_leanings_good = {
+		value = 30
+	}
+	fascism_leanings_bad = {
+		value = -30
+	}
+	neutrality_leanings_good = {
+		value = 30
+	}
+	neutrality_leanings_bad = {
+		value = -30
+	}
+	islamists_leanings_good = {
+		value = 30
+	}
+	islamists_leanings_bad = {
+		value = -30
+	}
+	rad_islamists_leanings_good = {
+		value = 30
+	}
+	rad_islamists_leanings_bad = {
+		value = -30
+	}	
+	tizard_relations = {
+		value = 50
+	}
+	tizard_refused = {
+		value = -50
+	}
+	sanctions_relations = {
+		value = -40
+	}
+	minor_sanctions_relations = {
+		value = -20
+	}
+	burma_road_good = {
+		value = 30
+	}
+	burma_road_bad = {
+		value = -30
+	}
+	axis_leanings_focus = {
+		value = 50
+	}
+	jap_sia_love = {
+		value = 50
+	}
+	unprovoked_aggression = {
+		value = -50
+		months = 36
+		decay = 1
+	}
+	scandinavian_intervention = {
+		value = -20
+		months = 24
+		decay = 1
+	}
+
+	balkan_strategy_good = {
+		value = 30
+	}
+
+	balkan_strategy_bad = {
+		value = -30
+	}
+
+	aided_industry = {
+		value = 30
+	}
+	
+	pan_slavic_opinion = {
+		value = 30
+	}
+	ger_ita_tech_treaty = {
+		value = 50
+	}
+
+	ger_ita_tech_treaty_rejected = {
+		value = -20
+	}
+
+	lend_leased_spanish_civil_war = {
+		value = 30
+	}
+
+	anti_german_coup = {
+		value = -40
+	}
+	
+	communist_collaborators = {
+		value = -125
+		months = 48
+		decay = 1
+	}
+	
+	unholy_alliance  = {
+		value = -50
+		months = 48
+		decay = 1
+	}
+
+	anti_imperialist = {
+		value = 40
+	}
+
+	destroyers_for_bases_opinion = {
+		value = 30
+	}
+	
+	Russia_agresie_to_Ukraine = {
+		value = -50
+	}
+	
+	lend_leased_Ukrainan_civil_war = {
+		value = -30
+	}
+	
+	member_BRICS = {
+		value = 30
+	}
+	
+	member_EU = {
+		value = 50
+	}
+	
+	military_provocation = {
+		value = -25
+		months = 36
+		decay = 1
+	}
+
+	rejected_demands = {
+		value = -30
+	}
+
+	unilateral_war = {
+		value = -50
+	}
+
+	betrayed_alliance = {
+		value = -50
+	}
+	
+	small_decrease = {
+		value = -10
+	}
+
+	medium_decrease = {
+		value = -25
+	}
+
+	large_decrease = {
+		value = -50
+	}
+
+	small_increase = {
+		value = 10
+	}
+
+	medium_increase = {
+		value = 25
+	}
+
+	large_increase = {
+		value = 50
+	}
+	
+	huge_increase = {
+		value = 100
+	}
+	##### TRADE MODIFIERS
+	embargo = {
+		trade = yes
+		value = -100
+	}
+	sanctions = {
+		trade = yes
+		value = -40
+	}
+	minor_sanctions = {
+		trade = yes
+		value = -20
+	}
+
+	unholy_alliance_opinion = {
+		value = 40
+	}
+	unholy_alliance_trade = {
+		trade = yes
+		value = 20
+	}
+
+	monroe_doctrine_trade = {
+		trade = yes
+		value = 5
+	}
+
+	### UK/BRITAIN/ENG FOCUS TREE ###
+
+	### Germany focus tree
+    germany_russia_friend = { value = 50 }
+	russia_germany_friend = { value = 50 }
+
+	### Polish focus tree ###
+	
+	### Ukrainian Focus Tree ###
+	UKR_Russia_focus = { value = -30 }
+	UKR_european_support_focus = { value = 30 }
+	RUS_seek_support_w.countries_UKR = { value = -35 }
+	RUS_seek_alliance_USA = { value = -40 }
+	UKR_politics_focus = { value = 30 }
+	UKR_support_RUS = { value = 40 }
+	USA_seek_alliance_UKR = { value = 40 }
+	NRU_is_puppet_UKR = { value = 15 }
+	
+	UKR_the_split_people_east_and_west = {
+		value = -15
+	}
+	
+	UKR_gas_agreements = { value = -10 }
+	UKR_the_split_people_east_and_west = { value = 5 }
+	
+	UKR_joint_siege = { value = 35 } #Совместная осада
+	UKR_blockade = { value = -25 } #Блокада Приднестровья (мнение)
+	UKR_not_blockade = { value = 10 } #Отказ от блокады
+	UKR_sanctions = { value = -20 } #Cанкции
+	UKR_russian_sanctions = { #Санкции
+		trade = yes
+		value = -500
+	}
+	UKR_transnistria_blockade1 = { #Блокада Приднестровья (торговля)
+		trade = yes
+		value = -500
+	}
+	UKR_coalition_with_west = { value = 35 } #Коалиция с западом
+	UKR_seek_east_ukraine_as_friend = { value = 20 decay = 1 } #Мнение об Восточ. Украине
+	UKR_seek_west_ukraine_as_friend = { value = 20 decay = 1 } #Мнение об Запад. Украине
+	UKR_seek_east_ukraine_as_enemy = { value = -20 decay = 1 } #Плохой мнение об Восточ. Украине
+	UKR_refused_the_coalition_with_west = { value = -20 decay = 1 }
+	UKR_seek_west_ukraine_as_enemy = { value = -20 decay = 1 }
+	
+	### Moldova Events ###
+	MDA_ukr_waiver_of_sanctions = { value = -15	} #Отказ от санкций
+	MDA_tmd_waiver_of_sanctions = {	value = 15 } #Отказ от санкций
+	
+	### Transnistria Events ###
+	TMD_knife_in_the_back = { value = -40} # Нож в спину
+ 
+	### Russia Focus Tree ###
+	RUS_support_DNR_LNR_focus = { value = 50 }
+	RUS_war_with_IGIL_focus = { value = 40 }
+	RUS_enemy_UKR_focus = { value = -40 }
+	RUS_influence_in_UKR_focus = { value = -30 }
+	
+	### China Focus Tree ###
+	CHI_friend_USA_focus = { value = 40 }
+	RUS_enemy_CHI_focus = { value = -40 }
+	
+	### Turkey Events ###
+	TUR_incindient_SU-24 = { value = -40 }
+		
+	### Iran focus tree ###
+	IRN_strategic_partner = { value = 15 }
+	
+	### North Korea Tree ###
+	PRK_friend_with_east = { value = 30 }
+	PRK_friend_with_west = { value = 30 }
+	PRK_friend_with_korea = { value = 50 }
+	PRK_friend_with_USA = { value = 50 }
+	PRK_friend_with_RUS = { value = 50 }
+	PRK_friend_with_CHI = { value = 50 }
+	
+	### British Focus Tree ###
+	ENG_stay_at_eu_tade_zone = { #Остаться в ЗСТ (торговля)
+		trade = yes
+		value = 100
+	}
+	
+	ENG_protectionism_politic = { #Политика протекционизма (торговля)
+		trade = yes
+		value = -50
+	}
+	POL_embargo = { #эмбарго
+        trade = yes
+        value = -300
+    }
+	
+}

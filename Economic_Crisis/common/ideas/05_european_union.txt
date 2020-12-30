@@ -1,0 +1,138 @@
+# Economic Crisis EU integration model (old)
+	
+ideas = {
+	EU_integration_level = {
+		
+		fully_integrated_in_EU = {
+			cost = 750
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 4
+			
+			#picture = civilian_economy1
+			
+			available = {
+				any_owned_state = { is_on_continent = europe }
+				OR = {
+					has_government = liberalism
+					has_government = democratic
+					has_government = reformism
+					has_government = neutrality
+				}
+				has_idea = eu_member
+				has_country_flag = country_ready_to_integrate_into_EU
+			}
+			
+			on_add = {
+				#event
+			}
+			
+			modifier = {
+				
+			}
+		}
+		
+		EU_membership = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 3
+			
+			picture = eu_member
+			
+			available = {
+				any_owned_state = { is_on_continent = europe }
+				OR = {
+					has_government = liberalism
+					has_government = democratic
+					has_government = reformism
+					has_government = neutrality
+				}
+				NOT = {
+					has_idea = eu_member
+				}
+				has_country_flag = country_successfully_passed_1st_step
+				has_country_flag = country_successfully_passed_2nd_step
+			}
+			
+			on_add = {
+				if = {
+					limit = {
+						NOT = { has_idea = eu_member }
+					}
+					add_ideas = eu_member
+				}
+			}
+			
+			modifier = {
+				
+			}
+		}
+		
+		candidate_EU_membership = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 2
+			
+			#picture = civilian_economy1
+			
+			available = {
+				any_owned_state = { is_on_continent = europe }
+				OR = {
+					has_government = liberalism
+					has_government = democratic
+					has_government = reformism
+					has_government = neutrality
+				}
+				NOT = {
+					has_idea = eu_member
+				}
+				has_country_flag = country_successfully_passed_1st_step
+			}
+			
+			on_add = {
+				country_event = {
+					id = European_Union.4 days = 50
+				}
+			}
+			
+			modifier = {
+				
+			}		
+		}
+		
+		EU_accession_negotiations = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 1
+			
+			#picture = civilian_economy1
+			
+			available = {
+				any_owned_state = { is_on_continent = europe }
+				OR = {
+					has_government = liberalism
+					has_government = democratic
+					has_government = reformism
+					has_government = neutrality
+				}
+				NOT = {
+					has_idea = eu_member
+				}
+				has_country_flag = country_ready_to_join_EU
+			}
+			
+			on_add = {
+				country_event = {
+					id = European_Union.1 days = 3
+				}
+			}
+			
+			modifier = {
+				
+			}
+		}
+	}
+}

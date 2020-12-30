@@ -1,0 +1,53 @@
+# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+add_ideas = mixed_schools
+capital = 617
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 11 }
+	load_oob = "_tech_insurgents_2013" 
+	oob = "_army_microstate_2013"
+	add_political_power = 0
+
+	set_convoys = 0
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 0
+		democratic = 35
+		neutrality = 20
+		fascism = 30
+		rad_islamists = 10
+	}
+
+	# World Uyghur Congress
+
+	create_country_leader = {
+		name = "Rabiye Qadir"
+		desc = "POLITICS_RABIYE_QADIR_DESC"
+		picture = "gfx/leaders/UYG/portrait_rabiye_qadir.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	# East Turkistan Islamic Party (ETIP)
+
+	create_country_leader = {
+		name = "Abdul Haq al-Turkistani" # Memetiming Memeti
+		desc = "POLITICS_ABDUL_HAQ_AL_TURKISTANI_DESC"
+		picture = "gfx/leaders/UYG/portrait_abdul_haq_al_turkistani.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+}

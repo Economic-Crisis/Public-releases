@@ -1,0 +1,989 @@
+technologies = {
+
+    #Корпус
+    corps_1 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 1960
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_1
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_1 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 1960
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_1
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_1 = {
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 1960
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_1
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+    #Ракета-носитель 
+    carrier_rocket_1 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 1960
+        
+        
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = radio_and_electrical_engineering_1
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = orbital_station_1
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+    #Радио и электротехника 
+    radio_and_electrical_engineering_1 = {
+		land_reinforce_rate = 0.02
+        research_cost = 1.5
+
+        start_year = 1960
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = -2 }
+        }
+
+        path = {
+            leads_to_tech = satellite_1
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+    #Спутник 
+    satellite_1 = {
+		encryption = 1
+		decryption = 1
+        research_cost = 1.68
+
+        start_year = 1960
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 0 }
+        }
+		path = {
+            leads_to_tech = orbital_station_1
+            research_cost_coeff = 1
+        }
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+
+    #Орбитальная станция
+    orbital_station_1 = {
+		research_speed_factor = 0.015
+        research_cost = 4.77
+
+        start_year = 1980
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 2 }
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+
+    #Корпус
+    corps_2 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 1970
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_2
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_2 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 1970
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_2
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_2 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 1970
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_2
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Ракета-носитель
+    carrier_rocket_2 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 1970
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        #dependencies = {satellite_1 = 1}
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Корпус
+    corps_3 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 1980
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_3
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_3 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 1980
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_3
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_3 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 1980
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_3
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Ракета-носитель
+    carrier_rocket_3 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 1980
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        dependencies = {satellite_1 = 1}
+
+        path = {
+            leads_to_tech = radio_and_electrical_engineering_2
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = orbital_station_2
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+    #Радио и электротехника 
+    radio_and_electrical_engineering_2 = {
+		land_reinforce_rate = 0.02
+        research_cost = 1.5
+
+        start_year = 1980
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = -2 }
+        }
+
+        path = {
+            leads_to_tech = satellite_2
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+    #Спутник
+    satellite_2 = {
+		encryption = 1
+		decryption = 1
+        research_cost = 1.68
+
+        start_year = 1990
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 0 }
+        }
+		path = {
+            leads_to_tech = orbital_station_2
+            research_cost_coeff = 1
+        }
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+
+    #Орбитальная станция
+    orbital_station_2 = {
+		research_speed_factor = 0.015
+        research_cost = 4.77
+
+        start_year = 1980
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 2 }
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+
+    #Корпус
+    corps_4 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 1990
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_4
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_4 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 1990
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_4
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_4 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 1990
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_4
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+    
+    #Ракета-носитель 
+    carrier_rocket_4 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 1990
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        
+        #dependencies = {satellite_2 = 1}
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Корпус
+    corps_5 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 2000
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_5
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_5 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 2000
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_5
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_5 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 2000
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_5
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+    
+    #Ракета-носитель 
+    carrier_rocket_5 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 2000
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = radio_and_electrical_engineering_3
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = orbital_station_3
+            research_cost_coeff = 1
+        }
+
+        dependencies = {satellite_2 = 1}
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Радио и электротехника 
+    radio_and_electrical_engineering_3 = {
+		land_reinforce_rate = 0.02
+        research_cost = 1.5
+
+        start_year = 2000
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = -2 }
+        }
+
+        path = {
+            leads_to_tech = satellite_3
+            research_cost_coeff = 1
+        }
+
+        
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+    #Спутник 
+    satellite_3 = {
+		encryption = 1
+		decryption = 1
+        research_cost = 1.68
+
+        start_year = 2000
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 0 }
+        }
+		path = {
+            leads_to_tech = orbital_station_3
+            research_cost_coeff = 1
+        }
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+
+    #Орбитальная станция
+    orbital_station_3 = {
+		research_speed_factor = 0.015
+        research_cost = 4.77
+
+        start_year = 2000
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 2 }
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+
+    #Корпус
+    corps_6 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 2010
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_6
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_6 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 2010
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_6
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_6 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 2010
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_6
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Ракета-носитель 
+    carrier_rocket_6 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 2010
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        dependencies = {satellite_3 = 1}
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Корпус
+    corps_7 = {
+		air_weather_penalty = -0.03
+		air_accidents_factor = -0.02
+		air_defence_factor = 0.015
+        research_cost = 1.12
+
+        start_year = 2020
+
+        folder = {
+            name = space_folder
+            position = { x = -6 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = motor_7
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Двигатель
+    motor_7 = {
+		naval_retreat_speed = 0.02
+		air_agility_factor = 0.04
+        research_cost = 1.12
+
+        start_year = 2020
+
+        folder = {
+            name = space_folder
+            position = { x = -4 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = electronics_7
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Электроника
+    electronics_7 = {
+		research_speed_factor = 0.005
+		air_interception_agility_factor = 0.01
+        research_cost = 1.12
+
+        start_year = 2020
+
+        folder = {
+            name = space_folder
+            position = { x = -2 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = carrier_rocket_7
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+
+    }
+
+    #Ракета-носитель 
+    carrier_rocket_7 = {
+        research_cost = 2
+		air_range_factor = 0.03
+        start_year = 2020
+        
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 0 y = 0 }
+        }
+
+        path = {
+            leads_to_tech = radio_and_electrical_engineering_4
+            research_cost_coeff = 1
+        }
+
+        path = {
+            leads_to_tech = orbital_station_4
+            research_cost_coeff = 1
+        }
+
+        dependencies = {satellite_3 = 1}
+
+        ai_will_do = {factor = 1}
+        
+        categories = {space}
+    }
+
+    #Радио и электротехника 
+    radio_and_electrical_engineering_4 = {
+		land_reinforce_rate = 0.02
+        research_cost = 1.12
+
+        start_year = 2020
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = -2 }
+        }
+
+        path = {
+            leads_to_tech = satellite_4
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+    #Спутник 
+    satellite_4 = {
+		encryption = 1
+		decryption = 1
+        research_cost = 1.5
+
+        start_year = 2020
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 0 }
+        }
+		path = {
+            leads_to_tech = orbital_station_4
+            research_cost_coeff = 1
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+    }
+
+    #Орбитальная станция
+    orbital_station_4 = {
+		research_speed_factor = 0.015
+        research_cost = 4.77
+
+        start_year = 2020
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 2 y = 2 }
+        }
+		path = {
+            leads_to_tech = project_ark
+            research_cost_coeff = 1
+        }
+		path = {
+            leads_to_tech = military_space_station
+            research_cost_coeff = 1
+        }
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+    project_ark = {
+		MONTHLY_POPULATION = 0.015
+		industry_air_damage_factor = -0.1
+		research_cost = 4.77
+
+        start_year = 2020
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 4 y = 2 }
+        }
+
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+	military_space_station = {
+		army_bonus_air_superiority_factor = 0.15
+        research_cost = 4.77
+
+        start_year = 2020
+
+        on_research_complete = {}
+
+        folder = {
+            name = space_folder
+            position = { x = 4 y = 4 }
+        }
+        ai_will_do = {factor = 1}
+
+        categories = {space}
+
+    }
+}

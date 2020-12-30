@@ -1,0 +1,156 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+	prk_pang_pong_ju_hog = {
+		
+				picture = GFX_idea_prk_pang_pong_ju
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = {
+				original_tag = "NKO"
+			}
+			
+			traits = { party_leader_communist
+						pm_communist
+					}
+			
+			on_add = {
+			
+			# country_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		prk_pak_ui_chun_fgm = {
+
+		picture = GFX_idea_prk_pak_ui_chun
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+
+			}
+
+      			allowed = { 
+				original_tag  = "NKO" 
+			}
+
+      			traits = { foreign_minister_policy_defender_1}
+
+ 	     		on_add = { 
+
+				# country_event = foreign.minister.1
+			}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	defence_minister = {
+
+		prk_choe_pu_il_defm = {
+
+		picture = GFX_idea_prk_choe_pu_il
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = "NKO"
+			}
+
+			traits = { defence_minister_serve_and_protect}
+			
+			on_add = {
+			
+			# country_event = defence.minister.1
+		}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	economic_minister = {
+	
+		prk_choe_kwang_jin_ecm = {
+		
+		picture = GFX_idea_prk_choe_kwang_jin
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "NKO"
+			}
+			
+			traits = { economic_minister_military_industry_1 }
+			
+			on_add = {
+			
+			# country_event = economic.minister.1
+			
+		}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		prk_jang_jong_nam_ssch = {
+		
+			picture = GFX_idea_prk_jang_jong_nam
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "NKO"
+			}
+			
+			traits = { secret_service_chief_executioner_2 }
+			
+			on_add = {
+			
+			# country_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

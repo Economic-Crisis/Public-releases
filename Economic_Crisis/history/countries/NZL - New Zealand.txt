@@ -1,0 +1,76 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 284
+
+add_ideas = {
+	parliamentary_monarchy
+	queen_elizabet
+	anzus_member
+	low_terrorism
+	mixed_schools
+}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 19050 }
+
+	load_oob = "_tech_nato_regional_2013"  # not NATO, but tehnologies level is comparable
+	oob = "NZL_2013"
+	
+	
+	add_ideas = NPT
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		TPP_member
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.9.20"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 0
+		reformism = 12
+		liberalism = 12
+		democratic = 70
+		neutrality = 6
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Bill English"
+		desc = "POLITICS_BILL_ENGLISH_DESC"
+		picture = "gfx/leaders/NZL/portrait_bill_english.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "John Key"
+		desc = "POLITICS_JOHN_KEY_DESC"
+		picture = "gfx/leaders/NZL/portrait_john_key.dds"
+		expire = "2016.12.12"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Jacinda Ardern"
+		desc = "POLITICS_JACINDA_ARDERN_DESC"
+		picture = "gfx/leaders/NZL/portrait_jacinda_ardern.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}

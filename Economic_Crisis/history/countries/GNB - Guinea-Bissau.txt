@@ -1,0 +1,95 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+capital = 296
+
+  add_ideas = {
+		au_member
+	}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 102 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "GNB_2013"
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		terrorism_discounted
+	}
+	
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "2014.4.13"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 63
+		reformism = 35
+		liberalism = 0
+		democratic = 0
+		neutrality = 2
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Umaro Sissoco Embaló"
+		desc = "POLITICS_UMARO_SISSOCO_EMBALO_DESC"
+		picture = "gfx/leaders/GNB/portrait_umaro_sissoco_embalo.dds"
+		ideology = leninism 
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "José Mário Vaz"
+		desc = "POLITICS_JOSE_MARIO_VAZ_DESC"
+		picture = "gfx/leaders/GNB/portrait_jose_mario_vaz.dds"
+		ideology = leninism 
+		expire = "2019.12.29"
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Manuel Serifo Nhamadjo"
+		desc = "POLITICS_MANUEL_SERIFO_NHAMADJO_DESC"
+		picture = "gfx/leaders/GNB/portrait_manuel_serifo_nhamadjo.dds"
+		ideology = leninism 
+		expire = "2014.5.18"
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Kumba Iala"
+		desc = "POLITICS_KUMBA_IALÁ_DESC"
+		picture = "gfx/leaders/GNB/portrait_kumba_iala.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+

@@ -1,0 +1,165 @@
+spriteTypes = {
+	spriteType = { 
+		name = "GFX_cryptology_country_entry_bg"
+		texturefile = "gfx/interface/crypto/country_entry_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_cryptology_country_entry_selected_bg"
+		texturefile = "gfx/interface/crypto/country_entry_selected_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_crypto_cracking_bg"
+		texturefile = "gfx/interface/crypto/cracking_bg.dds"
+	}
+
+	
+	#spriteType = { 
+	#	name = "GFX_cryptology_decrypt_button_icon"
+	#	texturefile = "gfx/interface/crypto/unused_decrypt_button_icon.dds"
+	#}
+	
+	spriteType = {
+		name = "GFX_crypto_header"
+		textureFile = "gfx/interface/crypto/header_crypto.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_counter_intelligence_level"
+		texturefile = "gfx/interface/crypto/counter_intelligence_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_cryptology_defense_level"
+		texturefile = "gfx/interface/crypto/defense_level_icon.dds"
+	}
+	
+	spriteType = { 
+		name = "GFX_cryptology_add_new_country"
+		texturefile = "gfx/interface/crypto/add_new.dds"
+		noOfFrames = 2
+	}
+	
+	spriteType = {
+		name = "GFX_crypto"
+		texturefile = "gfx/interface/crypto/decrypt_strength_icon.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_crypto_bar_bg"
+		textureFile = "gfx/interface/crypto/decryption_bar_bg.dds"
+	}
+	
+	progressbartype = {
+		name = "GFX_crypto_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/crypto/decryption_bar.dds"
+		textureFile2 = "gfx/interface/crypto/decryption_bar_empty.dds"
+		size = { x = 228 y = 14 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+
+	spriteType = {
+		name = "GFX_crypto_bar_done"
+		textureFile = "gfx/interface/crypto/decryption_bar_done.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_crypto_bar_small_bg"
+		textureFile = "gfx/interface/crypto/decryption_bar_small_bg.dds"
+	}
+	
+	progressbartype = {
+		name = "GFX_crypto_bar_small"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/crypto/decryption_bar_small.dds"
+		textureFile2 = "gfx/interface/crypto/decryption_bar_small_empty.dds"
+		size = { x = 85 y = 6 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+
+	spriteType = {
+		name = "GFX_crypto_map_icon_still"
+		textureFile = "gfx/interface/crypto/cracking_still.dds"
+	}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_crypto_map_icon_animated"
+		texturefile = "gfx/interface/crypto/cracking_animated_2.dds"
+		noOfFrames = 73
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 24
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+
+	spriteType = {
+		name = "GFX_crypto_map_icon_done"
+		textureFile = "gfx/interface/crypto/cracking_done.dds"
+	}
+	spriteType = {
+		name = "GFX_crypto_icon_done_small"
+		textureFile = "gfx/interface/crypto/cracking_done_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_crypto_map_icon_active"
+		textureFile = "gfx/interface/crypto/cracking_active.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_crypto_decryption_activate_button"
+		textureFile = "gfx/interface/crypto/decryption_activate_button.dds"
+	}
+	spriteType = {
+		name = "GFX_crypto_decryption_start_stop_button"
+		textureFile = "gfx/interface/crypto/decryption_start_stop_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_crypto_decryption_done_icon"
+		textureFile = "gfx/interface/crypto/decryption_done_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decrypt_button_bg"
+		textureFile = "gfx/interface/crypto/decrypt_button_bg.dds"
+	}
+	
+	
+	progressbartype = {
+		name = "GFX_decrypt_active_bg"
+		textureFile1 = "gfx/interface/abilitylist/ability_active_bg_full.dds"
+		textureFile2 = "gfx/interface/abilitylist/ability_active_bg.dds"
+		size = {x=44 y=54}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	
+	SpriteType = {
+		name = "GFX_crypto_decryption_activate_button_animated"
+		texturefile = "gfx/interface/crypto/decryption_activate_button.dds"
+#		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		effectFile = "gfx/FX/buttonstate.lua"		
+		animation = {
+			animationmaskfile = "gfx/interface/crypto/decryption_activate_button.dds"
+			animationtexturefile = "gfx/interface/focus_completed_texture.dds" 	# <- the animated file
+			animationrotation = 245.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 5			# in seconds
+			animationdelay = 0.0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+			animationframes = {1 2 3 }
+		}
+	
+		legacy_lazy_load = no
+	}
+
+}

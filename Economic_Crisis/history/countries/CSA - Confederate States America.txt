@@ -1,0 +1,86 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 371
+
+2013.11.1 = {
+
+	oob = "USA_2013"
+	load_oob = "_tech_csto_minor_2013"
+	load_oob = "_tech_csto_regional_2013"
+
+	set_convoys = 50
+	add_political_power = 0
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		presidential_republic
+		administrative_federation
+		unitary_state
+		secular_state
+		free_media
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		market_economy
+		civilian_economy
+		middle_social_security
+		pensions
+		average_terrorism
+		free_trade
+	}
+	
+	set_country_flag = pai_nondem_neutral
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.7.4" #random date
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 17
+		neutrality = 54
+		fascism = 29
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "David Duke"
+		desc = "POLITICS_DAVID_DUKE_DESC"
+		picture = "gfx/leaders/USA/portrait_david_duke.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+
+	#create_country_leader = {
+	#	name = "Rocky Suhayda"
+	#	desc = "POLITICS_ROCKY_SUHAYDA_DESC"
+	#	picture = "gfx/leaders/USA/portrait_rocky_suhayda.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
+
+	create_country_leader = {
+		name = "Thomas Robb"
+		desc = "POLITICS_THOMAS_ROBB_DESC"
+		picture = "gfx/leaders/CSA/portrait_thomas_robb.dds"
+		ideology = national_socialism
+		traits = { trait_national_socialism }
+	}
+
+	create_country_leader = {
+		name = "Frank Fluckiger"
+		desc = "POLITICS_FRANK_FLUCKIGER_DESC"
+		picture = "gfx/leaders/USA/portrait_frank_fluckiger.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+}

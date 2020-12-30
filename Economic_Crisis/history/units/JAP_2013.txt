@@ -1,0 +1,413 @@
+﻿division_template = {
+	name = "Hohei Shidan" 		#Infantry Division - Represents both frontline and garrison divisions
+	# Note: In 1940 the IJA reorganized infantry divisions into triangular formations
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized = { x = 3 y = 0 }
+		motorized = { x = 3 y = 1 }
+		motorized = { x = 3 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+		recon_battalion = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Chugata Hohei Shidan" 	# Triangular infantry division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+		recon_battalion = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Dokuritsu Konsei Ryodan" 	# Independent Mixed Brigade: 5 infantry battalions (4k men total), 1 field artillery basttalion - abstracted into infantry,
+										# 1 engineering battalion
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		main_battle_tank = { x= 2 y = 0 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Jidousha Shidan" 			#  Motorized Infantry - Represents 5th Infantry Division (later Guards 'Konoe Shidan' Division(s))
+
+	regiments = {
+		light_motorized = { x = 0 y = 0 }
+		light_motorized = { x = 0 y = 1 }
+		light_motorized = { x = 0 y = 2 }
+		light_motorized = { x = 1 y = 0 }
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 2 y = 0 }
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+		light_motorized = { x = 3 y = 0 }
+		light_motorized = { x = 3 y = 1 }
+		light_motorized = { x = 3 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+		recon_battalion = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Sensha Gurupu"				# Tank Group - Groupings of tank 'regiments' (battalion-sized units)
+
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 0 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+	}	
+}
+division_template = {
+	name = "Rikusentai"				# Groupings of various SNLF marines_motorized forces (can be 1000-3000 men per 'regiment')
+
+	regiments = {
+		marines_motorized = { x = 0 y = 0 }
+		marines_motorized = { x = 0 y = 1 }
+		marines_motorized = { x = 0 y = 2 }
+		marines_motorized = { x = 1 y = 0 }
+		marines_motorized = { x = 1 y = 1 }
+		marines_motorized = { x = 1 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+	}	
+	priority = 2
+}
+division_template = {
+	name = "Chuton-chi Shidan" 			# Manchukuo Shidan  Represents Imperial Manchukuo Army infantry divisions (militia; lowest experience, oldest equipment)
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Chuton-chi Shidan on tracked APC" 			
+
+	regiments = {
+		mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+		mechanized_on_apc_tracked = { x = 1 y = 0 }
+		mechanized_on_apc_tracked = { x = 1 y = 1 }
+		mechanized_on_apc_tracked = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+
+
+division_template = {
+	name = "Special team"
+	regiments = {
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		# гранатометный_взвод = { x = 0 y = 3 }
+	# 2d Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+		# гранатометный_взвод = { x = 1 y = 3 }
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+		# гранатометный_взвод = { x = 2 y = 3 }
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 2 }
+		# гранатометный_взвод = { x = 3 y = 3 }
+	# Учебная Рота
+		special_forces_mechanized_on_apc_wheeled = { x = 4 y = 0 }
+		special_forces_mechanized_on_apc_wheeled= { x = 4 y = 1 }
+	# Рота СРС ( специальной радио-связи) ( 2 юнита )
+		# рота_срс = { x = 5 y = 0 }
+		# рота_срс = { x = 5 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		uas_company = { x = 1 y = 1 }
+		sniper_company = { x = 1 y = 2 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Heavy Artillery Brigade"
+	regiments = {
+	# 1st battery
+		self_propelled_artillery = { x = 0 y = 0 }
+		self_propelled_artillery = { x = 0 y = 1 }
+		self_propelled_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		self_propelled_artillery = { x = 1 y = 0 }
+		self_propelled_artillery = { x = 1 y = 1 }
+		self_propelled_artillery = { x = 1 y = 2 }	
+	# 1st battery
+		self_propelled_howitzers = { x = 2 y = 0 }
+		self_propelled_howitzers = { x = 2 y = 1 }
+		self_propelled_howitzers = { x = 2 y = 2 }
+	# 1st battery Rocket Artillery
+		rocket_artillery_sr = { x = 3 y = 0 }
+		rocket_artillery_sr = { x = 3 y = 1 }
+		rocket_artillery_sr = { x = 3 y = 2 }
+	# 1st Anti Tank Battery
+		mechanized_self_propelled_at_ml = { x = 4 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 2 }
+	# Разведбат Арт Дивизиона	
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 1 } 
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 2 } 
+
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		uas_company = { x = 1 y = 1 }
+		sniper_company = { x = 1 y = 2 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+units = {
+	##### Home Islands Defense Force (CO: ) #####
+	
+	### Chuo Homengun (East Japan Army) (CO: ) ###
+	division = {
+		name = "Konoe Shidan"
+		location = 1182 #Tokyo
+		division_template = "Jidousha Shidan"			# Imperial Guards, elite division (later split into mixed and infantry brigades)
+		start_experience_factor = 0.5
+	}
+	division = {
+		name = "2 'Yu' Hohei Shidan"
+		location = 7087 #Shizuoka
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Yokosuka Kichi Kaiheidan"
+		location = 9998 #Yokosuka
+		division_template = "Chuton-chi Shidan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+
+	### Roppou Homengun (West Japan Army) (CO: ) ###
+	division = {
+		name = "4 'Yodo' Hohei Shidan"
+		location = 9950 #Nagasaki
+		division_template = "Hohei Shidan"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "9 'Take' Hohei Shidan"
+		location = 1092 #Hiroshima
+		division_template = "Chugata Hohei Shidan"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "16 'Kaki' Hohei Shidan"
+		location = 4102	# Kagoshima
+		division_template = "Chugata Hohei Shidan"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Kure Kichi Kaiheidan"
+		location = 1092 #Hiroshima
+		division_template = "Chuton-chi Shidan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Sasebo Kichi Kaiheidan"
+		location = 9950 #Sasebo/Nagasaki
+		division_template = "Chuton-chi Shidan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Tokusyusakusengun"
+		location = 12421
+		division_template = "Special team"
+		start_experience_factor = 0.9
+		start_equipment_factor = 0.9
+
+	}
+	
+	division = {
+		name = "2 Sasebo Kichi Kaiheidan"
+		location = 10032
+		division_template = "Chuton-chi Shidan on tracked APC"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	
+	division = {
+		name = "3 Sasebo Kichi Kaiheidan"
+		location = 4067
+		division_template = "Chuton-chi Shidan on tracked APC"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Sasebo Kichi Kaiheidan"
+		location = 4646
+		division_template = "Heavy Artillery Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+
+}
+
+
+
+
+#AIRCRAFT
+air_wings = {
+	### IJA & IJN Air Forces ###
+	282 = { 														# Tokyo
+		# 1 Hikodan 
+		light_fighter_equipment_1 = { owner = "JAP" amount = 144 }			# 1 Hiko Rentai -- Nakajima Ki-27
+					# 11 Hiko Rentai -- Nakajima Ki-27
+		strike_fighter_equipment_1 =  { owner = "JAP" amount = 54 }			# 7 Hiko Rentai -- Ki-30/Ki-32
+	}
+	716 = {															#  Dalian
+		# 2 Hikodan
+		light_fighter_equipment_1 = { owner = "JAP" amount = 72 }			# 3 Hiko Rentai -- Nakajima Ki-27
+		strike_fighter_equipment_1 =  { owner = "JAP" amount = 54 }			# 5 Hiko Rentai -- Ki-30/Ki-32
+		attack_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 9 Hiko Rentai -- Mitsubishi Ki-21
+	}
+	597 = {															#  Jinan
+		# 4 Hikodan
+		strike_fighter_equipment_1 =  { owner = "JAP" amount = 54 }			# 12 Hiko Rentai -- Ki-30/Ki-32
+		attack_bomber_equipment_1 =  { owner = "JAP" amount = 54 }		# 14 Hiko Rentai -- Mitsubishi Ki-21
+	}
+	524 = {															# Taiwan
+		# 3 Hikodan 
+		strike_fighter_equipment_1 =  { owner = "JAP" amount = 54 }			# 6 Hiko Rentai -- Ki-30/Ki-32
+		light_fighter_equipment_1 =  { owner = "JAP" amount = 144 }		# 10 Hiko Rentai -- Nakajima Ki-27
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	add_equipment_to_stockpile = { amount = 26 type = main_battle_tank_g7_equipment_0	} #Type-10
+	add_equipment_to_stockpile = { amount = 341 type = main_battle_tank_g5_equipment_0	} #Type-90
+	add_equipment_to_stockpile = { amount = 410 type = main_battle_tank_g4_equipment_0	} #Type-74
+
+	add_equipment_to_stockpile = { amount = 102 type = anti_ar_equipment_2	} #Type-87
+
+	add_equipment_to_stockpile = { amount = 68 type = ifv_tracked_g5_equipment_0 } #Type-89
+
+	add_equipment_to_stockpile = { amount = 286 type = apc_tracked_g4_equipment_0 } #Type-73
+
+	add_equipment_to_stockpile = { amount = 229 type = apc_wheeled_g3_equipment_0 } #Type-82
+	add_equipment_to_stockpile = { amount = 302 type = apc_wheeled_g5_equipment_0 } #Type-96
+
+	add_equipment_to_stockpile = { amount = 46 type = FIELD_ARTILLERY_SAU_4 } #Type-75
+	add_equipment_to_stockpile = { amount = 68 type = FIELD_ARTILLERY_SAU_5 } #Type-99
+	add_equipment_to_stockpile = { amount = 79 type = FIELD_ARTILLERY_SAU_6 } #M110A2
+
+	add_equipment_to_stockpile = { amount = 422 type = FIELD_ARTILLERY_6 } #FH-70
+
+	add_equipment_to_stockpile = { amount = 99 type = MRL_7 } #M270
+
+	add_equipment_to_stockpile = { amount = 24 type = TRENCH_MORTAR_2 } #Type-96
+
+	add_equipment_to_stockpile = { amount = 624 type = TRENCH_MORTAR_1 } #L16
+
+	add_equipment_to_stockpile = { amount = 1030 type = ATGM_salw_equipment_5 } #Type-01 LMAT
+	add_equipment_to_stockpile = { amount = 440 type = ATGM_salw_equipment_4 } #Type-87	Chu-MAT
+	add_equipment_to_stockpile = { amount = 140 type = ATGM_salw_equipment_3 } #Type-79 Jyu-MAT
+
+	add_equipment_to_stockpile = { amount = 74 type = attack_helicopter_equipment_3 } #AH-1S Cobra
+	add_equipment_to_stockpile = { amount = 10 type = attack_helicopter_equipment_6 } #AH-64D Apache
+
+	add_equipment_to_stockpile = { amount = 34 type = landing_vehicle_tracked_g4_equipment_0 } #CH-47D Chinook 
+	
+	add_equipment_to_stockpile = { amount = 30 type = assault_helicopter_equipment_3 } #UH-60L Black Hawk
+
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "JAP"
+		}
+		requested_factories = 8
+		progress = 0.1
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "JAP" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 100
+	}
+}

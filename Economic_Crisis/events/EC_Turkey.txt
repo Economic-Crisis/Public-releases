@@ -1,0 +1,636 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## Turkey events     ###
+########################
+## Written by SuxrobGM #
+########################
+
+add_namespace = turkey
+
+country_event = {  #Переворот в Турции 2016
+	id = turkey.1
+	title = turkey.1.t
+	desc = turkey.1.d
+	picture = GFX_repot_event_TUR_coup
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = TUR
+		date > 2016.7.5
+		country_exists = TUR
+		OR = {
+			has_government = neutrality
+			has_country_leader = {
+				name = "Recep Tayyip Erdogan"
+				ruling_only = yes
+			}
+		}
+	}
+	
+	immediate = {
+	    hidden_effect = { USA = { remove_from_faction = TUR } }
+	}
+	
+	mean_time_to_happen = { days = 10 }
+	
+	option = {
+		name = turkey.1.a       #Поддержать Мирный Совет
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		kill_ideology_leader = neutrality
+
+		set_capital = 341
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.5
+			capital = 49
+			states = { 49 347 340 339 342 343 345 346 344 348 355 356 }
+		}
+		random_other_country = {
+			limit = {
+				original_tag = TUR
+				has_government = neutrality
+			}
+			set_equipment_fraction = 0.3
+			set_stability = 0.9
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.25
+			}
+		}
+		set_equipment_fraction = 0.3
+		set_stability = 0.9	
+		
+		add_popularity = {
+			ideology = democratic
+			popularity = 1
+		}
+		hidden_effect = {
+			set_country_flag = TUR_civil_war
+			news_event = { id = turkey_news.1 days = 1 }
+			
+			create_country_leader = {
+				name = "Fethullah Gülen"
+				desc = ""
+				picture = "gfx/leaders/TUR/portrait_fethullah_gulen.dds"
+				ideology = gulenism
+				traits = { trait_gulenism }
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = TUR_gulenists_party
+				name = TUR_gulenists_party
+			}
+		}	
+	}
+	
+	option = {
+		name = turkey.1.b     #Президент Эрдоган выживает, начинается гражданская война
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		TUR = { start_civil_war = { ideology = democratic size = 0.35 } }
+		add_stability = -0.1
+		add_political_power = -75
+		hidden_effect = {
+			news_event = { id = turkey_news.2 days = 1 }
+			set_country_flag = TUR_civil_war
+		}
+
+		random_other_country = {
+			limit = {
+				original_tag = TUR
+				has_government = democratic
+			}
+
+			create_country_leader = {
+				name = "Fethullah Gülen"
+				desc = ""
+				picture = "gfx/leaders/TUR/portrait_fethullah_gulen.dds"
+				ideology = gulenism
+				traits = { trait_gulenism }
+			}
+
+			set_party_name = {
+				ideology = democratic
+				long_name = TUR_gulenists_party
+				name = TUR_gulenists_party
+			}
+
+		}
+
+		}
+	
+	option = {
+		name = turkey.1.c        #Президент Эрдоган выживает и быстро подавляет путч
+		ai_chance = { factor = 40 }
+		add_stability = -0.05
+		add_political_power = -30
+		news_event = { id = turkey_news.3 hours = 6 }
+		hidden_effect = {
+		    set_country_flag = TUR_defeated_coup
+			USA = { add_to_faction = TUR }
+		}
+	}
+}
+
+country_event = {  #инцидент Су-24
+	id = turkey.2
+	title = turkey.2.t
+	desc = turkey.2.d
+	picture = GFX_event_TUR_incidient_Su-24
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = TUR
+	    date > 2015.11.22
+	    country_exists = TUR
+	    RUS = { has_war_with = ISS }
+		RUS = { has_country_flag = RUS_air_strikes_on_isis }
+	}
+	
+	mean_time_to_happen = {
+		days = 4
+	}
+	
+	option = {
+		name = turkey.2.a       #инцидент Су-24
+		ai_chance = { factor = 70 }
+		add_opinion_modifier = { target = RUS modifier = TUR_incindient_SU-24 }
+		add_named_threat = { threat = 3.2 name = threat_TUR_incindient_SU-24 }
+	
+		hidden_effect = {
+			RUS = { country_event = { id = russia.2 days = 1 } }
+		}
+	}
+
+	option = {
+		name = turkey.2.b      
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = turkey.3
+	title = turkey.3.t
+	desc = turkey.3.d
+	#picture = 
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkey.3.a
+		ai_chance = { factor = 70 }
+		add_political_power = -50
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.15
+		}
+	}
+	option = {
+		name = turkey.3.b
+		ai_chance = { factor = 70 }
+		add_political_power = -100
+		country_event = { id = turkey.4 days = 1 }
+	}
+	option = {
+		name = turkey.3.c
+		ai_chance = { factor = 70 }
+		add_political_power = -150
+		add_stability = -0.05
+		add_war_support = -0.05
+		country_event = { id = turkey.7 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.4
+	title = turkey.4.t
+	desc = turkey.4.d
+	#picture = 
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#hidden = yes
+	
+	option = {
+		name = turkey.4.a
+		ai_chance = { factor = 4 }
+		country_event = { id = turkey.5 days = 1 }
+	}
+	option = {
+		name = turkey.4.b
+		ai_chance = { factor = 1 }
+		country_event = { id = turkey.6 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.5
+	title = turkey.5.t
+	desc = turkey.5.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.5.a
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.15
+		}
+	}
+}
+
+country_event = {
+	id = turkey.6
+	title = turkey.6.t
+	desc = turkey.6.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.6.a
+		ai_chance = { factor = 1 }
+		set_country_flag = TUR_erdogan_won
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
+	}
+}
+
+country_event = {
+	id = turkey.7
+	title = turkey.7.t
+	desc = turkey.7.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	#hidden = yes
+
+	option = {
+		name = turkey.7.a
+		ai_chance = { factor = 2 }
+		country_event = { id = turkey.8 days = 1 }
+	}
+	option = {
+		name = turkey.7.b
+		ai_chance = { factor = 1 }
+		country_event = { id = turkey.9 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.8
+	title = turkey.8.t
+	desc = turkey.8.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.8.a
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.15
+		}
+		start_civil_war = {
+			ideology = reformism
+			size = 0.7
+		}
+	}
+}
+
+country_event = {
+	id = turkey.9
+	title = turkey.9.t
+	desc = turkey.9.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.9.a
+		ai_chance = { factor = 1 }
+		set_country_flag = TUR_erdogan_won
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.5
+		}
+	}
+}
+
+country_event = {
+	id = turkey.10
+	title = turkey.10.t
+	desc = turkey.10.d
+	#picture = 
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkey.10.a
+		ai_chance = { factor = 70 }
+		#retire = yes
+	}
+	option = {
+		name = turkey.10.b
+		ai_chance = { factor = 70 }
+		add_political_power = -100
+		country_event = { id = turkey.11 days = 1 }
+	}
+	option = {
+		name = turkey.10.c
+		ai_chance = { factor = 70 }
+		add_political_power = -150
+		add_stability = -0.05
+		add_war_support = -0.05
+		country_event = { id = turkey.14 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.11
+	title = turkey.11.t
+	desc = turkey.11.d
+	#picture = 
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	#hidden = yes
+	
+	option = {
+		name = turkey.11.a
+		ai_chance = { factor = 4 }
+		country_event = { id = turkey.12 days = 1 }
+	}
+	option = {
+		name = turkey.11.b
+		ai_chance = { factor = 1 }
+		country_event = { id = turkey.13 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.12
+	title = turkey.12.t
+	desc = turkey.12.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.12.a
+		ai_chance = { factor = 1 }
+		#retire = yes
+	}
+}
+
+country_event = {
+	id = turkey.13
+	title = turkey.13.t
+	desc = turkey.13.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.13.a
+		ai_chance = { factor = 1 }
+		set_country_flag = TUR_erdogan_won
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
+	}
+}
+
+country_event = {
+	id = turkey.14
+	title = turkey.14.t
+	desc = turkey.14.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	#hidden = yes
+
+	option = {
+		name = turkey.14.a
+		ai_chance = { factor = 4 }
+		country_event = { id = turkey.15 days = 1 }
+	}
+	option = {
+		name = turkey.14.b
+		ai_chance = { factor = 1 }
+		country_event = { id = turkey.16 days = 1 }
+	}
+}
+
+country_event = {
+	id = turkey.15
+	title = turkey.15.t
+	desc = turkey.15.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.15.a
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.15
+		}
+		start_civil_war = {
+			ideology = reformism
+			size = 0.7
+		}
+	}
+}
+
+country_event = {
+	id = turkey.16
+	title = turkey.16.t
+	desc = turkey.16.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.16.a
+		ai_chance = { factor = 1 }
+		set_country_flag = TUR_erdogan_won
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.5
+		}
+	}
+}
+
+country_event = {
+	id = turkey.17
+	title = turkey.17.t
+	desc = turkey.17.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.17.a
+		ai_chance = { factor = 4 }
+		KUR = { 
+			add_opinion_modifier = {
+				target = TUR
+				modifier = actions_positive
+			}
+		}
+		TUR = { 
+			add_opinion_modifier = {
+				target = KUR
+				modifier = actions_positive
+			}
+		}
+		set_country_flag = kurd_dialogue
+	}
+	
+	option = {
+		name = turkey.17.b
+		ai_chance = { factor = 1 }
+		KUR = { 
+			add_opinion_modifier = {
+				target = TUR
+				modifier = actions_negative
+			}
+		}
+		TUR = { 
+			add_opinion_modifier = {
+				target = KUR
+				modifier = actions_negative
+			}
+		}
+		350 = {
+			remove_core_of = KUR
+		}
+		352 = {
+			remove_core_of = KUR
+		}
+		353 = {
+			remove_core_of = KUR
+		}
+	}
+	
+}
+
+country_event = {
+	id = turkey.18
+	title = turkey.18.t
+	desc = turkey.18.d
+	#picture = 
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.18.a
+		ai_chance = { factor = 1 }
+		add_political_power = -150
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = { id = turkey.19 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = turkey.19
+	title = turkey.19.t
+	desc = turkey.19.d
+	#picture = 
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = turkey.19.a
+		ai_chance = { factor = 3 }
+		add_political_power = -150
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+	}
+	option = {
+		name = turkey.19.b
+		ai_chance = { factor = 1 }
+		add_political_power = -150
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		country_event = { id = turkey.19 days = 1 }
+	}
+}

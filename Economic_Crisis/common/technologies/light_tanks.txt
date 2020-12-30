@@ -1,0 +1,450 @@
+technologies = {
+
+
+	# x = (вертикаль) - type
+	@lt_platform = 13
+	@lt1 = 15
+	@alt = 17
+	@rlt = 19
+	
+	# y = (горизонталь)
+	# g - generation
+	# d - doctine
+	# p - platform`
+	
+	@g0 = -3
+	@g1 = -2
+	@g1d = -1
+	
+	@g2p = 0
+	@g2 = 0
+	@g2d = 1
+	
+	@g3d = 2
+	@g3p = 3
+	@g3 = 3
+	
+	@g4d = 4
+	@g4p = 5
+	@g4 = 5
+	
+	@g5d = 6
+	@g5p = 7
+	@g5 = 7
+
+	@g6d = 8
+	@g6p = 9
+	@g6 = 9
+	
+	@g7d = 10
+	@g7p = 11
+	@g7 = 11
+	
+	@g8d = 12
+	@g8p = 13
+	@g8 = 13
+	
+	@g9d = 14
+	@g9p = 15
+	@g9 = 15
+	
+	@g10d = 16
+	@g10p = 17
+	@g10 = 17
+
+	#########Light tanks#############
+	
+	# ПТ-76, M24 Chaffee, Type 63 (WZ-211), VK 1602 «Leopard»
+	light_tank_t0 = {
+	
+		enable_equipments = {
+			light_tank_g0_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = concept_light_tank_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = concept_light_airdroppable_tank
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = concept_light_recon_tank
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1950
+		folder = {
+			name = armour_folder
+			position = { x = @g0 y = @lt_platform }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	concept_light_tank_1 = {
+
+		path = {
+			leads_to_tech = concept_light_tank_2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_tank_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_recon_tank_t1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = light_airdroppable_tank_t1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g2p y = @lt_platform }
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+	
+	concept_light_tank_2 = {
+	
+		path = {
+			leads_to_tech = concept_light_tank_3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_tank_t3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_recon_tank_t2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = light_airdroppable_tank_t2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4 y = @lt_platform }
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+	}
+	
+	concept_light_tank_3 = {
+		
+		path = {
+			leads_to_tech = light_tank_t4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g7p y = @lt_platform }
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+	}
+
+	concept_light_airdroppable_tank = {
+
+		path = {
+			leads_to_tech = light_airdroppable_tank_t1
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g0 y = @alt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+
+	concept_light_recon_tank = {
+
+		path = {
+			leads_to_tech = light_recon_tank_t1
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1
+		start_year = 1965
+		folder = {
+			name = armour_folder
+			position = { x = @g0 y = @rlt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	# Объект 906Б, M41 Walker Bulldog, Type 59-16 (Type-62), Spähpanzer SP I.C., AMX-13, Ikv 91 Järven
+	light_tank_t2 = { #ЛТ 3
+	
+		enable_equipments = {
+			light_tank_g2_equipment_0
+		}
+		
+		enable_subunits = {
+			light_tank
+		}
+		
+		research_cost = 1.8
+		start_year = 1950
+		folder = {
+			name = armour_folder
+			position = { x = @g2 y = @lt1 }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	# 2С15 «Норов», Stingray, VT5, Medium MBT (Marder), CVR(T) FV101 Scorpion 90, CV90105, WPB Anders
+	light_tank_t3 = {
+	
+		enable_equipments = {
+			light_tank_g3_equipment_0
+		}
+		
+		research_cost = 1.8
+		start_year = 1980
+		folder = {
+			name = armour_folder
+			position = { x = @g4 y = @lt1 }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	# MCS (XM1202), PL-01
+	light_tank_t4 = {
+	
+		enable_equipments = {
+			light_tank_g4_equipment_0
+		}
+		
+		research_cost = 1.8
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g7 y = @lt1 }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	#########air droppable light amphibious tanks#############
+	
+	light_airdroppable_tank_t1 = {
+
+		path = {
+			leads_to_tech = light_airdroppable_tank_t2
+			research_cost_coeff = 1
+		}
+	
+		enable_equipments = {
+			light_airdroppable_tank_g1_equipment_0
+		}
+		
+		enable_subunits = {
+			airdroppable_light_tank
+		}
+	
+		research_cost = 1.8
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g2d y = @alt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	light_airdroppable_tank_t2 = {
+
+		path = {
+			leads_to_tech = light_airdroppable_tank_t3
+			research_cost_coeff = 1
+		}
+	
+		enable_equipments = {
+			light_airdroppable_tank_g2_equipment_0
+		}
+		
+		research_cost = 1.8
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g5d y = @alt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	light_airdroppable_tank_t3 = {
+	
+		enable_equipments = {
+			light_airdroppable_tank_g3_equipment_0
+		}
+			
+		research_cost = 1.8
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g8d y = @alt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+
+	light_recon_tank_t1 = {
+		
+		path = {
+			leads_to_tech = light_recon_tank_t2
+			research_cost_coeff = 1
+		}
+	
+		enable_equipments = {
+			light_recon_tank_g1_equipment_0
+		}
+		
+		enable_subunits = {
+			light_recon_tank
+		}
+	
+		research_cost = 1.8
+		start_year = 1970
+		folder = {
+			name = armour_folder
+			position = { x = @g3 y = @rlt }
+		}
+	
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+	light_recon_tank_t2 = {
+	
+		enable_equipments = {
+			light_recon_tank_g2_equipment_0
+		}
+		
+		research_cost = 1.8
+		start_year = 1980
+		folder = {
+			name = armour_folder
+			position = { x = @g6d y = @rlt }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			cat_light_tank
+		}
+	}
+	
+}

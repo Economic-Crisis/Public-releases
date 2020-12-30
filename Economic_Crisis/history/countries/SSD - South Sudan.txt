@@ -1,0 +1,71 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 766
+
+	add_ideas = {
+		au_member
+		mixed_schools
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1326 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+	set_convoys = 5
+	
+	add_ideas = {
+		#laws
+		contract_army
+		low_economic_mobilisation
+		high_terrorism
+	}
+
+	set_country_flag = pai_nondem_authoritarian
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.7.9"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 20
+		liberalism = 20
+		democratic = 0
+		neutrality = 58
+		fascism = 2
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Salva Mayardit"
+		picture = "gfx/leaders/SSD/portrait_salva_mayardit.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	create_country_leader = {
+		name = "Bol Gai Deng"
+		picture = "gfx/leaders/SSD/portrait_bol_gai_deng.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Peter Kuot Ngong"
+		picture = "gfx/leaders/SSD/portrait_peter_kuot_ngong.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Joseph Wol Modesto"
+		picture = "gfx/leaders/SSD/portrait_joseph_wol_modesto.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}
+

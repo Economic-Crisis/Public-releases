@@ -1,0 +1,36 @@
+﻿division_template = {
+	name = "Brigada de Infanteria"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	##### Ejército de Cuba #####
+	division= {	
+		name = "1a Brigada de Ejercito"
+		location = 7622 # Havana
+		division_template = "Brigada de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+}
+
+##### No Notable Air Forces #####
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CUB"
+		}
+		requested_factories = 1
+		progress = 0.54
+		efficiency = 100
+	}
+}

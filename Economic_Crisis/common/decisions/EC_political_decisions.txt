@@ -1,0 +1,381 @@
+antiterrorist_operation = {
+   
+	special_operation_1 = {
+		icon = generic_civil_support
+		available = {	}
+		visible = {
+		    has_idea = decaying_state
+			has_country_flag = state_of_emergency
+		}
+		#remove_trigger = {	}
+		fire_only_once = yes
+		cost = 150
+		complete_effect = {
+		    swap_ideas = { remove_idea = decaying_state add_idea = high_terrorism }
+			add_manpower = -500
+		}
+		ai_will_do = {	factor = 1 }
+	}
+	terrorist_act_1 = {
+		icon = generic_civil_support
+		available = { has_idea = decaying_state	}
+		days_mission_timeout = 90
+		activation = {
+			has_idea = decaying_state
+			NOT = { has_government = rad_islamists }
+		}
+		visible = {	NOT = { has_idea = decaying_state }	}		
+		fixed_random_seed = no
+		fire_only_once = no
+		is_good = no
+		timeout_effect = {
+			random_list = {
+				25 = {	country_event = terrorism.1	}
+				25 = {	country_event = terrorism.2	}
+				25 = {	country_event = terrorism.3	}
+				25 = {	country_event = terrorism.4	}
+			}
+		}
+	}
+	
+	special_operation_2 = {
+		icon = generic_civil_support
+		available = { }
+		visible = {
+		    has_idea = high_terrorism
+			has_country_flag = red_level
+		}
+		#remove_trigger = {	}
+		fire_only_once = yes
+		cost = 150
+		complete_effect = {
+		    swap_ideas = { remove_idea = high_terrorism add_idea = average_terrorism }
+			add_manpower = -400
+		}
+		ai_will_do = { factor = 1 }
+	}
+	terrorist_act_2 = {
+		icon = generic_civil_support
+		available = { NOT = { has_idea = high_terrorism }	}
+		days_mission_timeout = 180
+		activation = {
+			has_idea = high_terrorism
+			#NOT = { has_government = islamists }
+			NOT = { has_government = rad_islamists }
+		}
+		visible = { has_idea = high_terrorism }		
+		fixed_random_seed = no
+		fire_only_once = no
+		is_good = no
+		timeout_effect = {
+			random_list = {
+				25 = { country_event = terrorism.1	}
+				25 = { country_event = terrorism.2	}
+				25 = { country_event = terrorism.3	}
+				25 = { country_event = terrorism.4	}
+			}
+		}
+	}
+	
+	special_operation_3 = {
+		icon = generic_civil_support
+		available = { }
+		visible = {
+		    has_idea = average_terrorism
+			has_country_flag = orange_level
+		}
+		#remove_trigger = {	}
+		fire_only_once = yes
+		cost = 150
+		complete_effect = {
+		    swap_ideas = { remove_idea = average_terrorism add_idea = low_terrorism }
+			add_manpower = -300
+		}
+		ai_will_do = {	factor = 1 }
+	}
+	terrorist_act_3 = {
+		icon = generic_civil_support
+		available = { NOT = { has_idea = average_terrorism } }
+		days_mission_timeout = 270
+		activation = {
+			has_idea = average_terrorism
+			NOT = { has_government = rad_islamists }
+		}
+		visible = {	has_idea = average_terrorism }		
+		fixed_random_seed = no
+		fire_only_once = no
+		is_good = no
+		timeout_effect = {
+			random_list = {
+				25 = { country_event = terrorism.1 }
+				25 = { country_event = terrorism.2 }
+				25 = { country_event = terrorism.3 }
+				25 = { country_event = terrorism.4 }
+			}
+		}
+	}
+	special_operation_4 = {
+		icon = generic_civil_support
+		available = { }
+		visible = {
+		    has_idea = low_terrorism
+			has_country_flag = yellow_level
+		}
+		#remove_trigger = { }
+		fire_only_once = yes
+		cost = 150
+		complete_effect = {
+		    swap_ideas = { remove_idea = low_terrorism add_idea = terrorism_discounted }
+			add_manpower = -200
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	terrorist_act_4 = {
+		icon = generic_civil_support
+		available = { NOT = { has_idea = low_terrorism }	}
+		days_mission_timeout = 360
+		activation = {
+			has_idea = low_terrorism
+			NOT = { has_government = rad_islamists }
+		}
+		visible = { has_idea = low_terrorism }		
+		fixed_random_seed = no
+		fire_only_once = no
+		is_good = no
+		timeout_effect = {
+			random_list = {
+				25 = { country_event = terrorism.1 }
+				25 = { country_event = terrorism.2 }
+				25 = { country_event = terrorism.3 }
+				25 = { country_event = terrorism.4 }
+			}
+		}
+	}
+}
+
+# #country_government_reform
+# subsidies = {
+	# subsidies_the_industry = {
+		# icon = aluminium
+		# available = { }
+		# visible = { }
+		# remove_trigger = {	}
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {
+			# add_ideas = subsidies_the_industry
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+	# subsidies_mic = {
+		# icon = generic_prepare_civil_war
+		# available = { }
+		# visible = { }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	add_ideas = subsidies_mic }
+		# ai_will_do = { factor = 1 }
+	# }
+	# subsidies_resource = {
+		# icon =  steel
+		# available = { }
+		# visible = { }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	add_ideas = subsidies_resource	}
+		# ai_will_do = { factor = 1 }
+	# }
+	# subsidies_shipyard = {
+		# icon = generic_construction
+		# available = { }
+		# visible = { }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	add_ideas = subsidies_shipyard }
+		# ai_will_do = { factor = 1 }
+	# }
+	# subsidies_builders = {
+		# icon = generic_operation
+		# available = { }
+		# visible = { }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = { add_ideas = subsidies_builders	}
+		# ai_will_do = { factor = 1 }
+	# }
+	# subsidies_science = {
+		# icon = generic_research
+		# available = { }
+		# visible = { }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	add_ideas = subsidies_science }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_the_industry = {
+		# icon = aluminium
+		# available = { }
+		# visible = { has_idea = subsidies_the_industry }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = { remove_ideas = subsidies_the_industry }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_mic = {
+		# icon = generic_prepare_civil_war
+		# available = { }
+		# visible = { has_idea = subsidies_mic }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	remove_ideas = subsidies_mic }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_resource = {
+		# icon =  steel
+		# available = { }
+		# visible = { has_idea = subsidies_resource }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = { remove_ideas = subsidies_resource }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_shipyard = {
+		# icon = generic_construction
+		# available = { }
+		# visible = { has_idea = subsidies_shipyard }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = { remove_ideas = subsidies_shipyard }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_builders = {
+		# icon = generic_operation
+		# available = { }
+		# visible = { has_idea = subsidies_builders }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	remove_ideas = subsidies_builders }
+		# ai_will_do = { factor = 1 }
+	# }
+	# cancel_subsidies_science = {
+		# icon = generic_research
+		# available = { }
+		# visible = { has_idea = subsidies_science }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 150
+		# complete_effect = {	remove_ideas = subsidies_science }
+		# ai_will_do = { factor = 1 }
+	# }
+# }
+# education_efforts = {
+	# mein_kampf = {
+		# icon = generic_fascism
+		# available = { fascism > 0.2 }
+		# visible = {
+		    # OR = {
+		        # fascism > 0.2
+		        # has_government = fascism
+				# }
+		# }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 50
+		# complete_effect = {
+			# add_popularity = {
+							# ideology = fascism
+							# popularity = 0.05
+						# }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+	# capital1 = {
+		# icon = generic_political_discourse
+		# available = {
+		    # OR = {
+		        # communism > 0.2
+				# reformism > 0.2
+			# }
+		# }
+		# visible = {
+		    # OR = {
+		        # communism > 0.2
+		        # has_government = communism
+				# reformism > 0.2
+		        # has_government = reformism
+			# }
+		# }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 50
+		# complete_effect = {
+			# add_popularity = {
+				# ideology = communism
+				# popularity = 0.05
+			# }
+			# add_popularity = {
+				# ideology = reformism
+				# popularity = 0.05
+			# }			
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+	# koran = {
+		# icon = generic_civil_support
+		# available = {
+		    # OR = {
+		        # islamists > 0.2
+				# rad_islamists > 0.2
+			# }
+		# }
+		# visible = {
+		    # OR = {
+		        # islamists > 0.2
+		        # has_government = islamists
+				# rad_islamists > 0.2
+		        # has_government = rad_islamists
+			# }
+		# }
+		# remove_trigger = { }
+		# fire_only_once = yes
+		# cost = 50
+		# complete_effect = {
+			# add_popularity = {
+				# ideology = islamists
+				# popularity = 0.05
+			# }
+			# add_popularity = {
+				# ideology = rad_islamists
+				# popularity = 0.05
+			# }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+# }
+army = {
+    politruk = {
+		icon = generic_civil_support
+		available = { }
+		visible = { }
+		remove_trigger = { }
+		fire_only_once = yes
+		days_remove = -1
+		cost = 75
+		modifier = {
+			army_org_factor = 0.05
+			army_morale_factor = 0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

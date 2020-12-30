@@ -1,0 +1,466 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 16
+
+	add_ideas = {
+		eu_member
+		major_country
+		high_terrorism
+	}
+
+	#if = {
+	#	limit = {
+	#		has_dlc = "Together for Victory"
+	#	}
+	#	set_autonomy = {
+	#		target = CAY
+	#		autonomy_state = autonomous_area
+	#		freedom_level = 0.1
+	#	}
+	#	else = {
+	#		puppet = CAY
+	#	}
+	#}
+	
+1985.1.1 = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "1981.4.26"
+		election_frequency = 84
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 40
+		liberalism = 5
+		democratic = 15
+		neutrality = 35
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "François Mitterrand"
+		desc = ""
+		picture = "gfx/leaders/FRA/portrait_francois_mitterand.dds"
+		ideology = social_democracy 
+		expire = "1995.5.17"
+		traits = { trait_social_democracy }
+	}
+
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 280900 }
+
+	oob = "FRA_2013"
+	load_oob = "_tech_nato_major_2013"
+	
+	
+	create_intelligence_agency = yes
+	
+	# laws
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		contract_army
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		extractive_industries_focus
+		civilian_economy
+		high_taxes
+		total_social_security
+		pensions
+		fra_jean_ayralt_hog
+		fra_jean_yves_le_drian_defm
+		fra_laurent_fabius_fgm
+		fra_pierre_moscovici_ecm
+		fra_bernard_bajolet_ssch
+		
+		integration_in_nato
+	}
+
+	add_ideas = {
+		  nuclear_country
+		  unsc_member
+	}
+
+	diplomatic_relation = {
+		country = UAE
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CAR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = GAB
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SEN
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IVO
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CHA
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = NGR
+		relation = military_access
+		active = yes
+	}
+
+	diplomatic_relation = {
+		country = DJI
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = UAE
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CAR
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = GAB
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SEN
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IVO
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CHA
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = NGR
+		relation = non_aggression_pact
+		active = yes
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 35
+
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.4.22"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 58
+		liberalism = 3
+		democratic = 36
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+	create_import = {
+		resource = uran
+		factories = 7
+		exporter = KAZ
+	}
+
+	# Олланд не пойдет на выборы 2017 года, но на старте сценария (2013) теоретически его рейтинг еще можно спасти.
+	# Оставляем Олланда главой реформистов и не будем пихать Вальса на его место в 17
+
+	create_country_leader = {
+		name = "Francois Hollande"
+		desc = "POLITICS_FRANCOIS_HOLLANDE_DESC"
+		picture = "gfx/leaders/FRA/portrait_francois_hollande.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "François Fillon"
+		desc = "POLITICS_FRANCOIS_FILLON_DESC"
+		picture = "gfx/leaders/FRA/portrait_francois_fillon.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Nicolas Sarkozy"
+		id = 100006
+		desc = "POLITICS_NICLOAS_SARKOZY_DESC"
+		picture = "gfx/leaders/FRA/portrait_nicloas_sarkozy.dds"
+		ideology = conservative_democracy
+		expire = "2017.1.1"
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Francois Bayrou"
+		id = 100009
+		desc = "POLITICS_LAURENT_HENART_DESC"
+		picture = "gfx/leaders/FRA/portrait_francois_bayrou.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+
+	# create_country_leader = {
+		# name = "Eva Joly"
+		# desc = "POLITICS_EVA_JOLY_DESC"
+		# picture = "gfx/leaders/FRA/portrait_eva_joly.dds"
+		# ideology = green_politics
+		# traits = { trait_green_politics }
+	# }
+
+	
+	#Исламисты
+	#create_country_leader = {
+	#	name = "Hassen Chalghoumi"
+	#	id = 100010
+	#	desc = "POLITICS_HASSEN_CHALGHOUMI_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+	#	#picture = "gfx/leaders/FRA/portrait_hassen_chalghoumi.dds"
+	#	ideology = sunni_islamism
+	#	traits = { trait_sunni_islamism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Hani Ramadan"
+	#	id = 100011
+	#	desc = "POLITICS_HANI_RAMADAN_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+	#	#picture = "gfx/leaders/FRA/portrait_hani_ramadan.dds"
+	#	ideology = sunni_panislamism
+	#	traits = { trait_sunni_panislamism }
+	#}
+
+	create_country_leader = {
+		name = "Marine Le Pen"
+		id = 100007
+		desc = "POLITICS_MARINE_LE_PEN_DESC"
+		picture = "gfx/leaders/FRA/portrait_marine_le_pen.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Jean-Luc Mélenchon"
+		desc = "POLITICS_JEAN_LUC_MELENCHON_DESC"
+		picture = "gfx/leaders/FRA/portrait_jean_luc_melenchon.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+	
+
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Bernard Bajolet"
+			GFX = GFX_portrait_bernard_bajolet
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { FRA }
+		}
+	}
+
+	# Генералы и адмиралы
+	create_field_marshal = {
+  		name = "Jean Pierre Bosser"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_jean_pierre_bosser.dds"
+  		traits = { }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+
+  	create_field_marshal = {
+  		name = "Pierre de Villiers"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_pierre_de_villiers.dds"
+  		traits = { defensive_doctrine old_guard }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_field_marshal = {
+  		name = "Benoit Puga"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_benoit_puga.dds"
+  		traits = { old_guard organisational_leader }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_field_marshal = {
+  		name = "Arnaud Sainte-Claire Deville"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_arnaud_sainte-claire_deville.dds"
+  		traits = { defensive_doctrine }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_field_marshal = {
+  		name = "François Labuze"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_francois_labuze.dds"
+  		traits = { panzer_leader }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+
+  	create_corps_commander = {
+  		name = "Eric Margail"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_eric_margail.dds"
+  		traits = { }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_corps_commander = {
+  		name = "Franck Boudet"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_franck_boudet.dds"
+  		traits = { ranger }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_corps_commander = {
+  		name = "Christophe Bizien"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_christophe_bizien.dds"
+  		traits = { hill_fighter }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_corps_commander = {
+  		name = "François Régis Jaminet"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_francois_regis_jaminet.dds"
+  		traits = { trait_engineer }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	
+	create_corps_commander = {
+  		name = "Guillaume de Sercey"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_guillaume_de_sercey.dds"
+  		traits = { trait_mountaineer }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_corps_commander = {
+  		name = "Guillaume Venard"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_guillaume_venard.dds"
+  		traits = { panzer_leader trait_engineer }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_corps_commander = {
+  		name = "Eric Maury"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_eric_maury.dds"
+  		traits = { old_guard trickster }
+  		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+  	}
+	
+	create_corps_commander = {
+  		name = "Jean-François Lafont Rapnouil"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_general_jean-francois_lafont_rapnouil.dds"
+  		traits = { old_guard commando }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+
+  	create_navy_leader = {
+  		name = "Edouard Guillaud"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_admiral_edouard_guillaud.dds"
+  		traits = { air_controller }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+
+  	create_navy_leader = {
+  		name = "An Kyuler"
+  		portrait_path = "gfx/leaders/FRA/portrait_fra_admiral_an_kyuler.dds"
+  		traits = { }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+}

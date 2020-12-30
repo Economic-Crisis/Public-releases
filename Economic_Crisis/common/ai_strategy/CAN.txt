@@ -1,0 +1,34 @@
+Canada_NATO_membership = {
+	
+	enable = {
+		tag = CAN
+		OR = {
+			has_government = democratic
+			has_government = liberalism
+			has_government = reformism
+			has_government = neutrality
+		}
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = USA
+			USA = { exists = no }
+			OR = {
+			    has_government = fascism
+				has_government = rad_islamists
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "USA"
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "USA"
+		value = 150
+	}
+}

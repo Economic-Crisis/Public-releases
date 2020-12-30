@@ -1,0 +1,578 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		fra_nexter_systems = {
+
+			picture = fra_nexter_systems
+			allowed = {
+				original_tag = FRA
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = fra_nexter
+				}
+
+			}
+			
+			
+			research_bonus = {
+				armor = 0.12
+				infantry_weapons = 0.03
+				cat_fighter_tech = -0.05
+			}
+
+			cost = 1800
+
+			traits = { ifv_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		fra_knds = {
+
+			picture = fra_knds
+			allowed = {
+				original_tag = FRA
+			}
+			
+			available = {
+
+			}
+			
+
+			research_bonus = {
+			armor = 0.12
+			naval_equipment = -0.12
+			}
+
+			cost = 850
+			traits = { med_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		fra_thomson_csf = {
+
+			picture = fra_thomson_csf
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				armor = 0.08
+				cat_air_drone_tech = 0.02
+			}
+			
+			available = {
+				OR = {
+					has_idea = fra_thales
+				}
+			}
+
+			cost = 950
+
+			traits = { zrk_manufacturer }
+
+			modifier = {
+			}
+		}
+
+	}
+
+	aircraft_manufacturer = {
+
+		designer = yes
+
+		fra_airbus_helicopters  = {
+
+		picture = fra_airbus_helicopters
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_helicopter_tech = 0.08
+				mot_rockets = -0.10
+
+			}
+
+			cost = 850
+
+			traits = { transport_helicopter_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		fra_safran = {
+
+			picture = fra_safran
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_strike_fighter_tech = 0.12
+				armor = -0.05
+			}
+
+			cost = 1000
+			traits = { medium_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		fra_airbus = {
+
+			picture = fra_airbus
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_attack_bomber_tech = 0.18
+				armor = -0.12
+			}
+
+			cost = 1900
+			traits = { heavy_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		fra_dassault_aviation = {
+
+			picture = fra_dassault_aviation
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_interceptor_fighter_tech = 0.12
+				armor = -0.15
+			}
+			cost = 850
+			traits = { light_aircraft_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	industrial_concern = {
+
+		#Total нефтегазовая компания
+		fra_total = {
+
+			picture = fra_total
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 25
+					}
+				}
+			}
+		}
+
+		fra_edf = {
+
+			picture = fra_edf
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.05
+			}
+
+			cost = 1200
+
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		fra_engie = {
+
+			picture = fra_engie
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				electronics = 0.08
+				industry = -0.03
+			}
+
+			cost = 1000
+
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		
+		fra_vinci = {
+
+			picture = fra_vinci
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				industry = 0.08
+				electronics = -0.04
+			}
+
+			cost = 1000
+
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		fra_thales = {
+
+			picture = fra_thales
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				electronics = 0.1
+				industry = -0.05
+			}
+
+			cost = 1800
+
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#DANONE продукты питания
+		fra_danone = {
+
+			picture = fra_danone
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		#BIC товары народного потребления
+		fra_bic = {
+
+			picture = fra_bic
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	}
+
+	materiel_manufacturer = {
+
+		designer = yes
+
+		#Manufacture d'armes de Saint-Étienne стрелковое вооружение а точнее автоматы FAMAS
+		fra_manufacture_darms_de_saint_eitenne = {
+			
+			picture = fra_manufacture_darms_de_saint_eitenne
+			allowed = {
+				original_tag = FRA
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#Areva атомная промышленность
+		fra_areva = {
+			
+			picture = fra_areva
+			allowed = {
+				original_tag = FRA
+			}
+			
+			research_bonus = {
+				rocketry = 0.1
+				nuclear_tech = 0.1
+			}
+			
+			cost = 1250
+			
+			traits = { nuclear_research_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		fra_tda = {
+
+			picture = fra_tda
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				artillery = 0.12
+				infantry_weapons = -0.05
+			}
+			
+			available = {
+				OR = {
+					has_idea = fra_thales
+				}
+			}
+			
+			cost = 850
+
+			traits = { artillery_development }
+
+			modifier = {
+			}
+		}
+
+		
+		fra_renault = {
+
+			picture = fra_renault
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.12
+				mot_rockets = 0.05
+				artillery = 0.05
+			}
+			cost = 1000
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+		
+		fra_peugeot = {
+
+			picture = fra_peugeot
+			
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.05
+				mot_rockets = 0.02
+			}
+			cost = 750
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+
+
+		fra_nexter = {
+
+			picture = fra_nexter
+			allowed = {
+				original_tag = FRA
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = fra_stephane_mayer
+				}
+
+			}
+			
+			
+			research_bonus = {
+			
+			cat_motorized_equipment = 0.12
+			infantry_weapons = 0.10
+			artillery =  0.02
+			}
+
+			cost = 2000
+
+			traits = { defence_corporation }
+
+			modifier = {
+			}
+		}
+		
+		fra_michelin = {
+
+			picture = fra_michelin
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.12
+				mot_rockets = 0.03
+				infantry_weapons = -0.03
+				artillery = -0.01
+			}
+
+			cost = 750
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	naval_manufacturer = {
+
+		designer = yes
+
+		fra_dcns = {
+
+			picture = fra_dcns
+			allowed = {
+				original_tag = FRA
+			}
+
+			available = {
+			
+				OR = {
+					has_idea = fra_thales
+				}
+
+			}
+			
+			
+			research_bonus = {
+				naval_equipment = 0.15
+				cat_fighter_tech = 0.05
+				artillery = -0.08
+				mot_rockets = -0.05
+				cat_motorized_equipment = -0.05
+				
+			}
+
+			cost = 1400
+
+			traits = { navy_corporation }
+
+			modifier = {
+			}
+		}
+
+		fra_stx_france = {
+
+			picture = fra_stx_france
+			allowed = {
+				original_tag = FRA
+			}
+
+			
+			available = {
+
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+				cat_naval_anti_submarine_air_tech = -0.02
+				artillery = -0.03
+				cat_motorized_equipment = -0.08
+			}
+
+			cost = 850
+
+			traits = { naval_corporation }
+
+			modifier = {
+			}
+		}
+
+
+		fra_cmn = {
+
+			picture = fra_cmn
+			
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				naval_equipment = 0.05
+				cat_naval_attack_helicopter_tech = -0.03
+			}
+
+			cost = 650
+
+			traits = { naval_corporation }
+
+			modifier = {
+			}
+		}
+	}
+
+}

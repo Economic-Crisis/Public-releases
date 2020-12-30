@@ -1,0 +1,80 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 324
+
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 179 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	set_convoys = 25
+	add_political_power = 0
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		semi-parliamentary_monarchy
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		terrorism_discounted
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.1.1"
+		election_frequency = 60
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 45
+		democratic = 25
+		neutrality = 30
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Tshering Tobgay"
+		desc = "POLITICS_TSHERING_TOBGAY_DESC"
+		picture = "gfx/leaders/BHU/portrait_tshering_tobgay.dds"
+		ideology = liberal_royalism
+		traits = { trait_liberal_royalism }
+	}
+
+	create_country_leader = {
+		name = "Jigme Thinley"
+		desc = "POLITICS_JIGME_THINLEY_DESC"
+		picture = "gfx/leaders/BHU/portrait_jigme_thinley.dds"
+		ideology = conservative_royalism
+		traits = { trait_conservative_royalism }
+	}
+
+	create_country_leader = {
+		name = "Jigme Khesar Namgyel Wangchuck"
+		desc = "POLITICS_JIGME_KHESAR_NAMGYEL_WANGCHUCK_DESC"
+		picture = "gfx/leaders/BHU/portrait_jigme_khesar_namgyel_wangchuck.dds"
+		ideology = royalism
+		traits = { trait_royalism }
+	}
+}
+

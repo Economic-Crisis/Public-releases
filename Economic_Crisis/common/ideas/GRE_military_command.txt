@@ -1,0 +1,410 @@
+# Economic Crisis - only military command
+
+ideas = {
+
+	general_staff_chief = {
+	
+	
+		gre_michail_kostarakos_chogs = {
+
+		picture = GFX_idea_gre_michail_kostarakos_chogs
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			cost = 1250
+
+			traits = { special_operation_force  }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_evangelos_apostolakis_chogs = {
+
+		picture = GFX_idea_gre_evangelos_apostolakis_chogs
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			cost = 750
+
+			traits = { army_analyst }
+
+		}
+
+
+	gre_ioannis_giangos_chogs = {
+
+	picture = GFX_idea_gre_ioannis_giangos_chogs
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_idea = gre_ioannis_giangos_defm
+				} 
+			}
+			
+			cost = 950
+
+			traits = { military_intel }
+		}
+
+
+
+	gre_dimitrios_grapsas_chogs = {
+
+	picture = GFX_idea_gre_dimitrios_grapsas_chogs
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			cost = 650
+			traits = { army_analyst }
+		}
+
+	}
+
+	intelligence_chief = {
+
+	gre_yannis_roubatis_isch  = {
+
+	picture = GFX_idea_gre_yannis_roubatis_isch
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_idea = gre_yiannis_roubatis_ssch
+				} 
+			}
+			
+			cost = 550
+			traits = { intellegence_chief_civilian }
+		}
+
+		gre_theodoros_dravillas_isch  = {
+
+		picture = GFX_idea_gre_theodoros_dravillas_isch
+
+				allowed = {
+					original_tag = GRE
+				}
+
+				cost = 750
+				traits = { intellegence_chief_analyst }
+			}
+
+	}
+
+	army_chief = {
+
+		gre_alkiviadis_stefanis_chogf = {
+
+		picture = GFX_idea_gre_alkiviadis_stefanis_chogf
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			cost = 950
+
+			traits = { army_combat_training }
+
+			ai_will_do = {
+				factor = 1
+
+			}
+		}
+
+		gre_athanasios_tselios_chogf = {
+
+		picture = GFX_idea_gre_athanasios_tselios_chogf
+
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			cost = 750
+
+			traits = { landing_forces_training }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_georgios_kambas_chogf = {
+
+		picture = GFX_idea_gre_georgios_kambas_chogf
+
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			cost = 650
+
+			traits = { landing_forces_training }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		gre_dimokritos_zervakis_chogf = {
+
+		picture = GFX_idea_gre_dimokritos_zervakis_chogf
+
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			cost = 650
+
+			traits = { army_chief_defensive_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+	}
+
+	navy_chief = {
+
+		gre_konstantinos_karageorgis_chonf = {
+
+		picture = GFX_idea_gre_konstantinos_karageorgis_chonf
+
+			cost = 550
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			traits = { navy_chief_commerce_raiding_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_ioannis_pavlopoulos_chonf = {
+
+		picture = GFX_idea_gre_ioannis_pavlopoulos_chonf
+
+			cost = 550
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { navy_chief_decisive_battle_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_nicolaos_tsounis_chonf = {
+
+		picture = GFX_idea_gre_nicolaos_tsounis_chonf
+
+			cost = 750
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { navy_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		gre_christos_christodoulou_choaf = {
+
+		picture = GFX_idea_gre_christos_christodoulou_choaf
+
+			cost = 750
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			traits = { air_close_air_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_dimitrios_christopoulos_choaf = {
+
+		picture = GFX_idea_gre_dimitrios_christopoulos_choaf
+
+			cost = 550
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { air_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_georgios_blioumis_choaf = {
+
+		picture = GFX_idea_gre_georgios_blioumis_choaf
+
+			cost = 650
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			traits = { air_chief_ground_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+	high_command = {
+
+		gre_konstantinos_vasiliadis_mhc = {
+
+		picture = GFX_idea_gre_konstantinos_vasiliadis_mhc
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			
+			cost = 450
+
+			traits = { army_mass_defence }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_nomikos_antonios_mhc = {
+
+		picture = GFX_idea_gre_nomikos_antonios_mhc
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			cost = 750
+
+			traits = { army_mass_assault }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_themistoklis_bourolias_mhc = {
+
+		picture = GFX_idea_gre_themistoklis_bourolias_mhc
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			cost = 850
+
+			traits = { air_special_operation }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_theodoros_ligris_mhc = {
+
+		picture = GFX_idea_gre_theodoros_ligris_mhc
+
+
+			cost = 650
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { air_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_nikolaos_kafetsis_mhc = {
+
+		picture = GFX_idea_gre_nikolaos_kafetsis_mhc
+
+			cost = 550
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { navy_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		gre_ioannis_paxivanakis_mhc = {
+
+		picture = GFX_idea_gre_ioannis_paxivanakis_mhc
+
+			cost = 550
+
+			allowed = {
+				original_tag = GRE
+
+			}
+
+			traits = { submarine_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

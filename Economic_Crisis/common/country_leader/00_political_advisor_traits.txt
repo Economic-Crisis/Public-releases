@@ -1,0 +1,277 @@
+### Traits for Foreign Minister
+### Скиллы идут как ОСНОВНЫЕ для политических советников, но могут тажке идти как дополнительные для всех министров
+## Часть из них можно и нужно раскидать по министерским трейтсам!
+
+leader_traits = {
+	###- Баф для министров внутренних дел общий.
+	police_reformer = {
+		random = no
+		sprite = 13
+		foreign_subversive_activites = -0.03
+		drift_defence_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	###-Популярная личность - аналог популярной фигуры в ваниле.
+	popular_person = {
+		random = no
+		sprite = 13
+		stability_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	###- Реформа здравоохранения
+	medicine_reformer = {
+		random = no
+		sprite = 10
+		attrition = -0.03
+		army_defence_factor = 0.02
+		monthly_population = 0.01
+		ai_will_do = { factor = 1 }
+	}
+	### - Государственные СМИ, пропаганда правящей власти, политики и т.д.
+	propaganda_reformer = {
+		random = no
+		sprite = 13
+		political_power_factor = 0.03
+		stability_factor = 0.03
+		stability_weekly = 0.001
+		ai_will_do = { factor = 1 }
+	}
+	###- Министры Культуры - направление развития культуры, ценностей, кинематографа и т.д.
+	cultura_reformer = {
+		random = no
+		sprite = 10
+		stability_factor = 0.03
+		stability_weekly = 0.001
+		ai_will_do = { factor = 1 }
+	}
+	###-Закулисный помощник, по идеи должен давать баф правящим элитам.
+	backstage_assistant = {
+		random = no
+		sprite = 10
+		opinion_gain_monthly_same_ideology_factor = 0.02
+		political_power_factor = 0.02
+		ai_will_do = { factor = 1 }
+	}
+	###- Развитие промышленности и фабрик.
+	industry_developer = {
+		random = no
+		sprite = 10
+		global_building_slots_factor = 0.02
+		production_speed_industrial_complex_factor = 0.02
+		production_speed_infrastructure_factor = 0.01
+		production_speed_arms_factory_factor = -0.03
+		consumer_goods_factor = -0.10
+		stability_weekly = -0.001
+		ai_will_do = { factor = 1 }
+	}
+	### - Развитие подготовки гражданского населения в сфере Гражданской Обороны.
+	military_education_reformer = {
+		random = no
+		sprite = 10
+		conversion_cost_civ_to_mil_factor= -0.05
+		# civ_to_mil_industry_conversion_rate = -2
+		training_time_army_factor = -0.05
+		army_defence_factor = 0.05
+		attrition = -0.05
+		ai_will_do = { factor = 1 }
+	}
+	### - Развитие исследований
+	research_reformer = {
+		random = no
+		sprite = 10
+		research_speed_factor = 0.03
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_radar_station_factor = 0.1
+		production_speed_nuclear_reactor_factor = 0.1
+		ai_will_do = { factor = 1 }
+	}
+	### - Развитие оборонной промышленности
+	oboronexpo_reformer  = {
+		random = no
+		sprite = 10
+		production_speed_arms_factory_factor = 0.03
+		production_speed_dockyard_factor = 0.1
+		production_speed_air_base_factor = 0.1
+		production_speed_naval_base_factor = 0.1
+		consumer_goods_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	###- Развитие Инфраструктуры
+	infrastructure_reformer = {
+		random = no
+		sprite = 10
+		production_speed_infrastructure_factor = 0.03
+		consumer_goods_factor = 0.01
+		ai_will_do = { factor = 1 }
+	}
+	###- Развитие Топливно Энергетического Комплекса.
+	tek_reformer = {
+		random = no
+		sprite = 10
+		
+		production_speed_synthetic_refinery_factor = 0.15
+		production_speed_nuclear_reactor_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	
+	###-Закулисный манипулятор или теневой манипулятор
+	backroom_manipulator = {
+		random = no
+		sprite = 10
+		political_power_factor = 0.03
+		drift_defence_factor = 0.02
+		stability_weekly = -0.001
+		stability_factor = -0.10
+		ai_will_do = { factor = 1 }
+	}
+	###-Промышленный топ менеджмент
+	industry_top_managment = {
+		random = no
+		sprite = 10
+		global_building_slots_factor = 0.05
+		production_speed_industrial_complex_factor = 0.02
+		production_speed_infrastructure_factor = 0.02
+		production_speed_synthetic_refinery_factor = 0.02
+		consumer_goods_factor = 0.02
+		political_power_factor = 0.01
+		stability_weekly = 0.001
+		ai_will_do = { factor = 1 }
+	}
+	###-Мастер переговоров
+	master_negotiations = {
+		random = no
+		sprite = 13
+		trade_opinion_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	###-Опальный Олигарх
+	rus_oligarch = {
+		random = no
+		sprite = 13
+		neutrality_drift = 0.01
+		trade_opinion_factor = 0.12
+		global_building_slots_factor = 0.08
+		production_speed_infrastructure_factor = 0.05
+		production_speed_synthetic_refinery_factor = 0.20
+		consumer_goods_factor = 0.10
+		production_speed_arms_factory_factor = -0.2
+		production_speed_air_base_factor = -0.2
+		production_speed_naval_base_factor = 0.05
+		stability_factor = -0.10
+		stability_weekly = -0.001
+		ai_will_do = { factor = 1 }
+	}
+	prince_of_terrors = {
+		sprite = 13
+		resistance_damage_to_garrison = -0.05
+		foreign_subversive_activites = -0.03
+		stability_factor = -0.15
+		ai_will_do = { factor = 1 }
+	}
+	### - Защитник режима или строя, только для стран с авторитарными, коммунистическими, националистическими, монархическими режимами.
+	regime_defender = {
+		random = no
+		sprite = 13
+		resistance_damage_to_garrison = -0.02
+		foreign_subversive_activites = -0.04
+		stability_factor = -0.04
+		ai_will_do = { factor = 1 }
+	}
+	###-Идеолог Теоретик
+	ideologue_theorist = {
+		random = no
+		sprite = 13
+		opinion_gain_monthly_same_ideology_factor = 0.04
+		stability_factor = 0.04
+		stability_weekly = 0.001
+		ai_will_do = { factor = 1 }
+	}
+	###Ваниль
+	popular_figurehead = {
+		sprite = 13
+		stability_factor = 0.15 
+		ai_will_do = { factor = 1 }
+	}
+	
+	silent_workhorse = {
+		random = yes
+		sprite = 13
+		political_power_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	
+	prince_of_terror = {
+		sprite = 13
+		resistance_damage_to_garrison = -0.25
+		foreign_subversive_activites = -0.3
+		ai_will_do = { factor = 1 }
+	}
+	compassionate_gentleman = {
+		random = yes
+		sprite = 13
+		opinion_gain_monthly_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	backroom_backstabber = {
+		sprite = 13
+		political_power_factor = 0.05
+		drift_defence_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	smooth_talking_charmer = {
+		random = yes
+		sprite = 13
+		trade_opinion_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	
+	ideological_crusader = {
+		random = yes
+		sprite = 13
+		opinion_gain_monthly_same_ideology_factor = 1.0
+		ai_will_do = { factor = 1 }
+	}
+	
+	fortification_engineer = {
+		sprite = 10
+		random = yes
+		production_speed_bunker_factor = 0.2
+		production_speed_coastal_bunker_factor = 0.2
+		#production_speed_anti_air_building_factor = 0.2
+		ai_will_do = { factor = 1 }
+	}
+	
+	war_industrialist = {
+		sprite = 10
+		random = yes
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		ai_will_do = { factor = 1 }
+	}
+	captain_of_industry = {
+		sprite = 10
+		random = yes
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+		ai_will_do = { factor = 1 }
+	}
+	armaments_organizer = {
+		sprite = 10
+		random = yes
+		conversion_cost_civ_to_mil_factor= -0.2
+		# civ_to_mil_industry_conversion_rate = -1
+		ai_will_do = { factor = 1 }
+	}
+	quartermaster_general = {
+		sprite = 10
+		random = yes
+		production_speed_air_base_factor = 0.15
+		production_speed_naval_base_factor = 0.15
+		#production_speed_rocket_site_factor = 0.15
+		production_speed_radar_station_factor = 0.15
+		production_speed_nuclear_reactor_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	
+}

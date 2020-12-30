@@ -1,0 +1,93 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 953
+
+# вступление в БРИКС
+2010.11.12 = {
+    add_ideas = brics_member
+}
+
+add_ideas = {
+	au_member
+	regional_country
+} 
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 36660 }
+
+	load_oob = "_tech_regional_2013" 
+	oob = "SAF_2013"
+
+   	add_ideas = {
+	    parliamentary_republic
+		unitary_state
+		secular_state
+        commercial_media 
+		suspended_liberties
+	   	mixed_army
+		mixed_schools
+		open_immigration
+	    mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+		
+	set_country_flag = pai__reformist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.5.17"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 7
+		reformism = 67
+		liberalism = 20
+		democratic = 5
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jacob Zuma"
+		desc = "POLITICS_JACOB_ZUMA_DESC"
+		picture = "gfx/leaders/SAF/portrait_jacob_zuma.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Helen Zille"
+		desc = "POLITICS_HELEN_ZILLE_DESC"
+		picture = "gfx/leaders/SAF/portrait_helen_zille.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Mangosuthu Buthelezi"
+		desc = "POLITICS_MANGOSUTHU_BUTHELEZI_DESC"
+		picture = "gfx/leaders/SAF/portrait_mangosuthu_buthelezi.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Mosiuoa Lekota"
+		desc = "POLITICS_MOSIUOA_LEKOTA_DESC"
+		picture = "gfx/leaders/SAF/portrait_mosiuoa_lekota.dds"
+		ideology = china_socialism
+		traits = { trait_china_socialism }
+	}
+}

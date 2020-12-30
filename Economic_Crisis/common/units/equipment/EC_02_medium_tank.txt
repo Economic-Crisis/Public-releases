@@ -1,0 +1,228 @@
+equipments = {
+
+	####################################################
+	# Танк среднего класса
+	####################################################
+	
+	medium_tank_equipment = {
+		is_archetype = yes
+		is_convertable = yes
+		is_buildable = no
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+		
+		#Misc Abilities
+		maximum_speed = 9
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 20
+		breakthrough = 30
+		hardness = 0.85
+		armor_value = 60
+
+		#Offensive Abilities
+		soft_attack = 20
+		hard_attack = 20
+		ap_attack = 30
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+		
+		build_cost_ic = 20
+		fuel_consumption = 3.6
+		resources = {
+			polymers = 4
+			alloy_steel = 2
+			steel = 4
+			#money = 4
+		}
+	}
+	
+	# T-44
+	medium_tank_g0_equipment_0 = { 
+		# active = no
+		archetype = medium_tank_equipment
+		#parent = medium_tank_equipment
+		priority = 50
+		visual_level = 3
+		
+		#Misc Abilities
+		maximum_speed = 10
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 34
+		hardness = 0.85
+		armor_value = 62.5
+
+		#Offensive Abilities
+		soft_attack = 23
+		hard_attack = 23
+		ap_attack = 35
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 11
+		
+		build_cost_ic = 21
+		resources = {
+			polymers = 4
+			alloy_steel = 2
+			steel = 4
+			#money = 4
+		}	
+	}
+	
+	# T-54 (1951)
+	medium_tank_g1_equipment_0 = { 
+		# active = no
+		archetype = medium_tank_equipment
+		parent = medium_tank_g0_equipment_0
+		priority = 50
+		visual_level = 3
+		
+		#Misc Abilities
+		maximum_speed = 11
+
+		#Defensive Abilities
+		defense = 24
+		breakthrough = 38
+		hardness = 0.85
+		armor_value = 65
+
+		#Offensive Abilities
+		soft_attack = 26
+		hard_attack = 26
+		ap_attack = 40
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 12
+		
+		build_cost_ic = 22
+		resources = {
+			polymers = 4
+			alloy_steel = 2
+			steel = 5
+			#money = 5
+		}	
+	}
+	
+	#Т-62
+	medium_tank_g2_equipment_0 = { 
+		# active = no
+		archetype = medium_tank_equipment
+		parent = medium_tank_g1_equipment_0
+		priority = 50
+		visual_level = 3
+		
+		#Misc Abilities
+		maximum_speed = 12
+
+		#Defensive Abilities
+		defense = 26
+		breakthrough = 42
+		hardness = 0.85
+		armor_value = 67.5
+
+		#Offensive Abilities
+		soft_attack = 29
+		hard_attack = 29
+		ap_attack = 45
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 13
+		
+		build_cost_ic = 23
+		resources = {
+			polymers = 6
+			alloy_steel = 3
+			steel = 5
+			#money = 5
+		}	
+	}
+	
+	#T-72 "Урал" / T-72А
+	medium_tank_g3_equipment_0 = { 
+		# active = no
+		archetype = medium_tank_equipment
+		parent = medium_tank_g2_equipment_0
+		priority = 80
+		visual_level = 4
+		
+		#Misc Abilities
+		maximum_speed = 13
+
+		#Defensive Abilities
+		defense = 28
+		breakthrough = 46
+		hardness = 0.85
+		armor_value = 70
+
+		#Offensive Abilities
+		soft_attack = 32
+		hard_attack = 32
+		ap_attack = 50
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 14
+		
+		build_cost_ic = 24 
+		resources = {
+			polymers = 6
+			alloy_steel = 3
+			steel = 6
+			#money = 6
+		}
+	}
+	
+	
+	# Т-72Б
+	medium_tank_g5_equipment_0 = { 
+		# active = no
+		archetype = medium_tank_equipment
+		parent = medium_tank_g3_equipment_0
+		priority = 80
+		visual_level = 4
+		
+		#Misc Abilities
+		maximum_speed = 15
+
+		#Defensive Abilities
+		defense = 32
+		breakthrough = 54
+		hardness = 0.85
+		armor_value = 75
+
+		#Offensive Abilities
+		soft_attack = 38
+		hard_attack = 38
+		ap_attack = 60
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 16
+		
+		build_cost_ic = 26
+		resources = {
+			polymers = 6
+			alloy_steel = 3
+			steel = 6
+			#money = 6
+		}
+	}
+
+}

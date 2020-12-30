@@ -1,0 +1,758 @@
+#By Skoolz
+
+
+has_trillions = {
+	if = { limit = { AND = { OR = { check_variable = { current_budget > 1200000 } check_variable = { planned_budget > 1300000 } } NOT = { has_country_flag = money_trillions } } } 
+	
+	set_country_flag = money_trillions 
+	divide_variable = { current_budget = 1000 }
+	divide_variable = { planned_budget = 1000 }
+	divide_variable = { budget_last_year = 1000 }
+	divide_variable = { budget_reserve = 1000 }
+	divide_variable = { budget_rest = 1000 }
+	
+	set_st_exp = yes
+	if = { limit = { check_variable = { budget_credit > 184 } } divide_variable = { budget_credit = 1000 } }
+	else_if = { limit = { check_variable = { budget_credit < 185 } check_variable = { budget_credit > 0 } } set_variable = { budget_credit = 0.185 } }
+	
+	update_categories = yes
+	}
+
+	else_if = { limit = { AND = { has_country_flag = money_trillions check_variable = { planned_budget < 100 } } } 
+	
+	clr_country_flag = money_trillions
+	multiply_variable = { current_budget = 1000 }
+	multiply_variable = { planned_budget = 1000 }
+	multiply_variable = { budget_last_year = 1000 }
+	multiply_variable = { budget_reserve = 1000 }
+	multiply_variable = { budget_rest = 1000 }
+	set_st_exp = yes
+	if = { limit = { check_variable = { budget_credit > 1999 } } set_variable = { budget_credit = 1900000 } }
+	else_if = { limit = { check_variable = { budget_credit > 0 } check_variable = { budget_credit < 2000 } } multiply_variable = { budget_credit = 1000 } }
+	update_categories = yes
+	}
+}
+update_current_budget_buf = {
+	if = { limit = { check_variable = { current_budget_buf > 0 } NOT = { has_country_flag = money_trillions } } add_to_variable = { current_budget = current_budget_buf } set_variable = { current_budget_buf = 0 } }
+	else_if = { limit = { check_variable = { current_budget_buf > 0 } has_country_flag = money_trillions } divide_variable = { current_budget_buf = 1000 } add_to_variable = { current_budget = current_budget_buf } set_variable = { current_budget_buf = 0 } }
+}
+
+
+set_st_exp = {
+
+#Cat 1
+															
+	#Для обороны стандартом является 6%.
+	set_variable = { st_def_exp = global.st_def_exp_percen }
+	multiply_variable = { st_def_exp = budget_last_year }
+
+#Sec 1
+	set_variable = { st_def_sal_exp = global.st_def_sal_exp_percen }
+	multiply_variable = { st_def_sal_exp = st_def_exp }
+	
+#Sec 2
+	set_variable = { st_def_def_ind_exp = global.st_def_def_ind_exp_percen }
+	multiply_variable = { st_def_def_ind_exp = st_def_exp }	
+	
+#Sec 3
+	set_variable = { st_def_research_exp = global.st_def_research_exp_percen }
+	multiply_variable = { st_def_research_exp = st_def_exp }		
+
+#Cat 2
+															
+	set_variable = { st_he_exp = global.st_he_exp_percen }
+	multiply_variable = { st_he_exp = budget_last_year }
+
+#Sec 1
+	set_variable = { st_he_sal_exp = global.st_he_sal_exp_percen }
+	multiply_variable = { st_he_sal_exp = st_he_exp }
+	
+#Sec 2
+	set_variable = { spe_med_fac_exp = global.spe_med_fac_exp_percen }
+	multiply_variable = { spe_med_fac_exp = st_he_exp }
+	
+#Sec 3
+	set_variable = { pub_hea_cen_exp = global.pub_hea_cen_exp_percen }
+	multiply_variable = { pub_hea_cen_exp = st_he_exp }
+	
+#Sec 4
+	set_variable = { equ_pro_cen_exp = global.equ_pro_cen_exp_percen }
+	multiply_variable = { equ_pro_cen_exp = st_he_exp }
+
+#Cat 3
+															
+	set_variable = { st_ed_exp = global.st_ed_exp_percen }
+	multiply_variable = { st_ed_exp = budget_last_year }
+
+#Sec 1
+	set_variable = { st_ed_sal_exp = global.st_ed_sal_exp_percen }
+	multiply_variable = { st_ed_sal_exp = st_ed_exp }
+
+
+#Cat 5
+															
+	set_variable = { st_inf_exp = global.st_inf_exp_percen }
+	multiply_variable = { st_inf_exp = budget_last_year }
+	
+#Sec 1
+	set_variable = { st_inf_sal_exp = global.st_inf_sal_exp_percen }
+	multiply_variable = { st_inf_sal_exp = st_inf_exp }
+
+#Cat 6
+															
+	set_variable = { st_ind_exp = global.st_ind_exp_percen }
+	multiply_variable = { st_ind_exp = budget_last_year }	
+
+#Sec 1
+	set_variable = { st_ind_sal_exp = global.st_ind_sal_exp_percen }
+	multiply_variable = { st_ind_sal_exp = st_ind_exp }
+
+}
+
+set_current_to_st_exp_ratio = {
+
+
+# CAT 1 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_1_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_def_sal_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_1_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_1_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_1_sec_1_ratio_st = 3 }
+	}
+
+# CAT 1 SEC 2
+
+	set_temp_variable = { temp_ratio = cat_1_sec_2_budget }
+	divide_temp_variable = { temp_ratio = st_def_def_ind_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_1_sec_2_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_1_sec_2_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_1_sec_2_ratio_st = 3 }
+	}
+	
+# CAT 1 SEC 3
+
+	set_temp_variable = { temp_ratio = cat_1_sec_3_budget }
+	divide_temp_variable = { temp_ratio = st_def_research_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_1_sec_3_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_1_sec_3_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_1_sec_3_ratio_st = 3 }
+	}
+
+# CAT 2 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_2_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_he_sal_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_2_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_2_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_2_sec_1_ratio_st = 3 }
+	}	
+
+# CAT 2 SEC 2
+
+	set_temp_variable = { temp_ratio = cat_2_sec_2_budget }
+	divide_temp_variable = { temp_ratio = spe_med_fac_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_2_sec_2_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_2_sec_2_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_2_sec_2_ratio_st = 3 }
+	}
+	
+# CAT 2 SEC 3
+
+	set_temp_variable = { temp_ratio = cat_2_sec_3_budget }
+	divide_temp_variable = { temp_ratio = pub_hea_cen_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_2_sec_3_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_2_sec_3_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_2_sec_3_ratio_st = 3 }
+	}
+
+# CAT 2 SEC 4
+
+	set_temp_variable = { temp_ratio = cat_2_sec_4_budget }
+	divide_temp_variable = { temp_ratio = equ_pro_cen_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_2_sec_4_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_2_sec_4_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_2_sec_4_ratio_st = 3 }
+	}
+	
+# CAT 3 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_3_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_ed_sal_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_3_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_3_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_3_sec_1_ratio_st = 3 }
+	}
+	
+# CAT 3 SEC 2
+
+	set_temp_variable = { temp_ratio = cat_3_sec_2_budget }
+	divide_temp_variable = { temp_ratio = st_ed_sal_exp }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_3_sec_2_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_3_sec_2_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_3_sec_2_ratio_st = 3 }
+	}
+
+
+# CAT 4 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_4_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_av_pay }
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_4_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_4_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_4_sec_1_ratio_st = 3 }
+	}
+
+
+# CAT 5 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_5_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_inf_sal_exp } 
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_5_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_5_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_5_sec_1_ratio_st = 3 }
+	}
+	
+# CAT 6 SEC 1
+
+	set_temp_variable = { temp_ratio = cat_6_sec_1_budget }
+	divide_temp_variable = { temp_ratio = st_ind_sal_exp } 
+
+	if = { limit = { check_variable = { temp_ratio < 0.85 } }
+		set_variable = { cat_6_sec_1_ratio_st = 1 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 0.84 } check_variable = { temp_ratio < 1.5 } }
+		set_variable = { cat_6_sec_1_ratio_st = 2 }
+	}
+	else_if = { limit = { check_variable = { temp_ratio > 1.4 } }
+		set_variable = { cat_6_sec_1_ratio_st = 3 }
+	}	
+
+}
+
+set_cats_visible_to_null = {
+	
+	set_variable = { cat_1_visible = 0 }
+	set_variable = { cat_2_visible = 0 }
+	set_variable = { cat_3_visible = 0 }
+	set_variable = { cat_4_visible = 0 }
+	set_variable = { cat_5_visible = 0 }
+	set_variable = { cat_6_visible = 0 }
+}
+
+
+#Av.pay all people
+
+set_st_av_pay_begin = {
+	set_variable = { st_av_pay = 0 }
+	set_st_av_pay = yes
+}
+
+set_st_av_pay = {
+	every_state  = {
+	limit = { is_fully_controlled_by = PREV }
+	set_temp_variable = { state_st_av_pay = this.state_population_k }
+	multiply_temp_variable = { state_st_av_pay = 0.01 }
+	add_to_variable = { PREV.st_av_pay = state_st_av_pay }
+	
+	
+	}
+
+}
+
+
+
+
+#Incomes
+
+
+set_civ_fact_inc = {
+	set_variable = { civ_fact_inc = num_of_civilian_factories }
+	multiply_variable = { civ_fact_inc = 0.54 }
+		if = { limit = { has_country_flag = money_trillions }
+	divide_variable = { civ_fact_inc = 1000 }
+	}
+}
+
+set_taxes_inc = {
+
+	set_variable = { taxes_inc = cat_4_sec_1_budget }
+	multiply_variable = { taxes_inc = tax_percentage }
+
+	
+}
+
+set_money_electricity_inc = {
+	set_variable = { money_electricity_inc_week = money_electricity_inc }
+	if = { limit = { has_country_flag = money_trillions }
+	divide_variable = { money_electricity_inc_week = 1000 }
+		
+	
+}
+
+}
+
+set_resources_inc_begin = {
+	set_variable = { resources_inc = 0 }
+	set_resources_inc = yes
+		if = { limit = { has_country_flag = money_trillions }
+	divide_variable = { resources_inc = 1000 }
+	}
+	
+}
+
+set_resources_inc = {
+
+
+	#oil
+	
+	set_temp_variable = { oil_inc = resource_exported@oil }
+	set_variable = { oil_inc = 0.3 }
+	
+	#energy_resource
+	
+	set_temp_variable = { energy_resource_inc = resource_exported@energy_resource }
+	set_variable = { energy_resource_inc = 0.1 }
+	
+	#iron_ore
+	
+	set_temp_variable = { iron_ore_inc = resource_exported@iron_ore }
+	set_variable = { iron_ore_inc = 0.05 }
+	
+	#steel
+	
+	set_temp_variable = { steel_inc = resource_exported@steel }
+	set_variable = { steel_inc = 0.12 }
+	
+	#bauxite
+	
+	set_temp_variable = { bauxite_inc = resource_exported@bauxite }
+	set_variable = { bauxite_inc = 0.07 }
+	
+	#aluminium
+	
+	set_temp_variable = { aluminium_inc = resource_exported@aluminium }
+	set_variable = { aluminium_inc = 0.14 }
+	
+	#alloy_ore
+	
+	set_temp_variable = { alloy_ore_inc = resource_exported@alloy_ore }
+	set_variable = { alloy_ore_inc = 0.08 }
+	
+	#alloy_steel
+	
+	set_temp_variable = { alloy_steel_inc = resource_exported@alloy_steel }
+	set_variable = { alloy_steel_inc = 0.15 }
+	
+	#rare_earth_ore
+	
+	set_temp_variable = { rare_earth_ore_inc = resource_exported@rare_earth_ore }
+	set_variable = { rare_earth_ore_inc = 0.2 }
+	
+	#rare_metals
+	
+	set_temp_variable = { rare_metals_inc = resource_exported@rare_metals }
+	set_variable = { rare_metals_inc = 0.35 }
+	
+	#uran
+	
+	set_temp_variable = { uran_inc = resource_exported@uran }
+	set_variable = { uran_inc = 0.2 }
+	
+	#enr_uran
+	
+	set_temp_variable = { enr_uran_inc = resource_exported@enr_uran }
+	set_variable = { enr_uran_inc = 0.4 }
+	
+	#polymers
+	
+	set_temp_variable = { polymers_inc = resource_exported@polymers }
+	set_variable = { polymers_inc = 0.1 }
+	
+	
+	add_to_variable = { resources_inc = oil_inc }
+	add_to_variable = { resources_inc = energy_resource_inc }
+	add_to_variable = { resources_inc = iron_ore_inc }
+	add_to_variable = { resources_inc = steel_inc }
+	add_to_variable = { resources_inc = bauxite_inc }
+	add_to_variable = { resources_inc = aluminium_inc }
+	add_to_variable = { resources_inc = alloy_ore_inc }
+	add_to_variable = { resources_inc = alloy_steel_inc }
+	add_to_variable = { resources_inc = rare_earth_ore_inc }
+	add_to_variable = { resources_inc = rare_metals_inc }
+	add_to_variable = { resources_inc = uran_inc }
+	add_to_variable = { resources_inc = enr_uran_inc }
+	add_to_variable = { resources_inc = polymers_inc }
+	
+	
+
+
+}
+
+set_all_incomes = {
+
+	add_to_variable = { all_inc = civ_fact_inc }
+	add_to_variable = { all_inc = taxes_inc }
+	add_to_variable = { all_inc = resources_inc }
+	add_to_variable = { all_inc = money_electricity_inc }
+	
+	multiply_variable = { all_inc = 7 }
+	
+} 
+
+#Expenses
+
+set_minist_exp = {
+	set_variable = { minist_exp = planned_budget }
+	subtract_from_variable = { minist_exp = budget_rest }
+	divide_variable = { minist_exp = 365 }
+}
+set_resources_exp_begin = {
+	set_variable = { resources_exp = 0 }
+	set_resources_exp = yes
+		if = { limit = { has_country_flag = money_trillions }
+	divide_variable = { resources_exp = 1000 }
+	}
+}
+set_credit_exp = {
+if = { limit = { check_variable = { budget_credit > 0 } }
+	set_variable = { credit_exp = budget_credit }
+	divide_variable = { credit_exp = 180 }
+	subtract_from_variable = { budget_credit = credit_exp }
+	}
+}
+set_money_electricity_dec = {
+	set_variable = { money_electricity_dec_week = money_electricity_dec }
+	if = { limit = { has_country_flag = money_trillions }
+	divide_variable = { money_electricity_dec_week = 1000 } }
+}
+set_resources_exp = {
+
+
+	#oil
+	
+	set_temp_variable = { oil_exp = resource_imported@oil }
+	set_variable = { oil_exp = 0.3 }
+	
+	#energy_resource
+	
+	set_temp_variable = { energy_resource_exp = resource_imported@energy_resource }
+	set_variable = { energy_resource_exp = 0.1 }
+	
+	#iron_ore
+	
+	set_temp_variable = { iron_ore_exp = resource_imported@iron_ore }
+	set_variable = { iron_ore_exp = 0.05 }
+	
+	#steel
+	
+	set_temp_variable = { steel_exp = resource_imported@steel }
+	set_variable = { steel_exp = 0.12 }
+	
+	#bauxite
+	
+	set_temp_variable = { bauxite_exp = resource_imported@bauxite }
+	set_variable = { bauxite_exp = 0.07 }
+	
+	#aluminium
+	
+	set_temp_variable = { aluminium_exp = resource_imported@aluminium }
+	set_variable = { aluminium_exp = 0.14 }
+	
+	#alloy_ore
+	
+	set_temp_variable = { alloy_ore_exp = resource_imported@alloy_ore }
+	set_variable = { alloy_ore_exp = 0.08 }
+	
+	#alloy_steel
+	
+	set_temp_variable = { alloy_steel_exp = resource_imported@alloy_steel }
+	set_variable = { alloy_steel_exp = 0.15 }
+	
+	#rare_earth_ore
+	
+	set_temp_variable = { rare_earth_ore_exp = resource_imported@rare_earth_ore }
+	set_variable = { rare_earth_ore_exp = 0.2 }
+	
+	#rare_metals
+	
+	set_temp_variable = { rare_metals_exp = resource_imported@rare_metals }
+	set_variable = { rare_metals_exp = 0.35 }
+	
+	#uran
+	
+	set_temp_variable = { uran_exp = resource_imported@uran }
+	set_variable = { uran_exp = 0.2 }
+	
+	#enr_uran
+	
+	set_temp_variable = { enr_uran_exp = resource_imported@enr_uran }
+	set_variable = { enr_uran_exp = 0.4 }
+	
+	#polymers
+	
+	set_temp_variable = { polymers_exp = resource_imported@polymers }
+	set_variable = { polymers_exp = 0.1 }
+	
+	
+	add_to_variable = { resources_exp = oil_exp }
+	add_to_variable = { resources_exp = energy_resource_exp }
+	add_to_variable = { resources_exp = iron_ore_exp }
+	add_to_variable = { resources_exp = steel_exp }
+	add_to_variable = { resources_exp = bauxite_exp }
+	add_to_variable = { resources_exp = aluminium_exp }
+	add_to_variable = { resources_exp = alloy_ore_exp }
+	add_to_variable = { resources_exp = alloy_steel_exp }
+	add_to_variable = { resources_exp = rare_earth_ore_exp }
+	add_to_variable = { resources_exp = rare_metals_exp }
+	add_to_variable = { resources_exp = uran_exp }
+	add_to_variable = { resources_exp = enr_uran_exp }
+	add_to_variable = { resources_exp = polymers_exp }
+	
+	
+
+
+}
+
+set_all_expenses = {
+
+	add_to_variable = { all_exp = minist_exp }
+	add_to_variable = { all_exp = credit_exp }
+	add_to_variable = { all_exp = resources_exp }
+	add_to_variable = { all_exp = money_electricity_dec_week }
+	
+	multiply_variable = { all_exp = 7 }
+} 
+
+set_total_money = {
+	set_variable = { total_money = 0 }
+	add_to_variable = { total_money = all_inc }
+	subtract_from_variable = { total_money = all_exp }
+}
+
+#TOTAL
+set_current_budget = {
+if = { limit = { date > 2014.1.2 }
+	add_to_variable = { current_budget = total_money }
+	
+	if = { limit = { check_variable = { current_budget < 0 } } add_to_variable = { budget_reserve = current_budget } set_variable = { current_budget = 0 } 
+		set_credit = yes
+	}
+}	
+}
+
+
+
+
+set_def_prof_percen = {
+	set_variable = { def_prof_percen = current_budget }
+	divide_variable = { def_prof_percen = planned_budget }
+	multiply_variable = { def_prof_percen = 100 }
+	round_variable = def_prof_percen
+	subtract_from_variable = { def_prof_percen = 100 }
+	if = { limit = { check_variable = { def_prof_percen > -1 } } set_variable = { def_prof_switch = 1 } }
+	else = { set_variable = { def_prof_switch = 0 } multiply_variable = { def_prof_percen = -1 } }
+}
+
+set_budget_year_switch = {
+	set_variable = { budget_last_year = current_budget }
+	set_st_exp = yes
+	if = { limit = { check_variable = { current_budget < planned_budget } } subtract_from_variable = { current_budget = planned_budget } add_to_variable = { budget_reserve = current_budget } }
+	else = { subtract_from_variable = { current_budget = planned_budget } add_to_variable = { budget_reserve = current_budget } add_to_variable = { budget_reserve = budget_rest } }
+	
+	set_credit = yes
+	
+	set_variable = { current_budget = 0 }
+	set_variable = { planned_budget = budget_last_year }
+	set_null_budget_percen = yes
+	if = { limit = { is_ai = yes } set_ai_template = yes }
+}
+
+set_new_budget = {					
+	set_variable = { budget_alert = 0 }
+	set_sec_bonus = yes
+}
+
+set_credit = {
+
+		if = { limit = { check_variable = { budget_reserve < 0 } }
+	 if = { limit = { NOT = { has_country_flag = has_3_credits } }
+		if = { limit = { check_variable = { budget_credit = 0 } } country_event = { id = budget_event.1 } }
+		else_if = { limit = { check_variable = { budget_credit > 0  } } country_event = { id = budget_event.2 } }
+		
+	    }
+	 else = {
+		country_event = { id = budget_event.3 }
+	    }	
+		set_variable = { budget_reserve = 0 }
+    }
+
+}
+
+
+
+remove_sec_bonus = {
+remove_ideas = {
+
+cat_1_sec_1_good
+cat_1_sec_1_bad
+cat_1_sec_2_good
+cat_1_sec_2_bad
+cat_1_sec_3_good
+cat_1_sec_3_bad
+
+cat_2_sec_1_good
+cat_2_sec_1_bad
+cat_2_sec_2_good
+cat_2_sec_2_bad
+cat_2_sec_3_good
+cat_2_sec_3_bad
+cat_2_sec_4_good
+cat_2_sec_4_bad
+
+cat_3_sec_1_good
+cat_3_sec_1_bad
+
+cat_4_sec_1_good
+cat_4_sec_1_bad
+
+cat_5_sec_1_good
+cat_5_sec_1_bad
+
+cat_6_sec_1_good
+cat_6_sec_1_bad
+}
+}
+
+set_sec_bonus = {
+
+remove_sec_bonus = yes
+
+if = { limit = { date > 2014.1.2 }
+
+##################CAT 1 
+
+######CAT 1 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_1_ratio_st = 3 } } }	add_ideas = cat_1_sec_1_good }
+if = { limit = { check_variable = { cat_1_sec_1_ratio_st = 1 } } add_ideas = cat_1_sec_1_bad }
+
+######CAT 1 SEC 2
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_2_ratio_st = 3 } } }	add_ideas = cat_1_sec_2_good }
+if = { limit = { check_variable = { cat_1_sec_2_ratio_st = 1 } } add_ideas = cat_1_sec_2_bad }
+
+######CAT 1 SEC 3
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_3_ratio_st = 3 } } }	add_ideas = cat_1_sec_3_good }
+if = { limit = { check_variable = { cat_1_sec_3_ratio_st = 1 } } add_ideas = cat_1_sec_3_bad }
+
+##################CAT 2 
+
+######CAT 2 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_1_ratio_st = 3 } } }	add_ideas = cat_2_sec_1_good }
+if = { limit = { check_variable = { cat_2_sec_1_ratio_st = 1 } } add_ideas = cat_2_sec_1_bad }
+
+######CAT 2 SEC 2 
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_2_ratio_st = 3 } } }	add_ideas = cat_2_sec_2_good }
+if = { limit = { check_variable = { cat_2_sec_2_ratio_st = 1 } } add_ideas = cat_2_sec_2_bad }
+
+##################CAT 3 
+
+######CAT 3 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_3_sec_1_ratio_st = 3 } } }	add_ideas = cat_3_sec_1_good }
+if = { limit = { check_variable = { cat_3_sec_1_ratio_st = 1 } } add_ideas = cat_3_sec_1_bad }
+
+
+##################CAT 4 
+
+######CAT 4 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_4_sec_1_ratio_st = 3 } } }	add_ideas = cat_4_sec_1_good }
+if = { limit = { check_variable = { cat_4_sec_1_ratio_st = 1 } } add_ideas = cat_4_sec_1_bad }
+
+##################CAT 5 
+
+######CAT 5 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_5_sec_1_ratio_st = 3 } } }	add_ideas = cat_5_sec_1_good }
+if = { limit = { check_variable = { cat_5_sec_1_ratio_st = 1 } } add_ideas = cat_5_sec_1_bad }
+
+##################CAT 6 
+
+######CAT 6 SEC 1
+
+if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_6_sec_1_ratio_st = 3 } } }	add_ideas = cat_6_sec_1_good }
+if = { limit = { check_variable = { cat_6_sec_1_ratio_st = 1 } } add_ideas = cat_6_sec_1_bad }
+
+	}
+}

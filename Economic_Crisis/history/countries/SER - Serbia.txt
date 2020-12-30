@@ -1,0 +1,86 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 107
+
+1991.06.25 = {
+	add_ideas = revanchism
+}
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4552 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SER_2013"
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		mixed_schools
+		terrorism_discounted
+		parliamentary_republic
+		NPT
+	}
+	set_country_flag = pai__centrist
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.4.2" #for 2017 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 30
+		liberalism = 0
+		democratic = 0
+		neutrality = 55
+		fascism = 10
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Tomislav Nikolić"
+		picture = "gfx/leaders/SER/portrait_tomislav_nikolic.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+	create_country_leader = {
+		name = "Ivica Dačić"
+		picture = "gfx/leaders/SER/portrait_ivica_dacic.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}	
+	create_country_leader = {
+		name = "Saša Radulović"
+		picture = "gfx/leaders/SER/portrait_sasha_radulovic.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}	
+
+	create_country_leader = {
+		name = "Vojislav Seseji"
+		picture = "gfx/leaders/SER/portrait_vojislav_seseji.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}	
+
+	
+	#create_country_leader = {
+	#	name = "Boshko Obraovic"
+	#	picture = "gfx/leaders/SER/portrait_boshko_obraovic.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}	
+}
+

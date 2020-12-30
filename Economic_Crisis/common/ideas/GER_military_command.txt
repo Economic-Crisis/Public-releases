@@ -1,0 +1,384 @@
+# Economic Crisis - only military command
+
+ideas = {
+
+	general_staff_chief = {
+	
+	
+		GER_Volker_Wieker_chogs = {
+
+		picture = GFX_idea_GER_Volker_Wieker_chogs
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 850
+
+			traits = { special_operation_force  }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Jorg_Vollmer_chogs = {
+
+		picture = GFX_idea_GER_Jorg_Vollmer_chogs
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 850
+
+			traits = { special_operation_force  }
+
+		}
+
+
+	GER_Carsten_Jacobson_chogs = {
+
+	picture = GFX_idea_GER_Carsten_Jacobson_chogs
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 650
+
+			traits = { military_intel }
+		}
+
+
+
+	GER_Reinhard_Kammerer_chogs = {
+
+  picture = GFX_idea_GER_Reinhard_Kammerer_chogs
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 350
+			traits = { army_analyst }
+		}
+
+	}
+
+	intelligence_chief = {
+
+	GER_Christof_Gramm_isch  = {
+
+	picture = GFX_idea_GER_Christof_Gramm_isch
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 450
+			traits = { intellegence_chief_analyst }
+		}
+
+		GER_Ulrich_Birkenheier_isch  = {
+
+		picture = GFX_idea_GER_Ulrich_Birkenheier_isch
+
+				allowed = {
+					original_tag = GER
+				}
+
+				cost = 350
+				traits = { intellegence_chief_diplomatic }
+			}
+
+	}
+
+	army_chief = {
+
+		GER_Bruno_Kasdorf_chogf = {
+
+		picture = GFX_idea_GER_Bruno_Kasdorf_chogf
+
+			allowed = {
+				original_tag = GER
+			}
+
+			cost = 350
+
+			traits = { army_combat_training }
+
+			ai_will_do = {
+				factor = 1
+
+			}
+		}
+
+		GER_Werner_Freers_chogf = {
+
+		picture = GFX_idea_GER_Werner_Freers_chogf
+
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			cost = 450
+
+			traits = { landing_forces_training }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Jorg_Vollmer_chogf = {
+
+		picture = GFX_idea_GER_Jorg_Vollmer_chogf
+
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			cost = 250
+
+			traits = { army_chief_defensive_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+
+		GER_Axel_Schimpf_chonf = {
+
+		picture = GFX_idea_GER_Axel_Schimpf_chonf
+
+			cost = 250
+
+			allowed = {
+				original_tag = GER
+			}
+
+			traits = { navy_chief_commerce_raiding_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Wolfgang_Nolting_chonf = {
+
+		picture = GFX_idea_GER_Wolfgang_Nolting_chonf
+
+			cost = 150
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { navy_chief_decisive_battle_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Andreas_Krause_chonf = {
+
+		picture = GFX_idea_GER_Andreas_Krause_chonf
+
+			cost = 450
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { navy_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		GER_Karl_Mullner_choaf = {
+
+		picture = GFX_idea_GER_Karl_Mullner_choaf
+
+			cost = 450
+
+			allowed = {
+				original_tag = GER
+			}
+
+			traits = { air_close_air_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Aarne_Kreuzinger_Janik_choaf = {
+
+		picture = GFX_idea_GER_Aarne_Kreuzinger_Janik_choaf
+
+			cost = 150
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { air_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Klaus_Peter_Stieglitz_choaf = {
+
+		picture = GFX_idea_GER_Klaus_Peter_Stieglitz_choaf
+
+			cost = 350
+
+			allowed = {
+				original_tag = GER
+			}
+
+			traits = { air_chief_ground_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+	high_command = {
+
+		GER_Volker_Wieker_mhc = {
+
+		picture = GFX_idea_GER_Volker_Wieker_mhc
+
+			allowed = {
+				original_tag = GER
+			}
+
+				available = {
+				NOT = {
+					has_idea = GER_Volker_Wieker_chogs
+				}
+			}
+			
+			cost = 150
+
+			traits = { army_mass_defence }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Wolfgang_Schneiderhan_mhc = {
+
+		picture = GFX_idea_GER_Wolfgang_Schneiderhan_mhc
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			cost = 250
+
+			traits = { army_mass_assault }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Peter_Schelzig_mhc = {
+
+		picture = GFX_idea_GER_Peter_Schelzig_mhc
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			cost = 450
+
+			traits = { air_special_operation }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Johann_Georg_Dora_mhc = {
+
+		picture = GFX_idea_GER_Johann_Georg_Dora_mhc
+
+
+			cost = 250
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { air_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Rainer_Brinkmann_mhc = {
+
+		picture = GFX_idea_GER_Rainer_Brinkmann_mhc
+
+			cost = 250
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { navy_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GER_Carsten_Stawitzki_mhc = {
+
+		picture = GFX_idea_GER_Carsten_Stawitzki_mhc
+
+			cost = 250
+
+			allowed = {
+				original_tag = GER
+
+			}
+
+			traits = { submarine_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

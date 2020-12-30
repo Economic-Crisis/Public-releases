@@ -1,0 +1,91 @@
+﻿########################
+## Economic Crisis   ###
+###############################################################
+## White Peace Events if fire only war at surrender level 50% #
+###############################################################
+## Written by SuxrobGM #
+########################
+
+
+add_namespace = whitepeace
+
+country_event = { #Начало договор 
+	id = whitepeace.1
+	title = whitepeace.1.t
+	desc = whitepeace.1.d
+	picture = GFX_event_whitepeace
+	
+	#fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_country = {
+			has_war = yes
+			surrender_progress < 0.5
+			NOT = { 
+				OR = {
+					has_country_flag = AFG_civilwar
+					has_country_flag = LBA_civilwar
+					has_country_flag = SYR_civilwar
+					has_country_flag = YEM_civilwar
+					has_country_flag = war_with_ISIS
+					has_country_flag = war_with_Iraq_and_Syria
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = whitepeace.1.a
+		ai_chance = { factor = 80 }
+    	every_enemy_country = {
+		    #limit = {    
+			#	FROM = { any_enemy_country = { has_war_with = ROOT } }
+			#	any_state = { 
+			#	    OR = {    
+			#			is_controlled_by = FROM 
+		    #            is_owned_by = FROM
+			#		}
+			#	}
+			#}
+			country_event = { id = whitepeace.2 days = 3 }
+		}
+	}  	
+	
+	option = {
+		name = whitepeace.1.b
+		ai_chance = { factor = 20 }
+	}
+}
+
+country_event = { #Примерение
+	id = whitepeace.2
+	title = whitepeace.2.t
+	desc = whitepeace.2.d
+	picture = GFX_event_sign_document_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = whitepeace.2.a
+		ai_chance = { 
+			factor = 55
+			modifier = {
+				factor = 30
+				OR = {	
+					tag = ISS
+					tag = ISL
+					tag = ISN
+					tag = ISA
+				}	
+			}
+		}
+    	FROM = { white_peace = ROOT }
+	}
+	
+	option = {
+		name = whitepeace.2.b
+		ai_chance = { factor = 45 }
+	}
+}

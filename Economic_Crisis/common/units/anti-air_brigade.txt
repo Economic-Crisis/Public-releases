@@ -1,0 +1,67 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	anti_air_brigade = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 301
+		ai_priority = 10
+		active = yes
+
+		type = {
+			infantry
+			anti_air
+		}
+		
+		group = militia_battalion #anti-air_division
+		
+		categories = {
+			category_army
+			category_line_artillery
+		}		
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 30
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+}

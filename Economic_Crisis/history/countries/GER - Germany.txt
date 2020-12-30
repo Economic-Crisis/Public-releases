@@ -1,0 +1,540 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+# Frankfurt ?
+capital = 55
+
+# Berlin
+1991.1.1 = { set_capital = 64 }
+
+
+	add_ideas = {
+		eu_member
+		major_country
+		NPT
+		
+		integration_in_nato
+	}
+	set_war_support = 0.3
+2013.11.1 = {
+	set_variable = { budget_last_year = 375300 }
+
+	load_oob = "GER_tech_2013"
+	oob = "GER_2013"
+	
+	# government
+	add_ideas = {
+		GER_Angela_Merkel_hog
+		GER_Thomas_de_Maiziere_defm
+		GER_Frank_Walter_Steinmeier_fgm
+		GER_Philipp_Rosler_ecm
+		GER_Hans_Georg_Maassen_ssch
+		GER_Volker_Wieker_chogs
+		GER_Ulrich_Birkenheier_isch
+		GER_Jorg_Vollmer_chogf
+		GER_Andreas_Krause_chonf
+		GER_Karl_Mullner_choaf
+	# laws
+		parliamentary_republic
+		federation
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		contract_army 
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		high_taxes
+		total_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.9.22"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 10
+		reformism = 35
+		liberalism = 4
+		democratic = 49
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Angela Merkel"
+		desc = "POLITICS_ANGELA_MERKEL_DESC"
+		picture = "gfx/leaders/GER/portrait_angela_merkel.dds"
+		ideology = christian_democracy_main
+		traits = { trait_christian_democracy_main }
+	}
+
+	create_country_leader = {
+		name = "Sigmar Gabriel"
+		desc = "POLITICS_SIGMAR_GABRIEL_DESC"
+		picture = "gfx/leaders/GER/portrait_sigmar_gabriel.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Christian Lindner"
+		desc = "POLITICS_CHRISTIAN_LINDNER_DESC"
+		picture = "gfx/leaders/GER/portrait_christian_lindner.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Philipp Rösler"
+		desc = "POLITICS_PHILIPP_ROSLER_DESC"
+		picture = "gfx/leaders/GER/portrait_philipp_rosler.dds"
+		ideology = classical_liberalism
+		expire = "2013.12.7"
+		traits = { trait_classical_liberalism }
+	}
+
+	set_country_flag = ger_free_democratic_party 
+
+	create_country_leader = {
+		name = "Sahra Wagenknecht"
+		desc = "POLITICS_SAHRA_WAGENKNECHT_DESC"
+		picture = "gfx/leaders/GER/portrait_sahra_wagenknecht.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+	
+	create_country_leader = {
+		name = "Frauke Petry"
+		desc = "POLITICS_FRAUKE_PETRY_DESC"
+		picture = "gfx/leaders/GER/portrait_frauke_petry.dds"
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Gerhard Woitzik"
+		desc = "POLITICS_ANGELA_MERKEL_DESC"
+		picture = "gfx/leaders/GER/portrait_gerhard_woitzik.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Frank Franz"
+	#	desc = "POLITICS_FRANK_FRANZ_DESC"
+	#	picture = "gfx/leaders/GER/portrait_frank_franz.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
+	
+	#create_country_leader = {
+	#	name = "Joachim Gauck"
+	#	desc = "POLITICS_JOACHIM_GAUCK_DESC"
+	#	picture = "gfx/leaders/GER/portrait_joachim_gauck.dds"
+	#	ideology = centrist_democracy 
+	#	traits = { trait_centrist_democracy }
+	#}
+
+
+	create_field_marshal = {
+		name = "Jörg Vollmer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_joerg_vollmer.dds"
+		traits = { old_guard thorough_planner organisational_leader }
+		skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Weicker Volker"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_weicker_volker.dds"
+		traits = { old_guard inspirational_leader artillery_commander }
+		skill = 2
+	}
+
+	create_field_marshal = {
+		name = "Richard Rossmanith"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_richard_rossmanith.dds"
+		traits = { organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Wolfgang Schneiderhan"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_wolfgang_schneiderhan.dds"
+		traits = { old_guard }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Hans-Peter von Kirchbach"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_peter_von_kirchbach.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Bruno Kasdorf"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_bruno_kasdorf.dds"
+		traits = { inspirational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Jörg Vollmer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_joerg_vollmer.dds"
+		traits = { old_guard thorough_planner }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Hans-Lothar Domröse"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_lothar_domrose.dds"
+		traits = { old_guard sso mechanized_infantry_commander }
+		skill = 3
+	} 
+	
+	create_corps_commander = {
+		name = "Carsten Jacobson"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_carsten_jacobson.dds"
+		traits = { panzer_leader }
+		skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Richard Rossmanith"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_richard_rossmanith.dds"
+		traits = { panzer_leader }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Markus Kneip"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_markus_kneip.dds"
+		traits = { artillery_commander }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Andre Bodemann"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_andre_bodemann.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 1
+	}
+
+
+	create_corps_commander = {
+		name = "Klaus Reinhardt"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_klaus_reinhardt.dds"
+		traits = { panzer_leader organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Weicker Volker"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_weicker_volker.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Karl-Heinz Lather"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_karl_heinz_lather.dds"
+		traits = { trait_engineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Hans-Lothar Domröse"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_lothar_domrose.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Egon Ramms"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_egon_ramms.dds"
+		traits = { }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Ludwig Leinhos"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_ludwig_leinhos.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Franz Xaver Pfrengle"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_franz_xaver_pfrengle.dds"
+		traits = { panzer_leader trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Mart de Kreift"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_mart_de_kreift.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Jürgen Weigt"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_jurgen_weigt.dds"
+		traits = { panzer_leader }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Dirk Backen"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_dirk_backen.dds"
+		traits = { panzer_leader }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Markus Laubenthal"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_markus_laubenthal.dds"
+		traits = { panzer_leader }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Johann Langenegger"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_johann_langenegger.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Walter Spindler"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_walter_spindler.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Hans-Otto Budde"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_otto_budde.dds"
+		traits = { sso }
+		skill = 3
+	}
+
+	###Luftwaffe
+	create_corps_commander = {
+		name = "Ludwig Leinhos"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_ludwig_leinhos.dds"
+		traits = { }
+		skill = 2
+	}
+	create_corps_commander = {
+		name = "Klaus Habersetzer"
+		portrait_path = "gfx/leaders/GER/portreit_ger_general_Klaus_Habersetzer.dds"
+		traits = {  }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Frank Leidenberger"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_frank_leidenberger.dds"
+		traits = { sso }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Erhard Bühler"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_erhard_buhler.dds"
+		traits = { old_guard mechanized_infantry_commander }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Franz Xaver Pfrengle"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_franz_xaver_pfrengle.dds"
+		traits = { panzer_leader trait_engineer }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Kai Rohrschneider"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_kai_rohrschneider.dds"
+		traits = { panzer_leader }
+		skill = 1
+	} 
+
+	create_corps_commander = {
+		name = "Eberhard Zorn"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_eberhard_zorn.dds"
+		traits = { sso mechanized_infantry_commander }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Hans-Werner Fritz"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_hans_werner_fritz.dds"
+		traits = { sso }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Erich Pfeffer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_erich_pfeffer.dds"
+		traits = { trait_mountaineer }
+		skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Jürgen Setzer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_jurgen_setzer.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Heinrich Fischer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_heinrich_fischer.dds"
+		traits = { artillery_commander }
+		skill = 1
+	}  
+	
+    create_corps_commander = {
+		name = "Bernd Schütt"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_bernd_schutt.dds"
+		traits = { panzer_leader }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Ansgar Meyer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_ansgar_meyer.dds"
+		traits = { old_guard panzer_leader }
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Volker Halbauer"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_volker_halbauer.dds"
+		traits = { old_guard sso }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Manfred Hofmann"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_manfred_hofmann.dds"
+		traits = { old_guard }
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Reinhard Wolski"
+		portrait_path = "gfx/leaders/GER/portrait_ger_general_reinhard_wolski.dds"
+		traits = { sso }
+		skill = 1
+	}
+	
+	create_navy_leader = {
+		name = "Axel Schimpf"
+		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_axel_schimpf.dds"
+		traits = { old_guard_navy }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+	create_navy_leader = {
+		name = "Andreas Krause"
+		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_andreas_krause.dds"
+		traits = { seawolf }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+	
+	create_navy_leader = {
+		name = "Axel Schimpf"
+		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_axel_schimpf.dds"
+		traits = { old_guard_navy }
+		skill = 2
+	}
+
+	create_navy_leader = {
+		name = "Andreas Krause"
+		portrait_path = "gfx/leaders/GER/portrait_ger_admiral_andreas_krause.dds"
+		traits = { seawolf }
+		skill = 3
+	}
+	
+}

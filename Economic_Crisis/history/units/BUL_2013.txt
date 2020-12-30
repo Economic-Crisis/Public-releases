@@ -1,0 +1,133 @@
+﻿start_equipment_factor = 0.25
+division_template = {
+	name = "Pekhotna Divizija"			# Infantry Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }   
+	}
+}
+
+units = {
+	##### Bulgarski Glavno Komandvane #####
+
+	# 1-va Armija
+	division = {
+		name = "1-va 'Sofiya' Pekhotna Divizija"
+		location = 949  # Sofia
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "7-ma 'Dupnica' Pekhotna Divizija"
+		location = 949  # Sofia
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# 2-ra Armija
+	division = {
+		name = "2-ra 'Plovdiv' Pekhotna Divizija"
+		location = 6923  # Plovdiv
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "8-a 'Stara Zagora' Pekhotna Divizija"
+		location = 6923  # Plovdiv
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "10-a 'Kirdzali' Pekhotna Divizija"
+		location = 6923  # Plovdiv
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# 3-ta Armija
+	division = {
+		name = "3-ta 'Sliven' Pekhotna Divizija"
+		location = 9783  # Varna
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "4-ta 'Schumen' Pekhotna Divizija"
+		location = 9783  # Varna
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# 4-va Armija
+	division = {
+		name = "5-ta 'Russe' Pekhotna Divizija"
+		location = 9610  # Pleven
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "6-ta 'Vraca' Pekhotna Divizija"
+		location = 9610  # Pleven
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "9-a 'Pleven' Pekhotna Divizija"
+		location = 9610  # Pleven
+		division_template = "Pekhotna Divizija"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "BUL"
+		}
+		requested_factories = 1
+		progress = 0.48
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "BUL"
+		}
+		requested_factories = 1
+		progress = 0.69
+		efficiency = 100
+	}
+}

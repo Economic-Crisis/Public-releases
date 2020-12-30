@@ -1,0 +1,83 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 770
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 84 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.75
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	add_ideas = {
+		parliamentary_monarchy
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		
+		integration_in_rss
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.2.19"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 2
+		liberalism = 40
+		democratic = 58
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Nazim Burke"
+		desc = "POLITICS_NAZIM_BURKE_DESC"
+		picture = "gfx/leaders/GRN/portrait_nazim_burke.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Keith Mitchell"
+		desc = "POLITICS_KEITH_MITCHELL_DESC"
+		picture = "gfx/leaders/GRN/portrait_keith_mitchell.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Gloria Payne-Banfield"
+		desc = "POLITICS_GLORIA_PAYNE-BANFIELD_DESC"
+		picture = "gfx/leaders/GRN/portrait_gloria_payne-banfield.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+

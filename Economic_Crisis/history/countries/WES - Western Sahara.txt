@@ -1,0 +1,79 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 789
+
+	add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5 }
+
+	load_oob = "_tech_minor_2013" 
+	oob = "WES_2013"	
+	
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		partially_recognized_country
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 15
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.2.28"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 100
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+						
+	create_country_leader = {
+		name = "Brahim Ghali"
+		desc = "POLITICS_BRAHIM_GHALI_DESC"
+		picture = "gfx/leaders/WES/portrait_brahim_ghali.dds"
+		ideology = social_democracy 
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mohamed Abdelaziz"
+		desc = "POLITICS_MOHAMED_ABDELAZIZ_DESC"
+		picture = "gfx/leaders/WES/portrait_mohamed_abdelaziz.dds"
+		ideology = social_democracy 
+		expire = "2016.5.31" #death
+		traits = { trait_social_democracy }
+	}
+
+}
+

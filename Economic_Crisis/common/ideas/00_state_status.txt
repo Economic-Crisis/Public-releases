@@ -1,0 +1,721 @@
+# Economic Crisis state status
+
+ideas = {
+	country_status = {
+		
+		superstate = {
+			cost = 2000
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+			
+			available = {
+				is_major = yes
+				has_country_flag = joined_into_UN
+				num_of_factories > 150
+			}
+			
+			on_add = {
+				
+			}
+			
+			modifier = {
+				TRADE_OPINION_FACTOR = 0.5
+				opinion_gain_monthly_factor = 0.5
+				POLITICAL_POWER_GAIN = 0.5
+				research_speed_factor = 0.1
+				LOCAL_NON_CORE_MANPOWER = 0.25
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = 0.22
+				INDUSTRIAL_CAPACITY_FACTORY = 0.22
+				INDUSTRIAL_CAPACITY_DOCKYARD = 0.22
+			}
+		}
+		
+		major_country = {
+			cost = 1500
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+			
+			available = {
+				is_major = yes
+				has_country_flag = joined_into_UN
+				num_of_factories > 80
+			}
+			
+			on_add = {
+				
+			}
+			
+			modifier = {
+				TRADE_OPINION_FACTOR = 0.25
+				opinion_gain_monthly_factor = 0.25
+				POLITICAL_POWER_GAIN = 0.25
+				research_speed_factor = 0.05
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = 0.11
+				INDUSTRIAL_CAPACITY_FACTORY = 0.11
+				INDUSTRIAL_CAPACITY_DOCKYARD = 0.11
+			}
+		}
+		
+		regional_country = {
+			cost = 1000
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+			
+			available = {
+				has_country_flag = joined_into_UN
+				num_of_factories > 45
+			}
+			
+			modifier = {
+				POLITICAL_POWER_GAIN = 0.15
+				research_speed_factor = 0.05
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = 0.05
+				INDUSTRIAL_CAPACITY_FACTORY = 0.05
+				INDUSTRIAL_CAPACITY_DOCKYARD = 0.05
+			}
+		}
+		
+		minor_country = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			
+			#picture = civilian_economy1
+			
+			available = {
+				has_country_flag = joined_into_UN
+			}
+			
+			modifier = {
+				TRADE_OPINION_FACTOR = -0.25
+				opinion_gain_monthly_factor = -0.25
+				POLITICAL_POWER_GAIN = -0.25
+				research_speed_factor = -0.05
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = -0.1
+				INDUSTRIAL_CAPACITY_FACTORY = -0.1
+				INDUSTRIAL_CAPACITY_DOCKYARD = -0.1
+			}
+		}
+		
+		partially_recognized_country = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			picture = generic_morale_bonus
+			
+			available = { always = no }
+			
+			on_add = {
+				every_country = {
+					if = {
+						limit = { has_idea = regional_country }
+						add_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = minor_country }
+						add_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = major_country }
+						add_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = superstate }
+						add_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = small_country }
+						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					
+				}
+			}
+			
+			modifier = {
+				TRADE_OPINION_FACTOR = -0.5
+				opinion_gain_monthly_factor = -0.5
+				POLITICAL_POWER_GAIN = -0.5
+				research_speed_factor = -0.1
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = -0.18
+				INDUSTRIAL_CAPACITY_FACTORY = -0.18
+				INDUSTRIAL_CAPACITY_DOCKYARD = -0.18
+			}
+		}
+		
+		not_recognized_country = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+		
+			available = { always = no }
+			
+			on_add = {
+				every_country = {
+					if = {
+						limit = { has_idea = regional_country }
+						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = minor_country }
+						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = major_country }
+						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = superstate }
+						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = small_country }
+						add_opinion_modifier = { target = PREV	 modifier = not_recognized_country_opinion_modifiers }
+					}
+					
+				}
+			}
+			
+			modifier = {
+				ai_call_ally_desire_factor = -9999
+				ai_join_ally_desire_factor = -9999
+				ai_get_ally_desire_factor = -9999
+				TRADE_OPINION_FACTOR = -0.75
+				opinion_gain_monthly_factor = -0.75
+				POLITICAL_POWER_GAIN = -0.75
+				research_speed_factor = -0.2
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = -0.27
+				INDUSTRIAL_CAPACITY_FACTORY = -0.27
+				INDUSTRIAL_CAPACITY_DOCKYARD = -0.27
+			}
+		}
+		
+		small_country = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+			
+			available = {
+				
+			}
+			
+			allowed = {
+				always = no
+			}
+			
+			
+			modifier = {
+				TRADE_OPINION_FACTOR = -0.65
+				opinion_gain_monthly_factor = -0.65
+				POLITICAL_POWER_GAIN = -0.75
+				research_speed_factor = 0.2
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = -0.21
+				INDUSTRIAL_CAPACITY_FACTORY = -0.21
+				INDUSTRIAL_CAPACITY_DOCKYARD = -0.21
+			}
+		}
+		
+		fighting_country = {
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			#picture = civilian_economy1
+			
+			available = {
+				
+			}
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				ai_call_ally_desire_factor = -999
+				ai_join_ally_desire_factor = -999
+				DRIFT_DEFENCE_FACTOR = 0.5
+				TRADE_OPINION_FACTOR = -1.25
+				opinion_gain_monthly_factor = -1.25
+				POLITICAL_POWER_GAIN = -0.75
+				research_speed_factor = 0.3
+				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = -0.32
+				INDUSTRIAL_CAPACITY_FACTORY = -0.32
+				INDUSTRIAL_CAPACITY_DOCKYARD = -0.32
+			}
+		}
+	}
+	integration_in_faction = {
+		law = yes
+
+		non_block_status = {
+			cost = 2000
+
+			available = {
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			on_add = {
+				
+			}
+
+			removal_cost = 1000
+		}
+
+		aspiring_nato = {
+			cost = 1000
+			available = {
+				has_country_flag = NATO_aspiring
+				OR = {
+					has_idea_with_trait = foreign_minister_addiction_USA
+					has_country_flag = aspiring_nato
+				}
+				USA = { is_faction_leader = yes }
+				NOT = { has_country_flag = VETO_alliance_country.NATO }
+				OR = { 
+					NOT = {
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = yes
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+			
+		}
+
+		integration_in_nato = {
+			cost = 1000
+			available = {
+				OR = { 
+					has_idea = aspiring_nato
+					OR = {
+						is_in_faction_with = USA
+						has_idea_with_trait = foreign_minister_addiction_USA
+					}
+				}
+				USA = { is_faction_leader = yes }
+				NOT = { has_country_flag = VETO_alliance_country.NATO }
+				OR = { 
+					NOT = {
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_csto = {
+			cost = 1000
+			available = {
+				OR = {
+					has_idea_with_trait = foreign_minister_addiction_RUS
+					is_in_faction_with = RUS
+				}
+				NOT = { has_country_flag = VETO_alliance_country }
+				RUS = { is_faction_leader = yes }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_rss = {
+			cost = 1000
+			available = {
+				NOT = { has_country_flag = VETO_alliance_country }
+				OR = {
+					original_tag = BAH
+					original_tag = CUB
+					original_tag = JAM
+					original_tag = HAI
+					original_tag = DOM
+					original_tag = PUE
+					original_tag = SKN
+					original_tag = ANT
+					original_tag = DMA
+					original_tag = SLC
+					original_tag = SVG
+					original_tag = GRN
+					original_tag = BRB
+					original_tag = TRI
+				}
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_nordefco = {
+			cost = 1000
+			available = {
+				NOT = { has_country_flag = VETO_alliance_country }
+				OR = {
+					original_tag = FIN
+					original_tag = SWE
+					original_tag = NOR
+					original_tag = DEN
+				}
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_ccasg = {
+			cost = 1000
+			available = {
+				NOT = { has_country_flag = VETO_alliance_country }
+				has_government = democratic
+				#is_in_faction_with = SAU
+				OR = {
+					original_tag = YEM
+					original_tag = OMA
+					original_tag = UAE
+					original_tag = QAT
+					original_tag = BHR
+					original_tag = KUW
+					original_tag = IRN
+					original_tag = JOR
+					original_tag = SAU
+				}
+				OR = {
+					has_idea = islam_idea_lvl_1
+					has_idea = islam_idea_lvl_2
+					has_idea = islam_idea_lvl_3
+					has_idea_with_trait = party_leader_islamist
+					has_idea_with_trait = trait_shia_islamism
+					has_idea_with_trait = trait_sunni_islamism
+					has_idea_with_trait = trait_ibadi_royalism
+					has_idea_with_trait = trait_ibadi_monarchism
+					has_idea_with_trait = trait_shia_royalism
+					has_idea_with_trait = trait_shia_monarchism
+					has_idea_with_trait = trait_sunni_monarchism
+					has_idea_with_trait = trait_liberalism_islamism
+					has_idea_with_trait = trait_right_islamism
+				}
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_fgs = {
+			cost = 1000
+			available = {
+				OR = {
+					tag = SOM
+					tag = ASW
+					tag = AWD
+					tag = SML
+					tag = KSS
+					tag = PSS
+					tag = GAS
+					tag = HAH
+					tag = JUB
+				}
+				
+				NOT = { has_country_flag = VETO_alliance_country }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				#always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_dalasia = {
+			cost = 1000
+			available = {
+				#NOT = { has_country_flag = VETO_alliance_country }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				always = no
+			}
+			default = yes
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_intermarium = {
+			cost = 1000
+			available = {
+				#NOT = { has_country_flag = VETO_alliance_country }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_china_sphere
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				always = no
+			}
+
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_china_sphere = {
+			cost = 1000
+			available = {
+				has_government = communism
+				OR = {
+					has_idea_with_trait = foreign_minister_addiction_CHI
+					CHI = { is_faction_leader = yes }
+				}
+				NOT = { has_country_flag = VETO_alliance_country }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_commonwealth
+					}
+				}
+			}
+
+			allowed = {
+				always = no
+			}
+
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		integration_in_commonwealth = {
+			cost = 1000
+			available = {
+				NOT = { has_country_flag = VETO_alliance_country }
+				OR = { 
+					NOT = {
+						has_idea = aspiring_nato
+						has_idea = integration_in_nato
+						has_idea = integration_in_csto
+						has_idea = integration_in_rss
+						has_idea = integration_in_nordefco
+						has_idea = integration_in_ccasg
+						has_idea = integration_in_fgs
+						has_idea = integration_in_intermarium
+						has_idea = integration_in_dalasia
+						has_idea = integration_in_china_sphere
+					}
+				}
+			}
+
+			allowed = {
+				always = no
+			}
+
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+
+		own_way = {
+			#default = yes
+			cost = 1000
+			available = {
+				
+			}
+
+			allowed = {
+				#always = no
+			}
+
+			on_add = {
+				
+			}
+			removal_cost = 500
+		}
+		
+	}
+}

@@ -1,0 +1,174 @@
+﻿start_equipment_factor = 0.2
+division_template = {
+	name = "Infanteriet Divisjon"		
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }  
+	}
+}
+division_template = {
+	name = "Binær Divisjon"		
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }  
+	}
+}
+
+division_template = {
+	name = "Anti Air Brigade"
+	regiments = {
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 0 y = 0 }
+		medium_self_propelled_aa_ml = { x = 0 y = 1 }
+		medium_self_propelled_aa_ml = { x = 0 y = 2 }
+	# 2nd battery
+		medium_self_propelled_aa_ml = { x = 1 y = 0 }
+		medium_self_propelled_aa_ml = { x = 1 y = 1 }
+		medium_self_propelled_aa_ml = { x = 1 y = 2 }	
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 2 y = 0 }
+		medium_self_propelled_aa_ml = { x = 2 y = 1 }
+		medium_self_propelled_aa_ml = { x = 2 y = 2 }
+	# 1st Anti Air Recon and Guard company
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+
+	}
+	support = {
+		 engineer_battalion = { x = 0 y = 0 }
+		 airborne_support_company = { x = 0 y = 1 }
+		 signal_company = { x = 0 y = 2 }
+		 recon_battalion = { x = 0 y = 3 }
+		 cbrn_defense_company = { x = 0 y = 4 }
+		 medical_company = { x = 0 y = 5 }
+		 electronic_warfare_company = { x = 0 y = 6 }
+		# uas_company = { x = 0 y = 7 }
+		 sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+units = {
+	######## LAND UNITS ########
+	##### Kongelige Norwegan Overkommando #####
+	division = {
+		name = "1. Divisjon"
+		location = 6115
+		division_template = "Infanteriet Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = {
+		name = "2. Divisjon"
+		location = 9157
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = {
+		name = "3. Divisjon"
+		location = 9296
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = {
+		name = "4. Divisjon"
+		location = 122
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = {
+		name = "5. Divisjon"
+		location = 3022
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = {
+		name = "6. Divisjon"
+		location = 192
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Finnmark Brigaden"
+		location = 9116
+		division_template = "Binær Divisjon"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	
+	division = {
+		name = "Anti Air Brigade"
+		location = 53
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+
+	}
+}
+
+air_wings = {
+	### Luftforsvaret -- Oslo
+	110 = {
+		light_fighter_equipment_0 =  { owner = "NOR" amount = 15 }			# Fighter Squadron -- Gloster Gladiator
+		attack_bomber_equipment_1 =  { owner = "NOR" amount = 15 }			# Bomber Squadron -- Fokker C.Vd
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "NOR"
+		}
+		requested_factories = 1
+		progress = 0.28
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "NOR" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 100
+	}
+}

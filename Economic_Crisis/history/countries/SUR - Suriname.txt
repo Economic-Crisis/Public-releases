@@ -1,0 +1,58 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 309
+add_ideas = mixed_schools
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 514 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "SUR_2013"
+
+	add_ideas = {
+		unasur_member
+		NPT
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.8.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 7
+		reformism = 58
+		liberalism = 13
+		democratic = 8
+		neutrality = 10
+		fascism = 4
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Dési Bouterse"
+		desc = "POLITICS_DESIRE_BOUTERSE_DESC"
+		picture = "gfx/leaders/SUR/portrait_desi_bouterse.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Chan Santokhi"
+		picture = "gfx/leaders/SUR/portrait_chan_santokhi.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+}
+

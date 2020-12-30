@@ -1,0 +1,60 @@
+﻿division_template = {
+	name = "Mechanized Brigade"				# Infantry Brigade
+
+	regiments = {
+		mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		mechanized_on_apc_wheeled = { x = 0 y = 3 }
+		main_battle_tank = { x = 1 y = 0 }
+	}
+	support = {
+		logistics_battalion = { x = 0 y = 0 }
+		engineer_battalion = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division= {
+		name = "1. Mechanized Brigade"
+		location = 9660
+		division_template = "Mechanized Brigade"
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "2. Mechanized Brigade"
+		location = 684
+		division_template = "Mechanized Brigade"
+		start_equipment_factor = 0.7
+	}
+}
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 1
+		progress = 0.82
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_fighter_equipment_0
+			creator = "HUN"
+		}
+		requested_factories = 1
+		progress = 0.47
+		efficiency = 100
+	}
+}

@@ -1,0 +1,99 @@
+﻿division_template = {
+	name = "Infantry Division"			# All divisions except 6th were reserves assigned to various military districts
+										# All but 6th are at reserve levels with low experience, older equipment
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized = { x = 2 y = 3 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }  
+	}
+}
+
+units = {
+	##### Royal Australian Army #####
+	### 2nd Australian Imperial Force (CO: Blamey) ###
+	division= {	
+		name = "6th Infantry Division"					# CO: Blamey
+		location = 12406 # Sydney
+		division_template = "Infantry Division"			# Frontline unit, experienced with latest equip., readying for overseas deployment
+		start_experience_factor = 0.3
+	}
+	
+	### Home Defense Militia ###
+	division= {	
+		name = "5th Infantry Division"
+		location = 1652 # Perth
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	# 2nd Military District -- New South Wales
+	division= {	
+		name = "1st Infantry Division"
+		location = 12406 # Sydney
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "2nd Infantry Division"
+		location = 7859 # Canberra
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# 3rd Military District -- New South Wales
+	division= {	
+		name = "3rd Infantry Division"
+		location = 7798 # Melbourne
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "4th Infantry Division"
+		location = 7798 # Melbourne
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}				
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "AST"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AST"
+		}
+		requested_factories = 1
+		progress = 0.45
+		efficiency = 100
+	}
+}

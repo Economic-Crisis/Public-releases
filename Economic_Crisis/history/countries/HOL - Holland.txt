@@ -1,0 +1,100 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 7
+
+add_ideas = {
+	king_willem-alexander
+	eu_member
+}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 86670 }
+
+	load_oob = "_tech_nato_minor_2013" 
+	oob = "HOL_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		parliamentary_monarchy
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		NPT
+		low_terrorism
+		
+		integration_in_nato
+	}
+		
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2012.9.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 20
+		liberalism = 40
+		democratic = 20
+		neutrality = 10
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Willem-Alexander"
+	#	desc = " "
+	#	picture = "gfx/leaders/HOL/alexander.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Mark Rutte"
+		desc = "POLITICS_MARK_RUTTE_DESC"
+		picture = "gfx/leaders/HOL/portrait_mark_rutte.dds"
+		ideology = conservative_liberalism #Народная партия за свободу и демократию
+		traits = { trait_conservative_liberalism }
+	}
+
+
+	create_country_leader = {
+		name = "Geert Wilders"
+		desc = "POLITICS_GEERT_WILDERS_DESC"
+		picture = "gfx/leaders/HOL/portrait_geert_wilders.dds"
+		ideology = euroscepticism #Партия свободы
+		traits = { trait_euroscepticism }
+	}
+
+	create_country_leader = {
+		name = "Diederik Samsom"
+		desc = "POLITICS_DIEDERIK_SAMSOM_DESC"
+		picture = "gfx/leaders/HOL/portrait_diederik_samsom.dds"
+		ideology = social_democracy #Партия труда
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kees van der Staaij"
+		desc = "POLITICS_DIEDERIK_SAMSOM_DESC"
+		picture = "gfx/leaders/HOL/portrait_diederik_samsom.dds"
+		ideology = social_conservatism #Реформатская партия
+		traits = { trait_social_conservatism }
+	}
+}

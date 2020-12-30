@@ -1,0 +1,76 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+# Actually it's Democratic Republic of the Congo
+
+capital = 295
+
+add_ideas = {
+	au_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3001 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		high_terrorism
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.2.1"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 72
+		liberalism = 10
+		democratic = 9
+		neutrality = 6
+		fascism = 3
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Félix Tshisekedi"
+		desc = "POLITICS_FELIX_TSHISEKEDI_DESC"
+		picture = "gfx/leaders/RCG/portrait_felix_tshisekedi.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Joseph Kabila"
+		desc = "POLITICS_JOSEPH_KABILA_DESC"
+		picture = "gfx/leaders/RCG/portrait_joseph_kabila.dds"
+		ideology = social_democracy
+		expire = "2019.1.24"
+		traits = { trait_social_democracy }
+	}
+
+}
+

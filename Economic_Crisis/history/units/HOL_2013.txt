@@ -1,0 +1,130 @@
+﻿division_template = {
+	name = "Infanterie Divisie"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+division_template = {
+	name = "Koloniale Garnizoen"		# miltia forces, lower experience and equipment
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	priority = 0
+}
+
+units = {
+	##### OLZ Nederland #####
+	### Veldleger ###
+	# 1e Legerkorps
+	division= {	
+		name = "1e Divisie"
+		location = 3314  # Amsterdam
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "3e Divisie"
+		location = 3211 # The Hague
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+
+	# 2e Legerkorps
+	division= {	
+		name = "2e Divisie"
+		location = 9498  # Rotterdam
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "4e Divisie"
+		location = 9498  # Rotterdam
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+
+	# 3e Legerkorps
+	division= {	
+		name = "5e Divisie"
+		location = 6500  # Venlo
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "6e Divisie"
+		location = 11562  # Maastricht
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+
+	# 4e Legerkorps
+	division= {	
+		name = "7e Divisie"
+		location = 9335  # Gronigen
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "8e Divisie"
+		location = 9335  # Gronigen
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+											
+}
+
+### Air Wings
+air_wings = {
+	# Luchtvaartafdeling -- NONE
+	# Note: All European aircraft were built by Fokker or ordered from USA starting in 1938
+
+	# Militaire Luchtvaart van het Koninklijk Nederlands-Indisch Leger (ML-KNIL) -- Celebes
+	# Note: ML-KNIL would increase in size during 1937-40 with USA models:
+	#	Curtis P-36 Hawks (H-75), CW-21 Interceptors, Brewster Buffaloes, Martin B-10s (WH-1--WH-3s)
+	673 = {
+		light_fighter_equipment_0 = {		# Curtis P-6
+			owner = "HOL" 
+			amount = 12
+		}
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "HOL"
+		}
+		requested_factories = 1
+		progress = 0.58
+		efficiency = 100
+	}
+}

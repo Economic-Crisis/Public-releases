@@ -1,0 +1,48 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 105 # Chernogoria or Montenegro
+
+	add_ideas = {
+		terrorism_discounted
+		parliamentary_republic
+		mixed_schools
+		NPT
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 446 }
+	load_oob = "_tech_minor_2013"
+	oob = "MNT_2013"
+	set_convoys = 25
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.4.7"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 55
+		liberalism = 0
+		democratic = 6
+		neutrality = 30
+		fascism = 8
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Filip Vujanović"
+		desc = "POLITICS_FILIP_VUJANOVIC_DESC"
+		picture = "gfx/leaders/MNT/portrait_filip_vujanovic.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+

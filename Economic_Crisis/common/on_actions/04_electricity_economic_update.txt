@@ -1,0 +1,108 @@
+#By Skoolz
+on_actions = {
+	on_startup = {
+		effect = {  
+		every_country = {
+			#set_variable = { counter_week = 5 }
+			#set_variable = { amount_of_weeks = 0 }
+			
+			
+					#Производство
+		set_electricity_factories = yes
+		
+
+		#Потребление электроэнергии всем населением страны ( в среднем 1 человек потребляет 11 кВт/ч в день )
+		set_country_population_electricity = yes
+		set_civilian_factories_electricity = yes
+		set_naval_factories_electricity = yes
+		set_military_factories_electricity = yes
+		
+		set_resources_exp_begin = yes
+		set_resources_inc_begin = yes
+		
+		
+		set_electricity_inc_dec = yes
+		#TOTAL
+		set_electricity_progress_bar_percen = yes
+		if = { limit = { is_ai = yes } set_electricity_ai = yes }
+				#ideas 
+		set_electricity_idea = yes
+			
+			
+			}
+			
+			
+		} 		
+	}
+	on_weekly = { 
+		effect = {
+			#if = { limit = { check_variable = { counter_week = 7 } } add_to_variable = { amount_of_weeks = 1 } set_variable = { counter_week = 0 }
+			
+		
+		#Производство
+		set_electricity_factories = yes
+		
+		#Покупка
+		
+		if = { limit = { check_variable = { electricity_arr_country_name^0 > 0 } } 
+		set_inc_dec_from_electricity_arr_main_clear = yes 
+		update_electricity_buy_time = yes 
+		}
+		
+
+		#Потребление электроэнергии всем населением страны ( в среднем 1 человек потребляет 11 кВт/ч в день )
+		set_country_population_electricity = yes
+		set_civilian_factories_electricity = yes
+		set_naval_factories_electricity = yes
+		set_military_factories_electricity = yes
+		
+		
+		set_electricity_inc_dec = yes
+		#TOTAL
+		set_electricity_progress_bar_percen = yes
+		if = { limit = { is_ai = yes } set_electricity_ai = yes }
+				#ideas 
+		set_electricity_idea = yes
+
+
+
+		
+		#ECONOMIC
+		
+		
+		#INCOME. Put new income here
+			set_variable = { all_inc = 0 }
+			set_civ_fact_inc = yes
+			set_taxes_inc = yes
+			#set_resources_inc_begin = yes
+			
+			
+			set_all_incomes = yes
+			#EXPENSES. Put new expences here
+			set_variable = { all_exp = 0 }
+			set_st_av_pay_begin = yes	
+			set_minist_exp = yes
+			#set_resources_exp_begin = yes
+			set_credit_exp = yes
+			
+			set_all_expenses = yes
+			#TOTAL
+			set_total_money = yes
+			update_current_budget_buf = yes
+			if = { limit = { is_ai = no }
+			set_current_budget = yes
+			}
+			else = { set_ai_current_budget = yes }
+		
+		
+  }
+  
+#   else = {
+# 	add_to_variable = { counter_week = 1 }
+#   }
+  
+  
+  
+ }
+}
+#}	

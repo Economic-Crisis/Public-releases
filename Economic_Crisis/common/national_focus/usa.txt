@@ -1,0 +1,2607 @@
+focus_tree = {
+	id = usa
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA
+		}
+	}
+	continuous_focus_position = { x = 100 y = 1200 }
+	default = no
+	reset_on_civilwar = no
+	
+#   Шаблон
+#	focus = {
+#		id = USA_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		relative_position_id = 
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		cost = 70
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#		ai_will_do = {	factor = 1	}
+#		available = {	}
+#		bypass = {	}
+#		complete_tooltip = {	}
+#		completion_reward = {	}
+#	}
+	
+	focus = {
+		id = USA_world_peacemaker
+		icon = GFX_goal_usa_world_peacemaker
+		cost = 70 
+		x = 4
+		y = 0
+		completion_reward = { add_political_power = 120	}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_example_of_democratic
+		icon = GFX_goal_usa_example_of_democratic
+		cost = 70 
+		mutually_exclusive = {	focus = USA_change_politics	}
+		x = 11
+		y = 0
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_example_of_democratic_idea }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_change_politics
+		icon = GFX_goal_usa_change_politics
+		cost = 70 
+		mutually_exclusive = { focus = USA_example_of_democratic }
+		x = 16
+		y = 0
+		ai_will_do = { factor = 0 }
+		completion_reward = { add_ideas = USA_change_politics_idea }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_army
+		icon = GFX_goal_usa_army
+		cost = 70 
+		x = 30
+		y = 0
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_industrial_effort
+		icon = GFX_goal_generic_production
+		cost = 70 
+		x = 40
+		y = 1
+		ai_will_do = {
+			factor = 1
+			modifier = { factor = 0	}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_russian_threat
+		icon = GFX_goal_usa_russian_threat
+		cost = 70 
+		prerequisite = { focus = USA_world_peacemaker }
+		x = 1
+		y = 1
+		available = {
+			RUS = {
+				exists = yes
+				has_added_tension_amount > 1
+			}
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 2 name = threat_USA_anti_RUS_sentiment }
+			RUS = {
+					add_opinion_modifier = {
+					target = USA
+					modifier = perceive_as_threat
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_nato_expansion
+		icon = GFX_goal_usa_nato_expansion
+		cost = 70 
+		prerequisite = { focus = USA_russian_threat	}
+		x = 0
+		y = 2
+		completion_reward = {
+			add_named_threat = { threat = 2 name = threat_USA_nato_expansion }
+			every_country = {
+				limit = {
+					OR = {
+					tag = FIN
+					tag = SWE
+					tag = UKR
+					}
+				is_in_faction = no
+				}
+			country_event = usa.1
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_promise_protection
+		icon = GFX_goal_usa_promise_protection
+		cost = 70 
+		prerequisite = { focus = USA_nato_expansion	}
+		x = 0
+		y = 3
+		completion_reward = {
+			add_named_threat = { threat = 3	name = threat_USA_promise_protection }
+			give_guarantee = FIN
+			give_guarantee = EST
+			give_guarantee = LAT
+			give_guarantee = UKR
+			hidden_effect = {
+				news_event = {
+					id = usa_news.8
+					days = 3
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_increasing_of_presence
+		icon = GFX_goal_usa_increasing_of_presence
+		cost = 70 
+		prerequisite = { focus = USA_promise_protection }
+		x = 0
+		y = 4
+		available = {
+			OR = {
+				AND = {
+					is_in_faction_with = EST
+					is_in_faction_with = LAT
+				}
+			AND = {
+				is_in_faction_with = FIN
+				is_in_faction_with = UKR
+				}
+			}
+		}
+		completion_reward = {
+			add_named_threat = { threat = 3 name = threat_USA_increasing_of_presence_in_europe }
+			if = {
+				limit = {	is_in_faction_with = FIN }
+				hidden_effect = { load_oob = "USA_FIN" }
+				FIN = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = protected_by_usa
+					}
+				}
+			}
+			if = {
+				limit = {	is_in_faction_with = UKR	}
+				hidden_effect = { load_oob = "USA_UKR" }
+				UKR = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = protected_by_usa
+					}
+				}
+			}
+			if = {
+				limit = {	is_in_faction_with = EST	}
+				hidden_effect = { load_oob = "USA_EST" }
+				EST = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = protected_by_usa
+					}
+				}
+			}
+			if = {
+				limit = {	is_in_faction_with = LAT	}
+				hidden_effect = { load_oob = "USA_LAT" }
+				LAT = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = protected_by_usa
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = usa_news.9
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_liquidation_of_threat
+		icon = GFX_goal_usa_liquidation_of_threat
+		cost = 70 
+		prerequisite = { focus = USA_increasing_of_presence	}
+		x = 0
+		y = 5
+		available = {
+			RUS = {
+				exists = yes
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+			hidden_effect = {
+				news_event = {
+					id = usa_news.13
+					days = 3
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_influence_to_russia
+		icon = GFX_goal_usa_influence_to_russia
+		cost = 70 
+		prerequisite = { focus = USA_russian_threat	}
+		x = 2
+		y = 2
+		available = {
+			RUS = {
+				exists = yes
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+		}
+		completion_reward = {
+			RUS = {
+				add_timed_idea = {
+					idea = RUS_influence_of_usa
+					days = 730
+				}
+				hidden_effect = {
+					country_event = {
+						id = usa.5
+						days = 730
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_impair_russia
+		icon = GFX_goal_usa_impair_russia
+		cost = 70 
+		prerequisite = { focus = USA_influence_to_russia }
+		x = 2
+		y = 3
+		available = {
+			exists = yes
+			RUS = {	has_idea = RUS_influence_of_usa	}
+		}
+		completion_reward = { RUS = {	add_ideas = RUS_impaired_by_usa	}	}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_press_on_russia
+		icon = GFX_goal_usa_press_on_russia
+		cost = 70 
+		prerequisite = { focus = USA_impair_russia	}
+		x = 2
+		y = 4
+		available = {
+			exists = yes
+			RUS = {
+				has_idea = RUS_impaired_by_usa
+				owns_state = 137
+			}
+		}
+		completion_reward = {
+			RUS = {
+				country_event = {
+					id = usa.2
+					days = 2
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_revolution_in_russia
+		icon = GFX_goal_usa_revolution_in_russia
+		cost = 70 
+		prerequisite = { focus = USA_press_on_russia }
+		x = 2
+		y = 5
+		ai_will_do = { factor = 0 }
+		available = {
+			RUS = {
+				exists = yes
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+				OR = {
+					has_idea = RUS_influence_of_usa
+					has_idea = RUS_protests_of_opposition
+				}
+				has_idea = RUS_impaired_by_usa
+			}
+		}
+		completion_reward = {
+			RUS = {
+				country_event = {
+					id = usa.6
+					days = 30
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_terroristic_threat
+		icon = GFX_goal_usa_terroristic_threat
+		cost = 70 
+		prerequisite = { focus = USA_world_peacemaker }
+		x = 4
+		y = 1
+		available = {
+			ISS = {
+				exists = yes
+				has_added_tension_amount > 15
+			}
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 2	name = threat_USA_war_terrorism }
+			ISS = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = perceive_as_threat
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_prevention_of_teracts
+		icon = GFX_goal_usa_prevention_of_teracts
+		cost = 70 
+		prerequisite = { focus = USA_terroristic_threat	}
+		x = 5
+		y = 2
+		completion_reward = {	add_ideas = { USA_prevention_of_teracts_idea }	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_support_opposition
+		icon = GFX_goal_usa_support_snc
+		cost = 70 
+		prerequisite = { focus = USA_prevention_of_teracts }
+		mutually_exclusive = {	focus = USA_support_syria	}
+		x = 4
+		y = 3
+		available = {
+			country_exists = ISS
+			country_exists = FSA
+			has_equipment = {	army_salw_equipment > 4999	}
+		}
+		completion_reward = {	FSA = {	country_event = usa.7 }	}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_support_syria
+		icon = GFX_goal_usa_support_syria
+		cost = 70 
+		prerequisite = { focus = USA_prevention_of_teracts }
+		mutually_exclusive = { focus = USA_support_opposition }
+		x = 6
+		y = 3
+		available = {
+			country_exists = ISS
+			country_exists = SYR
+			country_exists = FSA
+			has_equipment = { army_salw_equipment > 4999 }
+		}
+		completion_reward = {
+			SYR = {	country_event = usa.8 }
+			FSA = {	country_event = usa.9 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_bombing_igil
+		icon = GFX_goal_usa_bombing_igil
+		cost = 70 
+		bypass = {  NOT = { country_exists = ISS } } 
+		prerequisite = {
+			focus = USA_support_opposition
+			focus = USA_support_syria
+		}
+		x = 5
+		y = 4
+		available = { country_exists = ISS }
+		completion_reward = {
+			ISS = {
+				add_ideas = IGL_bombing_of_usa
+				country_event = usa.16
+				hidden_effect = {
+					ISS = { news_event = { id = isis.36 days = 30 } }
+					ISS = { news_event = { id = isis.36 days = 72 } }
+					ISS = { news_event = { id = isis.36 days = 93 } }
+					ISS = { news_event = { id = isis.36 days = 111 } }
+					ISS = { news_event = { id = isis.36 days = 137 } }
+					ISS = { news_event = { id = isis.36 days = 163 } }
+					ISS = { news_event = { id = isis.36 days = 189 } }
+					ISS = { news_event = { id = isis.36 days = 217 } }
+					ISS = { news_event = { id = isis.36 days = 243 } }
+					ISS = { news_event = { id = isis.36 days = 282 } }
+					ISS = { news_event = { id = isis.36 days = 320 } }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_defeat_igil
+		icon = GFX_goal_usa_defeat_igil
+		cost = 70 
+		bypass = {  NOT = { country_exists = ISS } } 
+		prerequisite = { focus = USA_bombing_igil }
+		x = 5
+		y = 5
+		available = { country_exists = ISS	}
+		completion_reward = {
+			create_wargoal = {
+				type = liberate_wargoal
+				target = ISS
+			}
+			hidden_effect = { news_event = usa_news.12	}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_communistic_threat
+		icon = GFX_goal_usa_communistic_threat
+		cost = 70 
+		prerequisite = { focus = USA_world_peacemaker }
+		x = 8
+		y = 1
+		available = {
+			CHI = {
+				exists = yes
+				has_added_tension_amount > 1
+			}
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 5 name =  threat_USA_war_communism }
+			CHI = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = perceive_as_threat
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_support_taivan
+		icon = GFX_goal_usa_support_taivan
+		cost = 70 
+		prerequisite = { focus = USA_communistic_threat }
+		x = 8
+		y = 2
+		available = {
+			country_exists = CHI
+			country_exists = ROC
+		}
+		completion_reward = {
+			give_guarantee = ROC
+			ROC = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = admited_claims_to_china
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_sanctions_against_china
+		icon = GFX_goal_usa_sanctions_against_china
+		cost = 70 
+		prerequisite = { focus = USA_support_taivan }
+		x = 7
+		y = 4
+		available = { country_exists = CHI	}
+		completion_reward = {
+			add_named_threat = { threat = 2	name = threat_USA_sanctions_against_CHI	}
+			add_opinion_modifier = {
+				target = USA
+				modifier = sanctions_against_china
+			}
+			hidden_effect = {	news_event = usa_news.15 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_distribute_democratic_china
+		icon = GFX_goal_usa_distribute_democratic_china
+		cost = 70 
+		prerequisite = { focus = USA_support_taivan }
+		x = 9
+		y = 4
+		available = { country_exists = CHI	}
+		completion_reward = {
+			CHI = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = reformism
+					popularity = 0.1
+				}
+				add_timed_idea = {
+					idea = CHI_distributing_democratic
+					days = 730
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_revolt_in_china
+		icon = GFX_goal_usa_revolt_in_china
+		cost = 70 
+		prerequisite = { focus = USA_distribute_democratic_china }
+		mutually_exclusive = { focus = USA_liberate_china }
+		x = 9
+		y = 5
+		available = {
+			CHI = {
+				exists = yes
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+		}
+		completion_reward = {
+			CHI = {
+				country_event = {
+					id = usa.17
+					days = 30
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_conservative_politics
+		icon = GFX_goal_usa_conservative_politics
+		cost = 70 
+		prerequisite = { focus = USA_example_of_democratic }
+		mutually_exclusive = {
+			focus = USA_liberal_democratic
+			focus = USA_care_of_people
+		}
+		x = 10
+		y = 1
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_government = democratic
+			}
+		}
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_conservatism_idea	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_liberal_democratic
+		icon = GFX_goal_usa_liberal_democratic
+		cost = 70 
+		prerequisite = { focus = USA_example_of_democratic }
+		mutually_exclusive = {
+			focus = USA_conservative_politics
+			focus = USA_care_of_people
+		}
+		x = 11
+		y = 2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_government = liberalism
+			}
+		}
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_liberalism_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_care_of_people
+		icon = GFX_goal_usa_care_of_people
+		cost = 70 
+		prerequisite = { focus = USA_example_of_democratic }
+		mutually_exclusive = {
+			focus = USA_conservative_politics
+			focus = USA_liberal_democratic
+		}
+		x = 12
+		y = 1
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_government = reformism
+			}
+		}
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_reformismic_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_country_of_freedom
+		icon = GFX_goal_usa_country_of_freedom
+		cost = 70 
+		prerequisite = {
+			focus = USA_conservative_politics
+			focus = USA_liberal_democratic
+			focus = USA_care_of_people
+		}
+		x = 11
+		y = 3
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_freedom_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_export_of_democratic
+		icon = GFX_goal_usa_export_of_democratic
+		cost = 70 
+		prerequisite = { focus = USA_country_of_freedom }
+		x = 11
+		y = 4
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+		completion_reward = { add_ideas = USA_democratic_export	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = USA_people_country
+		icon = GFX_goal_usa_people_country
+		cost = 70 
+		prerequisite = { focus = USA_change_politics }
+		mutually_exclusive = {	focus = USA_american_empire	}
+		x = 14
+		y = 1
+		completion_reward = { add_ideas = USA_people_country_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_communism_focus
+		icon = GFX_goal_usa_communism_focus
+		cost = 70 
+		prerequisite = { focus = USA_people_country	}
+		mutually_exclusive = { focus = USA_reformism_focus	}
+		x = 13
+		y = 2
+		completion_reward = { add_ideas = USA_communism_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_reformism_focus
+		icon = GFX_goal_usa_socialism_focus
+		cost = 70 
+		prerequisite = { focus = USA_people_country	}
+		mutually_exclusive = {	focus = USA_communism_focus	}
+		x = 15
+		y = 2
+		completion_reward = {	add_ideas = USA_reformism_idea	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_defeat_capitalism
+		icon = GFX_goal_usa_defeat_capitalism
+		cost = 70 
+		prerequisite = {
+			focus = USA_communism_focus
+			focus = USA_reformism_focus
+		}
+		x = 14
+		y = 3
+		available = {
+			OR = {
+				has_government = reformism
+				has_government = communism
+			}
+		}
+		completion_reward = {	add_ideas = USA_capitalism_defeated	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_american_empire
+		icon = GFX_goal_usa_american_empire
+		cost = 70 
+		prerequisite = { focus = USA_change_politics }
+		mutually_exclusive = {	focus = USA_people_country }
+		x = 17
+		y = 1
+		completion_reward = { add_ideas = USA_empire_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_nationalism_focus
+		icon = GFX_goal_usa_nationalism_focus
+		cost = 70 
+		prerequisite = { focus = USA_american_empire }
+		x = 17
+		y = 2
+		completion_reward = { add_ideas = USA_nationalism_idea }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_america_first
+		icon = GFX_goal_usa_change_politics
+		cost = 70 
+		prerequisite = { focus = USA_nationalism_focus	}
+		x = 17
+		y = 3
+		available = {	OR = {	has_government = fascism }	}
+		completion_reward = {	add_ideas = USA_america_first_idea	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = USA_army_effort
+		icon = GFX_goal_usa_army_effort
+		cost = 70 
+		prerequisite = { focus = USA_army }
+		x = 22
+		y = 1
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_equipment_effort
+		icon = GFX_goal_assault_rifle_M4A1
+		cost = 70 
+		prerequisite = { focus = USA_army_effort }
+		x = 19
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_equipment_effort_2
+		icon = GFX_goal_assault_rifle_usa
+		cost = 70 
+		prerequisite = { focus = USA_equipment_effort	}
+		x = 19
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_equipment_effort_3
+		icon = GFX_goal_heavy_equipment_Mark48
+		cost = 70 
+		prerequisite = { focus = USA_equipment_effort_2	}
+		x = 19
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_equipment_effort_4
+		icon = GFX_goal_anti-tank_FGM-148
+		cost = 70 
+		prerequisite = { focus = USA_equipment_effort_3	}
+		x = 19
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = USA_army_effort }
+		mutually_exclusive = {	focus = USA_specops_effort }
+		x = 20
+		y = 3
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = USA_doctrine_effort }
+		x = 20
+		y = 5
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = USA_doctrine_effort_2	}
+		x = 20
+		y = 7
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_specops_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = USA_army_effort }
+		mutually_exclusive = {	focus = USA_doctrine_effort	}
+		x = 22
+		y = 3
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_special_forces
+				category = cat_special_forces_weapons
+				category = cat_special_ammunition
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_specops_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = USA_specops_effort	}
+		x = 22
+		y = 5
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_special_forces_weapons
+				category = cat_special_ammunition
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_special_forces
+		icon = GFX_goal_usa_special_forces_1
+		cost = 70 
+		prerequisite = { focus = USA_specops_effort_2	}
+		x = 23
+		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_paratroopers
+				category = cat_marines
+				category = cat_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_paratroopers_divisions
+		icon = GFX_goal_usa_paratroopers
+		cost = 70 
+		prerequisite = { focus = USA_special_forces	}
+		x = 21
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_paratroopers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_marines_divisions
+		icon = GFX_goal_usa_marines
+		cost = 70 
+		prerequisite = { focus = USA_special_forces }
+		x = 25
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_marines
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_special_forces_2
+		icon = GFX_goal_usa_special_forces_2
+		cost = 70 
+		prerequisite = { focus = USA_special_forces }
+		x = 23
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_paratroopers
+				category = cat_marines
+				category = cat_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_armor_effort
+		icon = GFX_goal_armor_M1A2
+		cost = 70 
+		prerequisite = { focus = USA_army_effort }
+		x = 24
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_medium_tank
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_armor_effort_2
+		icon = GFX_goal_armor_M1A2
+		cost = 70 
+		prerequisite = { focus = USA_armor_effort	}
+		x = 24
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_main_battle_tank
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_motorization_effort
+		icon = GFX_goal_motorization_light_4x4_HMMW
+		cost = 70 
+		prerequisite = { focus = USA_army_effort }
+		x = 26
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_motorization_effort_2
+		icon = GFX_goal_motorization_APC_8x8_Stryker
+		cost = 70 
+		prerequisite = { focus = USA_motorization_effort }
+		x = 26
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_motorization_effort_3
+		icon = GFX_goal_motorization_IFV_Bradley
+		cost = 70 
+		prerequisite = { focus = USA_motorization_effort_2	}
+		x = 25
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_wheeled_vehicle
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_tracked_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_aviation_effort
+		icon = GFX_goal_usa_aviation_effort
+		cost = 70 
+		prerequisite = { focus = USA_army }
+		x = 30
+		y = 1
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+						building = air_base
+						size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_supermaneuverability_fighter_focus
+		icon = GFX_goal_multirole_fighter_F-22
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = {	focus = USA_stealth_aircraft_focus	}
+		x = 29
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = supermaneuverability_fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_bomber_focus
+		icon = GFX_goal_attack_aircraft_F-111
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = { focus = USA_naval_aircraft_focus }
+		x = 29
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_CAS_focus
+		icon = GFX_goal_CAS_A-10
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = {	focus = USA_attack_helicopter_focus	}
+		x = 29
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_nuclear_bomber_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_stealth_aircraft_focus
+		icon = GFX_goal_multirole_fighter_F-35
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = {	focus = USA_supermaneuverability_fighter_focus	}
+		x = 31
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = stealth_aircraf_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_4thgen_aircrafts
+			}
+			add_tech_bonus = {
+				name = stealth_aircraf_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_5thgen_aircrafts
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_aviation_effort_2
+		icon = GFX_goal_usa_aviation_effort
+		cost = 70 
+		prerequisite = {
+			focus = USA_stealth_aircraft_focus
+			focus = USA_supermaneuverability_fighter_focus
+		}
+		x = 30
+		y = 4
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_naval_aircraft_focus
+		icon = GFX_goal_multirole_fighter_F-16
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = { focus = USA_bomber_focus	}
+		x = 31
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_attack_helicopter_focus
+		icon = GFX_goal_attack_helicopter_AH-64
+		cost = 70 
+		prerequisite = { focus = USA_aviation_effort }
+		mutually_exclusive = { focus = USA_CAS_focus }
+		x = 31
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_attack_helicopter_tech
+			}
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_vtol_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = USA_naval_effort
+		icon = GFX_goal_usa_naval_effort
+		cost = 10 
+		prerequisite = { focus = USA_army }
+		x = 35
+		y = 1
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {	is_coastal = yes }
+				}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = naval_effort_built
+		}
+			if = {
+				limit = {
+					NOT = {	has_country_flag = naval_effort_built	}
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = naval_effort_built
+		}
+			if = {
+				limit = {
+					NOT = {	has_country_flag = naval_effort_built	}
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = {	tag = ROOT	}
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		}
+	}
+	focus = {
+		id = USA_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		cost = 10 
+		prerequisite = { focus = USA_naval_effort }
+		mutually_exclusive = {	focus = USA_large_navy	}
+		x = 34
+		y = 2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = USA_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10 
+		prerequisite = { focus = USA_naval_effort	}
+		mutually_exclusive = {	focus = USA_flexible_navy }
+		x = 36
+		y = 2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	focus = {
+		id = USA_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10 
+		prerequisite = {
+			focus = USA_flexible_navy
+			focus = USA_large_navy
+		}
+		x = 34
+		y = 3
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+	focus = {
+		id = USA_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10 
+		prerequisite = { focus = USA_submarine_effort }
+		x = 34
+		y = 4
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+	focus = {
+		id = USA_UAV_effort
+		icon = GFX_goal_UAV_effort
+		cost = 10 
+		prerequisite = { focus = USA_aviation_effort_2	}
+		x = 34
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_drone_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_attack_drone_tech
+			}
+		}
+	}
+	focus = {
+		id = USA_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10 
+		prerequisite = {
+			focus = USA_large_navy
+			focus = USA_flexible_navy
+		}
+		x = 36
+		y = 3
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+	focus = {
+		id = USA_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10 
+		prerequisite = { focus = USA_cruiser_effort	}
+		x = 36
+		y = 4
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+				technology = rocket_battleship
+			}
+		}
+	}
+	focus = {
+		id = USA_generic_reform_economics
+		icon = GFX_economic_reforms
+		x = 38
+		y = 0
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = USA_generic_anticorruption_company_focus
+		icon = GFX_anticorruption_campaign
+		prerequisite ={	focus = USA_generic_reform_economics }
+		x = 38
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			set_country_flag = conducted_anticorruption_company
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = USA_generic_new_laws_against_corruption
+		icon = GFX_anticorruption_reforms
+		prerequisite = { focus = USA_generic_anticorruption_company_focus }
+		x = 38
+		y = 2
+		cost = 70
+		completion_reward = {
+			set_country_flag = reform_laws_against_corruption
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = USA_modern_industry
+		icon = GFX_goal_generic_consumer_goods
+		cost = 70 
+		prerequisite = { focus = USA_industrial_effort	}
+		x = 40
+		y = 2
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+				}
+				OR = {
+					is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70 
+		prerequisite = { focus = USA_modern_industry }
+		x = 39
+		y = 3
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70 
+		prerequisite = { focus = USA_construction_effort }
+		x = 39
+		y = 4
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70 
+		prerequisite = { focus = USA_construction_effort_2 }
+		x = 39
+		y = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+			tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 70 
+		prerequisite = { focus = USA_construction_effort_3 }
+		x = 39
+		y = 6
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_rocket_effort
+		icon = GFX_focus_rocketry
+		cost = 70 
+		prerequisite = {
+			focus = USA_aviation_effort_2
+			focus = USA_infrastructure_effort
+		}
+		x = 32
+		y = 7
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = USA_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 70 
+		prerequisite = { focus = USA_infrastructure_effort }
+		x = 39
+		y = 7
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_nuclear_effort
+		icon = GFX_focus_wonderweapons
+		cost = 70 
+		prerequisite = { focus = USA_infrastructure_effort_2 }
+		x = 37
+		y = 8
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				category = nuclear_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = USA_extra_tech_slot
+		icon = GFX_focus_research
+		cost = 70 
+		prerequisite = { focus = USA_infrastructure_effort_2 }
+		x = 39
+		y = 8
+		completion_reward = { add_research_slot = 1	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = USA_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70 
+		prerequisite = { focus = USA_modern_industry }
+		x = 41
+		y = 3
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70 
+		prerequisite = { focus = USA_production_effort	}
+		x = 41
+		y = 4
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70 
+		prerequisite = { focus = USA_production_effort_2 }
+		x = 41
+		y = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70 
+		prerequisite = { focus = USA_production_effort_3 }
+		x = 41
+		y = 6
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70 
+		prerequisite = { focus = USA_infrastructure_effort }
+		x = 41
+		y = 7
+		ai_will_do = { factor = 1 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = USA_liberate_china
+		icon = GFX_goal_usa_liberate_china
+		cost = 70 
+		prerequisite = { focus = USA_sanctions_against_china }
+		mutually_exclusive = {	focus = USA_revolt_in_china }
+		x = 7
+		y = 5
+		available = { country_exists = CHI	}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CHI
+			}
+			every_state = {
+				limit = { is_core_of = CHI	}
+				add_core_of = ROC
+			}
+			hidden_effect = {
+				news_event = {
+					id = usa_news.14
+					days = 2
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = USA_extra_tech_slot_2
+		icon = GFX_focus_research
+		cost = 70 
+		prerequisite = { focus = USA_extra_tech_slot }
+		x = 39
+		y = 9
+		available = { num_of_factories > 50 }
+		completion_reward = { add_research_slot = 1	}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = USA_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		cost = 70 
+		prerequisite = { focus = USA_infrastructure_effort_2 }
+		x = 41
+		y = 8
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 4
+				category = electronics
+				category = nuclear_tech
+				category = rocketry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+}

@@ -1,0 +1,362 @@
+﻿##### Division Templates #####
+
+division_template = {
+	name = "Infantry Brigade"			# Infantry Brigade
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	
+}
+
+division_template = {
+	name = "Mountain Brigade"		# Mountain Infantry Brigade
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }	
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }	
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+	}
+	
+}
+
+division_template = {
+	name = "Airborne Brigade"				# Represents a pair of independent airborne brigades
+	
+	regiments = {
+		paratroopers_light_motorized = { x = 0 y = 0 }
+		paratroopers_light_motorized = { x = 0 y = 1 }
+		paratroopers_light_motorized = { x = 0 y = 2 }
+		paratroopers_light_motorized = { x = 1 y = 0 }
+		paratroopers_light_motorized = { x = 1 y = 1 }
+		paratroopers_light_motorized = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Border Guard Brigade"  		#
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+	#support = {
+	#	airborne_support_company = { x = 0 y = 0 } 
+	#	anti_air = { x = 0 y = 1 } 
+	#	artillery = { x = 0 y = 2 } 
+	#}
+}
+
+division_template = {
+	name = "Motorized Rifle Division"		# Motorized Rifle Divison
+	regiments = {
+		light_motorized = { x = 0 y = 0 }			# 1й полк моторизированной пехоты, БТР
+		light_motorized = { x = 0 y = 1 }			# 1й полк моторизированной пехоты, БТР
+		light_motorized = { x = 0 y = 2 }			# 1й полк моторизированной пехоты, БТР
+		light_motorized = { x = 1 y = 0 }			# 2й полк моторизированной пехоты, БТР
+		light_motorized = { x = 1 y = 1 }			# 2й полк моторизированной пехоты, БТР
+		light_motorized = { x = 1 y = 2 }			# 2й полк моторизированной пехоты, БТР
+		main_battle_tank = { x = 3 y = 0 }		# 4й танковый полк, Т-90
+		# anti_air_brigade = { x = 5 y = 0 }			# 5й полк артиллерии ПВО	
+		# anti_air_brigade = { x = 5 y = 1 }			# 5й полк артиллерии ПВО	
+		artillery_brigade = { x = 4 y = 0 }			# 6й полк буксируемой артиллерии
+		artillery_brigade = { x = 4 y = 1 }			# 6й полк буксируемой артиллерии
+	}
+	#support = {
+		# anti_air = { x = 0 y = 0 } 			
+		# artillery = { x = 0 y = 1 } 		# Пушечная артиллерия		
+	#}
+}
+
+division_template = {
+	name = "Motorized Rifle Brigade"		# Motorized Rifle Brigade
+	regiments = {
+		light_motorized = { x = 0 y = 0 }			# 1й батальон моторизированной пехоты БТР
+		light_motorized = { x = 0 y = 1 }			# 2й батальон моторизированной пехоты БТР
+		light_motorized = { x = 0 y = 2 }			# 3й батальон моторизированной пехоты БТР
+		main_battle_tank = { x = 1 y = 0 }		# 4й танковый дивизион, Т-72
+	}
+	#support = {
+		# anti_air = { x = 0 y = 0 } 			# отдельный двизион артиллерии ПВО
+		# artillery = { x = 0 y = 1 } 		# отдельный двизион буксируемой артиллерии		
+	#}
+}
+
+
+###### OOB ######
+units = {
+
+	####### Turkmenistan Motorized Rifle Divisons  #######
+
+	### 3rd Motorized Rifle Division in Ashgabat ###
+	# 3-я моторизированная стрелковая дивизия им. Байрам-хана в Ашхабаде
+	# ранее 84-я элитная мотострелковая дивизия им. С. Ниязова (танковый и мотострелковый полки)
+	# на базе 84-й МСД СССР
+	# наиболее боеспособное подразделение армии
+	division = {			
+		name = "3rd Motorized Rifle Division Bairam Khan"
+		location = 13290
+		division_template = "Motorized Rifle Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+
+	}
+	
+	### 11rd Motorized Rifle Division in Serhetabat (Kushka)	 ###
+	# 11-я моторизированная стрелковая дивизия) им. султана Санджара в Серхетабаде (Кушке)
+	# на базе 357-й мотострелковой дивизия (танковый и 2 мотострелковых полка)
+	# которая в свою очередь на базе 88-й МСД СССР
+	division = {			
+		name = "11rd Motorized Rifle Division Soltan Sanjar"
+		location = 4958
+		division_template = "Motorized Rifle Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}
+	
+	### 22rd Motorized Rifle Division in Serdar (Kyzyl-Arvat) ###
+	# 22-я моторизированная стрелковая дивизия им. Атамурата Ниязова в Сердаре (Кызыл-Арвате)
+	#на базе 58-й МСД СССР
+	division = {			
+		name = "22rd Motorized Rifle Division Atamurat Niyazov"
+		location = 4599
+		division_template = "Motorized Rifle Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}	
+
+	### 2rd Training Division in Tedzhen ###
+	# 2-я  учебная мотострелковая дивизия им. имени Алп-Арслана в Теджене
+	# на базе 61-й учебной МСД СССР
+	division = {			
+		name = "2rd Training Motorized Rifle Division Alp Arslan "
+		location = 13286
+		division_template = "Motorized Rifle Division"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.1
+	}		
+	
+	####### Turkmenistan Motorized Rifle Brigade - 3 Brigade  #######
+	
+	### 4rd Motorized Rifle Brigade Togrul beg in Turkmenbashi ###
+	# 4-я моторизированная стрелковая бригада имени Тогрул-бека
+	# реальная дислокация неизвестна - определна в Туркменбаши
+	division = {			
+		name = "4rd Motorized Rifle Brigade Toghrul-Beg"
+		location = 7477
+		division_template = "Motorized Rifle Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}	
+	
+	### 5rd Motorized Rifle Brigade Chaghri Beg in Dashoguz	###
+	# 5-я моторизированная стрелковая бригада им. Чагры-бека
+	# реальная дислокация неизвестна - определна в Дашогуз
+	division = {			
+		name = "5rd Motorized Rifle Brigade Chaghri Beg"
+		location = 12324
+		division_template = "Motorized Rifle Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}	
+	
+	### 6rd Motorized Rifle Brigade Gerogly Bega in Balkanabad ###
+	# 6-я моторизированная стрелковая бригада им. Чагры-бека
+	# реальная дислокация неизвестна - определна в Балканабат
+	division = {			
+		name = "6rd Motorized Rifle Brigade Gerogly Bega"
+		location = 10359
+		division_template = "Motorized Rifle Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.1
+	}	
+	
+	####### Turkmenistan Airborne #######
+	
+	### 152rd Airborne Brigade in Mary-2 Airbase ###
+	# 152-я отдельная десантно-штурмовая бригада осталась со времен СССР
+	division = {			
+		name = "152rd Airborne Brigade"						
+		location = 7560
+		division_template = "Airborne Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+	}
+	
+	# На данный момент не учтены:
+	# ?-я Pioneer Regiment
+	# ?-я артиллерийская бригада (Artillery Brigade) - 152-мм гаубицы 2А65 «Мета-Б» (Ашхабад);
+	# ?-й реактивный артиллерийский полк  (MRL Regiment) - 220-мм 16- ствольные РСЗО 9П140 «Ураган» (Ашхабад);
+	# ?-й инженерно-саперный полк (Ашхабад);
+	# ?-й парашютно-десантный батальон спецназначения (Ашхабад);
+	# ?-я ракетная бригада (U/I SCUD Brigade) — оперативно-тактический ракетный комплекс 9К72 «Скад» (центральный военный полигон Келат);
+	# 2 зенитные ракетные бригады ПВО (2 x Anti-Aircraft Regiment) сухопутных войск
+	# ?-я Air-Land Battalion 
+	# ?-й противотанковый артиллерийский полк (Anti-Tank Regiment)
+	
+	# Не учтены из состава ВВС:
+	# 1 зенитно-ракетной бригад
+	# 3 зенитно-ракетных полков
+	# 2 отдельныt радиотехнические бригады
+	
+	####### Turkmenistan Border Guard - 8 Brigade  #######
+
+	####### c 2013 Мырат Исламович Исламов, генерал-лейтенант #######
+
+	### Kazakhstan border in Garabogaz ###
+	division = {			
+		name = "Bekgash Border Guard Brigade"	# Бекдашский погранотряд создан в 2001 г.
+		location = 13281
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+
+	### Uzbekistan border in Turkmenabad ###
+	division = {			
+		name = "Farap Border Guard Brigade"		# Фарабский погранотряд созда в 1990-е
+		location = 7924
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	
+	### Uzbekistan & Afganistan border in Koytendag ###
+	division = {			
+		name = "Koytendag Border Guard Brigade"	 	# Койтендагский погранотряд создан в 2001 г.
+		location = 756
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	
+	### Afganistan border in Atamyrat (Kerki) ###
+	division = {			
+		name = "Atamyrat Border Guard Brigade"		# Атамурадский (Керкинский) погранотряд остался со времен СССР
+		location = 4549
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	### Afganistan border in Serhetabat ###
+	division = {			
+		name = "Kushka Border Guard Brigade"		# Кушкинский погранотряд созданн в 2001 г.
+		location = 4958
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	### Afganistan border in Tagtabazar  ###
+	division = {			
+		name = "Tagtabazar Border Guard Brigade"		# Тахтабазарский погранотряд остался со времен СССР	
+		location = 13287
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	### Iran & Afganistan border in Sarahs ###
+	division = {			
+		name = "Sarahs Border Guard Brigade"		# Серахсский погранотряд остался со времен СССР
+		location = 13289
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+
+	### Iran border in  ###
+	division = {			
+		name = "Kaka Border Guard Brigade"		# Какинский (Каахкинский) погранотряд остался со времен СССР
+		location = 7491
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	
+	### Iran border in Ashgabat ###
+	division = {			
+		name = "Ashgabat Border Guard Brigade"		# Ашхабадский погранотряд, создан в 1992 г.
+		location = 12333
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}	
+	
+	### Iran border in Baharly ###
+	division = {			
+		name = "Baharly Border Guard Brigade"		# Бахарлыйский (Бахарденский) погранотряд остался со времен СССР
+		location = 10510
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+
+	### Iran border in Garrygala ###
+	division = {			
+		name = "Garrygala Border Guard Brigade"	 	# Махтумкульский (Кара-Калинский) погранотряд остался со времен СССР
+		location = 10510
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	
+	### Iran border in Balkanabat region ###
+	division = {			
+		name = "Balkanabat Border Guard Brigade"		# Балканабадский (Небит-Дагский) погранотряд остался со времен СССР	
+		location = 12359
+		division_template = "Border Guard Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	
+}
+
+	### AIR WINGS ###
+	air_wings = {
+		584 = {	
+			### Ashgabat airbase ###
+			# бывший 156-й авиаполк истребителей-бомбардировщиков
+			light_fighter_equipment_1 = { owner = "TMS" amount = 12 }				# МиГ-29
+			strike_fighter_equipment_1 =  { owner = "TMS" amount = 20 }				# Су-25МК
+
+			}
+		791 = {	
+			### Mary-2 airbase ###
+			# Мары-2, 99-я авиационная база
+			light_fighter_equipment_1 = { owner = "TMS" amount = 12 }				# МиГ-29
+			air_transport_equipment_1 = { owner = "TMS" amount = 1 }		# Ан-74ТК-200С - 2 шт
+			air_transport_equipment_1 = { owner = "TMS" amount = 2 }		# Ан-26 - 1шт 
+		}
+	}
+
+	# Не учтены вертолеты ВВС:
+	# Ми-24, Ми-8
+	# 366-я отдельная вертолетная эскадрилья в Чарджоу
+	
+	# На хранении:
+	# Су-17МЗ, МиГ-21, Су-7, Л-39, Як-28, МиГ-23М и МиГ-25ПД Ан-24
+
+	
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "TMS"
+		}
+		requested_factories = 1
+		progress = 0.52
+		efficiency = 100
+	}
+}

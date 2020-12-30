@@ -1,0 +1,142 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 228
+
+# де-юре не признана никем (дата основания)
+2014.4.28 = {
+	add_ideas = {
+		not_recognized_country
+		dictatorship_state
+		secular_state
+		state_propaganda_media
+		emergency_law
+		close_borders
+		mixed_army
+		mixed_schools
+		partial_economic_mobilisation
+		balanced_industry
+		no_social_security
+		prohibition_of_forced_labour
+		mixed_economic
+		
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 18 }
+
+	load_oob = "_tech_microstate_2013"	
+	load_oob = "LUG_2013"
+	set_country_flag = UKR_war_with_LDNR
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+	set_country_flag = pai_nondem_totalitarian
+	#Склад
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_salw_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_ammunition_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = truck_g0_equipment_0
+	}
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.11.2"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 100
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	#  и глава Луганской Народной Республики — Алексей Карякин
+
+	create_country_leader = {
+		name = "Gennadiy Tsypkalov"
+		desc = "POLITICS_GENNADIY_TSYPKALOV_DESC"
+		picture = "gfx/leaders/LUG/portrait_gennadiy_tsypkalov.dds"
+		ideology = sovereign_democracy #irredentism
+		traits = { trait_sovereign_democracy }
+	}
+ 
+	#create_country_leader = {
+	#	name = "Igor Plotnitskiy"
+	#	desc = "POLITICS_IGOR_PLOTNITSKIY_DESC"
+	#	picture = "gfx/leaders/LUG/portrait_igor_plotnitskiy.dds"
+	#	ideology = sovereign_democracy #irredentism
+	#	traits = { trait_sovereign_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Zinaida Nadyon"
+	#	desc = "POLITICS_ZINAIDA_NADYON_DESC"
+	#	picture = "gfx/leaders/LUG/portrait_zinaida_nadyon.dds"
+	#	ideology = liberal_conservatism
+	#	traits = { trait_liberal_conservatism }
+	#}
+	
+
+	create_corps_commander = {
+  		name = "Aleksandr «Batman» Bednov"
+  		portrait_path = "gfx/leaders/LUG/portrait_lug_general_bednov.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Roman «Tsygan» Voznik"
+  		portrait_path = "gfx/leaders/LUG/portrait_lug_general_voznik.dds"
+  		traits = { infantry_expert }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Aleksandr «Serb» Milchakov"
+  		portrait_path = "gfx/leaders/LUG/portrait_lug_general_serb.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Aleksey Mozgovoy"
+  		portrait_path = "gfx/leaders/LUG/portrait_lug_general_mozgovoi.dds"
+  		traits = { infantry_expert }
+  		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+  	}
+	
+}
+
+
+

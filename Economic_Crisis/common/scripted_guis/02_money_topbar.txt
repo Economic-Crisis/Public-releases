@@ -1,0 +1,49 @@
+scripted_gui = {
+
+
+	topbar_money = {
+		window_name = "topbar_money_menu"      
+        parent_window_token = top_bar
+ 
+		context_type = player_context
+ 
+		visible = {
+            always = yes
+		}
+ 
+        effects = {                     
+           budget_bg_click = {
+				if = {
+					limit = { check_variable = { money_menu_visible = 0 } }
+				set_variable = { money_menu_visible = 1 }	
+				}
+				else = {
+				set_variable = { money_menu_visible = 0 }
+				}
+			}
+        }
+        
+		triggers = {
+		
+			budget_bg_click_enabled = {
+				check_variable = { current_years > 0 }
+			}
+			budget_value_visible = {
+				check_variable = { current_years > 0 }
+			}
+           
+        }
+	}
+	
+	diplomacy_money_menu = {
+	
+		window_name = "diplomacy_money"      
+        parent_window_token = selected_country_view_info
+ 
+		context_type = selected_country_context
+ 
+		visible = {
+            always = yes
+		}
+	}	
+}

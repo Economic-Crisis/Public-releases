@@ -1,0 +1,1560 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+	fra_jean_ayralt_hog = {
+
+		picture = GFX_idea_fra_jean_ayralt
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+			
+			
+			traits = { party_leader_reformist 
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		fra_francois_bayrou_hog = {
+
+		picture = GFX_idea_fra_francois_bayrou_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+				NOT = { has_country_leader = { id = 100009 ruling_only = yes name = "Francois Bayrou" }
+						
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_conservative 
+						pm_conservative
+					}
+
+			on_add = {
+
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_laurent_henart_hog = {
+
+		picture = GFX_idea_fra_laurent_henart_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_liberal 
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_edouard_philippe_hog = {
+
+		picture = GFX_idea_fra_edouard_philippe_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_manuel_valls_hog = {
+
+		picture = GFX_idea_fra_manuel_valls
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+				
+				NOT = {
+					has_idea = fra_manuel_valls
+				}
+			
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+			
+			
+			traits = { party_leader_reformist 
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_nicolas_sarkozy_hog = {
+
+		picture = GFX_idea_fra_nicolas_sarkozy
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = { has_country_leader = { id = 100006 ruling_only = yes name = "Nicloas Sarkozy" }
+						
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_francois_mitterrand_hog = {
+
+		picture = GFX_idea_fra_francois_mitterrand_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_reformist 
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+	fra_sylvia_pinel_hog = {
+
+	picture = GFX_idea_fra_sylvia_pinel
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_liberal
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_herve_morin_hog = {
+
+		picture = GFX_idea_fra_herve_morin_hog
+
+				cost = 1000
+				#removal_cost = -1
+
+				available = {
+					OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+					}
+				}
+
+				allowed = {
+					original_tag = FRA
+				}
+
+				traits = { party_leader_liberal
+							pm_liberal
+						}
+
+				on_add = {
+					news_event = head_of_government.1
+				}
+
+				ai_will_do = {
+					factor = 0
+				}
+			}
+
+	fra_pierre_laurent_hog = {
+
+	picture = GFX_idea_fra_pierre_laurent_hog
+
+		cost = 1000
+		#removal_cost = -1
+
+		available = {
+			OR = {
+				has_government = communism
+				has_country_flag = coalition_with_socialists
+			}
+		}
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		traits = {  party_leader_communist
+					pm_communist
+				}
+
+		on_add = {
+			news_event = head_of_government.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	fra_marie_george_buffet_hog = {
+
+	picture = GFX_idea_fra_marie_george_buffet_hog
+
+		cost = 1000
+		#removal_cost = -1
+
+		available = {
+			OR = {
+				has_government = communism
+				has_country_flag = coalition_with_socialists
+			}
+		}
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		traits = {  party_leader_communist
+					pm_communist
+				}
+
+		on_add = {
+			news_event = head_of_government.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	fra_marine_le_pen_hog = {
+
+	picture = GFX_idea_fra_marine_le_pen
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+				NOT = { has_country_leader = { id = 100007 ruling_only = yes name = "Marine Le Pen" }
+						
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { party_leader_nationalist
+						pm_nationalist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_annick_martin_hog = {
+
+		picture = GFX_idea_fra_annick_martin_hog
+
+				cost = 1000
+				#removal_cost = -1
+
+				available = {
+					OR = {
+
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+
+					}
+				}
+
+				allowed = {
+					original_tag = FRA
+				}
+
+				traits = { party_leader_nationalist
+							pm_nationalist
+						}
+
+				on_add = {
+					news_event = head_of_government.1
+				}
+
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			
+			
+			fra_hassen_chalghoumi_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+				NOT = {	
+					has_country_leader = { id = 100010 ruling_only = yes name = "Hassen Chalghoumi" } 	
+				}
+			}
+
+			allowed = {
+				original_tag = "FRA"
+			}
+
+			traits = { party_leader_islamist
+						pm_islamist
+					}
+
+			on_add = {
+				news_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+				}
+		}
+		
+			fra_hani_ramadan_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = rad_islamists
+					has_country_flag = coalition_with_rad_islamists
+				}
+				NOT = {
+				
+					has_country_leader = { id = 100011 ruling_only = yes name = "Hani Ramadan" } 	
+				}
+			}
+
+			allowed = {
+				original_tag = "FRA"
+			}
+			traits = { party_leader_rad_islamist
+						pm_rad_islamist
+					}
+
+			on_add = {
+				news_event = political_party.34
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = rad_islamists
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+				}
+		}
+
+	}
+
+
+	defence_minister = {
+
+		fra_florence_parly_defm = {
+
+		picture = GFX_idea_fra_florence_parly_defm
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+			available =	{
+ 			}
+
+			traits = {
+				defence_minister_analyst_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		fra_sylvie_goulard_defm = {
+
+		picture = GFX_idea_fra_sylvie_goulard_defm
+
+			cost = 350
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = {
+				defence_minister_bureaucrat_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		fra_jean_yves_le_drian_defm = {
+
+		picture = fra_jean_yves_le_drian_defm
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = {
+				defence_minister_serve_and_protect_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		fra_michele_alliot_marie_defm = {
+
+		picture = fra_michele_alliot_marie_defm
+
+			cost = 400
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = {
+				defence_minister_regime_loyalist_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+
+	}
+
+
+	foreign_minister ={
+
+		fra_jean_marc_ayrault_fgm = {
+
+		picture = GFX_idea_fra_jean_marc_ayrault_fgm
+
+			cost = 550
+
+			allowed = {
+				original_tag = FRA
+			}
+			
+			traits = { foreign_minister_policy_defender_1 }
+		}
+
+
+		fra_laurent_fabius_fgm = {
+
+		picture = GFX_idea_fra_laurent_fabius_fgm
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available =	{
+ 			}
+
+			traits = { foreign_minister_non-alignment
+					   foreign_minister_addiction_EU }
+
+		}
+
+		fra_bruno_le_maire_fgm = {
+
+		picture = GFX_idea_fra_bruno_le_maire_fgm
+
+			cost = 550
+
+			allowed = {
+				original_tag = FRA
+			}
+			
+			available =	{
+ 			OR = { }
+			NOT = {
+				has_country_flag = fra_bruno_le_maire_ecm
+				}
+			}
+			traits = { foreign_minister_policy_defender_2 }
+			
+			on_add = {
+				custom_effect_tooltip = remove_politic
+				hidden_effect = {
+					set_country_flag = fra_bruno_le_maire_ecm
+				}
+			}
+
+			#cancel_if_invalid = yes
+		}
+
+		fra_alain_juppe_fgm = {
+
+		picture = GFX_idea_fra_alain_juppe_fgm
+
+			cost = 650
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available =	{
+ 			}
+
+			traits = { foreign_minister_addiction_irredentist_2 }
+
+			on_add = {
+
+			}
+
+		}
+
+	}
+
+	economic_minister = {
+
+		fra_michel_sapin_ecm = {
+
+		picture = GFX_idea_fra_michel_sapin_ecm
+
+		cost = 450
+
+		allowed = {
+			original_tag = FRA
+			}
+
+		traits = { economic_minister_public_administration_1 }
+	   }
+
+		fra_pierre_moscovici_ecm = {
+
+		picture = GFX_idea_fra_pierre_moscovici_ecm
+
+			cost = 550
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { economic_minister_international_trade_2 }
+		}
+
+		fra_bruno_le_maire_ecm = {
+
+		picture = GFX_idea_fra_bruno_le_maire_ecm
+
+			cost = 650
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available =	{
+				NOT = {
+					has_country_flag = fra_bruno_le_maire_fgm
+				}
+ 			}
+
+			traits = { economic_minister_military_industry_1 }
+
+			on_add = {
+				custom_effect_tooltip = remove_politic
+				hidden_effect = {
+					set_country_flag = fra_bruno_le_maire_ecm
+				}
+			}
+
+			#cancel_if_invalid = yes
+		}
+		
+		fra_christine_lagarde_ecm = {
+
+		picture = GFX_idea_fra_christine_lagarde_ecm
+
+		cost = 850
+
+		allowed = {
+			original_tag = FRA
+			}
+
+		traits = { economic_minister_public_administration_3 }
+	   }
+
+		fra_francois_villeroy_ecm = {
+
+		picture = GFX_idea_fra_francois_villeroy_ecm
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { economic_minister_banking_credit_system_2 }
+		}
+	}
+
+	secret_service_chief = {
+
+		fra_jean_pierre_palasset_ssch = {
+
+		picture = GFX_idea_fra_jean_pierre_palasset_ssch
+
+			cost = 550
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available ={
+			}
+
+			traits = { secret_service_chief_executioner_2 }
+		}
+
+		fra_bernard_bajolet_ssch = {
+
+		picture = GFX_idea_fra_bernard_bajolet_ssch
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_spy_2 }
+		}
+
+		fra_erard_corbin_de_mangoux_ssch = {
+
+		picture = GFX_idea_fra_erard_corbin_de_mangoux_ssch
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_counterespionage_1 }
+		}
+	}
+
+	political_advisor = {
+	
+	
+		fra_michel_platini = {
+
+		picture = GFX_idea_fra_michel_platini
+
+			cost = 250
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+			traits = { popular_person }
+		}
+
+
+		fra_harlem_desir = {
+
+		picture = GFX_idea_fra_harlem_desir
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { backstage_assistant }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		fra_jean_marie_le_guen = {
+
+		picture = GFX_idea_fra_jean_marie_le_guen
+
+			cost = 350
+
+			allowed = {
+				original_tag = GER
+			}
+
+
+			traits = { ideologue_theorist } 
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		fra_segolene_royal = {
+
+			cost = 450
+
+			picture = fra_segolene_royal
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { tek_reformer }
+		}
+		
+		
+		fra_dominique_strauss_kahn = {
+
+		picture = GFX_idea_fra_dominique_strauss_kahn
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { master_negotiations }
+		}
+
+		fra_christine_lagarde = {
+
+		picture = GFX_idea_fra_christine_lagarde
+
+			cost = 750
+
+			allowed = {
+				original_tag = FRA
+			}
+			
+			available = {
+				OR = {
+				}
+				
+				NOT = {
+					has_idea = fra_christine_lagarde_ecm
+				}
+			}
+
+			traits = { industry_top_managment }
+		}
+
+		fra_stephane_le_foll = {
+
+		picture = GFX_idea_fra_dominique_strauss_kahn
+
+			cost = 650
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { industry_developer }
+		}
+
+		fra_bernard_cazeneuve = {
+
+		picture = GFX_idea_fra_bernard_cazeneuve
+
+			cost = 350
+
+			allowed = {
+				original_tag = FRA
+				date > 2014.02.4
+			}
+
+			traits = { police_reformer }
+		}
+		
+		fra_manuel_valls = {
+
+		picture = GFX_idea_fra_manuel_valls
+
+			cost = 250
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available = {
+				OR = {
+				}
+				
+				NOT = {
+					has_idea = fra_manuel_valls_hog
+				}
+			}
+			
+			traits = { police_reformer }
+		}
+
+
+		fra_fleur_pellerin = {
+
+		picture = GFX_idea_fra_fleur_pellerin
+
+			cost = 550
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { propaganda_reformer }
+		}
+
+		fra_najat_vallaud_belkacem = {
+
+		picture = GFX_idea_fra_najat_vallaud_belkacem
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { research_reformer }
+		}
+
+		fra_marisol_touraine = {
+
+		picture = GFX_idea_fra_marisol_touraine
+
+			cost = 650
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+			traits = { medicine_reformer }
+		}
+		
+
+		fra_bernard_kouchner = {
+
+		picture = GFX_idea_fra_bernard_kouchner
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+			traits = { medicine_reformer }
+		}
+		
+		
+		fra_stephane_mayer = {
+
+		picture = GFX_idea_fra_stephane_mayer
+
+			cost = 850
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+			traits = { economic_minister_military_industry_1 }
+		}
+
+		fra_alain_vidalies = {
+
+		picture = GFX_idea_fra_alain_vidalies
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { infrastructure_reformer }
+		}
+
+		fra_frederic_cuvillier = {
+
+		picture = GFX_idea_fra_frederic_cuvillier
+
+			cost = 500
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { infrastructure_reformer }
+		}
+
+		fra_aurelie_filippetti = {
+
+		picture = GFX_idea_fra_aurelie_filippetti
+
+			cost = 350
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { cultura_reformer }
+		}
+
+		fra_pierre_laurent = {
+
+		picture = GFX_idea_fra_pierre_laurent
+
+			cost = 450
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available = {
+				OR = {
+					communism > 0.03
+				}
+				
+				NOT = {
+					has_idea = fra_pierre_laurent_hog
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+				country_event = political.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		fra_marie_george_buffet = {
+
+		picture = GFX_idea_fra_marie_george_buffet
+
+			cost = 350
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			available = {
+				OR = {
+					communism > 0.03
+				}
+				
+				NOT = {
+					has_idea = fra_marie_george_buffet_hog
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+				country_event = political.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_nicolas_sarkozy = {
+
+			cost = 550
+
+			available = {
+				OR = {
+					neutrality > 0.03
+				}
+				NOT = {
+					has_idea = fra_nicolas_sarkozy_hog
+					has_country_leader = { id = 100006 ruling_only = yes name = "Nicloas Sarkozy" }
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { neutrality_reformer }
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_edouard_philippe = {
+
+			cost = 500
+
+			available = {
+				OR = {
+					neutrality > 0.03
+				}
+				NOT = {
+					has_idea = fra_edouard_philippe_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { neutrality_reformer }
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_francois_mitterrand = {
+
+		picture = GFX_idea_fra_francois_mitterrand
+
+			cost = 350
+
+			available = {
+				OR = {
+					reformism > 0.01
+				}
+				NOT = {
+					has_idea = fra_francois_mitterrand_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { reformism_demagogue }
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		fra_jean_marc_ayrault = {
+
+		picture = GFX_idea_fra_jean_marc_ayrault_fgm
+
+			cost = 450
+
+			available = {
+				OR = {
+					reformism > 0.01
+				}
+				NOT = {
+					has_idea = fra_jean_marc_ayrault_fgm
+				}	
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { reformism_demagogue }
+
+
+			on_add = {
+				# country_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		fra_sylvia_pinel= {
+
+		picture = GFX_idea_fra_sylvia_pinel
+
+			cost = 400
+
+			available = {
+				OR = {
+					liberalism > 0.01
+				}
+				NOT = {
+					has_idea = fra_sylvia_pinel_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				# country_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		fra_laurent_henart = {
+
+		picture = GFX_idea_fra_laurent_henart
+
+			cost = 500
+
+			available = {
+				OR = {
+					liberalism > 0.02
+				}
+				NOT = {
+					has_idea = fra_laurent_henart_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_herve_morin = {
+
+		picture = GFX_idea_fra_herve_morin
+
+			cost = 500
+
+			available = {
+				OR = {
+					liberalism > 0.01
+				}
+				NOT = {
+					has_idea = fra_herve_morin_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		fra_francois_bayrou = {
+
+		picture = GFX_idea_fra_francois_bayrou_hog
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			cost = 500
+
+			available = {
+				OR = {
+					democratic > 0.03
+				}
+				NOT = {
+					has_idea = fra_francois_bayrou_hog
+					has_country_leader = { id = 100009 ruling_only = yes name = "Francois Bayrou" }
+				}
+				
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political.13
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = democratic
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		fra_marine_le_pen = {
+
+		picture = GFX_idea_fra_marine_le_pen
+
+			cost = 350
+
+			available = {
+				OR = {
+					democratic < 0.80
+					neutrality > 0.05
+					liberalism < 0.70
+				}
+				NOT = {
+					has_idea = fra_marine_le_pen_hog
+					has_country_leader = { id = 100007 ruling_only = yes name = "Marine Le Pen" }	
+				}
+				
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_annick_martin = {
+
+			picture = GFX_idea_fra_annick_martin
+
+			cost = 250
+
+			available = {
+			OR = {
+					democratic < 0.60
+					neutrality > 0.10
+					liberalism < 0.60
+				}
+			NOT = {
+					has_idea = fra_annick_martin_hog
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { fascist_demagogue }
+
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		fra_hassen_chalghoumi = {
+
+			picture = GFX_idea_fra_hassen_chalghoumi
+
+			cost = 250
+
+			available = {
+				OR = {
+					democratic > 0.10
+				}
+				NOT = {
+					
+					has_idea = fra_hassen_chalghoumi_hog
+					has_country_leader = { id = 100010 ruling_only = yes name = "Hassen Chalghoumi" }
+				}
+			}
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			traits = { islamists_demagogue }
+
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+			fra_hani_ramadan = {
+
+			cost = 850
+			#picture =
+			allowed = {
+				original_tag = "FRA"
+
+			}
+			available = {
+				OR = {
+				rad_islamists > 0.01
+				}
+				NOT = {
+					
+					has_idea = fra_hani_ramadan_hog
+					has_country_leader = { id = 100011 ruling_only = yes name = "Hani Ramadan" } 	
+				
+				}
+			}
+
+			traits = { rad_islamists_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = rad_islamists
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}

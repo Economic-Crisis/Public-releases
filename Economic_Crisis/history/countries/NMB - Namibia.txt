@@ -1,0 +1,49 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 541
+
+add_ideas = {
+	mixed_schools
+	au_member
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 1271 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "NMB_2013"
+	add_ideas = NPT
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.1"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 87
+		liberalism = 0
+		democratic = 11
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+    create_country_leader = {
+		name = "Hifikepunye Pohamba"
+		desc = "POLITICS_HIFIKEPUNYE_POHAMBA_DESC"
+		picture = "gfx/leaders/NMB/portrait_hifikepunye_pohamba.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+
+

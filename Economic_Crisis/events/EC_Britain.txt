@@ -1,0 +1,1236 @@
+﻿## Economic Crisis #
+## Britain Events ##
+
+add_namespace = britain
+
+# 	Трафальгарский марш
+country_event = {
+	id = britain.1
+	title = britain.1.t
+	desc = britain.1.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.1.a"
+	}
+}
+		
+# 	Раскол в рядах Национальной Директории
+country_event = {
+	id = britain.2
+	title = britain.2.t
+	desc = britain.2.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.2.a"
+	}
+}
+		
+# 	Судьба Британии
+country_event = {
+	id = britain.3
+	title = britain.3.t
+	desc = britain.3.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.3.a"
+	}
+}
+
+# 	Вестминстерский путч	
+country_event = {  
+	id = britain.4
+	title = britain.4.t
+	desc = britain.4.d
+	picture = GFX_event_eng_westminster
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = britain.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.4.a"
+		ai_chance = { factor = 60 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Paul Golding"
+	        desc = ""
+	        picture = "gfx/leaders/ENG/portrait_Paul_golding.dds"
+	        ideology = national_liberalism
+	        traits = { trait_national_liberalism }
+        }
+			#news_event = { id =  days = 1 }
+		}
+	}
+	
+# 	Победа роялистов	
+country_event = {  
+	id = britain.5
+	title = britain.5.t
+	desc = britain.5.d
+	picture = GFX_event_eng_westminster
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = britain.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.5.a"
+		ai_chance = { factor = 60 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Charles Philip Arthur George"
+	        desc = ""
+	        picture = "gfx/leaders/ENG/portrait_prince_charles.dds"
+	        ideology = national_liberalism
+	        traits = { trait_national_liberalism }
+        }
+			#news_event = { id =  days = 1 }
+		}
+	}
+	
+# 	Судьба Британии
+country_event = {
+	id = britain.6
+	title = britain.6.t
+	desc = britain.6.d
+	picture = GFX_event_eng_westminster
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.6.a"
+	}
+}
+		
+# 	Имперский Сенат
+country_event = {
+	id = britain.7
+	title = britain.7.t
+	desc = britain.7.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.7.a"
+	}
+}
+		
+# 	Внутренний круг
+country_event = {
+	id = britain.8
+	title = britain.8.t
+	desc = britain.8.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.8.a"
+	}
+}
+		
+# 	Реформы сира Эддингтона
+country_event = {
+	id = britain.9
+	title = britain.9.t
+	desc = britain.9.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.9.a"
+	}
+}
+		
+# 	Угроза НАТО
+country_event = {
+	id = britain.10
+	title = britain.10.t
+	desc = britain.10.d
+	picture = GFX_event_nato_eng
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.10.a"
+	}
+}
+		
+# 	Поддержка влиятельных людей
+country_event = {
+	id = britain.11
+	title = britain.11.t
+	desc = britain.11.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.11.a"
+	}
+}
+		
+# 	Поддержка лордов
+country_event = {
+	id = britain.12
+	title = britain.12.t
+	desc = britain.12.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.12.a"
+	}
+}
+		
+# 	Культ личности
+country_event = {
+	id = britain.13
+	title = britain.13.t
+	desc = britain.13.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.13.a"
+	}
+}
+		
+# 	Пропаганда
+country_event = {
+	id = britain.14
+	title = britain.14.t
+	desc = britain.14.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.14.a"
+	}
+}
+		
+# 	Однопартийность
+country_event = {
+	id = britain.15
+	title = britain.15.t
+	desc = britain.15.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.15.a"
+	}
+}
+		
+				
+# 	Красное знамя
+country_event = {
+	id = britain.16
+	title = britain.16.t
+	desc = britain.16.d
+	picture = GFX_event_eng_communist
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.16.a"
+	}
+}
+		
+# 	Пять пунктов Капллиникоса
+country_event = {
+	id = britain.17
+	title = britain.17.t
+	desc = britain.17.d
+	picture = GFX_event_miting_com
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.17.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.18.a"
+	}
+}
+		
+# 	Народные Бригады
+country_event = {
+	id = britain.18
+	title = britain.18.t
+	desc = britain.18.d
+	picture = GFX_event_miting_com
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.18.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.18.a"
+	}
+}
+		
+# 	Задержание красных лидеров
+country_event = {
+	id = britain.19
+	title = britain.19.t
+	desc = britain.19.d
+	picture = GFX_event_miting_com
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.19.a"
+		hidden_effect = { country_event = { id = britain.20 days = 15 } }
+	}
+}
+		
+# 	Лондонское побоище
+country_event = {
+	id = britain.20
+	title = britain.20.t
+	desc = britain.20.d
+	picture = GFX_event_revolution_eng
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.20.a"
+		hidden_effect = { country_event = { id = britain.21 days = 15 } }
+	}
+}
+		
+# 	Взятие Латчмер—хауза
+country_event = {
+	id = britain.21
+	title = britain.21.t
+	desc = britain.21.d
+	picture = GFX_event_miting_com
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.21.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.21.a"
+		hidden_effect = { country_event = { id = britain.22 days = 10 } }
+	}
+}
+		
+# 	Победа революции	
+country_event = {  
+	id = britain.22
+	title = britain.22.t
+	desc = britain.22.d
+	picture = GFX_event_eng_communist
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = britain.22.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.22.a"
+		ai_chance = { factor = 60 }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		SCO = {
+			transfer_state = 133
+			transfer_state = 121
+			transfer_state = 136
+			transfer_state = 120
+			WLS = { transfer_state = 122 }
+			CYP = { transfer_state = 946 }
+			NCY = { transfer_state = 947 }
+			IRE = { transfer_state = 119 }
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.2
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Alex Callinicos"
+	        desc = ""
+	        picture = "gfx/leaders/ENG/portrait_alex_callinicos.dds"
+	        ideology = trotskizm
+	        traits = { trait_trotskizm }
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_trotskism_party
+				name = ENG_trotskism_party
+			}
+		}
+
+		news_event = { id = britain.58 days = 1 }
+	}
+}
+
+	
+#Народная узурпация
+country_event = {  
+	id = britain.23
+	title = britain.23.t
+	desc = britain.23.d
+	picture = GFX_event_eng_westminster
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = britain.23.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.23.a"
+		ai_chance = { factor = 70 }
+		add_political_power = -100
+		add_stability = -0.2
+	}
+	option = { 
+		name = britain.23.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.23.b"
+		ai_chance = { factor = 30 }
+		add_political_power = 100
+		add_stability = 0.1
+	   }
+}
+		
+# 	Общепартийный Съезд
+country_event = {
+	id = britain.24
+	title = britain.24.t
+	desc = britain.24.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.24.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.24.a"
+	}
+}
+		
+# 	Каллинисты и Парламентеры
+country_event = {
+	id = britain.25
+	title = britain.25.t
+	desc = britain.25.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.25.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.25.a"
+	}
+}
+		
+# 	Стратфордский инцидент
+country_event = {
+	id = britain.26
+	title = britain.26.t
+	desc = britain.26.d
+	picture = GFX_event_eng_westminster
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.26.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.26.a"
+		hidden_effect = { country_event = { id = britain.27 days = 70 } }
+	}
+}
+		
+# 	Взрыв в Лондонском метро
+country_event = {
+	id = britain.27
+	title = britain.27.t
+	desc = britain.27.d
+	picture = GFX_event_eng_westminster
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.27.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.27.a"
+		hidden_effect = { country_event = { id = britain.28 days = 40 } }
+	}
+}
+		
+# 	Противостояние
+country_event = {
+	id = britain.28
+	title = britain.28.t
+	desc = britain.28.d
+	picture = GFX_event_eng_westminster
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.28.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.28.a"
+	}
+}
+		
+#Референдум о выходе из ЕС
+country_event = {  
+	id = britain.29
+	title = britain.29.t
+	desc = britain.29.d
+	picture = GFX_event_britain_brexit
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = britain.29.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.29.a"
+		ai_chance = { factor = 70 }
+		add_political_power = -100
+		add_stability = -0.2
+		set_country_flag = ENG_brexit
+	}
+	option = { 
+		name = britain.29.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.29.b"
+		ai_chance = { factor = 30 }
+		add_political_power = 100
+		add_stability = 0.1
+		set_country_flag = ENG_bristay
+	}
+}
+	
+# 	Поднять вопрос о парламентской реформе
+country_event = {
+	id = britain.30
+	title = britain.30.t
+	desc = britain.30.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.30.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.30.a"
+		add_political_power = 100
+	}
+}
+		
+# 	Парламентская Республика
+country_event = {
+	id = britain.31
+	title = britain.31.t
+	desc = britain.31.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.31.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.31.a"
+		add_political_power = 250
+		add_ideas = parliamentary_republic
+	}
+}
+	
+# 	Парламентская Монархия
+country_event = {
+	id = britain.32
+	title = britain.32.t
+	desc = britain.32.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.32.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.32.a"
+		add_political_power = 50
+	}
+}
+	
+# 	Британия вводит в обращение Евро
+country_event = {
+	id = britain.33
+	title = britain.33.t
+	desc = britain.33.d
+	picture = GFX_event_euro
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.33.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.33.a"
+		add_political_power = 250
+	}
+}
+	
+# 	Европейский Совет
+country_event = {
+	id = britain.34
+	title = britain.34.t
+	desc = britain.34.d
+	picture = GFX_event_europarlament
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.34.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.34.a"
+		add_political_power = 100
+	}
+}
+	
+# 	Главенство в ЕС
+country_event = {
+	id = britain.35
+	title = britain.35.t
+	desc = britain.35.d
+	picture = GFX_event_europarlament
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.35.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.35.a"
+		add_political_power = 150
+		add_stability = 0.1
+	}
+}
+	
+# 	Выбор курса ЕС
+country_event = {
+	id = britain.36
+	title = britain.36.t
+	desc = britain.36.d
+	picture = GFX_event_europarlament
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+	    name = britain.36.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.36.a"
+		set_country_flag = ENG_euro_flag
+		add_political_power = 50
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+	    name = britain.36.b 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.36.b"
+		add_political_power = 50
+		ai_chance = { factor = 50 }
+		set_country_flag = ENG_con_flag
+	}
+}
+	
+# 	Евроцентризм
+news_event = {
+	id = britain.37
+	title = britain.37.t
+	desc = britain.37.d
+	picture = GFX_event_flag_EU_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.37.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.37.a"
+	}
+}
+	
+# 	Консерватизм
+news_event = {
+	id = britain.38
+	title = britain.38.t
+	desc = britain.38.d
+	picture = GFX_event_flag_EU_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.38.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.38.a"
+	}
+}
+	
+# 	Дипломатическая Экспансия
+country_event = {
+	id = britain.39
+	title = britain.39.t
+	desc = britain.39.d
+	picture = GFX_event_flag_EU
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.39.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.39.a"
+		add_political_power = 200
+	}
+}
+	
+#Приглашение в ЕС
+country_event = {  
+	id = britain.40
+	title = britain.40.t
+	desc = britain.40.d
+	picture = GFX_event_flag_EU
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = britain.40.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.40.a"
+		ai_chance = { factor = 80 }
+		add_political_power = 150
+		add_stability = 0.1
+		add_ideas = candidate_EU_membership
+	}
+	option = { 
+		name = britain.40.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.40.b"
+		ai_chance = { factor = 20 }
+		add_political_power = -100
+		add_stability = -0.1
+	}
+}
+	
+# 	Форма Государственного Правления
+country_event = {
+	id = britain.41
+	title = britain.41.t
+	desc = britain.41.d
+	picture = GFX_event_flag_EU
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.41.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.41.a"
+		add_political_power = 100
+	}
+}
+	
+# 	Утверждение Границ
+country_event = {
+	id = britain.42
+	title = britain.42.t
+	desc = britain.42.d
+	picture = GFX_event_flag_EU
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.42.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.42.a"
+		add_political_power = 100
+	}
+}
+	
+# 	Объединенная Армия
+country_event = {
+	id = britain.43
+	title = britain.43.t
+	desc = britain.43.d
+	picture = GFX_event_eu_army
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.43.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.43.a"
+		add_political_power = 100
+		army_experience = 150
+	}
+}
+	
+# 	Политический Кризис
+country_event = {
+	id = britain.44
+	title = britain.44.t
+	desc = britain.44.d
+	picture = GFX_event_britain_flag
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.44.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.44.a"
+		ai_chance = { factor = 60 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Theresa May"
+	        desc = ""
+	        picture = "gfx/leaders/ENG/portrait_theresa_may.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+		}
+		news_event = { id = britain.45 }
+	}
+}
+	
+# 	Политический кризис в Соединенном Королевстве
+news_event = {
+	id = britain.45
+	title = britain.45.t
+	desc = britain.45.d
+	picture = GFX_event_britain_flag_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.45.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.45.a"
+	}
+}
+	
+# 	Программа выхода из ЕС
+country_event = {
+	id = britain.46
+	title = britain.46.t
+	desc = britain.46.d
+	picture = GFX_event_palata_lordov
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.46.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.46.a"
+		add_political_power = 100
+	}
+}
+	
+# 	Переговоры с Европейской комиссией о выходе из ЕС
+news_event = {
+	id = britain.47
+	title = britain.47.t
+	desc = britain.47.d
+	picture = GFX_event_europarlament_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.47.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.47.a"
+	}
+}
+	
+# Вопрос Северной Ирландии
+country_event = {  
+	id = britain.48
+	title = britain.48.t
+	desc = britain.48.d
+	picture = GFX_event_britain_flag
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = britain.48.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.48.a"
+		ai_chance = { factor = 80 }
+		add_political_power = -150
+		add_stability = -0.05
+		add_to_variable = { money = -25.0 }
+	}
+	option = { 
+		name = britain.48.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.48.b"
+		ai_chance = { factor = 80 }
+		add_political_power = -150
+		add_stability = -0.1
+		IRE = { 
+			transfer_state = 119
+			add_state_core = 119
+		}
+		news_event = { id = britain.49  }
+	}
+	option = { 
+		name = britain.48.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.48.c"
+		ai_chance = { factor = 20 }
+		add_political_power = -300
+		add_stability = -0.2
+	}
+}
+	
+# 	Передать Ирландии
+news_event = {
+	id = britain.49
+	title = britain.49.t
+	desc = britain.49.d
+	picture = GFX_event_britain_flag_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.49.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.49.a"
+	}
+}
+	
+# 	Референдум в Шотландии
+news_event = {
+	id = britain.50
+	title = britain.50.t
+	desc = britain.50.d
+	picture = GFX_event_scotland_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.50.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.50.a"
+	}
+}
+	
+# 	Соединенное Королевство покинуло ЕС
+country_event = {
+	id = britain.51
+	title = britain.51.t
+	desc = britain.51.d
+	picture = GFX_event_britain_brexit_2
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.51.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.51.a"
+		add_political_power = 300
+		add_ideas = ENG_brexit
+		news_event = { id = britain.52 }
+	}
+}
+	
+# 	Соединенное Королевство покинуло ЕС
+news_event = {
+	id = britain.52
+	title = britain.52.t
+	desc = britain.52.d
+	picture = GFX_event_britain_brexit_2_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.52.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.52.a"
+	}
+}
+	
+# 	Великобритания покидает НАТО
+news_event = {
+	id = britain.53
+	title = britain.53.t
+	desc = britain.53.d
+	picture = GFX_event_nato_eng_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.53.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.53.a"
+	}
+}
+	
+# 	НАТО - оплот мировой демократии
+news_event = {
+	id = britain.54
+	title = britain.54.t
+	desc = britain.54.d
+	picture = GFX_event_nato_eng_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.54.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.54.a"
+	}
+}
+	
+#   Привелегии НАТО
+country_event = {
+	id = britain.55
+	title = britain.55.t
+	desc = britain.55.d
+	picture = GFX_event_nato_eng_news
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = britain.55.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.55.a"
+		add_political_power = 10
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+	    }
+    }
+}
+	
+	
+	
+# 	Содружество Наций
+news_event = {
+	id = britain.56
+	title = britain.56.t
+	desc = britain.56.d
+	picture = GFX_event_commonweath_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.56.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.56.a"
+	}
+}
+	
+#Приглашение в Содружество Наций
+country_event = {  
+	id = britain.57
+	title = britain.57.t
+	desc = britain.57.d
+	picture = GFX_event_commonweath_news
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = britain.57.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.57.a"
+		ai_chance = { factor = 80 }
+		add_political_power = 150
+		ENG = { add_to_faction = FROM }
+	}
+	option = { 
+		name = britain.57.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.57.b"
+		ai_chance = { factor = 20 }
+		add_political_power = -100
+		
+	}
+}
+	
+# 	Красная Революция в Великобритании
+news_event = {
+	id = britain.58
+	title = britain.58.t
+	desc = britain.58.d
+	picture = GFX_event_britain_flag_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.58.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.58.a"
+	}
+}
+	
+# 	Экономическая реформа
+country_event = {
+	id = britain.59
+	title = britain.59.t
+	desc = britain.59.d
+	picture = GFX_event_euro
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.59.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.59.a"
+		add_political_power = 100
+		add_stability = 0.1
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+	    }
+	}
+}
+	
+# 	Политическая реформа
+country_event = {
+	id = britain.60
+	title = britain.60.t
+	desc = britain.60.d
+	picture = GFX_event_eng_westminster
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.60.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.60.a"
+		add_political_power = 300
+	}
+}
+	
+# 	Военная реформа
+country_event = {
+	id = britain.61
+	title = britain.61.t
+	desc = britain.61.d
+	picture = GFX_event_eu_army
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.61.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.61.a"
+		add_political_power = 50
+		add_stability = 0.05
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+	    }
+	}
+}
+
+# 	Перенос столицы ЕС
+news_event = {
+	id = britain.62
+	title = britain.62.t
+	desc = britain.62.d
+	picture = GFX_event_britain_brexit_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.62.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.62.a"
+	}
+}
+	
+# 	Европейский Союз утвердил форму государственного правления
+news_event = {
+	id = britain.63
+	title = britain.63.t
+	desc = britain.63.d
+	picture = GFX_event_europarlament_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.63.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.63.a"
+	}
+}
+	
+# 	Европейский Союз утвердил границы союза
+news_event = {
+	id = britain.64
+	title = britain.64.t
+	desc = britain.64.d
+	picture = GFX_event_europarlament_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.64.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.64.a"
+	}
+}
+	
+# 	Европейский Союз утвердил призыв в вооруженные силы
+news_event = {
+	id = britain.65
+	title = britain.65.t
+	desc = britain.65.d
+	picture = GFX_event_europarlament_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.65.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.65.a"
+	}
+}
+	
+# 	Объединение Европейского Союза
+news_event = {
+	id = britain.66
+	title = britain.66.t
+	desc = britain.66.d
+	picture = GFX_event_flag_EU_news
+    
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+	    name = britain.66.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.66.a"		
+	}
+}

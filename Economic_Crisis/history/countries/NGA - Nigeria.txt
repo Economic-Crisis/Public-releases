@@ -1,0 +1,81 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 558
+
+add_ideas = {
+	regional_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 51500 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "NGA_2013" #"_army_minor_2013"
+	
+	add_ideas = {
+		opec_member
+		gaz_trader
+		au_member
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 15
+
+	add_ideas = {
+		au_member
+		presidential_republic
+		federation
+		secular_state
+		mixed_media
+		sharia_law
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		decaying_state
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.4.16"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 57
+		liberalism = 8
+		democratic = 35
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Goodluck Ebele Jonathan"
+		desc = "POLITICS_GOODLUCK_EBELE_JONATHAN_DESC"
+		picture = "gfx/leaders/NGA/portrait_goodluck_ebele_jonathan.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Muhammadu Buhari"
+		desc = "POLITICS_MUHAMMADU_BUHARI_DESC"
+		picture = "gfx/leaders/NGA/portrait_muhammadu_buhari.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+

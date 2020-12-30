@@ -1,0 +1,59 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+
+capital = 227
+
+# де-юре не признана никем
+2014.5.24 = {
+	add_ideas = {
+		mixed_schools
+		not_recognized_country
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5 }
+	oob = "NRU_2013_army"
+	load_oob = "UKR_tech_2013" 	
+	add_political_power = 0
+	set_convoys = 0
+	
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2014.2.14"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 45
+		fascism = 55
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Aleksandr Zaharchenko"
+		desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+		picture = "gfx/leaders/DON/portrait_aleksandr_zaharchenko.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Oleg Tsaryov"
+		desc = "POLITICS_OLEG_TSARYOV_DESC"
+		picture = "gfx/leaders/NRU/portrait_oleg_tsaryov.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+}
+

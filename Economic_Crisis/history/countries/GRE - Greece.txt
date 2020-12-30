@@ -1,0 +1,108 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 47
+
+add_ideas = eu_member
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 23990 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "GRE_2013"
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		NPT
+		average_terrorism
+		integration_in_nato
+		women_in_service
+	}
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.6.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 46
+		liberalism = 2
+		democratic = 31
+		neutrality = 9
+		fascism = 7
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Antonis Samaras"
+		desc = "POLITICS_ANTONIS_SAMARAS_DESC"
+		picture = "gfx/leaders/GRE/portrait_antonis_samaras.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Alexis Tsipras"
+		desc = "POLITICS_ALEXIS_TSIPRAS_DESC"
+		picture = "gfx/leaders/GRE/portrait_alexis_tsipras.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Karolos Papoulias"
+		desc = "POLITICS_KAROLOS_PAPOULIAS_DESC"
+		picture = "gfx/leaders/GRE/portrait_karolos_papoulias.dds"
+		ideology = social_liberalism #president from 2005 to 2015
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Nikolaos Michaloliakos"
+		desc = "POLITICS_NIKOLAOS_MICHALOLIAKOS_DESC"
+		picture = "gfx/leaders/GRE/portrait_nikolaos_michaloliakos.dds"
+		ideology = classical_fascism
+		traits = { trait_classical_fascism }
+	}
+
+	create_country_leader = {
+		name = "Aleka Papariga"
+		desc = "POLITICS_ALEKA_PAPARIGA_DESC"
+		picture = "gfx/leaders/GRE/portrait_aleka_papariga.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Panos Kammenos"
+		desc = "POLITICS_PANOS_KAMMENOS_DESC"
+		picture = "gfx/leaders/GRE/portrait_panos_kammenos.dds"
+		ideology = euroscepticism
+		traits = { trait_euroscepticism }
+	}
+}

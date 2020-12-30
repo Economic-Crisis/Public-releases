@@ -1,0 +1,958 @@
+#List of filters / Список фильтров
+#FOCUS_FILTER_DOMESTIC_POLICY - domestic policy (внутренняя политика)
+#FOCUS_FILTER_FOREIGN_POLICY - foreign policy (внешняя политика)
+#FOCUS_FILTER_INDUSTRY - industry (промышленность)
+#FOCUS_FILTER_RESEARCH - research (исследования)
+#FOCUS_FILTER_ARMY - army (армия)
+#FOCUS_FILTER_NAVY - navy (флот)
+#FOCUS_FILTER_AVIATION - aviation (авиация)
+#FOCUS_FILTER_ECONOMIC - economy (экономика)
+
+#	shared_focus = {
+#		id = CHI_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#		cost = 1
+#		ai_will_do = { factor = 1 }
+#		available = {	}
+#		bypass = {	}
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#		complete_tooltip = {	}
+#		completion_reward = {	}
+#	}
+	#	Standart military focuses
+	shared_focus = {
+		id = shared_army 
+		icon = GFX_goal_generic_military_sphere
+		x = 40
+		y = 0
+		cost = 70
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION}
+	}
+    shared_focus = {
+		id = shared_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = shared_army }
+		relative_position_id = shared_army
+		x = -4
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = shared_army_effort }
+		relative_position_id = shared_army_effort
+		x = -1
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = shared_army_effort }
+		bypass = { has_tech = tech_motorized_infantry }
+		relative_position_id = shared_army_effort
+		x = 1
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = shared_army_effort }
+		relative_position_id = shared_army_effort
+		x = 0
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY}
+	}
+
+	shared_focus = {
+		id = shared_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = shared_equipment_effort }
+		relative_position_id = shared_army_effort
+		x = -1
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = shared_motorization_effort }
+		relative_position_id = shared_army_effort
+		x = 1
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_motorized_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = shared_doctrine_effort }
+		relative_position_id = shared_army_effort
+		x = 0
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY}
+	}
+	shared_focus = {
+		id = shared_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = shared_doctrine_effort_2 }
+		relative_position_id = shared_army_effort
+		x = 0
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY}
+	}
+	shared_focus = {
+		id = shared_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = shared_equipment_effort_2 }
+		relative_position_id = shared_army_effort
+		x = -1
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_equipment_effort_4
+		icon = GFX_goal_rus_modern_weapon_2
+		prerequisite = { focus = shared_equipment_effort_3 }
+		relative_position_id = shared_army_effort
+		x = -1
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = shared_mechanization_effort }
+		relative_position_id = shared_army_effort
+		x = 1
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_armor_effort_2
+		icon = GFX_goal_rus_developing_armored_corps_2
+		prerequisite = { focus = shared_armor_effort }
+		relative_position_id = shared_army_effort
+		x = 1
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = shared_equipment_effort_4 }
+		prerequisite = { focus = shared_doctrine_effort_3 }
+		prerequisite = { focus = shared_armor_effort_2 }
+		relative_position_id = shared_army_effort
+		x = 0
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_paratroopers
+				technology = tech_marines
+				#technology = EC_tech_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_paratroopers_divisions
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = shared_special_forces }
+		relative_position_id = shared_army_effort
+		x = -1
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+				# category = cat_paratroopers
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_special_forces_2
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = shared_special_forces }
+		relative_position_id = shared_army_effort
+		x = 0
+		y = 10
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+				# category = cat_special_forces 
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_marines_divisions
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = shared_special_forces }
+		relative_position_id = shared_army_effort
+		x = 1
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+				# category = cat_marines
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_aviation_effort
+		prerequisite = { focus = shared_army }
+		icon = GFX_goal_generic_build_airforce
+		relative_position_id = shared_army
+		x = 0
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_AVIATION}
+	}
+	shared_focus = {
+		id = shared_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = shared_aviation_effort }
+		mutually_exclusive = { focus = shared_bomber_focus }
+		relative_position_id = shared_aviation_effort
+		x = -1
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = shared_aviation_effort }
+		mutually_exclusive = { focus = shared_fighter_focus }
+		relative_position_id = shared_aviation_effort
+		x = 1
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category =  cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = shared_bomber_focus focus = shared_fighter_focus }
+		relative_position_id = shared_aviation_effort
+		x = 0
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 3 }
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_AVIATION}
+	}
+	shared_focus = {
+		id = shared_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = shared_aviation_effort_2 }
+		prerequisite = { focus = shared_motorization_effort }
+		relative_position_id = shared_aviation_effort
+		x = -1
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = aircraft_rocket_technologies
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = shared_aviation_effort_2 }
+		relative_position_id = shared_aviation_effort
+		x = 0
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = shared_aviation_effort_2 }
+		prerequisite = { focus = shared_flexible_navy }
+		relative_position_id = shared_aviation_effort
+		x = 1
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_naval_effort
+		prerequisite = { focus = shared_army }
+		icon = GFX_goal_generic_construct_naval_dockyard
+		relative_position_id = shared_army
+		x = 4
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {	is_coastal = yes }
+				}
+				random_owned_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_NAVY}
+	}
+	shared_focus = {
+		id = shared_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = shared_naval_effort }
+		mutually_exclusive = { focus = shared_large_navy }
+		relative_position_id = shared_naval_effort
+		x = -1
+		y = 1
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = shared_naval_effort }
+		mutually_exclusive = { focus = shared_flexible_navy }
+		relative_position_id = shared_naval_effort
+		x = 1
+		y = 1
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	shared_focus = {
+		id = shared_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		relative_position_id = shared_naval_effort
+		x = -1
+		y = 2
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+	shared_focus = {
+		id = shared_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = shared_large_navy focus = shared_flexible_navy }
+		relative_position_id = shared_naval_effort
+		x = 1
+		y = 2
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+
+	shared_focus = {
+		id = shared_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = shared_submarine_effort }
+		relative_position_id = shared_naval_effort
+		x = -1
+		y = 3
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+	shared_focus = {
+		id = shared_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = shared_cruiser_effort }
+		relative_position_id = shared_naval_effort
+		x = 1
+		y = 3
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+			}
+		}
+	}    

@@ -1,0 +1,132 @@
+ideologies = {
+
+	reformism = { 
+	
+		# Реформизм
+		# Reformism
+	
+		types = {
+			# Социал-демократия
+			# Social Democracy
+			social_democracy = {
+			}
+	
+			# Демократический социализм
+			# Democratic Socialism
+			democratic_socialism = {
+			}
+			
+			# Скандинавская модель (Североевропейская модель или Североевропейская социал-демократия)
+			# Nordic Model (Scandinavian Social Democracy)
+			nordic_model = {
+				can_be_randomly_selected = no
+			}
+			
+			# Реформистская монархия (для партий монархистов)
+			# Reformist Monarchism 
+			reformist_royalism = {
+			    can_be_randomly_selected = no
+			}
+			
+			# Религиозный социализм
+			# Religious Socialism
+			religious_socialism = {
+			}
+			
+			# Зеленая политика
+			# Green Politics
+			green_politics = {
+			}
+			
+			# Прогрессивизм
+			# Progressivism
+			#progressivism = {
+			#}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_REFORMISM_1"
+			"FACTION_NAME_REFORMISM_2"
+			"FACTION_NAME_REFORMISM_3"
+			"FACTION_NAME_REFORMISM_4"
+			"FACTION_NAME_REFORMISM_5"
+			"FACTION_NAME_REFORMISM_6"
+		}
+		
+		color = { 204 51 153 }
+		
+		rules = {
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = no
+			# может инициировать свержение правительства в другой стране
+			can_force_government = no
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = no
+			# может иметь страны-марионетки
+			can_puppet = no
+			# может понижать напряженность (?)
+			can_lower_tension = no
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = yes
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = yes
+		}
+
+		# Может создавать правительство в изгнании
+		can_host_government_in_exile = yes
+		
+		# Влияние участия страны в войне на  международную напряженность (?)
+		war_impact_on_world_tension = -1.0			# peacemaker
+		# war_impact_on_world_tension = 0				# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		# war_impact_on_world_tension = 0.4			# danger
+		# war_impact_on_world_tension = 0.75		# aggresive		
+		# war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		faction_impact_on_world_tension = -0.1		# гарант
+		# faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		# faction_impact_on_world_tension = 0.5		# агрессивный
+		# faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# Постепенное достижение ценностей коммунизма
+		# Безусловная ценность человеческой личности
+		# Изначальное равенство перед законом
+		# Неотчуждаемые права
+		# Договорной характер отношений индивида и государства
+		# Верховенство закона как инструмента социального контроля
+		# Защищенность частной жизни человека и свободы его действия
+		# Диалог между слоями общества, посредник - государство
+		# Широкая социальная поддержка населения, уменьшение социального разрыва
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.25
+			# влиянеие присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.2
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.2
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.2
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 0.4
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 0.25# !Вырезано в связи с устранением данного модификатора в игре!
+			# стоимость политической власти при аннексии
+			annex_cost_factor = 0.5
+			# стоимость политической власти при создании марионетки
+			# puppet_cost_factor = 0
+			# уменьшение промышленности в социал-демократических странах
+			industrial_capacity_factory = -0.5 
+		}
+		
+		faction_modifiers = {
+			# plus 50% trade opinion
+			faction_trade_opinion_factor = 0.30
+		}
+		
+		# uses the democratic AI behaviour
+		ai_democratic = yes
+		can_collaborate = yes
+	}
+}

@@ -1,0 +1,83 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 749
+
+	add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1295 }
+	
+	load_oob = "_tech_minor_2013"
+	oob = "CHA_2013"
+
+	set_convoys = 15
+	set_stability = 0.5
+	add_political_power = 0
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.4.10" #for 2016 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 9
+		liberalism = 10
+		democratic = 0
+		neutrality = 81
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Idriss Deby"
+		desc = ""
+		picture = "gfx/leaders/CHA/portrait_idriss_deby.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+
+	create_country_leader = {
+		name = "Saleh Kebzabo"
+		desc = ""
+		picture = "gfx/leaders/CHA/portrait_saleh_kebzazo.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Fidèle Moungar"
+		desc = ""
+		picture = "gfx/leaders/CHA/portrait_fidele_moungar.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+}
+

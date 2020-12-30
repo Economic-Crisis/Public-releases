@@ -1,0 +1,47 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+
+capital = 122
+add_ideas = mixed_schools
+2013.11.1 = {
+	set_variable = { budget_last_year = 3530 }
+	oob = "WLS_2013"
+	load_oob = "_tech_nato_minor_2013"
+
+	set_stability = 0.75
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 25
+		reformism = 50
+		liberalism = 0
+		democratic = 15
+		neutrality = 9
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Leanne Wood"
+		desc = ""
+		picture = "gfx/leaders/WLS/portrait_leanne_wood.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+

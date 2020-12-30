@@ -1,0 +1,59 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 821
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 00683 }
+
+	load_oob = "_tech_insurgents_2013" 
+	oob = "ING_2013"
+
+	
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 5
+		democratic = 15
+		neutrality = 75
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Makhmud-Ali Kalimatov"
+		desc = ""
+		picture = "gfx/leaders/ING/portrait_makhmud-ali_kalimatov.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy}
+	}
+
+	create_country_leader = {
+		name = "Yunus-Bek Yevkurov"
+		desc = ""
+		picture = "gfx/leaders/ING/portrait_yunus-bek_yevkurov.dds"
+		ideology = sovereign_democracy
+		expire = "2019.6.26"
+		traits = { trait_sovereign_democracy }
+	}
+}
+

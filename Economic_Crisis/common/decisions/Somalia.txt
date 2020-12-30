@@ -1,0 +1,377 @@
+reincorporated_somalia = {
+
+    som_incorporate_to_federal_government = {
+		target_trigger = {
+			FROM = { 
+				has_country_flag = som_congress
+				is_in_faction = no	 
+			}	
+		}
+	    visible = {
+			FROM = { has_completed_focus = SOM_somalian_congress }
+			FROM = { exists = yes }
+			NOT = {
+				FROM = { is_puppet_of = SOM }
+				has_war_with = FROM
+			}				
+		}
+		available = {
+			NOT = {
+				FROM = { is_puppet_of = SOM }
+				has_war_with = FROM
+			}	
+		}
+		days_remove = 60
+		cost = 100
+		ai_will_do = { factor = 100 }
+		remove_effect = { puppet = FROM }	
+	}
+	
+	som_join_central_government = {
+		target_trigger = {
+			FROM = { has_country_flag = som_congress }
+			FROM = { is_puppet_of = SOM }			
+		}
+	    visible = {
+			FROM = { has_completed_focus = SOM_great_compromiss }
+			FROM = { exists = yes }			
+		}
+		available = { NOT = { has_war_with = FROM } }
+
+		days_remove = 60
+		cost = 200
+		ai_will_do = { factor = 100 }
+
+		remove_effect = { 
+			annex_country = { target = FROM transfer_troops = yes }
+		}
+	}
+	
+	all_somalia_elections = {
+
+		icon = generic_political_discourse
+
+		available = {
+			NOT = { country_exists = JUB }
+			NOT = { country_exists = HAH }
+			NOT = { country_exists = GAS }
+			NOT = { country_exists = PSS }
+			NOT = { country_exists = KSS }
+			NOT = { country_exists = SML }
+			NOT = { country_exists = AWD }
+		}
+
+		visible = {
+		    original_tag = SOM
+			has_completed_focus = SOM_stabilization_start
+		}
+		
+		remove_trigger = {
+			
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 30
+		cost = 25
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {		  
+			country_event = somalia.2
+		}		
+		
+	}
+}
+
+army = {	
+	som_expropriation_weapon = {
+		icon = generic_political_discourse
+		
+		available = { 
+		    has_completed_focus = SOM_confiscate_weapon
+			NOT = { has_completed_focus = SOM_stabilization_start }
+		}
+		
+		visible = {
+		    original_tag = SOM
+			has_completed_focus = SOM_confiscate_weapon
+		}
+		
+		days_remove = 21
+		cost = 50
+		ai_will_do = { factor = 0 }
+		
+		remove_effect = { 
+			add_equipment_to_stockpile = {
+				type = army_salw_equipment_1
+				amount = 200
+			}
+		}
+	}
+}
+
+resources_extract = {
+
+    mogadisho_oil = { #Mogadisho
+		
+		icon = oil
+
+		available = {
+			has_completed_focus = SOM_oil_recognize
+			num_of_civilian_factories_available_for_projects > 7
+			owns_state = 559
+			controls_state = 559
+		}
+
+		highlight_states = {
+			state = 559
+		}
+
+		allowed = { original_tag = SOM }
+
+		visible = {
+            has_completed_focus = SOM_oil_recognize
+			owns_state = 559
+			controls_state = 559
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 240
+
+		modifier = {
+			civilian_factory_use = 8
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			559 = {
+				add_resource = {
+					type = oil
+					amount = 24
+				}
+				add_resource = {
+					type = energy_resource
+					amount = 8
+				}
+			}
+		}
+	}
+	puntland_oil = { #Puntland
+		
+		icon = oil
+		
+		allowed = { original_tag = SOM }
+
+		available = {
+			has_completed_focus = SOM_oil_recognize
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 990
+			controls_state = 990
+		}
+
+		highlight_states = {
+			state = 990
+		}
+
+		visible = {
+            has_completed_focus = SOM_oil_recognize
+			owns_state = 990
+			controls_state = 990
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 160
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			990 = {
+				add_resource = {
+					type = oil
+					amount = 15
+				}
+				add_resource = {
+					type = energy_resource
+					amount = 5
+				}
+			}
+		}
+	}
+	somaliland_oil = { #Somaliland
+		
+		icon = oil
+		
+		allowed = { original_tag = SOM }
+
+		available = {
+			has_completed_focus = SOM_oil_recognize
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 269
+			controls_state = 269
+		}
+
+		highlight_states = {
+			state = 269
+		}
+
+		visible = {
+            has_completed_focus = SOM_oil_recognize
+			owns_state = 269
+			controls_state = 269
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 260
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			269 = {
+				add_resource = {
+					type = oil
+					amount = 30
+				}
+				add_resource = {
+					type = energy_resource
+					amount = 10
+				}
+			}
+		}
+	}
+	galmudug_uran = { #Galmudug
+		
+		icon = steel
+		
+		allowed = { original_tag = SOM }
+
+		available = {
+			has_completed_focus = SOM_natural_resources
+			num_of_civilian_factories_available_for_projects > 14
+			owns_state = 991
+			controls_state = 991
+		}
+
+		highlight_states = {
+			state = 991
+		}
+
+		visible = {
+            has_completed_focus = SOM_natural_resources
+			owns_state = 991
+			controls_state = 991
+		}
+
+		fire_only_once = yes
+
+		cost = 500
+		days_remove = 360
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			991 = {
+				add_resource = {
+					type = uran
+					amount = 30
+				}
+			}
+		}
+	}
+	south_west_iron_ore = { #Jubaland-Barawa
+		
+		icon = steel
+		
+		allowed = { original_tag = SOM }
+
+		available = {
+			has_completed_focus = SOM_natural_resources
+			num_of_civilian_factories_available_for_projects > 11
+			owns_state = 994
+			controls_state = 994
+			owns_state = 993
+			controls_state = 993
+			owns_state = 992
+			controls_state = 992
+		}
+
+		highlight_states = {
+		    state = 992
+			state = 993
+			state = 994
+		}
+
+		visible = {
+		    has_completed_focus = SOM_natural_resources
+            owns_state = 994
+			controls_state = 994
+			owns_state = 993
+			controls_state = 993
+			owns_state = 992
+			controls_state = 992
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+		days_remove = 200
+
+		modifier = {
+			civilian_factory_use = 12
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			992 = {
+				add_resource = {
+					type = iron_ore
+					amount = 23
+				}
+			}
+			993 = {
+				add_resource = {
+					type = iron_ore
+					amount = 12
+				}
+			}
+			994 = {
+				add_resource = {
+					type = iron_ore
+					amount = 15
+				}
+			}
+		}
+	}
+}

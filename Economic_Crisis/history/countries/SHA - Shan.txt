@@ -1,0 +1,67 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 854
+
+2013.11.1 = {
+
+	load_oob = "_tech_minor_2013"
+	oob = "SHA_2013"
+
+	add_ideas = {
+		not_recognized_country
+		single-party_state
+		unitary_state
+		limitation_of_liberties
+		mixed_schools
+		high_terrorism
+		high_corruption
+	}
+
+	add_political_power = 0
+	set_country_flag = pai_nondem_authoritarian
+
+	declare_war_on = { target = MYN type = civil_war }
+	declare_war_on = { target = WAS type = civil_war }
+	
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.1.1"
+		election_frequency = 72
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 100
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Yawd Serk"
+		picture = "gfx/leaders/SHA/portrait_yawd_serk.dds"
+		ideology = junta
+		traits = { trait_junta }
+	}
+
+	create_country_leader = {
+		name = "Sai Ai Pao"
+		picture = "gfx/leaders/SHA/portrait_sai_ai_pao.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Khun Htun Oo"
+		picture = "gfx/leaders/SHA/portrait_khun_htun_oo.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+}

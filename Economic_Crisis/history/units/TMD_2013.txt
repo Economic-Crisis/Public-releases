@@ -1,0 +1,45 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Motostrelkovaya Brigada"			# Rifle Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "TMD"
+		}
+		requested_factories = 1
+		progress = 0.52
+		efficiency = 100
+	}
+}
+
+units = {
+	division= {
+		name = "Motostrelkovaya Brigada 1."
+		location = 741 #
+		division_template = "Motostrelkovaya Brigada"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.4
+	}
+	division= {
+		name = "Motostrelkovaya Brigada 2."
+		location = 9576 # 
+		division_template = "Motostrelkovaya Brigada"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.4
+	}
+}

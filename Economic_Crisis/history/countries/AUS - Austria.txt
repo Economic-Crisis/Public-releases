@@ -1,0 +1,218 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 4
+
+# Декларация о независимости Австрии, 1955 г.
+add_ideas = neutrality_idea
+
+	add_ideas = {
+		NPT
+		eu_member
+	}
+
+	# laws
+	add_ideas = {
+		parliamentary_republic
+		federation
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		mandatory_urgent_service 
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		state-owned_enterprise
+		balanced_industry
+		civilian_economy
+		high_taxes
+		total_social_security
+		pensions
+		low_terrorism
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 42820 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "AUS_2013"
+
+	add_political_power = 0
+
+	set_convoys = 30
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.4.25"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 40
+		liberalism = 0
+		democratic = 35
+		neutrality = 10
+		fascism = 15
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Alexander Van der Bellen"
+		desc = "POLITICS_ALEXANDER_VAN_DER_BELLEN_DESC"
+		picture = "gfx/leaders/AUS/portrait_alexander_van_der_bellen.dds"
+		ideology = green_politics
+		traits = { trait_green_politics }
+	}
+	
+	create_country_leader = {
+		name = "Heinz Fischer"
+		desc = "POLITICS_HEINZ_FISCHER_DESC"
+		picture = "gfx/leaders/AUS/portrait_heinz_fischer.dds"
+		# конец срока
+		expire = "2016.7.8"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Michael Spindelegger"
+		desc = "POLITICS_MICHAEL_SPINDELEGGER_DESC"
+		picture = "gfx/leaders/AUS/portrait_michael_spindeleggerr.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_field_marshal = {
+		name = "Edmund Entacher"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_edmund_entacher.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Othmar Commenda"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_othmar_commenda.dds"
+		traits = { trait_mountaineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Peter Grunwald"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_peter_grunwald.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Christian Habersatter"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_christian_habersatter.dds"
+		traits = { hill_fighter }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Christian Riener"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_christian_riener.dds"
+		traits = { trickster }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Jurgen Worgotter"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_jurgen_worgotter.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Heinz Hufler"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_heinz_hufler.dds"
+		traits = { winter_specialist }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Norbert Huber"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_norbert_huber.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Bruno Hofbauer"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_bruno_hofbauer.dds"
+		traits = { trait_mountaineer }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Karl Pronhagl"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_karl_pronhagl.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Anton Wessely"
+		portrait_path = "gfx/leaders/AUS/portrait_aus_general_anton_wessely.dds"
+		traits = { ranger }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+}
+
+2016.7.8 = {
+	set_party_name = { 
+	    ideology = reformism 
+	    long_name = AUS_reformism_2016_party_long
+	    name = AUS_reformism_2016_party 
+	}
+}

@@ -1,0 +1,434 @@
+switch_to_empty = {
+	### Christianity ###
+	if = { 
+		limit = { has_idea = christianity_idea_lvl_1 }
+		remove_ideas = { christianity_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = christianity_idea_lvl_2 }
+		remove_ideas = { christianity_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = christianity_idea_lvl_3 }
+		remove_ideas = { christianity_idea_lvl_3 }
+	}
+	### Islam ###
+	else_if = { 
+		limit = { has_idea = islam_idea_lvl_1 }
+		remove_ideas = { islam_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = islam_idea_lvl_2 }
+		remove_ideas = { islam_idea_lvl_2 }
+	}
+	else_if = { 
+		limit = { has_idea = islam_idea_lvl_3 }
+		remove_ideas = { islam_idea_lvl_3 }
+	}
+	###Hinduism###
+	else_if = { 
+		limit = { has_idea = hinduism_idea_lvl_1 }
+		remove_ideas = { hinduism_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = hinduism_idea_lvl_2 }
+		remove_ideas = { hinduism_idea_lvl_2 }
+	}
+	else_if = { 
+		limit = { has_idea = hinduism_idea_lvl_3 }
+		remove_ideas = { hinduism_idea_lvl_3 }
+	}
+	###Judaism###
+	else_if = { 
+		limit = { has_idea = judaism_idea_lvl_1 }
+		remove_ideas = { judaism_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = judaism_idea_lvl_2 }
+		remove_ideas = { judaism_idea_lvl_2 }
+	}
+	else_if = { 
+		limit = { has_idea = judaism_idea_lvl_3 }
+		remove_ideas = { judaism_idea_lvl_3 }
+	}
+	###Buddhism###
+	else_if = { 
+		limit = { has_idea = buddhism_idea_lvl_1 }
+		remove_ideas = { buddhism_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = buddhism_idea_lvl_2 }
+		remove_ideas = { buddhism_idea_lvl_2 }
+	}
+	else_if = { 
+		limit = { has_idea = buddhism_idea_lvl_3 }
+		remove_ideas = { buddhism_idea_lvl_3 }
+	}
+	###sintoism###
+	else_if = { 
+		limit = { has_idea = sintoism_idea_lvl_1 }
+		remove_ideas = { sintoism_idea_lvl_1 }
+	}
+	else_if = { 
+		limit = { has_idea = sintoism_idea_lvl_2 }
+		remove_ideas = { sintoism_idea_lvl_2 }
+	}
+	else_if = { 
+		limit = { has_idea = sintoism_idea_lvl_3 }
+		remove_ideas = { sintoism_idea_lvl_3 }
+	}
+}
+
+switch_to_christianity_lvl_1 = {
+	if = { 
+		limit = { has_idea = christianity_idea_lvl_2 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_2 add_idea = christianity_idea_lvl_1 }
+	}
+	else_if = {
+		limit = { has_idea = christianity_idea_lvl_3 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_3 add_idea = christianity_idea_lvl_1 }
+		
+	}
+	#else_if = {
+		add_ideas = { christianity_idea_lvl_1 }
+	#}
+}
+
+
+switch_to_christianity_lvl_2 = {
+	if = {
+		limit = { has_idea = christianity_idea_lvl_1 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_1 add_idea = christianity_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = christianity_idea_lvl_3 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_3 add_idea = christianity_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { christianity_idea_lvl_2 }
+	#}	
+}
+
+switch_to_christianity_lvl_3 = {
+	if = {
+		limit = { has_idea = christianity_idea_lvl_2 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_2 add_idea = christianity_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = christianity_idea_lvl_1 }
+		swap_ideas = { remove_idea = christianity_idea_lvl_1 add_idea = christianity_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { christianity_idea_lvl_3 }
+	#}
+}
+
+
+###Buddhism###
+switch_to_buddhism_lvl_1 = {
+	if = {
+		limit = { has_idea = buddhism_idea_lvl_2 }
+		swap_ideas = { remove_idea = buddhism_idea_lvl_2 add_idea = buddhism_idea_lvl_1 }
+	}
+	else_if = {
+				limit = { has_idea = buddhism_idea_lvl_3 }
+				swap_ideas = { remove_idea = buddhism_idea_lvl_3 add_idea = buddhism_idea_lvl_1 }
+	}
+	#else_if = {
+		add_ideas = { buddhism_idea_lvl_1 } 
+	#}
+}
+
+switch_to_buddhism_lvl_2 = {
+	if = {
+		limit = { has_idea = buddhism_idea_lvl_1 }
+		swap_ideas = { remove_idea = buddhism_idea_lvl_1 add_idea = buddhism_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = buddhism_idea_lvl_3 }
+		swap_ideas = { remove_idea = buddhism_idea_lvl_3 add_idea = buddhism_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { buddhism_idea_lvl_2 } 
+	#}
+}
+
+switch_to_buddhism_lvl_3 = {
+	if = {
+		limit = { has_idea = buddhism_idea_lvl_2 }
+		swap_ideas = { remove_idea = buddhism_idea_lvl_2 add_idea = buddhism_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = buddhism_idea_lvl_1 }
+		swap_ideas = { remove_idea = buddhism_idea_lvl_1 add_idea = buddhism_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { buddhism_idea_lvl_3 }
+	#}
+}
+
+
+###Islam###
+switch_to_islam_lvl_1 = {
+	if = {
+		limit = { has_idea = islam_idea_lvl_2 }
+		swap_ideas = { remove_idea = islam_idea_lvl_2 add_idea = islam_idea_lvl_1 }
+	}
+	else_if = {
+		limit = { has_idea = islam_idea_lvl_3 }
+		swap_ideas = { remove_idea = islam_idea_lvl_3 add_idea = islam_idea_lvl_1 }
+	}
+	#else_if = {
+		add_ideas = { islam_idea_lvl_1 }
+	#}
+}
+
+switch_to_islam_lvl_2 = {
+	if = {
+		limit = { has_idea = islam_idea_lvl_1 }
+		swap_ideas = { remove_idea = islam_idea_lvl_1 add_idea = islam_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = islam_idea_lvl_3 }
+		swap_ideas = { remove_idea = islam_idea_lvl_3 add_idea = islam_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { islam_idea_lvl_2 } 
+	#}
+}
+
+switch_to_islam_lvl_3 = {
+	if = {
+		limit = { has_idea = islam_idea_lvl_2  }
+		swap_ideas = { remove_idea = islam_idea_lvl_2 add_idea = islam_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = islam_idea_lvl_1 }
+		swap_ideas = { remove_idea = islam_idea_lvl_1 add_idea = islam_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { islam_idea_lvl_3 }
+	#}
+}
+
+### JUDAISM ###
+
+switch_to_judaism_lvl_1 = {
+	if = {
+		limit = { has_idea = judaism_idea_lvl_2 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_2 add_idea = judaism_idea_lvl_1 }
+	}
+	else_if = {
+		limit = { has_idea = judaism_idea_lvl_3 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_3 add_idea = judaism_idea_lvl_1 }
+	}
+	#else_if = {
+		add_ideas = { judaism_idea_lvl_1 } 
+	#}
+}
+
+switch_to_judaism_lvl_2 = {
+	if = {
+		limit = { has_idea = judaism_idea_lvl_1 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_1 add_idea = judaism_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = judaism_idea_lvl_3 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_3 add_idea = judaism_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { judaism_idea_lvl_2 }
+	#}
+}
+
+switch_to_judaism_lvl_3 = {
+	if = {
+		limit = { has_idea = judaism_idea_lvl_2 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_2 add_idea = judaism_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = judaism_idea_lvl_1 }
+		swap_ideas = { remove_idea = judaism_idea_lvl_1 add_idea = judaism_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { judaism_idea_lvl_3 }
+	#}
+}
+
+### HINDUISM ###
+
+switch_to_hinduism_lvl_1 = {
+	if = {
+		limit = { has_idea = hinduism_idea_lvl_2 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_2 add_idea = hinduism_idea_lvl_1 }
+	}
+	else_if = {
+		limit = { has_idea = hinduism_idea_lvl_3 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_3 add_idea = hinduism_idea_lvl_1 }
+	}
+	#else_if = {
+		add_ideas = { hinduism_idea_lvl_1 }
+	#}
+}
+
+switch_to_hinduism_lvl_2 = {
+	if = {
+		limit = { has_idea = hinduism_idea_lvl_1 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_1 add_idea = hinduism_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = hinduism_idea_lvl_3 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_3 add_idea = hinduism_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { hinduism_idea_lvl_2 } 
+	#}
+}
+
+switch_to_hinduism_lvl_3 = {
+	if = {
+		limit = { has_idea = hinduism_idea_lvl_2 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_2 add_idea = hinduism_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = hinduism_idea_lvl_1 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_1 add_idea = hinduism_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { hinduism_idea_lvl_3 } 
+	#}
+}
+
+### sintoism ###
+
+switch_to_sintoism_lvl_1 = {
+	if = {
+		limit = { has_idea = sintoism_idea_lvl_2 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_2 add_idea = sintoism_idea_lvl_1 }
+	}
+	else_if = {
+		limit = { has_idea = sintoism_idea_lvl_3 }
+		swap_ideas = { remove_idea = sintoism_idea_lvl_3 add_idea = sintoism_idea_lvl_1 }
+	}
+	#else_if = {
+		add_ideas = { sintoism_idea_lvl_1 }
+	#}
+}
+
+switch_to_sintoism_lvl_2 = {
+	if = {
+		limit = { has_idea = sintoism_idea_lvl_1 }
+		swap_ideas = { remove_idea = sintoism_idea_lvl_1 add_idea = sintoism_idea_lvl_2 }
+	}
+	else_if = {
+		limit = { has_idea = sintoism_idea_lvl_3 }
+		swap_ideas = { remove_idea = hinduism_idea_lvl_3 add_idea = sintoism_idea_lvl_2 }
+	}
+	#else_if = {
+		add_ideas = { sintoism_idea_lvl_2 } 
+	#}
+}
+
+switch_to_sintoism_lvl_3 = {
+	if = {
+		limit = { has_idea = sintoism_idea_lvl_2 }
+		swap_ideas = { remove_idea = sintoism_idea_lvl_2 add_idea = sintoism_idea_lvl_3 }
+	}
+	else_if = {
+		limit = { has_idea = sintoism_idea_lvl_1 }
+		swap_ideas = { remove_idea = sintoism_idea_lvl_1 add_idea = sintoism_idea_lvl_3 }
+	}
+	#else_if = {
+		add_ideas = { sintoism_idea_lvl_3 } 
+	#}
+}
+
+add_religious_opinion_modifiers = {
+	every_country = {		
+		if = { limit = { has_main_religion = yes }
+			if = { 
+				limit = { ROOT = { christianity_is_main = yes } christianity_is_main = yes }		
+				#AND = {
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "christianity_is_main"
+				#}
+			}
+			else_if = {
+				limit = { ROOT = { islam_is_main = yes } islam_is_main = yes }
+				#AND = { 
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "islam_is_main"
+			#	}
+			}
+			else_if = {
+				limit = { ROOT = { buddhism_is_main = yes } buddhism_is_main = yes }	
+				#AND = { 		
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "buddhism_is_main"
+				#}
+			}
+			else_if = {
+				limit = { ROOT = { judaism_is_main = yes } judaism_is_main = yes }
+				#AND = { 				
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "judaism_is_main"
+				#}
+			}
+			else_if = {
+				limit = { ROOT = { hinduism_is_main = yes } hinduism_is_main = yes }
+				#AND = { 				
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "hinduism_is_main"
+				#}
+			}
+			else_if = {
+				limit = { ROOT = { sintoism_is_main = yes } sintoism_is_main = yes } 	
+				#AND = { 				
+					add_opinion_modifier = { target = ROOT modifier = same_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = same_religion } }
+					log = "sintoism_is_main"
+				#}
+			}
+			#else_if = {
+			#	AND = {	
+					add_opinion_modifier = { target = ROOT modifier = another_religion }
+					ROOT = { add_opinion_modifier = { target = PREV modifier = another_religion } }
+			#	}
+			#}
+		}
+		#else_if = {
+			remove_opinion_modifier = { target = ROOT modifier = another_religion }
+			#AND = {
+				ROOT = { remove_opinion_modifier = { target = PREV modifier = another_religion } }
+				remove_opinion_modifier = { target = ROOT modifier = same_religion }
+				ROOT = { remove_opinion_modifier = { target = PREV modifier = same_religion } }
+			#}
+		#}
+	}
+}
+
+remove_religious_opinion_modifiers = {
+	every_country = {
+		if = {
+			limit = { has_opinion_modifier = another_religion }
+			#AND = {
+				remove_opinion_modifier = { target = ROOT modifier = another_religion }
+				ROOT = { remove_opinion_modifier = { target = PREV modifier = another_religion } }
+			#}
+			else = {
+				if = {
+					limit = { has_opinion_modifier = same_religion }
+					#AND = {
+						remove_opinion_modifier = { target = ROOT modifier = same_religion }
+						ROOT = { remove_opinion_modifier = { target = PREV modifier = same_religion } }
+					#}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,136 @@
+﻿add_namespace = calling_wave
+	
+country_event = {
+	id = calling_wave.1
+	title = calling_wave.1.t
+	desc = calling_wave.1.d
+	picture = GFX_event_protest_calling_wave1
+	is_triggered_only = yes
+	trigger = {
+		has_war = yes
+		has_stability < 0.3
+		has_offensive_war = yes
+	}
+	
+	option = {
+		name = calling_wave.1.a
+		activate_decision = calling_wave19
+		clr_country_flag = calling_wave_wave20
+		clr_country_flag = calling_wave_wave21
+		clr_country_flag = calling_wave_wave22
+		clr_country_flag = calling_wave_wave23
+		clr_country_flag = calling_wave_wave24
+		clr_country_flag = calling_wave_wave25
+	}
+	option = {
+		name = calling_wave.1.b
+		add_political_power = -500
+	}
+	option = {
+		name = calling_wave.1.c
+		add_war_support = -0.03
+	}
+}
+
+country_event = {
+	id = calling_wave.2
+	title = calling_wave.2.t
+	desc = calling_wave.2.d
+	picture = GFX_event_protest_calling_wave2
+	is_triggered_only = yes
+
+	trigger = {
+		has_war = yes
+		has_stability < 0.2
+		has_offensive_war = yes
+	}
+	
+	option = {
+		name = calling_wave.2.a
+	}
+	option = {
+		name = calling_wave.2.b
+		add_political_power = -500
+	}
+	option = {
+		name = calling_wave.2.c
+	}
+}
+
+country_event = {
+	id = calling_wave.3
+	title = calling_wave.3.t
+	desc = calling_wave.3.d
+	picture = GFX_event_protest_calling_wave3
+	is_triggered_only = yes
+	trigger = {
+		has_war = yes
+		has_stability > 0.1
+		has_offensive_war = yes
+	}
+	
+	option = {
+		name = calling_wave.3.a
+	}
+	option = {
+		name = calling_wave.3.b
+		add_political_power = -500
+	}
+	option = {
+		name = calling_wave.3.c
+	}
+}
+
+add_namespace = emigration_war
+
+news_event = {
+	id = emigration_war.1
+	title = emigration_war.1.t
+	desc = emigration_war.1.d
+	picture = GFX_event_emigration_war_news
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = emigration_war.1.a
+		add_ideas = emigration_war
+	}
+}
+
+add_namespace = volunteers_on_war
+
+news_event = {
+	id = volunteers_on_war.1
+	title = volunteers_on_war.1.t
+	desc = volunteers_on_war.1.d
+	picture = GFX_event_volunteers_on_war_news
+	fire_only_once  = yes
+	trigger = {
+		has_war = yes
+		has_defensive_war = yes
+	}
+	
+	option = {
+		name = volunteers_on_war.1.a
+		add_ideas = volunteers_on_war
+		set_war_support = 1.0
+	}
+}
+
+news_event = {
+	id = volunteers_on_war.2
+	title = volunteers_on_war.2.t
+	desc = volunteers_on_war.2.d
+	picture = GFX_event_volunteers_on_war_news
+	fire_only_once  = yes
+	trigger = {
+		has_war = yes
+		has_defensive_war = yes
+	}
+	
+	option = {
+		name = volunteers_on_war.2.a
+		add_ideas = volunteers_on_war2
+		set_war_support = 1.0
+	}
+}

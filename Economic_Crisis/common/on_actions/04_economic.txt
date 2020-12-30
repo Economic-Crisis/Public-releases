@@ -1,0 +1,107 @@
+#By Skoolz
+on_actions = {
+	on_startup = {
+		effect = {
+		
+		
+		
+		#Standart exp on cats
+		
+
+		#1 Def
+		set_variable = { global.st_def_exp_percen = 0.24 }
+		#Sections cat 1 - Def
+		set_variable = { global.st_def_sal_exp_percen = 0.4 }
+		set_variable = { global.st_def_def_ind_exp_percen = 0.6 }
+		set_variable = { global.st_def_research_exp_percen = 0.3 }
+		
+		#2 Hea
+		set_variable = { global.st_he_exp_percen = 0.12 }
+		#Sections cat 2 - Hea 
+		set_variable = { global.st_he_sal_exp_percen = 0.25 }
+		set_variable = { global.spe_med_fac_exp_percen = 0.11 }
+		set_variable = { global.pub_hea_cen_exp_percen = 0.13 }
+		set_variable = { global.equ_pro_cen_exp_percen = 0.5 }
+		
+		#3 Edu
+		set_variable = { global.st_ed_exp_percen = 0.15 }
+		#Sections cat 3 - Edu
+		set_variable = { global.st_ed_sal_exp_percen = 0.25 }
+		
+		#5 Inf
+		set_variable = { global.st_inf_exp_percen = 0.15 } 
+		#Sections cat 1 - Inf
+		set_variable = { global.st_inf_sal_exp_percen = 0.3 }
+		
+		#6 Ind
+		set_variable = { global.st_ind_exp_percen = 0.4 } 
+		#Sections cat 1 - Ind
+		set_variable = { global.st_ind_sal_exp_percen = 0.3 }
+		
+		
+		
+		
+		every_country = {
+		#ST EXP begin
+			set_st_exp = yes
+		#ST EXP	end
+		
+		#START INCOME begin
+		
+		
+		#START INCOME end
+			set_variable = { budget_rest_cats_percen = 100 }
+			set_variable = { cat_1_rest_sections_percen = 100 }
+			set_variable = { cat_2_rest_sections_percen = 100 }
+			set_variable = { cat_3_rest_sections_percen = 100 }
+			set_variable = { cat_4_rest_sections_percen = 100 }
+			set_variable = { cat_5_rest_sections_percen = 100 }
+			set_variable = { cat_6_rest_sections_percen = 100 }	
+			set_planned_budget = yes
+			
+			
+			if = { limit = { has_idea = very_low_taxes } set_variable = { tax_percentage = 0.005 } }
+			else_if = { limit = { has_idea = low_taxes } set_variable = { tax_percentage = 0.01 } }
+			else_if = { limit = { has_idea = normal_taxes } set_variable = { tax_percentage = 0.015 } }
+			else_if = { limit = { has_idea = high_taxes } set_variable = { tax_percentage = 0.025 } }
+			else = { set_variable = { tax_percentage = 0.035 } }
+			
+			has_trillions = yes 
+			
+			}
+		}	
+	}
+
+	on_daily = {
+			
+		effect = {
+			random_country = { set_year_timer = yes }
+		has_trillions = yes
+
+			#New year
+			if = { 
+			 limit = { 
+			  check_variable = { current_years < global.years } 
+			} 
+			 set_def_prof_percen = yes
+			 set_budget_year_switch = yes
+			 set_variable = { budget_alert = 1 }
+			 add_to_variable = { current_years = 1 }
+			set_variable = { budget_timer = 0 }
+			}
+			
+			if = { limit = { check_variable = { budget_alert = 1 } }
+				add_to_variable = { budget_timer = 1 }
+				
+				if = { limit = { check_variable = { budget_timer > 9 } }
+					set_planned_budget = yes
+					set_new_budget = yes
+					set_variable = { budget_timer = 0 }
+				}
+			
+			}
+		
+			
+		}
+ 	}
+}	

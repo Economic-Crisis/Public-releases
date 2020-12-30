@@ -1,0 +1,82 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 302
+
+set_country_flag = monroe_doctrine
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3066 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "BOL_2013"
+
+	add_ideas = {
+		unasur_member
+		alba_member
+		NPT
+		gaz_trader
+	}
+
+	set_stability = 0.75
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "2009.12.6"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 70
+		reformism = 30
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Jeanine Áñez"
+	#	desc = "POLITICS_JEANINE_ANEZ_DESC"
+	#	picture = "gfx/leaders/BOL/portrait_jeanine_anez.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy}
+	#}
+
+	create_country_leader = {
+		name = "Evo Morales"
+		desc = "POLITICS_EVO_MORALES_DESC"
+		picture = "gfx/leaders/BOL/portrait_evo_morales.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}
+
+#if = {
+#	limit = {
+#		AND = {
+#			#is_ai = yes
+#			NOT = {
+#				reformism < 30
+#			}
+#			is_subject = no
+#		}
+#	}	
+#
+#	2019.11.12 = { 
+#		BOL = {
+#			set_politics = {
+#				ruling_party = reformism
+#			}
+#		}
+#	}
+#}

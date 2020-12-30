@@ -1,0 +1,77 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# c 20 декабря 1999
+
+capital = 326
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 27570 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	
+	add_ideas = {
+		contract_army
+	}
+
+	add_political_power = 0
+	set_convoys = 30
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		free_market
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		
+	}
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.9.4" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 7
+		reformism = 10
+		liberalism = 30
+		democratic = 37
+		neutrality = 6
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Carrie Lam"
+		desc = "POLITICS_CARRIE_LAM_DESC"
+		picture = "gfx/leaders/HKG/portrait_carrie_lam.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Leung Chun-ying"
+		desc = "POLITICS_LEUNG_CHUN-YING_DESC"
+		picture = "gfx/leaders/HKG/portrait_leung_chun-ying.dds"
+		ideology = conservative_democracy
+		expire = "2017.7.1"
+		traits = { trait_conservative_democracy }
+	}
+
+}
+

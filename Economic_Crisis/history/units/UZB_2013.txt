@@ -1,0 +1,222 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Motostrelkovaya Brigada"			
+
+	regiments = {
+		mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+		mechanized_on_apc_tracked = { x = 1 y = 0 }
+		mechanized_on_apc_tracked = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 2 y = 0 }
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Natsionalnaya Gvardiya"	
+
+	regiments = {
+		special_forces_light_motorized = { x = 0 y = 0 }
+		special_forces_light_motorized = { x = 0 y = 1 }
+		special_forces_light_motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	
+	support = {
+		signal_company = { x = 0 y = 0 } 
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Tankovaya Korpus" 					
+
+	regiments = {
+		medium_tank = { x = 0 y = 0 }		
+		medium_tank = { x = 0 y = 1 }	
+		medium_tank = { x = 1 y = 0 }		
+		medium_tank = { x = 1 y = 1 }		
+		light_motorized = { x = 2 y = 0 }		
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+		light_motorized = { x = 3 y = 0 }		
+		light_motorized = { x = 3 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Lyogkiy-Gornyaya Brigada" 					
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }		
+		mountaineers_motorized = { x = 0 y = 1 }	
+		mountaineers_motorized = { x = 0 y = 2 }
+		mountaineers_motorized = { x = 1 y = 0 }		
+		mountaineers_motorized = { x = 1 y = 1 }		
+		mountaineers_motorized = { x = 2 y = 0 }		
+		mountaineers_motorized = { x = 2 y = 1 }		
+	}
+}
+
+division_template = {
+	name = "Vozdushniy-Shturmovaya Brigada" 					
+
+	regiments = {
+		paratroopers_light_motorized = { x = 0 y = 0 }		
+		paratroopers_light_motorized = { x = 0 y = 1 }
+		paratroopers_light_motorized = { x = 0 y = 2 }
+		paratroopers_light_motorized = { x = 1 y = 0 }		
+		paratroopers_light_motorized = { x = 1 y = 1 }		
+		paratroopers_light_motorized = { x = 2 y = 0 }		
+		paratroopers_light_motorized = { x = 2 y = 1 }		
+	}
+}
+
+division_template = {
+	name = "Indjinernaya Brigada" 					
+
+	regiments = {
+		motorized = { x = 0 y = 0 }		
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }		
+		motorized = { x = 1 y = 1 }		
+		motorized = { x = 2 y = 0 }		
+		motorized = { x = 2 y = 1 }		
+	}
+	
+	support = {
+		recon_battalion = { x = 0 y = 0 } 		
+		airborne_support_company = { x = 0 y = 1 } 		
+	}
+}
+
+##### OOB #####
+units = {
+	####### Northwest Military District Karakalpakstan #######				
+	division= {			
+		name = "9ya Motostrelkovaya Brigada"		
+		location = 1614
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}			
+	division= {			
+		name = "7ya Motostrelkovaya Brigada"		
+		location = 1576
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	division= {			
+		name = "Vozdushniy-Shturmovaya Brigada"		
+		location = 1576
+		division_template = "Vozdushniy-Shturmovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	
+	####### Southwest Special Military District  Qashqadaryo #######				
+	division= {			
+		name = "25ya Motostrelkovaya Brigada"		
+		location = 10671
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}			
+	division= {			
+		name = "19ya Motostrelkovaya Brigada"		
+		location = 12722
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	division= {			
+		name = "Lyogkiy-Gornyaya Brigada"		
+		location = 12722
+		division_template = "Lyogkiy-Gornyaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	
+	####### Central Military District Dzhizak #######				
+	division= {			
+		name = "14ya Motostrelkovaya Brigada"		
+		location = 7682
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}			
+	division= {			
+		name = "16ya Motostrelkovaya Brigada"		
+		location = 4629
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	division= {			
+		name = "Indjinernaya Brigada"		
+		location = 4629
+		division_template = "Indjinernaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	
+	####### Eastern Military District Fergana #######				
+	division= {			
+		name = "17ya Motostrelkovaya Brigada"		
+		location = 10530
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}			
+	division= {			
+		name = "13ya Motostrelkovaya Brigada"		
+		location = 10530
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	
+	####### Tashkent Military District #######				
+	division= {			
+		name = "4ya Motostrelkovaya Brigada"		
+		location = 1459
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}			
+	division= {			
+		name = "6ya Motostrelkovaya Brigada"		
+		location = 1459
+		division_template = "Motostrelkovaya Brigada"
+		start_equipment_factor = 0.9
+	}
+	division= {			
+		name = "Natsionalnaya Gvardiya"		
+		location = 1459
+		division_template = "Natsionalnaya Gvardiya"
+		start_equipment_factor = 0.9
+	}
+	division= {			
+		name = "Tankovaya Korpus"		
+		location = 1459
+		division_template = "Tankovaya Korpus"
+		start_equipment_factor = 0.9
+	}
+}	
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "UZB"
+		}
+		requested_factories = 1
+		progress = 0.52
+		efficiency = 100
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = army_ammunition_equipment_1
+			creator = "UZB"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 100
+	}
+}

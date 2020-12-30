@@ -1,0 +1,45 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 249
+add_ideas = mixed_schools
+2013.11.1 = {
+	set_variable = { budget_last_year = 481 }
+
+	load_oob = "_tech_insurgents_2013" 
+	oob = "_army_minor_2013"
+	
+	set_convoys = 20
+
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.9.8"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 12
+		reformism = 5
+		liberalism = 0
+		democratic = 0
+		neutrality = 75
+		fascism = 8
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Rustem Khamitov"
+		desc = ""
+		picture = "gfx/leaders/BSK/portrait_rustem_khamitov.dds"
+		ideology = sovereign_democracy 
+		traits = { trait_sovereign_democracy }
+	}
+}

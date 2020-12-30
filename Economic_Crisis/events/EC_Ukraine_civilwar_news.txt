@@ -1,0 +1,221 @@
+﻿########################
+## Economic Crisis   ###
+##################################
+## Ukraine civilwar news events ##
+##################################
+## Written by Santilian ##
+##########################
+
+add_namespace = news_ukraine_civilwar
+
+## Блок новостей о гражданской войне Востока и Запада
+
+## Блок новостей о Крыме
+
+news_event = {
+	id = news_ukraine_civilwar.10   # Новость о веживых людях в Крыму
+	title = news_ukraine_civilwar.10.t
+	desc = news_ukraine_civilwar.10.d
+	picture = GFX_event_russia_army_in_Crimea_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.10.a # Посмотрим, что получится
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.10.a"
+		trigger = {
+		    NOT = { tag = RUS }
+		}
+	}
+	option = {
+		name = news_ukraine_civilwar.10.b # Точка зрения России, подготовка референдума о независимости и принятии в РФ
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.1.b"
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+		
+news_event = {
+	id = news_ukraine_civilwar.11 # В Крыму произошло восстание при поддержке Москвы. Власти Украины мобилизируют армию для проведения АТО в Крыму и призывают Москву оставаться нейтральной.
+	title = news_ukraine_civilwar.11.t
+	desc = news_ukraine_civilwar.11.d
+	picture = GFX_event_UKR_army_ATO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.11.a # Снова кровопролитие
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.11.a"
+	}
+}
+	
+news_event = {
+	id = news_ukraine_civilwar.12 # Волнения в Крыму, взято здание администрации, тем не менее активности русских сил не замечено - ставка на сторонников Евромайдана в Крыму и крымских татар, будем искать компромисс
+	title = news_ukraine_civilwar.12.t
+	desc = news_ukraine_civilwar.12.d
+	picture = GFX_event_protests_in_Crimea_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.12.a # Украина бездействует
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.12.a"
+	}
+}
+	
+news_event = {
+	id = news_ukraine_civilwar.13 # Волнения в Крыму, взято здание администрации, тем не менее активности русских сил не замечено - бросить армию и полицию на подавление этого и всех последующих мятежей
+	title = news_ukraine_civilwar.13.t
+	desc = news_ukraine_civilwar.13.d
+	picture = GFX_event_protests_in_Crimea_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.13.a"
+	}
+}	
+	
+news_event = {
+	id = news_ukraine_civilwar.14 # После ввода в Крым войск и объявления коммендантского часа произошли диверсии на предприятиях и инфраструктурых объектах, население полуострова не оказывает содействия армии
+	title = news_ukraine_civilwar.14.t
+	desc = news_ukraine_civilwar.14.d
+	picture = GFX_event_UKR_sabotage_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.14.a"
+	}
+}		
+
+news_event = {
+	id = news_ukraine_civilwar.15 # Россия объявляет о присоединении Крыма к РФ. Украина обвиняет Россию в аннексии
+	title = news_ukraine_civilwar.15.t
+	desc = news_ukraine_civilwar.15.d
+	picture = GFX_event_Crimea_annexation_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.15.a # Очередной территориальный спор
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.15.a"
+		trigger = {
+		    NOT = { tag = RUS }
+		}
+	}
+	option = {
+		name = news_ukraine_civilwar.15.b # Отличная новость!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.15.b"
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+	
+news_event = {
+	id = news_ukraine_civilwar.16 # Новость о принятии декларации независимости Крыма и том, что Украина не признает независимость Крыма
+	title = news_ukraine_civilwar.16.t
+	desc = news_ukraine_civilwar.16.d
+	picture = GFX_event_Crimea_independence_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.16.a # Посмотрим, что получится
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.16.a"
+		trigger = {
+		    NOT = { tag = RUS }
+		}
+	}
+	option = {
+		name = news_ukraine_civilwar.16.b # Ожидаемо
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.16.b"
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+
+news_event = {
+	id = news_ukraine_civilwar.17 # Новость о принятии декларации независимости Крыма и том, что Украина начинает войсковую операцию
+	title = news_ukraine_civilwar.17.t
+	desc = news_ukraine_civilwar.17.d
+	picture = GFX_event_UKR_army_ATO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.17.a # Новая горячая точка
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.17.a"
+	}
+}
+
+news_event = {
+	id = news_ukraine_civilwar.18 # Новость о принятии декларации независимости Крыма, Украина признает независимость Крыма
+	title = news_ukraine_civilwar.18.t
+	desc = news_ukraine_civilwar.18.d
+	picture = GFX_event_Crimea_independence_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.18.a # Худой мир лучше войны
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.18.a"
+	}
+}
+
+news_event = {
+	id = news_ukraine_civilwar.19 # Новость о пограничной перестрелке на границе Крыма и Украины
+	title = news_ukraine_civilwar.19.t
+	desc = news_ukraine_civilwar.19.d
+	picture = GFX_event_border_conflict_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.19.a # Печальные новости
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.19.a"
+	}
+}
+
+news_event = {
+	id = news_ukraine_civilwar.20 # Нормандская четвёрка (подписано перемирие между Восток и Запад)
+	title = news_ukraine_civilwar.20.t
+	desc = news_ukraine_civilwar.20.d
+	picture = GFX_event_border_conflict_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news_ukraine_civilwar.20.a # Хорошие новости
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): news_ukraine_civilwar.20.a"
+	}
+}
+
+## Блок новостей о гражданской войне на Востоке Укарины

@@ -1,0 +1,79 @@
+﻿division_template = {
+	name = "District Force"	# For 2-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "District Brigade"	# For 1-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	##### Royal Army #####
+	division = {
+		name = "District Force"
+		location = 8109
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "District Force"
+		location = 5028
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "District Force"
+		location = 2025
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "District Force"
+		location = 12900
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "District Force"
+		location = 1932
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "District Force"
+		location = 1932
+		division_template = "District Force"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+}	
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "NGA"
+		}
+		requested_factories = 1
+		progress = 0.51
+		efficiency = 100
+	}
+}

@@ -1,0 +1,194 @@
+on_actions = {
+	on_startup = {
+		effect = {	
+			###SETTING STARTING RELIGIONS by |ZoidberG|###
+			
+			every_country = { ##Scoping every country
+				if = {
+					limit = { ## trying get and set the level 1 religion
+						has_idea = preference_religion ## country should have preference_religion idea
+					}
+					if = {
+						limit = { has_christianity = yes }## then trying to find any religion by using trigger that checks region flags
+						add_ideas = { christianity_idea_lvl_1 }
+						else = {
+							if = {
+								limit = { has_islam = yes }
+								add_ideas = { islam_idea_lvl_1 }
+								else = {
+									if = {
+										limit = { has_buddhism = yes }
+										add_ideas = { buddhism_idea_lvl_1 }
+										else = {
+											if = {
+												limit = { has_hinduism = yes }
+												add_ideas = { hinduism_idea_lvl_1 }
+												else = {
+													if = {
+														limit = { has_judaism = yes }
+														add_ideas = { judaism_idea_lvl_1 }
+														else = {
+															if = {
+																limit = { has_sintoism = yes }
+																add_ideas = { sintoism_idea_lvl_1  }
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = { has_idea = state_religion }## trying get and set the level 2 religion
+							if = {
+								limit = { has_christianity = yes }
+								add_ideas = { christianity_idea_lvl_2 }
+								else = {
+									if = {
+										limit = { has_islam = yes }
+										add_ideas = { islam_idea_lvl_2 }
+										else = {
+											if = {
+												limit = { has_buddhism = yes }
+												add_ideas = { buddhism_idea_lvl_2 }
+												else = {
+													if = {
+														limit = {
+															has_hinduism = yes
+														}
+														add_ideas = { hinduism_idea_lvl_2 }
+														else = {
+															if = {
+																limit = { has_judaism = yes }
+																add_ideas = { judaism_idea_lvl_2 }
+																else = {
+																	if = {
+																		limit = { has_sintoism = yes }
+																		add_ideas = { sintoism_idea_lvl_2 }
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = { has_idea = theocracy }## trying get and set the level 3 religion
+									if = {
+										limit = { has_christianity = yes }
+										add_ideas = { christianity_idea_lvl_3 }
+										else = {
+											if = {
+												limit = { has_islam = yes }
+												add_ideas = { islam_idea_lvl_3 }
+												else = {
+													if = {
+														limit = { has_buddhism = yes }
+														add_ideas = { buddhism_idea_lvl_3 }
+														else = {
+															if = {
+																limit = { has_hinduism = yes }
+																add_ideas = { hinduism_idea_lvl_3 }
+																else = {
+																	if = {
+																		limit = { has_judaism = yes	}
+																		add_ideas = { judaism_idea_lvl_3 }
+																		else = {
+																			if = {
+																				limit = { has_sintoism = yes	}
+																				add_ideas = { sintoism_idea_lvl_3 }
+																			}	
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			###SETTING STARTING OPINION MODIFIERS FOR RELIGIONS by |ZoidberG|###
+			
+			every_country = { ## Scoping first country
+				every_country = { ## Scoping second country
+					if = {
+						limit = { ## Checking does they have any main religion
+							PREV = { has_main_religion = yes }
+							has_main_religion = yes 
+						}
+						if = {
+							limit = { ## Checking for christianity and etc.
+								PREV = { christianity_is_main = yes } 
+								christianity_is_main = yes
+							}		
+							add_opinion_modifier = { target = PREV modifier = same_religion } ## setting needed opinion modifier
+							else = {
+								if = {
+									limit = {
+										PREV = { islam_is_main = yes }
+										islam_is_main = yes
+									}		
+									add_opinion_modifier = { target = PREV modifier = same_religion }
+									else = {
+										if = {
+											limit = {
+												PREV = { buddhism_is_main = yes }
+												buddhism_is_main = yes
+											}		
+											add_opinion_modifier = { target = PREV modifier = same_religion }
+											else = {
+												if = {
+													limit = {
+														PREV = { judaism_is_main = yes }
+														judaism_is_main = yes
+													}		
+													add_opinion_modifier = { target = PREV modifier = same_religion }
+													else = {
+														if = {
+															limit = {
+																PREV = { hinduism_is_main = yes }
+																hinduism_is_main = yes
+															}	
+															add_opinion_modifier = { target = PREV modifier = same_religion }
+															else = {
+																if = {
+																	limit = {
+																		PREV = { sintoism_is_main = yes }
+																		sintoism_is_main = yes
+																	}
+																	else = { add_opinion_modifier = { target = PREV modifier = another_religion } }
+																}
+															}
+														}										
+													}
+												}
+											}
+										}	
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}	
+}

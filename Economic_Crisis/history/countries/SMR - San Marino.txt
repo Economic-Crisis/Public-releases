@@ -1,0 +1,80 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 769
+add_ideas = { 
+	mixed_schools
+	small_country
+	parliamentary_republic 
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 280 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_stability = 0.7
+	add_political_power = 0
+	set_war_support = 0
+	
+	set_convoys = 10
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.4.1"
+		election_frequency = 6
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 34
+		liberalism = 33
+		democratic = 33
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Grand and General Council"
+		picture = "gfx/leaders/SMR/Grand_and_General_Council.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Grand and General Council"
+		picture = "gfx/leaders/SMR/Grand_and_General_Council.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Grand and General Council"
+		picture = "gfx/leaders/SMR/Grand_and_General_Council.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy } 
+	}
+
+	create_country_leader = {
+		name = "Grand and General Council"
+		picture = "gfx/leaders/SMR/Grand_and_General_Council.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Grand and General Council"
+		picture = "gfx/leaders/SMR/Grand_and_General_Council.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+}

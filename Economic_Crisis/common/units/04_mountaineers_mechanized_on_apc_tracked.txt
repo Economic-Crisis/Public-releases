@@ -1,0 +1,70 @@
+sub_units = {
+
+	# mechanized mountaineers on tracked armored personnel carriers (APC)
+	mountaineers_mechanized_on_apc_tracked = {
+	
+		sprite = mountaineers_mechanized_on_apc_tracked
+		map_icon_category = infantry
+		active = no
+		special_forces = yes
+		mountaineers = yes
+		priority = 663
+
+		type = {
+			mechanized
+		}
+		
+		group = mountaineers_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_special_corps
+			category_mountaineers
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 26
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 116 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 235
+		suppression = 1
+		weight = 1
+		supply_consumption = 0.18
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			apc_tracked_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_tracked_equipment
+	
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			apc_tracked_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		hills = {
+			attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+		mountain = {
+			attack = 0.35
+			defence = 0.1
+			movement = 0.1
+		}
+	}
+}

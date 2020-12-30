@@ -1,0 +1,71 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 545
+
+add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2805 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "ZAM_2013"
+
+    add_ideas = {
+	    presidential_republic
+		unitary_state
+		secular_state
+		commercial_media 
+		suspended_liberties
+		contract_army
+		mixed_schools
+		civilian_economy
+		mixed_economic
+		free_market
+		NPT
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		terrorism_discounted
+    }
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.1.20" #for 2015
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 77
+		liberalism = 21
+		democratic = 0
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Michael Sata"
+		desc = "POLITICS_MICHAEL_SATA_DESC"
+		picture = "gfx/leaders/ZAM/portrait_michael_sata.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Hakainde Hichilema"
+		desc = "POLITICS_HAKAINDE_HICHILEMA_DESC"
+		picture = "gfx/leaders/ZAM/portrait_hakainde_hichilema.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}	
+

@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 316
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4975 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = terrorism_discounted
+	set_stability = 0.5
+	add_ideas = NPT
+
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2010.2.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 4
+		reformism = 40
+		liberalism = 50
+		democratic = 1
+		neutrality = 3
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Laura Chinchilla Miranda"
+		picture = "gfx/leaders/COS/portrait_laura_chinchilla_miranda.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Otto Guevara"
+		picture = "gfx/leaders/COS/portrait_otto_guevara.dds"
+		ideology = liberal_conservatism
+	 	traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Luis Fishman"
+		picture = "gfx/leaders/COS/portrait_luis_fishman.dds"
+		ideology = conservative_democracy
+	 	traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Luis Guillermo Solís"
+		picture = "gfx/leaders/COS/portrait_luis_guillermo_solis.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+
+2014.4.1 = { COS = { set_politics = { ruling_party = liberalism } } }
+	

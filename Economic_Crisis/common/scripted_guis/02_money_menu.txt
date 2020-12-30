@@ -1,0 +1,925 @@
+scripted_gui = {
+
+
+	money_menu_ = {
+		window_name = "money_menu_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { money_menu_visible = 1 }
+		}
+ 
+        effects = {
+			Close_btn_click = {
+				set_variable = { money_menu_visible = 0 }
+			}
+			
+			money_menu_budget_percen_btn_click = {
+				#!!!!!!!
+set_variable = { money_menu_switcher = 0 }
+			}
+			
+			
+			num_1_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 1 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 1 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_2_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 2 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 2 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_3_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 3 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 3 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_4_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 4 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 4 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_5_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 5 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 5 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_6_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 6 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 6 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_7_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 7 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 7 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_8_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 8 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 8 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_9_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 9 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 9 }
+					set_cat_percen = yes
+				}
+			}
+			
+			num_0_click = {
+				if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_variable = { budget_percen_temp_value = 0 }
+				set_budget_percen = yes
+				}
+				else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+					set_variable = { cat_change_temp_value = 0 }
+					set_cat_percen = yes
+				}
+			}
+			clear_btn_click = {
+			
+			if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_budget_percen_clear = yes
+				}
+			else_if = { limit = { check_variable = { money_menu_switcher = 1 } }
+				set_cat_percen_clear = yes
+				}
+				
+			}
+			
+			minus_btn_click = {
+			if = { limit = { check_variable = { money_menu_switcher = 0 } }
+				set_budget_percen_reverse = yes
+				}
+			}
+		
+			
+			cat_1_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 1 }
+			}
+
+		   cat_1_open_btn_click = {
+				if = { limit = { check_variable = { cat_1_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_1_visible = 1 } 
+				#!!!!!!!!!!
+				#!!!!!!!
+set_variable = { money_menu_switcher = 2 } }
+				
+				else = { set_variable = { cat_1_visible = 0 } } 
+		   }
+
+			cat_2_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 2 }
+			}
+			
+			cat_2_open_btn_click = {
+                    if = { limit = { check_variable = { cat_2_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_2_visible = 1 } 
+					#!!!!!!!!!!!!!
+					#!!!!!!!
+set_variable = { money_menu_switcher = 3 } }
+					
+					else = { set_variable = { cat_2_visible = 0 } } 
+              }
+			  
+			cat_3_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 3 }
+			}
+			
+			cat_3_open_btn_click = {
+                    if = { limit = { check_variable = { cat_3_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_3_visible = 1 }  
+					#!!!!!!!!!!!!!!!!!!!
+					#!!!!!!!
+set_variable = { money_menu_switcher = 4 } }
+					
+					else = { set_variable = { cat_3_visible = 0 } } 
+              }
+
+			cat_4_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 4 }
+			}
+			
+			cat_4_open_btn_click = {
+                    if = { limit = { check_variable = { cat_4_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_4_visible = 1 }  
+					#!!!!!!!!!!!!!!!!!!!
+					#!!!!!!!
+set_variable = { money_menu_switcher = 5 } }
+					
+					else = { set_variable = { cat_4_visible = 0 } } 
+              }
+			  
+			cat_5_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 5 }
+			}
+			
+			cat_5_open_btn_click = {
+                    if = { limit = { check_variable = { cat_5_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_5_visible = 1 }  
+					#!!!!!!!!!!!!!!!!!!!
+					#!!!!!!!
+set_variable = { money_menu_switcher = 6 } }
+					
+					else = { set_variable = { cat_5_visible = 0 } } 
+              }
+			  
+			cat_6_percen_btn_click = {
+				set_variable = { cat_change_temp_value = 0 }
+				set_variable = { cat_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 1 }
+				
+				#!!!!
+				set_variable = { cat_percen_change = 6 }
+			}
+			cat_6_open_btn_click = {
+                    if = { limit = { check_variable = { cat_6_visible = 0} } set_cats_visible_to_null = yes set_variable = { cat_6_visible = 1 }  
+					#!!!!!!!!!!!!!!!!!!!
+					#!!!!!!!
+set_variable = { money_menu_switcher = 7 } }
+					
+					else = { set_variable = { cat_6_visible = 0 } } 
+              }			  
+			  
+			  
+			money_menu_budget_accept_btn_click = {
+				set_new_budget = yes
+			}
+				
+        }
+        
+		triggers = {  
+		
+			money_menu_budget_accept_btn_click_enabled = {
+				check_variable = { budget_alert = 1 }
+				has_all_minist = yes
+			}
+			money_menu_current_budget_def_prof_text_visible = {
+				check_variable = { budget_alert = 1 }
+			}
+			
+        }
+
+		properties = {
+		
+           cat_1_bar = {
+			frame = cat_1_ratio
+		   }
+		   cat_2_bar = {
+			frame = cat_2_ratio
+		   }
+		   cat_3_bar = {
+			frame = cat_3_ratio
+		   }
+		   cat_4_bar = {
+			frame = cat_4_ratio
+		   }
+		   cat_5_bar = {
+			frame = cat_5_ratio
+		   }
+		   cat_6_bar = {
+			frame = cat_6_ratio
+		   }
+		   
+        }
+
+	}
+
+#CAT 1 #################################################################################
+	cat_1 = {
+		window_name = "money_menu_cat_1_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_1_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_1_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 2 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			sec_2_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 2 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 2 }
+			}
+			sec_3_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 2 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 3 }
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+        
+
+		properties = {
+		   sec_1_ratio_icon = {
+			frame = cat_1_sec_1_ratio_st
+		   }
+           sec_1_bar = {
+			frame = cat_1_sec_1_ratio
+		   }
+		   sec_2_ratio_icon = {
+			frame = cat_1_sec_2_ratio_st
+		   }
+		   sec_2_bar = {
+			frame = cat_1_sec_2_ratio
+		   }
+		   sec_3_ratio_icon = {
+			frame = cat_1_sec_3_ratio_st
+		   }
+		   sec_3_bar = {
+			frame = cat_1_sec_3_ratio
+		   }
+        }
+	}
+
+#CAT 2 #################################################################################
+	cat_2 = {
+		window_name = "money_menu_cat_2_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_2_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_2_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+			set_variable = { money_menu_switcher = 3 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			sec_2_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+			set_variable = { money_menu_switcher = 3 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 2 } 
+			}
+			
+			sec_3_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+			set_variable = { money_menu_switcher = 3 }
+				
+				#!!!!!
+				set_variable = { section_percen_change = 3 } 
+			}
+			
+			sec_4_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+			set_variable = { money_menu_switcher = 3 }
+				
+				#!!!!!
+				set_variable = { section_percen_change = 4 } 
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+
+		properties = {
+		   sec_1_ratio_icon = {
+			frame = cat_2_sec_1_ratio_st
+		   }
+           sec_1_bar = {
+			frame = cat_2_sec_1_ratio
+		   }
+		   sec_2_ratio_icon = {
+			frame = cat_2_sec_2_ratio_st
+		   }
+           sec_2_bar = {
+			frame = cat_2_sec_2_ratio
+		   }
+		   sec_3_ratio_icon = {
+			frame = cat_2_sec_3_ratio_st
+		   }
+           sec_3_bar = {
+			frame = cat_2_sec_3_ratio
+		   }
+		   sec_4_ratio_icon = {
+			frame = cat_2_sec_4_ratio_st
+		   }
+           sec_4_bar = {
+			frame = cat_2_sec_4_ratio
+		   }
+        }
+	}
+
+#CAT 3 #################################################################################
+	cat_3 = {
+		window_name = "money_menu_cat_3_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_3_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_3_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 4 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+        
+
+		properties = {
+		   sec_1_ratio_icon = {
+			frame = cat_3_sec_1_ratio_st
+		   }
+           sec_1_bar = {
+			frame = cat_3_sec_1_ratio
+		   }
+        }
+	}
+	
+#CAT 4 #################################################################################
+	cat_4 = {
+		window_name = "money_menu_cat_4_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_4_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_4_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 5 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+        
+
+		properties = {
+		  sec_1_ratio_icon = {
+			frame = cat_4_sec_1_ratio_st
+		   }
+          sec_1_bar = {
+			frame = cat_4_sec_1_ratio
+		   }
+        }
+	}	
+
+	#CAT 5 #################################################################################
+	cat_5 = {
+		window_name = "money_menu_cat_5_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_5_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_5_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 6 }
+				
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+
+		properties = {
+		  sec_1_ratio_icon = {
+			frame = cat_5_sec_1_ratio_st
+		   }
+          sec_1_bar = {
+			frame = cat_5_sec_1_ratio
+		   }
+        }
+	}
+	
+	
+#CAT 6 #################################################################################
+	cat_6 = {
+		window_name = "money_menu_cat_6_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { cat_6_visible = 1 }
+		}
+ 
+        effects = {
+			
+			cat_close_btn_click = {
+				set_variable = { cat_6_visible = 0 }
+			}
+			
+			sec_1_box_2_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_variable = { section_temp_ratio = 0 }
+				#!!!!!!!
+set_variable = { money_menu_switcher = 7 }
+				
+				#!!!!!
+				set_variable = { section_percen_change = 1 }
+			}
+			
+			sec_num_1_click = {
+				set_variable = { section_change_temp_value = 1 }
+				set_section_percen = yes
+			}
+			sec_num_2_click = {
+				set_variable = { section_change_temp_value = 2 }
+				set_section_percen = yes
+			}
+			sec_num_3_click = {
+				set_variable = { section_change_temp_value = 3 }
+				set_section_percen = yes
+			}
+			sec_num_4_click = {
+				set_variable = { section_change_temp_value = 4 }
+				set_section_percen = yes
+			}
+			sec_num_5_click = {
+				set_variable = { section_change_temp_value = 5 }
+				set_section_percen = yes
+			}
+			sec_num_6_click = {
+				set_variable = { section_change_temp_value = 6 }
+				set_section_percen = yes
+			}
+			sec_num_7_click = {
+				set_variable = { section_change_temp_value = 7 }
+				set_section_percen = yes
+			}
+			sec_num_8_click = {
+				set_variable = { section_change_temp_value = 8 }
+				set_section_percen = yes
+			}
+			sec_num_9_click = {
+				set_variable = { section_change_temp_value = 9 }
+				set_section_percen = yes
+			}
+			sec_num_0_click = {
+				set_variable = { section_change_temp_value = 0 }
+				set_section_percen = yes
+			}
+			
+			
+			sec_num_clear_btn_click = {
+				set_section_percen_clear = yes
+			}
+				
+        }
+
+		properties = {
+		  sec_1_ratio_icon = {
+			frame = cat_6_sec_1_ratio_st
+		   }
+          sec_1_bar = {
+			frame = cat_6_sec_1_ratio
+		   }
+        }
+	}	
+
+	budget_alert_s = {
+		window_name = "budget_alert_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { budget_alert = 1 }
+		}
+ 
+        effects = {
+			budget_menu_btn_click = {
+				if = {
+					limit = { check_variable = { money_menu_visible = 0 } }
+				set_variable = { money_menu_visible = 1 }	
+				}
+				else = {
+				set_variable = { money_menu_visible = 0 }
+				}
+			}
+				
+        }
+        
+	}
+
+}

@@ -1,0 +1,249 @@
+﻿##############################
+###### Economic Crisis #######
+##############################
+#####   Lugansk events   #####
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = lugansk
+
+country_event = {  #Выборы ЛНР: 2014
+	id = lugansk.1
+	title = lugansk.1.t
+	desc = lugansk.1.desc
+	picture = GFX_event_lugansk_elections_2013
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = LUG
+		country_exists = LUG
+		date > 2014.10.31
+	}
+
+	immediate = { set_country_flag = lugansk_elections_2014 }
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {	#Плотницкий
+		name = lugansk.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.1.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+
+		trigger = { neutrality > 0.3 }
+	}
+	
+	option = {	#Акимов
+		name = lugansk.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.1.b"
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Oleg Akimov"
+			desc = "POLITICS_OLEG_AKIMOV_DESC"
+			picture = "gfx/leaders/LUG/portrait_oleg_akimov.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = LUG_neutrality2_party
+			name = LUG_neutrality2_party
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+}
+
+country_event = {  #Выборы ЛНР: 2018
+	id = lugansk.2
+	title = lugansk.2.t
+	desc = lugansk.2.desc
+	picture = GFX_event_lugansk_elections_2018
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = LUG
+		country_exists = LUG
+		date > 2014.10.31
+	}
+
+	immediate = { set_country_flag = lugansk_elections_2018 }
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {	#Пасечник
+		name = lugansk.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.2.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = LUG_neutrality_party
+			name = LUG_neutrality_party
+		}
+		create_country_leader = {
+			name = "Leonid Pasechnik"
+			desc = "POLITICS_LEONID_PASECHNIK_DESC"
+			picture = "gfx/leaders/LUG/portrait_leonid_pasechnik.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		trigger = { neutrality > 0.3 }
+	}
+	
+	option = {	#Коваль
+		name = lugansk.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.2.b"
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Oleg Koval"
+			desc = "POLITICS_OLEG_KOVAL_DESC"
+			picture = "gfx/leaders/LUG/portrait_oleg_koval.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = LUG_neutrality2_party
+			name = LUG_neutrality2_party
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+}
+
+#Болотов
+country_event = {
+	id = lugansk.3
+	title = lugansk.3.t
+	desc = lugansk.3.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = LUG
+		country_exists = LUG
+		date > 2014.5.15
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = lugansk.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.3.a"
+		create_country_leader = {
+			name = "Valery Bolotov"
+			desc = "POLITICS_VALERY_BOLOTOV_DESC"
+			picture = "gfx/leaders/LUG/portrait_valeriy_bolotov.dds"
+			ideology = sovereign_democracy 
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}
+
+#Плотницкий
+country_event = {
+	id = lugansk.4
+	title = lugansk.4.t
+	desc = lugansk.4.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = LUG
+		country_exists = LUG
+		date > 2014.8.11
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = lugansk.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.4.a"
+		create_country_leader = {
+			name = "Igor Plotnitskiy"
+			desc = "POLITICS_IGOR_PLOTNITSKIY_DESC"
+			picture = "gfx/leaders/LUG/portrait_igor_plotnitskiy.dds"
+			ideology = sovereign_democracy #irredentism
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}
+
+#Пасечник (врио)
+country_event = {
+	id = lugansk.5
+	title = lugansk.5.t
+	desc = lugansk.5.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = LUG
+		country_exists = LUG
+		date > 2017.11.21
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = lugansk.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lugansk.5.a"
+		create_country_leader = {
+			name = "Leonid Pasechnik"
+			desc = "POLITICS_LEONID_PASECHNIK_DESC"
+			picture = "gfx/leaders/LUG/portrait_leonid_pasechnik.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}

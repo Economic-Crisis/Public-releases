@@ -1,0 +1,119 @@
+#By Skoolz
+
+set_ai_current_budget = {
+add_to_variable = { current_budget = total_money }
+if = { limit = { check_variable = { all_inc < all_exp } }
+	if = { limit = { check_variable = { current_budget < budget_last_year } }
+		set_temp_variable = { ai_temp_var = current_budget }
+		divide_temp_variable = { ai_temp_var = budget_last_year }
+		if = { limit = { check_variable = { ai_temp_var < 0.6 } }
+			subtract_from_variable = { current_budget = total_money }
+			multiply_variable = { current_budget = 1.1 }
+			add_to_variable = { current_budget = 0.2 }
+		}
+	
+	}
+}
+
+if = { limit = { check_variable = { current_budget < 0 } } multiply_variable = { current_budget = -1 } }
+if = { limit = { check_variable = { budget_reserve < 0 } } set_variable = { budget_reserve = 0 } clr_country_flag = has_2_credits clr_country_flag = has_3_credits set_variable = { budget_credit = 0 } }
+}
+
+
+
+#AI Budget templates ( how AI controls his budget )
+
+set_ai_template = {
+
+	if = { limit = { check_variable = { def_prof_switch = 0 } } set_variable = { budget_percen = -5 } }
+	else = { set_variable = { budget_percen = 2 } }
+	
+	random_list = {
+    25 = {
+        set_template_1 = yes
+        modifier = {
+            factor = 6
+            ai_millitary_template = yes
+        }
+    }
+    25 = {
+		set_template_2 = yes
+		modifier = {
+            factor = 4
+            ai_default_template = yes
+        }
+    }
+    25 = {
+        
+    }
+    25 = {
+       
+    }
+}
+	
+	
+	set_planned_budget = yes
+
+
+
+
+}
+
+
+#Template 1 millitary 30 10 10 10 25 10 5  MIL 30 40 30
+set_template_1 = {
+	set_variable = { cat_1_ratio = 30 }
+	set_variable = { cat_2_ratio = 10 }
+	set_variable = { cat_3_ratio = 10 }
+	set_variable = { cat_4_ratio = 10 }
+	set_variable = { cat_5_ratio = 25 }
+	set_variable = { cat_6_ratio = 10 }
+	set_variable = { budget_rest_cats_percen = 5 }
+	
+	
+	set_variable = { cat_1_sec_1_ratio = 30 }
+	set_variable = { cat_1_sec_2_ratio = 40 }
+	set_variable = { cat_1_sec_3_ratio = 30 }
+	
+	set_variable = { cat_2_sec_1_ratio = 25 }
+	set_variable = { cat_2_sec_2_ratio = 25 }
+	set_variable = { cat_2_sec_3_ratio = 25 }
+	set_variable = { cat_2_sec_4_ratio = 25 }
+	
+	set_variable = { cat_4_sec_1_ratio = 100 }
+	
+	set_variable = { cat_5_sec_1_ratio = 100 }
+	
+	set_variable = { cat_6_sec_1_ratio = 100 }
+}
+#####--#####--######--####--##--##-##-----######
+##--##-##-----##-----##--##-##--##-##-------##
+##--##-####---####---######-##--##-##-------##
+##--##-##-----##-----##--##-##--##-##-------##
+#####--#####--##-----##--##--####--######---##
+#Template 1 social 16 20 19 20 14 10 1  MIL 30 40 30
+set_template_2 = {
+	set_variable = { cat_1_ratio = 16 }
+	set_variable = { cat_2_ratio = 20 }
+	set_variable = { cat_3_ratio = 19 }
+	set_variable = { cat_4_ratio = 20 }
+	set_variable = { cat_5_ratio = 14 }
+	set_variable = { cat_6_ratio = 10 }
+	set_variable = { budget_rest_cats_percen = 1 }
+	
+	
+	set_variable = { cat_1_sec_1_ratio = 30 }
+	set_variable = { cat_1_sec_2_ratio = 40 }
+	set_variable = { cat_1_sec_3_ratio = 30 }
+	
+	set_variable = { cat_2_sec_1_ratio = 25 }
+	set_variable = { cat_2_sec_2_ratio = 25 }
+	set_variable = { cat_2_sec_3_ratio = 25 }
+	set_variable = { cat_2_sec_4_ratio = 25 }
+	
+	set_variable = { cat_4_sec_1_ratio = 100 }
+	
+	set_variable = { cat_5_sec_1_ratio = 100 }
+	
+	set_variable = { cat_6_sec_1_ratio = 100 }
+}

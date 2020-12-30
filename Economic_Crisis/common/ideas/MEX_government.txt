@@ -1,0 +1,151 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+		mex_miguel_angel_hog = {
+
+                picture = GFX_idea_mex_miguel_angel
+
+			cost = 1000
+			#removal_cost = -1
+
+                        available = {
+				OR = {
+						has_government = neutrality
+						has_country_flag = coalition_with_neutrality
+				}
+			}
+
+			allowed = {
+				original_tag = "MEX"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	defence_minister = {
+
+		mex_salvador_cienfuegos_defm = {
+
+		picture = GFX_idea_mex_salvador_cienfuegos
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = "MEX"
+			}
+
+			traits = { defence_minister_serve_and_protect }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+		}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		mex_jose_antonio_fgm = {
+
+		picture = GFX_idea_mex_jose_antonio
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				}
+
+
+      			allowed = { 
+				original_tag  = "MEX" 
+			}
+
+      			traits = { foreign_minister_policy_defender }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+			}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	economic_minister = {
+	
+		mex_ildefonso_villareal_ecm = {
+		
+		picture = GFX_idea_mex_ildefonso_villareal
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "MEX"
+			}
+			
+			traits = { economic_minister_public_administration }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+		}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		mex_genaro_luna_ssch = {
+		
+			picture = GFX_idea_mex_genaro_luna
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "MEX"
+			}
+			
+			traits = { secret_service_chief_counterespionage }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

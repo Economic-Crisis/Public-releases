@@ -1,0 +1,77 @@
+﻿### Economic Crisis ##
+### Czechia event by Shaak Ti
+
+add_namespace = czechia
+
+country_event = {
+	id = czechia.1
+	title = czechia.1.t
+	desc = czechia.1.d
+	picture = GFX_event_czechia_sobotka_coalition
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = CZE
+		date > 2014.1.27
+	    country_exists = CZE
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = Czechia.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): czechia.1.a"
+		ai_chance = { factor = 80 }
+		swap_ideas = { 
+			remove_idea = CZE_Jirzhy_Rusnok_hog
+			add_idea = CZE_Boguslav_Sobotka_hog
+		}
+		swap_ideas = { 
+			remove_idea = CZE_Jan_Kohout_fgm
+			add_idea = CZE_Lubomir_Zaoralek_fgm
+		}
+		swap_ideas = { 
+			remove_idea = CZE_Vlastimil_Picek_defm 
+			add_idea = CZE_Martin_Stropnicky_defm
+		}
+		swap_ideas = { 
+			remove_idea = CZE_Jan_Fischer_sm
+			add_idea = CZE_Ivan_Pilny_sm
+		}
+		set_country_flag = coalition_with_centrists
+		set_country_flag = coalition_with_liberals
+		remove_ideas = czech_political_corruption_scandal
+	}
+
+}
+
+country_event = {
+	id = czechia.2
+	title = czechia.2.t
+	desc = czechia.2.d
+	picture = GFX_event_sobotka_appointed
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = CZE
+		date > 2014.1.15
+	    country_exists = CZE
+		has_government = reformism
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = czechia.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): czechia.2.a"
+		ai_chance = { factor = 80 }
+		create_country_leader = {
+			name = "Bohuslav Sobotka"
+			desc = "POLITICS_BOHUSLAV_SOBOTKA_DESC"
+			picture = "gfx/leaders/CZE/portrait_bohuslav_sobotka.dds"
+			ideology = social_democracy
+			traits = { trait_social_democracy }
+		}
+	}
+
+}

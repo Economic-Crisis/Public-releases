@@ -1,0 +1,162 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+
+capital = 671
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 17120 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "VIN_2013"
+
+	add_ideas = {
+		asean_member
+		terrorism_discounted
+		TPP_member
+		NPT
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "2016.5.22"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 60
+		reformism = 20
+		liberalism = 5
+		democratic = 5
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	add_ideas = {
+		single-party_state
+		unitary_state
+		state_religion
+		state_propaganda_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		planned_economy
+		nationalization_of_heavy_industry
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+
+	create_country_leader = {
+		name = "Trần Đại Quang"
+		desc = "POLITICS_TRAN_DAI_QUANG_DESC"
+		picture = "gfx/leaders/VIN/portrait_tran_dai_quang.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Chyong Tan Shang"
+		desc = "POLITIC_CHYONG_TAN_SHANG_DESC"
+		picture = "gfx/leaders/VIN/portrait_chyong_tan_shang.dds"
+		ideology = leninism
+		expire = "2016.3.31"
+		traits = { trait_leninism }
+	}
+
+#	Communist Party leader, add on ideas
+#	create_country_leader = {
+#		name = "Nguyen Phu Trong"
+#		desc = "POLITIC_NGUYEN_PHU_TRONG_DESC"
+#		picture = "gfx/leaders/VIN/portrait_nguyen_phu_trong.dds"
+#		ideology = leninism
+#		traits = { trait_leninism }
+#	}
+
+
+	# Government of Free Vietnam (1995–2013) - ?
+
+
+	# Vietnam Reform Party |  Việt Tân
+    #create_country_leader = {
+	#	name = "Đỗ Hoàng Điềm"
+	#	desc = "POLITIC_DO_HOANG_DIEM_DESC"
+	#	picture = "gfx/leaders/VIN/portrait_do_hoang_diem.dds"
+	#	ideology = liberal_conservatism
+	#	traits = { trait_liberal_conservatism }
+	#}
+
+	# Vietnam Populist Party | Dang Vi Dan
+	#create_country_leader = {
+	#	name = "Nguyen CongBang" #  Secretary General of the VNPP
+	#	desc = "POLITIC_NGUYEN_CONGBANG_DESC"
+	#	picture = "gfx/leaders/VIN/portrait_nguyen_si_binh.dds"
+	#	ideology = liberal_democracy
+	#	traits = { trait_liberal_democracy }
+	#}
+
+	# People's Action Party of Vietnam (Founded January 18, 1991)
+	# Nguyen Tuong Ba (current) or  Nguyen Si Binh (in 1991) ?
+
+	#create_country_leader = {
+	#	name = "Nguyen Tuong Ba"
+	#	desc = "POLITIC_NGUYEN_TUONG_BA_DESC"
+	#	picture = "gfx/leaders/VIN/portrait_nguyen_si_binh.dds"
+	#	ideology = centrist_democracy  # de jure conservative_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Nguyen Si Binh"
+	#	desc = "POLITIC_DO_HOANG_DIEM_DESC"
+	#	picture = "gfx/leaders/VIN/portrait_nguyen_si_binh.dds"
+	#	ideology = centrist_democracy  # de jure conservative_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+
+	# Nationalist Party of Greater Vietnam
+    #create_country_leader = {
+	#	name = "Tran Trong Dat"
+	#	desc = "POLITIC_TRAN_TRONG_DAT_DESC"
+	#	picture = "gfx/leaders/VIN/portrait_tran_trong_dat.dds"
+	#	ideology = national_democracy
+	#	traits = { trait_national_democracy }
+	#}
+
+	create_corps_commander = {
+		name = "Đỗ Bá Ty"
+		portrait_path = "gfx/leaders/VIN/portrait_vin_general_do_ba_ty.dds"
+		skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Ngô Xuân Lịch"
+		portrait_path = "gfx/leaders/VIN/portrait_vin_general_ngo_xuan_lich.dds"
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Phùng Quang Thanh"
+		portrait_path = "gfx/leaders/VIN/portrait_vin_general_phung_quang_thanh.dds"
+		skill = 1
+	}
+	
+	create_navy_leader = {
+		name = "Phạm Hoài Nam"
+		portrait_path = "gfx/leaders/VIN/portrait_vin_admiral_pham_hoai_nam.dds"
+		skill = 2
+	}
+
+}

@@ -1,0 +1,878 @@
+﻿#########################
+## Economic Crisis     ##
+#########################
+## Russia events       ##
+#########################
+## Written by SuxrobGM ##
+#########################
+
+add_namespace = russia
+
+country_event = { #Россия гарантирует независимость Монголии
+	id = russia.1
+	title = russia.1.t
+	desc = russia.1.d
+	picture = GFX_event_help_to_MON
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.1.a #Гарантировать
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.1.a"
+		ai_chance = { factor = 80 }
+		RUS = { give_guarantee = MON }
+		CHI = { add_opinion_modifier = { target = RUS modifier = RUS_enemy_CHI_focus } }
+		hidden_effect = {
+			news_event = { id = russia_news.14 hours = 6 }
+		}
+	}
+	
+	option = { #Отказать
+		name = russia.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.1.b"
+		ai_chance = { factor = 20 }
+	}
+}
+
+country_event = { #Инцидент Су-24
+	id = russia.2
+	title = russia.2.t
+	desc = russia.2.d
+	picture = GFX_event_RUS_incidient_Su-24
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.2.a"
+		ai_chance = { factor = 80 }
+		add_opinion_modifier = { target = TUR modifier = TUR_incindient_SU-24 }
+		hidden_effect = {
+			news_event = { id = russia_news.15 hours = 6 }
+		}
+	}
+}
+
+country_event = { #Анексия восточной Украины
+	id = russia.3
+	title = russia.3.t
+	desc = russia.3.d
+	picture = GFX_event_UKR_vs_RUS
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.3.a #Ультиматум Украине и Новоросси
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.3.a"
+		ai_chance = { factor = 70 }
+		UKR = { country_event = { id = russia.4 days = 4 } }
+		if = { 
+		    limit = { country_exists = NRU }
+			NRU = { country_event = { id = russia.7 days = 3 } }
+		}
+		if = { 
+		    limit = { country_exists = DON }
+			DON = { country_event = { id = russia.7 days = 3 } }
+		}
+		if = { 
+		    limit = { country_exists = LUG }
+			LUG = { country_event = { id = russia.7 days = 3 } }
+		}
+	}
+	
+	option = { #отказ
+		name = russia.3.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.3.b"
+		ai_chance = { factor = 30 }
+	}
+}	
+	
+country_event = { #Украина получит ултиматум 
+	id = russia.4
+	title = russia.4.t
+	desc = russia.4.d
+	picture = GFX_event_rus_ultimatum_1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.4.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.4.a"
+		ai_chance = { factor = 30 }
+		RUS = { country_event = { id = russia.5 days = 2 } }
+		add_opinion_modifier = { target = RUS modifier = RUS_enemy_UKR_focus } 
+	}
+	
+	option = { #отказ
+		name = russia.4.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.4.b"
+		ai_chance = { factor = 70 }
+		RUS = { country_event = { id = russia.6 days = 2 } }
+		RUS = { add_opinion_modifier = { target = UKR modifier = RUS_enemy_UKR_focus } }
+	}
+}
+
+country_event = { #Украина приняла ултиматум 
+	id = russia.5
+	title = russia.5.t
+	desc = russia.5.d
+	picture = GFX_event_RUS_ultimatum_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.5.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.5.a"
+		ai_chance = { factor = 70 }
+		RUS = { 
+		    transfer_state = 225
+			transfer_state = 193
+			transfer_state = 259
+			transfer_state = 221
+			transfer_state = 785
+			transfer_state = 786
+			transfer_state = 226
+			transfer_state = 200
+			transfer_state = 196
+		}
+		hidden_effect = {
+			news_event = { id = russia_news.17 days = 1 }
+		}
+	}
+}
+
+country_event = { #Украина отвергла ултиматум 
+	id = russia.6
+	title = russia.6.t
+	desc = russia.6.d
+	picture = GFX_event_RUS_army1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.6.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.6.a"
+		ai_chance = { factor = 70 }
+		create_wargoal = {
+			type = take_state_focus 
+			target = UKR 
+			generator = { 225 193 259 221 785 786 226 200 196 }
+		}
+	}
+}
+
+country_event = { #ЛДНР получит ултиматум 
+	id = russia.7
+	title = russia.7.t
+	desc = russia.7.d
+	picture = GFX_event_RUS_army1
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.7.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.7.a"
+		ai_chance = { factor = 40 }
+		RUS = { country_event = { id = russia.8 days = 2 } }
+		add_opinion_modifier = { target = RUS modifier = RUS_enemy_UKR_focus }
+	}
+	
+	option = { #отказ
+		name = russia.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.7.b"
+		ai_chance = { factor = 60 }
+		RUS = { country_event = { id = russia.9 days = 2 } }
+		if = {
+		    limit = { country_exists = NRU }
+		    RUS = { add_opinion_modifier = { target = NRU modifier = RUS_enemy_UKR_focus } }
+		}
+		if = {
+		    limit = { country_exists = DON }
+		    RUS = { add_opinion_modifier = { target = DON modifier = RUS_enemy_UKR_focus } }
+		}
+		if = {
+		    limit = { country_exists = LUG }
+		    RUS = { add_opinion_modifier = { target = LUG modifier = RUS_enemy_UKR_focus } }
+		}
+	}
+}
+
+country_event = { #ЛДНР принял ултиматум 
+	id = russia.8
+	title = russia.8.t
+	desc = russia.8.d
+	picture = GFX_event_dogovor_s_russiey
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.8.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.8.a"
+		ai_chance = { factor = 70 }
+		if = {
+		    limit = { country_exists = NRU }
+		    RUS = { annex_country = { target = NRU } }
+		}
+		if = {
+		    limit = { country_exists = DON }
+		    RUS = { annex_country = { target = DON } }
+		}
+		if = {
+		    limit = { country_exists = LUG }
+		    RUS = { annex_country = { target = LUG } }
+		}
+		hidden_effect = {
+		    news_event = { id = russia_news.18 days = 1 }
+		}
+	}
+}
+
+country_event = { #ЛДНР отверг ултиматум 
+	id = russia.9
+	title = russia.9.t
+	desc = russia.9.d
+	picture = GFX_event_RUS_ultimatum_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.9.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.9.a"
+		ai_chance = { factor = 70 }
+		if = {
+		    limit = { country_exists = NRU }
+		    create_wargoal = {
+			    type = take_state_focus 
+			    target = NRU 
+			    generator = { 227 228 }
+		    }
+		}
+		if = {
+		    limit = { country_exists = DON }
+		    create_wargoal = {
+			    type = take_state_focus 
+			    target = DON 
+			    generator = { 227 }
+		    }
+		}
+		if = {
+		    limit = { country_exists = LUG }
+		    create_wargoal = {
+			    type = take_state_focus 
+			    target = LUG 
+			    generator = { 228 }
+		    }
+		}
+	}
+}
+
+country_event = { #Договор о создание ЕАЭС
+	id = russia.10
+	title = russia.10.t
+	desc = russia.10.d
+	picture = GFX_event_flag_eaeu_1
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		date > 2014.5.29
+		country_exists = RUS
+	}
+	
+	option = { 
+		name = russia.10.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.10.a"
+		ai_chance = { factor = 90 }
+		add_ideas = eaeu_member
+		if = {
+			limit = { country_exists = ARM }
+			ARM = { add_ideas = eaeu_member }
+		}
+		if = {
+			limit = { country_exists = BLR }
+			BLR = { add_ideas = eaeu_member }
+		}
+		if = {
+			limit = { country_exists = KAZ }
+			KAZ = { add_ideas = eaeu_member }
+		}
+		if = {
+			limit = { country_exists = KYR }
+			KYR = { add_ideas = eaeu_member }
+		}
+		hidden_effect = {
+			news_event = { id = russia_news.16 days = 1 }
+			set_country_flag = RUS_creation_eaeu
+		}
+	}
+
+    option = { 
+		name = russia.10.b #Отказ
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.10.b"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+
+country_event = {  #ЛДНР ленд-лиз
+	id = russia.12
+	title = russia.12.t
+	desc = russia.12.d
+	picture = GFX_event_DNR_LNR
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = RUS
+	    country_exists = DON
+        country_exists = LUG
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { #select_effect
+		name = russia.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.12.a"
+	    ai_chance = { 
+	        factor = 70
+			modifier = { 
+			    factor = 95
+				has_government = neutrality
+			}
+	    }
+		send_equipment = { target = DON type = army_ammunition_equipment amount = 5000 }
+		send_equipment = { target = DON type = army_salw_equipment amount = 5000 }
+	    send_equipment = { target = LUG type = army_ammunition_equipment amount = 5000 }
+		send_equipment = { target = LUG type = army_salw_equipment amount = 5000 }
+	    DON = { add_stability = 0.1 }
+	    LUG = { add_stability = 0.1 }
+	}
+	
+	option = {
+		name = russia.12.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.12.b"
+	    ai_chance = { 
+	        factor = 20
+			modifier = {
+			    factor = 80
+				NOT = { has_government = neutrality }
+			}
+	    }    
+		DON = {
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+	    LUG = {
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+	}	
+	
+	option = {
+		name = russia.12.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.12.b"
+	    ai_chance = { 
+	        factor = 20
+			modifier = {
+			    factor = 80
+				NOT = { has_government = neutrality }
+			}
+	    }    
+		DON = { add_stability = 0.1 }
+	    LUG = { add_stability = 0.1 }
+	}
+}
+
+country_event = { #Поддержка Януковича
+	id = russia.13
+	title = russia.13.t
+	desc = russia.13.d
+	picture = GFX_event_UKR_protests
+	
+	is_triggered_only = yes
+	
+	option = { #Поддержка правительства Януковича
+		name = russia.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.13.a"
+	    ai_chance = {
+			factor = 70
+		}
+		UKR = { add_opinion_modifier = { target = RUS modifier = actions_negative } }
+		add_ai_strategy = {
+			type = befriend
+			id = "NRU"			
+			value = 120
+		}
+	}
+	
+	option = { #Отказ
+		name = russia.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.13.b"
+		UKR = { add_opinion_modifier = { target = RUS modifier = actions_positive } }
+	    ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = { #Дума требует отставки правительства
+	id = russia.14
+	title = russia.14.t
+	desc = russia.14.d
+	picture = GFX_event_government_russia
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.14.a #оставить Медведева
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.14.a"
+		ai_chance = {
+			factor = 40
+		}
+		add_ideas = RUS_Dmitriy_Medvedev_hog
+		add_popularity = { ideology = neutrality popularity = 0.05 }
+		add_stability = -0.05
+		if = {
+			limit = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			coalition_with_centrists = yes
+		}
+	}
+	
+	option = {
+		name = russia.14.b #реформист Миронов
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.14.b"
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+			coalition_with_reformists = yes
+		}
+		add_ideas = RUS_Sergei_Mironov_hog
+		add_popularity = { ideology = reformism popularity = 0.1 }
+		add_political_power = 60
+	}
+	
+	option = {
+		name = russia.14.c #центрист Рогозин
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.14.c"
+		ai_chance = {
+			factor = 30
+		}
+		add_ideas = RUS_Dmitriy_Rogozin
+		add_stability = -0.05
+		if = {
+			limit = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			coalition_with_centrists = yes
+		}
+	}
+}
+
+country_event = {  
+	id = russia.15
+	title = russia.15.t
+	desc = russia.15.d
+	picture = GFX_event_RUS_ultimatum_2
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = russia.15.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.15.a"
+		set_capital = 195
+	}
+}
+country_event = {
+	id = russia.16
+	title = russia.16.t
+	desc = russia.16.d
+	picture = GFX_event_ne_tsar
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = RUS
+		date > 2018.05.05
+	    country_exists = RUS
+		has_country_leader = { 
+            id = 100002  #уникальный номер Путина (id из файла history/countries/RUS - Russia.txt)
+            ruling_only = yes 
+            name = "Vladimir Putin" 
+        }
+		has_stability < 0.45
+	}
+	
+	mean_time_to_happen = {
+	    days = 1
+	}
+	
+	option = {  
+		name = russia.16.a #Отдать власть Оппозиции
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.a"
+		ai_chance = { factor = 0.5 }
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.3
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = reformism
+			popularity = -1
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.51
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		   
+	    retire_country_leader = yes
+			
+		create_country_leader = {
+	        name = "Alexey Navalny"
+	        desc = ""
+	        picture = "gfx/leaders/RUS/portrait_alexey_navalny.dds"
+	        ideology = liberal_democracy
+	        traits = { trait_liberal_democracy }
+        }
+		create_country_leader = {
+	        name = "Dmitry Medvedev"
+	        desc = ""
+	        picture = "gfx/leaders/RUS/portrait_dmitry_medvedev.dds"
+	        ideology = oligarchy
+	        traits = { trait_oligarchy }
+        }
+
+		if = {
+			limit = {
+				date > 2012.12.15
+				date < 2014.2.8
+			}
+			set_party_name = { 
+				ideology = liberalism
+				long_name = RUS_liberalism_navalny_2012_party
+				name = RUS_liberalism_navalny_2012_party 
+			}
+		}
+
+		if = {
+			limit = {
+				date > 2014.2.8
+				date < 2018.5.19
+			}
+			set_party_name = { 
+				ideology = liberalism
+				long_name = RUS_liberalism_navalny_2016_party
+				name = RUS_liberalism_navalny_2016_party 
+			}
+		}
+
+		if = {
+			limit = {
+				date > 2018.5.19
+			}
+			set_party_name = { 
+				ideology = liberalism
+				long_name = RUS_liberalism_navalny_2018_party
+				name = RUS_liberalism_navalny_2018_party 
+			}
+
+		}
+
+	}	
+	
+	option = {
+		name = russia.16.b #Разогнать митингующих и арестовать некоторых
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.b"
+		ai_chance = { 
+			factor = 99.5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_stability = -0.02		
+	}
+}
+country_event = { #Падение А321 над Синайском полуострове
+	id = russia.17
+	title = russia.17.t
+	desc = russia.17.d
+	picture = GFX_event_a321_katastrofa
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		date > 2015.10.31
+		country_exists = RUS
+	}
+	
+	option = { 
+		name = russia.17.a #Направить материальную помощь
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.17.a"
+		ai_chance = { factor = 95 }
+		add_stability = 0.02
+	}
+	option = { 
+		name = russia.17.b #Не наши проблемы!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.17.b"
+		ai_chance = { factor = 5 }
+		add_stability = -0.04
+	}
+}
+country_event = { #Падение Челябинского метеорита
+	id = russia.18
+	title = russia.18.t
+	desc = russia.18.d
+	picture = GFX_event_chelyabinski_meteorit
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		date > 2013.02.15
+		country_exists = RUS
+	}
+	
+	option = { 
+		name = russia.18.a #Направить материальную помощь
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.18.a"
+		ai_chance = { 
+			factor = 60 
+		}
+		add_stability = -0.02
+	}
+	option = { 
+		name = russia.18.b #Не наши проблемы!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.18.b"
+		ai_chance = { 
+			factor = 40
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_stability = -0.04
+	}
+}
+country_event = { #Пожар в Кемерово в ТЦ "Зимняя Вишня".
+	id = russia.19
+	title = russia.19.t
+	desc = russia.19.d
+	picture = GFX_event_kemerovo
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		date > 2018.03.26
+		country_exists = RUS
+	}
+	
+	option = { 
+		name = russia.19.a #Направить материальную помощь
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.19.a"
+		ai_chance = { factor = 95 }
+		add_stability = -0.3
+	}
+	option = { 
+		name = russia.19.b #Не наши проблемы!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.19.b"
+		ai_chance = { factor = 5 }
+		add_stability = -0.8
+	}
+}
+news_event = { #Чемпионат мира по футболу 2018 в России
+	id = russia.20
+	title = russia.20.t
+	desc = russia.20.d
+	picture = GFX_event_world_cup_2018
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		date > 2018.07.15
+		country_exists = RUS
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = { 
+		name = russia.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.20.a"
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Japan Kuril Islands (RUS)
+country_event = {
+	id = russia.21
+	title = russia.21.t
+	desc = russia.21.d
+	picture = GFX_event_kuril_islands
+	is_triggered_only = yes
+	option = { # Accept demands
+		name = russia.21.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.21.a"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+					is_puppet_of = JAP
+					is_in_faction_with = JAP
+					}
+				}
+				JAP = {	surrender_progress > 0.09 }
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = JAP
+				}
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = {	tag = JAP }
+					RUS = {	is_puppet_of = PREV	}
+					NOT = {	is_in_faction_with = JAP }
+				}
+			}
+		}
+		JAP = {	country_event = { days = 1 id = japan.3 } }
+	}
+	option = { # Refuse
+		name = russia.21.b	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.21.b"		
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = {	JAP = {	surrender_progress > 0.09 }	}
+				NOT = {	any_other_country = {
+						is_in_faction_with = ROOT
+						has_war_with = JAP
+					}
+				}
+				NOT = {	any_other_country = {
+						NOT = {	tag = JAP }
+						RUS = {	is_puppet_of = PREV	}
+						NOT = {	is_in_faction_with = JAP }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {	is_in_faction_with = JAP
+					  RUS = { is_puppet_of = JAP }
+				}
+			}
+		}
+		effect_tooltip = { JAP = { country_event = { days = 1 id = japan.4 } } }
+		hidden_effect = { JAP = { country_event = { days = 1 id = japan.4 }	}
+	    }		
+    }
+}
+
+country_event = { # Japan Sakhalin Island (RUS)
+	id = russia.22
+	title = russia.22.t
+	desc = russia.22.d
+	picture = GFX_event_japan_sakhalin_island
+	is_triggered_only = yes
+	option = { # Accept demands
+		name = russia.22.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.22.a"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+					is_puppet_of = JAP
+					is_in_faction_with = JAP
+					}
+				}
+				JAP = {	surrender_progress > 0.09 }
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = JAP
+				}
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = {	tag = JAP }
+					RUS = {	is_puppet_of = PREV	}
+					NOT = {	is_in_faction_with = JAP }
+				}
+			}
+		}
+		JAP = {	country_event = { days = 1 id = japan.17 } }
+	}
+	option = { # Refuse
+		name = russia.22.b		
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.22.b"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = {	JAP = {	surrender_progress > 0.09 }	}
+				NOT = {	any_other_country = {
+						is_in_faction_with = ROOT
+						has_war_with = JAP
+					}
+				}
+				NOT = {	any_other_country = {
+						NOT = {	tag = JAP }
+						RUS = {	is_puppet_of = PREV	}
+						NOT = {	is_in_faction_with = JAP }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {	is_in_faction_with = JAP
+					  RUS = { is_puppet_of = JAP }
+				}
+			}
+		}
+		effect_tooltip = { JAP = { country_event = { days = 1 id = japan.18 } } }
+		hidden_effect = { JAP = { country_event = { days = 1 id = japan.18 } } }
+	}		
+}

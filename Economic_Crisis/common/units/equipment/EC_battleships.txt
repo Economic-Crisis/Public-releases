@@ -1,0 +1,202 @@
+equipments = {
+	ship_hull_heavy = {
+		year = 1922
+
+		is_archetype = yes
+		is_buildable = no
+		type = capital_ship
+		interface_category = interface_category_capital_ships
+		priority = 1500
+		group_by = archetype
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_rcc ship_railgun }
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_fire_control_system_slot = {
+				required = no
+				allowed_module_categories = { ship_fire_control_system }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar }
+			}
+			fixed_ship_nuclear_reactor_slot = {
+				required = yes
+				allowed_module_categories = { heavy_carrier_ship_nuclear_reactor }
+			}
+			fixed_ship_secondaries_slot = {
+				required = no
+				allowed_module_categories = { ship_rcc }
+			}
+			fixed_ship_armor_slot = {
+				required = yes
+				allowed_module_categories = { ship_heavy_armor }	
+			}
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_rcc
+					ship_light_battery
+				}
+			}
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_rcc
+					ship_light_battery
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_depth_charge
+				}
+			}
+			rear_2_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_depth_charge
+				}
+			}
+			front_2_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_depth_charge
+				}
+			}
+			rear_7_custom_slot = {
+				required = yes
+				allowed_module_categories = { ship_biological_defense }
+			}
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 0
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 20
+		naval_speed = 20
+		reliability = 0.80
+		
+		naval_range = 999999
+		
+		max_strength = 350
+		
+		build_cost_ic = 3300
+		resources = {
+			steel = 2
+		}
+
+		manpower = 4000
+	}
+	ship_hull_heavy_1 = {
+		year = 1922
+		archetype = ship_hull_heavy
+		priority = 1500
+		visual_level = 0
+		module_slots = inherit		
+	}
+
+	ship_hull_heavy_2 = {
+		year = 1936
+		archetype = ship_hull_heavy
+		priority = 1500
+		parent = ship_hull_heavy_1
+		visual_level = 1
+		module_slots = inherit
+		
+		naval_range = 999999
+		
+		max_strength = 370
+		reliability = 0.85
+		naval_speed = 22
+		build_cost_ic = 3400
+		resources = {
+			polymers = 1
+			steel = 2
+		}
+
+		manpower = 5200
+	}
+
+	ship_hull_heavy_3 = {
+		year = 1940
+		archetype = ship_hull_heavy
+		priority = 1500
+		parent = ship_hull_heavy_2
+		visual_level = 1
+		module_slots = inherit
+
+		naval_range = 999999
+		naval_speed = 24
+		max_strength = 400
+		reliability = 0.9
+
+		
+		build_cost_ic = 3500
+		resources = {
+			polymers = 1
+			steel = 2
+		}
+
+		manpower = 6000
+	}
+
+	ship_hull_heavy_4 = {
+		year = 1944
+		archetype = ship_hull_heavy
+		priority = 1500
+		parent = ship_hull_heavy_3
+		visual_level = 1
+		module_slots = inherit
+
+		naval_range = 999999
+		
+		max_strength = 450
+		naval_speed = 26
+		reliability = 0.95
+		build_cost_ic = 3600
+		resources = {
+			polymers = 1
+			steel = 2
+		}
+
+		manpower = 6000
+	}
+}

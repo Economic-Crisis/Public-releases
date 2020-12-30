@@ -1,0 +1,164 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 554
+add_ideas = mixed_schools
+# 22 марта 1945 года
+    add_ideas = {
+		arab_league_member
+	}
+	
+1967.06.10 = {
+    add_ideas = revanchism
+	add_ideas = NPT
+}
+
+# 16 ноября 2011
+2011.11.16 = {
+    remove_ideas = {
+		arab_league_member
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1390 }
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = 	{
+			target = ROJ
+			autonomy_state = autonomous_area
+		}
+		else = {
+		#	puppet = ROJ
+		}
+	}
+	add_ideas = {
+		decaying_state
+		obsolete_army
+	}
+}
+
+#2013.2.2 = { 
+#	declare_war_on = { type = take_state_focus target = ISS generator = { 822 } } #680
+#	declare_war_on = { type = annex_everything target = FSA } 
+#}
+
+2013.11.1 = {
+
+	load_oob = "_tech_minor_2013"
+	oob = "SYR_2013"
+
+	set_country_flag = SYR_civilwar
+	set_country_flag = war_with_ISIS
+
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+		
+	set_country_flag = pai_nondem_totalitarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.5.12"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 3
+		democratic = 5
+		neutrality = 84
+		fascism = 8
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Bashar al Assad"
+		desc = ""
+		picture = "gfx/leaders/SYR/portrait_bashar_al_assad.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Hashim al-Atassi"
+		desc = ""
+		picture = "gfx/leaders/SYR/portrait_arabia_generic_navy_1.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Antun Saadeh"
+		desc = ""
+		picture = "gfx/leaders/SYR/portrait_arabia_generic_land_3.dds"
+		ideology = classical_fascism
+		traits = { trait_classical_fascism }
+	}
+
+	create_country_leader = {
+		name = "Khalid Bakdash"
+		desc = ""
+		picture = "gfx/leaders/SYR/portrait_arabia_generic_communism1.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	#Generals
+	create_field_marshal = {
+		name = "Isaam Zahreddine"
+		portrait_path = "gfx/leaders/SYR/portrait_general_isaam_zahreddine.dds"
+		traits = { assault_army_ops_expert fast_planner }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Maher al-Assad"
+		portrait_path = "gfx/leaders/SYR/portrait_general_maher_al-assad.dds"
+		traits = { motorized_infantry_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Abdel-Fatah Qudsiyeh"
+		portrait_path = "gfx/leaders/SYR/portrait_general_abdel-fatah_qudsiyeh.dds"
+		traits = { specops_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Hawash Muhammed"
+		portrait_path = "gfx/leaders/SYR/portrait_general_hawash_muhammed.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Rustum Ghazaleh"
+		portrait_path = "gfx/leaders/SYR/portrait_general_rustum_ghazaleh.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+}

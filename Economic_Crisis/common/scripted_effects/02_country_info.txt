@@ -1,0 +1,20 @@
+### EC COUNTRY_INFO
+
+clear_country_population = {
+	set_variable = { country_population = 0 }
+}
+
+set_country_population = {
+				this.Owner = { add_to_variable = { country_population = PREV.state_population_k } }			
+}
+
+update_year_season = {
+
+	for_each_loop = {
+    array = global.season
+    add_to_variable = { global.season^i = 8.76 }
+    }
+}
+
+
+

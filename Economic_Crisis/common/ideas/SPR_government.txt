@@ -1,0 +1,148 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+	spr_soraya_de_santamaria_hog = {
+		
+				picture = GFX_idea_spr_soraya_de_santamaria
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = "SPR"
+			}
+			
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		spr_alfonso_dastis_fgm = {
+
+		picture = GFX_idea_spr_alfonso_dastis
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				}
+
+
+      		allowed = { 
+				original_tag  = "SPR" 
+			}
+
+      			traits = { foreign_minister_addiction_irredentist}
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+				}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	defence_minister = {
+
+		spr_maria_cospedal_defm = {
+
+		picture = GFX_idea_spr_maria_cospedal
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = "SPR"
+			}
+
+			traits = { defence_minister_bureaucrat}
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+		}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	economic_minister = {
+	
+		spr_luis_guindos_ecm = {
+		
+		picture = GFX_idea_spr_luis_guindos
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "SPR"
+			}
+			
+			traits = { economic_minister_public_administration }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+		}
+	}
+}
+
+	secret_service_chief = {
+	
+		spr_juan_zoido_ssch = {
+		
+			picture = GFX_idea_spr_juan_zoido
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "SPR"
+			}
+			
+			traits = { secret_service_chief_counterespionage }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

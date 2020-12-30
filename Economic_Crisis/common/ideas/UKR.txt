@@ -1,0 +1,225 @@
+ideas = {
+	country = {
+		UKR_euromaydan = {
+			allowed = {
+				always = no
+			}
+			picture = ukr_national_spirit
+			
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.25
+				research_speed_factor = 0.1
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				fascism_drift = 0.02
+				neutrality_drift = -0.05
+			}
+			removal_cost = -1
+		}		
+		
+		UKR_rebellion_suppression = {
+			allowed = {
+				always = no
+			}
+			
+			
+			modifier = {
+				#local_supplies = -0.8 # припасы в провинции
+			#	local_intel_to_enemies = 1 # разведданные врагов
+				resistance_damage_to_garrison = 0.15
+				attrition = 0.4 # потери от истощения
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+			#	modifier_resistance_tick = 12
+				resistance_target = 0.3 ## resistance_tick_auto = 4 # ???
+				stability_weekly = -0.005 # нац единство
+			}
+			removal_cost = -1
+		}
+		
+		UKR_the_split_people_east_and_west = { #Раскол украинцев на запад и восток
+			allowed = {
+				always = no
+			}
+			picture = ukr_the_split_people_east_and_west
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.1
+				research_speed_factor = -0.05
+			}
+			on_add = {
+				add_opinion_modifier = { target = RUS modifier = UKR_the_split_people_east_and_west }
+			}
+			removal_cost = -1
+		}
+		
+		UKR_gas_agreements = { #Газовые соглашения
+			allowed = {
+				always = no
+			}
+			picture = ukr_gas_agreements
+			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_gain = -0.1
+			}
+			on_add = {
+				add_opinion_modifier = { target = RUS modifier = UKR_gas_agreements }
+			}
+			removal_cost = -1
+		}
+		
+		UKR_lustration_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			
+			modifier = {
+				stability_factor = 0.005
+				political_power_gain = 0.15
+				research_speed_factor = 0.05
+				neutrality_drift = -0.1
+				reformism_drift = -0.05
+				army_org_factor = -0.1
+			}
+		}
+		
+		UKR_imf_loan_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		UKR_influences_fascism = { #Поддержка оппозиции (влияния)
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 45
+			}
+		}
+		UKR_influences_democratic = { #Поддержка оппозиции (влияния)
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				democratic_drift = 0.1
+				democratic_acceptance = 45
+			}
+		}
+		UKR_influences_liberalism = { #Поддержка оппозиции (влияния)
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				liberalism_drift = 0.1
+				liberalism_acceptance = 45
+			}
+		}
+		UKR_influences_reformism = { #Поддержка оппозиции (влияния)
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				reformism_drift = 0.1
+				reformism_acceptance = 45
+			}
+		}
+		UKR_influences_neutrality = { #Поддержка оппозиции (влияния)
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				neutrality_drift = 0.1
+				neutrality_acceptance = 45
+			}
+		}
+		UKR_budapest_memorandum = { #Будапештский меморандум
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			research_bonus = {
+				nuclear_tech = -0.25
+			}
+			
+			modifier = {
+				#nuclear_production = 0
+				nuclear_production_factor = -0.25
+				#nuclear_research = 0.25
+			}
+		}
+		UKR_debt_restructuring_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.18
+				political_power_gain = -0.15
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+﻿division_template = {
+	name = "Infantry Brigade"  	
+
+	regiments = {
+		light_motorized = { x = 0 y = 0 }
+		light_motorized = { x = 0 y = 1 }
+		light_motorized = { x = 0 y = 2 }
+		light_motorized = { x = 1 y = 0 }
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 2 y = 0 }
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+                # anti_tank_brigade = { x = 3 y = 0 }
+                # anti_air_brigade = { x = 4 y = 0 }
+               # artillery_brigade = { x = 5 y = 0 }
+	}
+	support = {
+                recon_battalion = { x = 0 y = 0 }
+				airborne_support_company = { x = 0 y = 1 } 
+                engineer_battalion = { x = 0 y = 2 }
+                medical_company = { x = 0 y = 3}
+                signal_company = { x = 0 y = 4}
+	}
+}
+
+units = {
+	# Tallinn
+	division = {
+		name = "Division in Tallinn"
+		location = 3152
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+
+	# Tartu
+	division = {
+		name = "Division in Tartu"
+		location = 9221
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+}

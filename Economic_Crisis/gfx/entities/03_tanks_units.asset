@@ -1,0 +1,212 @@
+	#####################################################################
+	#####															#####
+	#####			Tanks models base dummy units					#####
+	#####															#####
+	#####################################################################
+
+	# Models from EvsW or EC optimised, no sprites on node
+	
+	# Base animation for model
+	entity = {
+		name = "tank_no_sprites"
+		pdxmesh = "t55_mesh"
+
+		state = { name = "idle"				animation = "idle"   animation_blend_time = 0.3 }
+		state = { name = "move"				animation = "move"   animation_blend_time = 0.3 
+		#	event = { time = 0 node="exhaust" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		#	event = { time = 0 node="left_tracks" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+		#	event = { time = 0 node="right_tracks" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+		}
+		
+		state = { name = "retreat"				animation = "move"   animation_blend_time = 0.3 
+		#	event = { time = 0 node="exhaust" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		#	event = { time = 0 node="left_tracks" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+		#	event = { time = 0 node="right_tracks" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+		}
+		
+		# state = { name = "attack"			animation = "attack" animation_blend_time = 0.3 
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		# }
+		
+		# state = { name = "defend"			animation = "attack" animation_blend_time = 0.3 
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		# }
+			
+		# state = { name = "support_attack"	animation = "attack" animation_blend_time = 0.3  
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+			# event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		# }	
+		
+		state = { name = "attack"			animation = "attack" animation_blend_time = 0.3 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		
+		state = { name = "defend"			animation = "attack" animation_blend_time = 0.3 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		
+		state = { name = "support_attack"			animation = "attack" animation_blend_time = 0.3 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		
+		state = { name = "training"				animation = "idle" 			animation_blend_time = 0.3 animation_speed = 1.0
+		#	event = { time = 0 node="exhaust" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes }
+		}
+		
+		game_data = {
+			texture_anim_speed = 0.5
+		}
+	}
+
+	# T-55 model from EvsW
+	entity = {
+		name = "tank_t55"
+		clone = "tank_no_sprites"	
+		pdxmesh = "t72_mesh"
+	}	
+	
+	# T-72 model from EvsW
+	entity = {
+		name = "tank_t72"
+		clone = "tank_no_sprites"	
+		pdxmesh = "t72_mesh"
+	}
+
+	# T-80 model from EvsW
+	entity = {
+		name = "tank_t80"
+		clone = "tank_no_sprites"	
+		pdxmesh = "t80_mesh"
+	}
+
+	# T-90 model from EC
+	entity = {
+		name = "tank_t90"
+		clone = "tank_no_sprites"	
+		pdxmesh = "t90_mesh"
+	}
+	
+	# M48 Patton model from EvsW
+	entity = {
+		name = "tank_m48"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m48_mesh"
+	}
+	
+	# M48 Patton model from EvsW
+	entity = {
+		name = "tank_m48_sand"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m48_sand_mesh"
+	}	
+		
+	# M60 Patton model from EvsW
+	entity = {
+		name = "tank_m60"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m60_mesh"
+	}	
+
+	# M60 Patton model from EvsW
+	entity = {
+		name = "tank_m60_sand"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m60_sand_mesh"
+	}	
+	
+	# M1 Abrams model from EvsW (not used)
+	entity = {
+		name = "tank_m1_abrams"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m1_abrams_mesh"
+	}
+
+	# M1 Abrams model from EC
+	entity = {
+		name = "tank_m1a1"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m1a1_mesh"
+	}
+
+	# M1 Abrams model from EC
+	entity = {
+		name = "tank_m1a1_sand"
+		clone = "tank_no_sprites"	
+		pdxmesh = "m1a1_sand_mesh"
+	}
+		
+	# Leopard 2A5 model from EvsW 
+	entity = {
+		name = "tank_leopard2a5"
+		clone = "tank_no_sprites"	
+		pdxmesh = "leopard2a5_mesh"
+	}
+
+	# Leopard 2A4 model from EC
+	entity = {
+		name = "tank_leopard2"
+		clone = "tank_no_sprites"	
+		pdxmesh = "leopard2_mesh"
+	}
+	
+	# Type-99A (ZTZ99) from EC
+	entity = {
+		name = "tank_ztz99"
+		clone = "tank_no_sprites"	
+		pdxmesh = "ztz99_mesh"
+	}
+	
+	### MAIN BATTLE TANK DEBUG (not animaton) ###
+	entity = {
+		name = "tank_no_anims"
+		pdxmesh = "t64_mesh"
+
+		state = { name = "idle" }
+		state = { name = "move"	event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } } }
+		state = { name = "retreat" event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } } }
+		state = { name = "attack"
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		state = { name = "defend"
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		state = { name = "support_attack"
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+			event = { trigger_once = yes sound = { soundeffect = medium_armour_fire } } 
+		}
+		state = { name = "training"	}
+		
+		game_data = {
+			texture_anim_speed = 0.5
+		}
+	}
+
+	# T-64 from EC
+	entity = {
+		name = "tank_t64"
+		clone = "tank_no_anims"
+		pdxmesh = "t64_mesh"
+	}
+	
+	# T-84 Oplot from EC
+	entity = {
+		name = "tank_t84"
+		clone = "tank_no_anims"
+		pdxmesh = "t84_mesh"
+	}
+	
+	# FV4034 Challenger 2 from EC
+	entity = {
+		name = "tank_challenger2"
+		clone = "tank_no_anims"
+		pdxmesh = "challenger2_mesh"
+	}

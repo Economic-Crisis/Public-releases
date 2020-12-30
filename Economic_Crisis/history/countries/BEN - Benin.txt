@@ -1,0 +1,89 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# EDITED LEADERS
+# EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 747
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 915 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.75
+	add_ideas = NPT
+	add_political_power = 0
+
+	set_convoys = 10
+
+	# laws
+	add_ideas = {
+	    au_member
+		presidential_republic
+		unitary_state
+		preference_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		terrorism_discounted
+	}
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.3.20" #for 2016 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 21
+		liberalism = 36
+		democratic = 0
+		neutrality = 43
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Patrice Talon" #Патрис Талон
+		desc = ""
+		picture = "gfx/leaders/BEN/portrait_patrice_talon.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Thomas Boni Yayi" #Яйи Бони
+		desc = ""
+		picture = "gfx/leaders/BEN/portrait_yayi_boni.dds"
+		ideology = centrist_democracy
+		expire = "2016.3.20"
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Adrien Houngbedji" # Адриен Хунгбеджи
+		desc = ""
+		picture = "gfx/leaders/BEN/portrait_adrien_houngbedji.dds"
+		ideology = liberal_democracy #Партия демократического обновления
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Emmanuel Golou" # Эммануэль Голоу
+		desc = ""
+		picture = "gfx/leaders/BEN/portrait_emmanuel_golou.dds"
+		ideology = social_democracy #Социал-демократическая партия
+		traits = { trait_social_democracy }
+	}
+	
+}

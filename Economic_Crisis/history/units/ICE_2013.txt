@@ -1,0 +1,38 @@
+﻿start_equipment_factor = 0.2
+division_template = {
+	name = "Rikislogreglan"	# National Police
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "ICE"
+		}
+		requested_factories = 1
+		progress = 0.85
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "ICE"
+		}
+		requested_factories = 1
+		progress = 0.88
+		efficiency = 100
+	}
+}

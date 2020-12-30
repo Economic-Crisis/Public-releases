@@ -1,0 +1,69 @@
+﻿division_template = {
+	name = "División de Infanteria"	
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Airborne Regiment on APC Wheeled"	
+	regiments = {
+	# 1st airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+
+	}
+	
+}
+
+units = {
+	##### Alto Mando de Venezuela #####
+	division= {	
+		name = "1a División 'Eduardo Blanco'"
+		location = 8113 # Caracas
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3 
+
+	}
+	
+	division= {	
+		name = "42 Brigada de Infantería Paracaidista"
+		location = 10823 
+		division_template = "Airborne Regiment on APC Wheeled"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7 
+
+	}
+
+	##### No notable navy #####
+}
+
+##### No notable air forces #####
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "VEN"
+		}
+		requested_factories = 1
+		progress = 0.89
+		efficiency = 100
+	}
+}

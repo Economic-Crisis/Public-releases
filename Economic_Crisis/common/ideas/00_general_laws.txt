@@ -1,0 +1,1207 @@
+# Economic Crisis general laws 
+
+ideas = {
+
+	form_of_government_laws = {
+	   
+	   law = yes
+		
+		dictatorship_state = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 9
+	
+			available = { always = no }
+			
+			on_add = { 
+				set_country_flag = dictatura 
+			}
+		}
+		
+		single-party_state = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 8
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = dictatura
+			}
+			
+		}
+		
+		directorial_republic = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 7
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+			}
+			
+		}
+		caliphate = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 1
+			
+			allowed = {
+				has_government = rad_islamists
+			}
+			
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = dictatura 
+				set_country_flag = monarchy 
+			}
+			
+		}
+
+		presidential_republic = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 6
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+			}
+			
+		}
+		
+		semi-presidential_republic = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			# level = 5
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+			}
+			
+		}
+		
+		parliamentary_republic = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 4
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+			}
+			
+		}
+		
+		parliamentary_monarchy = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 3
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+				set_country_flag = monarchy 
+			}
+			
+		}
+		
+		semi-parliamentary_monarchy = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 2
+	
+			available = { always = no }
+			
+			on_add = {
+			    set_country_flag = democracy 
+				set_country_flag = monarchy 
+			}
+			
+		}
+		
+		
+		absolute_monarchy = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 1
+	
+            available = { always = no }	
+	
+			on_add = {
+				set_country_flag = monarchy 
+			}
+			
+		}
+	}
+
+	power_structure_laws = {
+	    law = yes
+		
+		confederation = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 7
+	
+	        available = { always = no }
+	
+			on_add = {
+				custom_effect_tooltip = confederation_TT
+			#	hidden_effect = {
+					news_event = confederation.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+			    stability_weekly = -0.002
+				stability_factor = -0.15
+				production_speed_buildings_factor = 0.05
+				join_faction_tension = -0.20
+				global_building_slots_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+				local_resources_factor = 0.08
+				consumer_goods_factor = 0.04
+				conversion_cost_civ_to_mil_factor = 0.10
+				resistance_target = -0.03
+			}
+		}
+		
+		federation = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 6
+	
+	        available = { always = no }
+	
+			on_add = {
+				custom_effect_tooltip = federation_TT
+			#	hidden_effect = {
+					news_event = federation.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+				stability_weekly =  0.001
+				stability_factor = -0.10
+			    join_faction_tension = -0.15
+				global_building_slots_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.03
+				consumer_goods_factor = 0.03
+				local_resources_factor = 0.05
+				production_speed_buildings_factor = 0.03
+				industry_repair_factor = 0.03
+				conversion_cost_civ_to_mil_factor = -0.10
+				resistance_target = -0.02
+			}
+		}
+		
+		administrative_federation = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 5
+	
+            available = { always = no }	
+	
+			on_add = {
+				custom_effect_tooltip = administrative_federation_TT
+			#	hidden_effect = {
+					news_event = administrative_federation.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+				stability_weekly =  0.001
+				stability_factor = -0.05
+			    join_faction_tension = -0.10
+				global_building_slots_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.01
+				consumer_goods_factor = 0.03
+				local_resources_factor = 0.03
+				production_speed_buildings_factor = 0.02
+				conversion_cost_civ_to_mil_factor = -0.05
+				resistance_target = -0.01
+			}
+		}
+		
+		national_federation = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 4
+	
+	        available = { always = no }
+	
+			on_add = {
+				custom_effect_tooltip = presidential_republic_TT
+			#	hidden_effect = {
+					news_event =  national_federation.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+				stability_weekly = 0.003
+				stability_factor = -0.05
+			    join_faction_tension = -0.05
+				global_building_slots_factor = 0.05
+				local_resources_factor = 0.03
+				production_speed_buildings_factor = 0.01
+				consumer_goods_factor = 0.02
+				industry_repair_factor = 0.02
+				conversion_cost_civ_to_mil_factor = -0.05
+				resistance_target = 0.01
+			}
+		}
+		
+		#regional_state = {
+		#    
+		#	cost = 500
+		#	removal_cost = -1
+		#	cancel_if_invalid = no
+		#	# level = 3
+		#
+		#	on_add = {
+		#	#	custom_effect_tooltip = regional_state_TT
+		#	#	hidden_effect = {
+		#	#	    country_event = regional_state.1
+		#	#	}
+		#	}
+		#
+		#	#do_effect = {
+		#	#	NOT = {
+		#	#		has_idea = 
+		#	#	}
+		#	#}
+		#	
+		#	modifier = {
+		#	    
+		#	}
+		#}
+		
+		unitary_state_with_devolution = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			# level = 2
+	
+			available = { always = no }
+			
+			on_add = {
+				custom_effect_tooltip = unitary_state_with_devolution_desc
+			#	hidden_effect = {
+				    news_event = unitary_state_with_devolution.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+				stability_weekly = 0.001
+				stability_factor = -0.02
+			    join_faction_tension =  0.05
+				global_building_slots_factor = 0.03
+				production_speed_buildings_factor = 0.02
+				consumer_goods_factor = 0.01
+				industry_repair_factor = 0.03
+				conversion_cost_civ_to_mil_factor = -0.10
+				resistance_target = -0.01
+			}
+		}
+		
+		unitary_state = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			# level = 1
+	
+			available = { always = no }
+			
+			on_add = {
+				custom_effect_tooltip = unitary_state_TT
+			#	hidden_effect = {
+					news_event = unitary_state.1
+			#	}
+			}
+	
+			#do_effect = {
+			#	NOT = {
+			#		has_idea = 
+			#	}
+			#}
+			
+			modifier = {
+				stability_weekly = 0.002
+				stability_factor = 0.05
+			    join_faction_tension =  0.10
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = 0.02
+				local_resources_factor = 0.01
+				production_speed_buildings_factor = 0.03
+				industry_repair_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.15
+				resistance_target = 0.03
+			}
+		}
+
+	}
+
+	
+	religion_laws = {
+	    
+		law = yes
+		
+		state_atheism = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 5
+
+			available = {
+				OR = {	
+					has_government = communism
+					has_government = fascism
+				}
+				#has_any_religion = yes
+			}
+			
+			on_add = {
+				custom_effect_tooltip = state_atheism_TT
+			#	hidden_effect = {
+					news_event = state_atheism.1
+			#	}
+			
+			#	switch_to_empty = yes	# not worked in 1.6	
+				country_event = religion.4			
+			}
+			
+			modifier = {
+			    research_speed_factor = 0.10
+				MONTHLY_POPULATION = -0.10
+			}
+		}
+		
+		secular_state = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			#level = 4
+			
+			
+			on_add = {
+				custom_effect_tooltip = secular_state_TT
+			#	hidden_effect = {
+					news_event = secular_state.1
+			#	}
+			
+			#	switch_to_empty = yes	# not worked in 1.6
+				country_event = religion.4
+			}
+	
+			modifier = {
+			    research_speed_factor = 0.08
+				MONTHLY_POPULATION = -0.05
+			}
+		}
+
+		preference_religion = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 3
+			
+			available = {
+				#has_any_religion = yes
+			}
+				
+			on_add = {
+				custom_effect_tooltip = preference_religion_TT
+			#	hidden_effect = {
+					news_event = preference_religion.1
+			#	}
+				hidden_effect = {
+					country_event = religion.1
+				}
+				#switch_to_christianity_lvl_1 = yes
+			}
+			
+
+			
+			modifier = {
+				research_speed_factor = 0.05
+				MONTHLY_POPULATION = -0.01
+			}
+		}
+		
+		state_religion = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 2
+			
+			available = {
+				#has_any_religion = yes
+			}
+				
+			on_add = {
+				custom_effect_tooltip = state_religion_TT
+			#	hidden_effect = {
+					news_event = state_religion.1
+			#	}
+				#switch_to_christianity_lvl_2 = yes
+				
+				hidden_effect = {
+					country_event = religion.2				
+				}
+			}
+			
+			modifier = {
+				research_speed_factor = 0.03
+				MONTHLY_POPULATION = 0.1
+			}
+		}		
+
+		theocracy = {
+		    
+			cost = 500
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 1
+
+			available = {
+				# has_idea = state_religion
+				# и идею одной или нескольких религий
+				# has_any_religion = yes
+				
+				OR = {
+					christianity_is_main = yes
+					islam_is_main = yes
+					buddhism_is_main = yes
+					hinduism_is_main = yes
+					judaism_is_main = yes
+				}
+				
+			}
+
+			on_add = {
+				custom_effect_tooltip = theocracy_TT
+			#	hidden_effect = {
+					news_event = theocracy.1
+			#	}
+				#switch_to_christianity_lvl_3 = yes
+				
+				hidden_effect = {
+					country_event = religion.3
+				}
+			}
+			
+			modifier = {
+				research_speed_factor = 0.01
+				MONTHLY_POPULATION = 0.05
+			}
+		}
+	}
+	
+	mass_media_laws = {
+	    
+		law = yes
+		
+		free_media = {
+		    
+			cost = 850
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 6
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+				}
+			}
+			
+			modifier = {
+			    stability_weekly = 0.001
+				political_power_factor = 0.10
+				political_power_gain = 0.03
+				trade_opinion_factor = 0.05
+				opinion_gain_monthly_factor = 0.03
+				opinion_gain_monthly_same_ideology_factor = 0.01
+				#reformism_drift = 0.02
+				#democratic_drift = 0.03
+				#liberalism_drift = 0.05
+				
+			}
+		}
+		
+		commercial_media = {
+		    
+			cost = 750
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 5
+			
+			modifier = {
+			    stability_weekly = 0.005
+				political_power_factor = 0.05
+				political_power_gain = 0.02
+				trade_opinion_factor = 0.03
+				opinion_gain_monthly_factor = 0.01
+				#democratic_drift = 0.05
+				#liberalism_drift = 0.03
+				#reformism_drift = 0.02
+				
+			}
+		}
+
+		mixed_media = {
+		    
+			cost = 550
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			level = 4
+			
+			modifier = {
+				political_power_factor = 0.10
+				political_power_gain = 0.01
+				opinion_gain_monthly_factor = 0.01
+				opinion_gain_monthly_same_ideology_factor = 0.01
+			    stability_weekly = 0.001
+				#neutrality_drift = 0.05
+				#reformism_drift = 0.05
+				foreign_subversive_activites = -0.03
+			}
+		}		
+
+		cencored_media = {
+		    
+			cost = 350
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 3
+			
+			on_add = {
+			    add_stability = -0.05
+			}
+			
+			modifier = {
+			    political_power_factor = 0.05
+				stability_factor = -0.05
+				political_power_gain = 0.01
+			    #stability_weekly =  0.001
+				#communism_drift = 0.03
+				#neutrality_drift = 0.04
+				foreign_subversive_activites = -0.08
+			}
+		}
+		
+		state_media_only = {
+		    
+			cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 2
+			
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = -0.05
+				political_power_gain = 0.01
+				opinion_gain_monthly_same_ideology_factor = 0.01
+			    stability_weekly =  0.001
+				#communism_drift = 0.04
+				#fascism_drift = 0.01
+				#neutrality_drift = 0.02
+				foreign_subversive_activites = -0.20
+				subversive_activites_upkeep = -0.05
+				#mobilization_laws_cost_factor = -0.01
+				
+			}
+		}
+		
+		state_propaganda_media = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 1
+			
+			available = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+					has_government = rad_islamists
+					has_government = democratic
+					has_government = neutrality
+				}
+			}
+			
+			on_add = {
+				support_current_ruling_party_normal = yes
+			}
+			
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = -0.10
+				political_power_gain = 0.03
+				opinion_gain_monthly_factor = -0.0001
+				opinion_gain_monthly_same_ideology_factor = 0.03
+			   #fascism_drift = 0.05
+			   #communism_drift = 0.05
+			   stability_weekly = 0.02
+			   foreign_subversive_activites = -0.30
+			   subversive_activites_upkeep = -0.10
+			   #mobilization_laws_cost_factor = -0.05
+			}
+		}
+	}
+
+	civil_liberties_laws = {
+	    law = yes
+
+		fully_guranted_liberties = {
+		    cost = 750
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 8
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+				}
+			}
+			
+			modifier = {
+			    stability_factor = 0.1
+				MONTHLY_POPULATION = 0.03
+				#democratic_drift = 0.08
+				#liberalism_drift = 0.08
+			}
+		}
+		
+		respect_of_liberties = {
+		    cost = 650
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 7
+			
+			modifier = {
+			    stability_factor = 0.05
+				MONTHLY_POPULATION = 0.02
+				#democratic_drift = 0.04
+				#liberalism_drift = 0.04
+				#neutrality_drift = 0.04
+			}
+		}
+		
+		suspended_liberties = {
+		    
+			cost = 550
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 6
+			
+			modifier = {
+			    stability_factor = -0.02
+				MONTHLY_POPULATION = 0.03
+				#communism_drift = 0.02
+				#neutrality_drift = 0.05
+				
+			}
+		}
+
+		limitation_of_liberties = {
+		    
+			cost = 450
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			level = 5
+			
+			modifier = {
+				stability_factor = -0.03
+				MONTHLY_POPULATION = 0.02
+				 #fascism_drift = 0.03
+				 #communism_drift = 0.08
+			}
+		}
+
+		lack_of_liberties = {
+		    
+			cost = 350
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 5
+			
+			modifier = {
+				stability_factor = -0.1
+				MONTHLY_POPULATION = 0.01
+				#fascism_drift = 0.10
+				#communism_drift = 0.10
+			}
+		}
+		
+		emergency_law = {
+		    cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			available = {
+				OR = {
+					has_civil_war = yes
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+			    stability_factor = -0.15
+				stability_weekly = 0.005
+				conscription = 0.03	
+				DRIFT_DEFENCE_FACTOR = 0.02		
+				#mobilization_laws_cost_factor = -0.03
+			}
+		}
+		
+		martial_law = {
+		    cost = 600
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			available = {
+			    AND = {
+				    NOT = {
+				        OR = {
+					        has_government = democratic
+					        has_government = liberalism
+					        has_government = reformism
+					    }
+				    }
+				    AND = {
+						has_war = yes
+						any_enemy_country = {
+							ic_ratio = { 
+								tag = ROOT 
+								ratio > 0.4
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+			    stability_factor = -0.25
+				stability_weekly = 0.01
+				conscription = 0.10
+				training_time_army_factor = 0.03
+				DRIFT_DEFENCE_FACTOR = 0.05
+				army_morale_factor = 0.05
+				#mobilization_laws_cost_factor = -0.10
+				non_core_manpower = 0.02
+			}
+							
+		}
+		
+		sharia_law = {
+		    cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+
+			available = {
+				OR = {
+					has_idea = state_religion
+					has_idea = theocracy
+				}
+				OR = {
+				    has_government = democratic
+					has_government = rad_islamists
+				}
+				has_idea = islam_idea_lvl_2
+			}
+			 
+			modifier = {
+			
+			stability_factor = -0.30
+			stability_weekly = 0.01
+			DRIFT_DEFENCE_FACTOR = 0.03
+			opinion_gain_monthly_same_ideology_factor = 0.30
+			non_core_manpower = 0.05
+			#rad_islamists_drift = 0.05
+			    
+			}
+		}
+	}
+
+	mobilization_laws = { 
+		law = yes
+		
+		contract_army = { #volunteer_only = {
+			cost = 250
+			removal_cost = -1
+			level = 8
+			cancel_if_invalid = no
+			
+			#picture = volunteer_only1
+			
+			modifier = {
+				conscription = 0.01
+				experience_loss_factor = -0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				training_time_factor = 0.1
+				army_org_factor = 0.05
+				stability_factor = 0.02
+				defence = 0.05
+				offence = 0.05
+			}
+		}
+  
+		mixed_army = { #limited_conscription = {
+			cost = 350
+			removal_cost = -1
+			level = 7
+			default = yes
+			cancel_if_invalid = no
+   
+			#picture = limited_conscription1
+   
+			modifier = {
+				conscription = 0.012
+				experience_loss_factor = -0.02
+				army_core_attack_factor = 0.02
+				army_core_defence_factor = 0.02
+				training_time_factor = 0.03
+				army_org_factor = 0.01
+				defence = 0.01
+				offence = 0.01
+				army_morale_factor = 0.1
+				attrition = -0.1
+				minimum_training_level = -0.1
+			}
+   
+		}
+
+		mandatory_urgent_service = { #service_by_requirement = {
+			cost = 450
+			removal_cost = -1
+			level = 6
+   
+			#picture = service_by_requirement1
+   
+			modifier = {
+				conscription = 0.015
+				conscription_factor = 0.1
+				minimum_training_level = -0.1
+				army_core_defence_factor = 0.02
+				army_org = 0.5
+				experience_loss_factor = -0.1
+				experience_gain_army_factor = 0.05
+			}
+   
+			cancel_if_invalid = no
+		}
+	}
+	
+	school_system_policy = {
+	    law = yes
+		
+		mixed_schools = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			default = yes
+			level = 3
+			
+			modifier = {
+			    POLITICAL_POWER_GAIN = 0.25
+				stability_weekly = 0.0002
+			}
+		}
+		
+		professional_schools = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 2
+			
+			available = {
+			    NOT = {	has_government = rad_islamists }
+			}
+			
+			modifier = {
+			   research_speed_factor = 0.05 
+			}
+		}
+		
+		religious_schools = {
+		    
+			cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			available = {
+			   OR = { OR = {
+				    #has_government = democratic
+					has_government = rad_islamists
+				}
+				OR = { 
+					has_government = democratic
+					has_idea = christianity_idea_lvl_2
+					has_idea = islam_idea_lvl_2
+					has_idea = buddhism_idea_lvl_2
+					has_idea = judaism_idea_lvl_2
+					has_idea = hinduism_idea_lvl_2
+					has_idea = sintoism_idea_lvl_2
+					
+				} }
+			}
+			
+			modifier = {
+				conscription = 0.01
+			    ARMY_CORE_ATTACK_FACTOR = 0.10
+				ARMY_CORE_DEFENCE_FACTOR = 0.05
+				ARMY_MORALE_FACTOR = 0.02
+				stability_weekly = 0.0003
+			}
+		}
+		
+		military_schools = {
+		    
+			cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			
+			available = {
+			    OR = {
+				    NOT = {
+				        OR = {
+					        has_government = democratic
+					        has_government = liberalism
+					    }
+				    }
+				    NOT = {
+				        AND = {
+						    has_war = yes
+						    any_enemy_country = {
+							    ic_ratio = { 
+								    tag = ROOT 
+								    ratio > 0.4
+							    }
+						    }
+					    }
+				    }
+				}
+			}
+			
+			modifier = {
+			   conscription = 0.02
+			   training_time_army_factor = -0.05
+			   ARMY_MORALE_FACTOR = 0.05
+			   ARMY_CORE_DEFENCE_FACTOR = 0.07
+			   stability_weekly = 0.0001
+			}
+		}
+		
+		tech_schools = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 1
+			
+			research_bonus = {
+				rocketry = 0.08
+				industry = 0.08
+				electronics = 0.08
+				nuclear_tech = 0.08
+			}
+			
+			modifier = {
+				POLITICAL_POWER_GAIN = -0.25
+			}
+		}
+	}
+	
+	immigration_laws = {
+	    law = yes
+
+		close_borders = {
+		    
+			cost = 350
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 4
+			
+			available = {
+			    
+			}
+			
+			on_add = {
+				set_stability = 0.01
+			}
+			
+			modifier = {
+			    consumer_goods_factor = -0.09
+				civilian_intel_to_others = 3.0
+				navy_intel_to_others = 1.0
+				army_intel_to_others = 1.0
+			}
+		}
+		
+		restricted_immigration = {
+		    
+			cost = 150
+			removal_cost = -1
+			default = yes
+			cancel_if_invalid = no
+			level = 3
+			
+			modifier = {
+			    monthly_population = 0.001
+				consumer_goods_factor = 0.03
+				civilian_intel_to_others = 13.0
+				navy_intel_to_others = 3.0
+				army_intel_to_others = 3.0
+			}
+		}
+		
+		open_immigration = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 2
+			available = {
+				NOT = { has_government = rad_islamists }
+			}
+			on_add = {
+				set_stability = -0.03
+			}
+			
+			modifier = {
+			    monthly_population = 0.01
+				consumer_goods_factor = 0.06
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 8.0
+				army_intel_to_others = 6.0
+			}
+		}
+		
+		attract_immigrants = {
+		    
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			level = 1
+			
+			on_add = {
+				set_stability = -0.06
+			}
+			available = {
+				NOT = { has_government = rad_islamists }
+			}
+			modifier = {
+			    monthly_population = 0.03
+				liberalism_drift = 0.01
+				reformism_drift = 0.01
+				consumer_goods_factor = 0.09
+				stability_weekly = -0.0003
+				civilian_intel_to_others = 23.7
+				navy_intel_to_others = 10.0
+				army_intel_to_others = 10.0
+			}
+		}
+		
+		schengen_area_immigration = {
+		    cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 3
+			
+			available = {
+				has_idea = eu_member
+			}
+			
+			modifier = {
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+			    monthly_population = 0.05
+				research_speed_factor = 0.05
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 3.0
+				army_intel_to_others = 3.0
+			}
+		}
+	}
+}

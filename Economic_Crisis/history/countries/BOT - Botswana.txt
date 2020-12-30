@@ -1,0 +1,74 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 542
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1492 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+
+	add_ideas = {
+	    au_member
+		parliamentary_republic
+		contract_army
+		unitary_state
+		secular_state
+		commercial_media 
+		suspended_liberties
+		mixed_schools
+		civilian_economy
+		free_market
+		NPT
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		low_economic_mobilisation
+		terrorism_discounted
+	}
+		
+	set_stability = 0.5
+	
+	add_political_power = 0
+
+	set_convoys = 25
+	
+	set_politics = {
+		ruling_party =  democratic
+		last_election = "2014.5.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 41
+		liberalism = 0
+		democratic = 53
+		neutrality = 0
+		fascism = 6
+		rad_islamists = 0
+	}
+
+    create_country_leader = {
+		name = "Ian Khama"
+		desc = "POLITICS_IAN_KHAMA_DESC"
+		picture = "gfx/leaders/BOT/portrait_ian_khama.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+    create_country_leader = {
+		name = "Dumelang Saleshando"
+		desc = "POLITICS_DUMELANG_SALESHANDO_DESC"
+		picture = "gfx/leaders/BOT/portrait_dumelang_saleshando.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}

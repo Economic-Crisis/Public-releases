@@ -1,0 +1,72 @@
+﻿# NOT USED in Economic Crisis 2013 scenario
+
+capital = 64
+
+set_war_support = 0.3
+
+1985.11.1 = {
+	set_variable = { budget_last_year = 0 }
+
+	load_oob = "_tech_nato_major_2013"
+	oob = "GER_2013"
+
+	# laws
+	add_ideas = {
+		parliamentary_republic
+		federation
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		contract_army 
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		high_taxes
+		total_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {		
+		ruling_party = democratic
+		last_election = "1983.3.6"
+		election_frequency = 48
+		elections_allowed = yes
+
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 40
+		liberalism = 10
+		democratic = 50
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Helmut Kohl"
+		desc = ""
+		picture = "gfx/leaders/GER/portrait_helmut_kohl.dds"
+		ideology = christian_democracy_main
+		expire = "1998.10.27"
+		traits = { trait_christian_democracy_main }
+	}
+
+}
+
+# Berlin
+1991.1.1 = { set_capital = 64 }
+
+
+
+

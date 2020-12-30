@@ -1,0 +1,55 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 611
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 100 }
+
+	load_oob = "_tech_csto_minor_2013"  # not CSTO, but tehnologies level is comparable
+	oob = "_army_microstate_2013"
+	
+	set_stability = 0.5
+	
+	add_political_power = 0
+	add_ideas = terrorism_discounted 
+	set_convoys = 0
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 40
+		democratic = 60
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Temtsiltu Shobtsood"
+		desc = ""
+		picture = "gfx/leaders/INM/portrait_temtsiltu_shobtsood.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Olhunud Daichin"
+		desc = ""
+		picture = "gfx/leaders/INM/portrait_olhunud_daichin.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+}

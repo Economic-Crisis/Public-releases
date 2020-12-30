@@ -1,0 +1,2084 @@
+#By Skoolz
+
+
+set_budget_percen = {
+
+if = { limit = { check_variable = { budget_alert = 1 } }
+
+if = { limit = { check_variable = { budget_percen > -1 } }
+
+if = {
+	limit = {
+		check_variable = { budget_percen_switcher = 0 }
+	}
+  set_variable = { budget_percen_switcher = 2 }
+  set_variable = { budget_percen = budget_percen_temp_value }
+}
+
+else_if = {
+	limit = {
+		check_variable = { budget_percen_switcher = 2 }
+	}
+  multiply_variable = { budget_percen = 10 }
+  add_to_variable = { budget_percen = budget_percen_temp_value }
+   if = { limit = { check_variable = { budget_percen > 50 } }
+		set_variable = { budget_percen = 50 }
+   }
+}
+	}
+	
+	
+	
+else = {
+	multiply_variable = { budget_percen = -1 }
+
+if = {
+	limit = {
+		check_variable = { budget_percen_switcher = 0 }
+	}
+  set_variable = { budget_percen_switcher = 2 }
+  set_variable = { budget_percen = budget_percen_temp_value }
+}
+
+else_if = {
+	limit = {
+		check_variable = { budget_percen_switcher = 2 }
+	}
+  multiply_variable = { budget_percen = 10 }
+  add_to_variable = { budget_percen = budget_percen_temp_value }
+   if = { limit = { check_variable = { budget_percen > 50 } }
+		set_variable = { budget_percen = 50 }
+   }
+}
+	multiply_variable = { budget_percen = -1 }
+
+}
+		set_planned_budget = yes
+}
+}
+set_budget_percen_clear = {
+
+if = { limit = { check_variable = { budget_alert = 1 } }
+
+if = { limit = { check_variable = { budget_percen > -1 } }
+	if = {
+		limit = {
+			check_variable = { budget_percen_switcher = 1 }
+		}
+	  set_variable = { budget_percen_switcher = 0 }
+	  set_variable = { budget_percen = 0 }
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { budget_percen_switcher = 2 }
+		}
+		
+		if = { 
+	limit = {
+				check_variable = {
+			var = budget_percen
+			value = 10
+			compare = not_equals
+							 }
+   }
+	  set_variable = { budget_percen_switcher = 1 }
+	  divide_variable = { budget_percen = 10 }
+	  subtract_from_variable = { budget_percen = 0.3 }
+	  round_variable = budget_percen
+	}
+	
+			else = { 
+	  set_variable = { budget_percen_switcher = 1 }
+	  divide_variable = { budget_percen = 10 }
+	}
+	
+   }	
+}
+
+else = { multiply_variable = { budget_percen = -1 }
+
+
+	if = {
+		limit = {
+			check_variable = { budget_percen_switcher = 1 }
+		}
+	  set_variable = { budget_percen_switcher = 0 }
+	  set_variable = { budget_percen = 0 }
+	}
+
+	else_if = {
+		limit = {
+			check_variable = { budget_percen_switcher = 2 }
+		}
+		
+		if = { 
+	limit = {
+				check_variable = {
+			var = budget_percen
+			value = 10
+			compare = not_equals
+							 }
+   }
+	  set_variable = { budget_percen_switcher = 1 }
+	  divide_variable = { budget_percen = 10 }
+	  subtract_from_variable = { budget_percen = 0.3 }
+	  round_variable = budget_percen
+	}
+	
+			else = { 
+	  set_variable = { budget_percen_switcher = 1 }
+	  divide_variable = { budget_percen = 10 }
+	}
+	
+   }	
+
+	multiply_variable = { budget_percen = -1 }
+}
+
+	set_planned_budget = yes
+}
+
+
+}
+
+
+
+set_planned_budget = {
+	set_variable = { planned_budget = budget_last_year }
+	set_variable = { planned_budget_multiplyer = budget_last_year }
+	divide_variable = { planned_budget_multiplyer = 100 }
+	multiply_variable = { planned_budget_multiplyer = budget_percen }
+	add_to_variable = { planned_budget = planned_budget_multiplyer }
+	update_categories = yes
+	set_budget_rest = yes
+}
+
+
+set_null_budget_percen = {
+	set_variable = { budget_percen = 0 }
+	set_variable = { budget_percen_switcher = 0 }
+	update_categories = yes
+}
+
+set_budget_percen_reverse = {
+	multiply_variable = { budget_percen = -1 }
+	set_planned_budget = yes
+}
+
+
+#Categories
+
+
+set_cat_percen = {
+
+if = { limit = { check_variable = { budget_alert = 1 } }
+
+	#CAT 1---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+		if = { limit = { check_variable = { cat_percen_change = 1 } } 	
+		set_variable = { cat_temp_ratio = cat_1_ratio }
+			if = { limit = { check_variable = { cat_1_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_1_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_1_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_1_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_1_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_1_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_1_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_1_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_1_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_1_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_1_ratio = cat_temp_ratio }
+				set_variable = { cat_1_budget = planned_budget }
+				divide_variable = { cat_1_budget = 100 }
+				multiply_variable = { cat_1_budget = cat_1_ratio }
+			
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}
+	
+	
+	#CAT 2---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+
+		else_if = { limit = { check_variable = { cat_percen_change = 2 } } 	
+		set_variable = { cat_temp_ratio = cat_2_ratio }
+			if = { limit = { check_variable = { cat_2_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_2_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_2_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_2_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_2_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_2_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_2_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_2_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_2_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_2_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_2_ratio = cat_temp_ratio }
+				set_variable = { cat_2_budget = planned_budget }
+				divide_variable = { cat_2_budget = 100 }
+				multiply_variable = { cat_2_budget = cat_2_ratio }
+		
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}
+
+	#CAT 3---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+
+		else_if = { limit = { check_variable = { cat_percen_change = 3 } } 	
+		set_variable = { cat_temp_ratio = cat_3_ratio }
+			if = { limit = { check_variable = { cat_3_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_3_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_3_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_3_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_3_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_3_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_3_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_3_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_3_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_3_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_3_ratio = cat_temp_ratio }
+				set_variable = { cat_3_budget = planned_budget }
+				divide_variable = { cat_3_budget = 100 }
+				multiply_variable = { cat_3_budget = cat_3_ratio }
+		
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}
+	
+	#CAT 4---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+
+		else_if = { limit = { check_variable = { cat_percen_change = 4 } } 	
+		set_variable = { cat_temp_ratio = cat_4_ratio }
+			if = { limit = { check_variable = { cat_4_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_4_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_4_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_4_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_4_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_4_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_4_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_4_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_4_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_4_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_4_ratio = cat_temp_ratio }
+				set_variable = { cat_4_budget = planned_budget }
+				divide_variable = { cat_4_budget = 100 }
+				multiply_variable = { cat_4_budget = cat_4_ratio }
+		
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}	
+
+	#CAT 5---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+
+		else_if = { limit = { check_variable = { cat_percen_change = 5 } } 	
+		set_variable = { cat_temp_ratio = cat_5_ratio }
+			if = { limit = { check_variable = { cat_5_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_5_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_5_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_5_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_5_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_5_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_5_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_5_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_5_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_5_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_5_ratio = cat_temp_ratio }
+				set_variable = { cat_5_budget = planned_budget }
+				divide_variable = { cat_5_budget = 100 }
+				multiply_variable = { cat_5_budget = cat_5_ratio }
+		
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}
+	
+	#CAT 5---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+
+		else_if = { limit = { check_variable = { cat_percen_change = 6 } } 	
+		set_variable = { cat_temp_ratio = cat_6_ratio }
+			if = { limit = { check_variable = { cat_6_percen_switcher = 0 } }
+				set_variable = { cat_temp_ratio = cat_change_temp_value }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_6_percen_switcher = 1 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				}
+				else = { set_variable = { cat_temp_ratio = budget_rest_cats_percen } set_variable = { budget_rest_cats_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_percen_switcher = 1 } }
+				multiply_variable = { cat_temp_ratio = 10 }
+				add_to_variable = { cat_temp_ratio = cat_change_temp_value }
+				subtract_from_variable = { cat_temp_ratio = cat_6_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio < budget_rest_cats_percen } }
+				set_variable = { cat_6_percen_switcher = 2 }
+				subtract_from_variable = { budget_rest_cats_percen = cat_temp_ratio }
+				add_to_variable = { cat_temp_ratio = cat_6_ratio }
+				}
+				else = { 
+				
+				set_variable = { cat_temp_ratio = cat_6_ratio }
+				add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				set_variable = { budget_rest_cats_percen = 0}
+				set_variable = { cat_6_percen_switcher = 2 }
+				
+				}
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_percen_switcher = 2 } }
+				set_variable = { cat_temp_ratio = 100 }
+				subtract_from_variable = { cat_temp_ratio = cat_6_ratio }
+				if = { limit = { check_variable = { cat_temp_ratio > budget_rest_cats_percen } }
+					set_variable = { cat_temp_ratio = cat_6_ratio }
+					add_to_variable = { cat_temp_ratio = budget_rest_cats_percen }
+				}
+				else = {
+					set_variable = { cat_temp_ratio = 100 }
+					set_variable = { cat_6_percen_switcher = 3 }
+				}
+				set_variable = { budget_rest_cats_percen = 0 }
+			}
+		
+		set_variable = { cat_6_ratio = cat_temp_ratio }
+				set_variable = { cat_6_budget = planned_budget }
+				divide_variable = { cat_6_budget = 100 }
+				multiply_variable = { cat_6_budget = cat_6_ratio }
+		
+		set_budget_rest = yes
+		update_sections = yes	
+
+	}	
+	
+		set_current_to_st_exp_ratio = yes
+}
+
+}
+
+set_cat_percen_clear = {
+if = { limit = { check_variable = { budget_alert = 1 } }
+	#CAT 1---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		if = { limit = { check_variable = { cat_percen_change = 1 } }
+		
+			if = { limit = { check_variable = { cat_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_1_ratio }
+				set_variable = { cat_1_ratio = 0 }
+				set_variable = { cat_1_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_1_ratio }
+				divide_variable = { cat_1_ratio = 10 }
+				subtract_from_variable = { cat_1_ratio = 0.5 }
+				round_variable = cat_1_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_1_ratio }
+				set_variable = { cat_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_percen_switcher = 3 } }
+				set_variable = { cat_1_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_1_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_1_budget = planned_budget }
+				divide_variable = { cat_1_budget = 100 }
+				multiply_variable = { cat_1_budget = cat_1_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}
+
+	#CAT 2---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		else_if = { limit = { check_variable = { cat_percen_change = 2 } }
+		
+			if = { limit = { check_variable = { cat_2_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_2_ratio }
+				set_variable = { cat_2_ratio = 0 }
+				set_variable = { cat_2_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_2_ratio }
+				divide_variable = { cat_2_ratio = 10 }
+				subtract_from_variable = { cat_2_ratio = 0.5 }
+				round_variable = cat_2_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_2_ratio }
+				set_variable = { cat_2_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_percen_switcher = 3 } }
+				set_variable = { cat_2_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_2_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_2_budget = planned_budget }
+				divide_variable = { cat_2_budget = 100 }
+				multiply_variable = { cat_2_budget = cat_2_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}
+
+	#CAT 3---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		else_if = { limit = { check_variable = { cat_percen_change = 3 } }
+		
+			if = { limit = { check_variable = { cat_3_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_3_ratio }
+				set_variable = { cat_3_ratio = 0 }
+				set_variable = { cat_3_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_3_ratio }
+				divide_variable = { cat_3_ratio = 10 }
+				subtract_from_variable = { cat_3_ratio = 0.5 }
+				round_variable = cat_3_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_3_ratio }
+				set_variable = { cat_3_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_percen_switcher = 3 } }
+				set_variable = { cat_3_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_3_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_3_budget = planned_budget }
+				divide_variable = { cat_3_budget = 100 }
+				multiply_variable = { cat_3_budget = cat_3_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}
+
+	#CAT 4---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		else_if = { limit = { check_variable = { cat_percen_change = 4 } }
+		
+			if = { limit = { check_variable = { cat_4_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_4_ratio }
+				set_variable = { cat_4_ratio = 0 }
+				set_variable = { cat_4_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_4_ratio }
+				divide_variable = { cat_4_ratio = 10 }
+				subtract_from_variable = { cat_4_ratio = 0.5 }
+				round_variable = cat_4_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_4_ratio }
+				set_variable = { cat_4_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_percen_switcher = 3 } }
+				set_variable = { cat_4_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_4_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_4_budget = planned_budget }
+				divide_variable = { cat_4_budget = 100 }
+				multiply_variable = { cat_4_budget = cat_4_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}
+		
+	#CAT 5---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		else_if = { limit = { check_variable = { cat_percen_change = 5 } }
+		
+			if = { limit = { check_variable = { cat_5_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_5_ratio }
+				set_variable = { cat_5_ratio = 0 }
+				set_variable = { cat_5_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_5_ratio }
+				divide_variable = { cat_5_ratio = 10 }
+				subtract_from_variable = { cat_5_ratio = 0.5 }
+				round_variable = cat_5_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_5_ratio }
+				set_variable = { cat_5_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_percen_switcher = 3 } }
+				set_variable = { cat_5_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_5_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_5_budget = planned_budget }
+				divide_variable = { cat_5_budget = 100 }
+				multiply_variable = { cat_5_budget = cat_5_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}
+
+	#CAT 5---------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	#--------------------------------------------------------------------------------
+	
+		else_if = { limit = { check_variable = { cat_percen_change = 6 } }
+		
+			if = { limit = { check_variable = { cat_6_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_percen_switcher = 1 } }
+				add_to_variable = { budget_rest_cats_percen = cat_6_ratio }
+				set_variable = { cat_6_ratio = 0 }
+				set_variable = { cat_6_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_percen_switcher = 2 } }
+				add_to_variable = { budget_rest_cats_percen = cat_6_ratio }
+				divide_variable = { cat_6_ratio = 10 }
+				subtract_from_variable = { cat_6_ratio = 0.5 }
+				round_variable = cat_6_ratio
+				subtract_from_variable = { budget_rest_cats_percen = cat_6_ratio }
+				set_variable = { cat_6_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_percen_switcher = 3 } }
+				set_variable = { cat_6_ratio = 10 }
+				add_to_variable = { budget_rest_cats_percen = 90 }
+				set_variable = { cat_6_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_6_budget = planned_budget }
+				divide_variable = { cat_6_budget = 100 }
+				multiply_variable = { cat_6_budget = cat_6_ratio }
+			
+			set_budget_rest = yes
+			update_sections = yes
+					
+		}		
+
+	set_current_to_st_exp_ratio = yes
+
+}
+
+}
+
+
+
+
+
+
+#Sections
+
+set_section_percen = {
+
+if = { limit = { check_variable = { budget_alert = 1 } }
+
+########################################################################## Cat 1
+	if = { limit = { check_variable = { money_menu_switcher = 2 } }
+	
+	
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 1 Sec 1
+		set_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+			if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen } }
+				set_variable = { cat_1_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_1_rest_sections_percen } }
+					set_variable = { cat_1_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_1_rest_sections_percen } set_variable = { cat_1_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen }  }
+				set_variable = { cat_1_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen } 
+					set_variable = { cat_1_rest_sections_percen = 0 }
+					set_variable = { cat_1_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_1_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_1_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_1_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_1_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_1_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_1_sec_1_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_1_budget = 100 }
+				multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }
+		}
+	
+	
+	#-----------------------------------------------------------------------------------
+	
+		if = { limit = { check_variable = { section_percen_change = 2 } } 	#Cat 1 Sec 2
+		set_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+			if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen } }
+				set_variable = { cat_1_sec_2_percen_switcher = 1 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_1_rest_sections_percen } }
+					set_variable = { cat_1_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_1_rest_sections_percen } set_variable = { cat_1_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen }  }
+				set_variable = { cat_1_sec_2_percen_switcher = 2 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen } 
+					set_variable = { cat_1_rest_sections_percen = 0 }
+					set_variable = { cat_1_sec_2_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_1_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_1_sec_2_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_1_sec_2_percen_switcher = 3 }
+				}
+				set_variable = { cat_1_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_1_sec_2_ratio = section_temp_ratio }
+				set_variable = { cat_1_sec_2_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_2_budget = 100 }
+				multiply_variable = { cat_1_sec_2_budget = cat_1_sec_2_ratio }
+		}
+	
+	
+
+
+
+	#-----------------------------------------------------------------------------------
+	
+		if = { limit = { check_variable = { section_percen_change = 3 } } 	#Cat 1 Sec 3
+		set_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+			if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen } }
+				set_variable = { cat_1_sec_3_percen_switcher = 1 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_1_rest_sections_percen } }
+					set_variable = { cat_1_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_1_rest_sections_percen } set_variable = { cat_1_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_1_rest_sections_percen }  }
+				set_variable = { cat_1_sec_3_percen_switcher = 2 }
+				subtract_from_variable = { cat_1_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen } 
+					set_variable = { cat_1_rest_sections_percen = 0 }
+					set_variable = { cat_1_sec_3_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_1_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_1_sec_3_ratio }
+					add_to_variable = { section_temp_ratio = cat_1_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_1_sec_3_percen_switcher = 3 }
+				}
+				set_variable = { cat_1_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_1_sec_3_ratio = section_temp_ratio }
+				set_variable = { cat_1_sec_3_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_3_budget = 100 }
+				multiply_variable = { cat_1_sec_3_budget = cat_1_sec_3_ratio }
+		}	
+	
+	}
+
+
+########################################################################## Cat 2
+	else_if = { limit = { check_variable = { money_menu_switcher = 3 } }
+
+			if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 2 Sec 1
+		set_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+			if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen } }
+				set_variable = { cat_2_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_2_rest_sections_percen } }
+					set_variable = { cat_2_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_2_rest_sections_percen } set_variable = { cat_2_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen }  }
+				set_variable = { cat_2_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen } 
+					set_variable = { cat_2_rest_sections_percen = 0 }
+					set_variable = { cat_2_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_2_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_2_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_2_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_2_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_2_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_2_sec_1_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_1_budget = 100 }
+				multiply_variable = { cat_2_sec_1_budget = cat_2_sec_1_ratio }
+		}
+		
+		
+		if = { limit = { check_variable = { section_percen_change = 2 } } 	#Cat 2 Sec 2
+		set_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+			if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen } }
+				set_variable = { cat_2_sec_2_percen_switcher = 1 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_2_rest_sections_percen } }
+					set_variable = { cat_2_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_2_rest_sections_percen } set_variable = { cat_2_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen }  }
+				set_variable = { cat_2_sec_2_percen_switcher = 2 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen } 
+					set_variable = { cat_2_rest_sections_percen = 0 }
+					set_variable = { cat_2_sec_2_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_2_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_2_sec_2_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_2_sec_2_percen_switcher = 3 }
+				}
+				set_variable = { cat_2_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_2_sec_2_ratio = section_temp_ratio }
+				set_variable = { cat_2_sec_2_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_2_budget = 100 }
+				multiply_variable = { cat_2_sec_2_budget = cat_2_sec_2_ratio }
+		}
+		
+		if = { limit = { check_variable = { section_percen_change = 3 } } 	#Cat 2 Sec 3
+		set_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+			if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen } }
+				set_variable = { cat_2_sec_3_percen_switcher = 1 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_2_rest_sections_percen } }
+					set_variable = { cat_2_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_2_rest_sections_percen } set_variable = { cat_2_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen }  }
+				set_variable = { cat_2_sec_3_percen_switcher = 2 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen } 
+					set_variable = { cat_2_rest_sections_percen = 0 }
+					set_variable = { cat_2_sec_3_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_2_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_2_sec_3_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_2_sec_3_percen_switcher = 3 }
+				}
+				set_variable = { cat_2_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_2_sec_3_ratio = section_temp_ratio }
+				set_variable = { cat_2_sec_3_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_3_budget = 100 }
+				multiply_variable = { cat_2_sec_3_budget = cat_2_sec_3_ratio }
+		}
+		
+		if = { limit = { check_variable = { section_percen_change = 4 } } 	#Cat 2 Sec 4
+		set_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+			if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen } }
+				set_variable = { cat_2_sec_4_percen_switcher = 1 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_2_rest_sections_percen } }
+					set_variable = { cat_2_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_2_rest_sections_percen } set_variable = { cat_2_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_2_rest_sections_percen }  }
+				set_variable = { cat_2_sec_4_percen_switcher = 2 }
+				subtract_from_variable = { cat_2_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen } 
+					set_variable = { cat_2_rest_sections_percen = 0 }
+					set_variable = { cat_2_sec_4_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_2_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_2_sec_4_ratio }
+					add_to_variable = { section_temp_ratio = cat_2_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_2_sec_4_percen_switcher = 3 }
+				}
+				set_variable = { cat_2_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_2_sec_4_ratio = section_temp_ratio }
+				set_variable = { cat_2_sec_4_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_4_budget = 100 }
+				multiply_variable = { cat_2_sec_4_budget = cat_2_sec_4_ratio }
+		}
+}
+
+
+########################################################################## Cat 3
+	else_if = { limit = { check_variable = { money_menu_switcher = 4 } }
+
+			if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 3 Sec 1
+		set_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+			if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_3_rest_sections_percen } }
+				set_variable = { cat_3_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_3_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_3_rest_sections_percen } }
+					set_variable = { cat_3_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_3_rest_sections_percen } set_variable = { cat_3_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_3_rest_sections_percen }  }
+				set_variable = { cat_3_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_3_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_3_rest_sections_percen } 
+					set_variable = { cat_3_rest_sections_percen = 0 }
+					set_variable = { cat_3_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_3_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_3_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_3_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_3_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_3_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_3_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_3_sec_1_budget = cat_3_budget }
+				divide_variable = { cat_3_sec_1_budget = 100 }
+				multiply_variable = { cat_3_sec_1_budget = cat_3_sec_1_ratio }
+		}
+}
+
+
+
+########################################################################## Cat 4
+	else_if = { limit = { check_variable = { money_menu_switcher = 5 } }
+
+			if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 4 Sec 1
+		set_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+			if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_4_rest_sections_percen } }
+				set_variable = { cat_4_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_4_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_4_rest_sections_percen } }
+					set_variable = { cat_4_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_4_rest_sections_percen } set_variable = { cat_4_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_4_rest_sections_percen }  }
+				set_variable = { cat_4_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_4_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_4_rest_sections_percen } 
+					set_variable = { cat_4_rest_sections_percen = 0 }
+					set_variable = { cat_4_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_4_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_4_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_4_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_4_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_4_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_4_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_4_sec_1_budget = cat_4_budget }
+				divide_variable = { cat_4_sec_1_budget = 100 }
+				multiply_variable = { cat_4_sec_1_budget = cat_4_sec_1_ratio }
+		}
+
+
+
+}
+
+########################################################################## Cat 5
+	else_if = { limit = { check_variable = { money_menu_switcher = 6 } }
+
+			if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 5 Sec 1
+		set_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+			if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_5_rest_sections_percen } }
+				set_variable = { cat_5_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_5_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_5_rest_sections_percen } }
+					set_variable = { cat_5_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_5_rest_sections_percen } set_variable = { cat_5_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_5_rest_sections_percen }  }
+				set_variable = { cat_5_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_5_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_5_rest_sections_percen } 
+					set_variable = { cat_5_rest_sections_percen = 0 }
+					set_variable = { cat_5_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_5_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_5_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_5_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_5_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_5_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_5_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_5_sec_1_budget = cat_5_budget }
+				divide_variable = { cat_5_sec_1_budget = 100 }
+				multiply_variable = { cat_5_sec_1_budget = cat_5_sec_1_ratio }
+		}
+	}
+########################################################################## Cat 6
+	else_if = { limit = { check_variable = { money_menu_switcher = 7 } }
+			if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 6 Sec 1
+		set_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+			if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 0 } }
+				set_variable = { section_temp_ratio = section_change_temp_value }
+				if = { limit = { check_variable = { section_temp_ratio < cat_6_rest_sections_percen } }
+				set_variable = { cat_6_sec_1_percen_switcher = 1 }
+				subtract_from_variable = { cat_6_rest_sections_percen = section_temp_ratio }
+				}
+				else_if = {
+					limit = { check_variable = {	section_temp_ratio = cat_6_rest_sections_percen } }
+					set_variable = { cat_6_rest_sections_percen = 0 }
+				}
+				else = { set_variable = { section_temp_ratio = cat_6_rest_sections_percen } set_variable = { cat_6_rest_sections_percen = 0 } }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 1 } }
+				multiply_variable = { section_temp_ratio = 10 }
+				add_to_variable = { section_temp_ratio = section_change_temp_value }
+				subtract_from_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio < cat_6_rest_sections_percen }  }
+				set_variable = { cat_6_sec_1_percen_switcher = 2 }
+				subtract_from_variable = { cat_6_rest_sections_percen = section_temp_ratio }
+				add_to_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+				}
+				else = { 
+					set_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_6_rest_sections_percen } 
+					set_variable = { cat_6_rest_sections_percen = 0 }
+					set_variable = { cat_6_sec_1_percen_switcher = 2 }					
+					}
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 2 } }
+				set_variable = { section_temp_ratio = 100 }
+				subtract_from_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+				if = { limit = { check_variable = { section_temp_ratio > cat_6_rest_sections_percen } }
+					set_variable = { section_temp_ratio = cat_6_sec_1_ratio }
+					add_to_variable = { section_temp_ratio = cat_6_rest_sections_percen }
+				}
+				else = {
+					set_variable = { section_temp_ratio = 100 }
+					set_variable = { cat_6_sec_1_percen_switcher = 3 }
+				}
+				set_variable = { cat_6_rest_sections_percen = 0 }
+			}
+			
+			
+			
+			
+			
+			
+			
+				set_variable = { cat_6_sec_1_ratio = section_temp_ratio }
+				set_variable = { cat_6_sec_1_budget = cat_6_budget }
+				divide_variable = { cat_6_sec_1_budget = 100 }
+				multiply_variable = { cat_6_sec_1_budget = cat_6_sec_1_ratio }
+		}
+
+}
+
+	set_current_to_st_exp_ratio = yes
+	}
+}
+
+
+
+set_section_percen_clear = {
+
+
+if = { limit = { check_variable = { budget_alert = 1 } }
+
+
+########################################################################## Cat 1
+	if = { limit = { check_variable = { money_menu_switcher = 2 } }
+	
+	
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 1 Sec 1
+		
+			if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_1_ratio }
+				set_variable = { cat_1_sec_1_ratio = 0 }
+				set_variable = { cat_1_sec_1_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_1_ratio }
+				divide_variable = { cat_1_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_1_sec_1_ratio = 0.5 }
+				round_variable = cat_1_sec_1_ratio
+				subtract_from_variable = { cat_1_rest_sections_percen = cat_1_sec_1_ratio }
+				set_variable = { cat_1_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_1_sec_1_ratio = 10 }
+				add_to_variable = { cat_1_rest_sections_percen = 90 }
+				set_variable = { cat_1_sec_1_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_1_sec_1_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_1_budget = 100 }
+				multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }
+			
+					
+		}
+		
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+		
+		if = { limit = { check_variable = { section_percen_change = 2 } } 	#Cat 1 Sec 2
+		
+			if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 1 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_2_ratio }
+				set_variable = { cat_1_sec_2_ratio = 0 }
+				set_variable = { cat_1_sec_2_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 2 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_2_ratio }
+				divide_variable = { cat_1_sec_2_ratio = 10 }
+				subtract_from_variable = { cat_1_sec_2_ratio = 0.5 }
+				round_variable = cat_1_sec_2_ratio
+				subtract_from_variable = { cat_1_rest_sections_percen = cat_1_sec_2_ratio }
+				set_variable = { cat_1_sec_2_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_2_percen_switcher = 3 } }
+				set_variable = { cat_1_sec_2_ratio = 10 }
+				add_to_variable = { cat_1_rest_sections_percen = 90 }
+				set_variable = { cat_1_sec_2_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_1_sec_2_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_2_budget = 100 }
+				multiply_variable = { cat_1_sec_2_budget = cat_1_sec_2_ratio }
+			
+					
+		}	
+	
+	
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+		
+		if = { limit = { check_variable = { section_percen_change = 3 } } 	#Cat 1 Sec 3
+		
+			if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 1 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_3_ratio }
+				set_variable = { cat_1_sec_3_ratio = 0 }
+				set_variable = { cat_1_sec_3_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 2 } }
+				add_to_variable = { cat_1_rest_sections_percen = cat_1_sec_3_ratio }
+				divide_variable = { cat_1_sec_3_ratio = 10 }
+				subtract_from_variable = { cat_1_sec_3_ratio = 0.5 }
+				round_variable = cat_1_sec_3_ratio
+				subtract_from_variable = { cat_1_rest_sections_percen = cat_1_sec_3_ratio }
+				set_variable = { cat_1_sec_3_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_1_sec_3_percen_switcher = 3 } }
+				set_variable = { cat_1_sec_3_ratio = 10 }
+				add_to_variable = { cat_1_rest_sections_percen = 90 }
+				set_variable = { cat_1_sec_3_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_1_sec_3_budget = cat_1_budget }
+				divide_variable = { cat_1_sec_3_budget = 100 }
+				multiply_variable = { cat_1_sec_3_budget = cat_1_sec_3_ratio }
+			
+					
+		}	
+	
+	
+	
+	
+	}
+########################################################################## Cat 2
+	else_if = { limit = { check_variable = { money_menu_switcher = 3 } }	
+	
+
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 2 Sec 1
+		
+			if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_1_ratio }
+				set_variable = { cat_2_sec_1_ratio = 0 }
+				set_variable = { cat_2_sec_1_percen_switcher = 0 }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_1_ratio }
+				divide_variable = { cat_2_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_2_sec_1_ratio = 0.5 }
+				round_variable = cat_2_sec_1_ratio
+				subtract_from_variable = { cat_2_rest_sections_percen = cat_2_sec_1_ratio }
+				set_variable = { cat_2_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_2_sec_1_ratio = 10 }
+				add_to_variable = { cat_2_rest_sections_percen = 90 }
+				set_variable = { cat_2_sec_1_percen_switcher = 2 }
+				
+			}
+			
+			
+			
+			set_variable = { cat_2_sec_1_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_1_budget = 100 }
+				multiply_variable = { cat_2_sec_1_budget = cat_2_sec_1_ratio }
+			
+					
+		}	
+	
+		if = { limit = { check_variable = { section_percen_change = 2 } } 	#Cat 2 Sec 2 
+		
+			if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 1 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_2_ratio }
+				set_variable = { cat_2_sec_2_ratio = 0 }
+				set_variable = { cat_2_sec_2_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 2 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_2_ratio }
+				divide_variable = { cat_2_sec_2_ratio = 10 }
+				subtract_from_variable = { cat_2_sec_2_ratio = 0.5 }
+				round_variable = cat_2_sec_2_ratio
+				subtract_from_variable = { cat_2_rest_sections_percen = cat_2_sec_2_ratio }
+				set_variable = { cat_2_sec_2_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_2_percen_switcher = 3 } }
+				set_variable = { cat_2_sec_2_ratio = 10 }
+				add_to_variable = { cat_2_rest_sections_percen = 90 }
+				set_variable = { cat_2_sec_2_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_2_sec_2_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_2_budget = 100 }
+				multiply_variable = { cat_2_sec_2_budget = cat_2_sec_2_ratio }
+			
+					
+		}
+		
+		if = { limit = { check_variable = { section_percen_change = 3 } } 	#Cat 2 Sec 3 
+		
+			if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 1 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_3_ratio }
+				set_variable = { cat_2_sec_3_ratio = 0 }
+				set_variable = { cat_2_sec_3_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 2 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_3_ratio }
+				divide_variable = { cat_2_sec_3_ratio = 10 }
+				subtract_from_variable = { cat_2_sec_3_ratio = 0.5 }
+				round_variable = cat_2_sec_3_ratio
+				subtract_from_variable = { cat_2_rest_sections_percen = cat_2_sec_3_ratio }
+				set_variable = { cat_2_sec_3_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_3_percen_switcher = 3 } }
+				set_variable = { cat_2_sec_3_ratio = 10 }
+				add_to_variable = { cat_2_rest_sections_percen = 90 }
+				set_variable = { cat_2_sec_3_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_2_sec_3_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_3_budget = 100 }
+				multiply_variable = { cat_2_sec_3_budget = cat_2_sec_3_ratio }
+			
+					
+		}
+		if = { limit = { check_variable = { section_percen_change = 4 } } 	#Cat 2 Sec 4 
+		
+			if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 1 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_4_ratio }
+				set_variable = { cat_2_sec_4_ratio = 0 }
+				set_variable = { cat_2_sec_4_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 2 } }
+				add_to_variable = { cat_2_rest_sections_percen = cat_2_sec_4_ratio }
+				divide_variable = { cat_2_sec_4_ratio = 10 }
+				subtract_from_variable = { cat_2_sec_4_ratio = 0.5 }
+				round_variable = cat_2_sec_4_ratio
+				subtract_from_variable = { cat_2_rest_sections_percen = cat_2_sec_4_ratio }
+				set_variable = { cat_2_sec_4_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 3 } }
+				set_variable = { cat_2_sec_4_ratio = 10 }
+				add_to_variable = { cat_2_rest_sections_percen = 90 }
+				set_variable = { cat_2_sec_4_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_2_sec_4_budget = cat_2_budget }
+				divide_variable = { cat_2_sec_4_budget = 100 }
+				multiply_variable = { cat_2_sec_4_budget = cat_2_sec_4_ratio }
+			
+					
+		}
+
+	
+	}
+	
+########################################################################## Cat 3
+	else_if = { limit = { check_variable = { money_menu_switcher = 4 } }	
+	
+
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 3 Sec 1
+		
+			if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_3_rest_sections_percen = cat_3_sec_1_ratio }
+				set_variable = { cat_3_sec_1_ratio = 0 }
+				set_variable = { cat_3_sec_1_percen_switcher = 0 }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_3_rest_sections_percen = cat_3_sec_1_ratio }
+				divide_variable = { cat_3_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_3_sec_1_ratio = 0.5 }
+				round_variable = cat_3_sec_1_ratio
+				subtract_from_variable = { cat_3_rest_sections_percen = cat_3_sec_1_ratio }
+				set_variable = { cat_3_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_3_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_3_sec_1_ratio = 10 }
+				add_to_variable = { cat_3_rest_sections_percen = 90 }
+				set_variable = { cat_3_sec_1_percen_switcher = 2 }
+				
+			}
+			
+			
+			
+			set_variable = { cat_3_sec_1_budget = cat_3_budget }
+				divide_variable = { cat_3_sec_1_budget = 100 }
+				multiply_variable = { cat_3_sec_1_budget = cat_3_sec_1_ratio }
+			
+					
+		}	
+
+	}	
+	
+########################################################################## Cat 4
+	else_if = { limit = { check_variable = { money_menu_switcher = 5 } }	
+	
+	
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 4 Sec 1
+		
+			if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_4_rest_sections_percen = cat_4_sec_1_ratio }
+				set_variable = { cat_4_sec_1_ratio = 0 }
+				set_variable = { cat_4_sec_1_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_4_rest_sections_percen = cat_4_sec_1_ratio }
+				divide_variable = { cat_4_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_4_sec_1_ratio = 0.5 }
+				round_variable = cat_4_sec_1_ratio
+				subtract_from_variable = { cat_4_rest_sections_percen = cat_4_sec_1_ratio }
+				set_variable = { cat_4_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_4_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_4_sec_1_ratio = 10 }
+				add_to_variable = { cat_4_rest_sections_percen = 90 }
+				set_variable = { cat_4_sec_1_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_4_sec_1_budget = cat_4_budget }
+				divide_variable = { cat_4_sec_1_budget = 100 }
+				multiply_variable = { cat_4_sec_1_budget = cat_4_sec_1_ratio }
+			
+					
+		}
+
+	
+	}	
+
+########################################################################## Cat 5
+	else_if = { limit = { check_variable = { money_menu_switcher = 6 } }	
+	
+	
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 5 Sec 1
+		
+			if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_5_rest_sections_percen = cat_5_sec_1_ratio }
+				set_variable = { cat_5_sec_1_ratio = 0 }
+				set_variable = { cat_5_sec_1_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_5_rest_sections_percen = cat_5_sec_1_ratio }
+				divide_variable = { cat_5_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_5_sec_1_ratio = 0.5 }
+				round_variable = cat_5_sec_1_ratio
+				subtract_from_variable = { cat_5_rest_sections_percen = cat_5_sec_1_ratio }
+				set_variable = { cat_5_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_5_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_5_sec_1_ratio = 10 }
+				add_to_variable = { cat_5_rest_sections_percen = 90 }
+				set_variable = { cat_5_sec_1_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_5_sec_1_budget = cat_5_budget }
+				divide_variable = { cat_5_sec_1_budget = 100 }
+				multiply_variable = { cat_5_sec_1_budget = cat_5_sec_1_ratio }
+			
+					
+		}
+
+	
+	}
+
+
+########################################################################## Cat 6
+	else_if = { limit = { check_variable = { money_menu_switcher = 7 } }	
+	
+		if = { limit = { check_variable = { section_percen_change = 1 } } 	#Cat 6 Sec 1
+		
+			if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 0 } }
+				
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 1 } }
+				add_to_variable = { cat_6_rest_sections_percen = cat_6_sec_1_ratio }
+				set_variable = { cat_6_sec_1_ratio = 0 }
+				set_variable = { cat_6_sec_1_percen_switcher = 0 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 2 } }
+				add_to_variable = { cat_6_rest_sections_percen = cat_6_sec_1_ratio }
+				divide_variable = { cat_6_sec_1_ratio = 10 }
+				subtract_from_variable = { cat_6_sec_1_ratio = 0.5 }
+				round_variable = cat_6_sec_1_ratio
+				subtract_from_variable = { cat_6_rest_sections_percen = cat_6_sec_1_ratio }
+				set_variable = { cat_6_sec_1_percen_switcher = 1 }
+			}
+			
+			else_if = { limit = { check_variable = { cat_6_sec_1_percen_switcher = 3 } }
+				set_variable = { cat_6_sec_1_ratio = 10 }
+				add_to_variable = { cat_6_rest_sections_percen = 90 }
+				set_variable = { cat_6_sec_1_percen_switcher = 2 }
+			}
+			
+			
+			
+			set_variable = { cat_6_sec_1_budget = cat_6_budget }
+				divide_variable = { cat_6_sec_1_budget = 100 }
+				multiply_variable = { cat_6_sec_1_budget = cat_6_sec_1_ratio }
+			
+					
+		}
+
+	
+	}
+
+	set_current_to_st_exp_ratio = yes
+}
+}
+
+update_categories = {
+
+	
+
+	#CAT 1
+	
+	set_variable = { cat_1_budget = planned_budget }
+				divide_variable = { cat_1_budget = 100 }
+				multiply_variable = { cat_1_budget = cat_1_ratio }
+						
+	#CAT 2
+	
+	set_variable = { cat_2_budget = planned_budget }
+				divide_variable = { cat_2_budget = 100 }
+				multiply_variable = { cat_2_budget = cat_2_ratio }
+				
+	#CAT 3
+	
+	set_variable = { cat_3_budget = planned_budget }
+				divide_variable = { cat_3_budget = 100 }
+				multiply_variable = { cat_3_budget = cat_3_ratio }
+
+	#CAT 4
+	
+	set_variable = { cat_4_budget = planned_budget }
+				divide_variable = { cat_4_budget = 100 }
+				multiply_variable = { cat_4_budget = cat_4_ratio }
+			
+	#CAT 5
+	
+	set_variable = { cat_5_budget = planned_budget }
+				divide_variable = { cat_5_budget = 100 }
+				multiply_variable = { cat_5_budget = cat_5_ratio }
+				
+	#CAT 6
+	
+	set_variable = { cat_6_budget = planned_budget }
+				divide_variable = { cat_6_budget = 100 }
+				multiply_variable = { cat_6_budget = cat_6_ratio }			
+	
+	set_budget_rest = yes
+	set_current_to_st_exp_ratio = yes
+	update_sections = yes
+}
+
+update_sections = {
+	
+	########CAT 1
+	
+	#SEC 1
+	
+	set_variable = { cat_1_sec_1_budget = cat_1_budget }
+	divide_variable = { cat_1_sec_1_budget = 100 }
+	multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }
+				
+	#SEC 2
+	
+	set_variable = { cat_1_sec_2_budget = cat_1_budget }
+	divide_variable = { cat_1_sec_2_budget = 100 }
+	multiply_variable = { cat_1_sec_2_budget = cat_1_sec_2_ratio }
+
+	#SEC 3
+	
+	set_variable = { cat_1_sec_3_budget = cat_1_budget }
+	divide_variable = { cat_1_sec_3_budget = 100 }
+	multiply_variable = { cat_1_sec_3_budget = cat_1_sec_3_ratio }				
+	
+	########CAT 2
+	
+	#SEC 1
+	
+	set_variable = { cat_2_sec_1_budget = cat_2_budget }
+	divide_variable = { cat_2_sec_1_budget = 100 }
+	multiply_variable = { cat_2_sec_1_budget = cat_2_sec_1_ratio }
+	
+	#SEC 2
+	
+	set_variable = { cat_2_sec_2_budget = cat_2_budget }
+	divide_variable = { cat_2_sec_2_budget = 100 }
+	multiply_variable = { cat_2_sec_2_budget = cat_2_sec_2_ratio }
+	
+	#SEC 3
+	
+	set_variable = { cat_2_sec_3_budget = cat_2_budget }
+	divide_variable = { cat_2_sec_3_budget = 100 }
+	multiply_variable = { cat_2_sec_3_budget = cat_2_sec_3_ratio }
+	
+	#SEC 4
+	
+	set_variable = { cat_2_sec_4_budget = cat_2_budget }
+	divide_variable = { cat_2_sec_4_budget = 100 }
+	multiply_variable = { cat_2_sec_4_budget = cat_2_sec_4_ratio }
+	
+	########CAT 3
+	
+	#SEC 1
+	
+	set_variable = { cat_3_sec_1_budget = cat_3_budget }
+	divide_variable = { cat_3_sec_1_budget = 100 }
+	multiply_variable = { cat_3_sec_1_budget = cat_3_sec_1_ratio }
+	
+
+	########CAT 4
+
+	#SEC 1
+	
+	set_variable = { cat_4_sec_1_budget = cat_4_budget }
+	divide_variable = { cat_4_sec_1_budget = 100 }
+	multiply_variable = { cat_4_sec_1_budget = cat_4_sec_1_ratio }	
+				
+				
+	########CAT 5
+
+	#SEC 1
+	
+	set_variable = { cat_5_sec_1_budget = cat_5_budget }
+	divide_variable = { cat_5_sec_1_budget = 100 }
+	multiply_variable = { cat_5_sec_1_budget = cat_5_sec_1_ratio }
+
+	########CAT 6
+
+	#SEC 1
+	
+	set_variable = { cat_6_sec_1_budget = cat_6_budget }
+	divide_variable = { cat_6_sec_1_budget = 100 }
+	multiply_variable = { cat_6_sec_1_budget = cat_6_sec_1_ratio }	
+				
+				
+	set_current_to_st_exp_ratio = yes
+}
+
+set_budget_rest = {
+	set_variable = { budget_rest = planned_budget }
+	divide_variable = { budget_rest = 100 }
+	multiply_variable = { budget_rest = budget_rest_cats_percen }
+}

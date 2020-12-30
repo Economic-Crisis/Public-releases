@@ -1,0 +1,1666 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+add_namespace = communism
+
+# Популярность больше 10%
+country_event = {
+	id = communism.1
+	title = communism.1.t
+	desc = communism.1.d
+	picture = GFX_event_communism_rise_10
+
+	trigger = {
+		communism > 0.1
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_10
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_10
+	}
+
+	option = { # Коалиция с коммунистами
+		name = communism.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.1.a"
+		trigger = {
+			has_government = reformism
+			is_democracy = yes
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 30
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		random_list = {
+			80 = {
+				coalition_with_communists = yes # Создать коалицию с коммунистами
+			}
+			20 = {}
+		}
+		add_communist = yes # Можно добавить коммуниста в правительство
+	}
+
+	option = { # Не враждовать с коммунистами
+		name = communism.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.1.b"
+		add_communist = yes # Можно добавить коммуниста в правительство
+		ai_chance = {
+			base = 35
+			modifier = {
+				factor = 75
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 60
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+	}
+
+	option = { # Выступать против коммунизма
+		name = communism.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.1.c"
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}		
+		set_country_flag = oppose_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.01
+		}
+		add_stability = -0.005
+		add_political_power = -20
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.1.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.1.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 100
+				has_country_flag = pai_democrat_anticommunist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_antinationalist
+					has_country_flag = pai_democrat_left
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность больше 10%, однопартийный режим
+country_event = {
+	id = communism.2
+	title = communism.2.t
+	desc = communism.2.d
+	picture = GFX_event_communism_rise_10
+
+	trigger = {
+		communism > 0.1
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_10
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_10
+	}
+
+	option = { # Игнорировать коммунистов
+		name = communism.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.2.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.2.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 3
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -20
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = communism.3
+	title = communism.3.t
+	desc = communism.3.d
+	picture = GFX_event_communism_decrease_10
+
+	trigger = {
+		has_country_flag = communism_10
+		communism < 0.08
+		NOT = {
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = communism.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.3.a"
+		clr_country_flag = communism_10
+		clr_country_flag = oppose_communism
+		clr_country_flag = suppress_communism
+		remove_communist = yes
+		no_coalition_with_communists = yes
+	}
+}
+
+# Популярность больше 25%
+country_event = {
+	id = communism.4
+	title = communism.4.t
+	desc = communism.4.d
+	picture = GFX_event_communism_rise_25
+
+	trigger = {
+		has_country_flag = communism_10
+		communism > 0.25
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_25
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_25
+	}
+
+	option = { # Сохранить коалицию с коммунистами
+		name = communism.4.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.y"
+		trigger = {
+			has_coalition_with_communists = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.005
+		add_political_power = 20
+		add_communist = yes
+	}
+
+	option = { # Разорвать коалицию с коммунистами
+		name = communism.4.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.n"
+		trigger = {
+			has_coalition_with_communists = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_communists = yes
+		add_stability = -0.01
+		add_political_power = -30
+	}
+
+	option = { # Коалиция с коммунистами
+		name = communism.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.a"
+		trigger = {
+			has_government = reformism
+			is_democracy = yes
+			has_coalition_with_communists = no
+			NOT = {
+				has_country_flag = oppose_communism
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 30
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		random_list = {
+			60 = {
+				coalition_with_communists = yes
+			}
+			40 = {}
+		}
+		add_communist = yes
+	}
+
+	option = { # Не враждовать с коммунистами
+		name = communism.4.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.b"
+		trigger = {
+			has_coalition_with_communists = no
+			NOT = {
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 35
+			modifier = {
+				factor = 75
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 60
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		add_communist = yes
+		clr_country_flag = oppose_communism
+	}
+
+	option = { # Выступать против коммунизма
+		name = communism.4.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.c"
+		trigger = {
+			has_coalition_with_communists = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}	
+		set_country_flag = oppose_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.03
+		}
+		add_stability = -0.015
+		add_political_power = -30
+		clr_country_flag = suppress_communism
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.4.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.4.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_communism
+				has_country_flag = suppress_communism
+			}
+			can_suppress_ideologies = yes
+		}
+		set_country_flag = suppress_communism
+		clr_country_flag = oppose_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 100
+				has_country_flag = pai_democrat_anticommunist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_antinationalist
+					has_country_flag = pai_democrat_left
+					has_country_flag = pai__communist
+				}
+			}
+		}
+	}
+}
+
+# Популярность больше 25%, однопартийный режим
+country_event = {
+	id = communism.5
+	title = communism.5.t
+	desc = communism.5.d
+	picture = GFX_event_communism_rise_25
+
+	trigger = {
+		has_country_flag = communism_10
+		communism > 0.25
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_25
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_25
+	}
+
+	option = { # Пойти на уступки
+		name = communism.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.5.a"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_totalitarian
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = 0.02
+		add_political_power = -200
+		add_communist = yes
+	}
+
+	option = { # Игнорировать коммунистов
+		name = communism.5.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.5.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_communism
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.5.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.5.c"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 3
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = communism.6
+	title = communism.6.t
+	desc = communism.6.d
+	picture = GFX_event_communism_decrease_25
+
+	trigger = {
+		has_country_flag = communism_25
+		communism < 0.2
+		NOT = {
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = communism.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.6.a"
+		clr_country_flag = communism_25
+		remove_communist = yes
+	}
+}
+
+# Популярность больше 40%
+country_event = {
+	id = communism.7
+	title = communism.7.t
+	desc = communism.7.d
+	picture = GFX_event_communism_rise_40
+
+	trigger = {
+		has_country_flag = communism_25
+		communism > 0.4
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_40
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_40
+	}
+
+	option = { # Сохранить коалицию с коммунистами
+		name = communism.7.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.y"
+		trigger = {
+			has_coalition_with_communists = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.015
+		add_political_power = 30
+		add_communist = yes
+	}
+
+	option = { # Разорвать коалицию с коммунистами
+		name = communism.7.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.n"
+		trigger = {
+			has_coalition_with_communists = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_communists = yes
+		add_stability = -0.02
+		add_political_power = -50
+	}
+
+	option = { # Коалиция с коммунистами
+		name = communism.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.a"
+		trigger = {
+			has_government = reformism
+			is_democracy = yes
+			has_coalition_with_communists = no
+			NOT = {
+				has_country_flag = oppose_communism
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 30
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		random_list = {
+			40 = {
+				coalition_with_communists = yes
+			}
+			60 = {}
+		}
+		add_communist = yes
+	}
+
+	option = { # Не враждовать с коммунистами
+		name = communism.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.b"
+		trigger = {
+			has_coalition_with_communists = no
+			NOT = {
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 35
+			modifier = {
+				factor = 75
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 60
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 50
+				has_country_flag = pai__communist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		add_communist = yes
+		clr_country_flag = oppose_communism
+	}
+
+	option = { # Выступать против коммунистов
+		name = communism.7.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.c"
+		trigger = {
+			has_coalition_with_communists = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}	
+		set_country_flag = oppose_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+		clr_country_flag = suppress_communism
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.7.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_communism
+				has_country_flag = suppress_communism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 100
+				has_country_flag = pai_democrat_anticommunist
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_antinationalist
+					has_country_flag = pai_democrat_left
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+		clr_country_flag = oppose_communism
+	}
+
+	option = { # Пойти на уступки
+		name = communism.7.o
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.7.o"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 400
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_totalitarian
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		trigger = {
+			is_democracy = no
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_communism
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = absolute_monarchy
+			}
+			swap_ideas = {
+				remove_idea = absolute_monarchy
+				add_idea = semi-parliamentary_monarchy
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = communism
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+	}
+}
+
+# Популярность больше 40%, однопартийный режим
+country_event = {
+	id = communism.8
+	title = communism.8.t
+	desc = communism.8.d
+	picture = GFX_event_communism_rise_40
+
+	trigger = {
+		has_country_flag = communism_25
+		communism > 0.4
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_40
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_40
+	}
+
+	option = { # Пойти на уступки
+		name = communism.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.8.a"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_communism
+			}
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_totalitarian
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = communism
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+		add_communist = yes
+	}
+
+	option = { # Игнорировать коммунистов
+		name = communism.8.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.8.b"
+		trigger = {
+			government_popularity_50 = yes
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_communism
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.8.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.8.c"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 3
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_reformator
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.02
+		add_political_power = -50
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = communism.9
+	title = communism.9.t
+	desc = communism.9.d
+	picture = GFX_event_communism_decrease_40
+
+	trigger = {
+		has_country_flag = communism_40
+		communism < 0.32
+		NOT = {
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = communism.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.9.a"
+		clr_country_flag = communism_40
+		remove_communist = yes
+	}
+}
+
+# Популярность больше 50%, демократия
+country_event = {
+	id = communism.10
+	title = communism.10.t
+	desc = communism.10.d
+	picture = GFX_event_communism_rise_50
+
+	trigger = {
+		has_country_flag = communism_40
+		communism > 0.5
+		NOT = {
+			has_government = communism
+			has_country_flag = communism_50
+		}
+		is_democracy = yes
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_50
+	}
+
+	option = { # Назначить досрочные выборы (коммунисты побеждают)
+		name = communism.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.10.a"
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = oppose_communism
+		clr_country_flag = suppress_communism
+		clr_country_flag = communism_10
+		clr_country_flag = communism_25
+		clr_country_flag = communism_40
+		clr_country_flag = communism_50
+	}
+
+	option = { # Нет досрочных выборов
+		name = communism.10.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.10.b"
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 5
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_left
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}
+		add_stability = -0.03
+		add_political_power = -100
+		set_country_flag = oppose_communism
+		clr_country_flag = suppress_communism
+		add_ideas = no_early_election_idea
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.10.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.10.s"
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 320
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.05
+		add_political_power = -150
+		clr_country_flag = oppose_communism
+	}
+}
+
+# Популярность больше 50%, не демократия
+country_event = {
+	id = communism.11
+	title = communism.11.t
+	desc = communism.11.d
+	picture = GFX_event_communism_rise_50
+
+	trigger = {
+		has_country_flag = communism_40
+		communism > 0.5
+	 	NOT = {
+			has_government = communism
+			has_country_flag = communism_50
+		}
+		is_democracy = no
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = communism_50
+	}
+
+	option = { # Уступить власть
+		name = communism.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.11.a"
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_totalitarian
+					has_country_flag = pai_nondem_reformator
+				}
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+		}
+		random_list = {
+			25 = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = yes
+				}
+			}
+			75 = {
+				start_civil_war = {
+					ruling_party = communism
+					ideology = ROOT
+					size = 0.3
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_communism
+		clr_country_flag = communism_10
+		clr_country_flag = communism_25
+		clr_country_flag = communism_40
+		clr_country_flag = communism_50
+	}
+
+	option = { # Пойти на уступки
+		name = communism.11.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.11.b"
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 160
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		if = {
+			limit = {
+				has_idea = single-party_state
+			}
+			swap_ideas = {
+				remove_idea = single-party_state
+				add_idea = parliamentary_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_stability = 0.05
+		add_political_power = -500
+		add_popularity = {
+			ideology = communism
+			popularity = -0.3
+		}
+		clr_country_flag = suppress_communism
+	}
+
+	option = { # Ожидать развития событий
+		name = communism.11.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.11.c"
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 5
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_left
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__communist
+			}
+		}
+	}
+
+	option = { # Подавлять коммунизм
+		name = communism.11.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.11.s"
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__communist
+					has_country_flag = pai_nondem_reformator
+				}
+			}
+		}
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		set_country_flag = suppress_communism
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = communism.12
+	title = communism.12.t
+	desc = communism.12.d
+	picture = GFX_event_communism_decrease_50
+
+	trigger = {
+		has_country_flag = communism_50
+		communism < 0.4
+		NOT = {
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 180
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = communism.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.12.a"
+		clr_country_flag = communism_50
+		remove_communist = yes
+	}
+}
+
+# Популярность больше 60%
+country_event = {
+	id = communism.13
+	title = communism.13.t
+	desc = communism.13.d
+	picture = GFX_event_communism_rise_60
+
+	trigger = {
+		has_country_flag = communism_50
+		communism > 0.6
+		NOT = {
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	option = { # Уступить власть
+		name = communism.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.13.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_anticommunist
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = communism
+					ideology = ROOT
+					size = 0.25
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_communism
+		clr_country_flag = communism_10
+		clr_country_flag = communism_25
+		clr_country_flag = communism_40
+		clr_country_flag = communism_50
+	}
+
+	option = { # Гражданская война
+		name = communism.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): communism.13.b"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_left
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__communist
+				}
+			}
+		}
+		start_civil_war = {
+			ideology = communism
+			size = 0.5
+		}
+	}
+}

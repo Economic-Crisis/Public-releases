@@ -1,0 +1,419 @@
+## ВСЕ ТРЕЙТЫ ДЛЯ КОМАНДУЩИХ ВВС, ТАКЖЕ МОГУТ ИСПОЛЬЗОВАТЬСЯ МИНИСТРАМИ ОБОРОНЫ И НАЧАЛЬНИКАМИ ГЕНШТАБА - категория идей air_chief
+
+leader_traits = {
+
+	###EC2013////////////////////////////////////////////
+			
+			
+		air_combat_training_expert = {  
+		sprite = 1
+		experience_gain_air_factor = 0.02
+		air_interception_attack_factor = 0.02
+		air_strategic_bomber_attack_factor = 0.02
+		air_strategic_bomber_defence_factor = 0.01
+		air_strategic_bomber_agility_factor = 0.01
+		air_strategic_bomber_bombing_factor = 0.02
+		air_cas_present_factor = 0.02
+		air_accidents_factor = -0.02
+		air_weather_penalty = -0.4
+		air_ace_generation_chance_factor = 0.3
+		
+		
+		ai_will_do = { factor = 1 }
+	}	
+			
+		air_special_operation = { 
+		sprite = 1
+		air_close_air_support_attack_factor = 0.02
+		air_close_air_support_agility_factor = 0.01
+		air_air_superiority_attack_factor = 0.02
+		air_air_superiority_agility_factor = 0.02
+		army_bonus_air_superiority_factor = 0.02
+		naval_strike_attack_factor = 0.02
+		air_cas_present_factor = 0.03
+		air_night_penalty = -0.03
+		
+		
+		ai_will_do = { factor = 3 }
+	}
+
+
+
+	###Ваниль/////////////////////////////////////////////////////////////////////////////////////////////
+			
+	air_chief_reform_1 = {  # Rate at which air experience is gained increases by 5%
+		sprite = 5
+		experience_gain_air_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_reform_2 = {  # Rate at which air experience is gained increases by 10%
+		sprite = 5
+		experience_gain_air_factor = 0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_chief_reform_3 = {  # Rate at which air experience is gained increases by 15%
+		sprite = 5
+		experience_gain_air_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_chief_safety_1 = {  # Rate of air accidents reduced by 5%
+		sprite = 1
+		air_accidents_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_safety_2 = {  # Rate of air accidents reduced by 10%
+		sprite = 1
+		air_accidents_factor = -0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_chief_safety_3 = {  # Rate of air accidents reduced by 15%
+		sprite = 1
+		air_accidents_factor = -0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	air_chief_old_guard = {
+		sprite = 1
+		experience_gain_air_factor = -0.1
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_night_operations_1 = {
+		sprite = 1
+		air_night_penalty = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_night_operations_2 = { 
+		sprite = 1
+		air_night_penalty = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_chief_night_operations_3 = { 
+		sprite = 1
+		air_night_penalty = -0.2
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_chief_ground_support_1 = {  # Air superiority impact on land units improved by 5%
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_ground_support_2 = {  # Air superiority impact on land units improved by 10%
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_chief_ground_support_3 = {  # Air superiority impact on land units improved by 15%
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	# using factor in stead of values because it is applied in ALL weathers (means bonus in good weather)
+	air_chief_all_weather_1 = {  # +5 bad weather air efficiency
+		sprite = 1
+		air_weather_penalty = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_chief_all_weather_2 = {  # +10 bad weather air efficiency
+		sprite = 1
+		air_weather_penalty = -0.2
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_chief_all_weather_3 = {  # +15 bad weather air efficiency
+		sprite = 1
+		air_weather_penalty = -0.3
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+
+	air_combat_training_1 = {  # Chance of ace generating is increased by 5%
+		sprite = 1
+		air_ace_generation_chance_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_combat_training_2 = {  # Chance of ace generating is increased by 10%
+		sprite = 1
+		air_ace_generation_chance_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_combat_training_3 = {  # Chance of ace generating is increased by 15%
+		sprite = 1
+		air_ace_generation_chance_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	# Guesstimation of what % increased efficiency might look like
+	air_naval_strike_1 = { # Naval Strike mission efficiency increased by 4%
+		sprite = 2
+		naval_strike_attack_factor = 0.02
+		naval_strike_targetting_factor = 0.02
+		naval_strike_agility_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_naval_strike_2 = { # Naval Strike mission efficiency increased by 8%
+		sprite = 2
+		naval_strike_attack_factor = 0.03
+		naval_strike_targetting_factor = 0.03
+		naval_strike_agility_factor = 0.03
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_naval_strike_3 = { # Naval Strike mission efficiency increased by 12%
+		sprite = 2
+		naval_strike_attack_factor = 0.05
+		naval_strike_targetting_factor = 0.05
+		naval_strike_agility_factor = 0.05
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_bomber_interception_1 = { # Bomber Interception mission efficiency increased by 4%
+		sprite = 1
+		air_interception_attack_factor = 0.02
+		air_interception_defence_factor = 0.02
+		air_interception_agility_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_bomber_interception_2 = { # Bomber Interception mission efficiency increased by 8%
+		sprite = 1
+		air_interception_attack_factor = 0.03
+		air_interception_defence_factor = 0.03
+		air_interception_agility_factor = 0.03
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_bomber_interception_3 = { # Bomber Interception mission efficiency increased by 12%
+		sprite = 1
+		air_interception_attack_factor = 0.05
+		air_interception_defence_factor = 0.05
+		air_interception_agility_factor = 0.05
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_superiority_1 = { # Air Superiority mission efficiency increased by 4%
+		sprite = 1
+		air_air_superiority_attack_factor = 0.02
+		air_air_superiority_agility_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_superiority_2 = { # Air Superiority mission efficiency increased by 8%
+		sprite = 1
+		air_air_superiority_attack_factor = 0.03
+		air_air_superiority_agility_factor = 0.03
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_superiority_3 = { # Air Superiority mission efficiency increased by 12%
+		sprite = 1
+		air_air_superiority_attack_factor = 0.05
+		air_air_superiority_agility_factor = 0.05
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_close_air_support_1 = { # Close Air Support mission efficiency increased by 4%
+		sprite = 1
+		air_close_air_support_attack_factor = 0.02
+		air_close_air_support_defence_factor = 0.02
+		air_close_air_support_agility_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_close_air_support_2 = { # Close Air Support mission efficiency increased by 8%
+		sprite = 1
+		air_close_air_support_attack_factor = 0.03
+		air_close_air_support_defence_factor = 0.03
+		air_close_air_support_agility_factor = 0.03
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_close_air_support_3 = { # Close Air Support mission efficiency increased by 12%
+		sprite = 1
+		air_close_air_support_attack_factor = 0.05
+		air_close_air_support_defence_factor = 0.05
+		air_close_air_support_agility_factor = 0.05
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	air_strategic_bombing_1 = { # Strategic Bombing mission efficiency increased by 4%
+		sprite = 2
+		air_strategic_bomber_attack_factor = 0.01
+		air_strategic_bomber_defence_factor = 0.01
+		air_strategic_bomber_agility_factor = 0.01
+		air_strategic_bomber_bombing_factor = 0.03
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_strategic_bombing_2 = { # Strategic Bombing mission efficiency increased by 8%
+		sprite = 2
+		air_strategic_bomber_attack_factor = 0.02
+		air_strategic_bomber_defence_factor = 0.02
+		air_strategic_bomber_agility_factor = 0.02
+		air_strategic_bomber_bombing_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_strategic_bombing_3 = { # Strategic Bombing mission efficiency increased by 12%
+		sprite = 2
+		air_strategic_bomber_attack_factor = 0.03
+		air_strategic_bomber_defence_factor = 0.03
+		air_strategic_bomber_agility_factor = 0.03
+		air_strategic_bomber_bombing_factor = 0.09
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	# Removed?
+	air_tactical_bombing_1 = { # Tactical Bombing mission efficiency increased
+		sprite = 2
+		air_cas_present_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_tactical_bombing_2 = { # Tactical Bombing mission efficiency increased
+		sprite = 2
+		air_cas_present_factor = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_tactical_bombing_3 = { # Tactical Bombing mission efficiency increased
+		sprite = 2
+		air_cas_present_factor = 0.2
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+}

@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 303
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 20120 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "PRU_2013"
+
+	add_ideas = {
+		unasur_member
+		low_terrorism
+		mixed_schools
+		TPP_member
+		NPT
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.7.28"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 45
+		liberalism = 22
+		democratic = 31
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ollanta Moisés Humala Tasso"
+		desc = "POLITICS_OLLANTA_HUMALA_DESC"
+		picture = "gfx/leaders/PRU/portrait_ollanta_humala.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Pedro Pablo Kuczynski"
+		desc = "POLITICS_PEDRO_PABLO_KUCZYNSKI_DESC"
+		picture = "gfx/leaders/PRU/portrait_pedro_pablo_kuczynski.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Keiko Fujimori"
+		desc = "POLITICS_KEIKO_FUJIMORI_DESC"
+		picture = "gfx/leaders/PRU/portrait_keiko_fujimori.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}

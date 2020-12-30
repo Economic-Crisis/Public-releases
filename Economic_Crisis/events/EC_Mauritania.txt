@@ -1,0 +1,99 @@
+##############################
+###### Economic Crisis #######
+##############################
+##### Mauritania events ######
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = mauritania
+
+country_event = {  #Смена флага в 2017 году
+	id = mauritania.1
+	title = mauritania.1.t
+	desc = mauritania.1.desc
+	picture = GFX_event_mauritania_new_flag
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = MRT
+		country_exists = MRT
+		OR = {
+			has_government = neutrality
+			has_government = democratic #islamists
+		}
+		date > 2017.8.3
+		date < 2017.8.20
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Меняем флаг
+		name = mauritania.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): mauritania.1.a"
+		ai_chance = { 
+			factor = 70
+		}
+
+		add_stability = -0.05
+
+		add_political_power = -100
+		hidden_effect = {
+			set_cosmetic_tag = MRT_new_flag
+		}
+
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = {	ideology = neutrality popularity = 0.05 }
+		}
+
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = {	ideology = democratic popularity = 0.05 }
+		}
+
+		add_timed_idea = {
+		    idea = nationalism_influence
+		    days = 30
+		}
+
+		trigger = {	
+			OR = {
+				democratic > 0.5
+				neutrality > 0.5
+			}
+		}
+	}
+	
+	option = {	#Оставляем как есть
+		name = mauritania.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): mauritania.1.b"
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		add_stability = -0.05
+				
+		add_timed_idea = {
+		    idea = nationalism_influence
+		    days = 90
+		}
+
+		trigger = {	
+			OR = {
+				democratic < 0.3
+				neutrality < 0.3
+			}
+		}
+
+	}
+
+}

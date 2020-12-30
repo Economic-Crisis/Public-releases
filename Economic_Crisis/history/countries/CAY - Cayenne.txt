@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 310
+
+2013.11.1 = {
+	#set_variable = { budget_last_year = 280900 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "_army_microstate_2013"
+
+	# laws
+	add_ideas = {
+		semi-presidential_republic
+		#unitary_state
+		#secular_state
+		#mixed_media
+		#fully_guranted_liberties
+		#contract_army
+		#mixed_schools
+		#schengen_area_immigration
+		#mixed_economic
+		#state-owned_enterprise
+		#extractive_industries_focus
+		#civilian_economy
+		#high_taxes
+		#total_social_security
+		#pensions
+	}
+
+	add_political_power = 0
+	#set_cosmetic_tag = CAY_FRA #French Guiana
+	
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.4.22"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 15
+		reformism = 10
+		liberalism = 0
+		democratic = 50
+		neutrality = 25
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Rodolphe Alexandre"
+		picture = "gfx/leaders/CAY/portait_rodolphe_alexandre.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Fabien Canavy"
+		picture = "gfx/leaders/CAY/portait_fabien_canavy.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+
+}

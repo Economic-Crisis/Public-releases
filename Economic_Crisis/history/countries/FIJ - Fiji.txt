@@ -1,0 +1,61 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 636
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 419 }
+	
+	oob = "_army_microstate_2013"
+	load_oob = "_tech_microstate_2013"
+	
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+	}
+	
+
+	set_politics = {
+		ruling_party = liberalism #parliament
+		last_election = "2014.9.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 10
+		liberalism = 50
+		democratic = 30
+		neutrality = 0
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Frank Bainimarama"
+		desc = ""
+		picture = "gfx/leaders/FIJ/portrait_frank_bainimarama.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+
+}
+

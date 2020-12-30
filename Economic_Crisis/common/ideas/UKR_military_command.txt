@@ -1,0 +1,288 @@
+# Economic Crisis - only military command
+
+ideas = {
+
+    general_staff_chief = {
+		
+		ukr_volodymyr_zamana = {
+			
+			picture = GFX_idea_ukr_volodymyr_zamana
+			allowed = {
+				original_tag = UKR
+			}
+			
+			cost = 350
+			traits = { army_analyst }
+		}
+		
+		ukr_yuriy_ilyin = {
+			
+			picture = GFX_idea_ukr_yuriy_ilyin
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			cost = 850
+			traits = { special_operation_force }
+		}
+		
+		ukr_mykhailo_kutsyn = {
+			
+			picture = GFX_idea_ukr_mykhailo_kutsyn
+			allowed = {
+				original_tag = UKR
+			}
+			
+			cost = 650
+			traits = { military_intel }
+		}
+		
+		ukr_viktor_muzhenko = {
+			
+			picture = GFX_idea_ukr_viktor_muzhenko
+			allowed = {
+				original_tag = UKR
+			}
+			
+			cost = 450
+			traits = { army_analyst }
+		}
+	
+	}
+	
+	intelligence_chief = {
+	
+		ukr_hryhoriy_illyashov = {
+			
+			picture = GFX_idea_ukr_hryhoriy_illyashov
+			allowed = {
+				original_tag = UKR
+			}
+			
+			
+			available =	{
+		        OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			cost = 150
+			traits = { intellegence_chief_civilian }
+		
+		}
+	
+		ukr_viktor_hvozd = {
+			
+			picture = GFX_idea_ukr_viktor_hvozd
+			allowed = {
+				original_tag = UKR
+			}
+
+			cost = 250
+			traits = { intellegence_chief_political }
+		
+		}
+	
+		ukr_ihor_razinkov = {
+			
+			picture = GFX_idea_ukr_ihor_razinkov
+			allowed = {
+				original_tag = UKR
+			}
+
+			cost = 450
+			traits = { intellegence_chief_analyst }
+		
+		}
+		
+		ukr_yehor_bozhok = {
+			
+			picture = GFX_idea_ukr_yehor_bozhok
+			allowed = {
+				original_tag = UKR
+			}
+
+			cost = 350
+			traits = { intellegence_chief_diplomatic }
+		
+		}
+	}
+	
+	army_chief = {
+		
+		ukr_genadiy_vorobyov = {
+			
+			picture = GFX_idea_ukr_genadiy_vorobyov
+			allowed = {
+				original_tag = UKR
+			}
+
+			available =	{
+		        OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			cost = 350
+			
+			traits = { army_combat_training }
+			
+			ai_will_do = {
+				factor = 1
+			
+			}
+		}
+		
+		ukr_anatoly_pusnyakov = {
+			
+			picture = GFX_idea_ukr_anatoly_pusnyakov
+			allowed = {
+				original_tag = UKR
+			}
+
+			cost = 550
+			
+			traits = { specops_training }
+			
+			ai_will_do = {
+				factor = 1
+			
+			}
+		}
+		
+		ukr_popko_nikolaevich = {
+			
+			picture = GFX_idea_ukr_popko_nikolaevich
+			allowed = {
+				original_tag = UKR
+			}
+
+			cost = 450
+			
+			traits = { landing_forces_training }
+			
+			ai_will_do = {
+				factor = 1
+			
+			}
+		}
+		
+	}
+	
+	navy_chief = {
+		
+		ukr_yuriy_ilyin_navy = {	
+        
+		picture = GFX_idea_ukr_yuriy_ilyin_navy
+			cost = 250
+		
+			allowed = {
+				original_tag = UKR
+			}
+
+			available =	{
+		        OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			traits = { navy_chief_decisive_battle_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ukr_denis_berezovsky = {	
+
+		picture = GFX_idea_ukr_denis_berezovsky
+			cost = 250
+		
+			allowed = {
+				original_tag = UKR
+			}
+
+			traits = { navy_chief_decisive_battle_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ukr_serhiy_hayduk = {	
+
+		picture = GFX_idea_ukr_serhiy_hayduk
+			cost = 250
+		
+			allowed = {
+				original_tag = UKR
+			}
+
+			traits = { navy_special_operation }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ukr_ihor_voronchenko = {	
+
+		picture = GFX_idea_ukr_ihor_voronchenko
+			cost = 250
+		
+			allowed = {
+				original_tag = UKR
+			}
+
+			traits = { submarine_combat_training_expert }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	air_chief = {
+		
+		ukr_sergey_drozdov = {
+
+			picture = GFX_idea_ukr_sergey_drozdov
+			cost = 450
+						
+			allowed = {
+				original_tag = UKR
+			}
+
+			traits = { air_combat_training_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ukr_yuriy_baydak = {
+
+			picture = GFX_idea_ukr_yuriy_baydak
+			cost = 450
+						
+			allowed = {
+				original_tag = UKR
+			}
+
+			traits = { air_special_operation }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}	
+	
+}

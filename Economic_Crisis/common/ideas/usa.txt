@@ -1,0 +1,421 @@
+ideas = {
+	country = {
+		USA_prevention_of_teracts_idea = {
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+
+		USA_SBIRS = {
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				spotting_chance = 0.1
+				air_strategic_bomber_bombing_factor = 0.1
+				air_night_penalty = -0.1
+			}
+		}
+
+		USA_example_of_democratic_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+				political_power_gain = 0.25
+			}
+			removal_cost = -1
+		}
+
+		USA_conservatism_idea = {
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			modifier = {
+				democratic_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_liberalism_idea = {
+			allowed_civil_war = {
+				has_government = liberalism
+			}
+			modifier = {
+				liberalism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_reformismic_idea = {
+			allowed_civil_war = {
+				has_government = reformism
+			}
+			modifier = {
+				reformism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_freedom_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				stability_factor = 0.1
+				drift_defence_factor = 1.0
+			}
+			removal_cost = -1
+		}
+
+		USA_democratic_export = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				conscription = 0.01
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.5
+			}
+			removal_cost = -1
+		}
+
+		USA_change_politics_idea = {
+			allowed_civil_war = {
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				democratic_drift = -0.01
+				liberalism_drift = -0.01
+				reformism_drift = -0.01
+			}
+			removal_cost = -1
+		}
+
+		USA_people_country_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				communism_drift = 0.05
+				reformism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_communism_idea = {
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				communism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_reformism_idea = {
+			allowed_civil_war = {
+				has_government = reformism
+			}
+			modifier = {
+				reformism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_capitalism_defeated = {
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.2
+				drift_defence_factor = 0.5
+			}
+			removal_cost = -1
+		}
+
+		USA_empire_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			modifier = {
+				fascism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_nationalism_idea = {
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			modifier = {
+				fascism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+
+		USA_america_first_idea = {
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			modifier = {
+				stability_factor = 0.1
+				justify_war_goal_when_in_major_war_time = -0.5
+				conscription = 0.02
+			}
+			rule = {
+				can_create_factions = yes
+			}
+			removal_cost = -1
+		}
+		
+		new_deal = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+				stability_factor = 0.10
+			}
+		}
+
+		wilkies_new_deal = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				stability_factor = 0.05
+				drift_defence_factor = 0.2
+			}
+		}
+		
+		full_employment = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+				political_power_cost = 1
+			}
+		}
+		
+		
+		wartime_industry_focus = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			modifier = {
+				conversion_cost_civ_to_mil_factor= -0.2
+			}
+		}
+	
+		bureau_of_ships_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_navy_bonus
+			
+			equipment_bonus = {
+
+				capital_ship = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				light_carrier = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				light_carrier_nr = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				heavy_carrier = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				heavy_carrier_nr = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				screen_ship = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				submarine = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+			
+
+		
+		USA_prepare_intervention = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = {
+				lend_lease_tension = -0.15
+			}
+		}
+		
+		limited_interventionism = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				send_volunteers_tension = -0.20
+				send_volunteer_divisions_required = -0.25
+			}
+		}
+		two_party_system = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			political_power_gain = 0.15
+			drift_defence_factor = 0.25
+			stability_factor = 0.05
+			}
+		}
+		usa_party_sistema = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			democratic_drift = 0.1
+			liberalism_drift = 0.1
+			}
+		}
+		third_party_usa = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			neutrality_drift = 0.01
+			reformism_drift = 0.01
+			}
+		}
+	}
+}

@@ -1,0 +1,482 @@
+### Скиллы на дрифты по идеологии. Они могут быть у любых министров и советников, но обязательно в связки с каким-то другим трейтсом!
+### Предлагается сделать на кадую по 3 типа трейстов разной мощности, возможно самый слабы без дебаффы, а более сильные - с дебаффами.
+### Также отдельно описать идеолоический трейт для лидеров партий.
+### Тут же могут быть трейтсы на отдаление от той или иной идеологии, т.к. ряд политиков в первую очередь не за кого-то, а против кого-то.
+
+leader_traits = {
+
+
+    party_leader_communist = {
+		random = no
+		# Boosts Communism
+		sprite = 13
+	#	communism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	party_leader_reformist = {
+		random = no
+		# Boosts Democracy
+		sprite = 13
+	#	reformism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	party_leader_liberal = {
+		random = no
+		# Boosts liberalism
+		sprite = 13
+	#	liberalism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	party_leader_conservative = {
+		random = no
+		# Boosts Democracy
+		sprite = 13
+	#	democratic_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	party_leader_centrist = {
+		random = no
+		# Boosts reformism
+		sprite = 13
+	#	neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	party_leader_oligarchy = {
+		random = no
+	# Boosts liberalism
+		sprite = 13
+	#	neutrality_drift = 0.1
+	#	liberalism_drift = 0.1
+	
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		
+	
+	party_leader_nationalist = {
+		random = no
+		# Boosts Fascism
+		sprite = 13
+	#	fascism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	party_leader_islamist  = {
+		random = no
+		sprite = 13
+	#	islamists_drift = 0.1
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	party_leader_rad_islamist  = {
+		random = no
+		sprite = 13
+		rad_islamists_drift = 0.5
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	party_leader_rad_islamist = {
+		random = no
+		# Boosts Rad_Islamists
+		sprite = 13
+	#	rad_islamists_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+  
+	islamists_demagogue = {
+		random = no
+		# Boosts Islamists
+		sprite = 13
+		democratic_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	liberalism_reformer = {
+		random = no
+		# Boosts Democracy
+		sprite = 13
+		democratic_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	liberalism_demagogue = { #liberalism
+		random = no
+		
+		sprite = 13
+		liberalism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	reformism_reformer= {
+		random = no
+		
+		sprite = 13
+	#	democratic_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	reformism_demagogue = {
+		random = no
+		
+		sprite = 13
+		reformism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		
+    communist_revolutionary = {
+		random = no
+
+		sprite = 13
+		communism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	democratic_reformer = {
+		random = no
+
+		sprite = 13
+		democratic_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	fascist_demagogue = {
+		random = no
+
+		sprite = 13
+		fascism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	rad_islamists_demagogue = {
+		random = no
+		# Boosts Rad_Islamists
+		sprite = 13
+		rad_islamists_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	neutrality_reformer = {
+		random = no
+		# Boosts Autaritarism
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	centrist_demagogue = {
+		random = no
+		# Boosts Autaritarism
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	centrist_puppet_opposition = {
+		random = no
+		# Boosts Autaritarism
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	democratic_puppet_opposition  = {
+		random = no
+		# Boosts Autaritarism
+		sprite = 13
+		democratic_drift = 0.1
+		liberalism_drift = 0.12
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	
+	moderatism_reformer = {
+		random = no
+		# Boosts Autaritarism
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	
+    pm_communist = {
+		random = no
+		sprite = 13
+	
+		production_speed_industrial_complex_factor = 0.10
+		opinion_gain_monthly_same_ideology_factor = 0.50
+		political_power_factor = 0.03
+		stability_weekly = 0.05
+		drift_defence_factor = 0.02
+		trade_opinion_factor = -0.05
+		production_speed_arms_factory_factor = 0.05
+		global_building_slots_factor = 0.03
+		production_speed_infrastructure_factor = 0.05
+		production_speed_synthetic_refinery_factor = 0.10
+		consumer_goods_factor = 0.10
+		training_time_army_factor = -0.05
+		foreign_subversive_activites = -0.10
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	pm_reformist = {
+		random = no
+		
+		sprite = 13
+		
+		production_speed_industrial_complex_factor = 0.02
+		political_power_factor = 0.01
+		stability_weekly = 0.01
+		drift_defence_factor = 0.02
+		trade_opinion_factor = 0.05
+		production_speed_arms_factory_factor = 0.05
+		global_building_slots_factor = -0.01
+		production_speed_infrastructure_factor = 0.02
+		production_speed_synthetic_refinery_factor = 0.01
+		consumer_goods_factor = -0.01
+		training_time_army_factor = -0.01
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	pm_liberal = {
+		random = no
+		sprite = 13
+		
+		production_speed_industrial_complex_factor = -0.02
+		political_power_factor = 0.01
+		stability_weekly = 0.01
+		drift_defence_factor = -0.05
+		trade_opinion_factor = 0.15
+		production_speed_arms_factory_factor = -0.05
+		global_building_slots_factor = 0.05
+		production_speed_infrastructure_factor = -0.02
+		production_speed_synthetic_refinery_factor = -0.01
+		consumer_goods_factor = 0.08
+		training_time_army_factor = -0.10
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	pm_conservative = {
+		random = no
+		sprite = 13
+		
+		foreign_subversive_activites = -0.05
+		production_speed_industrial_complex_factor = -0.01
+		political_power_factor = 0.02
+		stability_weekly = 0.05
+		drift_defence_factor = -0.02
+		trade_opinion_factor = 0.05
+		production_speed_arms_factory_factor = -0.03
+		global_building_slots_factor = 0.03
+		production_speed_infrastructure_factor = 0.02
+		production_speed_synthetic_refinery_factor = 0.01
+		consumer_goods_factor = 0.05
+		training_time_army_factor = -0.08
+		
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	pm_centrist = {
+		random = no
+		sprite = 13
+	
+		production_speed_industrial_complex_factor = 0.05
+		political_power_factor = 0.03
+		stability_weekly = 0.03
+		drift_defence_factor = 0.01
+		trade_opinion_factor = 0.05
+		production_speed_arms_factory_factor = 0.03
+		global_building_slots_factor = 0.05
+		production_speed_infrastructure_factor = 0.03
+		production_speed_synthetic_refinery_factor = 0.15
+		consumer_goods_factor = 0.05
+		training_time_army_factor = -0.03
+		foreign_subversive_activites = -0.15
+		resistance_damage_to_garrison = -0.05
+		
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	pm_oligarchy = {
+		random = no
+		sprite = 13
+		
+		production_speed_industrial_complex_factor = -0.02
+		political_power_factor = -0.01
+		stability_weekly = -0.05
+		drift_defence_factor = -0.08
+		trade_opinion_factor = 0.10
+		production_speed_arms_factory_factor = -0.15
+		global_building_slots_factor = 0.08
+		production_speed_infrastructure_factor = -0.05
+		production_speed_synthetic_refinery_factor = -0.20
+		consumer_goods_factor = 0.05
+		training_time_army_factor = 0.10
+	
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		
+	
+	pm_nationalist = {
+		random = no	
+		sprite = 13
+		
+		stability_factor = 0.15
+		stability_weekly = 0.03
+		production_speed_industrial_complex_factor = 0.01
+		political_power_factor = 0.03
+		drift_defence_factor = 0.02
+		production_speed_arms_factory_factor = 0.03
+		global_building_slots_factor = 0.08
+		production_speed_infrastructure_factor = 0.08
+		production_speed_synthetic_refinery_factor = 0.05
+		consumer_goods_factor = 0.03
+		training_time_army_factor = -0.02
+		trade_opinion_factor = -0.2
+		resistance_damage_to_garrison = -0.1
+		foreign_subversive_activites = -0.05
+		conversion_cost_civ_to_mil_factor= -0.03
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	pm_islamist  = {
+		random = no
+		sprite = 13
+		
+		production_speed_industrial_complex_factor = -0.05
+		political_power_factor = 0.05
+		stability_weekly = 0.01
+		drift_defence_factor = 0.03
+		trade_opinion_factor = 0.01
+		production_speed_arms_factory_factor = 0.01
+		global_building_slots_factor = -0.03
+		production_speed_infrastructure_factor = 0.03
+		production_speed_synthetic_refinery_factor = 0.20
+		consumer_goods_factor = -0.02
+		training_time_army_factor = -0.01
+		foreign_subversive_activites = -0.15
+		resistance_damage_to_garrison = -0.10
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	pm_rad_islamist  = {
+		random = no
+		sprite = 13
+		
+		production_speed_industrial_complex_factor = 0.05
+		political_power_factor = 0.05
+		stability_weekly = 0.05
+		drift_defence_factor = 0.05
+		trade_opinion_factor = -0.05
+		production_speed_arms_factory_factor = -0.01
+		global_building_slots_factor = -0.05
+		production_speed_infrastructure_factor = 0.03
+		production_speed_synthetic_refinery_factor = 0.05
+		consumer_goods_factor = -0.05
+		training_time_army_factor = 0.05
+		foreign_subversive_activites = -0.30
+		resistance_damage_to_garrison = -0.20
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

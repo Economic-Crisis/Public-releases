@@ -1,0 +1,1118 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## USA events        ###
+#################################
+## Written by Maxsim&SuxrobGM ###
+#################################
+
+add_namespace = usa
+
+# Inviting to NATO
+country_event = {
+	id = usa.1
+	title = usa.1.t
+	desc = usa.1.d
+	picture = GFX_event_UKR_to_NATO
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.1.a"
+		USA = {
+			add_to_faction = ROOT
+		}
+	}
+
+	option = {
+		name = usa.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.1.b"
+	}
+}
+
+# Ultimatum of USA (Russia)
+country_event = {
+	id = usa.2
+	title = usa.2.t
+	desc = usa.2.d
+	picture = GFX_event_USA_army1
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.2.a"
+		remove_ideas = RUS_impaired_by_usa
+		add_timed_idea = { idea = RUS_impaired_by_usa days = 365 }
+		effect_tooltip = {
+			UKR = {
+				set_state_owner = 228
+				set_state_owner = 227
+				set_state_owner = 137
+				set_state_owner = 828
+			}
+		}
+		hidden_effect = {
+			UKR = {
+				country_event = { id = usa.3 days = 1}
+			}
+		}
+	}
+
+	option = {
+		name = usa.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.2.b"
+		effect_tooltip = {
+			add_ideas = RUS_intensified_sanctions_of_usa
+		}
+		hidden_effect = {
+			USA = {
+				country_event = { id = usa.4 days = 2 }
+			}
+		}
+	}
+}
+
+# Russia Returned Crimea (Ukraine)
+country_event = {
+	id = usa.3
+	title = usa.3.t
+	desc = usa.3.d
+	picture = GFX_event_Crimea
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.3.a"
+		set_state_owner = 228
+		set_state_owner = 227
+		set_state_owner = 137
+		set_state_owner = 828
+	}
+}
+
+# Russia Rejected Ultimatum (USA)
+country_event = {
+	id = usa.4
+	title = usa.4.t
+	desc = usa.4.d
+	picture = GFX_event_flag_USA_vs_RUS
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.4.a"
+		RUS = {
+			add_ideas = RUS_intensified_sanctions_of_usa
+		}
+	}
+}
+
+# Protests Start (Russia)
+country_event = {
+	id = usa.5
+	title = usa.5.t
+	desc = usa.5.d
+	picture = GFX_event_protest1
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_idea = RUS_impaired_by_usa
+	}
+
+	immediate = {
+		hidden_effect = {
+			news_event = { id = usa_news.3 days = 1 }
+		}
+	}
+
+	option = {
+		name = usa.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.5.a"
+		add_timed_idea = { idea = RUS_protests_of_opposition days = 180 }
+		add_popularity = { ideology = democratic popularity = -0.05 }
+		add_popularity = { ideology = liberalism popularity = -0.05 }
+		add_popularity = { ideology = reformism popularity = -0.05 }
+		add_stability = -0.2
+		add_political_power = -200
+	}
+
+	option = {
+		name = usa.5.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.5.b"
+		add_timed_idea = { idea = RUS_protests_of_opposition days = 730 }
+		add_stability = -0.1
+	}
+
+	option = {
+		name = usa.5.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.5.c"
+		add_timed_idea = { idea = RUS_protests_of_opposition days = 730 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_popularity = { ideology = liberalism popularity = 0.05 }
+		add_popularity = { ideology = reformism popularity = 0.05 }
+		add_stability = 0.1
+		add_political_power = -200
+	}
+}
+
+# Revolt of Democrats (Russia)
+country_event = {
+	id = usa.6
+	title = usa.6.t
+	desc = usa.6.d
+	picture = GFX_event_protest1
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.6.a"
+		ai_chance = { factor = 25 }
+		start_civil_war = { ideology = democratic size = 0.2 }
+		hidden_effect = {
+			set_political_party = { ideology = liberalism popularity = 15 }
+			set_political_party = { ideology = reformism popularity = 15 }
+			set_political_party = { ideology = democratic popularity = 20 }
+			news_event = { id = usa_news.4 days = 1 }
+			every_country = {
+				limit = {
+					original_tag = RUS
+					NOT = { tag = RUS }
+					has_government = democratic
+				}
+				set_political_party = { ideology = liberalism popularity = 30 }
+				set_political_party = { ideology = reformism popularity = 30 }
+				set_political_party = { ideology = democratic popularity = 40 }
+			}
+		}
+	}
+
+	option = {
+		name = usa.6.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.6.b"
+		ai_chance = { factor = 25 }
+		retire_country_leader = yes
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		start_civil_war = { ideology = neutrality size = 0.2 }
+		hidden_effect = {
+			news_event = { id = usa_news.5 days = 1 }
+		}
+	}
+	option = {
+		name = usa.6.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.6.c"
+		ai_chance = { factor = 50 }
+		add_timed_idea = { idea = podavlenie_vostani days = 730 }
+	}
+}
+
+# Lend-Leade from USA (Syrian Opposition)
+country_event = {
+	id = usa.7
+	title = usa.7.t
+	desc = usa.7.d
+	picture = GFX_event_FSA_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.7.a"
+		USA = {
+			send_equipment = {
+				target = FSA
+				type = army_salw_equipment
+				amount = 5000
+			}
+		}
+		add_opinion_modifier = { target = USA modifier = supported_with_weapons }
+	}
+}
+
+# USA Suggest Peace with Opposition (Syria)
+country_event = {
+	id = usa.8
+	title = usa.8.t
+	desc = usa.8.d
+	picture = GFX_event_SYR_white_pece
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.8.a"
+		effect_tooltip = {
+			FSA = {
+				custom_effect_tooltip = needs_approval
+			}
+			USA = {
+				send_equipment = {
+					target = SYR
+					type = army_salw_equipment
+					amount = 2500
+				}
+				send_equipment = {
+					target = FSA
+					type = army_ammunition_equipment
+					amount = 2500
+				}
+			}
+			white_peace = FSA
+		}
+		set_global_flag = USA_syria_accept_peace
+		hidden_effect = {
+			country_event = { id = usa.10 days = 3 }
+			country_event = { id = usa.12 days = 3 }
+		}
+	}
+
+	option = {
+		name = usa.8.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.8.b"
+		set_global_flag = USA_syria_reject_peace
+	}
+}
+
+# USA Suggest Peace with Syria (Opposition)
+country_event = {
+	id = usa.9
+	title = usa.9.t
+	desc = usa.9.d
+	picture = GFX_event_SYR_white_pece
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.9.a"
+		effect_tooltip = {
+			SYR = {
+				custom_effect_tooltip = needs_approval
+			}
+			USA = {
+				send_equipment = {
+					target = SYR
+					type = army_salw_equipment
+					amount = 2500
+				}
+				send_equipment = {
+					target = FSA
+					type = army_salw_equipment
+					amount = 2500
+				}
+			}
+			white_peace = SYR
+		}
+		set_global_flag = USA_opposition_accept_peace
+		hidden_effect = {
+			country_event = { id = usa.11 days = 3 }
+			country_event = { id = usa.13 days = 3 }
+		}
+	}
+
+	option = {
+		name = usa.9.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.9.b"
+		set_global_flag = USA_opposition_reject_peace
+	}
+}
+
+# Peace with Opposition (Syria)
+country_event = {
+	id = usa.10
+	title = usa.10.t
+	desc = usa.10.d
+	picture = GFX_event_bashar_asad
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = USA_syria_accept_peace
+		has_global_flag = USA_opposition_accept_peace
+	}
+
+	option = {
+		name = usa.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.10.a"
+		effect_tooltip = {
+			white_peace = FSA
+			USA = {
+				send_equipment = {
+					target = SYR
+					type = army_salw_equipment
+					amount = 2500
+				}
+				send_equipment = {
+					target = FSA
+					type = army_salw_equipment
+					amount = 2500
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_war_with = FSA
+				}
+				white_peace = FSA
+				USA = {
+					country_event = usa.14
+				}
+			}
+		}
+	}
+}
+
+# Peace with Syria (Opposition)
+country_event = {
+	id = usa.11
+	title = usa.11.t
+	desc = usa.11.d
+	picture = GFX_event_flag_USA_FSA
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = USA_syria_accept_peace
+		has_global_flag = USA_opposition_accept_peace
+	}
+
+	option = {
+		name = usa.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.11.a"
+		effect_tooltip = {
+			white_peace = SYR
+			USA = {
+				send_equipment = {
+					target = SYR
+					type = army_salw_equipment
+					amount = 2500
+				}
+				send_equipment = {
+					target = FSA
+					type = army_salw_equipment
+					amount = 2500
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_war_with = SYR
+				}
+				white_peace = SYR
+				USA = {
+					country_event = usa.14
+				}
+			}
+		}
+	}
+}
+
+# Opposition Rejected Peace (Syria)
+country_event = {
+	id = usa.12
+	title = usa.12.t
+	desc = usa.12.d
+	picture = GFX_event_SYR_white_peace1
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = USA_opposition_reject_peace
+	}
+
+	option = {
+		name = usa.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.12.a"
+		USA = {
+			country_event = usa.15
+		}
+	}
+}
+
+# Syria Rejected Peace (Opposition)
+country_event = {
+	id = usa.13
+	title = usa.13.t
+	desc = usa.13.d
+	picture = GFX_event_protest_syria
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = USA_syria_reject_peace
+	}
+
+	option = {
+		name = usa.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.13.a"
+		USA = {
+			country_event = usa.15
+		}
+	}
+}
+
+# Syrian Peace Accepted
+country_event = {
+	id = usa.14
+	title = usa.14.t
+	desc = usa.14.d
+	picture = GFX_event_flag_USA_SYR
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.14.a"
+		send_equipment = {
+			target = SYR
+			type = army_salw_equipment
+			amount = 2500
+		}
+		send_equipment = {
+			target = FSA
+			type = army_salw_equipment
+			amount = 2500
+		}
+		hidden_effect = {
+			news_event = { id = usa_news.6 days = 1 }
+		}
+	}
+}
+
+# Syrian Peace Rejected
+country_event = {
+	id = usa.15
+	title = usa.15.t
+	desc = usa.15.d
+	picture = GFX_event_protest_syria
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.15.a"
+	}
+}
+
+# Bombing of USA (IGIL)
+country_event = {
+	id = usa.16
+	title = usa.16.t
+	desc = usa.16.d
+	picture = GFX_event_bombing_IGIL
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.16.a"
+		effect_tooltip = {
+			add_ideas = IGL_bombing_of_usa
+		}
+	}
+}
+
+# Revolt of Democrats (China)
+country_event = {
+	id = usa.17
+	title = usa.17.t
+	desc = usa.17.d
+	picture = GFX_event_protest_PRC
+
+	is_triggered_only = yes
+
+	option = {
+		name = usa.17.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.17.a"
+		ai_chance = { factor = 35 }
+		start_civil_war = { ideology = democratic size = 0.2 }
+		hidden_effect = {
+			set_political_party = { ideology = liberalism popularity = 15 }
+			set_political_party = { ideology = reformism popularity = 15 }
+			set_political_party = { ideology = democratic popularity = 20 }
+			news_event = { id = usa_news.10 days = 1 }
+			every_country = {
+				limit = {
+					original_tag = CHI
+					NOT = { tag = CHI }
+					has_government = democratic
+				}
+				set_political_party = { ideology = liberalism popularity = 30 }
+				set_political_party = { ideology = reformism popularity = 30 }
+				set_political_party = { ideology = democratic popularity = 40 }
+			}
+		}
+	}
+
+	option = {
+		name = usa.17.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.17.b"
+		ai_chance = { factor = 65 }
+		retire_country_leader = yes
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		start_civil_war = { ideology = communism size = 0.2 }
+		hidden_effect = {
+			news_event = { id = usa_news.11 days = 1 }
+		}
+	}
+}
+
+#2016 Elections Clinton vs Trump
+country_event = {
+	id = usa.18
+	title = usa.18.t
+	desc = usa.18.d
+	picture = GFX_event_clinton_vs_trump
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = USA
+		has_elections = yes
+		date > 2016.11.1
+		date < 2017.1.9
+	}
+	
+	immediate = {
+		set_country_flag = usa_election_2016
+	}
+	
+	option = {	#Clinton
+		name = usa.18.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.18.a"
+		ai_chance = { 
+			factor = 49
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_country_flag = clinton_elected_2016
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Hillary Clinton"
+			ideology = liberal_democracy
+			picture = "gfx/leaders/USA/portrait_hillary_clinton.dds"
+			#expire = "2025.1.1"
+			traits = { trait_liberal_democracy }
+		}
+		add_ideas = usa_timothy_kaine_hog #Vice President
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.09
+		}
+		add_stability = -0.05
+		hidden_effect = {
+		    news_event = { id = usa_news.17 days = 1 }
+		}
+	}
+	
+	option = {	#Trump
+		name = usa.18.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.18.b"
+		ai_chance = { factor = 51 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		set_country_flag = trump_elected_2016
+		create_country_leader = {
+			name = "Donald Trump"
+			ideology = conservative_democracy 
+			picture = "gfx/leaders/USA/portrait_donald_trump.dds"
+			#expire = "2025.1.1"
+			traits = { trait_conservative_democracy }
+		}
+		add_ideas = usa_michael_pence_hog #Vice President
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+		add_stability = -0.05
+		
+		MEX = { add_opinion_modifier = { target = USA modifier = actions_negative } }
+		CHI = { add_opinion_modifier = { target = USA modifier = actions_negative } }
+		RUS = { add_opinion_modifier = { target = USA modifier = actions_positive } }
+	    hidden_effect = { news_event = { id = usa_news.16 days = 1 } }
+	}
+
+	option = {	#Sanders (additional option)
+		name = usa.18.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.18.c"
+		ai_chance = { 
+			factor = 40 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+		set_country_flag = sanders_elected_2016
+		create_country_leader = {
+			name = "Bernie Sanders"
+			ideology = social_democracy 
+			picture = "gfx/leaders/USA/portrait_bernie_sanders.dds"
+			traits = { trait_social_democracy }
+		}
+		add_ideas = usa_bernard_sanders_hog #Let him be the head of government
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.1
+		}
+		add_stability = -0.25
+		trigger = {reformism > 0.4}
+	    #hidden_effect = { news_event = { id = usa_news.16 days = 1 } }
+	}
+
+}	
+
+country_event = { #Поставка оружие на ССА №1
+	id = usa.19
+	title = usa.19.t
+	desc = usa.19.d
+	picture = GFX_event_USA_SYR
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		date > 2014.1.1
+		country_exists = FSA
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = { 
+		name = usa.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.19.a"
+		FSA = { country_event = { id = syria.1 days = 1 } }
+		add_named_threat = { threat = 1.5 name = threat_USA_send_equipments_to_FSA }
+		ai_chance = { factor = 90 }
+	}
+	
+	option = { 
+		name = usa.19.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.19.b"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = { #Поставка оружие на ССА №2
+	id = usa.20
+	title = usa.19.t
+	desc = usa.19.d
+	picture = GFX_event_USA_SYR
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		date > 2014.3.1
+		country_exists = FSA
+	}
+	
+	mean_time_to_happen = {	days = 1 }
+	
+	option = { 
+		name = usa.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.20.a"
+		FSA = { country_event = { id = syria.1 days = 1 } }
+		add_named_threat = { threat = 1.5 name = threat_USA_send_equipments_to_FSA }
+		ai_chance = { factor = 90 }
+	}
+	
+	option = { 
+		name = usa.19.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.20.b"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = { #Поставка оружие на ССА №3
+	id = usa.21
+	title = usa.19.t
+	desc = usa.19.d
+	picture = GFX_event_USA_SYR
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		date > 2014.8.10
+		country_exists = FSA
+	}
+	
+	mean_time_to_happen = {	days = 1 }
+	
+	option = { 
+		name = usa.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.21.a"
+		FSA = { country_event = { id = syria.1 days = 1 } }
+		add_named_threat = { threat = 1.5 name = threat_USA_send_equipments_to_FSA }
+		ai_chance = { factor = 90 }
+	}
+	
+	option = { 
+		name = usa.19.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.21.b"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = { #Базы НАТО в Иране
+	id = usa.22
+	title = usa.22.t
+	desc = usa.22.d
+	picture = GFX_event_nato_bases
+	
+	is_triggered_only = yes
+	trigger = {	tag = USA }
+	mean_time_to_happen = { days = 1 }
+	option = { 
+		name = usa.22.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.22.a"
+		ai_chance = { factor = 75 }
+		transfer_state = 1000
+		add_opinion_modifier = {
+			target = IRN
+			modifier = actions_positive
+		}
+	}
+	
+	option = { 
+		name = usa.22.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.22.b"
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = -0.05
+		
+		add_opinion_modifier = {
+		target = IRN
+		modifier = actions_negative
+		}
+	}
+}
+
+# Japan Saipan Islands (USA)
+country_event = {
+	id = usa.23
+	title = usa.23.t
+	desc = usa.23.d
+	picture = GFX_event_usa_japan_saipan
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Accept demands
+		name = usa.23.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.23.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						is_puppet_of = JAP
+						is_in_faction_with = JAP
+					}
+				}
+				JAP = {	surrender_progress > 0.09 }
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = JAP
+				}
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = {	tag = JAP }
+					USA = {	is_puppet_of = PREV	}
+					NOT = {	is_in_faction_with = JAP }
+				}
+			}
+		}
+		JAP = {	country_event = { days = 1 id = japan.1 } }
+	}
+	option = { # Refuse
+		name = usa.23.b		
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.23.b"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = {	JAP = {	surrender_progress > 0.09 }	}
+				NOT = {	any_other_country = {
+						is_in_faction_with = ROOT
+						has_war_with = JAP
+					}
+				}
+				NOT = {	any_other_country = {
+						NOT = {	tag = JAP }
+						USA = {	is_puppet_of = PREV	}
+						NOT = {	is_in_faction_with = JAP }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = { is_in_faction_with = JAP
+					 USA = { is_puppet_of = JAP }
+				}
+			}
+		}
+		effect_tooltip = { JAP = {	country_event = { days = 1 id = japan.2 } }	}
+		hidden_effect = { JAP = { country_event = { days = 1 id = japan.2 }	} }		
+	}
+}
+	
+# Japan Caroline Islands (USA)
+country_event = {
+	id = usa.24
+	title = usa.24.t
+	desc = usa.24.d
+	picture = GFX_event_usa_japan_carolin
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Accept demands
+		name = usa.24.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.24.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						is_puppet_of = JAP
+						is_in_faction_with = JAP
+					}
+				}
+				JAP = {	surrender_progress > 0.09 }
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					has_war_with = JAP
+				}
+			}
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = {	tag = JAP }
+					USA = {	is_puppet_of = PREV	}
+					NOT = {	is_in_faction_with = JAP }
+				}
+			}
+		}
+		JAP = {	country_event = { days = 1 id = japan.5 } }
+	}
+	option = { # Refuse
+		name = usa.24.b		
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.42.b"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = {	JAP = {	surrender_progress > 0.09 }	}
+				NOT = {	any_other_country = {
+						is_in_faction_with = ROOT
+						has_war_with = JAP
+					}
+				}
+				NOT = {	any_other_country = {
+						NOT = {	tag = JAP }
+						USA = {	is_puppet_of = PREV	}
+						NOT = {	is_in_faction_with = JAP }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = { is_in_faction_with = JAP
+					 USA = { is_puppet_of = JAP }
+				}
+			}
+		}
+		effect_tooltip = { JAP = {	country_event = { days = 1 id = japan.6 } }	}
+		hidden_effect = { JAP = { country_event = { days = 1 id = japan.6 }	} }		
+	}
+}
+
+# Japan Annexes USA Bases
+country_event = {
+	id = usa.25
+	title = usa.25.t
+	desc = usa.25.d
+	picture = GFX_event_japan_usa_base
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.25.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.25.a"
+		}
+	}
+
+
+#2020 Elections Biden vs Trump
+country_event = {
+	id = usa.26
+	title = usa.26.t
+	desc = usa.26.d
+	picture = GFX_event_biden_vs_trump
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = usa.26.d1
+		trigger = {
+			has_country_flag = trump_elected_2016
+		}
+	}
+
+	desc = {
+		text = usa.26.d2
+		trigger = {
+			has_country_flag = clinton_elected_2016
+		}
+	}
+
+	trigger = {
+		tag = USA
+		has_elections = yes
+		date > 2020.11.2
+		date < 2020.1.10
+	}
+	
+	immediate = {
+		set_country_flag = usa_election_2020
+	}
+	
+	option = {	#Biden
+		name = usa.26.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.26.a"
+		ai_chance = {  factor = 51 }
+		set_country_flag = biden_elected_2020
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Joe Biden" 
+			ideology = liberal_democracy
+			picture = "gfx/leaders/USA/portrait_joe_biden.dds"
+			traits = { trait_liberal_democracy }
+		}
+		add_ideas = usa_kamala_harris_hog #Vice President
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.05
+		}
+		add_stability = -0.05
+		hidden_effect = {
+		    news_event = { id = usa_news.19 days = 1 }
+		}
+	}
+	
+	option = {	#Trump
+		name = usa.26.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.26.b"
+		ai_chance = { 
+			factor = 49 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_country_flag = trump_elected_2020
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Donald Trump"
+			ideology = conservative_democracy 
+			picture = "gfx/leaders/USA/portrait_donald_trump.dds"
+			traits = { trait_conservative_democracy }
+		}
+		add_ideas = usa_michael_pence_hog #Vice President
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.09
+		}
+		add_stability = -0.05
+		
+	    hidden_effect = { news_event = { id = usa_news.18 days = 1 } }
+	}
+
+	option = {	#Sanders (additional option)
+		name = usa.26.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.18.c"
+		ai_chance = { 
+			factor = 40
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+		set_country_flag = sanders_elected_2020
+		create_country_leader = {
+			name = "Bernie Sanders"
+			ideology = social_democracy 
+			picture = "gfx/leaders/USA/portrait_bernie_sanders.dds"
+			traits = { trait_social_democracy }
+		}
+		add_ideas = usa_bernard_sanders_hog #Let him be the head of government
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.1
+		}
+		add_stability = -0.15
+		trigger = {reformism > 0.4}
+	    #hidden_effect = { news_event = { id = usa_news.16 days = 1 } }
+	}
+
+}	

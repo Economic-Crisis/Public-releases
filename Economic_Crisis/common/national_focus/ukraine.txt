@@ -1,0 +1,5466 @@
+focus_tree = {
+	id = ukraine_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = UKR
+		}
+	}
+	 
+	reset_on_civilwar = yes
+
+	continuous_focus_position = { x = 50 y = 1000 }
+	
+#   Шаблон
+#	focus = {
+#		id = UKR_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		relative_position_id = 
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		cost = 70
+#		#cancel_if_invalid = yes
+#		#continue_if_invalid = no
+#		#available_if_capitulated = no
+#		ai_will_do = { factor = 1 }
+#		available = { }
+#		bypass = { }
+#		complete_tooltip = { }
+#		completion_reward = { }
+#	}
+	
+	focus = {
+		id = UKR_political_effort #Развитие Политики > Политический кризис на Украине > Выбор политического курса >  Соглашение об ассоциации между Украиной и Евросоюзом
+		icon = GFX_goal_ukr_political_effort
+		x = 13
+		y = 0
+		cost = 20
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			add_political_power = 100 
+			add_ideas = low_politic
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_political_effort"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_westering #Движение на запад > Курс на Запад 
+	    prerequisite = { focus = UKR_political_effort }
+	    icon = GFX_goal_ukr_westering
+		x = 1
+	    y = 1
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		bypass = {
+			UKR = {
+				has_country_flag = UKR_EU_signed_an_agreement
+			}
+		}		
+		available = {
+		    OR = {
+				has_government = liberalism
+				has_government = democratic
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+	    
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			set_country_flag = west_friend
+	        add_political_power = 150
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_westering"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_nato_training # Приглашение тренеров НАТО > Регулярные учения со странами НАТО
+	    prerequisite = { focus = UKR_westering }
+	    icon = GFX_goal_ukr_nato_training
+		x = 0
+	    y = 2
+	    cost = 70
+		
+		available = {
+		    OR = {
+				has_government = liberalism
+				has_government = democratic
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_nato_training"
+			army_experience = 15
+			air_experience = 5
+			add_tech_bonus = {
+				name = UKR_nato_training
+				bonus = 0.4
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+	    id = UKR_nato_standarts # Введение стандартов НАТО
+	    prerequisite = { focus = UKR_nato_training }
+	    icon = GFX_goal_ukr_nato_standarts
+		x = 0
+	    y = 3
+	    cost = 100
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_nato_standarts"
+		    remove_ideas = obsolete_army
+	        # бонусы для армии
+			army_experience = 20
+			navy_experience = 5
+			air_experience = 10
+			add_tech_bonus = {
+				name = UKR_nato_standarts
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+	    id = UKR_nato_bases # Базы НАТО на Черном море
+	    prerequisite = { focus = UKR_nato_standarts }
+	    icon = GFX_goal_ukr_nato_bases
+		x = 0
+	    y = 5
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_nato_bases"
+			navy_experience = 15
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}	
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+	    id = UKR_join_nato # Присоединение к НАТО
+	    prerequisite = { focus = UKR_nato_bases }
+	    icon = GFX_goal_ukr_join_nato
+		x = 0
+	    y = 6
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_join_nato"
+		    add_opinion_modifier = { target = RUS modifier = UKR_Russia_focus }  
+		    add_opinion_modifier = { target = USA modifier = UKR_european_support_focus }
+			RUS = { add_opinion_modifier = { target = UKR modifier = RUS_seek_alliance_USA } }
+			USA = { add_opinion_modifier = { target = UKR modifier = USA_seek_alliance_UKR } }
+		    country_event = { id = ukraine.3 days = 2 }
+			add_stability = 0.05
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+	
+	focus = {
+	    id = UKR_eu_association_agreement # Торговая ассоциация с Евросоюзом
+	    prerequisite = { focus = UKR_westering }
+	    icon = GFX_goal_ukr_eu_association_agreement
+		x = 2
+	    y = 2
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			UKR = {
+				has_country_flag = UKR_EU_signed_an_agreement
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_eu_association_agreement"
+		    add_opinion_modifier = { target = RUS modifier = UKR_Russia_focus }	
+		    add_opinion_modifier = { target = USA modifier = UKR_european_support_focus }
+			add_opinion_modifier = { target = ENG modifier = UKR_european_support_focus }
+			add_opinion_modifier = { target = GER modifier = UKR_european_support_focus }
+			add_opinion_modifier = { target = FRA modifier = UKR_european_support_focus }
+			add_opinion_modifier = { target = ITA modifier = UKR_european_support_focus }
+			RUS = { add_opinion_modifier = { target = UKR modifier = RUS_seek_support_w.countries_UKR } }
+			USA = { add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus } }
+			ENG = { add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus } }
+			GER = { add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus } }
+			FRA = { add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus } }
+			ITA = { add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus } }
+			add_stability = 0.05
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_russian_sanctions # Санкции против России
+	    prerequisite = { focus = UKR_eu_association_agreement }
+	    icon = GFX_goal_ukr_russian_sanctions
+		x = 2
+	    y = 3
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): focus UKR_russian_sanctions "
+		    remove_ideas = UKR_gas_agreements 
+			RUS = { add_opinion_modifier = { target = ROOT modifier = UKR_russian_sanctions } }
+			add_named_threat = { threat = 2 name = UKR_russian_sanctions }
+			every_other_country = {
+				limit = {
+					NOT = { tag = UKR }
+					NOT = { has_war_with = UKR }
+					NOT = { is_in_faction_with = RUS }
+					OR = {
+						capital_scope = {
+								is_on_continent = europe
+						}
+						capital_scope = {
+								is_on_continent = asia
+						}
+						num_of_factories > 25
+					}
+					OR = {
+						has_government = democratic 
+						AND = { has_government = reformism }
+						AND = { has_government = neutrality }
+						AND = {
+							is_neighbor_of = RUS
+							NOT = { has_government = communism }
+						}
+					}
+				}
+				country_event = ukraine.25
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_minsk_peace_pact # Минские соглашения по Востоку Украины
+	    prerequisite = { focus = UKR_russian_sanctions  }
+	    icon = GFX_goal_ukr_minsk_peace_pact
+		x = 1
+	    y = 4
+	    ai_will_do = { factor = 1 }
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		available = {
+			OR = {
+				has_war_with = DON
+				has_war_with = LUG
+				has_war_with = NRU
+				#has_civil_war = yes
+			}
+			NOT = { has_war_with = RUS }
+		}
+		bypass = {
+			#has_civil_war = no
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_minsk_peace_pact"
+			country_event = { id = ukraine.5 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_eu_guarantees # Гарантии об окончании кровопролития на Западе Украины
+	    prerequisite = { focus = UKR_russian_sanctions }
+	    icon = GFX_goal_ukr_eu_guarantees
+		x = 3
+	    y = 4
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		available = {
+			has_civil_war = yes
+			NOT = {
+				OR = {
+					has_war_with = GER
+					has_war_with = POL
+					has_war_with = RUS
+				}
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_eu_guarantees"
+	        country_event = { id = ukraine.41 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+
+	focus = {
+	    id = UKR_join_eu # Присоединение к ЕС
+	    prerequisite = { focus = UKR_imf_loan }
+		prerequisite = { focus = UKR_european_parliamentarism }
+	    icon = GFX_goal_ukr_join_eu
+		x = 2
+	    y = 6
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		available = {
+			has_civil_war = no
+			NOT = { 
+				has_war_with = NRU 
+				has_war_with = DON
+				has_war_with = LUG
+			}
+		}
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_join_eu"
+		    remove_ideas = UKR_the_split_people_east_and_west
+		    add_opinion_modifier = { target = RUS modifier = UKR_Russia_focus }  
+			RUS = { add_opinion_modifier = { target = UKR modifier = RUS_seek_alliance_USA } }
+			add_ideas = EU_accession_negotiations
+			set_country_flag = country_ready_to_join_EU
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_domestic_policy # Внутренняя политика
+	    prerequisite = { focus = UKR_political_effort }
+	    icon = GFX_goal_ukr_domestic_policy
+		x = 13
+	    y = 1
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_domestic_policy"
+	        add_political_power = 150
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+	    id = UKR_democratization # Демократизация Украины
+	    prerequisite = { focus = UKR_domestic_policy }
+		#mutually_exclusive = { focus = UKR_own_way }
+		#mutually_exclusive = { focus = UKR_compromise_agreement }
+	    icon = GFX_goal_ukr_democratization
+		x = 7
+	    y = 2
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_democratization"
+			add_timed_idea = {
+				idea = democratic_influence
+				days = 500
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+	    id = UKR_reforms_to_the_private_sector # Пакет реформ для частного бизнеса
+	    prerequisite = { focus =  UKR_democratization  }
+	    icon = GFX_goal_ukr_reforms_to_the_private_sector
+		available = {
+		}
+		x = 5
+	    y = 3
+		cost = 70
+	   	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_reforms_to_the_private_sector"
+			set_country_flag = reform_economy
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+	    id = UKR_european_values # Продвижение европейских ценностей
+	    prerequisite = { focus = UKR_reforms_to_the_private_sector }
+	    icon = GFX_goal_ukr_european_values
+		x = 5
+	    y = 4
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			UKR = {
+				has_country_flag = west_friend
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_european_values"
+			add_ideas = free_market
+			add_ideas = electronics_industry_focus
+			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+	    id = UKR_national_police_reform # Реформа Национальной Полиции
+	    prerequisite = { focus = UKR_democratization }
+	    icon = GFX_goal_ukr_national_police_reform
+		available = {
+		}
+		x = 7
+	    y = 3
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	   	
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_national_police_reform"
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC FOCUS_FILTER_RESEARCH}
+	}		
+		
+	focus = {
+	    id = UKR_court_reform # Реформа судебной системы
+	    prerequisite = { focus = UKR_national_police_reform }
+	    icon = GFX_goal_ukr_court_reform
+		available = {
+		}
+		x = 7
+	    y = 4
+		cost = 70
+	   	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_court_reform"
+			set_country_flag = conducted_anticorruption_company
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+	    id = UKR_light_industry # Модернизация легкой промышленности
+	    prerequisite =  { focus = UKR_democratization focus = UKR_own_way }
+		mutually_exclusive = { focus = UKR_munitions_industry  }
+	    icon = GFX_goal_ukr_light_industry
+		x = 9
+	    y = 3
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_light_industry"
+			201 = {
+			    add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			193 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			225 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}	
+	
+	
+	focus = {
+	    id = UKR_agricultural # Модернизация сельского хозяйства
+	    prerequisite = { focus = UKR_light_industry }
+	    icon = GFX_goal_ukr_agricultural
+		available = {
+		}
+		x = 9
+	    y = 4
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_agricultural"
+			203 = {
+			    add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			197 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			198 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			226 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+
+
+	focus = {
+	    id = UKR_imf_loan # Займ МВФ
+	    prerequisite = { focus = UKR_russian_sanctions }
+	    icon = GFX_goal_ukr_imf_loan
+		available = {
+		}
+		x = 2
+	    y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_imf_loan"
+			add_ideas = UKR_imf_loan_idea
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	
+	focus = {
+	    id = UKR_european_parliamentarism # Европейский парламентаризм
+	    prerequisite = { focus = UKR_european_values }
+		prerequisite = { focus = UKR_court_reform }
+		mutually_exclusive = { focus = UKR_common_history focus = UKR_ukraine_glory }
+		available = {
+			has_completed_focus = UKR_court_reform
+			has_completed_focus = UKR_european_values
+		}
+	    icon = GFX_goal_ukr_european_parliamentarism
+		x = 6
+	    y = 5
+	    cost = 70
+	    ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_european_parliamentarism"
+		    remove_ideas = low_politic
+			add_ideas = parliamentary_republic
+			every_country = {
+				limit = {
+					has_idea = eu_member
+				}
+				add_opinion_modifier = {
+					modifier = actions_positive
+					target = UKR
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_own_way # Свой путь
+	    prerequisite = { focus = UKR_domestic_policy }
+	    #mutually_exclusive = { focus = UKR_democratization }
+		#mutually_exclusive = { focus = UKR_compromise_agreement }
+		icon = GFX_goal_ukr_own_way
+		x = 13
+	    y = 2
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_own_way"
+			add_timed_idea = {
+				idea = nationalism_influence
+				days = 500
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+	    id = UKR_antiterror_operation # Проведение  антитеррорестической операции (АТО)
+	    prerequisite = { focus = UKR_own_way  }
+	    icon = GFX_goal_ukr_antiterror_operation
+		x = 13
+	    y = 3
+	    cost = 70
+		ai_will_do = { factor = 10 }
+		available = {
+			OR = {
+				country_exists = DON
+				country_exists = LUG
+				country_exists = NRU
+			}
+		}
+		
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_antiterror_operation"
+			country_event = { id = ukraine_civilwar.23 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_filtration_media # Фильтрация СМИ
+	    prerequisite = { focus = UKR_antiterror_operation }
+	    icon = GFX_goal_ukr_filtration_media
+		x = 13
+	    y = 4
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_filtration_media"
+			if = {
+				limit = {	
+					NOT = {	
+						OR = {	
+							has_idea = state_propaganda_media
+							has_idea = state_media_only
+							has_idea = cencored_media
+							has_idea = mixed_media
+							has_idea = commercial_media
+							has_idea = free_media
+						}	
+					}
+				}	
+				add_ideas = state_propaganda_media
+			}
+			if = {
+				limit = {	
+					has_idea = state_media_only
+				}	
+				add_ideas = state_propaganda_media
+			}
+			if = {
+				limit = {	
+					has_idea = cencored_media
+				}	
+				add_ideas = state_media_only
+			}
+			if = {
+				limit = {	
+					has_idea = mixed_media
+				}	
+				add_ideas = cencored_media
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+
+	focus = {
+	    id = UKR_munitions_industry # Развитие ВПК
+	    prerequisite = { focus = UKR_own_way focus = UKR_democratization }
+		mutually_exclusive = { focus = UKR_light_industry  }
+	    icon = GFX_goal_ukr_munitions_industry
+		available = {
+		}
+		x = 11
+	    y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_munitions_industry"
+			227 = {
+			    add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			221 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			91 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			202 = {
+				add_extra_state_shared_building_slots = 2 
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+	    id = UKR_militarization # Милитаризация общества
+	    prerequisite = { focus = UKR_antiterror_operation }
+	    icon = GFX_goal_ukr_militarization
+		x = 11
+	    y = 4
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+	    
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_militarization"
+			add_ideas = militarism_focus
+		}	
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+	
+
+
+	focus = {
+	    id = UKR_lustration # Закон об очистке власти (16.04.2014)
+	    prerequisite = { focus = UKR_own_way }
+		icon = GFX_goal_ukr_lustration
+		x = 15
+	    y = 3
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		available = {
+			NOT = { 
+				OR = { 
+					has_government = communism
+					has_government = neutrality
+					has_government = reformism
+				}
+			}	
+		}
+		
+		select_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_lustration"
+			news_event = { id = ukraine_news.1 hours = 6 }
+			set_country_flag = UKR_lustration_started
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					neutrality > 0.3
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = -0.3
+				}
+			}
+			if = {
+				limit = {
+					neutrality > 0.2
+					neutrality < 0.29
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = -0.2
+				}
+			}
+			if = {
+				limit = {
+					neutrality > 0.1
+					neutrality < 0.19
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = -0.1
+				}
+			}
+			add_political_power = -100
+			add_timed_idea = {
+				idea = UKR_lustration_idea
+				days = 730
+			}
+			corruption_decreased = yes
+			if = {
+				limit = { has_coalition_with_centrists = yes }
+				if = {
+					limit = {
+						has_country_flag = reformism_centrism_coalition
+					}
+					clr_country_flag = reformism_centrism_coalition
+				}
+				if = {
+					limit = {
+						has_country_flag = conservatism_centrism_coalition
+					}
+					clr_country_flag = conservatism_centrism_coalition
+				}
+				if = {
+					limit = {
+						has_country_flag = liberalism_centrism_coalition
+					}
+					clr_country_flag = liberalism_centrism_coalition
+				}
+				if = {
+					limit = {
+						has_country_flag = centrism_nationalism_coalition
+					}
+					clr_country_flag = centrism_nationalism_coalition
+				}
+				if = {
+					limit = {
+						has_country_flag = centrism_islamism_coalition
+					}
+					clr_country_flag = centrism_islamism_coalition
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_decommunization # Декоммунизация Украины (закон от 9.04.2015)
+	    prerequisite = { focus = UKR_lustration }
+		icon = GFX_goal_ukr_decommunization
+		x = 15
+	    y = 4
+	    cost = 70
+		
+		available = {
+			NOT = { 
+				OR = { 
+					has_government = communism
+					has_government = neutrality
+					has_government = reformism
+				}
+			}	
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_decommunization"
+			if = {
+				limit = {
+					communism > 0.3
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.3
+				}
+			}
+			if = {
+				limit = {
+					communism > 0.2
+					communism < 0.29
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.2
+				}
+			}
+			if = {
+				limit = {
+					communism > 0.1
+					communism < 0.19
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.1
+				}
+			}
+			add_political_power = -100
+			add_timed_idea = {
+				idea = communism_banned
+				days = 730
+			}
+			set_province_name = { id = 11437 name = "Dnipro" }
+			set_province_name = { id = 3403 name = "Kropyvnytskyi" }
+			if = {
+				limit = { has_coalition_with_communists = yes }
+				if = {
+					limit = { has_country_flag = communism_reformism_coalition }
+					clr_country_flag = communism_reformism_coalition
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_ukraine_glory # Слава Украине! Героям слава!
+	    prerequisite = { focus = UKR_militarization }
+		prerequisite = { focus = UKR_decommunization }
+		mutually_exclusive = { focus = UKR_european_parliamentarism focus = UKR_common_history }
+	    icon = GFX_goal_ukr_ukraine_glory
+		x = 13
+	    y = 5
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_ukraine_glory"
+		    remove_ideas = low_politic
+			add_stability = 0.05
+			add_political_power = 150
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_russian_question # Решение "Русского вопроса"
+	    prerequisite = { focus = UKR_ukraine_glory  }
+	    icon = GFX_goal_ukr_russian_question
+		x = 15
+	    y = 6
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_russian_question"
+			remove_ideas = UKR_the_split_people_east_and_west
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+
+	focus = {
+	    id = UKR_fight_crimea  # Возврат Крыма
+	    prerequisite = { focus = UKR_russian_question }
+		icon = GFX_goal_ukr_fight_crimea
+		x = 15
+	    y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			any_other_country = {
+				controls_state = 137
+				controls_state = 831
+			}
+		}
+		
+		bypass = {
+			UKR = {
+				controls_state = 137
+				controls_state = 831
+			}
+		}
+		
+		complete_tooltip = {
+			
+		}
+	    
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_fight_crimea"
+			every_country = {
+				limit = { 
+					OR = {
+						controls_state = 137
+						controls_state = 831
+					}
+				}	
+				country_event = { id = ukraine.36 days = 1 }
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_transnistria_blockade # Блокада Приднестровья
+	    prerequisite = { focus = UKR_ukraine_glory }
+	    icon = GFX_goal_ukr_transnistria_blockade
+		x = 13
+	    y = 6
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			OR = {
+				UKR = { controls_state = 774 }
+				any_other_country = {
+					is_in_faction_with = UKR
+					controls_state = 774
+				}
+			}
+			TMD = { exists = no }
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		available = {
+			TMD = {
+				OR = {
+					is_in_faction_with = RUS
+					is_puppet_of = RUS
+				}
+			}
+			NOT = {
+				UKR = {
+					is_in_faction_with = RUS
+					is_puppet_of = RUS
+				}
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_transnistria_blockade"
+			country_event = { id = ukraine.27 }					
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_cancel_budapest_memorandum # Отказ от Будапештского Меморандума
+	    prerequisite = { focus = UKR_ukraine_glory }
+	    icon = GFX_goal_ukr_cancel_budapest_memorandum
+		x = 11
+	    y = 6
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_cancel_budapest_memorandum"
+			if = {
+				limit = { has_idea = UKR_budapest_memorandum }
+				remove_ideas = UKR_budapest_memorandum
+			}
+			RUS = {	
+				add_opinion_modifier = {
+					modifier = actions_negative
+					target = UKR
+				}
+			}
+			USA = {	
+				add_opinion_modifier = {
+					modifier = actions_negative
+					target = UKR
+				}
+			}
+			ENG = {	
+				add_opinion_modifier = {
+					modifier = actions_negative
+					target = UKR
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_the_development_of_uranium_deposits # Разработка урановых месторождений
+	    prerequisite = { focus = UKR_cancel_budapest_memorandum }
+	    icon = GFX_goal_ukr_the_development_of_uranium_deposits
+		x = 11
+	    y = 7
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_the_development_of_uranium_deposits"
+			add_tech_bonus = {
+				name = UKR_the_development_of_uranium_deposits
+				bonus = 0.25
+				uses = 1
+				category = nuclear_tech
+			}
+			203 = {
+				add_resource = {
+					type = uran
+					amount = 12
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+	    id = UKR_chernobyl_legacy # Наследие Чернобыля
+	    prerequisite = { focus = UKR_the_development_of_uranium_deposits }
+	    icon = GFX_goal_ukr_chernobyl_legacy
+		x = 11
+	    y = 8
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_chernobyl_legacy"
+			add_tech_bonus = {
+				name = UKR_chernobyl_legacy
+				bonus = 0.4
+				uses = 1
+				category = nuclear_tech
+			}
+			add_ideas = nuclear_country
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+	    id = UKR_alliance_with_moldova # Альянс c Молдавией
+	    prerequisite = { focus = UKR_transnistria_blockade }
+	    icon = GFX_goal_ukr_alliance_with_moldova
+		x = 13
+	    y = 7
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_alliance_with_moldova"
+			set_rule = { can_create_factions = yes }
+			create_faction = Intermarium
+			MOL = { country_event = { id = ukraine.35 days = 1 } }
+			hidden_effect = {
+				news_event = { hours = 6 id = ukraine_news.5 }
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+
+
+	focus = {
+	    id = UKR_fight_transnistria # Вторжение в ПМР
+	    prerequisite = { focus = UKR_alliance_with_moldova }
+	    icon = GFX_goal_ukr_fight_transnistria
+		x = 15
+	    y = 8
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			MOL = { is_in_faction_with = UKR }
+		}
+		
+		bypass = {
+			#OR = {	
+				TMD = {
+					exists = no
+				}
+				#NOT = {
+				#	MOL = { is_in_faction_with = UKR }
+				#}
+			#}	
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_fight_transnistria"
+			#MOL = {	
+			#	create_wargoal = {
+			#		type = annex_everything
+			#		target = TMD
+			#	}
+			#}
+			MOL = {	country_event = { id = ukraine.39 days = 1 } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+
+	focus = {
+	    id = UKR_strengthen_position # Укрепить позиции в Прибалтике и на Кавказе
+	    prerequisite = { focus = UKR_alliance_with_moldova }
+	    icon = GFX_goal_ukr_strengthen_position
+		x = 13
+	    y = 8
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_strengthen_position"
+			LAT = {
+				country_event = { id = ukraine.35 days = 2 }					
+			}	
+			EST = {
+				country_event = { id = ukraine.35 days = 4 }					
+			}
+			LIT = {
+				country_event = { id = ukraine.35 days = 6 }					
+			}
+			GEO = {
+				country_event = { id = ukraine.35 days = 8 }					
+			}
+			ARM = {
+				country_event = { id = ukraine.35 days = 10 }					
+			}
+			AZR = {
+				country_event = { id = ukraine.35 days = 12 }					
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_freedom_of_belarus # Свобода Беларуси
+	    prerequisite = { focus = UKR_strengthen_position }
+	    icon = GFX_goal_ukr_freedom_of_belarus
+		x = 15
+	    y = 9
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_freedom_of_belarus"
+			custom_effect_tooltip = freedom_of_belarus_TT
+			if = {
+				limit = { 
+					has_government = fascism
+					BLR = { NOT = { has_government = fascism } }
+				}
+				BLR = { add_timed_idea = { idea = UKR_influences_fascism days = 732 } }
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					BLR = { NOT = { has_government = democratic } }
+				}
+				BLR = { add_timed_idea = { idea = UKR_influences_democratic days = 732 } }
+			}
+			if = {
+				limit = { 
+					has_government = liberalism
+					BLR = { NOT = { has_government = liberalism } }
+				}
+				BLR = { add_timed_idea = { idea = UKR_influences_liberalism days = 732 } }
+			}
+			if = {
+				limit = { 
+					has_government = neutrality
+					BLR = { NOT = { has_government = neutrality } }
+				}
+				BLR = { add_timed_idea = { idea = UKR_influences_neutrality days = 732 } }
+			}
+			if = {
+				limit = { 
+					has_government = reformism
+					BLR = { NOT = { has_government = reformism } }
+				}
+				BLR = { add_timed_idea = { idea = UKR_influences_reformism days = 732 } }
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+	
+	focus = {
+	    id = UKR_invite_poland # Пригласить Польшу
+	    prerequisite = { focus = UKR_strengthen_position  }
+		mutually_exclusive = { focus = UKR_confrontation_with_poland }
+	    icon = GFX_goal_ukr_invite_poland
+		x = 13
+	    y = 9
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_invite_poland"
+			POL = {
+				country_event = { id = ukraine.35 days = 2 }			
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+		
+	focus = {
+	    id = UKR_confrontation_with_poland # Конфронтация с Польшей
+	    prerequisite = { focus = UKR_strengthen_position  }
+		mutually_exclusive = { focus = UKR_invite_poland }
+	    icon = GFX_goal_ukr_confrontation_with_poland
+		x = 11
+	    y = 9
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		will_lead_to_war_with = POL
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			declare_war_on = { target = POL type = annex_everything } 
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_confrontation_with_poland"
+			add_opinion_modifier = { target = POL modifier = actions_very_negative }
+			POL = {
+				add_opinion_modifier = { target = UKR modifier = actions_very_negative }	
+			}
+			set_country_flag = confrontation_with_poland
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+		
+	focus = {
+	    id = UKR_invite_romania # Пригласить Румынию
+	    prerequisite = { focus = UKR_invite_poland }
+	    icon = GFX_goal_ukr_invite_romania
+		x = 13
+	    y = 10
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_invite_romania"
+			ROM = {
+				country_event = { id = ukraine.35 days = 3 }					
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+	    id = UKR_require_southern_bukovina # Требовать Южную Буковину
+	    prerequisite = { focus = UKR_confrontation_with_poland }
+	    icon = GFX_goal_ukr_require_southern_bukovina
+		x = 11
+	    y = 10
+	    cost = 70
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			ROM = {
+				is_in_faction_with = UKR
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_require_southern_bukovina"
+			#ROM = {
+			#	country_event = { id = romania.2 }					
+			#}
+			add_state_claim = 851
+			851 = { add_core_of = UKR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_intermarium # Междуморье
+	    prerequisite = { focus = UKR_freedom_of_belarus focus = UKR_invite_poland }
+	    icon = GFX_goal_ukr_intermarium
+		x = 15
+	    y = 10
+	    cost = 70
+	    ai_will_do = { factor = 1 }
+		completion_reward = {		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_intermarium"
+			add_to_tech_sharing_group = intermarium_research
+			every_country = {
+				limit = {
+					OR = {	
+						#has_idea = eau_member
+						is_in_faction_with = UKR
+					}
+				}
+				set_country_flag = science_aliance_intermarium
+				add_to_tech_sharing_group = intermarium_research
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+	    id = UKR_russian_rebel_army # Российская повстанческая армия
+	    prerequisite = { focus = UKR_intermarium focus = UKR_require_southern_bukovina }
+	    mutually_exclusive = { focus = UKR_war_with_russia }
+		icon = GFX_goal_ukr_russian_rebel_army
+		x = 14
+	    y = 11
+	    cost = 70
+	    ai_will_do = { factor = 1 }
+		
+		bypass = {
+			RUS = { 
+				OR = { 
+					exists = no
+					is_puppet_of = UKR
+					is_in_faction_with = UKR
+				} 
+			}
+		}
+		
+		available = {
+			RUS = {
+				exists = yes
+				NOT = {
+					OR = {
+						is_in_faction_with = UKR
+						is_puppet_of = UKR
+					}
+				}
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_russian_rebel_army"
+			custom_effect_tooltip = russian_rebel_army_TT
+			if = {
+				limit = { 
+					has_government = fascism
+					RUS = { fascism < 30 }
+					RUS = { NOT = { has_government = fascism } }
+				}
+				RUS = { add_timed_idea = { idea = UKR_influences_fascism days = 912 } }
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					RUS = { democratic < 30 }
+					RUS = { NOT = { has_government = democratic } }
+				}
+				RUS = { add_timed_idea = { idea = UKR_influences_democratic days = 912 } }
+			}
+			if = {
+				limit = { 
+					has_government = liberalism
+					RUS = { liberalism < 30 }
+					RUS = { NOT = { has_government = liberalism } }
+				}
+				RUS = { add_timed_idea = { idea = UKR_influences_liberalism days = 912 } }
+			}
+			if = {
+				limit = { 
+					has_government = neutrality
+					RUS = { neutrality < 30 }
+					RUS = { NOT = { has_government = neutrality } }
+				}
+				RUS = { add_timed_idea = { idea = UKR_influences_neutrality days = 912 } }
+			}
+			if = {
+				limit = { 
+					has_government = reformism
+					RUS = { reformism < 30 }
+					RUS = { NOT = { has_government = reformism } }
+				}
+				RUS = { add_timed_idea = { idea = UKR_influences_reformism days = 912 } }
+			}
+			
+			#start civil war
+			if = {
+				limit = { 
+					has_government = fascism
+					RUS = { fascism > 31 }
+					RUS = { NOT = { has_government = fascism } }
+				}
+				RUS = { 
+					add_timed_idea = { idea = UKR_influences_fascism days = 912 }
+					start_civil_war = {
+						ideology = fascism
+						size = 0.5
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					RUS = { democratic > 31 }
+					RUS = { NOT = { has_government = democratic } }
+				}
+				RUS = { 
+					add_timed_idea = { idea = UKR_influences_democratic days = 912 }
+					start_civil_war = {
+						ideology = democratic
+						size = 0.5
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_government = liberalism
+					RUS = { liberalism > 31 }
+					RUS = { NOT = { has_government = liberalism } }
+				}
+				RUS = { 
+					add_timed_idea = { idea = UKR_influences_liberalism days = 912 }
+					start_civil_war = {
+						ideology = liberalism
+						size = 0.5
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_government = neutrality
+					RUS = { neutrality > 31 }
+					RUS = { NOT = { has_government = neutrality } }
+				}
+				RUS = { 
+					add_timed_idea = { idea = UKR_influences_neutrality days = 912 }
+					start_civil_war = {
+						ideology = neutrality
+						size = 0.5
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_government = reformism
+					RUS = { reformism > 31 }
+					RUS = { NOT = { has_government = reformism } }
+				}
+				RUS = { 
+					add_timed_idea = { idea = UKR_influences_reformism days = 912 }
+					start_civil_war = {
+						ideology = reformism
+						size = 0.5
+					}
+				}
+			}
+			RUS = { set_country_flag = ukraine_supports_opposities }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+	    id = UKR_war_with_russia # Война с Россией
+	    prerequisite = { focus = UKR_intermarium focus = UKR_require_southern_bukovina }
+		mutually_exclusive = { focus = UKR_russian_rebel_army }
+	    icon = GFX_goal_ukr_war_with_russia
+		x = 12
+	    y = 11
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+		
+		bypass = {
+			RUS = { 
+				OR = { 
+					exists = no
+					is_puppet_of = UKR
+					is_in_faction_with = UKR
+				} 
+			}
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		available = {
+			RUS = {
+				exists = yes
+				NOT = {
+					OR = {
+						is_in_faction_with = UKR
+						is_puppet_of = UKR
+					}
+				}
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_war_with_russia"
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	###########################
+	### Пророссийская ветка ###
+	###########################
+	
+	focus = {
+	    id = UKR_compromise_agreement  # Компромиссное соглашение
+	    prerequisite = { focus = UKR_domestic_policy }
+		#mutually_exclusive = { focus = UKR_democratization }
+		#mutually_exclusive = { focus = UKR_own_way }
+		icon = GFX_goal_ukr_compromise_agreement
+		
+		available = {
+		    OR = {
+				has_government = communism
+				has_government = reformism
+				has_government = neutrality
+			}
+		}
+		x = 18
+	    y = 2
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_compromise_agreement"
+			add_timed_idea = {
+				idea = neutrality_influence
+				days = 500
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_sphere_of_influence # Передел сфер влияния
+	    prerequisite = { focus = UKR_compromise_agreement  }
+	    icon = GFX_goal_ukr_sphere_of_influence
+		available = {
+		}
+		x = 18
+	    y = 3
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+	    
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_sphere_of_influence"
+			if = {
+				limit = { country_exists = TMD }
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = TMD
+				}
+				TMD = {
+					add_opinion_modifier = {
+						modifier = actions_positive 
+						target = UKR
+					}
+				}
+			}
+			if = {
+				limit = { country_exists = ROM }
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = ROM
+				}
+				ROM = {	
+					add_opinion_modifier = {
+						modifier = actions_positive 
+						target = UKR
+					}
+				}
+			}
+
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_political_maneuvering  # Полическое лавирование > Многовекторная политика
+	    prerequisite = { focus = UKR_sphere_of_influence }
+	    icon = GFX_goal_ukr_political_maneuvering
+		x = 18
+	    y = 4
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_political_maneuvering"
+			add_opinion_modifier = {
+				modifier = actions_positive 
+				target = BLR
+			}
+			BLR = {	
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = UKR
+				}
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive 
+				target = POL
+			}
+			POL = {	
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = UKR
+				}
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive 
+				target = HUN
+			}
+			HUN = {	
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = UKR
+				}
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive 
+				target = SLO
+			}
+			SLO = {	
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = UKR
+				}
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive 
+				target = TUR
+			}
+			TUR = {	
+				add_opinion_modifier = {
+					modifier = actions_positive 
+					target = UKR
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_common_history  # Общая история
+	    prerequisite = { focus = UKR_political_maneuvering }	
+		mutually_exclusive = { focus = UKR_european_parliamentarism focus = UKR_ukraine_glory }
+	    icon = GFX_goal_ukr_common_history
+		x = 18
+	    y = 5
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		available = {
+			has_completed_focus = UKR_eastward
+			OR = {
+			    has_government = neutrality
+				has_government = communism
+				has_government = reformism
+            }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_common_history"
+			remove_ideas = UKR_the_split_people_east_and_west
+			RUS = {	
+				add_opinion_modifier = {
+					modifier = actions_positive
+					target = UKR
+				}
+			}	
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}	
+	
+	focus = {
+	    id = UKR_federalization  # Федерализация Украины
+	    prerequisite = { focus = UKR_common_history }
+	    icon = GFX_goal_ukr_federalization
+		x = 18
+	    y = 6
+	    cost = 70
+		
+		available = {
+		    OR = {
+				has_government = neutrality
+				has_government = communism
+				has_government = reformism
+				AND = {
+				    has_completed_focus = UKR_eastward
+					has_government = liberalism
+				}
+			}
+		}		
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_federalization"
+			add_ideas = administrative_federation
+			add_stability = -0.3
+			RUS = {	
+				add_opinion_modifier = {
+					modifier = actions_very_positive
+					target = UKR
+				}
+			} 			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	
+	focus = {
+	    id = UKR_oligarchy # Ставка на олигархию
+	    prerequisite = { focus = UKR_federalization  }
+	    icon = GFX_goal_ukr_oligarchy
+		available = {
+		}
+		x = 17
+	    y = 7
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+	    
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_oligarchy"
+			#random_owned_state = {
+			#	limit = {
+			#		is_in_home_area = yes
+			#	}
+			#	add_resource = {
+			#		type = money
+			#		amount = 60
+			#	}
+			#}	
+			add_ideas = state_media_only
+			add_ideas = state-owned_enterprise
+			add_ideas = high_taxes
+			corruption_increased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	
+	focus = {
+	    id = UKR_shadow_policy # Теневая политика
+	    prerequisite = { focus =  UKR_federalization }
+	    icon = GFX_goal_ukr_shadow_policy
+		x = 19
+	    y = 7
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+	    
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_shadow_policy"
+		    remove_ideas = low_politic
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = USA
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = RUS
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = ENG
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = GER
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = FRA
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = BLR
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = POL
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}		
+	
+	focus = {
+	    id = UKR_eastward #Движение на восток > Курс на Восток > Дружба с Россией
+	    prerequisite = { focus = UKR_political_effort }
+	    icon = GFX_goal_ukr_eastward
+		
+		x = 23
+	    y = 1
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		available = {
+		    OR = {
+				has_government = communism
+				has_government = reformism
+				has_government = neutrality
+				has_government = liberalism
+			}
+		}
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_eastward"
+	        add_political_power = 150
+			set_country_flag = east_friend
+	    }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_gas_prices # Газовый вопрос > Договорённости с Россией о ценах на газ
+	    prerequisite = { focus = UKR_eastward }
+	    #relative_position_id = UKR_eastward
+		icon = GFX_goal_ukr_gas_prices
+		x = 22
+	    y = 2
+	    cost = 70
+		
+		available = {
+		    OR = {
+				has_government = communism
+				has_government = reformism
+				has_government = neutrality
+				has_government = liberalism
+			}
+		}
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_gas_prices"
+			if = {
+				limit = { has_idea = UKR_gas_agreements }
+				remove_ideas = UKR_gas_agreements 
+			}		
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+	    id = UKR_eurasian_economic_space # Единое экономическое пространство > Вступление в Таможенный союз 
+	    prerequisite = { focus = UKR_gas_prices }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_eurasian_economic_space
+		available = {
+			has_completed_focus = UKR_federalization
+			OR = {
+				has_government = communism
+				has_government = reformism
+				has_government = neutrality
+			}
+		}
+		x = 22
+	    y = 3
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			has_idea = eaeu_member
+			RUS = { exists = no }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_eurasian_economic_space"
+	       add_ideas = eaeu_member
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+	    id = UKR_rights_russian_language # Права русскоязычного населения
+	    prerequisite = { focus = UKR_eurasian_economic_space  }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_rights_russian_language
+		x = 21
+	    y = 4
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_rights_russian_language"
+			RUS = {	
+				add_opinion_modifier = {
+					modifier = actions_very_positive
+					target = UKR
+				}
+			}	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+	    id = UKR_radical_ban # Запрет радикальных движений
+	    prerequisite = { focus = UKR_eurasian_economic_space }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_radical_ban
+		x = 23
+	    y = 4
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_radical_ban"
+	        add_stability = -0.05
+			if = {
+				limit = {
+					fascism > 0.3
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.3
+				}
+			}
+			if = {
+				limit = {
+					fascism > 0.2
+					fascism < 0.29
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.2
+				}
+			}
+			if = {
+				limit = {
+					fascism > 0.1
+					fascism < 0.19
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.1
+				}
+			}
+			add_political_power = -100
+			add_timed_idea = {
+				idea = fascism_banned
+				days = 730
+			}
+	    }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}	
+
+	focus = {
+	    id = UKR_debt_restructuring # Реструктуризация долгов перед РФ
+	    prerequisite = { focus =  UKR_rights_russian_language focus = UKR_radical_ban }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_debt_restructuring
+		available = {
+		}
+		x = 22
+	    y = 5
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_debt_restructuring"
+	        add_ideas = UKR_debt_restructuring_idea
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+	    id = UKR_join_eaeu # Совместное исследование
+	    prerequisite = { focus = UKR_debt_restructuring }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_join_eaeu
+		x = 22
+	    y = 6
+	    cost = 70
+	    
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		available = {
+			OR = {
+				has_idea = eaeu_member
+				has_idea = eau_member
+			}
+			RUS = { has_completed_focus = RUS_science_aliance_eaeu }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_join_eaeu"
+			add_to_tech_sharing_group = eau_research
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_RESEARCH} 
+	}
+
+	focus = {
+	    id = UKR_sevastopol_base # Подтверждение договора о базе РФ в Севастополе
+	    prerequisite = { focus = UKR_eastward  }
+	    icon = GFX_goal_ukr_sevastopol_base
+		#relative_position_id = UKR_eastward
+		x = 24
+	    y = 2
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			RUS = { controls_state = 831 }
+		}
+		
+		bypass = {
+			OR = {
+				UKR = { controls_state = 831 }
+				any_other_country = {
+					is_in_faction_with = UKR
+					controls_state = 831
+				}
+			}
+			RUS = { exists = no }
+		}
+		
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_sevastopol_base"
+			831 = {	remove_core_of = UKR }
+			RUS = {	
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_positive
+				}
+			}
+			news_event = {
+				id = ukraine_news.9 days = 1
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}	
+
+	focus = {
+	    id = UKR_csto_munitions_industry # Сотрудничество в сфере ВПК
+	    prerequisite = { focus = UKR_sevastopol_base }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_csto_munitions_industry
+		available = { has_completed_focus = UKR_federalization	}
+		x = 24
+	    y = 3
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+	    
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_csto_munitions_industry"
+		    remove_ideas = obsolete_army
+	        add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+	    id = UKR_csto_military_exercises # Совместные учения
+	    prerequisite = { focus = UKR_csto_munitions_industry }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_csto_military_exercises
+		x = 24
+	    y = 5
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+	
+		available = {
+			RUS = {
+				is_faction_leader = yes
+			}
+		}
+		
+		bypass = {
+			NOT = { country_exists = RUS }
+			RUS = {
+				is_faction_leader = no
+			}
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_csto_military_exercises"
+	        every_country = {
+				limit = {
+					is_in_faction_with = RUS
+					NOT = { tag = UKR }
+				}
+				army_experience = 25
+				air_experience = 15
+			}
+			if = {
+				limit = { NOT = { is_in_faction_with = RUS } }
+				army_experience = 25
+				air_experience = 15
+			}
+	    }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+		
+	focus = {
+	    id = UKR_join_csto # Присоединение к ОДКБ
+	    prerequisite = { focus = UKR_csto_military_exercises }
+		#relative_position_id = UKR_eastward
+	    icon = GFX_goal_ukr_join_csto
+		x = 24
+	    y = 6
+	    cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+	    ai_will_do = { factor = 1 }
+		
+		available = {
+			RUS = {
+				is_faction_leader = yes
+			}
+		}
+		
+		bypass = {
+			NOT = { country_exists = RUS }
+			RUS = {
+				is_faction_leader = no
+			}
+		}
+
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_join_csto"
+			RUS = { country_event = { id = ukraine.4 days = 1 } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_industrial_effort
+		icon = GFX_goal_generic_production
+		x = 27
+		y = 0
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			
+		}
+		
+		complete_tooltip = {
+			
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_industrial_effort"
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_modern_industry
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = UKR_industrial_effort }
+		x = 27
+		y = 1
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+	    completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_modern_industry"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		
+		    random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = UKR_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = UKR_modern_industry }
+		x = 26
+		y = 2
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_construction_effort"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = UKR_modern_industry }
+		x = 28
+		y = 2
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 1			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_production_effort"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = UKR_construction_effort }
+		x = 26
+		y = 3
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_construction_effort_2"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = UKR_construction_effort_2 }
+		x = 26
+		y = 4
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_construction_effort_3"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = UKR_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = UKR_production_effort }
+		x = 28
+		y = 3
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_production_effort_2"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = UKR_construction_effort_3 }
+		x = 26
+		y = 5
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_infrastructure_effort"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = UKR_production_effort_2 }
+		x = 28
+		y = 4
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_production_effort_3"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = UKR_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = UKR_production_effort_3 }
+		x = 28
+		y = 5
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_production_effort_4"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = UKR_infrastructure_effort }
+		x = 26
+		y = 6
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_infrastructure_effort_2"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = UKR_infrastructure_effort }
+		x = 28
+		y = 6
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_construction_effort_4"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = UKR_extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = UKR_infrastructure_effort_2 }
+		x = 26
+		y = 7
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_extra_tech_slot"
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = UKR_extra_tech_slot_2
+		icon = GFX_focus_research
+		prerequisite = { focus = UKR_extra_tech_slot }
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 26
+		y = 8
+		cost = 70
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			num_of_factories > 50
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_extra_tech_slot_2"
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+
+	##################
+	## ARMY FOCUSES ##
+	##################
+	focus = {
+		id = UKR_armed_forces
+		icon =  GFX_goal_ukr_armed_forces
+		cost = 70
+		x = 40
+		y = 0
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_armed_forces"
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_AVIATION FOCUS_FILTER_NAVY}
+	}
+	
+	focus = {
+		id = UKR_army_effort
+		icon = GFX_goal_ukr_army_effort
+		cost = 70
+		prerequisite = {
+			focus = UKR_armed_forces
+		}
+		x = 33
+		y = 1
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_army_effort"
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = UKR_equipment_effort
+		icon = GFX_goal_rus_modern_weapon_1
+		cost = 70
+		prerequisite = {
+			focus = UKR_army_effort
+		}
+		x = 31
+		y = 2
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_equipment_effort"
+			add_tech_bonus = {
+				name = infantry_4thgen_ammunition_bonus
+				bonus = 0.5
+				uses = 4
+				category = cat_4thgen_ammunition
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = UKR_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = {
+			focus = UKR_equipment_effort
+		}
+		x = 31
+		y = 3
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_doctrine_effort_2"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 1
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+
+	focus = {
+		id =  UKR_infantry_sawl_effort 
+		icon = GFX_goal_assault_rifle_AK-74U
+		cost = 70
+		prerequisite = {
+			focus = UKR_doctrine_effort_2
+		}
+		mutually_exclusive = { focus = UKR_sf_equipment_effort }
+		x = 30
+		y = 4
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_infantry_sawl_effort"
+					add_tech_bonus = {
+							name = infantry_weapons_bonus
+							bonus = 0.5
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+	
+	focus = {
+		id = UKR_sf_equipment_effort
+		icon = GFX_goal_assault_rifle_usa
+		cost = 70
+		prerequisite = {
+			focus = UKR_doctrine_effort_2
+		}
+		mutually_exclusive = { focus = UKR_infantry_sawl_effort  }
+		x = 32
+		y = 4
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_sf_equipment_effort"
+					#add_tech_bonus = {
+					#		name = sf_weapons_bonus
+					#		bonus = 0.5
+					#		uses = 1
+					#		category = special_forces_weapons
+					#	}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = UKR_equipment_effort_2
+		icon = GFX_goal_ger_equipment_effort_3
+		cost = 70
+		prerequisite = {
+			focus = UKR_infantry_sawl_effort focus = UKR_sf_equipment_effort
+		}
+		x = 31
+		y = 5
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_equipment_effort_2"
+					add_tech_bonus = {
+							name = infantry_artillery_bonus
+							bonus = 0.5
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+				}
+				search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = UKR_equipment_effort_3
+		icon = GFX_goal_ger_equipment_effort_4
+		cost = 70
+		prerequisite = {
+			focus = UKR_equipment_effort_2
+		}
+		mutually_exclusive = { focus = UKR_infantry_technical_means_effort  }
+		x = 30
+		y = 6
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_equipment_effort_3"
+					add_tech_bonus = {
+						name = infantry_artillery_bonus
+						ahead_reduction = 1
+						uses = 1
+						category = infantry_weapons
+						category = artillery
+					}
+			}
+			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = UKR_infantry_technical_means_effort
+		icon = GFX_goal_GNSS_effort
+		cost = 70
+		prerequisite = {
+			focus = UKR_equipment_effort_2
+		}
+		mutually_exclusive = { focus = UKR_equipment_effort_3  }
+		x = 32
+		y = 6
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_infantry_technical_means_effort"
+					add_tech_bonus = {
+							name = infantry_artillery_bonus
+							ahead_reduction = 1
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+				}
+				search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = UKR_gnss_programm
+		icon = GFX_goal_GNSS_effort_2
+		cost = 70
+		prerequisite = {
+			focus = UKR_infantry_technical_means_effort
+		}
+		x = 32
+		y = 7
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_gnss_programm"
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+	focus = {
+		id = UKR_equipment_effort_4
+		icon = GFX_goal_anti-tank_FGM-148
+		cost = 70
+		prerequisite = {
+			focus = UKR_equipment_effort_3
+		}
+		x = 30
+		y = 7
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_equipment_effort_4"
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = UKR_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = {
+			focus = UKR_equipment_effort_4
+			focus = UKR_gnss_programm
+		}
+		x = 31
+		y = 8
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_doctrine_effort_3"
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+
+
+	focus = {
+		id = UKR_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		cost = 70
+		prerequisite = {
+			focus = UKR_army_effort
+		}
+		mutually_exclusive = { focus = UKR_mechanization_effort  }
+		x = 33
+		y = 2
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_motorization_effort"
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = UKR_army_cars_effort
+		icon = GFX_goal_motorization_light_4x4_HMMW
+		cost = 70
+		prerequisite = {
+			focus = UKR_motorization_effort
+		}
+		x = 33
+		y = 3
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_army_cars_effort"
+					add_tech_bonus = {
+							name = motorized_bonus
+							ahead_reduction = 0.5
+							uses = 1
+							category = cat_motorized_vehicle
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}		
+	focus = {
+		id = UKR_mechanization_effort
+		icon = GFX_goal_rus_mechanization_corps
+		cost = 70
+		prerequisite = {
+			focus = UKR_army_effort
+		}
+		mutually_exclusive = { focus = UKR_motorization_effort  }
+		x = 36
+		y = 2
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_mechanization_effort"
+					add_tech_bonus = {
+							name = mechanized_bonus
+							ahead_reduction = 0.5
+							uses = 1
+							category = cat_mechanized_vehicle
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+	
+	focus = {
+		id = UKR_apc_wheeled_effort
+		icon = GFX_goal_motorization_APC_8x8_BTR80
+		cost = 70
+		prerequisite = {
+			focus = UKR_mechanization_effort
+		}
+		mutually_exclusive = { focus = UKR_infantry_tracked_effort}
+		x = 35
+		y = 3
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_apc_wheeled_effort"
+					add_tech_bonus = {
+							name = mechanized_bonus
+							ahead_reduction = 0.5
+							uses = 1
+							category = cat_mechanized_equipment
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+
+	focus = {
+		id = UKR_infantry_tracked_effort
+		icon = GFX_goal_motorization_APC_MT-LB
+		cost = 70
+		prerequisite = {
+			focus = UKR_mechanization_effort
+		}
+		mutually_exclusive = { focus = UKR_apc_wheeled_effort  }
+		x = 37
+		y = 3
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_infantry_tracked_effort"
+					add_tech_bonus = {
+							name = mechanized_bonus
+							ahead_reduction = 0.5
+							uses = 1
+							category = cat_mechanized_equipment
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = UKR_doctrine_effort_4
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = {
+			focus = UKR_army_cars_effort
+			focus = UKR_infantry_tracked_effort
+			focus = UKR_apc_wheeled_effort
+		}
+		x = 34
+		y = 4
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_doctrine_effort_4"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = UKR_assault_troops_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = {
+			focus = UKR_army_cars_effort
+			focus = UKR_infantry_tracked_effort
+			focus = UKR_apc_wheeled_effort
+		}
+		x = 36
+		y = 4
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_assault_troops_effort"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = UKR_ifv_effort
+		icon = GFX_goal_motorization_IFV_BMP-2
+		cost = 70
+		prerequisite = {
+			focus = UKR_assault_troops_effort
+		}
+		mutually_exclusive = { 
+			focus = UKR_airborne_vehicle_effort
+			focus = UKR_landing_vehicle_effort
+		}
+		x = 33
+		y = 5
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_ifv_effort"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = UKR_airborne_vehicle_effort
+		icon = GFX_goal_motorization_IFV_BMP-2
+		cost = 70
+		prerequisite = {
+			focus = UKR_assault_troops_effort
+		}
+		mutually_exclusive = { 
+			focus = UKR_landing_vehicle_effort
+			focus = UKR_ifv_effort
+		}
+		x = 35
+		y = 5
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_airborne_vehicle_effort"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = UKR_landing_vehicle_effort
+		icon = GFX_goal_motorization_IFV_BMP-2
+		cost = 70
+		prerequisite = {
+			focus = UKR_assault_troops_effort
+		}
+		mutually_exclusive = { 
+			focus = UKR_airborne_vehicle_effort
+			focus = UKR_ifv_effort
+		}
+		x = 37
+		y = 5
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_landing_vehicle_effort"
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}	
+	focus = {
+		id = UKR_aviation_effort
+		icon = GFX_goal_ukr_aviation_effort
+		cost = 70
+		prerequisite = {
+			focus = UKR_armed_forces
+		}
+		x = 40
+		y = 1
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_aviation_effort"
+					air_experience = 25
+					if = {
+							limit = {
+									capital_scope = {
+											NOT = {
+													free_building_slots = {
+															building = air_base
+															size > 1
+														}
+												}
+										}
+								}
+							random_owned_state = {
+									limit = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_AB
+										}
+								}
+						}
+					if = {
+							limit = {
+									capital_scope = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+								}
+							capital_scope = {
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_AB
+										}
+								}
+						}
+					add_tech_bonus = {
+							name = air_doc_bonus
+							bonus = 0.5
+							uses = 1
+							category = air_doctrine
+						}
+				}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = UKR_fighter_focus
+		icon = GFX_goal_ukr_bet_on_helicopter_Mi-8
+		cost = 70
+		prerequisite = {
+			focus = UKR_aviation_effort
+		}
+		mutually_exclusive = {
+			focus = UKR_bomber_focus
+		}
+		x = 39
+		y = 2
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_fighter_focus"
+					add_tech_bonus = {
+							name = fighter_bonus
+							bonus = 0.5
+							uses = 2
+							category = cat_fighter_tech
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = UKR_bomber_focus
+		icon = GFX_goal_rus_bet_on_Su-27SMZ
+		cost = 70
+		prerequisite = {
+			focus = UKR_aviation_effort
+		}
+		mutually_exclusive = {
+			focus = UKR_fighter_focus
+		}
+		x = 41
+		y = 2
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_bomber_focus"
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = UKR_aviation_effort_2
+		icon = GFX_goal_rus_modernization_Su-34
+		cost = 70
+		prerequisite = {
+			focus = UKR_bomber_focus
+			focus = UKR_fighter_focus
+		}
+		x = 40
+		y = 3
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_aviation_effort_2"
+					air_experience = 25
+					if = {
+							limit = {
+									capital_scope = {
+											NOT = {
+													free_building_slots = {
+															building = air_base
+															size > 1
+														}
+												}
+										}
+								}
+							random_owned_state = {
+									limit = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_2_AB
+										}
+								}
+						}
+					if = {
+							limit = {
+									capital_scope = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+								}
+							capital_scope = {
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_2_AB
+										}
+								}
+						}
+					add_tech_bonus = {
+							name = air_doc_bonus
+							bonus = 0.5
+							uses = 1
+							category = air_doctrine
+						}
+				}
+				search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = UKR_CAS_effort
+		icon = GFX_goal_rus_developing_Mig-31
+		cost = 70
+		prerequisite = {
+			focus = UKR_aviation_effort_2
+		}
+		prerequisite = {
+			focus = UKR_motorization_effort
+		}
+		x = 39
+		y = 4
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		
+		completion_reward = {
+				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_CAS_effort"
+					add_tech_bonus = {
+							name = CAS_bonus
+							bonus = 0.5
+							ahead_reduction = 1
+							uses = 1
+							category = aircraft_rocket_technologies
+						}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	
+	focus = {
+		id = UKR_naval_effort
+		icon = GFX_goal_ukr_naval_effort
+		cost = 10
+		prerequisite = {
+			focus = UKR_armed_forces
+		}
+		x = 44
+		y = 1
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+						NOT = {
+							any_owned_state = {
+									dockyard > 0
+									free_building_slots = {
+										building = dockyard
+										size > 2
+										include_locked = yes
+									}
+								}
+							}
+						any_owned_state = {
+							is_coastal = yes
+						}
+					}
+				random_owned_state = {
+						limit = {
+								is_coastal = yes
+								free_building_slots = {
+										building = dockyard
+										size > 2
+										include_locked = yes
+									}
+							}
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+								type = dockyard
+								level = 3
+								instant_build = yes
+							}
+					}
+				set_country_flag = naval_effort_built
+			}
+		if = {
+				limit = {
+						NOT = {
+								has_country_flag = naval_effort_built
+							}
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				random_owned_state = {
+						limit = {
+								dockyard > 0
+								free_building_slots = {
+										building = dockyard
+										size > 2
+										include_locked = yes
+									}
+							}
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+					}
+				set_country_flag = naval_effort_built
+			}
+		if = {
+				limit = {
+						NOT = {
+								has_country_flag = naval_effort_built
+							}
+						NOT = {
+							any_owned_state = {
+							free_building_slots = {
+									building = dockyard
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+					}
+				random_state = {
+						limit = {
+							controller = {
+									tag = ROOT
+								}
+								free_building_slots = {
+									building = dockyard
+									size > 2
+									include_locked = yes
+								}
+							}
+						add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+			}
+	}
+	focus = {
+		id = UKR_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = {
+			focus = UKR_naval_effort
+		}
+		mutually_exclusive = {
+			focus = UKR_large_navy
+		}
+		x = 43
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+						}
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = UKR_NAV_effort
+		icon = GFX_goal_generic_developing_UAV
+		cost = 10
+		prerequisite = {
+			focus = UKR_aviation_effort_2
+		}
+		prerequisite = {
+			focus = UKR_flexible_navy
+		}
+		x = 41
+		y = 5
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+	}
+	focus = {
+		id = UKR_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10
+		prerequisite = {
+			focus = UKR_naval_effort
+		}
+		mutually_exclusive = {
+			focus = UKR_flexible_navy
+		}
+		x = 45
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	focus = {
+		id = UKR_submarine_effort
+		icon = GFX_goal_rus_developing_submarine
+		cost = 10
+		prerequisite = {
+			focus = UKR_flexible_navy
+			focus = UKR_large_navy
+		}
+		x = 43
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+	focus = {
+		id = UKR_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10
+		prerequisite = {
+			focus = UKR_submarine_effort
+		}
+		x = 43
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+					all_owned_state = {
+						OR = {
+							is_coastal = no
+							dockyard < 1
+						}
+					}
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+	focus = {
+		id = UKR_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10
+		prerequisite = {
+			focus = UKR_large_navy
+			focus = UKR_flexible_navy
+		}
+		x = 45
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+					all_owned_state = {
+						OR = {
+							is_coastal = no
+							dockyard < 1
+						}
+					}
+			}
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+	focus = {
+		id = UKR_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10
+		prerequisite = {
+			focus = UKR_cruiser_effort
+		}
+		x = 45
+		y = 4
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+					all_owned_state = {
+						OR = {
+							is_coastal = no
+							dockyard < 1
+						}
+					}
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+			}
+		}
+	}
+	
+	
+	#######################
+	### Ветка претензий ###
+	####################### 
+	
+	focus = {
+		id = UKR_soborn_ukraina  
+		icon = GFX_goal_ukr_cathedral_ukraine
+		cost = 70
+		x = 54
+		y = 1
+		
+		available = {
+			NOT = { 
+				has_idea = UKR_the_split_people_east_and_west
+				has_government = neutrality
+				has_government = communism
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_soborn_ukraina"
+			add_political_power = 120 
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_vid_syanu
+		icon = GFX_goal_ukr_vid_syanu
+		cost = 70
+		prerequisite = {
+			focus = UKR_soborn_ukraina
+		}
+		x = 51
+		y = 2
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_vid_syanu"
+			add_political_power = 120 
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_maramures_and_bukovina
+		icon = GFX_goal_ukr_marumesh_buk
+		cost = 70
+		prerequisite = {
+			focus = UKR_vid_syanu
+		}
+		x = 49
+		y = 3
+		
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 851
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_maramures_and_bukovina"
+			add_state_core = 851
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_transisti_pretenzii
+		icon = GFX_goal_ukr_transistri
+		cost = 70
+		prerequisite = {
+			focus = UKR_vid_syanu
+		}
+		x = 51
+		y = 3
+
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 774
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_transisti_pretenzii"
+			add_state_core = 774
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_bessarabia
+		icon = GFX_goal_ukr_bessarabia
+		cost = 70
+		prerequisite = {
+		    focus = UKR_maramures_and_bukovina
+			focus = UKR_transisti_pretenzii 
+		}
+		x = 50
+		y = 4
+
+		available = {
+			OR = {
+                AND = { 			
+			        has_government = fascism
+					NOT = {
+					    RUS = { has_completed_focus = RUS_ter_moldova }
+					      }
+					   }
+		        AND = {
+				    NOT = {
+				           has_war_with = MOL
+						   }
+				    RUS = { has_completed_focus = RUS_ter_moldova }
+					OR = {
+					    has_government = fascism
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+						}
+					}
+				AND = {
+				     UKR = {
+			            controls_state = 79
+			               }
+					 OR = {
+					     has_government = fascism
+						 has_government = democratic
+						 has_government = liberalism
+						 has_government = reformism
+					      }
+					}
+				}
+			}
+	
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_bessarabia"
+				if = {
+				limit = { 
+					has_government = fascism
+					RUS = { NOT = { has_completed_focus = RUS_ter_moldova } }
+				}
+				    add_state_core = 79
+			    }
+				if = {
+				limit = { 
+					NOT = {
+				           has_war_with = MOL
+						   }
+				    RUS = { has_completed_focus = RUS_ter_moldova }
+					OR = {
+					    has_government = fascism
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+						}
+				}
+				country_event = { id = moldova.1 days = 1 }
+			    }
+				if = {
+				limit = { 
+				        UKR = {
+			            controls_state = 79
+			               }
+					     OR = {
+					     has_government = fascism
+						 has_government = democratic
+						 has_government = liberalism
+						 has_government = reformism
+					      }
+				}
+				    add_state_core = 79
+			    }
+		   }
+		   search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_pryachivchina
+		icon = GFX_goal_ukr_pryachiv
+		cost = 70
+		prerequisite = {
+			focus = UKR_vid_syanu
+		}
+		x = 52
+		y = 4
+
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 942
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_pryachivchina"
+			add_state_core = 942
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_zakerzona
+		icon = GFX_goal_ukr_zakerzona
+		cost = 70
+		prerequisite = {
+			focus = UKR_vid_syanu
+		}
+		x = 53
+		y = 3
+		
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 90
+					controls_state = 92
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_zakerzona"
+			add_state_core = 90
+			add_state_core = 92
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_podlachia
+		icon = GFX_goal_ukr_podlyasha
+		cost = 70
+		prerequisite = {
+			focus = UKR_zakerzona
+			focus = UKR_nord_border
+		}
+		x = 54
+		y = 4
+
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 97
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_podlachia"
+			add_state_core = 97
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	#focus = {
+	#	id = UKR_green_ukraine
+	#	icon = GFX_goal_ukr_green_state
+	#	cost = 70
+	#	prerequisite = {
+	#		focus = UKR_soborn_ukraina
+	#	}
+	#	x = 54
+	#	y = 2
+		
+	#	available = {
+			# add Far Eastern Republic with Green Ukraine cosmetic tag and ideology
+			# раскачиваем обстановку и при успехе поднимаем восстание Дальневосточного государтсва с косметическим тегом Зеленого клина и союзным Украине
+			#	country_exists = UFR
+	#	}
+
+	#}
+	
+	focus = {
+		id = UKR_do_donu
+		icon = GFX_goal_ukr_do_donu
+		cost = 70
+		prerequisite = {
+			focus = UKR_soborn_ukraina
+		}
+		x = 57
+		y = 2
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_do_donu"
+			add_political_power = 120 
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_nord_border
+		icon = GFX_goal_ukr_norder_bord
+		cost = 70
+		prerequisite = {
+			focus = UKR_do_donu
+		}
+		x = 55
+		y = 3
+		
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 94
+					controls_state = 194
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_nord_border"
+			add_state_core = 94
+			add_state_core = 194
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_belarus
+		icon = GFX_goal_ukr_belorus
+		cost = 70
+		prerequisite = {
+			focus = UKR_nord_border
+		}
+		x = 56
+		y = 4
+		
+		available = {
+			OR = {
+                AND = {
+                    has_government = fascism				
+                    BLR = {
+				       exists = yes
+				          NOT = {
+						     has_government = fascism
+					         OR = {
+						         is_in_faction_with = UKR
+						         is_puppet_of = UKR
+					              }
+				                 }
+			                }				
+					NOT = { 
+					    OR = {
+					          RUS = { has_completed_focus = RUS_ter_belarus }
+							  #POL = { has_completed_focus = POL_belarus_lands }
+					      }
+					   }
+					}
+		        AND = {
+				    BLR = {
+				       exists = yes
+				          NOT = {
+						     has_war_with = UKR
+					         OR = {
+						         is_in_faction_with = RUS
+						         is_puppet_of = RUS
+								 is_in_faction_with = POL
+						         is_puppet_of = POL
+					              }
+				                 }
+			                }
+				    OR = {
+					          RUS = { has_completed_focus = RUS_ter_belarus }
+							  #POL = { has_completed_focus = POL_belarus_lands }
+					      }
+					OR = {
+					    has_government = fascism
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+						}
+					}
+				}
+			}
+	
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_belarus"
+				if = {
+				limit = { 
+					has_government = fascism
+					BLR = { NOT = { has_government = fascism } }
+					RUS = { NOT = { has_completed_focus = RUS_ter_belarus } }
+				}
+				every_state = {
+				    limit = {
+					     is_controlled_by = BLR
+					     is_core_of = BLR
+				            }
+				    add_claim_by = UKR
+	               }
+				if = {
+				limit = {
+				    OR = {
+				        RUS = { has_completed_focus = RUS_ter_belarus }
+						#POL = { has_completed_focus = POL_belarus_lands }
+						 }
+					OR = {
+					    has_government = fascism
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+						}
+				    }
+			    }
+		    }
+        }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}	
+	}
+	
+	focus = {
+		id = UKR_starodubshchina_and_sivershchyna
+		icon = GFX_goal_ukr_starodub
+		cost = 70
+		prerequisite = {
+			focus = UKR_do_donu
+		}
+		x = 57
+		y = 3
+
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 224
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_starodubshchina_and_sivershchyna"
+			add_state_core = 224
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}	
+	}
+	
+	focus = {
+		id = UKR_eastern_slobozhanshchyna
+		icon = GFX_goal_ukr_east_sloboda
+		cost = 70
+		prerequisite = {
+			focus = UKR_do_donu
+		}
+		x = 58
+		y = 4
+
+		available = {
+			OR = {	
+			    has_government = fascism
+				AND = {
+				    UKR = {
+			        controls_state = 220
+					controls_state = 240
+					controls_state = 260
+			        }
+					OR = {
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					     }
+					}
+		       }
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_eastern_slobozhanshchyna"
+			add_state_core = 220
+			add_state_core = 240
+			add_state_core = 260
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = UKR_kuban_don
+		icon = GFX_goal_ukr_don_kuban
+		cost = 70
+		prerequisite = {
+			focus = UKR_do_donu
+		}
+		x = 59
+		y = 3
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): UKR_kuban_don"
+			add_state_core = 218
+			add_state_core = 234
+			add_state_core = 235
+			add_state_core = 238
+			add_state_claim = 884
+			add_state_claim = 885
+			add_state_claim = 897
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+}	

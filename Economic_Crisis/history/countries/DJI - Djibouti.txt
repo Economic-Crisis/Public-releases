@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# ALL HAS MILITARY BASE IN DJUBUTI =)
+
+capital = 999
+
+# 4 сентября 1977 года
+    add_ideas = {
+		arab_league_member
+		low_terrorism
+		mixed_schools
+		NPT
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 145 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+	set_country_flag = pai_nondem_totalitarian
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.11.8"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 89
+		liberalism = 0
+		democratic = 10
+		neutrality = 1
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Ismaïl Guelleh"
+		desc = ""
+		picture = "gfx/leaders/DJI/portrait_ismail_guelleh.dds"
+		ideology = democratic_socialism
+		traits = { trait_democratic_socialism }
+	}
+	create_country_leader = {
+		name = "Daher Ahmed Farah"
+		desc = ""
+		picture = "gfx/leaders/DJI/portrait_daher_ahmed_farah.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+    }
+	create_country_leader = {
+		name = "Ahmed Youssouf Houmed"
+		desc = ""
+		picture = "gfx/leaders/DJI/portrait_ahmed_youssof_houmed.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+    }
+}

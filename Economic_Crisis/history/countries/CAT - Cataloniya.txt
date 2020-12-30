@@ -1,0 +1,46 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 165
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 100 }
+
+	load_oob = "_tech_insurgents_2013"
+	oob = "_army_microstate_2013"
+	add_political_power = 0
+
+	set_convoys = 30
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.2.16"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 25
+		liberalism = 20
+		democratic = 40
+		neutrality = 5
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Carles Pudjmont"
+		desc = "POLITICS_CARLES_PUDJMONT_DESC"
+		picture = "gfx/leaders/CAT/portrait_carles_pudjmont.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

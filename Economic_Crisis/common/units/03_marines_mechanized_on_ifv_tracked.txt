@@ -1,0 +1,78 @@
+sub_units = {
+
+	marines_mechanized_on_ifv_tracked = {
+	
+		sprite = marines_mechanized_on_ifv_tracked
+		map_icon_category = infantry
+		
+		special_forces = yes
+		marines = yes
+		cavalry = yes
+		active = no
+		priority = 674
+		ai_priority = 200
+		
+		type = {
+			mechanized
+		}
+		
+		group = marines_battalion
+		
+		categories = {
+			category_front_line
+			category_cavalry
+			category_all_infantry
+			category_special_corps
+			category_marines
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 33
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 92 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 240
+		suppression = 1
+		weight = 1
+		supply_consumption = 0.2
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			ifv_tracked_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = ifv_tracked_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			ifv_tracked_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		marsh = {
+			attack = 0.4
+			defence = 0.3
+			movement = 0.4
+		}
+		river = {
+			attack = 0.4
+			defence = 0.25
+			movement = 0.15
+		}
+		amphibious = {
+			attack = 0.55
+			defence = 0.2
+			movement = 0.15
+		}
+	}
+}

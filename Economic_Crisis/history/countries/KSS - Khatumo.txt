@@ -1,0 +1,73 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 989
+
+#   
+    add_ideas = {
+		not_recognized_country
+		mixed_schools
+		musulman_collapse
+		presidential_republic
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 535 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	
+	set_stability = 0.35
+	add_ideas = high_terrorism
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 94
+		fascism = 0
+		rad_islamists = 6
+	}
+
+	#2014
+	create_country_leader = {
+		name = "Ali Khalif Galaydh"
+		desc = ""
+		picture = "gfx/leaders/SOM/KSS/portrait_ali_khalif_galaydh.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mohamed Yusuf Jama"
+		desc = ""
+		picture = "gfx/leaders/SOM/KSS/portrait_mohamed_yusuf_jama.dds"
+		ideology = centrist_democracy
+		expire = "2014.9.1"
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+	
+}
+

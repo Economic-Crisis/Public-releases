@@ -1,0 +1,253 @@
+## ВСЕ ТРЕЙТЫ ДЛЯ ЛИДРОВ СТРАН, ТАК ЖЕ ИСПОЛЬЗУЕМЫЕ ПРЕМЬЕР МИНИСТРАМИ - категория идей head_of_government
+
+leader_traits = {
+
+	####Трейты лидеров стран
+	
+	
+	
+	###EC Трейты лидеров
+	
+	sovereign = {
+		random = no
+		political_power_factor = 0.03
+		justify_war_goal_time = 0.03
+		subversive_activites_upkeep = -0.04
+		stability_weekly = 0.001
+		monthly_population = 0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	oligarch = {
+		random = no
+
+		political_power_factor = -0.01
+		stability_factor = -0.02
+		stability_weekly = -0.001
+		global_building_slots_factor = 0.04
+		production_speed_synthetic_refinery_factor = 0.03
+		monthly_population = -0.01
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	extremist = {
+		random = no
+		political_power_factor = 0.03
+		stability_weekly = -0.001
+		monthly_population = -0.03
+		drift_defence_factor = 0.3
+		rad_islamists_drift = 0.10
+		ai_will_do = { factor = 0 }
+	}
+	
+	
+	
+	###Vanila Трейты лидеров
+	
+	dictator = {
+		random = no
+		political_power_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	warrior_code = {
+		random = no
+		ai_call_ally_desire_factor = -40
+		ai_join_ally_desire_factor = -30
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ww_one_trauma = {
+		random = no
+		ai_call_ally_desire_factor = 10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	stout_defender = { # This particular trait will make the AI heavily prioritize defensive warfare, rarely, if ever, attacking out of fortified locations
+		random = no
+		ai_focus_defense_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	warmonger = {
+		random = no
+		ai_focus_aggressive_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	inexperienced_imperialist = {
+		random = no
+		political_power_factor = -0.3
+		stability_factor = 0.05
+		justify_war_goal_time = -0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	spirit_of_genghis = {
+		random = no
+		cavalry_attack_factor = 0.05
+		equipment_bonus = {
+			nav_bomber_equipment = {
+				air_range = 0.1 naval_strike_attack = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	
+	indomitable_perseverance = { # Ground units get 4 more Morale 
+		random = no
+		sprite = 5
+		army_morale_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+#ai_focus_defense_factor
+#ai_focus_aggressive_factor
+#ai_focus_production_factor
+#ai_focus_military_advancements_factor
+#ai_focus_peaceful_factor
+#ai_focus_naval_factor
+#ai_focus_naval_air_factor
+#ai_focus_aviation_factor 
+	
+	dislikes_germany = {
+		random = no
+		ai_strategy = {
+			type = antagonize
+			id = "GER"			
+			value = 200
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tenacious_defender = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	exiled = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	political_prisoner = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	assassination_survivor = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	stalins_puppet = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	union_man = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	political_dancer = {
+		random = no
+		political_power_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	staunch_constitutionalist = {
+		random = no
+		drift_defence_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	cornered_fox = {
+		random = no
+		army_defence_factor = 0.15
+		army_morale_Factor = 0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	permanent_revolutionary = {
+		random = no
+		political_power_factor = -0.15
+		justify_war_goal_time = 0.15
+		subversive_activites_upkeep = -0.3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	triumphant_revolutionary = {
+		random = no
+		justify_war_goal_time = 0.15
+		subversive_activites_upkeep = -0.5
+		drift_defence_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+		
+}

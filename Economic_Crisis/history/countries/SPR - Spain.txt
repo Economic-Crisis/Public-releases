@@ -1,0 +1,143 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 41
+
+add_ideas = {
+	regional_country
+	king_juan_carlos_i
+	#king_felipe_vi 2014
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 136200 }
+
+	load_oob = "_tech_nato_regional_2013"
+	oob = "SPR_2013"
+	
+	add_ideas = {
+		spr_soraya_de_santamaria_hog
+		spr_alfonso_dastis_fgm
+		spr_maria_cospedal_defm
+		spr_luis_guindos_ecm
+		spr_juan_zoido_ssch
+	}
+
+	add_ideas = {
+		eu_member
+		parliamentary_monarchy
+		unitary_state_with_devolution
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		contract_army
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		low_terrorism
+		
+		integration_in_nato
+	}
+
+	add_political_power = 0
+	set_convoys = 35
+	set_stability = 0.5
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.11.20"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 47
+		liberalism = 15
+		democratic = 32
+		neutrality = 6
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mariano Rajoy"
+		desc = "POLITICS_MARIANO_RAJOY_DESC"
+		picture = "gfx/leaders/SPR/portrait_mariano_rajoy.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Pedro Sanchez"
+		desc = "POLITICS_PEDRO_SANCHEZ_DESC"
+		picture = "gfx/leaders/SPR/portrait_pedro_sanchez.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Albert Rivera"
+		desc = "POLITICS_ALBERT_RIVERA_DESC"
+		picture = "gfx/leaders/SPR/portrait_albert_rivera.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "José Luis Centella"
+		desc = "POLITICS_JOSE_LUIS_CENTELLA_DESC"
+		picture = "gfx/leaders/SPR/portrait_jose_luis_centella.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Pablo Iglesias Turrión"
+		desc = "POLITICS_PABLO_IGLESIAS_TURRION_DESC"
+		picture = "gfx/leaders/SPR/portrait_pablo_iglesias_turrion.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy	}
+	}
+
+	create_country_leader = {
+		name = "Gabriel Rufián"
+		desc = "POLITICS_GABRIEL_RUFIAN_DESC"
+		picture = "gfx/leaders/SPR/portrait_gabriel_rufian.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	create_field_marshal = {
+		name = "Jaime Dominguez"
+		portrait_path = "gfx/leaders/SPR/portrait_spr_General_jaime_dominguez.dds"
+		traits = { organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Félix Sanz Roldán"
+			GFX = GFX_portrait_felix_sans_roldan
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { SPR }
+		}
+	}
+
+
+}

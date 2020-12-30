@@ -1,0 +1,1420 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		irn_hassan_rouhani_hog = {
+
+                picture = GFX_idea_irn_hassan_rouhani
+
+			cost = 1000
+			#removal_cost = -1
+
+                        available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+			}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+		irn_ali_jafari_hog = {
+		
+				picture = GFX_idea_irn_khosrow_seif
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_nationalist
+						pm_nationalist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+	
+		irn_khosrow_bytalhy_hog = {
+		
+				picture = GFX_idea_irn_khosrow_bytalhy
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_liberal
+						pm_liberal
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_lotfollah_forouzandeh_hog = {
+		
+				picture = GFX_idea_irn_lotfollah_forouzandeh
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_rad_islamist 
+						pm_rad_islamist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_maryam_rajavi_hog = {
+		
+				picture = GFX_idea_irn_maryam_rajavi
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+				
+				NOT = { 
+					has_country_leader = { id = 110010 ruling_only = yes name = "Ali Khamenehei" }
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_islamist
+						pm_islamist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_mohammad_omidvar_hog = {
+		
+				picture = GFX_idea_irn_mohammad_omidvar
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_communist
+						 pm_communist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		
+		
+		irn_gholamhossein_karbaschi_hog = {
+		
+				picture = GFX_idea_irn_gholamhossein_karbaschi
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_mohammad_khatami_hog = {
+		
+				picture = GFX_idea_irn_mohammad_khatami
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		 irn_davoud_hermidas_hog = {
+		
+				picture = GFX_idea_irn_davoud_hermidas
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		 irn_mahmoud_ahmadinejad_hog = {
+		
+				picture = GFX_idea_irn_mahmoud_ahmadinejad
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_reza_bahonar_hog = {
+		
+				picture = GFX_idea_irn_reza_bahonar
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+		
+		irn_mohammad_habibi_hog = {
+		
+				picture = GFX_idea_irn_mohammad_habibi
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { party_leader_conservative 
+						pm_conservative
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 0 
+			}
+		}
+	}
+	
+	
+	foreign_minister = {
+
+ 		irn_mohammad_javad_zarif_fgm = {
+
+		picture = GFX_idea_irn_mohammad_javad_zarif
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+
+			}
+
+      			allowed = { 
+				original_tag  = IRN 
+			}
+
+      			traits = { foreign_minister_policy_defender }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+				}
+      			ai_will_do = { 
+				factor = 0 
+			}
+     	}
+		
+		irn_azam_zangeneh_fgm = {
+		
+		picture = GFX_idea_irn_azam_zangeneh
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_addiction_irredentist_1 }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_manouchehr_mottaki_fgm = {
+		
+		picture = GFX_idea_irn_manouchehr_mottaki
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_non-alignment }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_amir_sadri_fgm = {
+		
+		picture = GFX_idea_irn_amir_sadri
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_policy_conversation
+							 foreign_minister_addiction_USA }
+							 
+							 
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_hossein_marashi_fgm = {
+		
+		picture = GFX_idea_irn_hossein_marashi
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_anti-globalization }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ali_javadi_fgm = {
+		
+		picture = GFX_idea_irn_ali_javadi
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_policy_defender_2 }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ali_akbar_salehi_fgm = {
+		
+		picture = GFX_idea_irn_ali_akbar_salehi
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_policy_defender_1 }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_masud_soltanpor_fgm = {
+		
+		picture = GFX_idea_irn_masud_soltanpor
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_addiction_irredentist_2 }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ahmad_mazani_fgm = {
+		
+		picture = GFX_idea_irn_masud_soltanpor
+		
+				cost = 350
+				#removal_cost = -1
+				available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			allowed = { 
+				original_tag  = IRN 
+			}
+			
+				traits = { foreign_minister_non-alignment_1 }
+				
+				on_add = {
+				
+					news_event = foreign.minister.1
+				}
+				ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+		
+
+	defence_minister = {
+
+		irn_hossein_dehghan_defm = {
+
+		picture = GFX_idea_irn_hossein_dehghan
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_army_order }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ahmad_vahidi_defm = {
+
+		picture = GFX_idea_irn_ahmad_vahidi
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_distinguished_military }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_mostafa_najjar_defm = {
+
+		picture = GFX_idea_irn_mostafa_najjar
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_serve_and_protect}
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ali_shamkhani_defm = {
+
+		picture = GFX_idea_irn_ali_shamkhani
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_analyst_1}
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_manouchekhr_yazdi_defm = {
+
+		picture = GFX_idea_irn_manouchekhr_yazdi
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists				
+				}
+			}	
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_regime_loyalist }
+			
+			on_add = {
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_mohammad_asangaran_defm = {
+
+		picture = GFX_idea_irn_mohammad_asangaran
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists			
+			}
+		}
+
+			allowed = {
+				original_tag = IRN
+			}
+
+			traits = { defence_minister_bureaucrat}
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+		
+		
+				
+
+	economic_minister = {
+	
+		irn_ali_tayebnia_ecm = {
+		
+		picture = GFX_idea_irn_ali_tayebnia
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_public_administration_2 }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_masoud_karbasian_ecm = {
+		
+		picture = GFX_idea_irn_masoud_karbasian
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_business_protege }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_shamseddin_hosseini_ecm = {
+		
+		picture = GFX_idea_irn_shamseddin_hosseini
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_international_trade_1 }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_davoud_danesh_ecm = {
+		
+		picture = GFX_idea_irn_davoud_danesh
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_banking_credit_system }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_safdar_hosseini_ecm = {
+		
+		picture = GFX_idea_irn_safdar_hosseini
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_military_industry }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_nader_zahedi_ecm = {
+		
+		picture = GFX_idea_irn_nader_zahedi
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_reformist}
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_keywan_javid_ecm = {
+		
+		picture = GFX_idea_irn_keywan_javid
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_social_reformer }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_noorbakh_rahimzada_ecm = {
+		
+		picture = GFX_idea_irn_noorbakh_rahimzada
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { economic_minister_military_industry_3 }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	
+
+	secret_service_chief = {
+	
+		irn_mahmoud_alavi_ssch = {
+		
+			picture = GFX_idea_irn_mahmoud_alavi
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_counterespionage_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+	
+	irn_ali_younesi_ssch = {
+		
+			picture = GFX_idea_irn_ali_younesi
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_eminence_grise_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_heydar_moslehi_ssch = {
+		
+			picture = GFX_idea_irn_heydar_moslehi
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_spy_2 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_gholamhossein_mohseni_ssch = {
+		
+			picture = GFX_idea_irn_irn_gholamhossein_mohseni
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_executioner_2 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_nasser_asghari_ssch = {
+		
+			picture = GFX_idea_irn_nasser_asghari
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_executioner_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_mohtaba_sheykeri_ssch = {
+		
+			picture = GFX_idea_irn_mohtaba_sheykeri
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_counterespionage_3 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		irn_ebrahim_mirani_ssch = {
+		
+			picture = GFX_idea_irn_geram_parsly
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			
+			OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			traits = { secret_service_chief_executioner_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	
+	
+	political_advisor = {
+	
+		irn_mahmoud_vaezi = {
+		
+			cost = 250
+			picture = GFX_idea_irn_mahmoud_vaezi
+			
+			allowed = {
+				original_tag = IRN
+			}
+			traits = { propaganda_reformer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		irn_abdolreza_fazli = {
+		
+			cost = 250
+			picture = GFX_idea_irn_abdolreza_fazli
+			
+			allowed = {
+				original_tag = IRN
+			}
+			traits = { police_reformer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		irn_ali_rabei = {
+		
+			cost = 250
+			picture = GFX_idea_irn_ali_rabei
+			
+			allowed = {
+				original_tag = IRN
+			}
+			traits = { military_education_reformer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_reza_salehi_amiri = {
+		
+			cost = 250
+			picture = GFX_idea_irn_reza_salehi_amiri
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { cultura_reformer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_fakhruddin_ahmadi = { 
+		
+			cost = 250
+			picture = GFX_idea_irn_fakhruddin_ahmadi
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { research_reformer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		irn_hamid_chitchian = {
+		
+			cost = 250
+			picture = GFX_idea_irn_hamid_chitchian
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { tek_reformer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_hassan_hashemi = {
+		
+			cost = 250
+			picture = GFX_idea_irn_hassan_hashemi
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { medicine_reformer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+		irn_mohammadreza_nematzadeh = {
+		
+			cost = 250
+			picture = GFX_idea_irn_mohammadreza_nematzadeh
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { industry_developer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_bijan_namdar = { 
+		
+			cost = 250
+			picture = GFX_idea_irn_bijan_namdar
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { industry_top_managment }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_mohammad_farhadi = {
+		
+			cost = 250
+			picture = GFX_idea_irn_mohammad_farhadi
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { popular_person }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_ahmad_akhondi = {
+		
+			cost = 250
+			picture = GFX_idea_irn_ahmad_akhondi
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = {infrastructure_reformer}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		irn_masoud_soltanifar = {
+		
+			cost = 250
+			picture = GFX_idea_irn_masoud_soltanifar
+			
+			allowed	= {
+				original_tag = IRN
+			}
+			traits = { backstage_assistant }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}

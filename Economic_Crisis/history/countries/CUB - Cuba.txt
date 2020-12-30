@@ -1,0 +1,78 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 315
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 7715 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "CUB_2013"
+
+	add_ideas = {
+		alba_member
+		terrorism_discounted
+		mixed_schools
+		NPT
+	}
+
+	set_country_flag = monroe_doctrine
+	set_country_flag = pai_nondem_totalitarian
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2010.1.10"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 80
+		reformism = 0
+		liberalism = 5
+		democratic = 7
+		neutrality = 8
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Raul Castro"
+		desc = "POLITICS_RAUL_CASTRO_DESC"
+		picture = "gfx/leaders/CUB/portrait_raul_castro.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Rene Hernandez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_5.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Fernando Sanchez Lopez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_2.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Yuniel Lopez"
+		desc = ""
+		picture = "gfx/leaders/CUB/portrait_south_america_generic_2.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

@@ -1,0 +1,83 @@
+﻿# NON-EXISTENT ON START GAME STATE
+
+# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 670
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1194 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "LAO_2013"
+
+	add_ideas = {
+		asean_member
+		NPT
+    }
+
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		single-party_state
+		unitary_state
+		state_religion
+		state_propaganda_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		attract_immigrants
+		planned_economy
+		nationalization_of_heavy_industry
+		
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		low_terrorism
+	}
+
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2011.4.30" #parliament
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 85
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 15
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Bounnhang Vorachit"
+		desc = ""
+		picture = "gfx/leaders/LAO/portrait_bounnhang_vorachit.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Choummaly Sayasone"
+		desc = ""
+		picture = "gfx/leaders/LAO/portrait_choummaly_sayasone.dds"
+		expire = "2016.1.22"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	
+}
+

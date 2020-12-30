@@ -1,0 +1,67 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Narodniye Opolchenie"			# Rifle Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 } 		# recon_battalion bn had 16 L tanks, 10 ACs, 1x mot inf co #Eng and recon_battalion removed and they seem rather OP. Could revisit if balance changes
+		airborne_support_company = { x = 0 y = 1 } 	# (semi-mot) airborne_support_company bn
+    }
+}
+
+units = {
+division = {
+		name = "Narodniye Opolchenie"
+		location = 3722
+		division_template = "Narodniye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "Narodniye Opolchenie"
+		location = 3722
+		division_template = "Narodniye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "Narodniye Opolchenie"
+		location = 9680
+		division_template = "Narodniye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "Narodniye Opolchenie"
+		location = 3686
+		division_template = "Narodniye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CRM"
+		}
+		requested_factories = 3
+		progress = 0.55
+		efficiency = 100
+	}
+}

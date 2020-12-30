@@ -1,0 +1,116 @@
+# Economic Crisis terrorism level
+
+ideas = {
+
+	terrorism_level = {
+		
+		terrorism_discounted = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 1
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				foreign_subversive_activites = -0.05
+			}
+		}
+		
+		regional_terrorism = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 2
+			
+			visible = {
+		        always = no
+		    }
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+				monthly_population = -0.01
+				foreign_subversive_activites = 0.05
+			}
+		}
+		
+		low_terrorism = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 3
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.10
+				monthly_population = -0.02
+				foreign_subversive_activites = 0.10
+			}
+		}
+		
+		average_terrorism = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 4
+			default = yes
+			
+			picture = terrorism
+			modifier = {
+			    stability_factor = -0.15
+				political_power_gain = -0.15
+				monthly_population = -0.03
+				foreign_subversive_activites = 0.15
+			}
+		}
+		
+		high_terrorism = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 5
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = -0.20
+				political_power_gain = -0.20
+				monthly_population = -0.04
+				foreign_subversive_activites = 0.20
+			}
+		}
+		
+		decaying_state = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 6
+			
+			#picture = civilian_economy1
+			
+			on_add = {
+				
+			}
+			
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = -0.25
+				monthly_population = -0.05
+				foreign_subversive_activites = 0.25
+			}
+		}
+	}
+}

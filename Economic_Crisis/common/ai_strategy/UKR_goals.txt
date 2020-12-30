@@ -1,0 +1,178 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ukraina_war_with_novorossia = {
+	enable = {
+		tag = UKR
+		country_exists = NRU
+	}
+	abort = {
+		NOT = {     
+			country_exists = NRU	
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "NRU"			
+		value = 200
+	}	
+}
+
+ukraina_war_with_DNR = {
+	enable = {
+		tag = UKR
+		country_exists = DON
+	}
+	abort = {
+		NOT = {     
+			country_exists = DON	
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "DON"			
+		value = 200
+	}	
+}
+
+ukraina_war_with_LNR = {
+	enable = {
+		tag = UKR
+		country_exists = LUG
+	}
+	abort = {
+		NOT = {  country_exists = LUG	}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "LUG"			
+		value = 200
+	}	
+}
+
+novorossia_war_with_west_ukraine = {
+    enable = {
+		OR = {
+		    tag = NRU
+		    tag = DON
+		    tag = LUG
+		}
+		country_exists = UKR
+	}
+	abort = {
+		NOT = {    
+			country_exists = UKR	
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "UKR"			
+		value = 200
+	}
+}
+
+novorossia_friend_with_Russia = {
+	enable = {
+		OR = {
+		    tag = NRU
+		    tag = DON
+		    tag = LUG
+		}
+		OR = {
+		    country_exists = DON
+		    country_exists = LUG
+			country_exists = NRU
+		}
+		RUS = { has_government = neutrality }
+		country_exists = RUS
+	}
+	abort = {
+		NOT = {
+			OR = {     
+				country_exists = RUS
+			    RUS = { has_government = neutrality }
+			}
+			country_exists = DON
+		    country_exists = LUG
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "RUS"			
+		value = 120
+	}
+}
+
+russia_support_east_ukraine = {
+	enable = {
+		tag = RUS
+		RUS = { has_government = neutrality }
+		country_exists = RUS
+		country_exists = NRU
+		NRU = { has_government = neutrality }
+		NRU = { has_war_with = UKR }
+	}
+	abort = {
+		NOT = {
+			OR = {	
+				RUS = { has_government = neutrality }
+				country_exists = RUS
+				country_exists = NRU
+				NRU = { has_government = neutrality }
+				NRU = { has_war_with = UKR }
+			}	
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = "NRU"			
+		value = 100
+	}
+}
+
+russia_intervention_to_east_ukraine = {
+	enable = {
+		tag = RUS
+		RUS = { has_government = neutrality }
+		country_exists = RUS
+		country_exists = NRU
+		NRU = { has_government = neutrality }
+		NRU = { has_war_with = UKR }
+		NRU = {
+			surrender_progress < 0.5
+			has_capitulated = no
+		}
+	}
+	abort = {
+		NOT = {
+			OR = {	
+				RUS = { has_government = neutrality }
+				country_exists = RUS
+				country_exists = NRU
+				NRU = { has_government = neutrality }
+				NRU = { has_war_with = UKR }
+			}	
+		}
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "NRU"			
+		value = 100
+	}
+}

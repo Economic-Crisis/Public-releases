@@ -1,0 +1,89 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+set_convoys = 25
+
+add_ideas = {
+	small_country
+}
+capital = 308
+
+	add_ideas = {
+		queen_elizabet
+		parliamentary_monarchy
+	}
+
+	create_faction = RSS #Региональная система обороны
+	add_to_faction = ANT
+	add_to_faction = BRB
+	add_to_faction = DMA
+	add_to_faction = SVG
+	add_to_faction = SLC
+	add_to_faction = GRN
+	add_ideas = integration_in_rss
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 119 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		mixed_schools
+		alba_member
+		NPT
+	}
+
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2009.3.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 46
+		liberalism = 0
+		democratic = 52
+		neutrality = 1
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Gaston Browne"
+		desc = "POLITICS_GASTON_BROWNE_DESC"
+		picture = "gfx/leaders/ANT/portrait_gaston_browne.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Baldwin Spencer"
+		desc = "POLITICS_BALDWIN_SPENCER_DESC"
+		picture = "gfx/leaders/ANT/portrait_baldwin_spencer.dds"
+		ideology = social_democracy
+		expire = "2014.6.13"
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Arthur Nibbs"
+		desc = ""
+		picture = "gfx/leaders/Europe/portrait_south_america_generic_4.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+		
+}
+2016.6.13 = {
+	set_party_name = { 
+	    ideology = reformism 
+	    long_name = ANT_reformism_2014_party
+	    name = ANT_reformism_2014_party 
+	}
+}

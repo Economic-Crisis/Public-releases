@@ -1,0 +1,213 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 229
+
+add_opinion_modifier = { target = NKR modifier = semi_active_war }
+add_opinion_modifier = { target = NKR modifier = separatist }
+add_opinion_modifier = { target = ARM modifier = semi_active_war }
+add_opinion_modifier = { target = ARM modifier = supporting_separatism }
+
+1992.1.1 = {
+	give_guarantee = TUR
+	add_ideas = ikor_diplomatic
+}
+
+1993.9.24 = {
+    add_ideas = {
+		mixed_schools
+		presidential_republic
+		cis_member
+		oil_spike
+	}
+}
+
+1994.05.05 = {
+	add_ideas = revanchism
+}
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+1997.10.10 = {
+    add_ideas = guam_member
+	add_ideas = Turkic_Council
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 7416 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "AZR_2013"
+	add_ideas = low_terrorism
+
+	add_political_power = 0
+	add_ideas = NPT
+	set_convoys = 20
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.10.9"
+		election_frequency = 63
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 3
+		liberalism = 5
+		democratic = 20
+		neutrality = 65
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ilham Aliyev" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_ilham_aliyev.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+	create_country_leader = {
+		name = "Isa Gambar" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_isa_gambar.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Ali Kerimli" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_ali_kerimli.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+	create_country_leader = {
+		name = "Rauf Gurbanov" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_rauf_gurbanov.dds"
+		ideology = leninism
+		traits = { trait_national_conservatism }
+	}
+	create_country_leader = {
+		name = "Sardar Jalaloglu" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_sardar_jalaloglu.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+	create_country_leader = {
+		name = "Araz Alizade" 
+		desc = ""
+		picture = "gfx/leaders/AZR/portrait_araz_alizade.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_field_marshal = {
+		name = "Zakir Hasanov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_zakir_hasanov.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Vagif Akhundov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_vagif_akhundov.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Najmeddin Sadikov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_najmeddin_sadikov.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Kerim Veliyev"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_kerim_veliyev.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Fuad Mammadov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_fuad_mammadov.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Ramiz Tairov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_ramiz_tairov.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Shahin Mammadov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_shahin_mammedov.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Elchin Guliyev"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_general_elchin_guliyev.dds"
+		traits = { swamp_fox }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Shahin Sultanov"
+		portrait_path = "gfx/leaders/AZR/portrait_azr_admiral_shahin_sultanov.dds"
+		traits = { seawolf }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+	
+}
+

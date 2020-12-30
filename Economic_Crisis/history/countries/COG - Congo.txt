@@ -1,0 +1,66 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 755
+
+	add_ideas = {
+		au_member
+	}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 1409 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "COG_2013"
+
+	add_political_power = 0
+
+	set_convoys = 15
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		high_terrorism
+	}
+
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2009.7.12"
+		election_frequency = 84
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 78
+		liberalism = 7
+		democratic = 2
+		neutrality = 13
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Denis Sassou Nguesso"
+		desc = "POLITICS_DENIS_SASSOU_NGUESSO_DESC"
+		picture = "gfx/leaders/COG/portrait_denis_sassou_nguesso.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+

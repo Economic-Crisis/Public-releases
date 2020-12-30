@@ -1,0 +1,410 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 126
+
+give_guarantee = BRU
+give_guarantee = BLZ
+give_guarantee = AST
+give_guarantee = NZL
+give_guarantee = CYP
+give_guarantee = SIE
+
+# Передача Гонконга
+1997.7.2 = {
+	give_guarantee = HKG
+}
+
+add_ideas = {
+ #   two_party_system
+	major_country
+	NPT
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 90200 }
+
+	load_oob = "_tech_nato_major_2013"
+	oob = "ENG_2013"
+
+	add_ideas = {
+		eu_member
+		nuclear_country
+		queen_elizabet
+		unsc_member
+		mixed_army
+		parliamentary_monarchy
+		unitary_state
+		secular_state
+		high_taxes
+		mixed_schools
+		middle_social_security
+		market_economy
+		ENG_David_Cameron_hog
+		ENG_Philip_Hammond_defm
+		ENG_William_Hague_fgm
+		ENG_George_Osborne_ecm
+		ENG_John_Sawers_ssch
+		ENG_David_Richards_chogs
+		ENG_David_Reddaway_isch
+		ENG_Nick_Houghton_chogf
+		ENG_Trevor_Soar_chonf
+		ENG_Stephen_Hillier_choaf
+		average_terrorism
+		
+		integration_in_nato
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+
+	diplomatic_relation = {
+		country = DJI
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = AFG
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CYP
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = BRU
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = BLZ
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SIE
+		relation = military_access
+		active = yes
+	}
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2010.05.06"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 39
+		liberalism = 9
+		democratic = 47
+		neutrality = 4
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "David Cameron"
+		desc = "POLITICS_DAVID_CAMERON_DESC"
+		picture = "gfx/leaders/ENG/portrait_david_cameron.dds"
+		ideology = conservative_democracy
+		expire = "2016.7.1"
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Jeremy Corbyn"
+		desc = "POLITICS_JEREMY_CORBYN_DESC"
+		picture = "gfx/leaders/ENG/portrait_jeremy_corbyn.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Nick Clegg"
+		desc = "POLITICS_NICK_CLEGG_DESC"
+		picture = "gfx/leaders/ENG/portrait_nick_clegg.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Nigel Farage"
+		desc = "POLITICS_NIGEL_FARAGE_DESC"
+		picture = "gfx/leaders/ENG/portrait_nigel_farage.dds"
+		ideology = euroscepticism
+		traits = { trait_euroscepticism }
+	}
+
+	create_country_leader = {
+		name = "Nick Griffin"
+		desc = "POLITICS_NICK_GRIFFIN_DESC"
+		picture = "gfx/leaders/ENG/portrait_nick_griffin.dds"
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Alex Callinicos"
+		desc = "POLITICS_ALEX_CALLINICOS_DESC"
+		picture = "gfx/leaders/ENG/portrait_alex_callinicos.dds"
+		ideology = trotskizm
+		traits = { trait_trotskizm }
+	}
+
+	create_country_leader = {
+		name = "Anjem Choudary"
+		desc = "POLITICS_ANJEM_CHOUDARY_DESC"
+		picture = "gfx/leaders/ENG/portrait_anjem_choudary.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	# Генералы и адмиралы
+	create_field_marshal = {
+  		name = "Nick Carter"
+  		portrait_path = "gfx/leaders/ENG/portrait_eng_general_nick_carter.dds"
+  		traits = { logistics_wizard old_guard }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+
+  	create_field_marshal = {
+  		name = "Tim Radford"
+  		portrait_path = "gfx/leaders/ENG/portrait_eng_general_tim_radford.dds"
+  		traits = { offensive_doctrine }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+
+  	create_corps_commander = {
+  		name = "Giles Hill"
+  		portrait_path = "gfx/leaders/ENG/portrait_eng_general_giles_hill.dds"
+  		traits = { fortress_buster }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+
+	create_field_marshal = {
+		name = "Sir Peter Anthony Inge"
+		portrait_path = "gfx/leaders/portrait_eng_general_peter_anthony_inge.dds"
+		traits = { old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_field_marshal = {
+		name = "Sir Michael Walker"
+		portrait_path = "gfx/leaders/portrait_eng_general_michael_walker.dds"
+		traits = { fast_planner }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_field_marshal = {
+		name = "Sir Charles Guthrie"
+		portrait_path = "gfx/leaders/portrait_eng_general_charles_guthrie.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_field_marshal = {
+		name = "Sir Nick Houghton"
+		portrait_path = "gfx/leaders/portrait_eng_general_nick_houghton.dds"
+		traits = { defensive_doctrine }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Sir Nick Parker"
+		portrait_path = "gfx/leaders/portrait_eng_general_nick_parker.dds"
+		traits = { desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Sir Peter Anthony Wall"
+		portrait_path = "gfx/leaders/portrait_eng_general_peter_anthony_Wall.dds"
+		traits = { commando swamp_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "The Lord Richards of Herstmonceux"
+		portrait_path = "gfx/leaders/portrait_eng_general_richards_herstmonceux.dds"
+		traits = { trait_mountaineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Sir Adrian Bradshaw"
+		portrait_path = "gfx/leaders/portrait_eng_general_adrian_bradshaw.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Prince Charles"
+		portrait_path = "gfx/leaders/portrait_eng_general_prince_charles.dds"
+		traits = { old_guard }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_navy_leader = {
+		name = "Sir Philip Jones"
+  		portrait_path = "gfx/leaders/ENG/portrait_eng_admiral_philip_jones.dds"
+		traits = {  }
+		skill = 4
+		skill = 4
+		coordination_skill = 4
+		defense_skill = 4
+		maneuvering_skill = 4
+		attack_skill = 4
+	}
+
+	create_navy_leader = {
+		name = "Jonathan Woodcock"
+  		portrait_path = "gfx/leaders/ENG/portrait_eng_admiral_jonathan_woodcock.dds"
+		traits = {}
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+
+	create_navy_leader = {
+		name = "Ben Key"
+		picture = "gfx/leaders/portrait_eng_admiral_ben_key.dds"
+		traits = {  }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+
+	create_navy_leader = {
+		name = "Ian Wheatley"
+		picture = "gfx/leaders/portrait_eng_admiral_ian_wheatley.dds"
+		traits = {  }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+
+	create_navy_leader = {
+		name = "Robert Magowan"
+		picture = "gfx/leaders/portrait_eng_admiral_robert_magowan.dds"
+		traits = {  }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+	create_navy_leader = {
+		name = "Paul Bennett"
+		picture = "gfx/leaders/portrait_eng_admiral_paul_bennett.dds"
+		traits = {  }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+	create_navy_leader = {
+		name = "Simon Williams"
+		picture = "gfx/leaders/portrait_eng_admiral_simon_williams.dds"
+		traits = {  }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+	create_navy_leader = {
+		name = "Alex Burton"
+		picture = "gfx/leaders/portrait_eng_admiral_alex_burton.dds"
+		traits = {  }
+		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+	}
+
+}
+
+2015.9.1 = {
+	create_country_leader = {
+		name = "Jeremy Corbyn"
+		desc = "POLITICS_JEREMY_CORBYN_DESC"
+		picture = "gfx/leaders/Europe/portrait_jeremy_corbyn.dds"
+		ideology = social_democracy
+		traits = { }
+	}
+}
+
+2016.7.1 = {
+	#TODO: прописать приход Мэй к власти через ивент на выход Бриташки из ЕС
+	create_country_leader = {
+		name = "Theresa May"
+		desc = "POLITICS_THERESA_MAY_DESC"
+		picture = "gfx/leaders/ENG/portrait_theresa_may.dds"
+		ideology = conservative_democracy
+		traits = {	}
+	}
+}

@@ -1,0 +1,73 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 709
+
+add_ideas = {
+	small_country 
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 141 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 15
+
+	add_ideas = {
+		au_member
+		presidential_republic
+		secular_state
+		mixed_media
+		respect_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.5.21"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 66
+		liberalism = 14
+		democratic = 11
+		neutrality = 9
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Danny Faure"
+		desc = "POLITICS_DANNY_FAURE_DESC"
+		picture = "gfx/leaders/SEY/portrait_danny_faure.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "James Michel"
+		desc = "POLITICS_JAMES_ALIX_MICHEL_DESC"
+		picture = "gfx/leaders/SEY/portrait_james_michel.dds"
+		ideology = social_democracy
+		expire = "2016.10.16"
+		traits = { trait_social_democracy }
+	}
+}
+

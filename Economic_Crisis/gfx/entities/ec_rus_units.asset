@@ -1,0 +1,631 @@
+	#####################################################################
+	#####															#####
+	#####					RUSSIA									#####
+	#####															#####
+	#####################################################################
+
+	### GROUND FORCES (MOTORIZED OR MECHANIZED) BASE INFANTRY UNIT ###
+
+	entity = {
+		name = "RUS_infantry_entity"
+		clone = "infantry_entity"
+		pdxmesh = "RUS_infantry_hoi4_mesh"
+	
+		attach = { 	name = "rifle1"	Right_Hand_node = "infantry_weapon_ak47_entity" }	
+		attach = { 	name = "rifle4"	Root_node_2 = "infantry_weapon_ak47_entity" }
+		attach = { 	name = "rifle2"	Left_Hand_node = "infantry_weapon_ak47_entity" }
+		attach = { 	name = "rifle3"	mid_back_node = "infantry_weapon_ak47_entity" }
+	}
+
+	### MILITIA (NOT MOTORIZED OR MECHANIZED) INFANTRY UNIT ###
+	entity = {
+		name = "RUS_militia_entity"
+		clone = "RUS_infantry_entity"
+		pdxmesh = "RUS_militia_hoi4_mesh"
+	}	
+
+	### GENDARMES (INTERNAL TROOPS) INFANTRY UNIT ###
+	entity = {
+		name = "RUS_gendarmes_entity"
+		clone = "RUS_infantry_entity"
+	}
+
+	### MARINES INFANTRY UNIT ###
+	entity = {
+		name = "RUS_marines_entity"
+		clone = "RUS_infantry_entity"
+		pdxmesh = "RUS_marine_hoi4_mesh"
+	}	
+
+	### mountaineers INFANTRY UNIT ###
+	entity = {
+		name = "RUS_mountaineers_entity"
+		clone = "RUS_infantry_entity"
+	}	
+	
+	### PARATROOPERS INFANTRY UNIT ###
+	entity = {
+		name = "RUS_paratroopers_entity"
+		clone = "RUS_infantry_entity"
+	}
+
+	### SPECIAL FORCES INFANTRY UNIT ###
+	entity = {
+		name = "RUS_special_forces_entity"
+		clone = "RUS_infantry_entity"
+	}
+
+	### RECON INFANTRY UNIT ###
+	entity = {
+		name = "RUS_recons_entity"
+		clone = "RUS_infantry_entity"
+	}
+
+	#####################################################################
+	#####															#####
+	#####				Generic motorised infantry					#####
+	#####				Motorised troops on trucks					#####
+	#####															#####
+	#####################################################################
+
+	### MOTORIESED GROUND FORCES ON TRUCKS ###
+	entity = {
+		name = "RUS_motorized_entity"
+		clone = "motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+
+		attach = { 	name = "vehicle"			vehicle = "truck_kraz255_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+
+	### MOTORIESED GENDARMES (INTERNAL TROOPS) ON TRUCKS ###
+	entity = {
+		name = "RUS_gendarmes_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }
+	}
+
+	### MOTORIESED MARINES ON TRUCKS ###
+	entity = {
+		name = "RUS_marines_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### MOTORIESED MOUNTAINEERS ON TRUCKS ###
+	entity = {
+		name = "RUS_mountaineers_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### MOTORIESED PARATROOPERS ON TRUCKS ###
+	entity = {
+		name = "RUS_paratroopers_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### MOTORIESED SPECIAL FORCES ON TRUCKS ###
+	entity = {
+		name = "RUS_special_forces_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### MOTORIESED RECONS ON TRUCKS ###
+	entity = {
+		name = "RUS_recons_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+			
+	#####################################################################
+	#####															#####
+	#####				Generic light motorised infantry			#####
+	#####				Motorised troops on armored cars			#####
+	#####															#####
+	#####################################################################
+	
+	### LIGHT MOTORIESED GROUND FORCES ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_light_motorized_entity"
+		clone = "light_motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		attach = { 	name = "vehicle"			vehicle = "car_gaz_tigr_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+	
+	### LIGHT MOTORIESED GENDARMES (INTERNAL TROOPS) ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_gendarmes_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }
+	}
+
+	### LIGHT MOTORIESED MARINES ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_marines_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### LIGHT MOTORIESED MOUNTAINEERS ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_mountaineers_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### LIGHT MOTORIESED PARATROOPERS ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_paratroopers_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### LIGHT MOTORIESED SPECIAL FORCES ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_special_forces_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### LIGHT MOTORIESED RECONS ON LUV OR ARMORED CARS ###
+	entity = {
+		name = "RUS_recons_light_motorized_entity"
+		clone = "RUS_motorized_entity"
+
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+
+	#####################################################################
+	#####															#####
+	#####			Generic recons on special light APC				#####
+	#####															#####
+	#####################################################################
+
+	### MECHANIZED RECONS ON LIGHT WHEELED APC ###
+	entity = {
+		name = "RUS_recons_on_light_apc_wheeled_entity"
+		clone = "RUS_motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }			
+	}
+
+	### MECHANIZED RECONS ON LIGHT TRACKED APC ###
+	entity = {
+		name = "RUS_recons_on_light_apc_tracked_entity"
+		clone = "RUS_motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }			
+	}
+
+	### MECHANIZED RECONS ON AIR-DROPPABLE TRACKED APC ###
+	entity = {
+		name = "RUS_recons_on_light_apc_airdroppable_entity"
+		clone = "RUS_motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }			
+	}
+	
+	#####################################################################
+	#####															#####
+	#####				Generic mechanized infantry					#####
+	#####				Mechanized troops on wheeled APC			#####
+	#####															#####
+	#####################################################################
+	
+	### MECHANIZED GROUND FORCES ON WHEELED APC ###
+	entity = {
+		name = "RUS_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_btr82_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+	
+	### MECHANIZED GENDARMES (INTERNAL TROOPS) ON WHEELED APC ###
+	entity = {
+		name = "RUS_gendarmes_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }
+	}
+
+	### MECHANIZED MARINES ON WHEELED APC ###
+	entity = {
+		name = "RUS_marines_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### MECHANIZED MOUNTAINEERS ON WHEELED APC ###
+	entity = {
+		name = "RUS_mountaineers_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### MECHANIZED PARATROOPERS ON WHEELED APC ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### MECHANIZED SPECIAL FORCES ON WHEELED APC ###
+	entity = {
+		name = "RUS_special_forces_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### MECHANIZED PRECONS ON WHEELED APC (FOR AIRBORNE) ###
+	entity = {
+		name = "RUS_recons_mechanized_on_apc_wheeled_entity"
+		clone = "RUS_mechanized_on_apc_wheeled_entity"
+
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####				Generic mechanized infantry					#####
+	#####				Mechanized troops on tracked APC			#####
+	#####															#####
+	#####################################################################
+	
+	### MECHANIZED GROUND FORCES ON TRACKED APC ###
+	entity = {
+		name = "RUS_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_mtlb_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+	
+	### MECHANIZED GENDARMES (INTERNAL TROOPS) ON TRACKED APC ###
+	entity = {
+		name = "RUS_gendarmes_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }		
+	}
+
+	### MECHANIZED MARINES ON TRACKED APC ###
+	entity = {
+		name = "RUS_marines_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### MECHANIZED MOUNTAINEERS ON TRACKED APC ###
+	entity = {
+		name = "RUS_mountaineers_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### MECHANIZED PARATROOPERS ON TRACKED APC ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### MECHANIZED SPECIAL FORCES ON TRACKED APC ###
+	entity = {
+		name = "RUS_special_forces_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### MECHANIZED RECONS ON TRACKED APC ###
+			### NOT IN GAME ###
+	entity = {
+		name = "RUS_recons_mechanized_on_apc_tracked_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####		Generic mechanized infantry	(armored cavalry)		#####
+	#####				Mechanized troops on tracked IFV			#####
+	#####															#####
+	#####################################################################
+	
+	### ARMORED CAVALRY (MECHANIZED) GROUND FORCES ON TRACKED IFV ###
+	entity = {
+		name = "RUS_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_bmp1_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+	
+	### ARMORED CAVALRY (MECHANIZED) GENDARMES (INTERNAL TROOPS) ON TRACKED IFV ###
+				### NOT IN GAME ###
+	entity = {
+		name = "RUS_gendarmes_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) MARINES ON TRACKED IFV ###
+	entity = {
+		name = "RUS_marines_mechanized_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) MOUNTAINEERS ON TRACKED IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "RUS_mountaineers_mechanized_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) PARATROOPERS ON TRACKED IFV ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) SPECIAL FORCES ON TRACKED IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "RUS_special_forces_mechanized_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### ARMORED CAVALRY (MECHANIZED) RECONS ON TRACKED IFV ###
+			### NOT IN GAME ###
+	entity = {
+		name = "RUS_recons_mechanized_on_ifv_tracked_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+
+	#########################################################################
+	#####																#####
+	#####	Generic airborne (paratroopers) on air-droppable vehicle	#####
+	#####																#####
+	#########################################################################
+
+	### MECHANIZED PARATROOPERS ON AIR-DROPPABLE TRACKED APC ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_apc_airdroppable_entity"
+		clone = "RUS_mechanized_on_apc_tracked_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_mtlb_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }		
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) PARATROOPERS ON AIR-DROPPABLE TRACKED IFV ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_ifv_airdroppable_entity"
+		clone = "RUS_mechanized_on_ifv_tracked_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_bmp1_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }		
+	}
+	
+	#####################################################################
+	#####															#####
+	#####	Generic heavy mechanized infantry	(armored cavalry)	#####
+	#####		Mechanized troops on heavy tracked APC | IFV		#####
+	#####															#####
+	#####################################################################
+	
+	### ARMORED CAVALRY (HEAVY MECHANIZED) GROUND FORCES ON TRACKED HEAVY APC -> HEAVY IFV ###
+
+	entity = {
+		name = "RUS_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_bmp1_entity" }
+		attach = { 	name = "infantry"			infantry = "RUS_infantry_entity" }
+	}
+	
+	### ARMORED CAVALRY (MECHANIZED) GENDARMES (INTERNAL TROOPS) ON TRACKED HEAVY APC -> HEAVY IFV ###
+				### NOT IN GAME ###
+	entity = {
+		name = "RUS_gendarmes_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_gendarmes_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) MARINES ON TRACKED HEAVY APC -> HEAVY IFV ###
+	entity = {
+		name = "RUS_marines_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_marines_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) MOUNTAINEERS ON TRACKED HEAVY APC -> HEAVY IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "RUS_mountaineers_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_mountaineers_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) PARATROOPERS ON TRACKED HEAVY APC -> HEAVY IFV ###
+	entity = {
+		name = "RUS_paratroopers_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_paratroopers_entity" }
+	}
+
+	### ARMORED CAVALRY (MECHANIZED) SPECIAL FORCES ON TRACKED HEAVY APC -> HEAVY IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "RUS_special_forces_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "RUS_special_forces_entity" }
+	}
+		
+	### ARMORED CAVALRY (MECHANIZED) RECONS ON TRACKED HEAVY APC -> HEAVY IFV ###
+			### NOT IN GAME ###
+	entity = {
+		name = "RUS_recons_mechanized_on_ifv_heavy_entity"
+		clone = "RUS_mechanized_on_ifv_heavy_entity"
+
+		attach = { 	name = "infantry"			infantry = "RUS_recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####					Generic tanks units						#####
+	#####															#####
+	#####################################################################
+	
+	### LIGHT TANKS ###
+	entity = {
+		name = "RUS_light_tank_entity"
+		clone = "tank_t55"
+		pdxmesh = "t55_mesh"
+	}
+	
+	### MEDIUM TANK (1950 - 1st gen) ###
+	entity = {
+		name = "RUS_medium_tank_entity"
+		clone = "tank_t55"
+		pdxmesh = "t55_mesh"
+	}
+	
+	### MAIN BATTLE TANK DEBUG (1960 - 2nd gen) ###
+	entity = {
+		name = "RUS_main_battle_tank_entity"
+		clone = "tank_t64"
+		pdxmesh = "t64_mesh"
+	}
+	
+	### TRANSITION MAIN BATTLE TANK (1970 - 2,5th gen) ###
+	entity = {
+		name = "RUS_transition_main_battle_tank_entity"
+		clone = "tank_t72"
+		pdxmesh = "t72_mesh"
+	}
+
+	### MODERN MAIN BATTLE TANK WITH GAS TURBINE ENGINE (1980 - 3th gen) ###
+	entity = {
+		name = "RUS_main_battle_tank_te_entity"
+		clone = "tank_t80"
+		pdxmesh = "t80_mesh"
+	}
+	
+	### MODERN MAIN BATTLE TANK (1990 - 3th gen) ###
+	entity = {
+		name = "RUS_modern_main_battle_tank_entity"
+		clone = "tank_t90"
+		pdxmesh = "t90_mesh"
+	}
+	
+	### MODERN MAIN BATTLE TANK (2010 - 3th gen) ###
+	entity = {
+		name = "RUS_future_main_battle_tank_entity"
+		clone = "tank_t90"
+		pdxmesh = "t90_mesh"
+	}
+	
+	#####################################################################
+	#####															#####
+	#####					Generic aircrafts units					#####
+	#####															#####
+	#####################################################################
+	
+
+	### FIGHTERS ###
+	entity = {
+		name = "RUS_fighter_aircraft_entity"
+		clone = "fighter_mig29"
+	}
+
+#	entity = {
+#		name = "RUS_vtol_aircraft_entity"
+#		clone = "fighter_mig29"
+#	}
+
+	entity = {
+		name = "RUS_drone_aircraft_entity"
+		clone = "fighter_mig29"
+	}
+
+	### GROUND ATTACK AIRCRAFT ###
+	entity = {
+		name = "RUS_ground_attack_aircraft_entity"
+		clone = "cas_su25"
+	}
+
+	### TACTICAL BOMBER AIRCRAFT ###
+	entity = {
+		name = "RUS_tactical_bomber_aircraft_entity"
+		clone = "bomber_su24m"
+	}
+	
+	### HEAVY BOMBER AIRCRAFT ###
+	entity = {
+		name = "RUS_heavy_bomber_aircraft_entity"
+		clone = "strategic_tu95"
+	}
+
+	### HELICOPTERS ###
+	entity = {
+		name = "RUS_attack_helicopter_entity"
+		clone = "helicopter_mi24"
+	}
+
+	entity = {
+		name = "RUS_assault_helicopter_entity"
+		clone = "helicopter_mi8"
+	}
+
+	entity = {
+		name = "RUS_transport_helicopter_entity"
+		clone = "helicopter_mi8"
+	}	

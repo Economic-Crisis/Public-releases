@@ -1,0 +1,1491 @@
+﻿######################
+## Economic Crisis ###
+######################
+## Germany events  ###
+###############################
+## Written by Maxsim&SuxrobGM #
+###############################
+
+add_namespace = germany
+
+# Germany Impact on EU
+country_event = {
+	id = germany.1
+	title = germany.1.t
+	desc = germany.1.d
+	picture = GFX_event_flag_german_and_EU
+	is_triggered_only = yes
+	option = {
+		name = germany.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.1.a"
+		ai_chance = { factor = 8 }
+		add_ideas = impact_of_GER
+	}
+	option = {
+		name = germany.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.1.b"
+		ai_chance = { factor = 2 }
+		add_opinion_modifier = { target = GER modifier = impact_on_eu }
+	}
+}
+
+# Germany Lead EU
+country_event = {
+	id = germany.2
+	title = germany.2.t
+	desc = germany.2.d
+	picture = GFX_event_flag_german_and_EU
+	is_triggered_only = yes
+	option = {
+		name = germany.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.2.a"
+		ai_chance = {
+			base = 4
+			modifier = { # More chance if government support is ample (conservatism)
+				has_government = democratic
+				democratic > 0.49
+				add = 2
+			}
+			modifier = { # More chance if government support is ample (liberalism)
+				has_government = liberalism
+				liberalism > 0.49
+				add = 2
+			}
+			modifier = { # More chance if government support is ample (social-democratic)
+				has_government = reformism
+				reformism > 0.49
+				add = 2
+			}
+			modifier = { # More chance if national unity is ample
+				has_stability > 0.49
+				add = 2
+			}
+		}
+		set_country_flag = german_puppet
+		effect_tooltip = {
+			GER = {	puppet = ROOT }
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					is_faction_leader = yes
+				}
+				remove_from_faction = ROOT
+			}
+		}
+		add_ideas = puppet_of_GER
+		custom_effect_tooltip = germany.2.adesc
+		if = { # Nationalists will start civil war
+			limit = {
+				OR = {
+					AND = {
+						has_government = democratic
+						democratic > 0.49
+					}
+					AND = {
+						has_government = liberalism
+						liberalism > 0.49
+					}
+					AND = {
+						has_government = reformism
+						reformism > 0.49
+					}
+				}
+				has_stability > 0.49
+			}
+			start_civil_war = { ideology = fascism size = 0.2 }
+		}
+		if = { # More size if national unity is not ample
+			limit = {
+				OR = {
+					AND = {
+						has_government = democratic
+						democratic > 0.49
+					}
+					AND = {
+						has_government = liberalism
+						liberalism > 0.49
+					}
+					AND = {
+						has_government = reformism
+						reformism > 0.49
+					}
+				}
+				has_stability < 0.5
+			}
+			start_civil_war = { ideology = fascism size = 0.4 }
+		}
+		if = { # More size if government support is not ample
+			limit = {
+				OR = {
+					AND = {
+						has_government = democratic
+						democratic < 0.5
+					}
+					AND = {
+						has_government = liberalism
+						liberalism < 0.5
+					}
+					AND = {
+						has_government = reformism
+						reformism < 0.5
+					}
+				}
+				has_stability > 0.49
+			}
+			start_civil_war = { ideology = fascism size = 0.4 }
+		}
+		if = { # Max size
+			limit = {
+				OR = {
+					AND = {
+						has_government = democratic
+						democratic < 0.5
+					}
+					AND = {
+						has_government = liberalism
+						liberalism < 0.5
+					}
+					AND = {
+						has_government = reformism
+						reformism < 0.5
+					}
+				}
+				has_stability < 0.5
+			}
+			start_civil_war = { ideology = fascism size = 0.6 }
+		}
+	}
+	option = {
+		name = germany.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.2.b"
+		remove_ideas = eu_member
+		add_opinion_modifier = { target = GER modifier = leaded_EU }
+		GER = { add_opinion_modifier = { target = ROOT modifier = no_eu_more } }
+		ai_chance = { factor = 2 }
+	}
+}
+# Unity Europe
+country_event = {
+	id = germany.3
+	title = germany.3.t
+	desc = germany.3.d
+	is_triggered_only = yes
+
+	#trigger = {
+	#	has_idea = eu_member
+	#	EUR = {
+	#		exists = yes
+	#		has_capitulated = no
+	#	}
+	#}
+	#
+	#mean_time_to_happen = {
+	#	days = 14
+	#}
+
+	option = {
+		name = germany.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.3.a"
+		ai_chance = {
+			factor = 6
+		}
+		every_owned_state = {
+			add_core_of = GER
+		}
+		GER = {
+			if = {
+				limit = {
+					GER = {	is_ai = no	}
+				}
+				custom_effect_tooltip = GAME_OVER_TT
+			}
+			if = {
+				limit = {
+					is_ai = no
+					GER = {	is_ai = yes	}
+				}
+				change_tag_from = ROOT
+			}
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+	}
+	option = {
+		name = germany.3.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.3.b"
+		ai_chance = { factor = 4 }
+		GER = {	add_opinion_modifier = { target = ROOT modifier = no_eu_more } }
+	}
+}
+
+# Revolt of Nationalists (EU)
+country_event = {
+	id = germany.4
+	title = germany.4.t
+	desc = germany.4.d
+	picture = GFX_event_civilwar6
+	is_triggered_only = yes
+	option = {
+		name = germany.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.4.a"
+		start_civil_war = { ideology = fascism size = 0.2 }
+		hidden_effect = {
+			every_country = {
+				limit = {
+					original_tag = GER
+					NOT = { tag = GER }
+					has_government = fascism
+				}
+				set_stability = 0.9
+			}
+		}
+	}
+}
+
+# Germany Puppets Country (Hidden)
+country_event = {
+	id = germany.5
+	hidden = yes
+	trigger = {
+		has_country_flag = german_puppet
+		has_civil_war = no
+	}
+	mean_time_to_happen = {	days = 1 }
+	fire_only_once = yes
+	immediate = {
+		GER = {	puppet = ROOT }
+	}
+}
+# United Europe (Hidden)
+country_event = {
+	id = germany.6
+	hidden = yes
+	trigger = {
+		has_idea = eu_member
+		GER = {
+			has_country_flag = GER_lead_eurounion
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	mean_time_to_happen = {	days = 4 }
+	fire_only_once = yes
+	immediate = {
+		random_list = {
+			10 = { country_event = { id = germany.3 days = 1 }	}
+			10 = { country_event = { id = germany.3 days = 2 }	}
+			10 = { country_event = { id = germany.3 days = 3 }	}
+			10 = { country_event = { id = germany.3 days = 4 }	}
+			10 = { country_event = { id = germany.3 days = 5 }	}
+			10 = { country_event = { id = germany.3 days = 6 }	}
+			10 = { country_event = { id = germany.3 days = 7 }	}
+			10 = { country_event = { id = germany.3 days = 8 }	}
+			10 = { country_event = { id = germany.3 days = 9 }	}
+			10 = { country_event = { id = germany.3 days = 10 }	}
+		}
+	}
+}
+
+# Exit EU
+country_event = {
+	id = germany.7
+	title = germany.7.t
+	desc = germany.7.d
+	picture = GFX_event_flag_EU
+	is_triggered_only = yes
+	option = {
+		name = germany.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.7.a"
+		ai_chance = { factor = 8 }
+		if = {
+			limit = { fascism < 0.1	}
+			country_event = { id = germany.9 days = 1 }
+			add_stability = -0.15
+		}
+		if = {
+			limit = {
+				fascism > 0.0999
+				fascism < 0.2
+			}
+			random_list = {
+				20 = {
+					country_event = { id = germany.8 days = 1 }
+					add_stability = -0.25
+				}
+				80 = {
+					country_event = { id = germany.9 days = 1 }
+					add_stability = -0.12
+				}
+			}
+		}
+		if = {
+			limit = {
+				fascism > 0.1999
+				fascism < 0.3
+			}
+			random_list = {
+				40 = {
+					country_event = { id = germany.8 days = 1 }
+					add_stability = -0.2
+				}
+				60 = {
+					country_event = { id = germany.9 days = 1 }
+					add_stability = -0.09
+				}
+			}
+		}
+		if = {
+			limit = {
+				fascism > 0.2999
+				fascism < 0.4
+			}
+			random_list = {
+				60 = {
+					country_event = { id = germany.8 days = 1 }
+					add_stability = -0.15
+				}
+				40 = {
+					country_event = { id = germany.9 days = 1 }
+					add_stability = -0.06
+				}
+			}
+		}
+		if = {
+			limit = {
+				fascism > 0.3999
+				fascism < 0.5
+			}
+			random_list = {
+				80 = {
+					country_event = { id = germany.8 days = 1 }
+					add_stability = -0.1
+				}
+				20 = {
+					country_event = { id = germany.9 days = 1 }
+					add_stability = -0.03
+				}
+			}
+		}
+		if = {
+			limit = { fascism > 0.4999	}
+			add_stability = -0.05
+			country_event = { id = germany.8 days = 1 }
+		}
+	}
+
+	option = {
+		name = germany.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.7.b"
+		ai_chance = { factor = 2 }
+		if = {
+			limit = { fascism < 0.1 }
+			add_stability = -0.5
+			add_political_power = -250
+		}
+		if = {
+			limit = {
+				fascism > 0.0999
+				fascism < 0.2
+			}
+			add_stability = -0.4
+			add_political_power = -200
+		}
+		if = {
+			limit = {
+				fascism > 0.1999
+				fascism < 0.3
+			}
+			add_stability = -0.3
+			add_political_power = -150
+		}
+		if = {
+			limit = {
+				fascism > 0.2999
+				fascism < 0.4
+			}
+			add_stability = -0.2
+			add_political_power = -100
+		}
+		if = {
+			limit = {
+				fascism > 0.3999
+				fascism < 0.5
+			}
+			add_stability = -0.1
+			add_political_power = -50
+		}
+		add_ideas = GER_exits_eu
+		hidden_effect = { news_event = { id = gernews.10 days = 3 }	}
+	}
+}
+
+# Referendum: Germany Exits EU
+country_event = {
+	id = germany.8
+	title = germany.8.t
+	desc = germany.8.d
+	picture = GFX_event_parliament_EU
+	is_triggered_only = yes
+	option = {
+		name = germany.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.8.a"
+		add_ideas = GER_exits_eu
+		hidden_effect = { news_event = { id = gernews.7 days = 1 } }
+	}
+}
+
+# Referendum: Germany Stays EU
+country_event = {
+	id = germany.9
+	title = germany.9.t
+	desc = germany.9.d
+	picture = GFX_event_to_EU
+	is_triggered_only = yes
+	option = {
+		name = germany.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.9.a"
+		ai_chance = { factor = 0 }
+		hidden_effect = { news_event = { id = gernews.8 days = 1 } }
+	}
+
+	option = {
+		ai_chance = {
+			factor = 1
+		}
+		name = germany.9.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.9.b"
+		add_stability = -0.05
+		add_political_power = -50
+		country_event = { id = germany.7 days = 365 }
+		hidden_effect = { news_event = { id = gernews.9 days = 1 } }
+	}
+}
+
+# Claims on Poland
+country_event = {
+	id = germany.10
+	title = germany.10.t
+	desc = germany.10.d
+	picture = GFX_event_german_territories
+	is_triggered_only = yes
+	option = {
+		name = germany.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.10.a"
+		ai_chance = { factor = 4 }
+		GER = {
+			country_event = germany.11
+			effect_tooltip = {
+				transfer_state = 63
+				transfer_state = 66
+				transfer_state = 67
+				transfer_state = 85
+				transfer_state = 86
+				transfer_state = 944
+                transfer_state = 1095
+			}
+		}
+	}
+
+	option = {
+		name = germany.10.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.10.b"
+		GER = {
+			country_event = germany.12
+			effect_tooltip = {
+				create_wargoal = {
+					target = POL
+					type = take_state_focus
+					generator = { 63 66 67 85 86 944 1095 }
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = POL
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = POL
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = POL
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = POL
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+	}
+}
+
+# Poland Ceded West
+country_event = {
+	id = germany.11
+	title = germany.11.t
+	desc = germany.11.d
+	is_triggered_only = yes
+	option = {
+		name = germany.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.11.a"
+		transfer_state = 63
+		transfer_state = 66
+		transfer_state = 67
+		transfer_state = 85
+		transfer_state = 86
+		transfer_state = 944
+        transfer_state = 1095
+		add_state_core = 63
+		add_state_core = 66
+		add_state_core = 67
+		add_state_core = 85
+		add_state_core = 86
+		add_state_core = 944
+        add_state_core = 1095
+	}
+}
+
+# Poland Refused Ceding West
+country_event = {
+	id = germany.12
+	title = germany.12.t
+	desc = germany.12.d
+	is_triggered_only = yes
+	option = {
+		name = germany.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.12.a"
+		create_wargoal = {
+			target = POL
+			type = take_state_focus
+			generator = { 63 66 67 85 86 944 1095 }
+		}
+		set_country_flag = poland_refused_ceding_west
+	}
+}
+
+# Baltic Sea Bases
+country_event = {
+	id = germany.13
+	title = germany.13.t
+	desc = germany.13.d
+	picture = GFX_event_puppet_sweden
+	is_triggered_only = yes
+	trigger = { 
+	    tag = SWE
+	}
+	option = {
+		name = germany.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.13.a"
+		ai_chance = { factor = 5 }
+		GER = {
+			puppet = SWE
+			country_event = germany.14
+		}
+		hidden_effect = { add_popularity = { ideology = fascism popularity = 25 } }
+		if = {
+			limit = { fascism > 0.25 }
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			start_civil_war = { ideology = neutrality size = 0.2 }
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = SWE
+				is_faction_leader = yes
+				NOT = {	is_in_faction_with = GER }
+			}
+			remove_from_faction = SWE
+		}
+	}
+
+	option = {
+		name = germany.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.13.b"
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 1
+				any_country = {
+					is_in_faction_with = SWE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					is_in_faction_with = SWE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					has_guaranteed = SWE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					has_guaranteed = SWE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+		GER = {
+			country_event = germany.15
+			effect_tooltip = {
+				create_wargoal = {
+					target = SWE
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+}
+
+# Sweden Became Puppet
+country_event = {
+	id = germany.15
+	title = germany.15.t
+	desc = germany.15.d
+	is_triggered_only = yes
+	option = {
+		name = germany.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.15.a"
+		effect_tooltip = { puppet = SWE	}
+	}
+}
+
+# Sweden Refused to Become Puppet
+country_event = {
+	id = germany.16
+	title = germany.16.t
+	desc = germany.16.d
+	is_triggered_only = yes
+	option = {
+		name = germany.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.16.a"
+		create_wargoal = {
+			target = SWE
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# Northern Sea Bases
+country_event = {
+	id = germany.17
+	title = germany.17.t
+	desc = germany.17.d
+	picture = GFX_event_german_territories
+	is_triggered_only = yes
+	trigger = { 
+	    tag = NOR
+	}
+	option = {
+		name = germany.17.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.17.a"
+		ai_chance = { factor = 1 }
+		GER = {
+			puppet = NOR
+			country_event = germany.18
+		}
+		hidden_effect = { add_popularity = { ideology = fascism popularity = 30 } }
+		if = {
+			limit = { fascism > 0.2	}
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			start_civil_war = { ideology = neutrality size = 0.4 }
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = NOR
+				is_faction_leader = yes
+				NOT = {	is_in_faction_with = GER }
+			}
+			remove_from_faction = NOR
+		}
+	}
+	option = {
+		name = germany.17.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.17.b"
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 1
+				any_country = {
+					is_in_faction_with = NOR
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					is_in_faction_with = NOR
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					has_guaranteed = NOR
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 1
+				any_country = {
+					has_guaranteed = NOR
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+		GER = {
+			country_event = germany.19
+			effect_tooltip = {
+				create_wargoal = {
+					target = NOR
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+}
+
+# Norway Became Puppet
+country_event = {
+	id = germany.18
+	title = germany.18.t
+	desc = germany.18.d
+	picture = GFX_event_norway_puppet
+	is_triggered_only = yes
+	option = {
+		name = germany.18.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.18.a"
+		effect_tooltip = {
+			puppet = NOR
+		}
+	}
+}
+
+# Norwar Refused to Became Puppet
+country_event = {
+	id = germany.19
+	title = germany.19.t
+	desc = germany.19.d
+	is_triggered_only = yes
+	option = {
+		name = germany.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.19.a"
+		create_wargoal = {
+			target = NOR
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# Alliance with Russia
+country_event = {
+	id = germany.20
+	title = germany.20.t
+	desc = germany.20.d
+	trigger = { has_global_flag = ger_rus_friend }
+	mean_time_to_happen = { days = 400 }
+	fire_only_once = yes
+	option = {
+		name = germany.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.20.a"
+		trigger = {	NOT = { has_war_with = RUS	} }
+		ai_chance = { factor = 1 }
+		RUS = {
+			country_event = { id = germany.21 days = 1 }
+		}
+		if = {
+			limit = {
+				is_faction_leader = yes
+				any_country = {
+					is_in_faction_with = GER
+					has_war_with = RUS
+				}
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					has_war_with = RUS
+				}
+				GER = {	remove_from_faction = PREV	}
+			}
+		}
+		if = {
+			limit = {
+				is_faction_leader = no
+				is_in_faction = yes
+				any_country = {
+					is_in_faction_with = GER
+					has_war_with = RUS
+				}
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					is_faction_leader = yes
+				}
+				remove_from_faction = GER
+			}
+		}
+	}
+
+	option = {
+		name = germany.20.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.20.b"
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 9
+				OR = {
+					any_country = {
+						is_in_faction_with = GER
+						has_war_with = RUS
+					}
+					any_country = {
+						is_in_faction_with = RUS
+						has_war_with = GER
+					}
+				}
+			}
+		}
+	}
+}
+
+# Alliance with Germany (Russia)
+country_event = {
+	id = germany.21
+	title = germany.21.t
+	desc = germany.21.d
+	is_triggered_only = yes
+	option = {
+		name = germany.21.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.21.a"
+		ai_chance = { factor = 1 }
+		GER = {
+			country_event = { id = germany.22 days = 1 }
+			effect_tooltip = {
+				add_to_faction = RUS
+			}
+		}
+		every_country = {
+			limit = {
+				RUS = {	is_faction_leader = yes	}
+				is_in_faction_with = RUS
+				NOT = {
+					any_country = {
+						has_war_with = PREV
+						is_in_faction_with = GER
+					}
+				}
+			}
+			effect_tooltip = { GER = {	add_to_faction = PREV }	}
+			set_country_flag = ger_rus_alliance_member
+		}
+	}
+	option = {
+		name = germany.21.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.21.b"
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 9
+				OR = {
+					any_country = {
+						is_in_faction_with = GER
+						has_war_with = RUS
+					}
+					any_country = {
+						is_in_faction_with = RUS
+						has_war_with = GER
+					}
+				}
+			}
+		}
+		GER = {
+			country_event = { id = germany.23 days = 1 }
+		}
+	}
+}
+
+# Russia Accepted Alliance
+country_event = {
+	id = germany.22
+	title = germany.22.t
+	desc = germany.22.d
+	is_triggered_only = yes
+	option = {
+		name = germany.22.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.22.a"
+		if = {
+			limit = { is_faction_leader = no }
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+					is_in_faction_with = GER
+				}
+				remove_from_faction = GER
+			}
+			create_faction = "axis"
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_country_flag = ger_rus_alliance_member
+					tag = RUS
+				}
+			}
+			GER = {	add_to_faction = PREV }
+		}
+	}
+}
+# Russia Refused Alliance
+country_event = {
+	id = germany.23
+	title = germany.23.t
+	desc = germany.23.d
+	is_triggered_only = yes
+	option = {
+		name = germany.23.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.23.a"
+	}
+}
+# Germany Demands Kenigsberg
+country_event = {
+	id = germany.24
+	title = germany.24.t
+	desc = germany.24.d
+	picture = GFX_event_kaliningrad
+	is_triggered_only = yes
+	trigger = { 
+	    tag = RUS
+	}
+	option = {
+		name = germany.24.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.24.a"
+		GER = {
+			country_event = germany.25
+			effect_tooltip = {	transfer_state = 5	}
+		}
+	}
+	option = {
+		name = germany.24.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.24.b"
+		GER = {
+			country_event = germany.26
+			effect_tooltip = {
+				create_wargoal = {
+					target = RUS
+					type = take_state_focus
+					generator = { 5 }
+				}
+			}
+		}
+	}
+}
+# Russia Ceded Kenigsberg
+country_event = {
+	id = germany.25
+	title = germany.25.t
+	desc = germany.25.d
+	picture = GFX_event_german_territories
+	is_triggered_only = yes
+	option = {
+		name = germany.25.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.25.a"
+		transfer_state = 5
+	}
+}
+# Russia Refused to Cede Kenigsberg
+country_event = {
+	id = germany.26
+	title = germany.26.t
+	desc = germany.26.d
+	picture = GFX_event_german_territories
+	is_triggered_only = yes
+	option = {
+		name = germany.25.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.25.b"
+		create_wargoal = {
+			target = RUS
+			type = take_state_focus
+			generator = { 5 }
+		}
+	}
+}
+# Confrontation with Germany (Russia)
+country_event = {
+	id = germany.27
+	title = germany.27.t
+	desc = germany.27.d
+	trigger = {
+		tag = RUS
+		has_global_flag = ger_rus_confrontation
+	}
+	mean_time_to_happen = { days = 7 }
+	fire_only_once = yes
+	option = {
+		name = germany.27.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.27.a"
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				is_in_faction_with = GER
+			}
+		}
+		if = {
+			limit = { is_in_faction_with = GER }
+			every_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = GER
+						tag = GER
+					}
+					is_in_faction_with = RUS
+					is_faction_leader = yes
+					NOT = { tag = RUS }
+				}
+				remove_from_faction = RUS
+			}
+			if = {
+				limit = { is_faction_leader = yes }
+				remove_from_faction = GER
+			}
+		}
+		declare_war_on = {
+			target = GER
+			type = puppet_wargoal_focus
+		}
+	}
+
+	option = {
+		name = germany.27.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.27.b"
+		ai_chance = { factor = 1 }
+		add_stability = -0.2
+		add_political_power = -200
+	}
+}
+
+# Austria asked about again Anschluss
+country_event = {
+	id = germany.28
+	title = germany.28.t
+	desc = germany.28.d
+	picture = GFX_event_flag_AUS
+	
+	is_triggered_only = yes
+	trigger = { 
+	    tag = AUS
+	}
+	option = { # Accept
+		name = germany.28.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.28.a"
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -25
+				GER = { has_army_size = { size < 40 } }
+			}
+			modifier = {
+				add = 100
+				GER = { has_army_size = { size > 39 } }
+			}
+		}
+		GER = {
+			country_event = { hours = 2 id = germany.30 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = germany.28.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.28.b"
+		ai_chance = {
+			base = 10			
+			modifier = {
+				factor = 0
+				GER = { has_army_size = { size > 39 } }
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				add = 20
+				GER = { has_army_size = { size < 30 } }
+			}
+		}
+		GER = {
+			add_opinion_modifier = { target = ROOT modifier = actions_very_negative }
+			country_event = { hours = 2 id = germany.29 }
+			if = { limit = { is_in_faction_with = AUS }
+				remove_from_faction = AUS
+			}
+		}
+	}
+}
+
+# Austria refuses Anschluss
+country_event = {
+	id = germany.29
+	title = germany.29.t
+	desc = germany.29.d
+	picture = GFX_event_german_army2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.29.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.29.a"
+		add_state_claim = 4
+		add_state_claim = 152
+		add_state_claim = 153
+		create_wargoal = {
+			type = take_state_focus
+			target = AUS
+			generator = { 4 152 153 }
+		}
+	}
+}
+
+# Austrian Anschluss Completed
+country_event = {
+	id = germany.30
+	title = germany.30.t
+	desc = germany.30.d
+	picture = GFX_event_german_flag
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.30.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.30.a"
+		4 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		152 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		153 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+
+		annex_country = { target = AUS transfer_troops = yes }
+		add_political_power = 75
+		add_named_threat = { threat = 5 name = GER_anchluss_again }
+		set_country_flag = AUS_annexed
+		news_event = { hours = 6 id = gernews.15 }
+	}
+}
+
+# Claims on Sudetes
+country_event = {
+	id = germany.31
+	title = germany.31.t
+	desc = germany.31.d
+	picture = GFX_event_german_territories
+	is_triggered_only = yes
+	trigger = { 
+	    tag = CZE
+	}
+	option = {
+		name = germany.31.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.31.a"
+		ai_chance = { factor = 4 }
+		GER = {
+			country_event = germany.32
+			effect_tooltip = {
+				transfer_state = 69
+				transfer_state = 74
+			}
+		}
+	}
+
+	option = {
+		name = germany.31.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.31.b"
+		GER = {
+			country_event = germany.33
+			effect_tooltip = {
+				create_wargoal = {
+					target = CZE
+					type = take_state_focus
+					generator = { 69 74 }
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = CZE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = CZE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = CZE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = CZE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+	}
+}
+
+# Sudetes YES
+country_event = {
+	id = germany.32
+	title = germany.32.t
+	desc = germany.32.d
+	is_triggered_only = yes
+	option = {
+		name = germany.32.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.32.a"
+		transfer_state = 69
+		transfer_state = 74
+		add_state_core = 69
+		add_state_core = 74
+	}
+}
+
+# Sudetes NO
+country_event = {
+	id = germany.33
+	title = germany.33.t
+	desc = germany.33.d
+	is_triggered_only = yes
+	option = {
+		name = germany.33.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.33.a"
+		create_wargoal = {
+			target = CZE
+			type = take_state_focus
+			generator = { 69 74 }
+		}
+		set_country_flag = czech_republic_refused_ceding
+	}
+}
+
+# Claims on Czech Republic
+country_event = {
+	id = germany.34
+	title = germany.34.t
+	desc = germany.34.d
+	picture = GFX_event_event_chehia
+	is_triggered_only = yes
+	trigger = { 
+	    tag = CZE
+	}
+	option = {
+		name = germany.34.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.34.a"
+		ai_chance = { factor = 4 }
+		GER = {
+			country_event = germany.35
+		}
+	}
+
+	option = {
+		name = germany.34.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.34.b"
+		GER = {
+			country_event = germany.36
+			effect_tooltip = {
+				create_wargoal = {
+					target = CZE
+					type = take_state_focus
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = CZE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = CZE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = CZE
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = CZE
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+	}
+}
+
+# Czech Republic YES
+country_event = {
+	id = germany.35
+	title = germany.35.t
+	desc = germany.35.d
+	is_triggered_only = yes
+	option = {
+		name = germany.35.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.35.a"
+		annex_country = { target = CZE  transfer_troops = yes }
+	}
+}
+
+# Czech Republic NO
+country_event = {
+	id = germany.36
+	title = germany.36.t
+	desc = germany.36.d
+	is_triggered_only = yes
+	option = {
+		name = germany.36.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.36.a"
+	}
+}
+
+# Claims on Slovakia
+country_event = {
+	id = germany.37
+	title = germany.37.t
+	desc = germany.37.d
+	picture = GFX_event_slovakia
+	is_triggered_only = yes
+	trigger = { 
+	    tag = SLO
+	}
+	option = {
+		name = germany.37.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.37.a"
+		ai_chance = { factor = 4 }
+		GER = {
+			country_event = germany.37
+		}
+	}
+
+	option = {
+		name = germany.37.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.37.b"
+		GER = {
+			country_event = germany.37
+			effect_tooltip = {
+				create_wargoal = {
+					target = SLO
+					type = take_state_focus
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = SLO
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					is_in_faction_with = SLO
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = SLO
+					strength_ratio = { tag = GER ratio > 0.5 }
+				}
+			}
+			modifier = {
+				add = 2
+				any_country = {
+					has_guaranteed = SLO
+					strength_ratio = { tag = GER ratio > 1.0 }
+				}
+			}
+		}
+	}
+}
+
+# Slovakia YES
+country_event = {
+	id = germany.38
+	title = germany.38.t
+	desc = germany.38.d
+	is_triggered_only = yes
+	option = {
+		name = germany.38.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.38.a"
+		puppet = SLO
+	    set_autonomy = { target = SLO autonomy_state = satellite_state }
+	}
+}
+
+# Slovakia NO
+country_event = {
+	id = germany.39
+	title = germany.39.t
+	desc = germany.39.d
+	is_triggered_only = yes
+	option = {
+		name = germany.36.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): germany.39.a"
+		annex_country = { target = SLO transfer_troops = yes }
+	}
+}

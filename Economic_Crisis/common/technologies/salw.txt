@@ -1,0 +1,1346 @@
+technologies = {
+
+	@1950 = -1
+	@1960 = 2
+	@1970 = 5
+	@1980 = 8
+	@1985 = 11
+	@1990 = 14
+	@1995 =	17
+	@2000 = 20
+	@2005 = 23
+	@2010 = 26
+	@2015 = 29
+	@2020 = 32
+	@2025 = 35
+	@2030 = 38
+	
+	
+	# Ручное вооружение СКС / M-14
+	army_salw = {
+
+		enable_equipments = {
+			army_salw_equipment_0
+		}
+		
+		# Infantry small arms and light weapons
+		path = {
+			leads_to_tech = army_salw_1
+			research_cost_coeff = 1
+		}
+
+		# Infantry-portable fire support weapon
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_1
+			research_cost_coeff = 1
+		}
+		
+		# Man-portable anti-air systems
+		path = {
+			leads_to_tech = tech_infantry_mpads_1
+			research_cost_coeff = 1
+		}
+
+		# Man-portable anti-tank systems
+		path = {
+			leads_to_tech = tech_infantry_mpats_1
+			research_cost_coeff = 1
+		}
+		
+		# eans for night battle
+		path = {
+			leads_to_tech = tech_infantry_night_battle_1
+			research_cost_coeff = 1
+		}
+			
+		research_cost = 1.1
+		start_year = 1950
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = -3 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 69
+		}
+	}
+	
+	# Infantry Small Arms and Light Weapons (SALW)
+	# Общевойсковое стрелковое оружие I (АК / AR-10)
+	army_salw_1 = { 
+
+		enable_equipments = {
+			army_salw_equipment_1
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_1
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1955
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 1 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 68
+		}
+	}	
+	
+	army_salw_2 = { #Общевойсковое стрелковое оружие II (АКМ / M-16)
+
+		enable_equipments = {
+			army_salw_equipment_2
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_2
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_3
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 1962
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 4 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# Общевойсковое стрелковое оружие III (АК-74 / M16A1)
+	army_salw_3 = { 
+
+		enable_equipments = {
+			army_salw_equipment_3
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_3
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_4
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 1973
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 7 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	army_salw_4 = { #cat_infantry_weapons_IV #Общевойсковое стрелковое оружие IV («Абакан» / M16A2)
+
+		enable_equipments = {
+			army_salw_equipment_4
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_4
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_5
+			research_cost_coeff = 1
+		}
+
+		
+		research_cost = 2
+		start_year = 1982
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 10 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	army_salw_5 = { #Общевойсковое стрелковое оружие V (АК-74M / M-16A4)
+
+		enable_equipments = {
+			army_salw_equipment_5
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_5
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1994
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 13 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	army_salw_6 = { #Общевойсковое стрелковое оружие VI (АК-107 / M27 IAR)
+
+		enable_equipments = {
+			army_salw_equipment_6
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_6
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_7
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2001
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 16 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	army_salw_7 = { #Общевойсковое стрелковое оружие VIII ( / )
+
+		enable_equipments = {
+			army_salw_equipment_7
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_7
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_8
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2012
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 19 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	army_salw_8 = { #Общевойсковое стрелковое оружие VII (AK-12 / SCAR)
+
+		enable_equipments = {
+			army_salw_equipment_8
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_8
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_9
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2015
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 22 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	army_salw_9 = { #Общевойсковое стрелковое оружие IX ( / )
+
+		enable_equipments = {
+			army_salw_equipment_9
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_9
+			research_cost_coeff = 0.9
+		}
+
+		path = {
+			leads_to_tech = army_salw_10
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 25 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	army_salw_10 = { #Общевойсковое стрелковое оружие X ( / )
+
+		enable_equipments = {
+			army_salw_equipment_10
+		}
+				
+		path = {
+			leads_to_tech = special_salw_tech_10
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = salw_folder
+			position = { x = -3 y = 28 }
+		}
+		
+		categories = {
+			cat_infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	# Special Forces Small Arms and Light Weapons (SALW)
+	
+	special_salw_tech_1 = { #Cтрелковое оружие спецподразделений I(___ / XM177E1)
+		
+		enable_equipments = {
+		   special_salw_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = special_salw_tech_1
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.5
+		start_year = 1964
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 2 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	special_salw_tech_2 = { #Cтрелковое оружие спецподразделений II (___ / Colt Commando Model 733)
+
+		enable_equipments = {
+		    special_salw_equipment_2
+		}
+		
+		path = {
+			leads_to_tech = special_salw_tech_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1975
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 5 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	
+	special_salw_tech_3 = { #Cтрелковое оружие спецподразделений III (___ / M-4)
+
+		enable_equipments = {
+		    special_salw_equipment_3
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1984
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 8 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	
+	special_salw_tech_4 = { #Cтрелковое оружие спецподразделений IV (___ / M-4A1)
+		
+		enable_equipments = {
+		    special_salw_equipment_4
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1996
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 11 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	special_salw_tech_5 = { #Cтрелковое оружие спецподразделений V (___ / M-416)
+
+		enable_equipments = {
+		    special_salw_equipment_5
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2005
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 14 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	special_salw_tech_6 = { #Cтрелковое оружие спецподразделений VI (___ / M-416A5)
+
+		enable_equipments = {
+		    special_salw_equipment_6
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_7
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2009
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 17 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# Cтрелковое оружие спецподразделений VII
+	special_salw_tech_7 = { 
+
+		enable_equipments = {
+		    special_salw_equipment_7
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_8
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2013
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 20 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	special_salw_tech_8 = { #Cтрелковое оружие спецподразделений VIII (___ / ___)
+
+		enable_equipments = {
+		     special_salw_equipment_8
+		}		
+
+		path = {
+			leads_to_tech = special_salw_tech_9
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2016
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 23 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+		
+	special_salw_tech_9 = { #Cтрелковое оружие спецподразделений IX (___ / ___)
+
+		enable_equipments = {
+		    special_salw_equipment_9
+		}
+		
+		path = {
+			leads_to_tech = special_salw_tech_10
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2021
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 26 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	special_salw_tech_10 = { #Cтрелковое оружие спецподразделений IX (___ / ___)
+
+		enable_equipments = {
+		    special_salw_equipment_10
+		}	
+		
+		research_cost = 1.5
+		start_year = 2026
+		folder = {
+			name = salw_folder
+			position = { x = -1 y = 29 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# All infantry-portable fire support weapon
+	# Ветка переносные средства огневой поддержки пехоты 
+	
+	tech_infantry_ipfsw_1 = {
+		
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_2
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.3
+		start_year = 1963
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 2 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	tech_infantry_ipfsw_2 = {
+
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.3
+		start_year = 1970
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 5 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_ipfsw_3 = { 
+
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1980
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 8 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_ipfsw_4 = {
+		
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1986
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 11 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_ipfsw_5 = {
+
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_ipfsw_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1993
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 14 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_ipfsw_6 = {
+
+		category_all_infantry = {
+			defense = 0.05
+			breakthrough = 0.05
+		}		
+
+		#path = {
+		#	leads_to_tech = tech_infantry_ipfsw_7
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.3
+		start_year = 2001
+		folder = {
+			name = salw_folder
+			position = { x = 1 y = 17 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	# All infantry & special forces man-portable anti-tank systems (MPATS)
+	
+	### Ветка пехотного противотанкового вооружения
+	
+	tech_infantry_mpats_1 = {
+		enable_subunits = {
+            ATGM_subunit
+        }
+		
+		enable_equipments = {
+			ATGM_salw_equipment_0
+		}
+		
+		# category_all_infantry = {
+			# hard_attack = 0.3
+			# ap_attack = 0.15
+		# }
+		
+		path = {
+			leads_to_tech = tech_infantry_mpats_2
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.3
+		start_year = 1964
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 2 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	tech_infantry_mpats_2 = {
+
+		enable_equipments = {
+			ATGM_salw_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mpats_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.3
+		start_year = 1971
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 5 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_mpats_3 = { 
+
+		enable_equipments = {
+			ATGM_salw_equipment_2
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_mpats_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1980
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 8 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_mpats_4 = {
+		
+		enable_equipments = {
+			ATGM_salw_equipment_3
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_mpats_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1987
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 11 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_mpats_5 = {
+
+		enable_equipments = {
+			ATGM_salw_equipment_4
+		}	
+
+		path = {
+			leads_to_tech = tech_infantry_mpats_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1994
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 14 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	tech_infantry_mpats_6 = {
+
+		enable_equipments = {
+			ATGM_salw_equipment_5
+		}	
+
+		#path = {
+		#	leads_to_tech = tech_infantry_mpats_7
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.3
+		start_year = 2002
+		folder = {
+			name = salw_folder
+			position = { x = 3 y = 17 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	# All infantry & special forces man-portable air-defense system (MPADS)
+	
+	# ПЗРК I (Стрела-2 / FIM-43 Redeye /Blowpipe / HN-5)
+	
+	tech_infantry_mpads_1 = {
+		enable_subunits = {
+            MANPADS_subunit
+			portable_aa_ml
+			light_self_propelled_aa_ml
+			motorized_self_propelled_aa_ml
+			anti_air_brigade
+        }
+		
+		enable_equipments = {
+			MANPADS_salw_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mpads_2
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.3
+		start_year = 1965
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 2 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	# ПЗРК II(Стрела-3 / FIM-43D /RBS-70 / HN-5B )
+	tech_infantry_mpads_2 = {
+
+		enable_equipments = {
+			MANPADS_salw_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mpads_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.3
+		start_year = 1972
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 5 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# ПЗРК III(Игла-1 / FIM-92 Stinger /Javelin / QW-2)
+	tech_infantry_mpads_3 = { 
+
+		enable_equipments = {
+			MANPADS_salw_equipment_2
+		}	
+
+		path = {
+			leads_to_tech = tech_infantry_mpads_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1981
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 8 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# ПЗРК IV (Игла / FIM-92B / QW-3 Starburst / Mistral )
+	tech_infantry_mpads_4 = {
+		
+		enable_equipments = {
+			MANPADS_salw_equipment_3
+		}	
+
+		path = {
+			leads_to_tech = tech_infantry_mpads_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1988
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 11 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# ПЗРК V(Игла-Н / FIM-92E /Starstreak / FN-6)
+	tech_infantry_mpads_5 = {
+
+		enable_equipments = {
+			MANPADS_salw_equipment_4
+		}		
+
+		path = {
+			leads_to_tech = tech_infantry_mpads_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1995
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 14 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# ПЗРК VI(Игла-C / FIM-92D /FN-16 )
+	tech_infantry_mpads_6 = {
+
+		enable_equipments = {
+			MANPADS_salw_equipment_5
+		}		
+
+		#path = {
+		#	leads_to_tech = tech_infantry_mpads_7
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.3
+		start_year = 2003
+		folder = {
+			name = salw_folder
+			position = { x = 5 y = 17 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	
+	
+	####										####
+	## Ветки про улучшение ночной атаки пехоты	  ##
+	####										####
+	# I
+	tech_infantry_night_battle_1 = {
+		
+		land_night_attack = 0.01
+		
+		path = {
+			leads_to_tech = tech_infantry_night_battle_2
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.3
+		start_year = 1965
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 2 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	
+	# II
+	tech_infantry_night_battle_2 = {
+
+		land_night_attack = 0.02
+		
+		path = {
+			leads_to_tech = tech_infantry_night_battle_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.3
+		start_year = 1972
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 5 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# III
+	tech_infantry_night_battle_3 = { 
+
+		land_night_attack = 0.03		
+
+		path = {
+			leads_to_tech = tech_infantry_night_battle_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1981
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 8 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# IV 
+	tech_infantry_night_battle_4 = {
+		
+		land_night_attack = 0.04	
+
+		path = {
+			leads_to_tech = tech_infantry_night_battle_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1988
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 11 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# V
+	tech_infantry_night_battle_5 = {
+
+		land_night_attack = 0.05		
+
+		path = {
+			leads_to_tech = tech_infantry_night_battle_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.3
+		start_year = 1995
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 14 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+
+	# VI
+	tech_infantry_night_battle_6 = {
+
+		land_night_attack = 0.06
+
+		#path = {
+		#	leads_to_tech = tech_infantry_night_battle_7
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.3
+		start_year = 2003
+		folder = {
+			name = salw_folder
+			position = { x = 7 y = 17 }
+		}
+		
+		categories = {
+			cat_special_forces_weapons
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+}

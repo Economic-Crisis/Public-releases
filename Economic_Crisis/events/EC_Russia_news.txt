@@ -1,0 +1,307 @@
+﻿############################
+## Economic Crisis        ##
+############################
+## Russia news events     ##
+############################
+## Written by MrSuricate  ##
+############################
+
+add_namespace = russia_news
+
+############################ ИВЕНТЫ, ВЫЗЫВАЕМЫЕ НАЦ. ФОКУСАМИ ############################
+
+news_event = { #Дестабилизация Прибалтики 
+	id = russia_news.1   
+	title = russia_news.1.t
+	desc = russia_news.1.d
+	picture = GFX_event_destsablisation_pribaltic_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = russia_news.1.a
+		 
+	}
+}	
+
+news_event = { #Союз европейских националистов
+	id = russia_news.2   
+	title = russia_news.2.t
+	desc = russia_news.2.d
+	picture = GFX_event_ruskiy_natsionalistov_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = russia_news.2.a
+		 
+	}
+}
+	
+news_event = { #Борьба против капиталистов 
+	id = russia_news.3   
+	title = russia_news.3.t
+	desc = russia_news.3.d
+	picture = GFX_event_war_against_capitalism_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = russia_news.3.a
+		trigger = {
+			tag = ROOT
+			NOT = { tag = RUS is_in_faction_with = RUS }
+		}
+	}
+	option = { 
+	name = russia_news.3.b
+		trigger = {
+			tag = RUS 
+			is_in_faction_with = RUS
+		}
+	}
+}
+	
+news_event = { #Дружба с Китаем
+	id = russia_news.4   
+	title = russia_news.4.t
+	desc = russia_news.4.d
+	picture = GFX_event_putin_and_xinpin_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.4.a
+		 
+	    }
+	}
+	
+news_event = { #Новый Комминтерн
+	id = russia_news.5    
+	title = russia_news.5.t
+	desc = russia_news.5.d
+	picture = GFX_event_new_commintern_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.5.a
+		 
+	    }
+	}
+	
+news_event = { #Объединение
+	id = russia_news.6    
+	title = russia_news.6.t
+	desc = russia_news.6.d
+	picture = GFX_event_soyuszniy_respubliki_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.6.a
+		 
+	    }
+	}
+	
+news_event = { #Россия вступает в НАТО
+	id = russia_news.7   
+	title = russia_news.7.t
+	desc = russia_news.7.d
+	picture = GFX_event_RUS_to_NATO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.7.a
+		 
+	    }
+	}
+	
+news_event = { #Удар в спину
+	id = russia_news.8   
+	title = russia_news.8.t
+	desc = russia_news.8.d
+	picture = GFX_event_flag_USA_vs_RUS_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.8.a
+		 
+	    }
+	}
+	
+news_event = { #Борьба против Терроризма
+	id = russia_news.9   
+	title = russia_news.9.t
+	desc = russia_news.9.d
+	picture = GFX_event_RUS_fight_against_terrorism_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.9.a
+		 
+	    }
+	}
+	
+news_event = { #Союз Пекина и Москвы
+	id = russia_news.10   
+	title = russia_news.10.t
+	desc = russia_news.10.d
+	picture = GFX_event_flag_PRC_RUS_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.10.a
+		 
+	    }
+	}
+	
+news_event = { #Начинается новая мировая война
+	id = russia_news.11   
+	title = russia_news.11.t
+	desc = russia_news.11.d
+	picture = GFX_event_voyna_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.11.a
+		 
+	    }
+	}
+
+news_event = { #Ухудшение отношение с КНР
+	id = russia_news.12   
+	title = russia_news.12.t
+	desc = russia_news.12.d
+	picture = GFX_event_RUS_vs_CHI_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = russia_news.12.a
+		 
+	    }
+	}	
+	
+news_event = { #Пятый интернационал
+	id = russia_news.13 
+	title = russia_news.13.t
+	desc = russia_news.13.d
+	picture = GFX_event_fifth_international_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = russia_news.13.a
+	
+	}
+}	
+
+############################ ИВЕНТЫ, ВЫЗЫВАЕМЫЕ EC_Russia ############################
+	
+news_event = { #Россия гарантирует независимость Монголии
+	id = russia_news.14   
+	title = russia_news.14.t
+	desc = russia_news.14.d
+	picture = GFX_event_government_russia_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = russia_news.14.a	
+	}
+}
+
+news_event = { #Инцидент с Су-24
+	id = russia_news.15   
+	title = russia_news.15.t
+	desc = russia_news.15.d
+	picture = GFX_event_incidient_Su-24_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = russia_news.15.a
+	}
+}
+
+news_event = { #Создание ЕАЭС
+	id = russia_news.16
+	title = russia_news.16.t
+	desc = russia_news.16.d
+	picture = GFX_event_flag_eaeu_2_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = russia_news.16.a
+	
+	}
+}
+
+news_event = { #Россия окупирует восточную Украину.
+	id = russia_news.17   
+	title = russia_news.17.t
+	desc = russia_news.17.d
+	picture = GFX_event_RUS_army2_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = russia_news.17.a
+	}
+}
+
+news_event = { #Россия окупирует ЛДНР.
+	id = russia_news.18   
+	title = russia_news.18.t
+	desc = russia_news.18.d
+	picture = GFX_event_RUS_army1_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = russia_news.18.a
+	}
+}

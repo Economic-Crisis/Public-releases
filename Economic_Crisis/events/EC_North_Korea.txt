@@ -1,0 +1,274 @@
+﻿###########################
+## Economic Crisis       ##
+###########################
+## North Korea events    ##
+###########################
+## Written by MrSuricate ##
+###########################
+
+add_namespace = north_korea
+
+news_event = { #Успешный тест водородный бомбы КНДР
+	id = north_korea.1
+	title = north_korea.1.t
+	desc = north_korea.1.d
+	picture = GFX_event_nuclear_bomb_news
+
+	is_triggered_only = yes
+
+	major = yes 
+	
+	option = {
+	    name = north_korea.1.a
+		trigger = { NOT = { tag = NKO } } 
+	}
+	
+	option = { 
+		name = north_korea.1.b
+		trigger = {	tag = NKO }
+	}
+	
+}
+	
+news_event = { #Trigger nuclear PRK (hidden)
+	id = north_korea.2   
+	title = north_korea.2.t
+	desc = north_korea.2.d
+	picture = GFX_event_nuclear_bomb_news
+    
+	fire_only_once = yes
+    
+	trigger = {
+		date > 2016.1.6
+		country_exists = NKO
+	}
+	
+	immediate = {
+		set_global_flag = nuclear_bomb_PRK
+		NKO = { 
+			add_named_threat = { threat = 4 name = threat_PRK_nuclear_program }
+		}
+		news_event = { id = north_korea.1 hours = 6 }
+	}
+	
+	option = {
+	    name = north_korea.2.a
+	
+	}
+}
+
+news_event = { #Запуск баллистической ракеты
+	id = north_korea.3
+	title = north_korea.3.t
+	desc = north_korea.3.d
+	picture = GFX_event_nuclear_bomb_news
+
+	is_triggered_only = yes
+
+	major = yes 
+	
+	option = {
+	    name = north_korea.3.a
+	}
+}
+
+country_event = { #Успех переворота в Южной Корее
+	id = north_korea.4
+	title = north_korea.4.t
+	desc = north_korea.4.d
+	picture = GFX_event_successfull_rev_south_korea1
+
+	is_triggered_only = yes
+	
+	option = {
+	    name = north_korea.4.a
+		add_stability = 0.1
+		USA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_negative
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		JAP = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+	}
+	
+}
+
+country_event = { #Неудача переворота в Южной Корее
+	id = north_korea.5
+	title = north_korea.5.t
+	desc = north_korea.5.d
+	picture = GFX_event_fail_rev_south_korea1
+
+	is_triggered_only = yes
+
+	option = {
+	    name = north_korea.5.a
+		add_stability = -0.05
+		KOR = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_negative
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		JAP = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+	}
+	
+}
+
+news_event = { #Переворот в Южной Корее
+	id = north_korea.6
+	title = north_korea.6.t
+	desc = north_korea.6.d
+	picture = GFX_event_successfull_rev_south_korea2
+
+	is_triggered_only = yes
+
+	major = yes 
+	
+	option = {
+	    name = north_korea.6.a
+	}
+}
+
+country_event = { #Успех покушения в Южной Корее
+	id = north_korea.7
+	title = north_korea.7.t
+	desc = north_korea.7.d
+	picture = GFX_event_kim_jong_un
+
+	is_triggered_only = yes
+	
+	option = {
+		name = north_korea.7.a
+		KOR = {
+			kill_country_leader = yes
+		}
+		add_stability = 0.05
+		KOR = { add_opinion_modifier = { target = NKO modifier = actions_very_negative } }
+		USA = { add_opinion_modifier = { target = NKO modifier = actions_very_negative } }
+		ENG = { add_opinion_modifier = { target = NKO modifier = actions_very_negative } }
+		FRA = { add_opinion_modifier = { target = NKO modifier = actions_negative } }
+		GER = { add_opinion_modifier = { target = NKO modifier = actions_very_negative } }
+		JAP = { add_opinion_modifier = { target = NKO modifier = actions_very_negative } }
+	}
+	
+}
+
+country_event = { #Неудача покушения в Южной Корее
+	id = north_korea.8
+	title = north_korea.8.t
+	desc = north_korea.8.d
+	picture = GFX_event_nko_fail_assassination
+
+	is_triggered_only = yes
+	
+	option = {
+	    name = north_korea.8.a
+		add_stability = -0.05
+		KOR = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_negative
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+		JAP = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_negative
+			}
+		}
+	}
+	
+}
+
+news_event = { #Покушение в Южной Корее
+	id = north_korea.9
+	title = north_korea.9.t
+	desc = north_korea.9.d
+	picture = GFX_event_nko_successfull_assassination_news
+
+	is_triggered_only = yes
+
+	major = yes 
+	
+	option = {
+	    name = north_korea.9.a
+	}
+}

@@ -1,0 +1,81 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 820
+
+add_ideas = mixed_schools
+
+1991.10.27 = {
+	create_country_leader = {
+		name = "Dzhokhar Dudayev"
+		desc = ""
+		picture = "gfx/leaders/CHE/portrait_dzhokhar_dudayev.dds"
+		ideology = authoritarian_democracy
+		expire = "1996.4.21" #death
+		traits = { trait_authoritarian_democracy }
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 02 }
+	add_ideas = NPT
+	load_oob = "_tech_insurgents_2013"
+	oob = "CHE_2013"
+	
+	set_convoys = 0
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 10
+		democratic = 15
+		neutrality = 65
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ramzan Kadyrov"
+		desc = ""
+		picture = "gfx/leaders/CHE/portrait_ramzan_kadyrov.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ramzan Kadyrov"
+		desc = ""
+		picture = "gfx/leaders/CHE/portrait_ramzan_kadyrov.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	create_country_leader = {
+		name = "Ramzan Kadyrov"
+		desc = ""
+		picture = "gfx/leaders/CHE/portrait_ramzan_kadyrov.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Ramzan Kadyrov"
+		desc = ""
+		picture = "gfx/leaders/CHE/portrait_ramzan_kadyrov.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+}

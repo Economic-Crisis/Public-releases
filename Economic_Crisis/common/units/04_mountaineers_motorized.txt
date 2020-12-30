@@ -1,0 +1,73 @@
+sub_units = {
+
+	# base motorized infantry on trucks
+	mountaineers_motorized = {
+	
+		sprite = mountaineers_motorized
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		special_forces = yes
+		mountaineers = yes
+		active = no
+		priority = 601
+		ai_priority = 200
+		
+		type = {
+			motorized
+		}
+		
+		group = mountaineers_battalion
+		
+		categories = {
+			category_front_line
+			category_motorized
+			category_all_infantry
+			category_mountaineers
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 21
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 116 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 155
+		suppression = 1
+		weight = 0.65
+		supply_consumption = 0.07
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			truck_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = truck_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			truck_equipment = 17
+			infantry_technical_means_equipment = 147
+		}
+		
+		hills = {
+			#attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+		mountain = {
+			#attack = 0.35
+			defence = 0.05
+			movement = 0.2
+		}
+	}
+}

@@ -1,0 +1,27 @@
+﻿start_equipment_factor = 0.8
+
+division_template = {
+	name = "Garrison Brigade"  		# used for island defense (older equipment, lower experience)
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }   
+	}
+	priority = 0
+}
+
+
+###### OOB ######
+units = {
+	division = {			
+		name = "Puerto Rico Department"
+		location = 1440
+		division_template = "Garrison Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.15
+	}
+}

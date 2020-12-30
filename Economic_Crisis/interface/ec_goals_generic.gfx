@@ -1,0 +1,497 @@
+spriteTypes = {	
+
+#### Generic continuous goal icons
+	SpriteType = {
+		name = "GFX_goal_generic_research"
+		texturefile = "gfx/interface/goals/goal_generic_research.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_research_red"
+		texturefile = "gfx/interface/goals/goal_generic_research_red.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_repairments"
+		texturefile = "gfx/interface/goals/goal_generic_repairments.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_repairments_shine"
+		texturefile = "gfx/interface/goals/goal_generic_repairments.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_repairments.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_repairments.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_equipment_production_shine"
+		texturefile = "gfx/interface/goals/goal_generic_equipment_production.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_equipment_production.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_equipment_production.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_save_ideology_shine"
+		texturefile = "gfx/interface/goals/goal_generic_save_ideology.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_save_ideology.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_save_ideology.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_continuous_boost_freedom_shine"
+		texturefile = "gfx/interface/goals/goal_continuous_boost_freedom.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_continuous_boost_freedom.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_continuous_boost_freedom.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_agreement"
+		texturefile = "gfx/interface/goals/goal_generic_agreement.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_goal_generic_agreement_shine"
+		texturefile = "gfx/interface/goals/goal_generic_agreement.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_continuous_boost_freedom.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_agreement.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	 spriteType = {
+	 	name = "GFX_goal_continuous_boost_freedom"
+	 	texturefile = "gfx/interface/goals/goal_continuous_boost_freedom.dds"
+	 }
+	 spriteType = {
+	 	name = "GFX_goal_generic_save_ideology"
+	 	texturefile = "gfx/interface/goals/goal_generic_save_ideology.dds"
+	 }
+	 
+	  spriteType = {
+	 	name = "GFX_goal_generic_equipment_production"
+	 	texturefile = "gfx/interface/goals/goal_generic_equipment_production.dds"
+	 }
+	   spriteType = {
+	 	name = "GFX_goal_generic_fight"
+	 	texturefile = "gfx/interface/goals/goal_generic_fight.dds"
+	 }
+	 
+	 spriteType = {
+	 	name = "GFX_focus_research"
+	 	texturefile = "gfx/interface/goals/focus_research.dds"
+	 }
+
+	spriteType = {
+		name = "GFX_focus_wonderweapons"
+		texturefile = "gfx/interface/goals/focus_wonderweapons.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_generic_wonderweapons"
+		texturefile = "gfx/interface/goals/goal_generic_wonderweapons.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_generic_allies_build_infantry"
+		texturefile = "gfx/interface/goals/goal_generic_allies_build_infantry.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_generic_communism_propaganda"
+		texturefile = "gfx/interface/goals/goal_generic_communism_propaganda.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_economic"
+		texturefile = "gfx/interface/goals/goal_generic_economic.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_economic_sabotage"
+		texturefile = "gfx/interface/goals/goal_generic_economic_sabotage.dds"			
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_conservatism"
+		texturefile = "gfx/interface/goals/goal_generic_conservatism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_education_reforms"
+		texturefile = "gfx/interface/goals/goal_generic_education_reforms.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_medium_education_reforms"
+		texturefile = "gfx/interface/goals/goal_generic_medium_education_reforms.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_high_education_reforms"
+		texturefile = "gfx/interface/goals/goal_generic_high_education_reforms.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_civ_factory"
+		texturefile = "gfx/interface/goals/goal_generic_construct_civ_factory.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_civ_factory_red"
+		texturefile = "gfx/interface/goals/goal_generic_construct_civ_factory_red.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_infrastructure"
+		texturefile = "gfx/interface/goals/goal_generic_construct_infrastructure.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_infrastructure_red"
+		texturefile = "gfx/interface/goals/goal_generic_construct_infrastructure_red.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_mil_factory"
+		texturefile = "gfx/interface/goals/goal_generic_construct_mil_factory.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_construct_nuclear_energy_station"
+		texturefile = "gfx/interface/goals/goal_generic_construction_nuclear_energy_station.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_ecolog_energy_station"
+		texturefile = "gfx/interface/goals/goal_generic_construction_ecolog_station.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_coal_energy_station"
+		texturefile = "gfx/interface/goals/goal_generic_construction_coal_energy_station.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_construct_coal_energy_station_2"
+		texturefile = "gfx/interface/goals/goal_generic_construction_coal_energy_station_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_dangerous_deal"
+		texturefile = "gfx/interface/goals/goal_generic_dangerous_deal.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_defence"
+		texturefile = "gfx/interface/goals/goal_generic_defence.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_demand_territory"
+		texturefile = "gfx/interface/goals/goal_generic_demand_territory.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_democracy_propaganda"
+		texturefile = "gfx/interface/goals/goal_generic_democracy_propaganda.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_developing_UAV"
+		texturefile = "gfx/interface/goals/goal_generic_developing_UAV.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_forceful_treaty"
+		texturefile = "gfx/interface/goals/goal_generic_forceful_treaty.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_intelligence_exchange"
+		texturefile = "gfx/interface/goals/goal_generic_intelligence_exchange.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_goal_generic_military_sphere"
+		texturefile = "gfx/interface/goals/goal_generic_military_sphere.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_more_territorial_claims"
+		texturefile = "gfx/interface/goals/goal_generic_more_territorial_claims.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_national_unity"
+		texturefile = "gfx/interface/goals/goal_generic_national_unity.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_nationalism_propaganda"
+		texturefile = "gfx/interface/goals/goal_generic_nationalism_propaganda.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_neutrality_focus"
+		texturefile = "gfx/interface/goals/goal_generic_neutrality_focus.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_political_pressure"
+		texturefile = "gfx/interface/goals/goal_generic_political_pressure.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_production"
+		texturefile = "gfx/interface/goals/goal_generic_production.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_scientific_exchange"
+		texturefile = "gfx/interface/goals/goal_generic_scientific_exchange.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_submarine_effort"
+		texturefile = "gfx/interface/goals/goal_generic_submarine_effort.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_communism"
+		texturefile = "gfx/interface/goals/goal_generic_support_communism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_democracy"
+		texturefile = "gfx/interface/goals/goal_generic_support_democracy.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_fascism"
+		texturefile = "gfx/interface/goals/goal_generic_support_fascism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_islamism"
+		texturefile = "gfx/interface/goals/goal_generic_support_islamism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_liberalism"
+		texturefile = "gfx/interface/goals/goal_generic_support_liberalism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_rad_islamism"
+		texturefile = "gfx/interface/goals/goal_generic_support_rad_islamism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_goal_generic_support_reformism"
+		texturefile = "gfx/interface/goals/goal_generic_support_reformism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_support_nazists"
+		texturefile = "gfx/interface/goals/goal_generic_support_nazists.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_research"
+		texturefile = "gfx/interface/goals/goal_generic_research.dds"			
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_fortification"
+		texturefile = "gfx/interface/goals/goal_generic_fortification.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_fortification_1"
+		texturefile = "gfx/interface/goals/goal_generic_fortification_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_fortification_2"
+		texturefile = "gfx/interface/goals/goal_generic_fortification_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_generic_to_arms"
+		texturefile = "gfx/interface/goals/goal_generic_to_arms.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_to_arms_shine"
+		texturefile = "gfx/interface/goals/goal_generic_to_arms.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_to_arms.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/goal_generic_to_arms.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_goal_unknown"
+		texturefile = "gfx/interface/goals/goal_unknown.dds"
+	}
+
+    spriteType = {
+		name = "GFX_generic_monopoly_kapital"
+		texturefile = "gfx/interface/goals/goal_generic_construct_civ_factory_red.dds"
+	}		
+
+	spriteType = {
+		name = "GFX_goal_generic_raw_materials"
+		texturefile = "gfx/interface/goals/goal_generic_raw_materials.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_goal_cocacola"
+		texturefile = "gfx/interface/goals/goal_cocacola.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_generic_peace"
+		texturefile = "gfx/interface/goals/goal_generic_peace.dds"	
+	}
+	
+}

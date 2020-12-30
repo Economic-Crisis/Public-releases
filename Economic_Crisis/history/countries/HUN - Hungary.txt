@@ -1,0 +1,109 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 43
+
+add_ideas = eu_member
+
+1991.2.15 = {
+	add_ideas = visegrad_group_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 13470 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "HUN_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+
+	set_country_flag = pai__centrist
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.4.25"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 27
+		liberalism = 1
+		democratic = 1
+		neutrality = 53
+		fascism = 17
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Viktor Orban"
+		desc = "POLITICS_VIKTOR_ORBAN_DESC"
+		picture = "gfx/leaders/HUN/portrait_viktor_orban.dds"
+		ideology = euroscepticism
+		traits = { trait_euroscepticism }
+	}
+
+	create_country_leader = {
+		name = "Attila Mesterhazy"
+		desc = "POLITICS_ATTILA_MESTERHAZY_DESC"
+		picture = "gfx/leaders/HUN/portrait_attila_mesterhazy.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Gabor Vona"
+		desc = "POLITICS_GABOR_VONA_DESC"
+		picture = "gfx/leaders/HUN/portrait_gabor_vona.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	create_country_leader = {
+		name = "Viktor Szabadai"
+		desc = "POLITICS_VIKTOR_SZABADAI_DESC"
+		picture = "gfx/leaders/HUN/portrait_viktor_szabadai.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Gyula Thurmer"
+		desc = "POLITICS_GYULA_THURMER_DESC"
+		picture = "gfx/leaders/HUN/portrait_gyula_thurmer.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Zsolt Makay"
+		desc = "POLITICS_ZSOLT_MAKAY_DESC"
+		picture = "gfx/leaders/HUN/portrait_zsolt_makay.dds"
+		ideology = christian_democracy_main
+		traits = { trait_christian_democracy_main }
+	}
+	
+}
+

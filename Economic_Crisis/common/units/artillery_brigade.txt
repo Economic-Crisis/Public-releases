@@ -1,0 +1,221 @@
+sub_units = {
+
+	artillery_brigade = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1198
+		ai_priority = 100
+		active = yes
+		
+		type = {
+			infantry
+			artillery
+		}
+
+		group = artillery_division
+		
+		categories = {
+			category_line_artillery
+		}
+
+		combat_width = 3
+
+		manpower = 62
+		need = {
+			FIELD_ARTILLERY_arch = 36
+		}
+		
+		max_strength = 0.6
+		max_organisation = 30
+		default_morale = 0.1
+		training_time = 120
+		weight = 0.5
+		supply_consumption = 0.2
+
+		#Line artillery bonuses
+		soft_attack = 0.25
+		
+		forest = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+	#Ваниль
+	rocket_artillery_brigade = {
+		sprite = "artillery"
+		map_icon_category = infantry
+		priority = 1199
+		ai_priority = 100
+		active = no
+		
+		type = {
+			infantry
+			artillery
+		}
+
+		group = artillery_division
+		
+		categories = {
+			category_army
+			category_line_artillery
+		}		
+
+		combat_width = 3
+
+		need = {
+			truck_equipment = 16
+			FIELD_ARTILLERY_arch = 36
+		}
+		
+		manpower = 36
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		training_time = 120
+		weight = 0.5
+
+		supply_consumption = 0.2
+		
+		forest = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+	#Ваниль
+	motorized_rocket_brigade = {
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 1199
+		ai_priority = 100
+		active = no
+		
+		type = {
+			artillery
+			motorized
+			rocket
+		}
+
+		group = artillery_division
+		
+		categories = {
+			category_army
+			category_line_artillery
+		}		
+
+		combat_width = 3
+
+		need = {
+			truck_equipment = 20
+			infantry_technical_means_equipment = 20
+			FIELD_ARTILLERY_arch = 20
+		}
+		
+		manpower = 20
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		training_time = 120
+		weight = 0.5
+
+		
+		supply_consumption = 0.28
+		
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.5
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.5
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+}

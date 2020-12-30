@@ -1,0 +1,90 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 312
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1850 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_microstate_2013"
+
+	add_ideas = {
+		alba_member
+		NPT
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		
+		low_terrorism
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.2.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 29
+		liberalism = 21
+		democratic = 42
+		neutrality = 6
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Juan Orlando Hernandez"
+		picture = "gfx/leaders/HON/portrait_juan_orlando_hernandez.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Porfirio Lobo Sosa"
+		expire = "2014.1.27"
+		picture = "gfx/leaders/HON/portrait_porfirio_lobo_sosa.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Manuel Zelaya"
+		picture = "gfx/leaders/HON/portrait_manuel_zelaya.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mauricio Villeda"
+		picture = "gfx/leaders/HON/portrait_mauricio_villeda.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}
+

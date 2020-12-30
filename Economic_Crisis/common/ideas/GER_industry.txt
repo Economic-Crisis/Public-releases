@@ -1,0 +1,448 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		GER_Rheinmetall_def = {
+
+			picture = GFX_idea_GER_Rheinmetall_def
+			allowed = {
+				original_tag = GER
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = GER_Rheinmetall
+				}
+
+			}
+			
+			
+			research_bonus = {
+				armor = 0.12
+				infantry_weapons = 0.03
+				cat_naval_attack_drone_tech = -0.05
+			}
+
+			cost = 1800
+
+			traits = { ifv_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		Krauss_Maffei_Wegmann = {
+
+			picture = GFX_idea_Krauss_Maffei_Wegmann
+			allowed = {
+				original_tag = GER
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = Siemens
+				}
+
+			}
+			
+
+			research_bonus = {
+			armor = 0.12
+			naval_equipment = -0.12
+			}
+
+			cost = 850
+			traits = { med_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		MBDA = {
+
+			picture = GFX_idea_MBDA
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				armor = 0.10
+				cat_fighter_tech = 0.02
+			}
+
+			cost = 950
+
+			traits = { zrk_manufacturer }
+
+			modifier = {
+			}
+		}
+
+	}
+
+	aircraft_manufacturer = {
+
+		designer = yes
+
+		Airbus_Helicopters_Deutschland  = {
+
+		picture = GFX_idea_Airbus_Helicopters_Deutschland
+
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_air_transport_tech = 0.08
+				mot_rockets = -0.10
+
+			}
+
+			cost = 850
+
+			traits = { transport_helicopter_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		 Eurofighter_Jagdflugzeug = {
+
+			picture = GFX_idea_Eurofighter_Jagdflugzeug
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_interceptor_fighter_tech = 0.12
+				armor = -0.05
+			}
+
+			cost = 1000
+			traits = { medium_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		Extra_Flugzeugbau = {
+
+			picture = GFX_idea_Extra_Flugzeugbau
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.12
+				armor = -0.12
+			}
+
+			cost = 950
+			traits = { heavy_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		Flight_Design = {
+
+			picture = GFX_idea_Flight_Design
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_light_fighter_tech = 0.15
+				armor = -0.25
+			}
+			cost = 750
+			traits = { light_aircraft_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	industrial_concern = {
+
+		Hochtief = {
+
+			picture = GFX_idea_Hochtief
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				industry = 0.10
+				electronics = -0.06
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+
+		Siemens = {
+
+			picture = GFX_idea_Siemens
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				electronics = 0.12
+				industry = -0.06
+			}
+
+			cost = 1200
+
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		ThyssenKrupp = {
+
+			picture = GFX_idea_ThyssenKrupp
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				industry = 0.12
+				electronics = -0.03
+			}
+
+			cost = 1500
+
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		
+		
+	}
+
+	materiel_manufacturer = {
+
+		designer = yes
+
+		BASF = {
+
+			picture = GFX_idea_BASF
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.12
+				artillery = 0.05
+			}
+
+			cost = 850
+
+			traits = { infantry_equipment_development }
+
+			modifier = {
+			}
+		}
+
+		ger_h_a_k = {
+
+			picture = GFX_idea_ger_h_a_k
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.15
+				artillery = 0.01
+				cat_motorized_equipment = -0.03
+				mot_rockets = -0.02
+			}
+
+			cost = 1500
+
+			traits = { infantry_equipment_development }
+
+			modifier = {
+			}
+		}
+		
+		Daimler_AG = {
+
+			picture = GFX_idea_Daimler_AG
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.08
+				mot_rockets = 0.05
+				artillery = 0.03
+			}
+			cost = 750
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+
+		GER_Rheinmetall = {
+
+			picture = GFX_idea_GER_Rheinmetall
+			allowed = {
+				original_tag = GER
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = GER_klaus_eberhardt
+				}
+
+			}
+			
+			
+			research_bonus = {
+			
+				cat_motorized_equipment = 0.12
+				infantry_weapons = 0.12
+				artillery = -0.05
+			}
+
+			cost = 2000
+
+			traits = { defence_corporation }
+
+			modifier = {
+			}
+		}
+		
+		
+
+   IBD_Deisenroth_Engineering = {
+
+			picture = GFX_idea_IBD_Deisenroth_Engineering
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.12
+				mot_rockets = 0.08
+				infantry_weapons = -0.03
+				artillery = -0.01
+			}
+
+			cost = 950
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	naval_manufacturer = {
+
+		designer = yes
+
+		Blohm_und_Voss = {
+
+			picture = GFX_idea_Blohm_und_Voss
+			allowed = {
+				original_tag = GER
+			}
+
+			available = {
+			
+				OR = {
+					has_idea = ThyssenKrupp
+				}
+
+			}
+			
+			
+			research_bonus = {
+				naval_equipment = 0.12
+				cat_strike_fighter_tech = 0.05
+				artillery = -0.10
+				mot_rockets = -0.03
+				cat_motorized_equipment = -0.03
+				
+			}
+
+			cost = 950
+
+			traits = { navy_corporation }
+
+			modifier = {
+			}
+		}
+
+		HDW = {
+
+			picture = GFX_idea_HDW
+			allowed = {
+				original_tag = GER
+			}
+
+			
+			available = {
+			
+				OR = {
+					has_idea = ThyssenKrupp
+				}
+
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.12
+				cat_attack_drone_tech = -0.02
+				artillery = -0.03
+				cat_motorized_equipment = -0.08
+			}
+
+			cost = 850
+
+			traits = { navy_corporation }
+
+			modifier = {
+			}
+		}
+
+
+		ger_flensburger = {
+
+			picture = GFX_idea_ger_flensburger
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				naval_equipment = 0.05
+				cat_naval_attack_helicopter_tech = -0.03
+			}
+
+			cost = 550
+
+			traits = { naval_corporation }
+
+			modifier = {
+			}
+		}
+	}
+
+}

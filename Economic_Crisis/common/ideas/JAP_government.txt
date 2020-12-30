@@ -1,0 +1,152 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		jap_taro_aso_hog = {
+		
+				picture = GFX_idea_jap_taro_aso
+				
+			cost = 1000
+			#removal_cost = -1
+			
+						available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = "JAP"
+			}
+			
+			traits = { party_leader_conservative 
+						pm_conservative
+					}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		jap_fumio_kishida_fgm = {
+
+		picture = GFX_idea_jap_fumio_kishida
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				}
+
+
+      			allowed = { 
+				original_tag  = "JAP" 
+			}
+
+      			traits = { foreign_minister_policy_defender_1 }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+			}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	defence_minister = {
+
+		jap_itsunori_onodera_defm = {
+
+		picture = GFX_idea_jap_itsunori_onodera
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = "JAP"
+			}
+
+			traits = { defence_minister_bureaucrat_2 }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+		}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	economic_minister = {
+	
+		jap_taro_aso_ecm = {
+		
+		picture = GFX_idea_jap_taro_aso
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "JAP"
+			}
+			
+			traits = { economic_minister_business_protege_2 }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+		}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		jap_hachiro_okonogi_ssch = {
+		
+			picture = GFX_idea_jap_hachiro_okonogi
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "JAP"
+			}
+			
+			traits = { secret_service_chief_counterespionage_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 586
+
+1992.3.6 = {
+    add_ideas = cis_member
+}
+
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
+
+1996.4.26 = {
+	add_ideas = Turkic_Council
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 733 }
+
+	load_oob = "_tech_csto_minor_2013"
+	oob = "KYR_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		cencored_media
+		limitation_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+	
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.10.30"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 15
+		liberalism = 10
+		democratic = 3
+		neutrality = 65
+		fascism = 7
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Sooronbay Jeenbekov"
+	#	desc = ""
+	#	picture = "gfx/leaders/KYR/portrait_sooronbay_jeenbekov.dds"
+	#	ideology = authoritarian_democracy
+	#	traits = { trait_authoritarian_democracy }
+	#}
+
+
+	create_country_leader = {
+		name = "Almazbek Atambayev"
+		desc = ""
+		picture = "gfx/leaders/KYR/portrait_almazbek_atambayev.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+
+}
+
+
+

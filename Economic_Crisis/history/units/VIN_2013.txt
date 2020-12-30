@@ -1,0 +1,67 @@
+﻿division_template = {
+	name = "Vietnam Division"	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+        motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+        motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	
+}
+
+division_template = {
+	name = "Colonial Garrison"			# Represents local militias, garrisons
+										# Low experience, oldest equipment, mostly militias
+	regiments = {  
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	
+	division = {
+		name = "5th Infantry Division"
+		location = 7518 
+		division_template = "Vietnam Division"			
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+	}
+	division = {
+		name = "308th Infantry Division"
+		location = 12319 
+		division_template = "Vietnam Division"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+	}
+	division = {
+		name = "312th Division"
+		location = 7093 
+		division_template = "Vietnam Division"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "VIN"
+		}
+		requested_factories = 1
+		progress = 0.86
+		efficiency = 100
+	}
+}

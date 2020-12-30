@@ -1,0 +1,70 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 544
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1602 }
+	load_oob = "_tech_minor_2013"
+	oob = MZB_2013
+
+    add_ideas = {
+	    presidential_republic
+	    au_member
+	    unitary_state
+		secular_state
+		commercial_media 
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		civilian_economy
+		mixed_economic
+		free_market
+		NPT
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		average_terrorism
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 25
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2009.10.15" #for 2014 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 74
+		liberalism = 0
+		democratic = 22
+		neutrality = 4
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+	    name = "Armando Guebuza"
+		desc = "POLITICS_ARMANDO_GUEBUZA_DESC"
+		picture = "gfx/leaders/MZB/portrait_armando_guebuza.dds"
+		ideology = social_democracy
+		expire = "2015.1.15"
+	    traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+	    name = "Afonso Dhlakama"
+		desc = "POLITICS_AFONSO_DHLAKAMA_DESC"
+		picture = "gfx/leaders/MZB/portrait_afonso_dhlakama.dds"
+		ideology = conservative_democracy
+	    traits = { trait_conservative_democracy }
+	}
+
+}

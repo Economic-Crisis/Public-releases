@@ -1,0 +1,105 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# EDITED LAWS
+# NOT EDITED POLITICS
+
+# not edited
+capital = 430
+
+add_ideas = {
+	overpopulation
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 15000 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "BAN_2013"
+
+	set_stability = 0.6
+	
+	add_political_power = 0
+	set_convoys = 25
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		parliamentary_republic
+		unitary_state
+		preference_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		attract_immigrants
+		market_economy
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		minimum_wage
+		high_terrorism
+	}
+	
+		
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.5" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 65
+		liberalism = 8
+		democratic = 16
+		neutrality = 0
+		fascism = 10
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Sheikh Hasina"
+		desc = "POLITICS_SHEIKH_HASINA_DESC"
+		picture = "gfx/leaders/BAN/portrait_sheikh_hasina.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Hussain Muhammad Ershad"
+		desc = "POLITICS_HUSSAIN_ERSHAD_DESC"
+		picture = "gfx/leaders/BAN/portrait_hussain_muhammad_ershad.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Khaleda Zia"
+		desc = "POLITICS_KHALEDA_ZIA_DESC"
+		picture = "gfx/leaders/BAN/portrait_khaleda_zia.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Rashed Khan Menon"
+		desc = "POLITICS_RASHED_KHAN_MENON_DESC"
+		picture = "gfx/leaders/BAN/portrait_rashed_khan_menon.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	
+	#create_country_leader = {
+	#	name = "Motiur Rahman Nizami"
+	#	desc = "POLITICS_MOTIUR_NIZAMI_DESC"
+	#	picture = "gfx/leaders/BAN/portrait_motiur_nizami.dds"
+	#	expire = "2016.5.11" #death
+	#	ideology = sunni_islamism
+	#	traits = { trait_sunni_islamism }
+	#}
+
+}

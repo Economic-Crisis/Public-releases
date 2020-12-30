@@ -1,0 +1,73 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 771
+
+add_ideas = {
+	mixed_schools
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 437 }
+
+	add_ideas = {
+		parliamentary_monarchy
+		queen_elizabet
+		
+		integration_in_rss
+	}
+	
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+	add_ideas = NPT
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.2.21"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 48
+		liberalism = 1
+		democratic = 51
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mia Mottley"
+		desc = "POLITICS_MIA_MOTTLEY_DESC"
+		picture = "gfx/leaders/BRB/portrait_mia_mottley.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Freundel Stuart"
+		desc = "POLITICS_FREUNDEL_STUART_DESC"
+		picture = "gfx/leaders/BRB/portrait_freundel_stuart.dds"
+		expire = "2018.5.25"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+
+2018.5.25 = {
+	set_party_name = { 
+	    ideology = reformism 
+	    long_name = BRB_reformism_2018_party
+	    name = BRB_reformism_2018_party 
+	}
+}

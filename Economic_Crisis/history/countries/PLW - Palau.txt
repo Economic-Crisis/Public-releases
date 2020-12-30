@@ -1,0 +1,53 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 647
+add_ideas = {
+	mixed_schools
+	small_country	
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 22 }
+	add_ideas = { 
+		NPT
+		presidential_republic
+	}
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 50
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.11.6"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 100
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Thomas Remengesau Jr."
+		desc = ""
+		picture = "gfx/leaders/PLW/portrait_tommy_remengesau.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+}
+

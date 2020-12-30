@@ -1,0 +1,137 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 446
+
+# 22 марта 1945 года
+    add_ideas = {
+		arab_league_member
+		regional_country
+		high_terrorism
+		NPT
+		au_member
+	}
+
+# This is not military alliance on start game in 2013
+#	create_faction = LAS #Лига арабских государств
+#	add_to_faction = EGY
+#	add_to_faction = ALG
+#	add_to_faction = BHR
+#	add_to_faction = JOR
+#	add_to_faction = RCG
+#	add_to_faction = COM
+#	add_to_faction = KUW
+#	add_to_faction = LEB
+#	add_to_faction = MRT
+#	add_to_faction = MOR
+#	add_to_faction = UAE
+#	add_to_faction = OMA
+#	add_to_faction = PAL
+#	add_to_faction = SOM
+#	add_to_faction = SUD
+#	add_to_faction = TUN
+#	add_to_faction = SAU
+	
+1967.06.10 = {
+    add_ideas = revanchism
+}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 28860 }
+	
+	load_oob = "_tech_regional_2013"
+	oob = EGY_2013
+	
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+	    cencored_media
+		respect_of_liberties
+		mixed_army
+		open_immigration
+		professional_schools
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai__centrist
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.6.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 1
+		liberalism = 18
+		democratic = 10
+		neutrality = 70
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Abdel Fattah el-Sisi"
+		desc = "POLITICS_ABDEL_FATTAH_EL_SISI_DESC"
+		picture = "gfx/leaders/EGY/portrait_abdel_fattah_el-Sisi.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+   
+	create_country_leader = {
+		name = "Adly Mansour"
+		expire = 2014.6.8
+		desc = "POLITICS_ADLY_MANSOUR_DESC"
+		picture = "gfx/leaders/EGY/portrait_adly_mansour.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+
+    create_country_leader = {
+		name = "Essam Khalil"
+		desc = "POLITICS_ESSAM_KHALIL_DESC"
+		picture = "gfx/leaders/EGY/portrait_essam_khalil.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Sameh Ashour"
+		desc = "POLITICS_SAMEH_ASHOUR_DESC"
+		picture = "gfx/leaders/EGY/portrait_sameh_ashour.dds"
+		ideology = irredentism 
+		traits = { trait_irredentism }
+	}
+	
+	create_country_leader = {
+		name = "Hamdeen Sabahi"
+		desc = ""
+		picture = "gfx/leaders/EGY/portrait_hamdeen_sabahi.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+	
+	create_country_leader = {
+		name = "Younes Makhioun"
+		desc = ""
+		picture = "gfx/leaders/EGY/portrait_younes_makhioun.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+}
+

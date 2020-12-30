@@ -1,0 +1,62 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 307
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 37100 }
+	load_oob = "_tech_minor_2013"
+	oob = "VEN_2013"
+
+	add_ideas = {
+		opec_member
+		unasur_member
+		gaz_trader
+		alba_member
+		low_terrorism
+		mixed_schools
+		oil_spike
+		NPT
+	}
+
+	set_country_flag = monroe_doctrine
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = communism
+		last_election = "2013.4.14"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 51
+		reformism = 3
+		liberalism = 40
+		democratic = 3
+		neutrality = 2
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Nicolas Maduro Moros"
+		desc = "POLITICS_NICOLAS_MADURO_MOROS_DESC"
+		picture = "gfx/leaders/VEN/portrait_nicolas_maduro_moros.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+	create_country_leader = {
+		name = "Enrique Capriles Radonski"
+		desc = "POLITICS_ENRIQUE_CAPRILES_RADONSKI_DESC"
+		picture = "gfx/leaders/VEN/portrait_enrique_capriles_radonski.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}

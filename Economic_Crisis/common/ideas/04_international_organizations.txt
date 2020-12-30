@@ -1,0 +1,293 @@
+ideas = {
+    country = {
+
+	# FOR INTERNATIONAL ORGANIZATIONS (NOT for unions and alliances)
+	
+		# Совет Безопасности ООН
+		unsc_member = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.25
+			}
+
+		}
+
+		# СНГ
+		cis_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				#stability_factor = 0.05
+				consumer_goods_factor = -0.05
+				MONTHLY_POPULATION = 0.05
+				political_power_gain = 0.15
+			}
+		}
+		
+		# СНГ-2
+		cis_2_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    ai_get_ally_desire_factor = -100
+			    ai_call_ally_desire_factor = -100
+			    ai_join_ally_desire_factor = -100
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		# Поддержка СНГ-2
+		support_cis_2_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		# ГУАМ
+		guam_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    industrial_capacity_factory = 0.1
+				political_power_gain = 0.05
+				democratic_drift = 0.01
+				reformism_drift = 0.01
+				liberalism_drift = 0.01
+			}				
+		}
+		
+		# Организация черноморского экономического сотрудничества
+		bsec_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				TRADE_OPINION_FACTOR = 0.15
+				PRODUCTION_FACTORY_EFFICIENCY_GAIN_FACTOR = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		
+		# Вишеградская группа
+		visegrad_group_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {				
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				TRADE_OPINION_FACTOR = 0.05
+			}
+		}
+		
+		# БРИКС
+		brics_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				PRODUCTION_FACTORY_EFFICIENCY_GAIN_FACTOR = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+
+		# ШОС
+		sco_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.05
+				political_power_gain = 0.15
+				drift_defence_factor = 0.25
+			}
+		}
+
+		# ALBA
+		alba_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+				political_power_gain = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		# Содуржество Наций
+		commonwealth_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				stability_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+
+		# Совет сотрудничества арабских государств Персидского залива (ССАГПЗ)
+		gcc_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				political_power_gain = 0.1
+				consumer_goods_factor = -0.15
+			}
+		}
+		
+		# Транстихоокеанское партнёрство
+		TPP_member = {
+			picture = GFX_idea_TPP_member
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				democratic_drift = 0.01
+				reformism_drift = 0.01
+				liberalism_drift = 0.01
+			}
+		}
+		# НАФТА
+		nafta_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {			
+				TRADE_OPINION_FACTOR = 0.5
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		# ОПЕК
+		opec_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+
+		# ТТП Тихоокеанский альянс
+		pacific_alliance_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.05
+				research_speed_factor = 0.02
+			}
+		}
+
+		# Association of Southeast Asian Nations (ASEAN)
+		asean_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				TRADE_OPINION_FACTOR = 0.45
+				POLITICAL_POWER_GAIN = 0.15
+			}
+		}
+
+
+		# Economic Cooperation Organization (ECO)
+		eco_member = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.15
+				TRADE_OPINION_FACTOR = 0.4
+			}
+		}
+
+	}
+}

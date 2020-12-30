@@ -1,0 +1,50 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Pesi Divize"					# Infantry Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	##### Slovenská Polná Armádna (CO: Catlos) #####
+	division = {
+		name = "1. Pesi Divize 'Janosík'"
+		location = 6604
+		division_template = "Pesi Divize"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Pesi Divize 'Skultéty'"
+		location = 3550
+		division_template = "Pesi Divize"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "3. Pesi Divize 'Razus'"
+		location = 3581
+		division_template = "Pesi Divize"
+		start_experience_factor = 0.2
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "SLO"
+		}
+		requested_factories = 1
+		progress = 0.37
+		efficiency = 100
+	}
+}

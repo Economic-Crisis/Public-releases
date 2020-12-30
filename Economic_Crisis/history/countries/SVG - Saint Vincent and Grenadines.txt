@@ -1,0 +1,67 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 772
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 72 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	add_ideas = {
+		parliamentary_monarchy
+		queen_elizabet
+		alba_member
+		NPT
+		mixed_schools
+		
+		integration_in_rss
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.12.13"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 51
+		liberalism = 0
+		democratic = 48
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ralph Everard Gonsalves"
+		desc = "POLITICS_RALPH_GONSALVES_DESC"
+		picture = "gfx/leaders/SVG/portrait_ralph_gonsalves.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Godwin Friday"
+		desc = "POLITICS_GODWIN_FRIDAY_DESC"
+		picture = "gfx/leaders/SVG/portrait_пodwin_аriday.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

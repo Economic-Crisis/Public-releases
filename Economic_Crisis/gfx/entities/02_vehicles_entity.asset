@@ -1,0 +1,610 @@
+# ONLY INFANTRY VEHICLE: CARS, TRUCKS, LIGHT armORED CAR, RECON  VEHICLE, APC and IFV ENTITY
+# !!!! not set scale! scale set on _vehicles.gfx !!!!
+
+	### DUMMY VEHICLE NO ANIMATION
+	
+	entity = {
+		name = "vehicle_debug_entity"
+		pdxmesh = "ifv_bmp2_mesh"
+		
+		# model hasn't animation
+		state = { name = "idle"				}
+		state = { name = "retreat"		event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+		state = { name = "training"			}
+		state = { name = "death"			}
+		state = { name = "support_attack"	}
+		state = { name = "attack"			}
+		state = { name = "defend"			}
+		state = { name = "move"			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+	}	
+
+	######## TRUCKS ######## 
+	
+	entity = {
+		name = "truck_m35_entity"
+		pdxmesh = "truck_m35_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+	}
+
+	entity = {
+		name = "truck_zetros_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_zetros_mesh"
+	}
+	
+	entity = {
+		name = "truck_zetros_ger_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_zetros_ger_mesh"
+	}
+	
+	entity = {
+		name = "truck_sbat111s_entity"
+		clone = "truck_m35_entity"
+		pdxmesh = "truck_sbat111s_mesh"
+	}
+	
+	entity = {
+		name = "truck_gaz66_entity"
+		clone = "truck_m35_entity" # cloning animation, sound & effects
+		pdxmesh = "truck_gaz66_mesh"
+	}
+
+	entity = {
+		name = "truck_gaz66_sand_entity"
+		clone = "truck_m35_entity" # cloning animation, sound & effects
+		pdxmesh = "truck_gaz66_sand_mesh"
+	}
+
+	entity = {
+		name = "truck_kraz255_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_kraz255_mesh"
+	}
+
+	entity = {
+		name = "truck_kraz255_sand_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_kraz255_sand_mesh"
+	}
+	
+	entity = {
+		name = "truck_kraz255_ukr_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_kraz255_ukr_mesh"
+	}
+
+	entity = {
+		name = "truck_sx2190_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "truck_sx2190_mesh"
+	}
+	
+	######## armORED CARS ##########
+
+	# GAZ Tigr
+	entity = {
+		name = "car_gaz_tigr_entity"
+		pdxmesh = "car_gaz_tigr_mesh"
+		
+		# model hasn't animation
+		state = { name = "idle"				}
+		state = { name = "retreat"		event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+		state = { name = "training"			}
+		state = { name = "death"			}
+		state = { name = "support_attack"	}
+		state = { name = "attack"			}
+		state = { name = "defend"			}
+		state = { name = "move"			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+	}
+
+	# GAZ Tigr foe Desert
+	entity = {
+		name = "car_gaz_tigr_sand_entity"
+		clone = "car_gaz_tigr_entity"	
+		pdxmesh = "car_gaz_tigr_sand_mesh"
+	}
+	
+	# HMMWV (in green texture)
+	entity = {
+		name = "car_hmmwv_entity"
+		pdxmesh = "car_hmmwv_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+	}
+		
+	# HMMWV (in desert | sand texture)
+	entity = {
+		name = "car_hmmwv_sand_entity"
+		clone = "car_hmmwv_entity"
+		pdxmesh = "car_hmmwv_sand_mesh"
+	}
+	
+	# Dingo ATF
+	entity = {
+		name = "car_dingo_atf_entity"
+		clone = "car_gaz_tigr_entity"
+		pdxmesh = "car_dingo_atf_mesh"
+	}
+
+	# Dingo ATF Germnay
+	entity = {
+		name = "car_dingo_atf_ger_entity"
+		clone = "car_dingo_atf_entity"
+		pdxmesh = "car_dingo_atf_ger_mesh"
+	}
+	
+	# Land Rover Snatch 2
+	entity = {
+		name = "car_snatch2_entity"
+		clone = "car_hmmwv_entity"
+	}
+	
+	# Komatsu LAV
+	entity = {
+		name = "car_komatsu_lav_entity"
+		clone = "car_hmmwv_entity"
+	}
+
+	# RG-32 (Sweden, SAR, Egypet)
+	entity = {
+		name = "car_rg32_entity"
+		clone = "car_hmmwv_entity"
+	}
+	
+	# # Iveco LMV
+	entity = {
+		name = "car_iveco_lmv_entity"
+		clone = "car_hmmwv_entity"
+	}
+	
+	# Dozor-B
+	entity = {
+		name = "car_dozor-b_entity"
+		clone = "car_hmmwv_entity"
+		pdxmesh = "car_dozor-b_mesh"
+	}
+		
+
+
+	# ZFB-05
+	entity = {
+		name = "car_zfb05_entity"
+		clone = "car_gaz_tigr_entity"	
+		pdxmesh = "car_zfb05_mesh"		
+	}
+	
+	# Rakhsh
+	entity = {
+		name = "car_rakhsh_entity"
+		clone = "car_gaz_tigr_entity"	
+		pdxmesh = "car_gaz_tigr_sand_mesh"
+	}
+	
+	# Toyota
+	entity = {
+		name = "car_toyota_entity"
+		clone = "car_hmmwv_entity"
+		clone = "car_hmmwv_sand_entity"		
+	}
+	
+	
+	######## RECON APC ##########
+	
+	# BRDM-2
+		
+	entity = {
+		name = "scout_brdm2_entity"
+		pdxmesh = "scout_brdm2_mesh"
+		
+		# model hasn't animation
+		state = { name = "idle"				}
+		state = { name = "retreat"		event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+		state = { name = "training"			}
+		state = { name = "death"			}
+		state = { name = "support_attack"	}
+		state = { name = "attack"			}
+		state = { name = "defend"			}
+		state = { name = "move"			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+
+	}
+
+	# BRDM-2 for desert
+	
+	entity = {
+		name = "scout_brdm2_sand_entity"
+		clone = "scout_brdm2_entity"
+		pdxmesh = "scout_brdm2_sand_mesh"
+	}	
+
+	# BRDM-2 Ukraine
+	
+	entity = {
+		name = "scout_brdm2_ukr_entity"
+		clone = "scout_brdm2_entity"
+		pdxmesh = "scout_brdm2_ukr_mesh"
+	}	
+	
+	# Fennek 
+	
+	entity = {
+		name = "scout_fennek_entity"
+		clone = "car_hmmwv_entity"
+	}
+	
+	# Alvis Scarab  (in green texture)
+	
+	entity = {
+		name = "scout_scarab_entity"
+		clone = "car_hmmwv_entity"
+	}	
+	
+	######### WHEELED APC #########
+
+	# Stryker
+	entity = {
+		name = "apc_stryker_entity"
+		pdxmesh = "apc_stryker_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 			animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+	}
+
+	# Stryker for desert
+	entity = {
+		name = "apc_stryker_sand_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_stryker_sand_mesh"
+	}
+	
+	
+	# Type 96 (Japan)
+	entity = {
+		name = "apc_type96_entity"
+		clone = "apc_stryker_entity"
+	}
+	
+	# XA-185 Patria Pasi (Sweden, Finland, Scandinavia)
+	entity = {
+		name = "apc_xa185_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_xa185_mesh"
+	}	
+
+	# GTK Boxer 
+	entity = {
+		name = "apc_boxer_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "apc_boxer_mesh"
+	}
+
+	# GTK Boxer (Germany)
+	entity = {
+		name = "apc_boxer_ger_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "apc_boxer_ger_mesh"
+	}
+	
+	# BTR-82 (Russia)
+	entity = {
+		name = "apc_btr82_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr82_mesh"
+	}	
+	
+	# BTR-80 (green variant)
+	entity = {
+		name = "apc_btr80_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr80_mesh"
+	}	
+	
+	# BTR-80 (desert variant) Iran
+	entity = {
+		name = "apc_btr80_sand_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr80_sand_mesh"
+	}	
+
+	# BTR-80 (Ukraine) 
+	entity = {
+		name = "apc_btr80_ukr_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr80_ukr_mesh"
+	}	
+	
+	# BTR-60 (gray variant)
+	entity = {
+		name = "apc_btr60_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr60_mesh"
+	}
+		
+	# BTR-60 (green variant)
+	entity = {
+		name = "apc_btr60_green_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr60_green_mesh"
+	}
+
+	# BTR-60 (desert variant)
+	entity = {
+		name = "apc_btr60_sand_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr60_sand_mesh"
+	}	
+	
+	# BTR-60 (Ukraine variant)
+	entity = {
+		name = "apc_btr60_ukr_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr60_ukr_mesh"
+	}
+
+	# BTR-152
+	entity = {
+		name = "apc_btr152_entity"
+		clone = "apc_stryker_entity"
+		pdxmesh = "apc_btr152_mesh"
+	}	
+	
+	# ZBL-09 (China)
+	entity = {
+		name = "apc_zbl09_entity"
+		clone = "scout_brdm2_entity"
+		pdxmesh = "apc_zbl09_mesh"
+	}
+	
+	######### TRACKED APC #########
+	
+	# not tracked apc soundeffects!!!
+	
+	# M-113 sand (USA)
+	entity = {
+		name = "apc_m113_sand_entity"
+		pdxmesh = "apc_m113_sand_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"				animation = "attack" 			animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+	}
+	
+	# M-113 green
+	entity = {
+		name = "apc_m113_entity"
+		clone = "apc_m113_sand_entity"
+		pdxmesh = "apc_m113_mesh"
+	}
+
+	# M-113 Germany
+	entity = {
+		name = "apc_m113_ger_entity"
+		clone = "apc_m113_entity"
+		pdxmesh = "apc_m113_ger_mesh"
+	}
+	
+	# FV432 (Britan)
+	entity = {
+		name = "apc_fv432_green_entity"
+		clone = "apc_m113_entity"
+	}
+
+	# Pbv 302 (Sweden)
+	entity = {
+		name = "apc_pbv302_entity"
+		clone = "apc_m113_entity"
+	}
+	
+	# Type 73  (Japan)
+	entity = {
+		name = "apc_type73_entity"
+		clone = "apc_m113_entity"
+	}
+	
+	# MT-LB (Russia? green)
+	entity = {
+		name = "apc_mtlb_entity"
+		clone = "apc_m113_sand_entity"
+		pdxmesh = "apc_mtlb_mesh"
+	} 
+
+	# MT-LB (desert)
+	entity = {
+		name = "apc_mtlb_sand_entity"
+		clone = "apc_m113_sand_entity"
+		pdxmesh = "apc_mtlb_sand_mesh"
+	} 
+
+	
+	# MT-LB (Ukraine)
+	entity = {
+		name = "apc_mtlb_ukr_entity"
+		clone = "apc_m113_sand_entity"
+		pdxmesh = "apc_mtlb_ukr_mesh"
+	} 
+	
+	# ZSD-89 (China)
+	entity = {
+		name = "apc_zsd89_entity"
+		clone = "scout_brdm2_entity"
+		pdxmesh = "apc_zsd89_mesh"
+	}
+	
+	# Boragh (Iran)
+	entity = {
+		name = "apc_boragh_entity"
+		clone = "apc_mtlb_entity"
+	}
+	
+	######### AIR DROP APC #########
+	
+	
+
+	######### IFV #########
+	
+	# M2 Bradley (green)
+	entity = {
+		name = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_m2_bradley_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"				animation = "attack" 			animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } }
+		}
+	}
+
+	#  M2 Bradley (USA)
+		entity = {
+		name = "ifv_m2_bradley_sand_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_m2_bradley_sand_mesh"
+	}
+	
+	# Stridsfordon 90 (Strf 90; Eng. Combat Vehicle 90, CV90)
+	# SWEDEN (Denmark, Estonia, Finlandm, Netherlands, Norway, Switzerland, Sweden)
+	entity = {
+		name = "ifv_strf90_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_strf90_mesh"
+	}
+	
+	# FV510 Warrior (or early CVR(T))
+	entity = {
+		name = "ifv_fv510_warrior_entity"
+		clone = "ifv_m2_bradley_entity"
+	}
+	
+	# Marder
+	entity = {
+		name = "ifv_marder_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "ifv_marder_mesh"
+	}
+
+	# Marder (Germany)
+	entity = {
+		name = "ifv_marder_ger_entity"
+		clone = "vehicle_debug_entity"
+		pdxmesh = "ifv_marder_ger_mesh"
+	}
+	
+	# Mitsubishi Type 89
+	entity = {
+		name = "ifv_type89_entity"
+		clone = "ifv_strf90_entity"
+	}
+	
+	# BMP-1 (green)
+	entity = {
+		name = "ifv_bmp1_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_bmp1_mesh"
+	}
+	
+	# BMP-1 (desert) ISIS
+	entity = {
+		name = "ifv_bmp1_sand_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_bmp1_sand_mesh"
+	}
+	
+	# BMP-2 (Ukraine, Iran)
+	entity = {
+		name = "ifv_bmp2_entity"
+		pdxmesh = "ifv_bmp2_mesh"
+		
+		# model hasn't animation
+		state = { name = "idle"				}
+		state = { name = "retreat"		event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+		state = { name = "training"			}
+		state = { name = "death"			}
+		state = { name = "support_attack"	}
+		state = { name = "attack"			}
+		state = { name = "defend"			}
+		state = { name = "move"			event = { trigger_once = yes sound = { soundeffect = "mechanized_unit_move_animation" } } }
+	}	
+	
+	# BMP-3 (green) Russia
+	entity = {
+		name = "ifv_bmp3_green_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_bmp3_green_mesh"
+	}
+	
+	# BMP-3 (desert) Russia
+	entity = {
+		name = "ifv_bmp3_sand_entity"
+		clone = "ifv_m2_bradley_entity"
+		pdxmesh = "ifv_bmp3_sand_mesh"
+	}
+	
+	# ZBD-97 (China)
+	entity = {
+		name = "ifv_zbd97_entity"
+		clone = "scout_brdm2_entity"
+		pdxmesh = "ifv_zbd97_mesh"
+	}
+	
+	
+	######### AIR DROP IFV #########
+	
+	
+	

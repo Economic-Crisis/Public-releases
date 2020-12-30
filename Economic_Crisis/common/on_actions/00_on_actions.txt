@@ -1,0 +1,879 @@
+on_actions = {
+	# country 
+	 on_new_term_election = {
+		 random_events = {
+			 100 = usa.18
+		 }
+		 random_events = {
+			 100 = election.2
+			 100 = election.3
+			 100 = election.4
+			 100 = election.5
+			 100 = election.6
+			 100 = election.11
+			 100 = election.12
+			 100 = election.13
+			 100 = election.14
+			 100 = election.15
+		 }
+	 }
+
+	# Ace pilots
+	# country, FROM = ace
+	on_ace_promoted = {
+		random_events = {
+			100 = ace_promoted.1
+			5 = ace_promoted.2
+		}
+	}
+
+	# country, FROM = ace, PREV = enemy ace 
+	# This event fires twice, once for each ace.
+	on_aces_killed_each_other = {
+		random_events = {
+			100 = aces_killed_each_other.1
+		}
+	}
+	
+	# country, FROM = our ace, 
+	# PREV = enemy ace, has killed FROM
+	on_ace_killed_by_ace = {
+		random_events = {
+			100 = ace_killed_by_ace.1
+		}
+	}
+
+	# country, FROM = our ace, 
+	# PREV = enemy ace, killed by FROM
+	on_ace_killed_other_ace = {
+		random_events = {
+			100 = ace_killed_other_ace.1
+		}
+	}
+
+	# country, FROM = ace
+	on_ace_killed = {
+		random_events = {
+			100 = ace_died.1
+		}
+	}
+
+	# During justifying wargoals
+	# triggered daily, so make sure there is a sink somewhere not firing events
+	# country, FROM = target nation
+	on_justifying_wargoal_pulse = {
+
+		random_events = {
+			100 = war_justification.1
+			100 = war_justification.2
+			100 = war_justification.3
+			100 = war_justification.4
+			100 = war_justification.5
+			100 = war_justification.6
+			100 = war_justification.7
+			100 = war_justification.8
+			100 = war_justification.9
+			100 = war_justification.10
+			100 = war_justification.11
+			100 = war_justification.12
+			100 = war_justification.13
+			100 = war_justification.14
+			100 = war_justification.15
+			100 = war_justification.16
+			100 = war_justification.17
+			100 = war_justification.18
+			100 = war_justification.19
+			17000 = 0
+		}
+		
+		effect = {
+			if = {	
+				limit = { 
+					OR = {	
+						FROM = { has_war = no }
+						#ROOT = { has_war = no }
+					}	
+				}
+				news_event = { id = news.74 days = 25 }
+			}	
+		}
+	}
+	
+	#THIS is country that has just gotten into a war
+	on_war = {
+		effect = {
+		
+		}
+	}
+
+	on_wargoal_expire = {
+		random_events = {
+			100 = war_justification.301
+		}
+	}
+
+	#FROM is state #ROOT is broken as hell
+	on_nuke_drop = {
+
+		effect = {
+			news_event = { id = nuke_dropped.2 days = 1}
+			news_event = { id = nuke_dropped.3 days = 1}
+			news_event = { id = nuke_dropped.4 days = 1}
+			news_event = { id = nuke_dropped.5 days = 1}
+			news_event = { id = nuke_dropped.6 days = 1}
+			news_event = { id = nuke_dropped.7 days = 1}
+			news_event = { id = nuke_dropped.8 days = 1}
+			news_event = { id = nuke_dropped.9 days = 1}
+			news_event = { id = nuke_dropped.10 days = 1}
+			news_event = { id = nuke_dropped.11 days = 1}
+			news_event = { id = nuke_dropped.12 days = 1}
+			news_event = { id = nuke_dropped.13 days = 1}
+		}
+		random_events = {
+			100 = nuke_dropped.0
+		}
+	}
+
+	on_border_war_lost = {
+		effect = {
+			owner = {
+				country_event = { id = ukraine.17 days = 10 }
+				country_event = { id = ukraine.19 days = 10 }
+				country_event = { id = ukraine.20 days = 10 }
+				country_event = { id = ukraine_civilwar.19 days = 5 }
+				country_event = { id = ukraine_civilwar.21 days = 5 }
+				country_event = { id = isis.28 days = 20 }
+				country_event = { id = isis.30 days = 20 }
+			}
+		}
+	}
+	
+	on_leave_faction = {
+		effect = {
+			FROM = {
+				add_opinion_modifier = {
+					modifier = faction_traitor
+					target = ROOT
+					days = 365
+				}
+			
+				add_opinion_modifier = {
+					modifier = faction_traitor_trade
+					target = ROOT
+					days = 365
+				}
+			}
+		}
+	}
+	
+	# country random events
+	#on_bi_yearly_pulse = {
+	#	effect = {
+	#		
+	#	}
+	#}
+
+	#on_five_year_pulse = {
+	#	effect = {
+	#		
+	#	}
+	#}
+
+	#FROM is the one that joins the faction
+	on_create_faction = {
+		effect = {
+			
+		}
+	}
+
+	#FROM is country getting invited.
+	on_offer_join_faction = {
+		effect = {
+			
+		}
+	}
+	
+		# called when a country send volunteers to another
+	# ROOT is sender, FROM is receiver
+	on_send_volunteers = {
+		effect = {
+		
+		}
+	}
+	
+	#ROOT is winner #FROM gets annexed - This fires just before FROM gets annexed, meaning the country and everything it owns still exists. It will also fire on_annex and on_civil_war_end
+	on_civil_war_end_before_annexation = {
+		effect = {
+		
+		}
+	}
+
+	#FROM is faction leader on join faction requests.
+	on_join_faction = {
+		effect = {
+			
+		}
+	}
+
+	#FROM is war target
+	on_declare_war = {
+		effect = {
+			
+		}
+	}
+	
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { 
+					has_intelligence_agency = yes
+					is_ai = yes
+				}
+				update_operation_ai = yes
+			}
+		}
+	}
+	
+	# When a new faction is formed
+	on_faction_formed = {
+		effect = {
+			
+		}
+	}
+	
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {
+			news_event = { id = country_capitulated.0 days = 0 }
+		}
+	}
+	
+	#ROOT is winner #FROM gets annexed - This fires just before FROM gets annexed, meaning the country and everything it owns still exists. It will also fire on_annex and on_civil_war_end
+	#on_civil_war_end_before_annexation {
+	#	effect = {
+	#	
+	#	}
+	#}
+
+	on_government_change = {
+		effect = {			
+			
+		}
+	}
+
+	on_coup_succeeded = {
+		effect = {
+			#Turn elections on for democracies created from coup
+			random_other_country = {
+				limit = {
+					OR = {	
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}	
+					original_tag = ROOT
+				}
+				set_politics = {
+					elections_allowed = yes
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed
+	on_civil_war_end = {
+		effect = {
+			
+		}
+	}
+	
+	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						has_offensive_war_with = PREV
+						NOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = liberate_wargoal
+							}
+						}
+					}
+				}
+				FROM.FROM = {
+					set_state_flag = Major.annex_territory
+					add_dynamic_modifier = { modifier = annex_territory }
+				}
+			}
+		}
+	}
+	
+	#ROOT is subject FROM is previous overlord
+	on_subject_free = {
+		effect = {
+			
+		}
+	}
+
+	#ROOT is subject FROM is overlord
+	on_subject_autonomy_level_change = {
+		effect = {
+			
+		}
+	}
+	
+	#ROOT is subject FROM is overlord
+	on_subject_annexed = {
+		effect = {
+			
+		}
+	}
+	
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					tag = CAY
+					FROM = {
+						tag = FRA
+					}
+				}
+				set_cosmetic_tag = CAY_FRA #French Guiana
+			}
+		}
+	}
+	
+	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = {
+					tag = CAY
+					FROM = {
+						tag = FRA
+					}
+				}
+				set_cosmetic_tag = CAY_FRA #French Guiana
+			}
+		}
+	}
+	
+	# called a country fully decrypts cipher of a target country
+	# scope is the target country that its cipher is decrypted
+	# from scope is the decrypter country
+	on_fully_decrypted_cipher = {
+
+	}
+	
+	# called when a country activates its active cipher bonuses against a target
+	# scope is the target country
+	# from scope is the country that activates its bonuses
+	on_activated_active_decryption_bonuses = {
+
+	}
+	
+	#ROOT is free nation FROM is releaser
+	on_release_as_free = {
+		effect = {
+
+		}
+	}
+	
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							is_controlled_by = ISS
+							is_controlled_by = ISL
+							is_controlled_by = ISN
+							is_controlled_by = ISA
+							is_controlled_by = ALQ
+							is_controlled_by = TAL
+						}
+					}
+				}
+				FROM.FROM = {
+					add_dynamic_modifier = { modifier = religious_war }
+					set_state_flag = religious_war
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						NOT = {
+							#OR = {
+								is_controlled_by = ISS
+								is_controlled_by = ISL
+								is_controlled_by = ISN
+								is_controlled_by = ISA
+								is_controlled_by = ALQ
+								is_controlled_by = TAL
+							#}
+						}
+						has_state_flag = religious_war
+					}
+				}
+				FROM.FROM = {
+					remove_dynamic_modifier = { modifier = religious_war }
+					clr_state_flag = religious_war
+				}
+			}
+			FROM.FROM = {
+				add_dynamic_modifier = {
+					modifier = regional_emigration
+					scope = PREV
+					days = 420
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = regional_emigration
+						scope = PREV
+					}
+				}
+				remove_dynamic_modifier = { modifier = regional_emigration }
+				add_dynamic_modifier = {
+					modifier = regional_emigration
+					scope = PREV
+					days = 420
+				}
+			}
+		}
+	}
+
+	#Root - current country
+	#on_daily = {
+	#	effect = {
+			#ROOT = {
+				#Для контролирование формат деньги
+				#convert_money_to_true_format = yes 
+			#}		
+	#	}
+	#}
+
+	#Not run on a specific country.
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { 
+					NOT = {
+						has_idea = fighting_country
+						has_idea = not_recognized_country
+						has_idea = partially_recognized_country
+						has_idea = small_country
+						original_tag = VAT
+					} 
+				}
+				set_country_flag = joined_into_UN
+			}
+			every_country = {
+				limit = { is_ai = yes }
+				add_ideas = ai_join_faction_limited
+			}
+			every_country = {
+				limit = {
+					has_idea = eu_member
+					NOT = { tag = EUR }
+				}
+				add_opinion_modifier = {
+					modifier = member_EU
+					target = EUR
+				}
+			}
+			every_country = {
+				limit = {
+					has_idea = eu_member
+				}
+				add_ideas = EU_membership
+				set_country_flag = country_successfully_passed_1st_step
+				set_country_flag = country_ready_to_join_EU
+			}
+			#EUR = {
+			#	add_opinion_modifier = {
+			#		modifier = member_EU
+			#		target = BEL
+			#	}
+			#}
+			every_country = {
+				limit = { 
+					is_ai = yes
+					NOT = { 
+						has_government = rad_islamists 
+					}
+					NOT = {
+						tag = RUS #чтобы в начале игра РФ не послала добровольцов в Сирию
+					}
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "ISS"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "ISL"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "ISN"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "ISA"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "TAL"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "ALQ"
+					value = 200
+				}
+			}
+			ISS = {
+				declare_war_on = { target = SYR type = annex_everything }
+				declare_war_on = { target = IRQ type = annex_everything }
+				declare_war_on = { target = NGA type = annex_everything }
+				declare_war_on = { target = KUR type = annex_everything }
+				declare_war_on = { target = AFG type = annex_everything }
+				declare_war_on = { target = ROJ type = annex_everything }
+			}
+			#ISS = {	
+			#	if = {
+			#		limit = { 
+			#			country_exists = ISS 
+			#		}
+			#		add_ideas = ai_focused_aggressive_attack
+			#	}
+			#}
+			
+			### Add default money to all countries ###
+			# every_country = {
+				# # Единица измерение деньги(money) посмотрите в файле history/00_legend.txt
+				# add_to_variable = { money = 100.0 } #добавить в каждой стране 1 млрд. доллар
+			# }
+			
+			# ### set default global variables
+			# every_country = {
+				# set_oil_cost = yes
+				# set_aluminium_cost = yes
+				# set_rubber_cost = yes
+				# set_alloy_steel_cost = yes
+				# set_steel_cost = yes
+				# set_gas_cost = yes
+				# set_uran_cost = yes
+				# set_enr_uran_cost = yes
+				# set_rare_metals_cost = yes
+				# set_bauxite_cost = yes
+				# set_polymers_cost = yes
+				# set_alloy_ore_cost = yes
+				# set_current_export_value = yes
+				# set_tax_percentage = yes
+			# }
+		}
+	}
+			
+			
+	
+	on_unit_leader_created = {
+		effect = {
+		}
+	}
+	
+	on_unit_leader_level_up = {
+		effect = {
+			
+		}
+	}
+	
+	# From is owner country
+	on_army_leader_daily = {
+		effect = {
+			
+		}
+	}
+	
+	# From is owner country
+	on_army_leader_won_combat = {
+		effect = {
+			
+		}
+	}
+	
+	# From is owner country
+	on_army_leader_lost_combat = {
+		effect = {
+			
+		}
+	}
+	
+	
+	on_army_leader_promoted = {
+		effect = {
+			
+		}
+	}
+	
+	# scope is operative
+	# from scope is the country 
+	#on_operative_recruited = {
+	#	effect = {
+	#	
+	#	}
+	#}
+	
+	# scope is operative
+	# from scope is the country 
+	#on_operative_created = {
+	#	effect = {
+	#	
+	#	}
+	#}
+	
+	on_operation_completed = {
+		effect = {
+			# same scope setup as in operation outcome:
+			# THIS: the operation
+			# ROOT: the initiating country
+			# FROM: the target country
+			#log = "This: [This.GetName] From: [From.GetName] Root: [Root.GetName]"
+			
+			if = {
+				limit = {
+					ROOT = { has_country_flag = just_freed_operative_flag }
+				}
+				every_operative = {
+					if = {
+						limit = {
+							NOT = { has_trait = operative_escape_artist }
+						}
+						random_list = {
+							15 = { add_unit_leader_trait = operative_escape_artist }
+							85 = {}
+						}
+					}
+				}
+				ROOT = { clr_country_flag = just_freed_operative_flag }
+			}
+			every_operative = { #add target nationality if linguist
+				if = {
+					limit = {
+						has_trait = operative_linguist
+						NOT = { operative_leader_mission = no_mission }
+						NOT = { has_nationality = FROM }
+					}
+					random_list = {
+						20 = { add_nationality = FROM }
+						80 = {}
+					}
+				}
+			}
+		}
+	}
+	
+	# SCOPE_UNIT_LEADER [
+	#	ROOT, FROM
+	#	FROM.FROM : SCOPE_STATE ( will only be set if the operation has a specific selection_target )
+	# ]
+	on_operative_detected_during_operation = {
+		effect = {
+			random_list = {
+				45 = {
+					force_operative_leader_into_hiding = 45
+					operative_leader_event = {
+						id = lar_operative_event.2
+						set_from_from = FROM
+					}
+				}
+				25 = {
+					capture_operative = {
+						captured_by = FROM
+					}
+				}
+				25 = {
+					harm_operative_leader = 90
+					operative_leader_event = {
+						id = lar_operative_event.4
+						set_from_from = FROM
+					}
+				}
+				5 = {
+					kill_operative = {
+						killed_by = FROM
+					}
+				}
+			}
+		}
+	}
+	
+	on_operative_death = {
+		effect = {
+			# SCOPE  the operative
+			# ROOT   the killer country (optional)
+			# FROM   the country the operative is operating for
+			if = {
+				limit = {
+					country_exists = ROOT
+				}
+
+				# operative killed by a country, likelly while on mission
+				operative_leader_event = {
+					id = lar_operative_event.3
+					set_from_from = ROOT
+				}
+			}
+			else = {
+				# other cause of death
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						NOT = { is_ai = yes }
+						#has_done_agency_upgrade = upgrade_suicide_pills
+					}
+				}
+				set_global_flag = kill_me_alive_flag
+			}
+		}
+	}
+	
+	on_operative_captured = {
+		effect = {
+			# SCOPE  the operative
+			# ROOT   the country the operative was performing its mission in
+			# FROM   the country the operative is operating for
+			operative_leader_event = {
+					id = lar_operative_event.6
+					recipient = ROOT
+					originator = ROOT
+					set_from_from = ROOT
+					set_from = FROM
+					days = 1
+			}
+			if = {
+				limit = {
+					NOT = { has_unit_leader_flag = le_clerc1 }
+				}
+				set_unit_leader_flag = le_clerc1
+			}
+			else_if = {
+				limit = {
+					has_unit_leader_flag = le_clerc1
+				}
+				set_unit_leader_flag = le_clerc2
+			}
+			random_list = {
+				log = yes
+				90 = { #regular
+					operative_leader_event = {
+						id = lar_operative_event.1
+						set_from_from = ROOT
+					}
+				}
+				10 = { #operative turned
+					modifier = {
+						has_trait = operative_tough
+						factor = 0 #tough operatives never get turned
+					}
+					modifier = {
+						has_trait = operative_double_agent
+						factor = 0 #no tripple agents please
+					}
+					turn_operative = { turned_by = ROOT }
+					# ensure the operative has the nationality of the country he is coming from
+					add_nationality = FROM
+					operative_leader_event = {
+            	    	id = lar_operative_event.5
+						set_from_from = FROM #tells the event which nationality to add
+            		}
+            	}
+			}
+		}
+	}
+	
+	# called when an operative performing an offensive mission in a country
+	# has been spotted
+	on_operative_on_mission_spotted = {
+
+		effect = {
+            # SCOPE  the operative
+            # ROOT   the country the operative was performing its mission in
+            # FROM   the country the operative is operating for
+
+			# base values
+            set_temp_variable = {
+                var = capture_chance
+                value = 90
+            }
+            set_temp_variable = {
+                var = kill_chance
+                value = 10
+            }			
+
+            # nullify kill chance for some missions
+            if = {
+                limit = {
+                    OR = {
+                        operative_leader_mission = control_trade
+                        operative_leader_mission = diplomatic_pressure
+                    }
+                }
+                set_temp_variable = {
+                    var = kill_chance
+                    value = 0
+                }
+            }
+
+            # Capture chance modifier unused as it would just increased or decrease death chance
+            #multiply_temp_variable = {
+            #   var = capture_chance
+            #   value = own_capture_chance_factor # the operative's capture chance modifiers
+            #}
+            #clamp_temp_variable = {
+            #   var = capture_chance
+            #   min = 0
+            #   max = 100
+            #}
+
+            random_list = {
+                #log = yes # log picked effect in game.log
+
+                temp_var:capture_chance = {
+                   	capture_operative = {
+                   	    captured_by = ROOT
+                   	}  	
+                }
+                temp_var:kill_chance = {
+                    kill_operative = { 
+                        killed_by = ROOT
+                    }
+                }
+
+            }
+
+        }
+        
+    }
+
+	#ROOT is winner #FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			
+		}
+	}	
+}

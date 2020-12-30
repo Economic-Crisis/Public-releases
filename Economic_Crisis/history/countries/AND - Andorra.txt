@@ -1,0 +1,77 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 790
+set_convoys = 25
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3249 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	
+	add_political_power = 0
+	set_war_support = 0
+	set_country_flag = pai_democrat_moderate
+	
+	add_ideas = {
+		parliamentary_monarchy
+		small_country
+		unitary_state
+		preference_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+	
+	set_politics = {	
+		ruling_party = democratic
+		last_election = "2011.4.3"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Xavier Espot Zamora"
+		desc = ""
+		picture = "gfx/leaders/AND/portrait_xavier_espot_zamora.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Antoni Martí"
+		desc = ""
+		picture = "gfx/leaders/AND/portrait_antoni_marti.dds"
+		ideology = liberal_conservatism
+		expire = "2019.5.16"
+		traits = { trait_liberal_conservatism }
+	}
+}
+

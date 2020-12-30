@@ -1,0 +1,827 @@
+leader_traits = {
+
+##################################
+# Field Marshal traits.
+##################################
+
+	
+	assault_army_ops_expert = { 
+		type = field_marshal
+		gain_xp = {
+			is_attacker = yes
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			multiply_temp_variable = { temp = 0.12 }
+			check_variable = { num_motorized > temp }
+		}
+		cost = 700
+		modifier = {
+			army_speed_factor = 0.05
+			army_attack_factor = 0.08
+			army_artillery_attack_factor = 0.10
+			army_defence_factor = 0.03
+			land_reinforce_rate = 0.15
+			army_morale_factor = 0.08
+			combat_width_factor = -0.08
+			out_of_supply_factor = -0.03
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	marine_infantry_commander_expert = { 
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_mechanized > temp }
+			check_variable = { num_motorized > temp }
+			is_amphibious_invasion = yes
+			is_fighting_in_terrain = marsh
+		}
+		cost = 800
+		modifier = {
+			amphibious_invasion = 0.12
+			invasion_preparation = -0.10
+			out_of_supply_factor = -0.05
+			marsh = {
+				movement = 0.10
+				attack = 0.10
+				defence = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	airborne_commander_expert = { 
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			is_fighting_in_terrain = desert
+			is_fighting_in_terrain = hills
+			is_fighting_in_terrain = forest
+		}
+		cost = 2000
+		modifier = {
+			air_paradrop_attack_factor = 0.08
+			air_paradrop_defence_factor = 0.05
+			air_paradrop_agility_factor = 0.10
+			recon_factor = 0.05
+			out_of_supply_factor = -0.08
+			desert = {
+				movement = 0.03
+				attack = 0.08
+				defence = 0.03
+			}
+			hills = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.03
+			}
+			forest = {
+				movement = 0.03
+				attack = 0.05
+				defence = 0.03
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	specops_commander_expert = { 
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.25 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+			check_variable = { num_mechanized > temp }
+			is_fighting_in_terrain = desert
+			is_fighting_in_terrain = jungle
+			is_fighting_in_terrain = urban
+			is_fighting_in_terrain = forest
+		}
+		cost = 2000
+		modifier = {
+			special_forces_attack_factor = 0.10
+			special_forces_defence_factor = 0.05
+			air_paradrop_agility_factor = 0.10
+			amphibious_invasion = 0.10
+			recon_factor = 0.10
+			out_of_supply_factor = -0.15
+			desert = {
+				movement = 0.05
+				attack = 0.10
+				defence = 0.03
+			}
+			jungle = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.03
+			}
+			urban = {
+				movement = 0.10
+				attack = 0.10
+				defence = 0.05
+			}
+			forest ={
+				movement = 0.05
+				attack = 0.05
+				defence = 0.03
+				}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	tanks_commander_expert = { 
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.25 }
+			check_variable = { num_mechanized > temp }
+			}
+		
+		cost = 900
+		modifier = {
+			army_armor_speed_factor = 0.10
+			army_armor_attack_factor = 0.10
+			out_of_supply_factor = -0.05			
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	artillery_commander_expert = {
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_artillery > temp }
+			multiply_temp_variable = { temp = 0.05 }
+			check_variable = { num_motorized > temp }
+		}
+		cost = 800
+		modifier = {
+			motorized_attack_factor = 0.03
+			motorized_defence_factor = 0.06
+			army_artillery_attack_factor = 0.08
+			army_artillery_defence_factor = 0.02
+			out_of_supply_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	
+
+##################################
+#For All FM+CC traits
+##################################
+
+	assault_army_ops = { 
+		type = field_marshal
+		gain_xp = {
+			is_attacker = yes
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			multiply_temp_variable = { temp = 0.05 }
+			check_variable = { num_motorized > temp }			
+		}
+		cost = 700
+		modifier = {		
+			army_speed_factor = 0.02
+			army_attack_factor = 0.05
+			army_defence_factor = 0.02
+			army_artillery_attack_factor = 0.05
+			land_reinforce_rate = 0.10
+			army_morale_factor = 0.05
+			combat_width_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	mountaineer_infantry_commander = { 
+		type = all 
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			check_variable = { num_motorized > temp }
+			is_fighting_in_terrain = mountain
+			is_fighting_in_terrain = hills
+			is_fighting_in_terrain = forest
+		}
+		cost = 700
+		modifier = {
+		
+			out_of_supply_factor = -0.03
+			
+			mountain = {
+				movement = 0.08
+				attack = 0.08
+				defence = 0.05
+			}
+			hills = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.02
+			}
+			forest = {
+				movement = 0.03
+				attack = 0.03
+				defence = 0.01
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	motorized_infantry_commander = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+		}
+		cost = 600
+		modifier = {
+		
+			motorized_attack_factor = 0.05
+			motorized_defence_factor = 0.05
+			max_dig_in_factor = 0.15
+			defence = 0.025
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	mechanized_infantry_commander = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_mechanized > temp }
+		}
+		cost = 750
+		modifier = {
+			cavalry_attack_factor = 0.05
+			cavalry_defence_factor = 0.05
+			max_dig_in_factor = 0.20
+			out_of_supply_factor = -0.03
+			defence = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	marine_infantry_commander = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			check_variable = { num_motorized > temp }
+			is_amphibious_invasion = yes
+			is_fighting_in_terrain = marsh
+		}
+		cost = 650
+		modifier = {
+			amphibious_invasion = 0.08
+			invasion_preparation = -0.05
+			out_of_supply_factor = -0.01
+			marsh = {
+				movement = 0.02
+				attack = 0.05
+				defence = 0.02
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	airborne_commander_1 = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			is_fighting_in_terrain = desert
+			is_fighting_in_terrain = hills
+			is_fighting_in_terrain = forest
+		}
+		cost = 800
+		modifier = {
+			air_paradrop_attack_factor = 0.05
+			air_paradrop_defence_factor = 0.05
+			air_paradrop_agility_factor = 0.05
+			out_of_supply_factor = -0.05
+			recon_factor = 0.02
+			desert = {
+				movement = 0.01
+				attack = 0.02
+				defence = 0.01
+			}
+			hills = {
+				movement = 0.02
+				attack = 0.02
+				defence = 0.01
+			}
+			forest = {
+				movement = 0.01
+				attack = 0.02
+				defence = 0.01
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	specops_commander = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.15 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+			check_variable = { num_mechanized > temp }
+			is_fighting_in_terrain = desert
+			is_fighting_in_terrain = jungle
+			is_fighting_in_terrain = urban
+			is_fighting_in_terrain = forest
+
+		}
+		cost = 1350
+		modifier = {
+			special_forces_attack_factor = 0.05
+			special_forces_defence_factor = 0.05
+			air_paradrop_agility_factor = 0.05
+			amphibious_invasion = 0.05
+			recon_factor = 0.05
+			out_of_supply_factor = -0.10
+			desert = {
+				movement = 0.02
+				attack = 0.02
+				defence = 0.02
+			}
+			jungle = {
+				movement = 0.02
+				attack = 0.02
+				defence = 0.02
+			}
+			urban = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.02
+			}
+			forest ={
+				movement = 0.02
+				attack = 0.05
+				defence = 0.02
+				}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tanks_commander = {
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_mechanized > temp }
+			}
+		
+		cost = 700
+		modifier = {
+			army_armor_speed_factor = 0.10
+			army_armor_attack_factor = 0.05 
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	artillery_commander = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+			check_variable = { num_artillery > temp }
+		}
+		cost = 550
+		modifier = {
+			motorized_attack_factor = 0.05
+			motorized_defence_factor = 0.05
+			army_artillery_attack_factor = 0.05
+			army_artillery_defence_factor = 0.05
+			max_dig_in_factor = 0.5
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	
+	mp = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+			is_fighting_in_terrain = urban
+		}
+		cost = 470
+		modifier = {
+			motorized_attack_factor = 0.02
+			motorized_defence_factor = 0.02
+			foreign_subversive_activites = -0.03
+			resistance_damage_to_garrison = -0.05
+			army_morale_factor = 0.05
+			max_dig_in_factor = 0.8
+			urban = {
+				movement = 0.02
+				attack = 0.02
+				defence = 0.08
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	arctic = { 
+		type = all
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_motorized > temp }
+			check_variable = { num_mechanized > temp }
+			temperature < -10
+			is_fighting_in_terrain = marsh
+		}
+		cost = 530
+		modifier = {
+			winter_attrition_factor = -0.25
+			heat_attrition_factor = 0.10
+			supply_consumption_factor = -0.05
+			max_dig_in_factor = 0.15
+			out_of_supply_factor = -0.05
+			marsh = {
+				movement = 0.01
+				attack = 0.02
+				defence = 0.03
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	civilian_staff = { 
+		type = field_marshal
+		gain_xp = {
+			infantry > 0.10
+			motorized > 0.10
+			mechanized > 0.10
+
+		}
+		cost = 350
+		modifier = {
+		
+			defence = 0.03
+			out_of_supply_factor = -0.3
+			supply_consumption_factor = -0.08
+			max_dig_in_factor = 0.2
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	militia_commander = { 
+		type = field_marshal
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			check_variable = { num_mechanized > temp }
+			multiply_temp_variable = { temp = 0.03 }
+			check_variable = { num_motorized > temp }
+
+		}
+		cost = 150
+		modifier = {
+		
+			army_infantry_attack_factor = 0.03
+			army_infantry_defence_factor = 0.06
+			training_time_factor = -0.08
+			conscription = 0.01
+			out_of_supply_factor = -0.05
+			supply_consumption_factor = -0.02
+			max_dig_in_factor = 0.12
+			land_reinforce_rate = 0.03
+
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		
+	mercenary_commander = { 
+		type = field_marshal
+		gain_xp = {
+			is_attacker = yes
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.1 }
+			check_variable = { num_infantry > temp }
+			multiply_temp_variable = { temp = 0.02 }
+			check_variable = { num_motorized > temp }
+			
+		}
+		cost = 500
+		modifier = {		
+			army_infantry_attack_factor = 0.08
+			army_infantry_defence_factor = 0.01
+			training_time_factor = -0.03
+			land_reinforce_rate = 0.05
+			combat_width_factor = -0.08
+			army_org = 2
+			non_core_manpower = 0.02
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+##################################
+#Naval traits.
+##################################
+	
+	carrier_anti_air_support = {
+		type = navy
+		gain_xp = { }
+		cost = 2000
+		modifier = {
+			navy_carrier_air_targetting_factor = 0.10 #Airplanes from carriers has better naval targetting
+			navy_carrier_air_attack_factor = 0.05
+			sortie_efficiency = 0.05
+			navy_anti_air_attack_factor = 0.10
+			air_interception_attack_factor = 0.02
+			air_interception_defence_factor = 0.02
+			air_interception_agility_factor = 0.02
+			air_air_superiority_attack_factor = 0.02
+			air_air_superiority_defence_factor = 0.02
+			air_accidents_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	carrier_anti_fleet_support = {
+		type = navy
+
+		gain_xp = { }
+		cost = 1600
+		modifier = {
+			navy_carrier_air_targetting_factor = 0.10 #Airplanes from carriers has better naval targetting
+			sortie_efficiency = 0.05
+			navy_submarine_detection_factor = 0.10
+			naval_strike_attack_factor = 0.05
+			naval_strike_targetting_factor = 0.05
+			naval_strike_agility_factor = 0.05
+			spotting_chance = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	carrier_close_air_support = {
+		type = navy
+
+		gain_xp = { }
+		cost = 1800
+		modifier = {
+			navy_carrier_air_targetting_factor = 0.05 #Airplanes from carriers has better naval targetting
+			sortie_efficiency = 0.05
+			army_bonus_air_superiority_factor = 0.05
+			air_close_air_support_attack_factor = 0.05
+			air_close_air_support_defence_factor = 0.05
+			air_close_air_support_agility_factor = 0.05
+			air_cas_present_factor = 0.10
+			spotting_chance = 0.05
+			air_weather_penalty = -0.05
+			air_night_penalty = -0.05
+			air_accidents_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	fleet_commander = {
+		type = navy
+
+		gain_xp = {}
+		cost = 1000
+		modifier = {
+			naval_speed_factor = 0.05
+			spotting_chance = 0.05
+			navy_submarine_detection_factor = 0.05
+			navy_anti_air_attack_factor = 0.05
+			navy_max_range_factor = 0.05
+			navy_capital_ship_attack_factor = 0.05
+			navy_capital_ship_defence_factor = 0.05
+			navy_screen_attack_factor = 0.05
+			navy_screen_defence_factor = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	fleet_commander_expert = {
+		type = navy
+		gain_xp = {}
+		cost = 2000
+		modifier = {
+			naval_speed_factor = 0.10
+			spotting_chance = 0.10
+			navy_submarine_detection_factor = 0.10
+			navy_anti_air_attack_factor = 0.10
+			navy_max_range_factor = 0.10
+			navy_capital_ship_attack_factor = 0.10
+			navy_capital_ship_defence_factor = 0.05
+			navy_screen_attack_factor = 0.10
+			navy_screen_defence_factor = 0.05
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	submarine_fleet_commander = {
+		type = navy
+		gain_xp = {}
+		cost = 1000
+		modifier = {
+			naval_speed_factor = 0.02
+			spotting_chance = 0.10
+			navy_submarine_detection_factor = 0.05
+			navy_max_range_factor = 0.05
+			navy_submarine_attack_factor = 0.05
+			navy_submarine_defence_factor = 0.05
+			}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	submarine_fleet_commander_expert = {
+		type = navy
+		gain_xp = {}
+		cost = 1950
+		modifier = {
+			naval_speed_factor = 0.05
+			spotting_chance = 0.20
+			navy_submarine_detection_factor = 0.10
+			navy_max_range_factor = 0.20
+			navy_submarine_attack_factor = 0.10
+			navy_submarine_defence_factor = 0.10
+			}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+###UNIQ
+
+	sso = { 
+		type = field_marshal
+		gain_xp = {
+			infantry > 0.25
+			motorized > 0.15
+			mechanized > 0.15
+			is_fighting_in_terrain = desert
+			is_fighting_in_terrain = jungle
+			is_fighting_in_terrain = urban
+			is_fighting_in_terrain = hills
+			is_fighting_in_terrain = mountain
+			AND = { 
+			has_trait = specops_commander
+			}
+
+		}
+		
+		
+		cost = 1555
+		modifier = {
+			special_forces_attack_factor = 0.10
+			special_forces_defence_factor = 0.05
+			air_paradrop_agility_factor = 0.10
+			amphibious_invasion = 0.05
+			recon_factor = 0.15
+			out_of_supply_factor = -0.2
+			combat_width_factor = -0.05
+			desert = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.03
+			}
+			jungle = {
+				movement = 0.02
+				attack = 0.02
+				defence = 0.02
+			}
+			urban = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.02
+			}
+			hills ={
+				movement = 0.02
+				attack = 0.05
+				defence = 0.02
+				}
+			mountain = {
+				movement = 0.08
+				attack = 0.10
+				defence = 0.03
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+}

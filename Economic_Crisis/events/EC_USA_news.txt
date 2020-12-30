@@ -1,0 +1,655 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## USA news events   ###
+#################################
+## Written by Maxsim&SuxrobGM ###
+#################################
+
+add_namespace = usa_news
+
+# NATO Expansion
+news_event = {
+	id = usa_news.1
+	title = usa_news.1.t
+	desc = usa_news.1.d
+	picture = GFX_event_NATO_expansions_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			tag = USA
+			tag = FIN
+			tag = SWE
+			tag = UKR
+		}
+	}
+
+	option = {
+		name = usa_news.1.a
+		trigger = {
+			NOT = { tag = RUS }
+		}
+	}
+
+	option = {
+		name = usa_news.1.b
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+
+# Russia Returned Crimea to Ukraine
+news_event = {
+	id = usa_news.2
+	title = usa_news.2.t
+	desc = usa_news.2.d
+	picture = GFX_event_crimea_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			tag = RUS
+			tag = USA
+			tag = UKR
+		}
+	}
+
+	option = {
+		name = usa_news.2.a
+	}
+}
+
+# Protests in Russia
+news_event = {
+	id = usa_news.3
+	title = usa_news.3.t
+	desc = usa_news.3.d
+	picture = GFX_event_protest_kreml_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			tag = RUS
+		}
+	}
+
+	option = {
+		name = usa_news.3.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.3.b
+		trigger = {
+			NOT = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+}
+
+# Revolt of Democrats in Russia
+news_event = {
+	id = usa_news.4
+	title = usa_news.4.t
+	desc = usa_news.4.d
+	picture = GFX_event_russkie_protest_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	#trigger = {
+	#	NOT = { original_tag = RUS }
+	#}
+
+	option = {
+		name = usa_news.4.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.4.b
+		trigger = {
+			NOT = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+}
+
+# Government Changed in Russia
+news_event = {
+	id = usa_news.5
+	title = usa_news.5.t
+	desc = usa_news.5.d
+	picture = GFX_event_government_russia_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { original_tag = RUS }
+	}
+
+	option = {
+		name = usa_news.5.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.5.b
+		trigger = {
+			NOT = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+}
+
+# Syria-Opposition Peace
+news_event = {
+	id = usa_news.6
+	title = usa_news.6.t
+	desc = usa_news.6.d
+	picture = GFX_event_syria_peace_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			tag = USA
+			tag = FSA
+			tag = SYR
+		}
+	}
+
+	option = {
+		name = usa_news.6.a
+		trigger = {
+			NOT = { tag = ISS }
+		}
+	}
+
+	option = {
+		name = usa_news.6.b
+		trigger = {
+			tag = ISS
+		}
+	}
+}
+
+# Bombing IGIL of USA
+news_event = {
+	id = usa_news.7
+	title = usa_news.7.t
+	desc = usa_news.7.d
+	picture = GFX_event_bombing_IGIL_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			tag = USA
+			tag = ISS
+		}
+	}
+
+	option = {
+		name = usa_news.7.a
+		trigger = {
+			NOT = { tag = ISS }
+		}
+	}
+
+	option = {
+		name = usa_news.7.b
+		trigger = { tag = ISS }
+	}
+}
+
+# USA Promised Protection
+news_event = {
+	id = usa_news.8
+	title =  usa_news.8.t
+	desc = usa_news.8.d
+	picture = GFX_event_flag_USA_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.8.a
+		trigger = {
+			NOT = { tag = RUS }
+		}
+	}
+
+	option = {
+		name = usa_news.8.b
+		trigger = { tag = RUS }
+	}
+}
+
+# USA Increase Presence
+news_event = {
+	id = usa_news.9
+	title = usa_news.9.t
+	desc = usa_news.9.d
+	picture = GFX_event_barak_obama_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.9.a
+		trigger = {
+			NOT = { tag = RUS }
+		}
+	}
+
+	option = {
+		name = usa_news.9.b
+		trigger = { tag = RUS }
+	}
+}
+
+# Revolt of Democrats in China
+news_event = {
+	id = usa_news.10
+	title = usa_news.10.t
+	desc = usa_news.10.d
+	picture = GFX_event_protest1_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { original_tag = CHI }
+	}
+
+	option = {
+		name = usa_news.10.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.10.b
+		trigger = {
+			NOT = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+				has_government = communism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.10.c
+		trigger = {
+			OR = {
+				has_government = communism
+			}
+		}
+	}
+}
+
+# Government Changed in China
+news_event = {
+	id = usa_news.11
+	title = usa_news.11.t
+	desc = usa_news.11.d
+	picture = GFX_event_china_usa_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { original_tag = CHI }
+	}
+
+	option = {
+		name = usa_news.11.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.11.b
+		trigger = {
+			NOT = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+				has_government = communism
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.11.c
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+		}
+	}
+}
+
+# USA are Going to Declare War on IGIL
+news_event = {
+	id = usa_news.12
+	title = usa_news.12.t
+	desc = usa_news.12.d
+	picture = GFX_event_USA_army1_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.12.a
+		trigger = {
+			NOT = {
+				tag = ISS
+				has_war_with = ISS
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.12.b
+		trigger = {
+			has_war_with = ISS
+		}
+	}
+
+	option = {
+		name = usa_news.12.c
+		trigger = {
+			tag = ISS
+		}
+	}
+}
+
+# USA are Going to Declare War on Russia
+news_event = {
+	id = usa_news.13
+	title = usa_news.13.t
+	desc = usa_news.13.d
+	picture = GFX_event_flag_USA_vs_RUS_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.13.a
+		trigger = {
+			NOT = {
+				tag = RUS
+				has_war_with = RUS
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.13.b
+		trigger = {
+			has_war_with = RUS
+		}
+	}
+
+	option = {
+		name = usa_news.13.c
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+
+# USA are Going to Declare War on China
+news_event = {
+	id = usa_news.14
+	title = usa_news.14.t
+	desc = usa_news.14.d
+	picture = GFX_event_CHI_teritory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.14.a
+		trigger = {
+			NOT = {
+				tag = CHI
+				has_war_with = CHI
+				tag = ROC
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.14.b
+		trigger = {
+			OR = {
+				has_war_with = CHI
+				tag = ROC
+			}
+		}
+	}
+
+	option = {
+		name = usa_news.14.c
+		trigger = {
+			tag = CHI
+		}
+	}
+}
+
+# Sanctions of USA against China
+news_event = {
+	id = usa_news.15
+	title = usa_news.15.t
+	desc = usa_news.15.d
+	picture = GFX_event_flag_CHI_on_great_wall_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		NOT = { tag = USA }
+	}
+
+	option = {
+		name = usa_news.15.a
+		trigger = { tag = CHI }
+	}
+
+	option = {
+		name = usa_news.15.b
+		trigger = {
+			NOT = { tag = CHI }
+		}
+	}
+}
+
+news_event = { #Victory Trump
+	id = usa_news.16
+	title = usa_news.16.t
+	desc = usa_news.16.d
+	picture = GFX_event_victory_trump_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = usa_news.16.a
+		trigger = { NOT = { tag = RUS } }
+	}
+
+	option = {
+		name = usa_news.16.b
+		trigger = {
+			tag = RUS 
+		}
+	}
+}
+
+news_event = { #Victory Clinton
+	id = usa_news.17
+	title = usa_news.17.t
+	desc = usa_news.17.d
+	picture = GFX_event_victory_clinton_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = usa_news.17.a
+		trigger = { NOT = { tag = RUS } }
+	}
+
+	option = {
+		name = usa_news.17.b
+		trigger = {
+			tag = RUS 
+		}
+	}
+}
+
+news_event = { #Victory Trump - 2020
+	id = usa_news.18
+	title = usa_news.18.t
+	desc = usa_news.18.d
+	picture = GFX_event_victory_trump_news_2020
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = usa_news.18.a
+		trigger = { NOT = { tag = RUS } }
+	}
+
+	option = {
+		name = usa_news.18.b
+		trigger = {
+			tag = RUS 
+		}
+	}
+
+	option = {
+		name = usa_news.18.c
+		trigger = {
+			tag = RUS 
+			USA = { has_country_flag = trump_elected_2016 }
+		}
+	}
+
+}
+
+news_event = { #Victory Biden
+	id = usa_news.19
+	title = usa_news.19.t
+	desc = usa_news.19.d
+	picture = GFX_event_victory_biden_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = usa_news.19.a
+		trigger = { NOT = { tag = RUS } }
+	}
+
+	option = {
+		name = usa_news.19.b
+		trigger = {
+			tag = RUS 
+		}
+	}
+}

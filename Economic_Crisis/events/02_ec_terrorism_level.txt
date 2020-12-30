@@ -1,0 +1,208 @@
+﻿add_namespace = terrorism
+#terrorism - factory sabotaged
+country_event = {
+	id = terrorism.1
+	title = terrorism.1.t
+	desc = terrorism.1.d
+	picture = GFX_report_event_generic_ruins
+
+	is_triggered_only = yes
+	
+	option = {
+		name = terrorism.1.a 
+		add_manpower = -50
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.6
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = rad_islamists }
+			add_popularity = { ideology = rad_islamists popularity = -0.01 }	
+		}
+	}
+}
+
+#terrorism - civilian factory sabotaged
+country_event = {
+	id = terrorism.2
+	title = terrorism.2.t
+	desc = terrorism.2.d
+	picture = GFX_report_event_generic_ruins
+
+	is_triggered_only = yes
+	
+	option = {
+		name = terrorism.2.a 
+		add_manpower = -50
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = rad_islamists }
+			add_popularity = { ideology = rad_islamists popularity = -0.01 }	
+		}
+	}
+}
+
+#terrorism - bridge blown
+country_event = {
+	id = terrorism.3
+	title = terrorism.3.t
+	desc = terrorism.3.d
+	picture = GFX_report_event_generic_train
+
+	is_triggered_only = yes
+	
+	option = {
+		name = terrorism.3.a #
+		add_manpower = -25
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = rad_islamists }
+			add_popularity = { ideology = rad_islamists popularity = -0.01 }	
+		}
+	}
+}
+
+#terrorism - bridge blown
+country_event = {
+	id = terrorism.4
+	title = terrorism.4.t
+	desc = terrorism.4.d
+	picture = GFX_report_event_generic_train
+
+	is_triggered_only = yes
+	
+	option = {
+		name = terrorism.4.a #
+		add_political_power = 50
+		add_manpower = -10
+		add_stability = 0.01
+		terrorism_decreased = yes
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = 0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = 0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = 0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = 0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = 0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = 0.01 }	
+		}
+		if = {
+			limit = { has_government = rad_islamists }
+			add_popularity = { ideology = rad_islamists popularity = 0.01 }	
+		}
+	}
+}

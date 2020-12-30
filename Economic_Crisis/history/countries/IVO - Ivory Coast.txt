@@ -1,0 +1,84 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+# NOT EDITED POLITICS
+
+capital = 745
+add_ideas = { au_member }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3127 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "IVO_2013"
+	
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+	}
+
+    set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 25
+	
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2011.12.11"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 20
+		reformism = 0
+		liberalism = 60
+		democratic = 0
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Alassane Ouattara"
+		desc = "POLITICS_ALASSANE_OUATTARA_DESC"
+		picture = "gfx/leaders/IVO/portrait_alassane_ouattara.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}	
+		
+	create_country_leader = {
+		name = "Pascal Affi N'Guessan"
+		desc = "POLITICS_PASCAL_AFFI_N'GUESSAN_DESC"
+		picture = "gfx/leaders/IVO/portrait_pascal_affi_nguessan.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Achy Ekissi"
+		desc = "POLITICS_ACHY_EKISSI_DESC"
+		picture = "gfx/leaders/IVO/portrait_achy_ekissi.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Henri Konan Bedie"
+		desc = "POLITICS_HENRI_KONAN_BEDIE_DESC"
+		picture = "gfx/leaders/IVO/portrait_henri_konan_bedie.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

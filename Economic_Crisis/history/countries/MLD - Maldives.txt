@@ -1,0 +1,88 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 281
+
+add_ideas = {
+	mixed_schools
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 279 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2008.10.28"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 10
+		liberalism = 38
+		democratic = 52
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	# Исторически президент с ноября 2018, в случае 
+	# победы Ямина на следующих выборах он станет лидером партии 
+	#create_country_leader = {
+	#	name = "Ibrahim Mohamed Solih"
+	#	desc = ""
+	#	picture = "gfx/leaders/MLD/portrait_ibrahim_mohamed_solih.dds"
+	#	ideology = liberal_democracy
+	#	traits = { trait_liberal_democracy }
+	#}
+	
+	# Кандидат на выборах ноября 2013
+	create_country_leader = {
+		name = "Mohamed Nasheed"
+		desc = ""
+		picture = "gfx/leaders/MLD/portrait_mohamed_nasheed.dds"
+		ideology = liberal_democracy
+		expire = "2018.11.17"
+		traits = { trait_liberal_democracy }
+	}
+
+	# Президент с ноября 2013
+	create_country_leader = {
+		name = "Abdulla Yameen"
+		desc = ""
+		picture = "gfx/leaders/MLD/portrait_abdulla_yameen.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Mohammed Waheed Hassan"
+		desc = ""
+		picture = "gfx/leaders/MLD/portrait_mohammed_waheed_hassan.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Qasim Ibrahim"
+	#	desc = ""
+	#	picture = "gfx/leaders/MLD/portrait_qasim_ibrahim.dds"
+	#	ideology = social_conservatism
+	#	traits = { trait_social_conservatism }
+	#}
+
+}
+

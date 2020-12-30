@@ -1,0 +1,75 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+
+capital = 272
+
+add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1481 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SEN_2013"
+	
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		low_terrorism
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 15
+
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2012.4.2"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 13
+		liberalism = 87
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Macky Sall"
+		desc = "POLITICS_MACKY_SALL_DESC"
+		picture = "gfx/leaders/SEN/portrait_macky_sall.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ousmane Tanor Dieng"
+		desc = "POLITICS_OUSMANE_TANOR_DIENG_DESC"
+		picture = "gfx/leaders/SEN/portrait_ousmane_tanor_dieng.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+

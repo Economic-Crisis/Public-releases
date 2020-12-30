@@ -1,0 +1,220 @@
+equipments = {
+
+	#Боевая машина пехоты (БМП)
+	
+	ifv_tracked_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			armor
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+		
+		maximum_speed = 12.0 #+1.5
+		reliability = 0.8 
+		
+		#Defensive Abilities
+		defense = 18 #+2
+		breakthrough = 12 #+4
+		armor_value = 26 #+3
+		hardness = 0.4 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 15 #+4% 
+		hard_attack = 9 #+4%
+		ap_attack = 10 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 5.5 #+1
+
+		build_cost_ic = 10 #+1
+		fuel_consumption = 1
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 1
+			#money = 3
+		}
+	}
+	
+	#I
+	ifv_tracked_g2_equipment_0 = {
+		archetype = ifv_tracked_equipment
+		#parent = ifv_tracked_equipment
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 13.5 #+1.5
+		reliability = 0.8 
+		
+		#Defensive Abilities
+		defense = 20 #+2
+		breakthrough = 16 #+4
+		armor_value = 29 #+3
+		hardness = 0.41 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 15.6 #+4% 
+		hard_attack = 9.4 #+4%
+		ap_attack = 10.6 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 6.5 #+1
+
+		build_cost_ic = 11 #+0.5
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 2
+			#money = 4
+		}
+	}
+	
+	#II
+	ifv_tracked_g3_equipment_0 = {
+		archetype = ifv_tracked_equipment
+		parent = ifv_tracked_g2_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 15.0 #+1.5
+		reliability = 0.85 
+		
+		#Defensive Abilities
+		defense = 22 #+2
+		breakthrough = 20 #+4
+		armor_value = 32 #+3
+		hardness = 0.46 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 19.7 #+4% 
+		hard_attack = 11.8 #+4%
+		ap_attack = 15.0 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 7.5 #+1
+
+		build_cost_ic = 12 #+0.5
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 2
+			#money = 4
+		}
+	}
+	
+	#III
+	ifv_tracked_g4_equipment_0 = {
+		archetype = ifv_tracked_equipment
+		parent = ifv_tracked_g3_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 16.5 #+1.5
+		reliability = 0.85
+		
+		#Defensive Abilities
+		defense = 24 #+2
+		breakthrough = 24 #+4
+		armor_value = 35 #+3
+		hardness = 0.52 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 25 #+4% 
+		hard_attack = 15 #+4%
+		ap_attack = 21.3 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 8.5 #+1
+
+		build_cost_ic = 13 #+0.5
+		resources = {
+			steel = 4
+			polymers = 6
+			alloy_steel = 3
+			#money = 5
+		}
+	}
+	
+	#IV
+	ifv_tracked_g5_equipment_0 = {
+		archetype = ifv_tracked_equipment
+		parent = ifv_tracked_g4_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 18.0 #+1.5
+		reliability = 0.85 
+		
+		#Defensive Abilities
+		defense = 26 #+2
+		breakthrough = 28 #+4
+		armor_value = 38 #+3
+		hardness = 0.59 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 31.6 #+4% 
+		hard_attack = 19 #+4%
+		ap_attack = 30.3 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 9.5 #+1
+
+		build_cost_ic = 14 #+0.5
+		resources = {
+			steel = 4
+			polymers = 6
+			alloy_steel = 3
+			#money = 5
+		}
+	}
+	
+	#V
+	ifv_tracked_g6_equipment_0 = {
+		archetype = ifv_tracked_equipment
+		parent = ifv_tracked_g5_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 19.5 #+1.5
+		reliability = 0.9 
+		
+		#Defensive Abilities
+		defense = 28 #+2
+		breakthrough = 32 #+4
+		armor_value = 41 #+3
+		hardness = 0.7 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 40 #+4% 
+		hard_attack = 24 #+4%
+		ap_attack = 42.9 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10.5 #+1
+
+		build_cost_ic = 15 #+0.5
+		resources = {
+			steel = 5
+			polymers = 8
+			alloy_steel = 3
+			#money = 6
+		}
+	}
+
+}

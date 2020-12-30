@@ -1,0 +1,106 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 100
+
+	add_ideas = {
+		eu_member
+		integration_in_nato
+		NPT
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1548 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "ICE_2013"
+	
+	set_convoys = 0
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		national_social_security
+		pensions
+		mixed_economic
+		
+		low_terrorism
+	}
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {	
+		ruling_party = neutrality
+		last_election = "2012.6.30"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 23
+		liberalism = 10
+		democratic = 34
+		neutrality = 33
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	# Честно говоря, с Исландией много чего непонятного
+	# Они президентская республика, но все кандидаты на выборах 2012 года были беспартийными самовыдвиженцами
+	# Поэтому, я взял президента на начало сценария и лидеров партий, с ними все понятно (более менее)
+
+	create_country_leader = {
+		name = "Ólafur Ragnar Grímsson"
+		desc = "POLITICS_OLAFUR_RAGNAR_GRIMSSON_DESC"
+		picture = "gfx/leaders/ICE/portrait_olafur_ragnar_grimsson.dds"
+		expire = "2016.7.1"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Sigurður Ingi Jóhannsson"
+	#	desc = "POLITICS_SIGURDOR_INGI_JOHANNSSON_DESC"
+	#	picture = "gfx/leaders/ICE/portrait_sigurdor_ingi_johannsson.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Guðni Thorlacius Jóhannesson"
+	#	desc = "POLITICS_GUONI_THORLACIUS_JOHANNESSON_DESC"
+	#	picture = "gfx/leaders/ICE/portrait_guoni_thorlacius_johannesson.dds"
+	#	ideology = liberal_democracy
+	#	expire = "2016.7.1"
+	#	traits = { trait_liberal_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Bjarni Benediktsson"
+	#	desc = "POLITICS_BJARNI_BENEDIKTSSON_DESC"
+	#	picture = "gfx/leaders/ICE/portrait_bjarni_benediktsson.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Katrin Jakobsdottir"
+	#	desc = "POLITICS_KATRIN_JAKOBSDOTTIR_DESC"
+	#	picture = "gfx/leaders/ICE/portrait_katrin_jakobsdottir.dds"
+	#	ideology = green_politics
+	#	traits = { trait_green_politics }
+	#}
+
+}
+

@@ -1,0 +1,97 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 742
+
+1991.12.25 = {
+    add_ideas = {
+		mixed_schools
+		cis_member
+		NPT
+	}
+}
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
+1996.4.26 = {
+    add_ideas = sco_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 850 }
+
+	load_oob = "_tech_csto_minor_2013"
+	oob = "TAJ_2013"
+
+	set_stability = 0.5
+	add_ideas = low_terrorism
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+		
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2006.11.6"
+		election_frequency = 84
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 30
+		reformism = 0
+		liberalism = 0
+		democratic = 10
+		neutrality = 60
+		fascism = 0
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Emomali Rahmon"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_emomali_rahmon.dds"
+		ideology = authoritarian_democracy 
+		traits = { trait_authoritarian_democracy }
+	}
+	create_country_leader = {
+		name = "Sholi Shabdolov"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_sholi_shabdolov.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	create_country_leader = {
+		name = "Muhiddin Kabirov"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_muhidin_kabirov.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+	create_country_leader = {
+		name = "Saijafar Ismonov"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_saijafar_ismonov.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Olimjohn Boboev"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_olimchon_boboev.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	create_country_leader = {
+		name = "Rahmatullo Zoirov"
+		desc = ""
+		picture = "gfx/leaders/TAJ/portrait_rahmatullo_zoirov.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}

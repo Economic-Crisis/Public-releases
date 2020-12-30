@@ -1,0 +1,77 @@
+﻿division_template = {
+	name = "Infantry Division"		
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+
+
+units = {
+	######## LAND OOB ########
+	##### Royal Siamese Army #####
+	division = {
+		name = "1st Division"
+		location = 7408
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "2nd Division"
+		location = 7236
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "3rd Division"
+		location = 7292
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "4th Division"
+		location = 12264
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "6th Division"
+		location = 7408
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}				
+}
+
+#air_wings = {
+	### Royal Siamese Air Force ###
+#}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "SIA"
+		}
+		requested_factories = 1
+		progress = 0.69
+		efficiency = 100
+	}
+}

@@ -1,0 +1,76 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 183
+
+	add_ideas =  {
+		eu_member
+		small_country
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2405 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "CYP_2013"
+	
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	
+	add_ideas = {
+		presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		minimum_wage
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 40
+		reformism = 0
+		liberalism = 0
+		democratic = 60
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Nikos Anastasiades"
+		desc = ""
+		picture = "gfx/leaders/CYP/portrait_nicos_anastasiades.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Stavros Malas"
+		desc = ""
+		picture = "gfx/leaders/CYP/portrait_stavros_malas.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+}
+

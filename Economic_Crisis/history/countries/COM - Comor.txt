@@ -1,0 +1,97 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 708
+
+add_ideas = {
+	small_country
+}
+
+# 20 ноября 1993 года
+1993.11.20 = {
+    add_ideas = {
+		arab_league_member
+		au_member
+	}
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 61 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_convoys = 15
+
+	set_stability = 0.4
+
+	add_ideas = {
+		presidential_republic
+		administrative_federation
+		state_religion
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		
+		NPT
+		islam_idea_lvl_3
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2010.11.7"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 28
+		liberalism = 10
+		democratic = 62
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ikililou Dhoinine"
+		desc = "POLITICS_IKILILOU_DHOININE_DESC"
+		picture = "gfx/leaders/COM/portrait_ikililou_dhoinine.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Azali Assoumani"
+		desc = "POLITICS_AZALI_ASSOUMANI_DESC"
+		picture = "gfx/leaders/COM/portrait_azali_assoumani.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+
+
+2019.03.24 = { 
+	COM = {
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.3
+		}
+
+		set_politics = {
+			ruling_party = reformism
+		}
+	}
+}
+
+

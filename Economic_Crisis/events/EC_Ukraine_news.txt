@@ -1,0 +1,347 @@
+﻿############################
+### Economic Crisis       ##
+############################
+### Ukraine news events   ##
+############################
+### Written by MrSuricate ##
+############################
+
+
+
+add_namespace = ukraine_news 
+
+news_event = { #Люстрация
+	id = ukraine_news.1 
+	title = ukraine_news.1.t
+	desc = ukraine_news.1.d
+	picture = GFX_event_ukraine_lustration_news
+
+	is_triggered_only = yes
+
+	option = {
+    name = ukraine_news.1.a
+		}
+}
+
+news_event = { #Вступление Украины в НАТО
+	id = ukraine_news.2   
+	title = ukraine_news.2.t
+	desc = ukraine_news.2.d
+	picture = GFX_event_UKR_to_NATO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.2.a
+		trigger = {
+			NOT = { tag = RUS }
+		}
+	}
+	
+	option = {
+	name = ukraine_news.2.b
+		trigger = {
+			tag = RUS
+		}
+	}
+}
+
+news_event = { #Проведение АТО
+	id = ukraine_news.3   
+	title = ukraine_news.3.t 
+	desc = ukraine_news.3.d
+	picture = GFX_event_UKR_army_ATO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.3.a	 
+	}
+}
+
+news_event = { #Претензии Украины на Крым
+	id = ukraine_news.4   
+	title = ukraine_news.4.t
+	desc = ukraine_news.4.d
+	picture = GFX_event_ukraine_crimea_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.4.a	 
+	}
+}
+
+news_event = { #Украина создает алянс Междуморье
+	id = ukraine_news.5   
+	title = ukraine_news.5.t
+	desc = ukraine_news.5.d
+	picture = GFX_event_mejdumore_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.5.a
+	 
+	}
+}
+	
+#news_event = { #Украина сохранает нейтралитет
+	# id = ukraine_news.6   
+	#title = ukraine_news.6.t
+	#desc = ukraine_news.6.d
+	#picture = GFX_event_UKR_teritory_news
+
+	#is_triggered_only = yes
+
+	#major = yes
+
+	#option = {
+	#name = ukraine_news.6.a
+		 
+	#}
+#}
+
+#news_event = { #Договор с Россией
+	# id = ukraine_news.7   
+	#title = ukraine_news.7.t
+	#desc = ukraine_news.7.d
+	#picture = GFX_event_ukraine_russia
+
+	#is_triggered_only = yes
+
+	#major = yes
+
+	    #option = {
+		#name = ukraine_news.7.a
+		 
+	#}
+#}
+
+news_event = { #В Украине начинется гражданская война
+	id = ukraine_news.8   
+	title = ukraine_news.8.t
+	desc = ukraine_news.8.d
+	picture = GFX_event_UKR_civilwar_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.8.a
+	}
+}
+
+news_event = { #Украина улучшает отношения с Россией
+	id = ukraine_news.9   
+	title = ukraine_news.9.t
+	desc = ukraine_news.9.d
+	picture = GFX_event_ukraine_russia_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	    option = {
+		name = ukraine_news.9.a
+		 
+	}
+}
+	
+news_event = { #Вступление Украины в ОДКБ
+	id = ukraine_news.10   
+	title = ukraine_news.10.t
+	desc = ukraine_news.10.d
+	picture = GFX_event_UKR_to_CSTO_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = ukraine_news.10.a
+		 
+	}
+}
+
+news_event = { #События Евромайдана
+	id = ukraine_news.11   
+	title = ukraine_news.11.t
+	desc = ukraine_news.11.d
+	picture = GFX_event_euromaydan_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+	    hidden_effect = {
+		    UKR = {
+			    add_named_threat = { threat = 3 name = threat_UKR_euromaydan }
+			}
+		}
+	}	
+	
+	option = {
+    name = ukraine_news.11.a
+	
+	}
+}
+
+news_event = { #Вооружённый конфликт на востоке Украины
+	id = ukraine_news.12  
+	title = ukraine_news.12.t
+	desc = ukraine_news.12.d
+	picture = GFX_event_conflict_in_east_ukraine_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = ukraine_news.12.a
+	
+	}
+}
+
+news_event = { #Отстранение Януковича
+	id = ukraine_news.13  
+	title = ukraine_news.13.t
+	desc = ukraine_news.13.d
+	picture = GFX_event_otstranenie_Yanukovicha_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = ukraine_news.13.a
+	
+	}
+}
+
+news_event = { #Президентские выборы в Украине
+	id = ukraine_news.14  
+	title = ukraine_news.14.t
+	desc = ukraine_news.14.d
+	picture = GFX_event_elections_ukraine_2014_news
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = ukraine_news.14.a
+	
+	}
+}
+
+news_event = {
+	id = ukraine_news.15
+	title = ukraine_news.15.t
+	desc = ukraine_news.15.d
+	picture = GFX_event_flood_in_western_ukraine_2020_news
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+			89 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+			91 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+			939 = {
+				damage_building = {
+					type = thermal_power_plant
+					damage = 2
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+		}
+	}
+
+	trigger = {
+		date > 2020.6.23
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	major = yes
+
+	option = {
+		name = ukraine_news.15.a
+		if = { 
+			limit = {
+				original_tag = UKR
+			}
+			subtract_from_variable = { budget_reserve = 3 }
+			
+		}
+	}
+}
+
+news_event = {
+	id = ukraine_news.16
+	title = ukraine_news.16.t
+	desc = ukraine_news.16.d
+	picture = GFX_event_flood_in_kyiv_2018_news
+
+	immediate = {
+		hidden_effect = {
+			202 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+			}
+			
+		}
+	}
+
+	trigger = {
+		date > 2018.6.25
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	major = yes
+
+	option = {
+		name = ukraine_news.16.a
+		if = { 
+			limit = {
+				original_tag = UKR
+			}
+			subtract_from_variable = { budget_reserve = 1 }
+			custom_effect_tooltip = ukraine_news.16.TT
+		}
+	}
+}

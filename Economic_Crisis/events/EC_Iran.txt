@@ -1,0 +1,133 @@
+﻿#########################
+## Economic Crisis     ##
+#########################
+## Persian Events      ##
+#########################
+## Written by  Ulyanov ##
+#########################
+
+add_namespace = iran
+
+country_event = { #Теракт в Тегеране
+	id = iran.1
+	title = iran.1.t
+	desc = iran.1.d
+	picture = GFX_event_teract_tegeran
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = IRN
+	}
+	
+	option = { 
+		name = iran.1.a
+		ai_chance = { factor = 100 }
+		random_list = {
+				40 = {
+					country_event = { id = iran.2 days = 1 }
+					add_stability = -0.15
+				}
+				60 = {
+					country_event = { id = iran.3 days = 1 }
+					add_stability = 0.05
+				}
+			}
+	}
+}
+
+country_event = { #Али Хаменеи мёртв
+	id = iran.2
+	title = iran.2.t
+	desc = iran.2.d
+	picture = GFX_event_teract_tegeran
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = IRN
+	}
+	option = { 
+		name = iran.2.a
+		ai_chance = { factor = 100 }
+		kill_country_leader = yes
+	}
+}
+
+country_event = { #Али Хаменеи жив
+	id = iran.3
+	title = iran.3.t
+	desc = iran.3.d
+	picture = GFX_event_teract_tegeran
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = IRN
+	}
+	option = { 
+		name = iran.3.a
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { #Белуджистан
+	id = iran.4
+	title = iran.4.t
+	desc = iran.4.d
+	picture = GFX_event_beluji
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = IRN
+	}
+	option = { 
+		name = iran.4.a
+		ai_chance = { factor = 60 }
+		add_political_power = -50
+		add_opinion_modifier = {
+		target = PAK
+		modifier = actions_positive
+		}
+		add_opinion_modifier = {
+		target = SAU
+		modifier = actions_negative
+		}
+	}
+	option = { 
+		name = iran.4.b
+		ai_chance = { factor = 30 }
+		add_state_claim = 444
+		add_state_core = 444
+		add_state_claim = 445
+		add_state_core = 445
+		add_opinion_modifier = {
+		target = PAK
+		modifier = actions_negative
+		}
+		add_opinion_modifier = {
+		target = SAU
+		modifier = actions_negative
+		}
+	}
+	option = { 
+		name = iran.4.c
+		ai_chance = { factor = 10 }
+		add_opinion_modifier = {
+		target = PAK
+		modifier = actions_negative
+		}
+		add_opinion_modifier = {
+		target = SAU
+		modifier = actions_negative
+		}
+		BLD = {
+		add_state_claim = 444
+		add_state_core = 444
+		add_state_claim = 445
+		add_state_core = 445
+		transfer_state = 444
+		transfer_state = 445
+		declare_war_on = {
+		target = PAK
+		type = liberate_wargoal
+			}
+		}
+	}
+}

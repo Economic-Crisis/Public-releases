@@ -1,0 +1,330 @@
+﻿##############################
+###### Economic Crisis #######
+##############################
+#####   Donetsk events   #####
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = donetsk
+
+country_event = {  #Выборы ДНР: 2014
+	id = donetsk.1
+	title = donetsk.1.t
+	desc = donetsk.1.d
+	picture = GFX_event_donetsk_elections_2014
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = DON
+		country_exists = DON
+		date > 2014.10.31
+	}
+
+	immediate = { set_country_flag = donetsk_elections_2014 }
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {	#Захарченко
+		name = donetsk.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.1.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Aleksandr Zakharchenko"
+			desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+			picture = "gfx/leaders/DON/portrait_aleksandr_zaharchenko.dds"
+			ideology = sovereign_democracy #irredentism
+			traits = { trait_sovereign_democracy }
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+	
+	option = {	#Кофман
+		name = donetsk.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.1.b"
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Aleksandr Kofman"
+			desc = "POLITICS_ALEKSANDR_KOFMAN_DESC"
+			picture = "gfx/leaders/DON/portrait_aleksandr_kofman.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+
+	option = {	#Сивоконенко
+		name = donetsk.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.1.c"
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Yuri Sivokonenko"
+			desc = "POLITICS_YURI_SIVOKONENKO_DESC"
+			picture = "gfx/leaders/DON/portrait_yuri_sivokonenko.dds"
+			ideology = irredentism 
+			traits = { trait_irredentism }
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.3
+		}
+		trigger = {
+			fascism > 0.25
+		}
+	}
+
+}
+
+country_event = {  #Выборы ДНР: 2018
+	id = donetsk.2
+	title = donetsk.2.t
+	desc = donetsk.2.d
+	picture = GFX_event_donetsk_elections_2018
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = DON
+		country_exists = DON
+		date > 2018.11.9
+		#has_country_flag = zakharchenko_killed
+	}
+
+	immediate = { set_country_flag = donetsk_elections_2018 }
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {	#Пушилин
+		name = donetsk.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.2.a"
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		create_country_leader = {
+			name = "Denis Pushilin"
+			desc = "POLITICS_DENIS_PUSHILIN_DESC"
+			picture = "gfx/leaders/DON/portrait_denis_pushilin.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+	
+	option = {	#Храменков
+		name = donetsk.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.2.b"
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "2014.11.11"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "Roman Khramenkov"
+			desc = "POLITICS_ROMAN_KHRAMENKOV_DESC"
+			picture = "gfx/leaders/DON/portrait_roman_khramenkov.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		trigger = {
+			neutrality > 0.25
+		}
+	}
+
+	option = {	#Шишкина
+		name = donetsk.2.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.2.c"
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = { ruling_party = fascism }
+		create_country_leader = {
+			name = "Elena Shishkina"
+			desc = "POLITICS_ELENA_SHISHKINA_DESC"
+			picture = "gfx/leaders/DON/portrait_elena_shishkina.dds"
+			ideology = irredentism 
+			traits = { trait_irredentism }
+		}
+		if = {
+			limit = {
+				fascism < 0.35
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.3
+			}
+		}
+		
+		trigger = {
+			fascism > 0.25
+		}
+	}
+
+}
+
+#Бородай
+country_event = {
+	id = donetsk.3
+	title = donetsk.3.t
+	desc = donetsk.3.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = DON
+		country_exists = DON
+		date > 2014.5.13
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = donetsk.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.3.a"
+		create_country_leader = {
+			name = "Aleksandr Boroday"
+			desc = "POLITICS_ALEKSANDR_BORODAY_DESC"
+			picture = "gfx/leaders/DON/portrait_aleksandr_boroday.dds"
+			ideology = sovereign_democracy 
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}
+
+
+#Захарченко становится премьер-министром
+country_event = {
+	id = donetsk.4
+	title = donetsk.4.t
+	desc = donetsk.4.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = DON
+		country_exists = DON
+		date > 2014.8.4
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = donetsk.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.4.a"
+		create_country_leader = {
+			name = "Aleksandr Zakharchenko"
+			desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+			picture = "gfx/leaders/DON/portrait_aleksandr_zaharchenko.dds"
+			ideology = sovereign_democracy #irredentism
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}
+
+#Убийство Захарченко
+country_event = {
+	id = donetsk.5
+	title = donetsk.5.t
+	desc = donetsk.5.d
+	picture = GFX_event_zakharchenko_death
+	hidden = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DON
+		country_exists = DON
+		date > 2018.8.29
+		has_country_leader = {
+			name = "Aleksandr Zakharchenko"
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Aleksandr Zakharchenko"
+				}
+			}
+			kill_ideology_leader = neutrality
+			add_stability = -0.1
+		}
+	}
+	option = {
+		name = donetsk.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): donetsk.4.a"
+		set_country_flag = zakharchenko_killed
+
+		create_country_leader = {
+			name = "Dmitriy Trapeznikov"
+			desc = "POLITICS_DMITRIY_TRAPEZNIKOV_DESC"
+			picture = "gfx/leaders/DON/portrait_dmitriy_trapeznikov.dds"
+			ideology = sovereign_democracy #irredentism
+			traits = { trait_sovereign_democracy }
+		}
+
+	}
+}

@@ -1,0 +1,320 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## Libya events      ###
+########################
+## Written by SuxrobGM #
+########################
+
+add_namespace = libya
+
+country_event = {  #Civil war 2014
+	id = libya.1
+	title = libya.1.t
+	desc = libya.1.d
+	picture = GFX_event_libya_civilwar1
+	
+	fire_only_once = yes
+
+	immediate = { 
+		set_country_flag = LBA_civilwar
+	    hidden_effect = {
+			add_named_threat = { threat = 3 name = threat_LBA_civilwar_2014 }
+		}
+	}
+	
+	trigger = { 
+	    tag = LBA
+		has_stability < 0.1
+	    country_exists = LBA
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = libya.1.a       #Поддержать ПНЕ Ливии
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): libya.1.a"
+		set_capital = 448
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			capital = 451
+			size = 0.5
+			states = { 451 662 273 663 450 449 824 }
+		}
+		
+		#set_equipment_fraction = 0.3
+		#set_stability = 0.9	
+		remove_ideas = LBA_Crisis
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.9
+		}
+		
+		random_other_country = {
+			limit = {
+				original_tag = LBA
+				has_government = neutrality
+			}
+			#set_equipment_fraction = 0.3
+			#set_stability = 0.9
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.25
+			}
+		}
+		hidden_effect = {
+			set_country_flag = LBA_civil_war
+		    news_event = { id = libya_news.1 days = 1 }
+			country_event = libya.2
+		}	
+	}
+	
+	option = {
+		name = libya.1.b     #Поддержать действующий правительства
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): libya.1.b"
+		set_capital = 451
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = democratic
+			capital = 448
+			size = 0.5
+			states = { 448 661 787 }
+		}
+		#set_equipment_fraction = 0.3
+		#set_stability = 0.9	
+		remove_ideas = LBA_Crisis
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.2
+		}
+		random_other_country = {
+			limit = {
+				original_tag = LBA
+				has_government = democratic
+			}
+			#set_equipment_fraction = 0.3
+			set_stability = 0.5
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.9
+			}
+		}
+		hidden_effect = {
+			set_country_flag = LBA_civil_war
+		    news_event = { id = libya_news.1 days = 1 }
+			country_event = libya.2
+		}
+	}
+}
+
+country_event = { 
+	id = libya.2
+	title = libya.2.t
+	desc = libya.2.d
+	picture = GFX_event_libya_in_new_war
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+	    hidden_effect = {
+		    ISL = { 
+			    transfer_state = 808
+				808 = { add_core_of = ISL }
+				load_oob = "_tech_isis_2013"
+				load_oob = "ISL_2013"
+			}
+			ISS = { declare_war_on = { target = LBA type = annex_everything } }
+			ISL = { declare_war_on = { target = LBA type = annex_everything } }
+			
+			if = {
+				limit = {
+					D01 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D01 type = annex_everything } }
+				ISL = { declare_war_on = { target = D01 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D02 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						} 
+					}
+				}
+				ISS = { declare_war_on = { target = D02 type = annex_everything } }
+				ISL = { declare_war_on = { target = D02 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D03 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						} 
+					}
+				}
+				ISS = { declare_war_on = { target = D03 type = annex_everything } }
+				ISL = { declare_war_on = { target = D03 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D04 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D04 type = annex_everything } }
+				ISL = { declare_war_on = { target = D04 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D05 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D05 type = annex_everything } }
+				ISL = { declare_war_on = { target = D05 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D06 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D06 type = annex_everything } }
+				ISL = { declare_war_on = { target = D06 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D07 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D07 type = annex_everything } }
+				ISL = { declare_war_on = { target = D07 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D08 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D08 type = annex_everything } }
+				ISL = { declare_war_on = { target = D08 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D09 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D09 type = annex_everything } }
+				ISL = { declare_war_on = { target = D09 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D10 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D10 type = annex_everything } }
+				ISL = { declare_war_on = { target = D10 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D11 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D11 type = annex_everything } }
+				ISL = { declare_war_on = { target = D11 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D12 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D12 type = annex_everything } }
+				ISL = { declare_war_on = { target = D12 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D13 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D13 type = annex_everything } }
+				ISL = { declare_war_on = { target = D13 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D14 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D14 type = annex_everything } }
+				ISL = { declare_war_on = { target = D14 type = annex_everything } }
+			}
+			if = {
+				limit = {
+					D15 = { 
+						OR = {
+							controls_state = 448
+							controls_state = 451
+						}
+					}
+				}
+				ISS = { declare_war_on = { target = D15 type = annex_everything } }
+				ISL = { declare_war_on = { target = D15 type = annex_everything } }
+			}
+		}
+	}
+	
+	option = {
+		name = libya.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): libya.2.b"
+	}
+}	

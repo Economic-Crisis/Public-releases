@@ -1,0 +1,110 @@
+﻿add_namespace = hippie
+
+news_event = {	
+	id = hippie.1
+	title = hippie.1.t
+	desc = hippie.1.d
+	picture = GFX_event_protest_hippie1_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.3
+		has_war_support > 0.5 
+	}
+	option = {  
+		name = hippie.1.a
+		add_timed_idea = { idea = hippie_protest days = 120 }
+		hidden_effect = {
+			add_popularity = { ideology = fascism popularity = 0.02 }
+			add_popularity = { ideology = democratic popularity = 0.02 }
+		}
+	}
+}
+
+news_event = {	
+	id = hippie.2
+	title = hippie.2.t
+	desc = hippie.2.d
+	picture = GFX_event_protest_hippie2_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.2
+		has_war_support > 0.8 
+		has_idea = high_terrorism
+	}
+	option = {  
+		name = hippie.2.a
+		add_ideas = decaying_state
+		add_stability = -0.3
+	}
+}
+news_event = {	
+	id = hippie.3
+	title = hippie.2.t
+	desc = hippie.2.d
+	picture = GFX_event_protest_hippie2_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.2
+		has_war_support > 0.8 
+		has_idea = average_terrorism
+	}
+	option = {  
+		name = hippie.2.a
+		add_ideas = high_terrorism
+		add_stability = -0.3
+	}
+}
+news_event = {	
+	id = hippie.4
+	title = hippie.2.t
+	desc = hippie.2.d
+	picture = GFX_event_protest_hippie2_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.2
+		has_war_support > 0.8 
+		has_idea = low_terrorism
+	}
+	option = {  
+		name = hippie.2.a
+		add_ideas = average_terrorism
+		add_stability = -0.3
+	}
+}
+news_event = {	
+	id = hippie.5
+	title = hippie.2.t
+	desc = hippie.2.d
+	picture = GFX_event_protest_hippie2_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.2
+		has_war_support > 0.8 
+		has_idea = terrorism_discounted
+	}
+	option = {  
+		name = hippie.2.a
+		add_ideas = low_terrorism
+		add_stability = -0.3
+	}
+}
+news_event = {	
+	id = hippie.6
+	title = hippie.6.t
+	desc = hippie.6.d
+	picture = GFX_event_protest_hippie3_news
+	fire_only_once = yes
+	trigger = {
+		has_war = no
+		has_stability < 0.1
+		has_war_support > 0.9
+	}
+	option = {  
+		name = hippie.3.a
+	}
+}

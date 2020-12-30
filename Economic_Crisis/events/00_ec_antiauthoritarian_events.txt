@@ -1,0 +1,683 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+add_namespace = aa
+
+# Высокая популярность антиавторитарных идеологий
+country_event = {
+	id = aa.1
+	title = aa.1.t
+	desc = aa.1.d
+	
+	#is_triggered_only = yes #ЭВЕНТ ОТКЛЮЧЕНА, ПОТОМУ ЧТО НЕ ДОРАБОТАН ДО КОНЦА!
+
+	trigger = {
+		always = no
+		is_historical_focus_on = no
+		is_true_democracy = no
+		OR = {
+			AND = {
+				has_country_flag = conservatism_40
+				has_country_flag = liberalism_10
+			}
+			AND = {
+				has_country_flag = conservatism_25
+				has_country_flag = liberalism_25
+			}
+			AND = {
+				has_country_flag = conservatism_10
+				has_country_flag = liberalism_40
+			}
+			AND = {
+				has_country_flag = liberalism_40
+				has_country_flag = reformism_10
+			}
+			AND = {
+				has_country_flag = liberalism_25
+				has_country_flag = reformism_25
+			}
+			AND = {
+				has_country_flag = liberalism_10
+				has_country_flag = reformism_40
+			}
+			AND = {
+				has_country_flag = reformism_40
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = reformism_25
+				has_country_flag = conservatism_25
+			}
+			AND = {
+				has_country_flag = reformism_10
+				has_country_flag = conservatism_40
+			}
+			AND = {
+				has_country_flag = conservatism_25
+				has_country_flag = liberalism_10
+				has_country_flag = reformism_10
+			}
+			AND = {
+				has_country_flag = liberalism_25
+				has_country_flag = reformism_10
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = reformism_25
+				has_country_flag = liberalism_10
+				has_country_flag = conservatism_10
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = antiauthoritarian_high
+	}
+
+	option = {
+		name = aa.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): aa.1.a"
+	}
+}
+
+# Антиавторитарные идеологии готовы свергнуть режим
+country_event = {
+	id = aa.2
+	title = aa.2.t
+	desc = aa.2.d
+	
+	#is_triggered_only = yes #ЭВЕНТ ОТКЛЮЧЕНА, ПОТОМУ ЧТО НЕ ДОРАБОТАН ДО КОНЦА!
+	
+	trigger = {
+		always = no
+		is_historical_focus_on = no
+		is_true_democracy = no
+		OR = {
+			AND = {
+				has_country_flag = conservatism_50
+				has_country_flag = liberalism_10
+			}
+			AND = {
+				has_country_flag = conservatism_40
+				has_country_flag = liberalism_25
+			}
+			AND = {
+				has_country_flag = conservatism_25
+				has_country_flag = liberalism_40
+			}
+			AND = {
+				has_country_flag = conservatism_10
+				has_country_flag = liberalism_50
+			}
+			AND = {
+				has_country_flag = liberalism_40
+				has_country_flag = reformism_10
+			}
+			AND = {
+				has_country_flag = liberalism_40
+				has_country_flag = reformism_25
+			}
+			AND = {
+				has_country_flag = liberalism_25
+				has_country_flag = reformism_40
+			}
+			AND = {
+				has_country_flag = liberalism_10
+				has_country_flag = reformism_50
+			}
+			AND = {
+				has_country_flag = reformism_50
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = reformism_40
+				has_country_flag = conservatism_25
+			}
+			AND = {
+				has_country_flag = reformism_25
+				has_country_flag = conservatism_40
+			}
+			AND = {
+				has_country_flag = reformism_10
+				has_country_flag = conservatism_50
+			}
+			AND = {
+				has_country_flag = conservatism_40
+				has_country_flag = liberalism_10
+				has_country_flag = reformism_10
+			}
+			AND = {
+				has_country_flag = liberalism_40
+				has_country_flag = reformism_10
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = reformism_40
+				has_country_flag = liberalism_10
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = conservatism_25
+				has_country_flag = liberalism_25
+				has_country_flag = reformism_10
+			}
+			AND = {
+				has_country_flag = liberalism_25
+				has_country_flag = reformism_25
+				has_country_flag = conservatism_10
+			}
+			AND = {
+				has_country_flag = reformism_25
+				has_country_flag = conservatism_25
+				has_country_flag = liberalism_10
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = antiauthoritarian_high
+	}
+
+	option = { # Уступить власть консерваторам
+		name = aa.2.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): aa.2.a"
+		trigger = {
+			has_country_flag = conservatism_10
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 920
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = democratic
+					ideology = ROOT
+					size = 0.4
+				}
+			}
+		}
+	}
+
+	option = { # Уступить власть либералам
+		name = aa.2.l
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): aa.2.1"
+		trigger = {
+			has_country_flag = liberalism_10
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 920
+				has_country_flag = pai__liberal
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = liberalism
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = ROOT
+					size = 0.4
+				}
+			}
+		}
+	}
+
+	option = { # Уступить власть реформистам
+		name = aa.2.r
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): aa.2.r"
+		trigger = {
+			has_country_flag = reformism_10
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 920
+				has_country_flag = pai__reformist
+			}
+			modifier = {
+				factor = 80
+				has_country_flag = pai_democrat_left
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = reformism
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = reformism
+					ideology = ROOT
+					size = 0.4
+				}
+			}
+		}
+	}
+
+	option = { # Гражданская война
+		name = aa.2.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): aa.2.n"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 40
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 20
+				OR = {
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai_nondem_reformist
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_democrat_neutral
+			}
+		}
+		random_list = {
+			33 = {
+				start_civil_war = {
+					ideology = democratic
+					size = 0.5
+				}
+				hidden_effect = {
+					every_country = {
+						limit = {
+							original_tag = ROOT
+							has_civil_war = yes
+							has_government = democratic
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_10
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_25
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_40
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_50
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_10
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_25
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_40
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_50
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.1
+							}
+						}
+					}
+				}
+			}
+			33 = {
+				start_civil_war = {
+					ideology = liberalism
+					size = 0.5
+				}
+				hidden_effect = {
+					every_country = {
+						limit = {
+							original_tag = ROOT
+							has_civil_war = yes
+							has_government = liberalism
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_10
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_25
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_40
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_50
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_10
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_25
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_40
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = reformism_50
+								}
+							}
+							add_popularity = {
+								ideology = reformism
+								popularity = 0.1
+							}
+						}
+					}
+				}
+			}
+			33 = {
+				start_civil_war = {
+					ideology = reformism
+					size = 0.5
+				}
+				hidden_effect = {
+					every_country = {
+						limit = {
+							original_tag = ROOT
+							has_civil_war = yes
+							has_government = reformism
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_10
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_25
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_40
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = liberalism_50
+								}
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_10
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.1
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_25
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_40
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.15
+							}
+						}
+						if = {
+							limit = {
+								ROOT = {
+									has_country_flag = conservatism_50
+								}
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

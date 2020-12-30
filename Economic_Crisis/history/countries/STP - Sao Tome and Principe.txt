@@ -1,0 +1,64 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+
+capital = 705
+
+add_ideas = {
+	au_member
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 30290 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_convoys = 15
+	set_stability = 0.8
+	add_political_power = 0
+
+	add_ideas = {
+		presidential_republic
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.5.23"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 52
+		liberalism = 3
+		democratic = 10
+		neutrality = 30
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Manuel Pinto da Costa"
+		desc = "POLITICS_MANUEL_PINTO_DA_COSTA_DESC"
+		picture = "gfx/leaders/STP/portrait_manuel_pinto_da_costa.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}

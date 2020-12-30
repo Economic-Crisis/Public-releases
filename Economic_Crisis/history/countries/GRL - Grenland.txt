@@ -1,0 +1,69 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 101
+
+2013.11.1 = {
+	#set_variable = { budget_last_year = 280900 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "_army_microstate_2013"
+
+	# laws
+	add_ideas = {
+		semi-presidential_republic
+		#unitary_state
+		#secular_state
+		#mixed_media
+		#fully_guranted_liberties
+		#contract_army
+		#mixed_schools
+		#schengen_area_immigration
+		#mixed_economic
+		#state-owned_enterprise
+		#extractive_industries_focus
+		#civilian_economy
+		#high_taxes
+		#total_social_security
+		#pensions
+	}
+
+	add_political_power = 0
+	set_country_flag = pai_democrat_neutral
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.3.12"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 23
+		reformism = 53
+		liberalism = 10
+		democratic = 5
+		neutrality = 9
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kim Kielsen"
+		picture = "gfx/leaders/GRL/portrait_kim_kielsen.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Aleqa Hammond"
+		picture = "gfx/leaders/GRL/portrait_aleqa_hammond.dds"
+		ideology = social_democracy
+		expire = "2014.9.30"
+		traits = { trait_social_democracy }
+	}
+
+
+}

@@ -1,0 +1,150 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+		ind_manmohan_singh_hog = {
+
+                picture = GFX_idea_ind_manmohan_singh
+
+			cost = 1000
+			##removal_cost = -1
+
+                        available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = IND
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	defence_minister = {
+
+		ind_ak_antony_defm = {
+
+		picture = GFX_idea_ind_ak_antony
+			cost = 350
+			##removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IND
+			}
+
+			traits = { defence_minister_distinguished_military }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		ind_salman_kurshid_fgm = {
+
+		picture = GFX_idea_ind_salman_kurshid
+
+      			cost = 350
+      			##removal_cost = -1
+      			available = {
+				}
+
+
+      			allowed = { 
+				original_tag  = IND 
+			}
+
+      			traits = { foreign_minister_addiction_irredentist }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+				}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	economic_minister = {
+	
+		ind_p_chidambaram_ecm = {
+		
+		picture = GFX_idea_ind_p_chidambaram
+		
+			cost = 450
+			##removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IND
+			}
+			
+			traits = { economic_minister_business_protege }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		ind_sushlikumar_shinde_ssch = {
+		
+			picture = GFX_idea_ind_sushlikumar_shinde
+		
+			cost = 350
+			##removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IND
+			}
+			
+			traits = { secret_service_chief_executioner_1 }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

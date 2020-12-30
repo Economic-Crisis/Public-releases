@@ -1,0 +1,121 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+has_any_religion = {
+	any_owned_state = {
+		OR = {
+			has_state_flag = christianity
+			has_state_flag = islam
+			has_state_flag = buddhism
+			has_state_flag = judaism
+			has_state_flag = hinduism
+			has_state_flag = sintoism
+		}
+	}
+}
+
+has_christianity = {
+	any_owned_state = {
+		has_state_flag = christianity
+	}
+}
+
+has_islam = {
+	any_owned_state = {
+		has_state_flag = islam
+	}
+}
+
+has_buddhism = {
+	any_owned_state = {
+		has_state_flag = buddhism
+	}
+}
+has_sintoism = {
+	any_owned_state = {
+		has_state_flag = sintoism
+	}
+}
+
+has_judaism = {
+	any_owned_state = {
+		has_state_flag = judaism
+	}
+}
+
+has_hinduism = {
+	any_owned_state = {
+		has_state_flag = hinduism
+	}
+}
+
+has_main_religion = {
+	OR = {
+		has_idea = christianity_idea_lvl_2
+		has_idea = islam_idea_lvl_2
+		has_idea = buddhism_idea_lvl_2
+		has_idea = judaism_idea_lvl_2
+		has_idea = hinduism_idea_lvl_2
+		has_idea = sintoism_idea_lvl_2
+		
+		has_idea = christianity_idea_lvl_3
+		has_idea = islam_idea_lvl_3
+		has_idea = buddhism_idea_lvl_3
+		has_idea = judaism_idea_lvl_3
+		has_idea = hinduism_idea_lvl_3
+		has_idea = sintoism_idea_lvl_3
+	}
+}
+
+christianity_is_main = {
+	OR = {
+		has_idea = christianity_idea_lvl_2
+		has_idea = christianity_idea_lvl_3
+	}
+}
+
+islam_is_main = {
+	OR = {
+		has_idea = islam_idea_lvl_2
+		has_idea = islam_idea_lvl_3
+	}
+}
+
+buddhism_is_main = {
+	OR = {
+		has_idea = buddhism_idea_lvl_2
+		has_idea = buddhism_idea_lvl_3
+	}	
+}
+sintoism_is_main = {
+	OR = {
+		has_idea = sintoism_idea_lvl_2
+		has_idea = sintoism_idea_lvl_3
+	}	
+}
+
+judaism_is_main = {
+	OR = {
+		has_idea = judaism_idea_lvl_2
+		has_idea = judaism_idea_lvl_3
+	}	
+}
+
+hinduism_is_main = {
+	OR = {
+		has_idea = hinduism_idea_lvl_2
+		has_idea = hinduism_idea_lvl_3
+	}	
+}

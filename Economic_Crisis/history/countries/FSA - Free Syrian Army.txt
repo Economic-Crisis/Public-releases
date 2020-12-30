@@ -1,0 +1,107 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 776
+add_ideas = mixed_schools
+2013.2.2 = { 
+	declare_war_on = { type = take_state_focus target = ISS generator = { 822 } } #680
+	declare_war_on = { type = annex_everything target = SYR } 
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 12 }
+	
+	load_oob = "_tech_microstate_2013" 
+	oob = "FSA_2013"
+
+	set_country_flag = SYR_civilwar
+	set_country_flag = war_with_ISIS
+	
+	add_political_power = 0
+
+	set_convoys = 35
+		
+		
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.4.12"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 25
+		neutrality = 15
+		fascism = 60
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Anas al-Abdah"
+		picture = "gfx/leaders/FSA/portrait_anas_al-abdah.dds"
+		ideology = junta
+		traits = { trait_junta }
+	}
+
+	create_country_leader = {
+		name = "Khaled Khodja"
+		picture = "gfx/leaders/FSA/portrait_khaled_khoja.dds"
+		ideology = junta
+		expire = "2016.3.5"
+		traits = { trait_junta }
+	}
+
+	create_country_leader = {
+		name = "Hadi al-Bahra"
+		picture = "gfx/leaders/FSA/portrait_hadi_al_bahra.dds"
+		expire = "2015.1.4"
+		ideology = junta
+		traits = { trait_junta }
+	}
+
+	create_country_leader = {
+		name = "Ahmad Jarba"
+		picture = "gfx/leaders/FSA/portrait_ahmad_jarba.dds"
+		expire = "2014.6.9"
+		ideology = junta
+		traits = { trait_junta }
+	}
+	
+	#Generals
+	create_field_marshal = {
+		name = "Abdul-Ilah al-Bashir"
+		portrait_path = "gfx/leaders/FSA/portrait_general_abdul-ilah_al-bashir.dds"
+		traits = { offensive_doctrine }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Riad al-Asaad"
+		portrait_path = "gfx/leaders/FSA/portrait_general_riad_al-asaad.dds"
+		traits = { airborne_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Salim Idris"
+		portrait_path = "gfx/leaders/FSA/portrait_general_salim_idris.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+}
+

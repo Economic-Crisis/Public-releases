@@ -1,0 +1,1984 @@
+technologies = {
+
+	# x = (горизонталь - поколения  технгики, шаг 10 лет)
+	@T0 = 0
+	@T1 = 1
+	@T2 = 4
+	@T00 = 6
+	@T3 = 7
+	@T4 = 10
+	@T000 = 12
+	@T5 = 13	
+	@T6 = 16
+	@T0000 = 18	
+	@T7 = 19
+	@T8 = 22
+	@T9 = 25
+	@T10 = 28
+	
+	# y = (вертикаль, типы техники, строка для каждого класса)
+	@MMM = -1
+	@LandH = 1
+	@AssH = 3
+	@AttH = 5
+	@NavAttH = 7
+	@NavAssH = 9	
+	@AntSubH = 11	
+	@VTOL = 13
+	@AntSubD = 15
+
+###################################################################	
+########### ранние вертолеты - 50е-60е годы #######################
+###################################################################
+	
+### Затычка вормально открывающая эпоху ранних вертолетов, открывает эквипмент древнейшего траспортного вертолета
+	early_helicopters = {
+	
+		enable_equipments = {
+			landing_helicopter_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = landing_helicopter_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = assault_helicopter_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_helicopter_T1
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = naval_attack_helicopter_T1
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = naval_assault_helicopter_T1
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = anti_submarine_helicopter_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = VTOL_T1
+			research_cost_coeff = 0.9
+		}
+		#path = {
+		#	leads_to_tech = anti_submarine_drone_T1
+		#	research_cost_coeff = 0.9
+		#}
+
+		
+		research_cost = 1
+		start_year = 1945
+		folder = {
+			name = helicopters_folder
+			position = { x = @T0 y = @MMM }
+		}
+		
+		categories = { cat_1stgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантный вертолет первого поколения типа Ми-2
+	landing_helicopter_T1 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = landing_helicopter_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = helicopters_folder
+			position = { x = @T1 y = @LandH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантный вертолет первого поколения типа Ми-6
+	landing_helicopter_T2 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_2
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = landing_helicopter_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = helicopters_folder
+			position = { x = @T2 y = @LandH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантно-штурмовой вертолет первого поколения типа Ми-4
+	assault_helicopter_T1 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = assault_helicopter_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = helicopters_folder
+			position = { x = @T1 y = @AssH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантно-штурмовой вертолет второго поколения типа Ми-2А
+	assault_helicopter_T2 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_2
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = assault_helicopter_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = helicopters_folder
+			position = { x = @T2 y = @AssH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### графическая заглушка для старта ветки ударных вертолетов, я хз как по другому вывести стрелочку
+	attack_helicopter_T1 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_1
+		}
+
+		path = {
+			leads_to_tech = attack_helicopter_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = helicopters_folder
+			position = { x = @T1 y = @AttH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ударный вертолет второго поколения типа Ми-1МУ
+	attack_helicopter_T2 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_2
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = helicopters_folder
+			position = { x = @T2 y = @AttH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### противолодочный первого поколения типа Ка-15
+	anti_submarine_helicopter_T1 = {
+
+		enable_equipments = {
+			anti_submarine_helicopter_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = anti_submarine_helicopter_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = helicopters_folder
+			position = { x = @T1 y = @AntSubH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_aircrafts_tech
+						cat_anti_submarine_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### противолодочный вертолет первого поколения Ка-25
+	anti_submarine_helicopter_T2 = {
+
+		enable_equipments = {
+			anti_submarine_helicopter_equipment_2
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = anti_submarine_helicopter_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = helicopters_folder
+			position = { x = @T2 y = @AntSubH }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_aircrafts_tech
+						cat_anti_submarine_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### первые реактивные вертикалки Як-36
+	VTOL_T1 = {
+
+#		enable_equipments = {
+#			VTOL_equipment_1
+#		}
+
+		path = {
+			leads_to_tech = VTOL_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = helicopters_folder
+			position = { x = @T1 y = @VTOL }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ранние вертикалки Т2 Як-38
+	VTOL_T2 = {
+
+		enable_equipments = {
+			VTOL_equipment_2
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = helicopters_folder
+			position = { x = @T2 y = @VTOL }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+
+###################################################################	
+########### полусовременные вертолеты - 70е-80е годы ##############
+###################################################################
+	
+### Затычка формально открывающая эпоху полусовременных вертолетов
+	semi_modern_helicopters = {
+	
+#		enable_equipments = {
+#			landing_helicopter_equipment_0
+#		}
+		
+		path = {
+			leads_to_tech = landing_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = assault_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = naval_attack_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = naval_assault_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = anti_submarine_helicopter_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = VTOL_T3
+			research_cost_coeff = 0.9
+		}
+		#path = {
+		#	leads_to_tech = anti_submarine_drone_T3
+		#	research_cost_coeff = 0.9
+		#}
+
+		
+		research_cost = 1
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T00 y = @MMM }
+		}
+		
+		categories = { cat_2ndgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантный вертолет поколения Т3 типа Ми-10
+	landing_helicopter_T3 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = landing_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @LandH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантный вертолет поколения Т4 типа Ми-26
+	landing_helicopter_T4 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = landing_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @LandH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантно-штурмовой вертолет поколения Т3 типа Ми-8
+	assault_helicopter_T3 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = assault_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @AssH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантно-штурмовой вертолет поколения Т4 типа Ми-24
+	assault_helicopter_T4 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = assault_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @AssH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### ударный вертолет поколения Т3 типа Ми-28А
+	attack_helicopter_T3 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_3
+		}
+
+		path = {
+			leads_to_tech = attack_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @AttH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ударный вертолет поколения Т4 типа Ка-50
+	attack_helicopter_T4 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @AttH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+
+##### палубный ударный вертолет поколения Т3 типа Bell AH-1J Sea Cobra 
+	naval_attack_helicopter_T3 = {
+
+		enable_equipments = {
+			naval_attack_helicopter_equipment_3
+		}
+
+		path = {
+			leads_to_tech = naval_attack_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @NavAttH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_attack_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### палубный ударный вертолет поколения Т4 типа Bell AH-1W Super Cobra 
+	naval_attack_helicopter_T4 = {
+
+		enable_equipments = {
+			naval_attack_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = naval_attack_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @NavAttH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_attack_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+#####  палубный десантно-штурмовой вертолет поколения Т3 типа Sikorsky CH-60E 
+	naval_assault_helicopter_T3 = {
+
+		enable_equipments = {
+			naval_assault_helicopter_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = naval_assault_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @NavAssH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### палубный десантно-штурмовой вертолет поколения Т4 типа Bell UH-1Y Venom 
+	naval_assault_helicopter_T4 = {
+
+		enable_equipments = {
+			naval_assault_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = naval_assault_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @NavAssH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+	
+	
+	
+	
+
+##### противолодочный поколения Т3 типа Ка-27
+	anti_submarine_helicopter_T3 = {
+
+		enable_equipments = {
+			anti_submarine_helicopter_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = anti_submarine_helicopter_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @AntSubH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_aircrafts_tech
+						cat_anti_submarine_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### противолодочный вертолет поколения Т4 Ка-27М
+	anti_submarine_helicopter_T4 = {
+
+		enable_equipments = {
+			anti_submarine_helicopter_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = anti_submarine_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @AntSubH }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_aircrafts_tech
+						cat_anti_submarine_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### вертикалки поколения Т3 типа Як-38М
+	VTOL_T3 = {
+
+		enable_equipments = {
+			VTOL_equipment_3
+		}
+		
+		path = {
+			leads_to_tech = VTOL_T4
+			research_cost_coeff = 0.9
+		}		
+
+		categories = {	cat_2ndgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = helicopters_folder
+			position = { x = @T3 y = @VTOL }
+		}
+		
+	#	categories = {
+	#
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### вертикалки поколения Т4 типа Як-39
+	
+	VTOL_T4 = {
+
+		enable_equipments = {
+			VTOL_equipment_4
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T4
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = helicopters_folder
+			position = { x = @T4 y = @VTOL }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+#################################################################	
+########### современные вертолеты - 90е-2000е годы ##############
+#################################################################
+	
+### Затычка формально открывающая эпоху современных вертолетов
+	modern_helicopters = {
+	
+#		enable_equipments = {
+#			landing_helicopter_equipment_0
+#		}
+		
+		path = {
+			leads_to_tech = landing_helicopter_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = assault_helicopter_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_helicopter_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = naval_attack_helicopter_T5
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = naval_assault_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = anti_submarine_helicopter_T5
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = VTOL_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = anti_submarine_drone_T7
+			research_cost_coeff = 0.9
+		}
+
+		
+		research_cost = 1
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T000 y = @MMM }
+		}
+		
+		categories = { cat_3rdgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантный вертолет поколения Т5 типа Ми-30
+	landing_helicopter_T5 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_5
+		}
+
+
+		path = {
+			leads_to_tech = landing_helicopter_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @LandH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантный вертолет поколения Т6 типа Bell Boeing Quad TiltRotor 
+	landing_helicopter_T6 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_6
+		}
+
+### в следующем поколение ###		
+#		path = {
+#			leads_to_tech = landing_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @LandH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+
+##### десантно-штурмовой вертолет поколения Т5 типа Ми-35M
+	assault_helicopter_T5 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_5
+		}
+
+		
+		path = {
+			leads_to_tech = assault_helicopter_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @AssH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантно-штурмовой вертолет поколения Т6 типа Ми-280 винтокрыл
+	assault_helicopter_T6 = {
+
+		enable_equipments = {
+			assault_helicopter_equipment_6
+		}
+
+		
+#		path = {
+#			leads_to_tech = assault_helicopter_T6
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @AssH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_assault_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+
+
+##### ударный вертолет поколения Т5 типа Ка-52 
+	attack_helicopter_T5 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_5
+		}
+
+		path = {
+			leads_to_tech = attack_helicopter_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @AttH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ударный вертолет поколения Т6 типа Ми-28НМ
+	attack_helicopter_T6 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_6
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @AttH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+
+##### палубный ударный вертолет поколения Т5 типа Bell AH-1Z Viper  
+	naval_attack_helicopter_T5 = {
+
+		enable_equipments = {
+			naval_attack_helicopter_equipment_5
+		}
+
+		path = {
+			leads_to_tech = naval_attack_helicopter_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @NavAttH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_attack_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### палубный ударный вертолет поколения Т6 типа Ка-52К 
+	naval_attack_helicopter_T6 = {
+
+		enable_equipments = {
+			naval_attack_helicopter_equipment_6
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = naval_attack_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @NavAttH }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_helicopter_tech
+						cat_naval_attack_helicopter_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+
+	
+
+
+
+##### вертикалки поколения Т5 типа Як-43
+	VTOL_T5 = {
+
+		enable_equipments = {
+			VTOL_equipment_5
+		}
+
+		path = {
+			leads_to_tech = VTOL_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @VTOL }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### вертикалки поколения Т6 типа Як-141
+	VTOL_T6 = {
+
+		enable_equipments = {
+			VTOL_equipment_6
+		}
+
+#		path = {
+#			leads_to_tech = VTOL_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @VTOL }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+###################################################################	
+########### суперсовременные вертолеты - 10е-20е годы ##############
+###################################################################
+	
+### Затычка формально открывающая эпоху суперсовременных вертолетов
+	ultramodern_helicopters = {
+	
+#		enable_equipments = {
+#			landing_helicopter_equipment_0
+#		}
+		
+		path = {
+			leads_to_tech = landing_helicopter_T7
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = assault_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = attack_helicopter_T7
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = naval_attack_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = naval_assault_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = anti_submarine_helicopter_T7
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = VTOL_T7
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = anti_submarine_drone_T9
+			research_cost_coeff = 0.9
+		}
+
+		
+		research_cost = 1
+		start_year = 2010
+		folder = {
+			name = helicopters_folder
+			position = { x = @T0000 y = @MMM }
+		}
+		
+		categories = { cat_4thgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### десантный вертолет поколения Т7 типа Bell Boeing Quad TiltRotor 
+	landing_helicopter_T7 = {
+
+		enable_equipments = {
+			landing_helicopter_equipment_7
+		}
+	
+#		path = {
+#			leads_to_tech = landing_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = helicopters_folder
+			position = { x = @T7 y = @LandH }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_helicopter_tech
+						cat_landing_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### десантный вертолет поколения Т8 типа "фантастический квадракоптер"
+	#landing_helicopter_T8 = {
+
+	#	enable_equipments = {
+	#		landing_helicopter_equipment_8
+	#	}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = landing_helicopter_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = helicopters_folder
+	#		position = { x = @T8 y = @LandH }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_helicopter_tech
+	#		cat_landing_helicopter_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}
+
+##### десантно-штурмовой вертолет поколения Т7 типа "можно пофантазировать о вооруженных конвертопланах"
+#	assault_helicopter_T7 = {
+#
+#		enable_equipments = {
+#			assault_helicopter_equipment_7
+#		}
+#	
+#		path = {
+#			leads_to_tech = assault_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+#		
+#		research_cost = 2
+#		start_year = 2010
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T7 y = @AssH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}
+
+##### десантно-штурмовой вертолет поколения Т8 типа "я даже не знаю куда тут фантазировать"
+#	assault_helicopter_T8 = {
+#
+#		enable_equipments = {
+#			assault_helicopter_equipment_8
+#		}
+#
+#	#прсевдотупик, открывается с поколением полусовременных вертолетов
+#	#	path = {
+#	#		leads_to_tech = assault_helicopter_T9
+#	#		research_cost_coeff = 0.9
+#	#	}
+#		
+#		research_cost = 2
+#		start_year = 2020
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T8 y = @AssH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}	
+
+##### ударный вертолет поколения Т7 типа McDonnell Douglas AH-64 Block III «Guardian» 
+	attack_helicopter_T7 = {
+
+		enable_equipments = {
+			attack_helicopter_equipment_7
+		}
+
+#		path = {
+#			leads_to_tech = attack_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = helicopters_folder
+			position = { x = @T7 y = @AttH }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_helicopter_tech
+						cat_attack_helicopter_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ударный вертолет поколения Т8 типа "надо гуглить что-то"
+	#attack_helicopter_T8 = {
+
+		#enable_equipments = {
+		#	attack_helicopter_equipment_8
+		#}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = helicopters_folder
+	#		position = { x = @T8 y = @AttH }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_helicopter_tech
+	#		cat_attack_helicopter_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+
+##### палубный ударный вертолет поколения Т7 типа "уверен что нифига не найду" 
+#	naval_attack_helicopter_T7 = {
+#
+#		enable_equipments = {
+#			naval_attack_helicopter_equipment_7
+#		}
+#
+#		path = {
+#			leads_to_tech = naval_attack_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+#		
+#		research_cost = 2
+#		start_year = 2010
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T7 y = @NavAttH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}		
+#
+##### палубный ударный вертолет поколения Т8 типа "ну точно фигина не найду" 
+#	naval_attack_helicopter_T8 = {
+#
+#		enable_equipments = {
+#			naval_attack_helicopter_equipment_8
+#		}
+#
+#	#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#	#		path = {
+#	#			leads_to_tech = naval_attack_helicopter_T9
+#	#			research_cost_coeff = 0.9
+#	#		}
+#		
+#		research_cost = 2
+#		start_year = 2020
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T8 y = @NavAttH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}		
+
+
+#####  палубный десантно-штурмовой вертолет поколения Т7 типа  "хрен найдешь"
+#	naval_assault_helicopter_T7 = {
+#
+#		enable_equipments = {
+#			naval_assault_helicopter_equipment_7
+#		}
+#	
+#		path = {
+#			leads_to_tech = naval_assault_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+#		
+#		research_cost = 2
+#		start_year = 2010
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T7 y = @NavAssH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}
+#
+##### палубный десантно-штурмовой вертолет поколения Т8 типа "нахрен надо" 
+#	naval_assault_helicopter_T8 = {
+#
+#		enable_equipments = {
+#			naval_assault_helicopter_equipment_8
+#		}
+#
+#	#прсевдотупик, открывается с поколением полусовременных вертолетов
+#	#	path = {
+#	#		leads_to_tech = naval_assault_helicopter_T9
+#	#		research_cost_coeff = 0.9
+#	#	}
+#		
+#		research_cost = 2
+#		start_year = 2020
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T8 y = @NavAssH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}	
+	
+	
+	
+	
+
+##### противолодочный поколения Т7 типа "их заменили дроны"
+#	anti_submarine_helicopter_T7 = {
+#
+#		enable_equipments = {
+#			anti_submarine_helicopter_equipment_7
+#		}
+#	
+#		path = {
+#			leads_to_tech = anti_submarine_helicopter_T8
+#			research_cost_coeff = 0.9
+#		}
+#		
+#		research_cost = 2
+#		start_year = 2010
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T7 y = @AntSubH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}
+
+##### противолодочный вертолет поколения Т8 типа "их точно заменят роботами"
+#	anti_submarine_helicopter_T8 = {
+#
+#		enable_equipments = {
+#			anti_submarine_helicopter_equipment_8
+#		}
+#
+#	#прсевдотупик, открывается с поколением полусовременных вертолетов
+#	#	path = {
+#	#		leads_to_tech = anti_submarine_helicopter_T9
+#	#		research_cost_coeff = 0.9
+#	#	}
+#		
+#		research_cost = 2
+#		start_year = 2020
+#		folder = {
+#			name = helicopters_folder
+#			position = { x = @T8 y = @AntSubH }
+#		}
+#		
+#	#	categories = {
+#	#
+#	#	}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}	
+
+##### вертикалки поколения Т7 типа F-35B
+	VTOL_T7 = {
+
+		enable_equipments = {
+			VTOL_equipment_7
+		}
+
+		path = {
+			leads_to_tech = VTOL_T8
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = helicopters_folder
+			position = { x = @T7 y = @VTOL }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### вертикалки поколения Т8 типа "гугл в помощь"
+	
+	VTOL_T8 = {
+
+		enable_equipments = {
+			VTOL_equipment_8
+		}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = attack_helicopter_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = helicopters_folder
+			position = { x = @T8 y = @VTOL }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_vtol_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### противолодочный дрон Т7 типа MQ-8C Fire-X  
+	anti_submarine_drone_T7 = {
+
+		enable_equipments = {
+			anti_submarine_drone_equipment_7
+		}
+	
+		path = {
+			leads_to_tech = anti_submarine_drone_T8
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = helicopters_folder
+			position = { x = @T5 y = @AntSubD }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_air_drone_tech
+						cat_naval_attack_drone_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### противолодочный вертолет поколения Т8 типа "я хз на что они будут похожи если пока даже первых серийных нет"
+	anti_submarine_drone_T8 = {
+	
+		enable_equipments = {
+			anti_submarine_drone_equipment_8
+		}
+	
+	#прсевдотупик, открывается с поколением полусовременных вертолетов
+		#path = {
+		#	leads_to_tech = anti_submarine_drone_T7
+		#	research_cost_coeff = 0.9
+		#}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = helicopters_folder
+			position = { x = @T6 y = @AntSubD }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_air_drone_tech
+						cat_naval_attack_drone_tech
+		}
+		
+		#sub_technologies = {
+			
+		#}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+###################
+	anti_submarine_drone_T9 = {
+	
+		enable_equipments = {
+			anti_submarine_drone_equipment_9
+		}
+	
+	#прсевдотупик, открывается с поколением полусовременных вертолетов
+		path = {
+			leads_to_tech = anti_submarine_drone_T10
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = helicopters_folder
+			position = { x = @T7 y = @AntSubD }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_air_drone_tech
+						cat_naval_attack_drone_tech
+		}
+		
+		#sub_technologies = {
+			
+		#}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	########################
+	anti_submarine_drone_T10 = {
+	
+		enable_equipments = {
+			anti_submarine_drone_equipment_10
+		}
+	
+	#прсевдотупик, открывается с поколением полусовременных вертолетов
+		#path = {
+		#	leads_to_tech = anti_submarine_drone_T9
+		#	research_cost_coeff = 0.9
+		#}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = helicopters_folder
+			position = { x = @T8 y = @AntSubD }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_naval_aircrafts_tech
+						cat_air_drone_tech
+						cat_naval_attack_drone_tech
+		}
+		
+		#sub_technologies = {
+			
+		#}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	
+
+
+
+	
+	
+}

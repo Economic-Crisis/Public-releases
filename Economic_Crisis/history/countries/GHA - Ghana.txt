@@ -1,0 +1,77 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+# NOT EDITED POLITICS
+
+capital = 274
+
+	add_ideas = {
+		au_member
+	}
+
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4781 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "GHA_2013"
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		low_terrorism
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.12.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 52
+		liberalism = 0
+		democratic = 48
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "John Dramani Mahama"
+		desc = "POLITICS_JOHN_DRAMANI_MAHAMA_DESC"
+		picture = "gfx/leaders/GHA/portrait_john_dramani_mahama.dds"
+		#expire = "2017.1.7"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+    create_country_leader = {
+		name = "Nana Akufo-Addo"
+		desc = "POLITICS_NANA_AKUFO_ADDO_DESC"
+		picture = "gfx/leaders/GHA/portrait_nana_akufo_addo.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}	
+	
+}
+

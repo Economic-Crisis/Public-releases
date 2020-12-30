@@ -1,0 +1,66 @@
+﻿division_template = {
+	name = "División de Infanteria"		# Infantry Division - All cadres at the military district level with reserves called up to division strength 
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+
+units = {
+	##### Ejército de Chile #####
+	division= {	
+		name = "1era División del Ejercito"
+		location = 650 # Santiago
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "2da División del Ejercito"
+		location = 12994 # Antofagasta
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "3era División del Ejercito"
+		location = 5121 # Concepcion
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+
+}
+air_wings = {
+	### Fuerza Aérea de Chile -- Santiago
+	279 = {
+		# Fighter Air Group -- Curtis Hawk IIs
+		light_fighter_equipment_0 =  {
+			owner = "CHL" 
+			amount = 18
+		}
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CHL"
+		}
+		requested_factories = 1
+		progress = 0.18
+		efficiency = 100
+	}
+}

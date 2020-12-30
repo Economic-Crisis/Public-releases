@@ -1,0 +1,452 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		###- ������������� ���������� ������� ���� ���\��� , ������ ������ ������, ������� ���� � ����
+
+		Alvis_Cars = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				armor = 0.30
+				infantry_weapons = -0.15
+			}
+
+			cost = 500
+			traits = { ifv_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		# ������� ����, ������� ��, ������� ��������� ������������� �-55 �� ���������� ��, ������ ��������.
+
+		BAE_Systems = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				armor = 0.18
+				naval_equipment = -0.18
+			}
+
+			cost = 350
+
+			traits = { med_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		###-�������� ����� ��� �-72,�90,�95
+		Vauxhall_Motors = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				armor = 0.35
+				artillery = -0.20
+			}
+
+			cost = 600
+
+			traits = { heav_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		### - ���������� ��������������� � ������������� ���, ��� (�.�. ��� � ������) - ����� ���������� ������ ����� �� ��� � traits �� ���.
+		FMC_Corporation = {
+
+			cost = 450
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				armor = 0.2
+				cat_naval_aircrafts_tech = -0.1
+			}
+
+			traits = { zrk_manufacturer }
+
+			modifier = {
+			}
+		}
+
+	}
+
+	aircraft_manufacturer = {
+
+		designer = yes
+
+		### EC ��������� ����� �� (������������) � �a (�������)
+		### ������ �� ������������ � ������� ����� ��� �� �� ������ �������� � ������� ��� ��������
+
+		Westland_Helicopters  = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.30
+				mot_rockets = -0.15
+
+			}
+
+			cost = 450
+
+			traits = { transport_helicopter_manufacturer }
+
+			modifier = {
+			}
+		}
+
+		###-�������� �����  �������� �� "������"
+		 Eurofighter_GmbH = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.28
+				armor = -0.20
+			}
+
+			cost = 250
+			traits = { light_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		British_Aerospace = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.22
+				armor = -0.12
+			}
+
+			cost = 350
+			traits = { medium_aircraft_development }
+
+			modifier = {
+			}
+		}
+
+		Rolls_Royce_Group = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.25
+				armor = -0.15
+			}
+			cost = 450
+			traits = { heavy_aircraft_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	###-������������ ��������
+	industrial_concern = {
+
+		JCB = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				industry = 0.20
+				electronics = -0.05
+			}
+			cost = 250
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+
+		General_Electric = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				electronics = 0.20
+				industry = -0.05
+			}
+
+			cost = 350
+
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+	}
+	###-���������� ������ � ���������
+	materiel_manufacturer = {
+
+		designer = yes
+
+		Royal_Ordnance_Factory = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				artillery = 0.25
+				electronics = -0.10
+			}
+
+			cost = 250
+
+			traits = { artillery_development }
+
+			modifier = {
+			}
+		}
+
+		Royal_Small_Arms_Factory = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.18
+			}
+
+			cost = 350
+
+			traits = { infantry_equipment_development }
+
+			modifier = {
+			}
+		}
+
+		Lewis_Machine_and_Tool_Company = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.25
+			}
+
+			cost = 650
+
+			traits = { infantry_equipment_development }
+
+			modifier = {
+			}
+		}
+
+		###--�������� ������� + ����
+		SC_Group = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.17
+				mot_rockets = 0.23
+				artillery = 0.10
+			}
+			cost = 350
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+
+
+
+   International_Truck = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.22
+				mot_rockets = 0.17
+				artillery = 0.10
+			}
+
+			cost = 450
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+
+
+    Force_Protection_Europe = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.25
+				armor = 0.10
+			}
+
+			cost = 550
+			traits = { motorized_equipment_development }
+
+			modifier = {
+			}
+		}
+	}
+
+	naval_manufacturer = {
+
+		designer = yes
+
+		Vickers_Shipbuilding = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.25
+				cat_naval_aircrafts_tech = -0.15
+			}
+
+			cost = 350
+
+			traits = { naval_development }
+
+			modifier = {
+			}
+		}
+
+		BAE_Systems_Maritime = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.30
+				cat_naval_aircrafts_tech = -0.20
+			}
+
+			cost = 450
+
+			traits = { naval_development }
+
+			modifier = {
+			}
+		}
+
+
+		Vosper_Thorneycroft = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.15
+				cat_naval_aircrafts_tech = -0.10
+			}
+
+			cost = 150
+
+			traits = { naval_development }
+
+			modifier = {
+			}
+		}
+
+
+		Swan_Hunter = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.18
+				cat_naval_aircrafts_tech = -0.12
+			}
+			cost = 250
+			traits = { naval_development }
+
+			modifier = {
+			}
+		}
+
+		Yarrow_Shipbuilders = {
+
+			picture = ENG_unknown
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.20
+				cat_naval_aircrafts_tech = -0.13
+			}
+			cost = 280
+			traits = { naval_development }
+
+			modifier = {
+			}
+		}
+	}
+
+}

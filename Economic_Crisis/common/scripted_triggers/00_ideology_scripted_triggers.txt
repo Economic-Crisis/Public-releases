@@ -1,0 +1,87 @@
+# add to vanila in 1.6 path
+# EC Edit
+
+is_enemy_ideology = {
+	OR = {
+		AND = {
+			has_government = communism
+			ROOT = {
+				OR = {
+					has_government = fascism
+					has_government = democratic
+					has_government = reformism
+					has_government = liberalism
+					has_government = neutrality
+					has_government = rad_islamists
+				}
+			}
+		}
+		AND = {
+			has_government = democratic
+			ROOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_government = rad_islamists
+					has_government = democratic
+				}
+			}
+		}
+		AND = {
+			has_government = liberalism
+			ROOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_government = rad_islamists
+					has_government = democratic
+				}
+			}
+		}
+		AND = {
+			has_government = reformism
+			ROOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_government = rad_islamists
+					has_government = democratic
+				}
+			}
+		}
+		AND = {
+			has_government = neutrality
+			ROOT = {
+				OR = {
+					has_government = rad_islamists
+				}
+			}
+		}
+		AND = {
+			has_government = fascism
+			ROOT = {
+				OR = {
+					has_government = communism
+					has_government = democratic
+					has_government = reformism
+					has_government = liberalism
+					has_government = neutrality
+					has_government = rad_islamists
+				}
+			}
+		}
+		AND = {
+			has_government = rad_islamists
+			ROOT = {
+				OR = {
+					has_government = communism
+					has_government = democratic
+					has_government = reformism
+					has_government = liberalism
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,86 @@
+﻿division_template = {
+	name = "District Force"	# For 2-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "District Brigade"	# For 1-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Militia Force"
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "SOM"
+		}
+		requested_factories = 1
+		progress = 0.51
+		efficiency = 100
+	}
+	
+	add_equipment_to_stockpile = {
+		amount = 500
+		type = army_salw_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 600
+		type = army_ammunition_equipment
+	}
+}
+
+
+units = {
+
+	
+	division = {
+		name = "Militia"
+		location = 12991
+		division_template = "Militia Force" 
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {
+		name = "Militia"
+		location = 14039
+		division_template = "Militia Force" 
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {
+		name = "Militia"
+		location = 14041
+		division_template = "Militia Force" 
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	
+}	
+	

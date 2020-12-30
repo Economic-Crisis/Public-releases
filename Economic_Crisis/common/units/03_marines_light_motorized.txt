@@ -1,0 +1,77 @@
+sub_units = {
+
+	# light motorized infantry on armored cars and utility vehicles
+	marines_light_motorized = {
+
+		sprite = marines_light_motorized
+		map_icon_category = infantry
+	
+		# helicopter_landing = yes
+		special_forces = yes
+		marines = yes
+		active = no
+		priority = 671
+		ai_priority = 200
+		
+		type = {
+			motorized
+		}
+		
+		group = marines_battalion
+		
+		categories = {
+			category_front_line
+			category_light_motorized
+			category_all_infantry
+			category_marines
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 23
+		max_organisation = 70
+		default_morale = 0.4
+		manpower = 92 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 150
+		suppression = 1
+		weight = 0.75
+		supply_consumption = 0.11
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			light_utility_vehicle_equipment
+			apc_wheeled_light_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = light_utility_vehicle_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			light_utility_vehicle_equipment = 20
+			apc_wheeled_light_equipment = 10
+			infantry_technical_means_equipment = 160
+		}
+		
+		marsh = {
+			attack = 0.2
+			movement = 0.5
+		}
+		river = {
+			attack = 0.3
+			movement = 0.4
+		}
+		amphibious = {
+			attack = 0.4
+			movement = 0.4
+		}
+	}
+}

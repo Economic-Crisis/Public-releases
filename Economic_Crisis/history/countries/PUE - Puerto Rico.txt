@@ -1,0 +1,49 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 686
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 10310 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "PUE_2013"
+	
+	add_ideas = {
+		contract_army
+		mixed_schools
+	}
+
+	add_political_power = 0
+
+	set_convoys = 30
+	
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2013.1.2"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 15
+		liberalism = 65
+		democratic = 15
+		neutrality = 5
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Alejandro Garcia Padilla"
+		desc = "POLITICS_ALEJANDRO_GARCIA_PADILLA_DESC"
+		picture = "gfx/leaders/PUE/portrait_alejandro_garcia_padilla.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	
+}
+

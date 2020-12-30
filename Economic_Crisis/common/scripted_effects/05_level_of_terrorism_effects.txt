@@ -1,0 +1,61 @@
+################################################
+## Economic Crisis 
+################################################
+## Increase/decrease level of terrorism
+################################################
+##Здесь, господа, работал Владимир Ильич Ленин
+################################################
+
+terrorism_decreased = {
+	if = {
+		limit = {
+			has_idea = decaying_state
+		}
+		swap_ideas = { remove_idea = decaying_state add_idea = high_terrorism }
+	}
+	else_if = {
+		limit = {
+			has_idea = high_terrorism
+		}
+		swap_ideas = { remove_idea = high_terrorism add_idea = average_terrorism }
+	}
+	else_if = {
+		limit = {
+			has_idea = average_terrorism
+		}
+		swap_ideas = { remove_idea = average_terrorism add_idea = low_terrorism }
+	}
+	else_if = {
+		limit = {
+			has_idea = low_terrorism
+		}
+		swap_ideas = { remove_idea = low_terrorism add_idea = terrorism_discounted }
+	}
+}
+
+terrorism_increased = {
+	if = {
+		limit = {
+			has_idea = high_terrorism
+		}
+		swap_ideas = { remove_idea = high_terrorism add_idea = decaying_state }
+	}
+	else_if = {
+		limit = {
+			has_idea = average_terrorism
+		}
+		swap_ideas = { remove_idea = average_terrorism add_idea = high_terrorism }
+	}
+	else_if = {
+		limit = {
+			has_idea = low_terrorism
+		}
+		swap_ideas = { remove_idea = low_terrorism add_idea = average_terrorism }
+	}
+	else_if = {
+		limit = {
+			has_idea = terrorism_discounted
+		}
+		swap_ideas = { remove_idea = terrorism_discounted add_idea = low_terrorism }
+	}
+}

@@ -1,0 +1,1104 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		ENG_Theresa_May_hog = {
+
+		picture = GFX_idea_ENG_Theresa_May_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+
+			on_add = {
+
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_David_Cameron_hog = {
+
+		picture = GFX_idea_ENG_David_Cameron_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_conservative
+						pm_conservative	
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Nigel_Farage_hog = {
+
+		picture = GFX_idea_ENG_Nigel_Farage_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Ed_Miliband_hog = {
+
+		picture = GFX_idea_ENG_Ed_Miliband_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Jeremy_Corbyn_hog = {
+
+		picture = GFX_idea_ENG_Jeremy_Corbyn_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+	ENG_Nick_Clegg_hog = {
+
+	picture = GFX_idea_ENG_Nick_Clegg_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_liberal 
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+	ENG_Alex_Callinicos_hog = {
+
+	picture = GFX_idea_ENG_Alex_Callinicos_hog
+
+		cost = 1000
+		#removal_cost = -1
+
+		available = {
+			OR = {
+				has_government = communism
+				has_country_flag = coalition_with_socialists
+			}
+		}
+
+		allowed = {
+			original_tag = "ENG"
+		}
+
+		traits = {  party_leader_communist 
+					pm_communist
+				}
+
+		on_add = {
+			news_event = head_of_government.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ENG_Nick_Griffin_hog = {
+
+	picture = GFX_idea_ENG_Nick_Griffin_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nareftionalists
+
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_nationalist 
+						pm_nationalist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Muhammad_Abdul_Barin_hog = {
+
+		picture = GFX_idea_ENG_Muhammad_Abdul_Barin_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { party_leader_islamist
+						pm_islamist
+					}
+
+			on_add = {
+				news_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+	}
+
+
+	defence_minister = {
+
+		ENG_Philip_Hammond_defm = {
+
+			cost = 300
+
+			picture = GFX_idea_ENG_Philip_Hammond_defm
+
+			allowed = {
+				original_tag = ENG
+			}
+			available =	{
+				NOT = {
+					has_country_flag = ENG_Philip_Hammond_fgm
+					has_country_flag = ENG_Philip_Hammond
+				}
+ 			}
+
+			traits = {
+				defence_minister_bureaucrat_2
+			}
+
+			on_add = {
+				hidden_effect = {
+					set_country_flag = ENG_Philip_Hammond_defm
+					country_event = { id = britain_government.1  days = 1 }
+				}
+			}
+
+			#cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		ENG_Michael_Fallon_defm = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Michael_Fallon_defm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = {
+				defence_minister_regime_loyalist_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		ENG_Richard_Dunnut_defm = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Richard_Dunnut_defm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = {
+				defence_minister_serve_and_protect_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Michael_Walker_defm = {
+
+		picture = GFX_idea_ENG_Michael_Walker_defm
+
+			cost = 200
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = {
+				defence_minister_distinguished_military_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Charles_Guthrie_defm = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Charles_Guthrie_defm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = {
+				defence_minister_analyst_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+
+	foreign_minister ={
+
+		ENG_William_Hague_fgm = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_William_Hague_fgm
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { foreign_minister_non-alignment_2 }
+		}
+
+
+		ENG_Philip_Hammond_fgm = {
+
+		picture = GFX_idea_ENG_Philip_Hammond_fgm
+
+			cost = 350
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			available =	{
+				NOT = {
+					has_country_flag = ENG_Philip_Hammond_defm
+					has_country_flag = ENG_Philip_Hammond
+				}
+ 			}
+
+			traits = { foreign_minister_addiction_irredentist_2 }
+
+
+			on_add = {
+				hidden_effect = {
+					set_country_flag = ENG_Philip_Hammond_fgm
+					country_event = { id = britain_government.1  days = 1 }
+				}
+			}
+
+			#cancel_if_invalid = yes
+
+		}
+
+		ENG_Boris_Johnson_fgm = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Boris_Johnson_fgm
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = {
+				foreign_minister_policy_defender_3
+			}
+		}
+
+	}
+
+	economic_minister = {
+
+	ENG_George_Osborne_ecm = {
+
+		cost = 450
+
+		picture = GFX_idea_ENG_George_Osborne_ecm
+
+		allowed = {
+			original_tag = "ENG"
+		}
+
+		traits = { economic_minister_public_administration_2 }
+	}
+
+		ENG_Vince_Cable_ecm = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Vince_Cable_ecm
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { economic_minister_business_protege_2 }
+		}
+
+
+
+		ENG_Greg_Clark_ecm = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Greg_Clark_ecm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			available =	{
+
+			}
+
+			traits = { economic_minister_international_trade_3 }
+		}
+
+
+		ENG_Peter_Mandelson_ecm = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Peter_Mandelson_ecm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { economic_minister_military_industry_2 }
+		}
+
+
+		ENG_Sajid_Javid_ecm = {
+
+			cost = 150
+
+			picture = GFX_idea_ENG_Sajid_Javid_ecm
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { economic_minister_banking_credit_system_2 }
+		}
+	}
+
+	secret_service_chief = {
+
+		ENG_Alex_Younger_ssch = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Alex_Younger_ssch
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+
+
+		ENG_John_Sawers_ssch = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_John_Sawers_ssch
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_eminence_grise_3 }
+		}
+	}
+
+	political_advisor = {
+
+		ENG_Philip_Hammond = {
+
+			cost = 300
+
+			picture = GFX_idea_ENG_Philip_Hammond
+
+			allowed = {
+				original_tag = ENG
+			}
+			available =	{
+				NOT = {
+					has_country_flag = ENG_Philip_Hammond_fgm
+					has_country_flag = ENG_Philip_Hammond_defm
+				}
+ 			}
+
+			traits = { economic_minister_banking_credit_system }
+
+			on_add = {
+				hidden_effect = {
+					set_country_flag = ENG_Philip_Hammond
+					country_event = { id = britain_government.1  days = 1 }
+				}
+			}
+
+			#cancel_if_invalid = yes
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		ENG_Anthony_Blair = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Anthony_Blair
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+
+			traits = { popular_person }
+		}
+
+
+		ENG_Oliver_Letwin = {
+
+			cost = 400
+			picture = GFX_idea_ENG_Oliver_Letwin
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { backstage_assistant }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Michael_Howard = {
+
+			cost = 250
+			picture = GFX_idea_ENG_Michael_Howard
+
+			allowed = {
+				original_tag = ENG
+			}
+
+
+			traits = { ideologue_theorist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Liam_Fox = {
+
+			cost = 200
+			picture = GFX_idea_ENG_Liam_Fox
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { master_negotiations }
+		}
+
+		ENG_George_Osborne = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_George_Osborne
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { industry_top_managment }
+		}
+
+		ENG_Andrew_Mitchell = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Andrew_Mitchell
+
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { industry_developer }
+		}
+
+
+
+		ENG_Owen_Paterson = {
+
+			cost = 150
+
+			picture = GFX_idea_ENG_Owen_Paterson
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { police_reformer }
+		}
+
+
+		ENG_John_Whittingdale = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_John_Whittingdale
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { propaganda_reformer }
+		}
+
+		ENG_John_Hutton = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_John_Hutton
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			available =	{
+
+			}
+
+			traits = { military_education_reformer }
+		}
+
+		ENG_Greg_Clark = {
+
+			cost = 400
+
+			picture = GFX_idea_ENG_Greg_Clark
+			allowed = {
+				original_tag = ENG
+			}
+
+			available =	{
+				NOT = {
+					has_idea = ENG_Greg_Clark_ecm
+				}
+			}
+
+			traits = { research_reformer }
+		}
+
+		ENG_Andrew_Lansley = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Andrew_Lansley
+
+			allowed = {
+				original_tag = ENG
+			}
+
+
+			traits = { medicine_reformer }
+		}
+
+		ENG_Jeremy_Hunt = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Jeremy_Hunt
+
+			allowed = {
+				original_tag = ENG
+			}
+
+
+			traits = { medicine_reformer }
+		}
+
+		ENG_Patrick_McLoughlin = {
+
+			cost = 300
+
+			picture = GFX_idea_ENG_Patrick_McLoughlin
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { infrastructure_reformer }
+		}
+
+		ENG_Amber_Rudd = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Amber_Rudd
+
+			allowed = {
+				original_tag = ENG
+			}
+
+
+			traits = { tek_reformer }
+		}
+
+		ENG_Karen_Bradley = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Karen_Bradley
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { cultura_reformer }
+		}
+
+		ENG_Nigel_Farage = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Nigel_Farage
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			available = {
+				OR = {
+					neutrality > 0.03
+				}
+				NOT = {
+					has_idea = ENG_Nigel_Farage_hog
+				}
+			}
+
+			traits = { centrist_puppet_opposition }
+
+			on_add = {
+				news_event = political_party.7
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = neutrality
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Alex_Callinicos = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Alex_Callinicos
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			available = {
+				OR = {
+					communism > 0.03
+				}
+				NOT = {
+					has_idea = ENG_Alex_Callinicos_hog
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+				country_event = political.1
+			}
+			#
+			#ai_will_do = {
+			#	factor = 0
+			#}
+		}
+
+		ENG_Ed_Miliband = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Ed_Miliband
+
+			available = {
+				OR = {
+					reformism > 0.01
+				}
+				NOT = {
+					has_idea = ENG_Ed_Miliband_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { reformism_demagogue }
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		ENG_Jeremy_Corbyn = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Jeremy_Corbyn
+
+			available = {
+				OR = {
+					reformism > 0.01
+				}
+				NOT = {
+					has_idea = ENG_Ed_Miliband_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { reformism_demagogue }
+
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		ENG_Nick_Clegg = {
+
+			cost = 400
+
+			picture = GFX_idea_ENG_Nick_Clegg
+
+			available = {
+				OR = {
+					liberalism > 0.01
+				}
+				NOT = {
+					has_idea = ENG_Nick_Clegg_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Ben_Gummer = {
+
+			picture = GFX_idea_ENG_Ben_Gummer
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			cost = 500
+
+			available = {
+				OR = {
+					democratic > 0.03
+				}
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political.13
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = democratic
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Nick_Griffin = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Nick_Griffin
+
+			available = {
+				NOT = {
+					has_idea = ENG_Nick_Griffin_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "ENG"
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ENG_Muhammad_Abdul_Barin = {
+
+			cost = 550
+
+			picture = GFX_idea_ENG_Muhammad_Abdul_Barin
+			allowed = {
+				original_tag = "ENG"
+			}
+			available =
+			{
+			NOT = {
+				has_idea = ENG_Muhammad_Abdul_Barin_hog
+			}
+			}
+
+			traits = { islamists_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+}

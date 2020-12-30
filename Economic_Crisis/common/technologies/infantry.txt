@@ -1,0 +1,2019 @@
+technologies = {
+
+	# y =
+	@ifv = -2
+	@apc_descent = 0
+	@apctr = 2
+	@apc = 6
+	@base = 10
+	@light = 10
+	@upd1 = 12
+	@upd2 = 14
+	@upd3 = 16
+	@upd4 = 18
+	@upd5 = 20
+	@upd6 = 22
+
+	# x =
+	@infantry = -3
+	@cavalry = -2
+	@motorized = -1
+	@mechanized_track = -1
+	@mechanized_8x8 = 0
+	@gendarmes = 2	
+	@mountaineers = 4
+	@marines = 6
+	@paratroopers = 8
+	@special_forces = 10
+	@support = 12
+	@engineers = 16
+	@field_hospital = 18
+	@logistics_company = 20
+	@military_police = 22
+	@signal_company = 24
+	@maintenance_company = 26
+	
+	# Ecomic Crisis
+	# All infantry battle units
+	
+	
+	tech_infantry = {
+	
+		enable_subunits = {
+			infantry
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = infantry
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_infantry"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_motorized_infantry
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @infantry y = @base }
+		}
+		
+		categories = {
+			cat_militia
+			cat_infantry
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	tech_motorized_infantry = {
+
+		enable_subunits = {
+			light_motorized
+			motorized
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = motorized
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_motorized"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_infantry_mechanized_on_ifv_tracked
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_marines
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers
+			research_cost_coeff = 1
+		}	
+		
+		path = {
+			leads_to_tech = tech_paratroopers
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tech_special_forces
+			research_cost_coeff = 1
+		}			
+		
+		path = {
+			leads_to_tech = tech_gendarmes
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @motorized y = @base }
+		}
+		
+		
+		categories = {
+			cat_infantry
+			cat_infantry_motorized
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	tech_infantry_mechanized_on_apc_wheeled = {
+
+		enable_subunits = {
+			mechanized_on_apc_wheeled
+		}
+
+		path = {
+			leads_to_tech = tech_marines_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_paratroopers_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_special_forces_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_gendarmes_mechanized_on_apc_wheeled
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = infantry_folder
+			position = { x = @mechanized_8x8 y = @apc }
+		}
+		
+		categories = {
+			cat_infantry
+			cat_infantry_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}	
+	
+	tech_infantry_mechanized_on_apc_tracked = {
+
+		enable_subunits = {
+			mechanized_on_apc_tracked
+		}
+		
+		path = {
+			leads_to_tech = tech_marines_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_paratroopers_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tech_gendarmes_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+		
+				
+		path = {
+			leads_to_tech = tech_special_forces_mechanized_on_apc_tracked
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = infantry_folder
+			position = { x = @mechanized_track y = @apctr }
+		}
+		
+		categories = {
+			cat_infantry
+			cat_infantry_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tech_infantry_mechanized_on_ifv_tracked = {
+
+		enable_subunits = {
+			mechanized_on_ifv_tracked
+		}
+
+		path = {
+			leads_to_tech = tech_marines_mechanized_on_ifv_tracked
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_paratroopers_mechanized_on_ifv_airdroppable
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 1944
+		folder = {
+			name = infantry_folder
+			position = { x = @cavalry y = @ifv }
+		}
+		
+		categories = {
+			cat_infantry
+			cat_infantry_cavalry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	tech_gendarmes = { 
+
+		enable_subunits = {
+			gendarmes_light_motorized
+			gendarmes_motorized
+		}
+				
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = gendarmes_light_motorized
+				has_template_containing_unit = gendarmes_motorized
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_gendarmes_light_motorized"
+				load_oob = "unlock_gendarmes_motorized"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_gendarmes1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @light }
+		}
+		
+		categories = {
+			cat_gendarmes
+			cat_gendarmes_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+
+	tech_gendarmes1 = {
+
+		gendarmes_light_motorized = {
+			max_organisation = 5
+		}
+
+		gendarmes_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		gendarmes_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = tech_gendarmes2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 1970
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @upd1 }
+		}
+		
+		categories = {
+			cat_gendarmes
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_gendarmes2 = {
+
+		gendarmes_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		gendarmes_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		gendarmes_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_gendarmes3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @upd2 }
+		}
+		
+		categories = {
+			cat_gendarmes
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_gendarmes3 = {
+
+		gendarmes_light_motorized = {
+			max_organisation = 5
+		}
+
+		gendarmes_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		gendarmes_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+
+		path = {
+			leads_to_tech = tech_gendarmes4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @upd3 }
+		}
+		
+		categories = {
+			cat_gendarmes
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_gendarmes4 = {
+
+		gendarmes_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		gendarmes_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		gendarmes_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @upd4 }
+		}
+		
+		categories = {
+			cat_gendarmes
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_gendarmes_mechanized_on_apc_wheeled = { 
+
+		enable_subunits = {
+			gendarmes_mechanized_on_apc_wheeled
+		}
+		
+		dependencies = {
+			tech_gendarmes = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = gendarmes_mechanized_on_apc_wheeled
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_gendarmes_mechanized_on_apc_wheeled"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @apc }
+		}
+		
+		categories = {
+			cat_gendarmes
+			cat_gendarmes_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+		
+	tech_gendarmes_mechanized_on_apc_tracked = { 
+
+		enable_subunits = {
+			gendarmes_mechanized_on_apc_tracked 
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = gendarmes_mechanized_on_apc_tracked 
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_gendarmes_mechanized_on_apc_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @gendarmes y = @apctr } 
+		}
+		
+		categories = {
+			cat_gendarmes
+			cat_gendarmes_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	tech_marines = {
+
+		enable_subunits = {
+			marines_motorized
+			marines_light_motorized
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marines_motorized
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_marines_motorized"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		path = {
+			leads_to_tech = marines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @light }
+		}
+		
+		categories = {
+			cat_marines
+			cat_marines_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+
+	marines1 = {
+
+		marines_motorized = {
+			max_organisation = 5
+		}
+		marines_light_motorized = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_ifv_tracked = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = marines2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 1990
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @upd1 }
+		}
+		
+		categories = {
+			cat_marines
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+	
+	marines2 = {
+
+	
+		marines_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_ifv_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = marines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @upd2 }
+		}
+		
+		categories = {
+			cat_marines
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+	
+	marines3 = {
+
+		marines_motorized = {
+			max_organisation = 5
+		}
+		marines_light_motorized = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		marines_mechanized_on_ifv_tracked = {
+			max_organisation = 5
+		}
+
+		path = {
+			leads_to_tech = marines4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @upd3 }
+		}
+		
+		categories = {
+			cat_marines
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}	
+
+	marines4 = {
+
+		marines_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		marines_mechanized_on_ifv_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		research_cost = 1.5
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @upd4 }
+		}
+		
+		categories = {
+			cat_marines
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+	
+	# Морская пехота на колесных бронетранспортерах (8х8, БТР, Stryker)
+	
+	tech_marines_mechanized_on_apc_wheeled = { 
+
+		enable_subunits = {
+			marines_mechanized_on_apc_wheeled
+		}
+		
+		dependencies = {
+			tech_marines = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marines_mechanized_on_apc_wheeled
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_marines_mechanized_on_apc_wheeled"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @apc }
+		}
+		
+		categories = {
+			cat_marines
+			cat_marines_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Морская пехота на гусенечных бронетранспортерах (МТ-ЛБ, М113)
+	
+	tech_marines_mechanized_on_apc_tracked = { 
+
+		enable_subunits = {
+			marines_mechanized_on_apc_tracked
+		}
+		
+		dependencies = {
+			tech_marines = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marines_mechanized_on_apc_tracked
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_marines_mechanized_on_apc_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @apctr }
+		}
+		
+		categories = {
+			cat_marines
+			cat_marines_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Морская пехота на БМП
+	
+	tech_marines_mechanized_on_ifv_tracked = { 
+
+		enable_subunits = {
+			marines_mechanized_on_ifv_tracked
+		}
+	
+		dependencies = {
+			tech_marines = 1
+		}
+	
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marines_mechanized_on_ifv_tracked
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_marines_mechanized_on_ifv_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @marines y = @ifv }
+		}	
+		
+		categories = {
+			cat_marines
+			cat_marines_cavalry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tech_mountaineers = {
+
+		enable_subunits = {
+			mountaineers_motorized
+			mountaineers_light_motorized
+			mountaineers_mechanized_on_apc_tracked
+			mountaineers_mechanized_on_apc_wheeled
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineers_motorized
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_mountaineers_motorized"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @light }
+		}
+		
+		categories = {
+			cat_mountaineers
+			cat_mountaineers_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+		}
+	}
+
+	tech_mountaineers1 = {
+
+		mountaineers_motorized = {
+			max_organisation = 5
+		}
+		
+		mountaineers_light_motorized = {
+			max_organisation = 5
+		}		
+		
+		mountaineers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		
+		mountaineers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers2
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.5
+		start_year = 1990
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @upd1 }
+		}
+		
+		categories = {
+			cat_mountaineers
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tech_mountaineers2 = {
+
+		mountaineers_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		mountaineers_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}		
+		
+		mountaineers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		mountaineers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @upd2 }
+		}
+		
+		categories = {
+			cat_mountaineers
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tech_mountaineers3 = {
+
+		mountaineers_motorized = {
+			max_organisation = 5
+		}
+		
+		mountaineers_light_motorized = {
+			max_organisation = 5
+		}		
+		
+		mountaineers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		
+		mountaineers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tech_mountaineers4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @upd3 }
+		}
+		
+		categories = {
+			cat_mountaineers
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	tech_mountaineers4 = {
+
+		mountaineers_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		mountaineers_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}		
+		
+		mountaineers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		mountaineers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @upd4 }
+		}
+		
+		categories = {
+			cat_mountaineers
+
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Горные стрелки на бронетранспортерах (8х8, БТР, Stryker)
+	
+	tech_mountaineers_mechanized_on_apc_wheeled = { 
+
+		enable_subunits = {
+			mountaineers_mechanized_on_apc_wheeled
+		}
+		
+		dependencies = {
+			tech_mountaineers = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineers_mechanized_on_apc_wheeled
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_mountaineers_mechanized_on_apc_wheeled"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @apc }
+		}
+		
+		categories = {
+			cat_mountaineers
+			cat_mountaineers_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Горные стрелки на гусенечных бронетранспортерах (МТ-ЛБ, М-113)
+	
+	tech_mountaineers_mechanized_on_apc_tracked = { 
+
+		enable_subunits = {
+			mountaineers_mechanized_on_apc_tracked
+		}
+		
+		dependencies = {
+			tech_mountaineers = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineers_mechanized_on_apc_tracked
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_mountaineers_mechanized_on_apc_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @mountaineers y = @apctr }
+		}
+		
+		categories = {
+			cat_mountaineers
+			cat_mountaineers_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Парашютисты с легкой техников (с возможностью сброса без экипажей - штраф на развертывание)
+	
+	tech_paratroopers = {
+
+		enable_subunits = {
+			paratroopers_motorized
+			paratroopers_light_motorized
+		}
+		
+		path = {
+			leads_to_tech = paratroopers1
+			research_cost_coeff = 1
+		}
+		
+		# path = {
+			# leads_to_tech = tech_marines_mechanized_on_ifv_tracked
+			# research_cost_coeff = 0.5
+		# }
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @light }
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratrooper
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_paratroopers_light_motorized"
+				load_oob = "unlock_paratroopers_motorized"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		categories = {
+			cat_paratroopers
+			cat_paratroopers_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+
+	paratroopers1 = {
+
+		paratroopers_motorized = {
+			max_organisation = 5
+		}
+
+		paratroopers_light_motorized = {
+			max_organisation = 5
+		}
+
+		paratroopers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+
+		paratroopers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		paratroopers_mechanized_on_ifv_airdroppable = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = paratroopers2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @upd1 }
+		}
+		
+		categories = {
+			cat_paratroopers
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+	
+	paratroopers2 = {
+
+		paratroopers_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		paratroopers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		paratroopers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		paratroopers_mechanized_on_ifv_airdroppable = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+			
+		path = {
+			leads_to_tech = paratroopers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @upd2 }
+		}
+		
+		categories = {
+			cat_paratroopers
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+
+	paratroopers3 = {
+
+		paratroopers_motorized = {
+			max_organisation = 5
+		}
+
+		paratroopers_light_motorized = {
+			max_organisation = 5
+		}
+
+		paratroopers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+
+		paratroopers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		paratroopers_mechanized_on_ifv_airdroppable = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = paratroopers4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @upd3 }
+		}
+		
+		categories = {
+			cat_paratroopers
+			cat_paratroopers_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+
+	paratroopers4 = {
+
+		paratroopers_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		paratroopers_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		paratroopers_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		paratroopers_mechanized_on_ifv_airdroppable = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = paratroopers4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @upd4 }
+		}
+		
+		categories = {
+			cat_paratroopers
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+	}
+	
+	# Парашютисты на коелсных БТР
+	
+	tech_paratroopers_mechanized_on_apc_wheeled = { 
+
+		enable_subunits = {
+			paratroopers_mechanized_on_apc_wheeled
+		}
+		
+		dependencies = {
+			tech_paratroopers = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratroopers_mechanized_on_apc_wheeled
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_paratroopers_mechanized_on_apc_wheeled"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @apc }
+		}
+		
+		categories = {
+			cat_paratroopers
+			cat_paratroopers_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Воздушные десантники, десантно-штурмовые подразделения на не десантируемых гусеничных БТР
+	
+	tech_paratroopers_mechanized_on_apc_tracked = { 
+
+		enable_subunits = {
+			paratroopers_mechanized_on_apc_tracked
+		}
+		
+		dependencies = {
+			tech_paratroopers = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = tech_airborne_on_apc
+		#	research_cost_coeff = 1
+		#}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratroopers_mechanized_on_apc_tracked
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_paratroopers_mechanized_on_apc_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers y = @apctr }
+		}
+		
+		categories = {
+			cat_paratroopers
+			cat_paratroopers_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Воздушные десантники (парашютисты) на десантируемой с экипажем бронетехнике (БТР-Д)
+	#
+	#tech_airborne_on_apc = { 
+	#
+	#	enable_subunits = {
+	#		paratroopers_mechanized_on_apc_airdroppable
+	#	}
+	#	
+	#	dependencies = {
+	#		tech_paratroopers = 1
+	#	}
+	#	
+	#	on_research_complete_limit = {
+		# 	NOT = {
+		# 		has_template_containing_unit = paratroopers_mechanized_on_apc_airdroppable
+		# 	}
+		# }
+		# on_research_complete = {
+	#		hidden_effect = {
+	#			load_oob = "unlock_paratroopers_mechanized_on_apc_airdroppable"
+	#		}			
+	#		custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+	#	}
+	#
+	#	research_cost = 1.5
+	#	start_year = 1952
+	#	folder = {
+	#		name = infantry_folder
+	#		position = { x = @special_forces y = @apctr }
+	#	}
+	#	
+	#	categories = {
+	#		infantry_weapons
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
+	# Десантно-штурмовые подразделения на авиадесантируемой с экипажем тяжелой технике (гусеничные БМД)
+	
+	tech_paratroopers_mechanized_on_ifv_airdroppable = { 
+
+		enable_subunits = {
+			paratroopers_mechanized_on_ifv_airdroppable
+		}
+		
+		dependencies = {
+			tech_paratroopers = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratroopers_mechanized_on_ifv_airdroppable
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_paratroopers_mechanized_on_ifv_airdroppable"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @paratroopers  y = @ifv }
+		}
+		
+		categories = {
+			cat_paratroopers
+			cat_paratroopers_cavalry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Специальные подразделения на легкой технике
+	
+	tech_special_forces = { 
+
+		enable_subunits = {
+			special_forces_light_motorized
+		}
+				
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = special_forces_light_motorized
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_special_forces_light_motorized"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_special_forces1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @light }
+		}
+		
+		categories = {
+			cat_special_forces
+			cat_special_forces_motorized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+
+	tech_special_forces1 = {
+
+		special_forces_light_motorized = {
+			max_organisation = 5
+		}
+
+		special_forces_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		special_forces_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+		
+		path = {
+			leads_to_tech = tech_special_forces2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 1970
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @upd1 }
+		}
+		
+		categories = {
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_special_forces2 = {
+
+		special_forces_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		special_forces_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		special_forces_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = tech_special_forces3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @upd2 }
+		}
+		
+		categories = {
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_special_forces3 = {
+
+		special_forces_light_motorized = {
+			max_organisation = 5
+		}
+
+		special_forces_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+		}
+		
+		special_forces_mechanized_on_apc_tracked = {
+			max_organisation = 5
+		}
+
+		path = {
+			leads_to_tech = tech_special_forces4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @upd3 }
+		}
+		
+		categories = {
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	tech_special_forces4 = {
+
+		special_forces_light_motorized = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+
+		special_forces_mechanized_on_apc_wheeled = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		special_forces_mechanized_on_apc_tracked = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @upd4 }
+		}
+		
+		categories = {
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+
+	# Специальные подразделения на колесных бронетранспортерах (8х8, БТР, Stryker)
+	
+	tech_special_forces_mechanized_on_apc_wheeled = { 
+
+		enable_subunits = {
+			special_forces_mechanized_on_apc_wheeled
+		}
+		
+		dependencies = {
+			tech_special_forces = 1
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = special_forces_mechanized_on_apc_wheeled
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_special_forces_mechanized_on_apc_wheeled"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @apc }
+		}
+		
+		categories = {
+			cat_special_forces
+			cat_special_forces_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 16
+				is_major = yes
+			}
+			
+		}
+	}
+	
+	# Специальные подразделения на легких 4x4 бронетранспортерах и машинах разведки | ASV (4х4, БРДМ, LAV-100 Commando)
+	
+	tech_special_forces_mechanized_on_apc_tracked = { 
+
+		enable_subunits = {
+			special_forces_mechanized_on_apc_tracked
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = special_forces_mechanized_on_apc_tracked
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_special_forces_mechanized_on_apc_tracked"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		research_cost = 1.5
+		start_year = 1952
+		folder = {
+			name = infantry_folder
+			position = { x = @special_forces y = @apctr }
+		}
+		
+		categories = {
+			cat_special_forces
+			cat_special_forces_mechanized
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

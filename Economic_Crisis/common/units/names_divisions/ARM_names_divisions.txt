@@ -1,0 +1,503 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+
+
+ARM_CAV_01 = 
+{
+	name = "Mechanized Brigade Tracked"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized_on_ifv_tracked" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_INF_01 }
+
+	fallback_name = "%d Motostelkoviy Polk"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d Motostelkoviy Polk" }
+		2 = { "%d Motostelkoviy Polk" }
+		3 = { "%d Motostelkoviy Polk" }
+		4 = { "%d Motostelkoviy Polk" }
+		5 = { "%d Motostelkoviy Polk" }
+		6 = { "%d Motostelkoviy Polk" }
+		7 = { "%d Motostelkoviy Polk" }
+		8 = { "%d Motostelkoviy Polk" }
+		9 = { "%d Motostelkoviy Polk" }
+		10 = { "%d Motostelkoviy Polk" }
+		11 = { "%d Motostelkoviy Polk" }
+		12 = { "%d Motostelkoviy Polk" }
+		13 = { "%d Motostelkoviy Polk" }
+		14 = { "%d Motostelkoviy Polk" }
+		15 = { "%d Motostelkoviy Polk" }
+		16 = { "%d Motostelkoviy Polk" }
+		17 = { "%d Motostelkoviy Polk" }
+		18 = { "%d Motostelkoviy Polk" }
+		19 = { "%d Motostelkoviy Polk" }
+		20 = { "%d Motostelkoviy Polk" }
+		21 = { "%d Motostelkoviy Polk" }
+		22 = { "%d Motostelkoviy Polk" }
+		23 = { "%d Motostelkoviy Polk" }
+		24 = { "%d Motostelkoviy Polk" }
+		25 = { "%d Motostelkoviy Polk" }
+		26 = { "%d Motostelkoviy Polk" }
+		27 = { "%d Motostelkoviy Polk" }
+		28 = { "%d Motostelkoviy Polk" }
+		29 = { "%d Motostelkoviy Polk" }
+		30 = { "%d Motostelkoviy Polk" }
+
+	}
+}
+
+ARM_MOT_01 = 
+{
+	name = "Mechanized Brigade Wheeled"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" "light_motorized" "mechanized_on_apc_tracked" "mechanized_on_apc_wheeled" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_INF_01 }
+
+	fallback_name = "%dya Motostrelkovaya Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Motostrelkovaya Brigada" }
+		2 = { "%dya Motostrelkovaya Brigada" }
+		3 = { "%dya Motostrelkovaya Brigada" }
+		4 = { "%dya Motostrelkovaya Brigada" }
+		5 = { "%dya Motostrelkovaya Brigada" }
+		6 = { "%dya Motostrelkovaya Brigada" }
+		7 = { "%dya Motostrelkovaya Brigada" }
+		8 = { "%dya Motostrelkovaya Brigada" }
+		9 = { "%dya Motostrelkovaya Brigada" }
+		10 = { "%dya Motostrelkovaya Brigada" }
+		11 = { "%dya Motostrelkovaya Brigada" }
+		12 = { "%dya Motostrelkovaya Brigada" }
+		13 = { "%dya Motostrelkovaya Brigada" }
+		14 = { "%dya Motostrelkovaya Brigada" }
+		15 = { "%dya Motostrelkovaya Brigada" }
+		16 = { "%dya Motostrelkovaya Brigada" }
+		17 = { "%dya Motostrelkovaya Brigada" }
+		18 = { "%dya Motostrelkovaya Brigada" }
+		19 = { "%dya Motostrelkovaya Brigada" }
+		20 = { "%dya Motostrelkovaya Brigada" }
+		21 = { "%dya Motostrelkovaya Brigada" }
+		22 = { "%dya Motostrelkovaya Brigada" }
+		23 = { "%dya Motostrelkovaya Brigada" }
+		24 = { "%dya Motostrelkovaya Brigada" }
+		25 = { "%dya Motostrelkovaya Brigada" }
+		26 = { "%dya Motostrelkovaya Brigada" }
+		27 = { "%dya Motostrelkovaya Brigada" }
+		28 = { "%dya Motostrelkovaya Brigada" }
+		29 = { "%dya Motostrelkovaya Brigada" }
+		30 = { "%dya Motostrelkovaya Brigada" }
+		31 = { "%dya Motostrelkovaya Brigada" }
+		32 = { "%dya Motostrelkovaya Brigada" }
+		33 = { "%dya Motostrelkovaya Brigada" }
+		34 = { "%dya Motostrelkovaya Brigada" }
+		35 = { "%dya Motostrelkovaya Brigada" }
+
+	}
+}
+
+ARM_ARM_01 = 
+{
+	name = "Tank Regiment"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "light_tank" "main_battle_tank" "main_battle_tank_te" "medium_tank" "ng_battle_tank" "unmanned_tank" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_INF_01 }
+
+	fallback_name = "%d Tank Regiment"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d Tank Regiment" }
+		2 = { "%d Tank Regiment" }
+		3 = { "%d Tank Regiment" }
+		4 = { "%d Tank Regiment" }
+		5 = { "%d Tank Regiment" }
+		6 = { "%d Tank Regiment" }
+		7 = { "%d Tank Regiment" }
+		8 = { "%d Tank Regiment" }
+		9 = { "%d Tank Regiment" }
+		10 = { "%d Tank Regiment" }
+		11 = { "%d Tank Regiment" }
+		12 = { "%d Tank Regiment" }
+		13 = { "%d Tank Regiment" }
+		14 = { "%d Tank Regiment" }
+		15 = { "%d Tank Regiment" }
+		16 = { "%d Tank Regiment" }
+		17 = { "%d Tank Regiment" }
+		18 = { "%d Tank Regiment" }
+		19 = { "%d Tank Regiment" }
+		20 = { "%d Tank Regiment" }
+
+	}
+}
+
+
+ARM_MAR_01 = 
+{
+	name = "Marine Divisions"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "marines_motorized" "marines_light_motorized" "marines_mechanized_on_apc_tracked" "marines_mechanized_on_apc_wheeled" "marines_mechanized_on_ifv_tracked" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_INF_01 }
+
+	fallback_name = "%dya Armyanska Div. Morskoi Pekhoty"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		2 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		3 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		4 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		5 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		6 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		7 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		8 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		9 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+		10 = { "%dya Armyanska Div. Morskoi Pekhoty" }
+
+	}
+}
+
+ARM_MTN_01 = 
+{
+	name = "Motorized regiment"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers_motorized" "mountaineers_light_motorized" "mountaineers_mechanized_on_apc_tracked" "mountaineers_mechanized_on_apc_wheeled" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%d Motostelkoviy Polk 'Gornyi'"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		36 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		37 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		38 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		39 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		40 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		41 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		42 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		43 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		44 = { "%d Motostelkoviy Polk 'Gornyi'" }
+		45 = { "%d Motostelkoviy Polk 'Gornyi'" }
+
+	}
+}
+
+ARM_PAR_01 = 
+{
+	name = "Paratrooper Divisions"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "paratroopers_motorized" "paratroopers_light_motorized" "paratroopers_mechanized_on_apc_tracked" "paratroopers_mechanized_on_apc_wheeled" "paratroopers_mechanized_on_ifv_airdroppable" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_INF_01 }
+
+	fallback_name = "%dya Armyanska Vozdushno-Desantnaya Div."
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		2 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		3 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		4 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		5 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		6 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		7 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		8 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		9 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+		10 = { "%dya Armyanska Vozdushno-Desantnaya Div." }
+
+	}
+}
+
+ARM_ART_01 = 
+{
+	name = "Artillery Brigade"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "self_propelled_artillery" "field_artillery" "towed_howitzers" "mortars" "mechanized_self_propelled_light_mortars" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%dya Artileriyskaya Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Artileriyskaya Brigada" }
+		2 = { "%dya Artileriyskaya Brigada" }
+		3 = { "%dya Artileriyskaya Brigada" }
+		4 = { "%dya Artileriyskaya Brigada" }
+		5 = { "%dya Artileriyskaya Brigada" }
+		6 = { "%dya Artileriyskaya Brigada" }
+		7 = { "%dya Artileriyskaya Brigada" }
+		8 = { "%dya Artileriyskaya Brigada" }
+		9 = { "%dya Artileriyskaya Brigada" }
+		10 = { "%dya Artileriyskaya Brigada" }
+		11 = { "%dya Artileriyskaya Brigada" }
+		12 = { "%dya Artileriyskaya Brigada" }
+		13 = { "%dya Artileriyskaya Brigada" }
+		14 = { "%dya Artileriyskaya Brigada" }
+		15 = { "%dya Artileriyskaya Brigada" }
+		16 = { "%dya Artileriyskaya Brigada" }
+		17 = { "%dya Artileriyskaya Brigada" }
+		18 = { "%dya Artileriyskaya Brigada" }
+		19 = { "%dya Artileriyskaya Brigada" }
+		20 = { "%dya Artileriyskaya Brigada" }
+
+	}
+}
+
+ARM_ART_02 = 
+{
+	name = "Rocket Artillery Brigade"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "medium_rocket_artillery" "heavy_rocket_artillery" "rocket_artillery_sr" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%dya Rocket Artillery Brigade"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Rocket Artillery Brigade" }
+		2 = { "%dya Rocket Artillery Brigade" }
+		3 = { "%dya Rocket Artillery Brigade" }
+		4 = { "%dya Rocket Artillery Brigade" }
+		5 = { "%dya Rocket Artillery Brigade" }
+		6 = { "%dya Rocket Artillery Brigade" }
+		7 = { "%dya Rocket Artillery Brigade" }
+		8 = { "%dya Rocket Artillery Brigade" }
+		9 = { "%dya Rocket Artillery Brigade" }
+		10 = { "%dya Rocket Artillery Brigade" }
+		11 = { "%dya Rocket Artillery Brigade" }
+		12 = { "%dya Rocket Artillery Brigade" }
+		13 = { "%dya Rocket Artillery Brigade" }
+		14 = { "%dya Rocket Artillery Brigade" }
+		15 = { "%dya Rocket Artillery Brigade" }
+		16 = { "%dya Rocket Artillery Brigade" }
+		17 = { "%dya Rocket Artillery Brigade" }
+		18 = { "%dya Rocket Artillery Brigade" }
+		19 = { "%dya Rocket Artillery Brigade" }
+		20 = { "%dya Rocket Artillery Brigade" }
+
+	}
+}
+
+ARM_AAR_01 = 
+{
+	name = "Anti Air Brigade"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized_self_propelled_aag" "mechanized_self_propelled_aa_ml" "medium_self_propelled_aa_ml" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%d Zenitnyi Raketniy Polk"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d Zenitnyi Raketniy Polk" }
+		2 = { "%d Zenitnyi Raketniy Polk" }
+		3 = { "%d Zenitnyi Raketniy Polk" }
+		4 = { "%d Zenitnyi Raketniy Polk" }
+		5 = { "%d Zenitnyi Raketniy Polk" }
+		6 = { "%d Zenitnyi Raketniy Polk" }
+		7 = { "%d Zenitnyi Raketniy Polk" }
+		8 = { "%d Zenitnyi Raketniy Polk" }
+		9 = { "%d Zenitnyi Raketniy Polk" }
+		10 = { "%d Zenitnyi Raketniy Polk" }
+		11 = { "%d Zenitnyi Raketniy Polk" }
+		12 = { "%d Zenitnyi Raketniy Polk" }
+		13 = { "%d Zenitnyi Raketniy Polk" }
+		14 = { "%d Zenitnyi Raketniy Polk" }
+		15 = { "%d Zenitnyi Raketniy Polk" }
+		16 = { "%d Zenitnyi Raketniy Polk" }
+		17 = { "%d Zenitnyi Raketniy Polk" }
+		18 = { "%d Zenitnyi Raketniy Polk" }
+		19 = { "%d Zenitnyi Raketniy Polk" }
+		20 = { "%d Zenitnyi Raketniy Polk" }
+
+	}
+}
+
+ARM_REC_01 = 
+{
+	name = "Reconnaissance Regiment"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "recons_light_motorized" "recons_mechanized_on_light_ifv_airdroppable" "recons_mechanized_on_apc_wheeled" "recons_mechanized_on_light_apc_wheeled" "recons_mechanized_on_light_apc_tracked"  }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%d Razved Polk"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d Razved Polk" }
+		2 = { "%d Razved Polk" }
+		3 = { "%d Razved Polk" }
+		4 = { "%d Razved Polk" }
+		5 = { "%d Razved Polk" }
+		6 = { "%d Razved Polk" }
+		7 = { "%d Razved Polk" }
+		8 = { "%d Razved Polk" }
+		9 = { "%d Razved Polk" }
+		10 = { "%d Razved Polk" }
+		11 = { "%d Razved Polk" }
+		12 = { "%d Razved Polk" }
+		13 = { "%d Razved Polk" }
+		14 = { "%d Razved Polk" }
+		15 = { "%d Razved Polk" }
+		16 = { "%d Razved Polk" }
+		17 = { "%d Razved Polk" }
+		18 = { "%d Razved Polk" }
+		19 = { "%d Razved Polk" }
+		20 = { "%d Razved Polk" }
+
+	}
+}
+
+ARM_SOF_01 = 
+{
+	name = "Special Forces Brigade"
+
+	for_countries = { ARM }
+
+	can_use = { always = yes }
+
+	division_types = { "special_forces_light_motorized" "special_forces_light_motorized" "special_forces_mechanized_on_apc_tracked" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ARM_CAV_01 }
+
+	fallback_name = "%dya Brigada Spetsnaza"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Brigada Spetsnaza" }
+		2 = { "%dya Brigada Spetsnaza" }
+		3 = { "%dya Brigada Spetsnaza" }
+		4 = { "%dya Brigada Spetsnaza" }
+		5 = { "%dya Brigada Spetsnaza" }
+		6 = { "%dya Brigada Spetsnaza" }
+		7 = { "%dya Brigada Spetsnaza" }
+		8 = { "%dya Brigada Spetsnaza" }
+		9 = { "%dya Brigada Spetsnaza" }
+		10 = { "%dya Brigada Spetsnaza" }
+		11 = { "%dya Brigada Spetsnaza" }
+		12 = { "%dya Brigada Spetsnaza" }
+		13 = { "%dya Brigada Spetsnaza" }
+		14 = { "%dya Brigada Spetsnaza" }
+		15 = { "%dya Brigada Spetsnaza" }
+		16 = { "%dya Brigada Spetsnaza" }
+		17 = { "%dya Brigada Spetsnaza" }
+		18 = { "%dya Brigada Spetsnaza" }
+		19 = { "%dya Brigada Spetsnaza" }
+		20 = { "%dya Brigada Spetsnaza" }
+
+	}
+}

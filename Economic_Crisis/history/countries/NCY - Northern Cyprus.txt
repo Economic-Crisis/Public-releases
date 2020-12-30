@@ -1,0 +1,61 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 781
+
+add_ideas = {
+	mixed_schools
+	presidential_republic
+	partially_recognized_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 72 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "NCY_2013"
+	
+	set_convoys = 20
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_neutral
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2010.4.26"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 40
+		liberalism = 0
+		democratic = 3
+		neutrality = 7
+		fascism = 50
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Derviş Eroğlu"
+		desc = ""
+		picture = "gfx/leaders/NCY/portrait_dervis_eroglu.dds"
+		ideology = national_conservatism
+		#expire = "2015.4.30"
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Mustafa Akindji"
+		desc = ""
+		picture = "gfx/leaders/NCY/portrait_akinci.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+

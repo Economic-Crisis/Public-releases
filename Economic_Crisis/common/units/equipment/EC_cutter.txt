@@ -1,0 +1,312 @@
+equipments = {
+	ship_hull_cutter = {
+		year = 1950
+
+		is_archetype = yes
+		is_buildable = no
+		type = screen_ship
+		interface_category = interface_category_screen_ships
+		#alias = destroyer
+		priority = 2000
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_light_battery }
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			# fixed_ship_fire_control_system_slot = {
+			# 	required = no
+			# 	allowed_module_categories = { ship_fire_control_system ship_sonar }
+			# }
+			# fixed_ship_radar_slot = {
+			# 	required = no
+			# 	allowed_module_categories = { ship_radar ship_sonar }
+			# }
+			fixed_ship_torpedo_slot = {
+				required = no
+				allowed_module_categories = { ship_torpedo }
+			}
+			fixed_ship_engine_slot = {
+				required = yes
+				allowed_module_categories = { light_ship_engine }
+			}
+			fixed_ship_armor_slot = {
+				required = no
+				allowed_module_categories = { ship_light_armor }	
+			}
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_anti_air
+					ship_depth_charge
+				}
+			}
+			rear_1_custom_slot = mid_1_custom_slot
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		module_count_limit = {
+			category = ship_sonar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 1
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 4
+		naval_speed = 25
+		reliability = 0.80
+		
+		naval_range = 1400
+
+		build_cost_ic = 500
+		
+		max_strength = 11
+
+		resources = {
+			steel = 2
+		}
+		
+		manpower = 26
+	}
+
+	ship_hull_cutter_1 = {
+		year = 1960
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_1
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+		}
+	}
+
+	ship_hull_cutter_2 = {
+		year = 1980
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_1
+		#alias = destroyer_2
+		
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_2
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+
+		reliability = 0.90
+		naval_range = 4100
+		max_strength = 40
+		build_cost_ic = 530
+		resources = {
+			steel = 2
+		}
+		manpower = 45
+	}
+
+	ship_hull_cutter_3 = {
+		year = 2000
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_2
+		#alias = destroyer_3
+
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_3
+			fixed_ship_anti_air_slot = ship_anti_air_3
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_engine_slot = light_ship_engine_3
+			fixed_ship_torpedo_slot = ship_torpedo_3
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 3000
+		max_strength = 50
+		build_cost_ic = 560
+		manpower = 30
+	}
+	ship_hull_cutter_4 = {
+		year = 2000
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_3
+		#alias = destroyer_3
+
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_4
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_4
+			fixed_ship_engine_slot = light_ship_engine_4
+			fixed_ship_torpedo_slot = ship_torpedo_4
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 4800
+		max_strength = 50
+		build_cost_ic = 590
+		manpower = 36
+	}
+	ship_hull_cutter_5 = {
+		year = 2000
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_4
+		#alias = destroyer_3
+
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_5
+			fixed_ship_anti_air_slot = ship_anti_air_5
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_5
+			fixed_ship_engine_slot = light_ship_engine_5
+			fixed_ship_torpedo_slot = ship_torpedo_5
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 4600
+		max_strength = 50
+		build_cost_ic = 620
+		manpower = 38
+	}
+	ship_hull_cutter_6 = {
+		year = 2000
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_5
+		#alias = destroyer_3
+
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_6
+			fixed_ship_anti_air_slot = ship_anti_air_6
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_6
+			fixed_ship_engine_slot = light_ship_engine_6
+			fixed_ship_torpedo_slot = ship_torpedo_6
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 4600
+		max_strength = 50
+		build_cost_ic = 650
+		manpower = 52
+	}
+	ship_hull_cutter_7 = {
+		year = 2000
+
+		archetype = ship_hull_cutter
+		priority = 2000
+		parent = ship_hull_cutter_5
+		#alias = destroyer_3
+
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_7
+			fixed_ship_anti_air_slot = ship_anti_air_7
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_7
+			fixed_ship_engine_slot = light_ship_engine_7
+			fixed_ship_torpedo_slot = ship_torpedo_7
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+		}
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 4600
+		max_strength = 50
+		build_cost_ic = 690
+		manpower = 39
+	}
+}

@@ -1,0 +1,109 @@
+﻿########################
+## Economic Crisis   ###
+####################################
+## Syria&oppozition Syria events ###
+####################################
+## Written by SuxrobGM #
+########################
+
+add_namespace = syria
+
+country_event = { #Получение оружие от США 
+	id = syria.1
+	title = syria.1.t
+	desc = syria.1.d
+	picture = GFX_event_FSA_army
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = syria.1.a
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_salw_equipment_1
+		}
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_ammunition_equipment_1
+		}
+	}
+}
+
+country_event = { #Склад боеприпасы для Сирии и Ирак чтобы они продолжали воевать с ИГ
+	id = syria.2
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = SYR
+		SYR = { has_country_flag = war_with_ISIS }
+	}
+	
+	immediate = {
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_salw_equipment_1
+		}
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_ammunition_equipment_1
+		}
+	}
+	
+	option = { 
+		name = syria.2.a
+	}
+}
+
+country_event = { #Склад боеприпасы для Сирии и Ирак чтобы они продолжали воевать с ИГ
+	id = syria.3
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = IRQ
+		IRQ = { has_country_flag = war_with_ISIS }
+	}
+	
+	immediate = {
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_salw_equipment_1
+		}
+		add_equipment_to_stockpile = {
+			amount = 60000
+			type = army_ammunition_equipment_1
+		}
+	}
+	
+	option = { 
+		name = syria.3.a
+	}
+}
+
+country_event = { #if AI FSA will create Syria to puppet, after peace conference 
+	id = syria.8
+	
+	#is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		country_exists = FSA
+		FSA = { is_ai = yes }
+		OR = {	
+			SYR = { IS_PUPPET_OF = FSA }
+			SYR = { IS_SUBJECT_OF = FSA }
+		}	
+	}
+	
+	immediate = { 
+		FSA = {	annex_country = { target = SYR } }
+	}
+	
+	option = { 
+		name = syria.4.a
+	}
+}

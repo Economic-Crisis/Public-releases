@@ -1,0 +1,87 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 692
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	add_ideas = {
+		parliamentary_monarchy
+		queen_elizabet
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		
+		#integration_in_rss
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.11.30"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 52
+		liberalism = 0
+		democratic = 48
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kenny Anthony"
+		desc = "POLITICS_KENNY_ANTHONY_DESC"
+		picture = "gfx/leaders/SLC/portrait_kenny_anthony.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Allen Chastanet"
+		desc = "POLITICS_ALLEN_CHASTANET_DESC"
+		picture = "gfx/leaders/SLC/portrait_allen_chastanet.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+		2016.6.7 = { 
+			SLC = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.06
+				}
+
+				set_politics = {
+					ruling_party = democratic
+				}
+			}
+		}

@@ -1,0 +1,328 @@
+guiTypes = {
+	containerWindowType = {
+		name = "video_gallery_compact"
+		position = { x = -1 y = -363 } # X coordinate will be overwritten by code
+		size = { width = 536 height = 830 }
+		orientation = CENTER
+		fade_time = 500
+		fade_type = linear
+		moveable = no
+
+		positionType = {
+			name = "position_offset"
+			position = { x = -6 y = 0 }
+		}
+
+		iconType = {
+			name = "background"
+			spriteType = "GFX_video_gallery_small_bg"
+			position = { x = 0 y = 0 }
+		}
+		
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 99 y = 27 }
+			text = "HOW_TO_PLAY"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = center
+		}
+
+		containerWindowType = {
+			name = "grid_container"
+			position = { x = 0 y = 0 }
+			size = { width = 450 height = 280 } 
+			verticalScrollbar = "right_vertical_slider"
+		
+			gridBoxType = {
+				name = "thumbnail_grid"
+				position = { x = 17 y = 34 }
+				size = { width = 450 height = 340 }
+				slotsize = { width = 100%% height = 280 }
+				max_slots_horizontal = 1
+			}
+		}
+		
+		buttonType = {
+			name = "expand_button"
+			quadTextureSprite = "GFX_button_261x34"
+			position = { x = 116 y = 647 }
+			font = "cg_16b"
+			text = "MORE_VIDEOS"
+			clicksound = click_default
+		}
+
+		instantTextBoxType = {
+			name = "disable_alerts_label"
+			position = { x = 153 y = 691 }
+			font = "hoi_18mbs"
+			text = "DISABLE_ALERTS"
+			maxWidth = 330
+			maxHeight = 20
+			format = left
+		}
+
+		checkboxType = {
+			name = "disable_alerts_checkbox"
+			position = { x = 116 y = 685 }
+			quadTextureSprite ="GFX_generic_checkbox"
+			clicksound = click_checkbox
+		}
+	}
+	
+	positionType = {
+		name = "large_library_threshold"
+		position = { x = 1600 y = 900 }
+	}
+
+	positionType = {
+		name = "medium_library_threshold"
+		position = { x = 1366 y = 768 }
+	}
+
+	containerWindowType = {
+		name = "video_gallery_expanded_large"
+		position = { x = -799 y = -450 }
+		size = { width = 1602 height = 899 }
+		orientation = CENTER
+		fade_time = 500
+		fade_type = linear
+		clipping = yes
+		
+		iconType = {
+			name = "background"
+			spriteType = "GFX_video_gallery_expanded_large_bg"
+			position = { x = 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 645 y = 28 }
+			text = "VIDEO_TUTORIALS"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = center
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -53 y = 28 }
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		containerWindowType = {
+			name = "grid_container"
+			position = { x = 19 y = 72 }
+			size = { width = 1560 height = 769 }
+			verticalScrollbar = "right_vertical_slider"
+
+			background = { # Dummy background to make the scroll bar work
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+
+			gridBoxType = {
+				name = "thumbnail_grid"
+				position = { x = -487 y = 0 }
+				size = { width = 1602 height = 100%% }
+				slotsize = { width = 500 height = 300 }
+				max_slots_horizontal = 3
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "video_gallery_expanded_medium"
+		position = { x = -682 y = -384 }
+		size = { width = 1366 height = 768 }
+		orientation = CENTER
+		fade_time = 500
+		fade_type = linear
+		clipping = yes
+
+		iconType = {
+			name = "background"
+			spriteType = "GFX_video_gallery_expanded_medium_bg"
+			position = { x = 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 535 y = 28 }
+			text = "VIDEO_TUTORIALS"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = center
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -50 y = 29 }
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		containerWindowType = {
+			name = "grid_container"
+			position = { x = -4 y = 72 }
+			size = { width = 1349 height = 639 }
+			verticalScrollbar = "right_vertical_slider"
+			
+			background = { # Dummy background to make the scroll bar work
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+			
+			gridBoxType = {
+				name = "thumbnail_grid"
+				position = { x = -340 y = 0 }
+				size = { width = 1602 height = 100%% }
+				slotsize = { width = 540 height = 310 }
+				max_slots_horizontal = 2
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "video_gallery_expanded_small"
+		position = { x = -639 y = -360 }
+		size = { width = 1278 height = 720 }
+		orientation = CENTER
+		fade_time = 500
+		fade_type = linear
+		clipping = yes
+
+		iconType = {
+			name = "background"
+			spriteType = "GFX_video_gallery_expanded_small_bg"
+			position = { x = 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 490 y = 28 }
+			text = "VIDEO_TUTORIALS"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = center
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -50 y = 29 }
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		containerWindowType = {
+			name = "grid_container"
+			position = { x = 22 y = 72 }
+			size = { width = 1237 height = 590 }
+			verticalScrollbar = "right_vertical_slider"
+
+			background = { # Dummy background to make the scroll bar work
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+
+			gridBoxType = {
+				name = "thumbnail_grid"
+				position = { x = -430 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 500 height = 300 }
+				max_slots_horizontal = 2
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "video_gallery_entry"
+		position = { x = 0 y = 20 }
+		size = { width = 450 height = 320 }
+		moveable = no
+		
+		iconType = {
+			name = "thumbnail_bg"
+			position = { x = 0 y = 20 }
+			spriteType = "GFX_video_thumbnail_bg"
+			alwaysTransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 7 y = 28 }
+			text = "VIDEO_TITLE"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = left
+		}
+		
+		iconType = {
+			name = "thumbnail"
+			position = { x = 7 y = 50 }
+			spriteType = "GFX_tiled_window_transparent"
+		}
+		
+		iconType = {
+			name = "video_alert_background"
+			position = { x = 7 y = 50 }
+			spriteType = "GFX_video_alert_bg"
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "thumbnail_play"
+			position = { x = 7 y = 50 }
+			spriteType = "GFX_video_thumbnail_play"
+		}
+		
+		iconType = {
+			position = { x = 380 y = 55 }
+			name = "watched_indicator"
+			spriteType = "GFX_video_watched_icon"
+			alwaystransparent = no
+			pdx_tooltip = "VIDEO_WATCHED_ICON"
+		}
+		
+		gridBoxType = {
+			name = "alerts"
+			position = { x = -65  y = 50}
+			size = { width = 200 height = 40 }
+			slotsize = { width = 50 height = 40 }
+			max_slots_horizontal = 5
+		}
+	}
+
+	containerWindowType = {
+		name = "video_thumbnail_alert"
+		position = { x = 0 y = 0 }
+		size = { width = 40 height = 40 }
+
+		iconType = {
+			name = "icon"
+			position = {x = 0 y = 0}
+			spriteType = "GFX_global_alert_icons_no_backgrounds"
+			alwaystransparent = no
+		}
+	}
+}

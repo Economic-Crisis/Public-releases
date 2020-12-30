@@ -1,0 +1,20 @@
+SAU_and_JOR_likes_LAS = {
+	enable = {
+		OR = {  
+		    tag = SAU
+			tag = JOR
+			tag = MRT
+		}	
+	}
+	abort = {
+		NOT = {
+			country_exists = EGY
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "EGY"			
+		value = 100
+	}	
+}

@@ -1,0 +1,408 @@
+ideas = {
+
+	political_advisor = { #Политические советники
+		# POLITICAL
+		generic_centrists_leader = { # Лидер центристов
+
+			allowed = {
+				NOT = {
+					#OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					#}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = neutrality_reformer limit = 1 }
+				}
+			}
+
+			traits = { neutrality_reformer }
+
+			on_add = {
+				news_event = political_party.32
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_rad_islamists_leader = {
+
+			allowed = {
+				OR = {
+					tag = ISS
+					tag = ISL
+					tag = ISN
+					tag = ISA
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = rad_islamists_demagogue limit = 1 }
+				}
+			}
+
+
+			traits = { rad_islamists_demagogue }
+
+			on_add = {
+				news_event = political_party.34
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = rad_islamists
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_islamists_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = islamists_demagogue limit = 1 }
+				}
+			}
+
+			traits = { islamists_demagogue }
+
+			on_add = {
+				news_event = political_party.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_reformists_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = reformism_demagogue limit = 1 }
+				}
+			}
+
+			traits = { reformism_demagogue }
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_liberals_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = liberalism_demagogue limit = 1 }
+				}
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_socialists_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+			}
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+				country_event = political.1
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_conservators_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+				}
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		generic_nationalists_leader = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+				NOT = {
+					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+				}
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		## СОВЕТНИКОВ НИЖЕ РАСКИДАТЬ ПО ДРУГИМ
+		generic_captain_of_industry = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+			}
+
+			traits = { captain_of_industry }
+
+		}
+
+		generic_fortification_engineer = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+			}
+
+			traits = { smooth_talking_charmer }
+		}
+
+		generic_war_industrialist = {
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = ITA
+						original_tag = SLO
+					}
+				}
+			}
+
+			traits = { compassionate_gentleman }
+		}
+	}
+}

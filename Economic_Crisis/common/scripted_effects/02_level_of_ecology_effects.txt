@@ -1,0 +1,53 @@
+ecology_decreased = {
+	if = {
+		limit = {
+			has_idea = full_protect
+		}
+		swap_ideas = { remove_idea = full_protect add_idea = big_protect }
+	}
+	if = {
+		limit = {
+			has_idea = big_protect
+		}
+		swap_ideas = { remove_idea = big_protect add_idea = normal_protect }
+	}
+	if = {
+		limit = {
+			has_idea = normal_protect
+		}
+		swap_ideas = { remove_idea = normal_protect add_idea = low_protect }
+	}
+	if = {
+		limit = {
+			has_idea = low_protect
+		}
+		swap_ideas = { remove_idea = low_protect add_idea = no_protect }
+	}
+}
+
+terrorism_increased = {
+	if = {
+		limit = {
+			has_idea = big_protect
+		}
+		swap_ideas = { remove_idea = big_protect add_idea = full_protect }
+	}
+	if = {
+		limit = {
+			has_idea = normal_protect
+		}
+		swap_ideas = { remove_idea = normal_protect add_idea = big_protect }
+	}
+	if = {
+		limit = {
+			has_idea = low_protect
+		}
+		swap_ideas = { remove_idea = low_protect add_idea = normal_protect }
+	}
+	if = {
+		limit = {
+			has_idea = no_protect
+		}
+		swap_ideas = { remove_idea = no_protect add_idea = low_protect }
+	}
+}

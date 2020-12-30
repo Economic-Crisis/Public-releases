@@ -1,0 +1,2375 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	###HEAD MINISTERS###
+
+	head_of_government = {
+	
+		pol_donald_tusk_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+			
+			picture = pol_donald_tusk
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_liberal 
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_ewa_kopacz_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+			
+			picture = pol_ewa_kopacz 
+			
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_liberal 
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_beata_szydlo_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			picture = pol_beata_szydlo 
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+	
+		pol_jaroslaw_kaczynski_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			picture = pol_jaroslaw_kaczynski
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+	
+		pol_leszek_miller_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			picture = pol_leszek_miller
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_wlodzimierz_czarzasty_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			picture = pol_wlodzimierz_czarzasty
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+
+		pol_janusz_piechocinski_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			picture = pol_janusz_piechocinski
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_wladyslaw_kosiniak-kamysz_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			picture = pol_wladyslaw_kosiniak-kamysz
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_krzysztof_szwej_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			picture = pol_krzysztof_szwej
+			
+			allowed = {
+				original_tag = "POL"
+			}
+
+			traits = { party_leader_communist
+						pm_communist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+		
+		pol_robert_winnicki_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			picture = pol_robert_winnicki
+			
+			allowed = {
+				original_tag = "POL"
+				NOT = {
+					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+				}
+			}
+
+			traits = { party_leader_nationalist
+						pm_nationalist
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+			
+		}
+	}
+	
+	###DEFENCE MINISTERS###
+	
+	defence_minister = {
+	
+		pol_tomasz_siemoniak_defm = {
+			#liberalism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			picture = pol_tomasz_siemoniak
+			
+			traits = {
+				defence_minister_distinguished_military
+				army_chief_reform_1
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		
+		pol_stefan_niesiolkowski_defm = {
+			#liberalism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+
+			picture = pol_stefan_niesiolkowski
+			
+			traits = {
+				defence_minister_regime_loyalist
+				army_chief_reform_2
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		pol_jadwiga_zakrzewska_defm = {
+			#liberalism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+
+			picture = pol_jadwiga_zakrzewska
+			
+			traits = {
+				defence_minister_army_order
+				army_chief_reform_3
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		pol_antoni_macierewicz_defm = {
+			#democratic
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+
+			picture = pol_antoni_macierewicz
+			
+			traits = {
+				defence_minister_bureaucrat
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		pol_bartosz_kownacki_defm = {
+			#democratic
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			picture = pol_bartosz_kownacki
+			
+			traits = {
+				defence_minister_serve_and_protect
+				army_chief_reform_1
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		pol_michal_jach_defm = {
+			#democratic
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			picture = pol_michal_jach
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		pol_grzegorz_kurczuk_defm = {
+			#reformism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+
+			picture = pol_grzegorz_kurczuk
+			
+			traits = {
+				defence_minister_distinguished_military
+				army_chief_reform_1
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		pol_pawel_bejda_defm = {
+			#centrism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+
+			picture = pol_pawel_bejda
+			
+			traits = {
+				defence_minister_regime_loyalist
+				army_chief_reform_2
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+
+		pol_jozef_lachut_defm = {
+			#communism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			picture = pol_jozef_lachut
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+			
+			available =	{
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+
+		pol_marian_kowalski_defm = {
+			#fascism
+			cost = 250
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			picture = pol_marian_kowalski
+
+			traits = {
+				defence_minister_army_order
+				army_chief_reform_3
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}			
+	}
+	
+		
+	###FOREIGN MINISTERS###
+	
+	foreign_minister = {
+		
+		#Liberalism#
+		pol_radoslaw_sikorski_fgm = {
+		
+			cost = 450
+
+			picture = pol_radoslaw_sikorski
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+			
+			traits = { foreign_minister_policy_defender }
+		}
+
+		pol_grzegorz_schetyna_fgm = {
+		
+			cost = 450
+
+			picture = pol_grzegorz_schetyna
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+		pol_robert_tyszkiewicz_ecm = {
+		
+			cost = 450
+
+			picture = pol_robert_tyszkiewicz
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		pol_marek_krzakala_fgm = {
+		
+			cost = 450
+
+			picture = pol_marek_krzakala
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+		#Democratic#
+		
+		pol_witold_waszczykowski_fgm = {
+		
+			cost = 450
+
+			picture = pol_witold_waszczykowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+
+		pol_anna_fotyga_fgm = {
+		
+			cost = 450
+
+			picture = pol_anna_fotyga
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}		
+		
+		pol_malgorzata_gosiewska_fgm = {
+		
+			cost = 450
+
+			picture = pol_malgorzata_gosiewska
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		pol_jaroslaw_sellin_fgm = {
+		
+			cost = 450
+
+			picture = pol_jaroslaw_sellin
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+		#Reformism#
+		
+		pol_wlodzimierz_cimoszewicz_fgm = {
+		
+			cost = 450
+
+			picture = pol_wlodzimierz_cimoszewicz
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists				
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		pol_zbyszek_zaborowski_fgm = {
+		
+			cost = 450
+
+			picture = pol_zbyszek_zaborowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists				
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+		#Neutrality#
+		
+		pol_jan_lopata_fgm = {
+		
+			cost = 450
+
+			picture = pol_jan_lopata
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists				
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		pol_stanislaw_zelichowski_fgm = {
+		
+			cost = 450
+
+			picture = pol_stanislaw_zelichowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+		
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists				
+				}
+			}
+			
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+		pol_jaroslaw_gorczynski_fgm = {
+		
+			cost = 450
+
+			picture = pol_jaroslaw_gorczynski
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists				
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		#Communism#
+		
+		pol_tadusz_iwinski_fgm = {
+		
+			cost = 450
+
+			picture = pol_tadusz_iwinski
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists			
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}	
+		
+		#Fascism#
+		
+		pol_adam_andruszkiewicz_fgm = {
+		
+			cost = 450
+
+			picture = pol_adam_andruszkiewicz
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists			
+				}
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		pol_bartosz_jozwiak_fgm = {
+		
+			cost = 450
+
+			picture = pol_bartosz_jozwiak
+
+			allowed = {
+				original_tag = "POL"
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists			
+				}
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+		
+	}
+	
+	###ECONOMIC MINISTERS###
+	
+	economic_minister = {
+	
+		#Liberalism#
+		
+		pol_mateusz_szczurek_ecm = {
+
+			cost = 350
+
+			picture = pol_mateusz_szczurek
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		pol_wlodzimierz_karpinski_ecm = {
+
+			cost = 350
+
+			picture = pol_wlodzimierz_karpinski
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_military_industry }
+		}	
+
+		pol_jacek_rostowski_ecm = {
+
+			cost = 350
+
+			picture = pol_jacek_rostowski
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_international_trade }
+		}
+
+		pol_krystyna_skowronska_ecm = {
+
+			cost = 350
+
+			picture = pol_krystyna_skowronska
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}		
+
+		#Democratic#
+		
+		pol_mateusz_morawiecki_ecm = {
+
+			cost = 350
+
+			picture = pol_mateusz_morawiecki
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_public_administration }
+		}	
+
+		pol_pawel_szalamacha_ecm = {
+
+			cost = 350
+
+			picture = pol_pawel_szalamacha
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_social_reformer }
+		}
+
+		pol_jerzy_materna_ecm = {
+
+			cost = 350
+
+			picture = pol_jerzy_materna
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_military_industry }
+		}		
+		
+		pol_henryk_kowalczyk_ecm = {
+
+			cost = 350
+
+			picture = pol_henryk_kowalczyk
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { economic_minister_international_trade }
+		}	
+		
+		#Reformism#
+		
+		pol_andrzej_raczko_ecm = {
+
+			cost = 350
+
+			picture = pol_andrzej_raczko
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists					
+				}
+			}
+
+			traits = { economic_minister_social_reformer }
+		}		
+		
+		pol_marek_belka_ecm = {
+
+			cost = 350
+
+			picture = pol_marek_belka
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists					
+				}
+			}
+
+			traits = { economic_minister_public_administration }
+		}		
+		
+		pol_wincenty_elsner_ecm = {
+
+			cost = 350
+
+			picture = pol_wincenty_elsner
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists					
+				}
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}
+		
+		#Neutrality#
+		
+		pol_janusz_piechocinski_ecm = {
+
+			cost = 350
+
+			picture = pol_janusz_piechocinski
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { economic_minister_military_industry }
+		}		
+		
+		pol_waldemar_pawlak_ecm = {
+
+			cost = 350
+
+			picture = pol_waldemar_pawlak
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { economic_minister_international_trade }
+		}
+
+		pol_romuald_garczewski_ecm = {
+
+			cost = 350
+
+			picture = pol_romuald_garczewski
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}
+
+		pol_genowefa_tokarska_ecm = {
+
+			cost = 350
+
+			picture = pol_genowefa_tokarska
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { economic_minister_public_administration }
+		}		
+
+		#Communism#
+		
+		pol_marian_indelak_ecm = {
+
+			cost = 350
+
+			picture = pol_marian_indelak
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			traits = { economic_minister_social_reformer }
+		}	
+
+		pol_adam_marcin_ecm = {
+
+			cost = 350
+
+			picture = pol_adam_marcin
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			traits = { economic_minister_military_industry }
+		}		
+		
+		#Fascism#
+
+		pol_tomasz_rzymkowski_ecm = {
+
+			cost = 350
+
+			picture = pol_tomasz_rzymkowski
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			traits = { economic_minister_international_trade }
+		}						
+		
+		pol_andrzej_diakonow_ecm = {
+
+			cost = 350
+
+			picture = pol_andrzej_diakonow
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}	
+		
+		pol_krzysztof_bosak_ecm = {
+
+			cost = 350
+
+			picture = pol_krzysztof_bosak
+
+			allowed = {
+				original_tag = POL
+			}
+			
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			traits = { economic_minister_military_industry }
+		}		
+		
+	}
+	
+	###SECRET SERVICE CHIEFS###
+	
+	secret_service_chief = {
+	
+		#Liberalism#
+		
+		pol_dariusz_luczak_ssch = {
+
+			cost = 550
+
+			picture = pol_dariusz_luczak
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+		
+		pol_krzysztof_bondaryk_ssch = {
+
+			cost = 550
+
+			picture = pol_krzysztof_bondaryk
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+		
+		pol_cezary_grabarczyk_ssch = {
+
+			cost = 550
+
+			picture = pol_cezary_grabarczyk
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+		
+		pol_marek_wojcik_ssch = {
+
+			cost = 550
+
+			picture = pol_marek_wojcik
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_counterespionage }
+		}
+		
+		#Democratic#
+		
+		pol_piotr_pogonowski_ssch = {
+
+			cost = 550
+
+			picture = pol_piotr_pogonowski
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+		
+		pol_mariusz_kaminski_c_ssch = {
+
+			cost = 550
+
+			picture = pol_mariusz_kaminski
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+		
+		pol_jerzy_polaczek_ssch = {
+
+			cost = 550
+
+			picture = pol_jerzy_polaczek
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+		
+		pol_jaroslaw_zielinski_ssch = {
+
+			cost = 550
+
+			picture = pol_jaroslaw_zielinski
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+					
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals					
+				}
+			}
+
+			traits = { secret_service_chief_counterespionage }
+		}
+		
+		#Reformism#
+		
+		pol_artur_ostrowski_ssch = {
+
+			cost = 550
+
+			picture = pol_artur_ostrowski
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+		
+		pol_cezary_olejniczak_ssch = {
+
+			cost = 550
+
+			picture = pol_cezary_olejniczak
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+		
+		#Neutrality#
+		
+		pol_zbigniew_sosnowski_ssch = {
+
+			cost = 550
+
+			picture = pol_zbigniew_sosnowski
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+		
+		pol_miroslaw_pawlak_ssch = {
+
+			cost = 550
+
+			picture = pol_miroslaw_pawlak
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { secret_service_chief_counterespionage }
+		}
+		
+		pol_henryk_kmiecik_ssch = {
+
+			cost = 550
+
+			picture = pol_henryk_kmiecik
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+		
+		#Communism#
+		
+		pol_zbigniew_wiktor_ssch = {
+
+			cost = 550
+
+			picture = pol_zbigniew_wiktor
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+		
+		#Fascism#
+		
+		pol_bartosz_jozwiak_ssch = {
+
+			cost = 550
+
+			picture = pol_bartosz_jozwiak
+
+			allowed = {
+				original_tag = POL
+			}
+
+			available =	{
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+		
+	}
+	
+	###POLITICAL ADVISORS###
+	
+	political_advisor = {
+		
+		pol_jolanta_fedak = { ##
+
+			cost = 150
+
+			picture = pol_jolanta_fedak
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { popular_person }
+		}
+		
+		pol_krzysztof_kwiatkowski = { ##
+
+			cost = 150
+
+			picture = pol_krzysztof_kwiatkowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { backstage_assistant }
+		}
+		
+		pol_michal_kaminski_n = { ##
+
+			cost = 150
+
+			picture = pol_michal_kaminski_n
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { ideologue_theorist }
+		}
+		
+		pol_przemyslaw_holocher = { ##
+
+			cost = 150
+
+			picture = pol_przemyslaw_holocher
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { master_negotiations }
+		}
+		
+		pol_aleksander_rejckant = { ##
+
+			cost = 150
+
+			picture = pol_aleksander_rejckant
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { industry_developer }
+		}
+		
+		pol_bartosz_berk = { ##
+
+			cost = 150
+
+			picture = pol_bartosz_berk
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { police_reformer }
+		}
+		
+		pol_tadeusz_matusiak = { ##
+
+			cost = 150
+
+			picture = pol_tadeusz_matusiak
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { propaganda_reformer }
+		}
+		
+		pol_mariusz_lapinski = { ##
+
+			cost = 150
+
+			picture = pol_mariusz_lapinski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { medicine_reformer }
+		}
+		
+		pol_jerzy_wenderlich = { ##
+
+			cost = 150
+
+			picture = pol_jerzy_wenderlich
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { propaganda_reformer }
+		}
+		
+		pol_krzysztof_gawkowski = { ##
+
+			cost = 150
+
+			picture = pol_krzysztof_gawkowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { research_reformer }
+		}
+		
+		pol_slawomir_neumann = { ##
+
+			cost = 150
+
+			picture = pol_slawomir_neumann
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { infrastructure_reformer }
+		}
+		
+		pol_bogdan_zdrojewski = { ##
+
+			cost = 150
+
+			picture = pol_bogdan_zdrojewski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { cultura_reformer }
+		}
+		
+		pol_cezary_grabarczyk = { ##
+
+			cost = 150
+
+			picture = pol_cezary_grabarczyk
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { infrastructure_reformer }
+		}
+		
+		pol_rafal_grupinski = { ##
+
+			cost = 150
+
+			picture = pol_rafal_grupinski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { research_reformer }
+		}
+		
+		pol_piotr_andrzejewski = { ##
+
+			cost = 150
+
+			picture = pol_piotr_andrzejewski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { cultura_reformer }
+		}
+		
+		pol_anna_fotyga = { ##
+
+			cost = 150
+
+			picture = pol_anna_fotyga
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { ideologue_theorist }
+		}
+		
+		pol_kazimierz_marcinkiewicz = { ##
+
+			cost = 150
+
+			picture = pol_kazimierz_marcinkiewicz
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { economic_minister_banking_credit_system }
+		}
+		
+		pol_ludwik_dorn = { ##
+
+			cost = 150
+
+			picture = pol_ludwik_dorn
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { master_negotiations }
+		}
+		
+		pol_janusz_korwin_mikke = { ##
+
+			cost = 150
+
+			picture = pol_janusz_korwin_mikke
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { popular_person }
+		}
+		
+		pol_jozef_zych = { ##
+
+			cost = 150
+
+			picture = pol_jozef_zych
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { ideologue_theorist }
+		}
+		
+		pol_zbigniew_sosnowski = { ##
+
+			cost = 150
+
+			picture = pol_zbigniew_sosnowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { police_reformer }
+		}
+		
+		pol_marek_sawicki = { ##
+
+			cost = 150
+
+			picture = pol_marek_sawicki
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { industry_developer }
+		}
+		
+		pol_mieczyslaw_kasprzak = { ##
+
+			cost = 150
+
+			picture = pol_mieczyslaw_kasprzak
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { industry_top_managment }
+		}
+		
+		pol_urszula_paslawska = { ##
+
+			cost = 150
+
+			picture = pol_urszula_paslawska
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { cultura_reformer }
+		}
+		
+		pol_piotr_ikonowicz = { ##
+
+			cost = 150
+
+			picture = pol_piotr_ikonowicz
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { master_negotiations }
+		}
+		
+		pol_dariusz_jonski = { ##
+
+			cost = 150
+
+			picture = pol_dariusz_jonski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { cultura_reformer }
+		}
+		
+		pol_waldemar_witkowski = { ##
+
+			cost = 150
+
+			picture = pol_waldemar_witkowski
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { research_reformer }
+		}
+		
+		pol_krzysztof_janik = { ##
+
+			cost = 150
+
+			picture = pol_krzysztof_janik
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+			}
+
+
+			traits = { backstage_assistant }
+		}
+		
+		pol_elzbieta_bienkowska = { #Liberalism#
+
+			cost = 150
+
+			picture = pol_elzbieta_bienkowska
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+
+			traits = { liberalism_demagogue }
+		}
+		
+		pol_boleslaw_piecha = { #Democratic#
+
+			cost = 150
+
+			picture = pol_boleslaw_piecha
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+
+			traits = { democratic_reformer }
+		}
+		
+		pol_grzegorz_tuderek = { #Reformism#
+
+			cost = 150
+
+			picture = pol_grzegorz_tuderek
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+
+
+			traits = { reformism_demagogue }
+		}
+		
+
+		pol_waldemar_pawlak = { #Neutrality#
+
+			cost = 150
+
+			picture = pol_waldemar_pawlak
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+
+			traits = { centrist_puppet_opposition }
+		}
+	
+		pol_tymoteusz_kochan = { #Communism#
+
+			cost = 150
+
+			picture = pol_tymoteusz_kochan
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+		}
+		
+		pol_piotr_farfal = { #Fascism#
+
+			cost = 150
+
+			picture = pol_piotr_farfal
+
+			allowed = {
+				original_tag = "POL"
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+
+			traits = { fascist_demagogue }
+		}
+		
+	}
+}

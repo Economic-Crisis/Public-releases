@@ -1,0 +1,57 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 317
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1098 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		alba_member
+		presidential_republic
+		low_terrorism
+		mixed_schools
+		NPT
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2011.11.6"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 61
+		reformism = 1
+		liberalism = 23
+		democratic = 14
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Daniel Ortega"
+		picture = "gfx/leaders/NIC/portrait_daniel_ortega.dds"
+		ideology = marxism #sandinism
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Arnoldo Alemán"
+		picture = "gfx/leaders/NIC/portrait_arnoldo_aleman.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+}
+

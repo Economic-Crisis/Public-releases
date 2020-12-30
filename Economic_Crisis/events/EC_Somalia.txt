@@ -1,0 +1,76 @@
+﻿add_namespace = somalia
+
+
+country_event = {
+	id = somalia.1
+	title = somalia.1.t
+	desc = somalia.1.d
+	picture = GFX_event_sign_document_1
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = SOM
+	}
+
+	option = {
+		name = somalia.1.o1
+		
+		add_political_power = 50
+		JUB = { set_country_flag = som_congress }
+		HAH = { set_country_flag = som_congress }
+		GAS = { set_country_flag = som_congress }
+		PSS = { set_country_flag = som_congress }
+		KSS = { set_country_flag = som_congress }
+		SML = { set_country_flag = som_congress }
+		AWD = { set_country_flag = som_congress }
+		hidden_effect = {
+			news_event = { id = somalia_news.1  days = 1 }
+		}
+		
+		ai_chance = {
+			base = 70
+		}
+	}
+}
+
+country_event = {
+	id = somalia.2
+	title = somalia.2.t
+	desc = somalia.2.d
+	picture = GFX_event_sign_document_1
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = SOM
+	}
+
+	option = {
+        name = somalia.2.left
+        set_country_flag = som_left_front_win
+		custom_effect_tooltip = som_socialists_assembly
+		hidden_effect = {
+			add_popularity = { ideology = communism popularity = 0.10 }
+			add_popularity = { ideology = reformism popularity = 0.10 }
+        }
+    }
+    option = {
+        name = somalia.2.demo
+        set_country_flag = som_democrat_coalition
+		custom_effect_tooltip = som_liberal_assembly
+		hidden_effect = {
+			add_popularity = { ideology = democratic popularity = 0.10 }
+			add_popularity = { ideology = liberalism popularity = 0.10 }
+        }
+    }
+    option = {
+        name = somalia.2.national
+        set_country_flag = som_national_coalition
+		custom_effect_tooltip = som_natiotalists_assembly
+		hidden_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.10 }
+			add_popularity = { ideology = fascism popularity = 0.10 }
+        }
+    }
+}

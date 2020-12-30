@@ -1,0 +1,72 @@
+sub_units = {
+
+	# mechanized special_forces on wheeled 8x8 or 6x6 armored personnel carriers (APC)
+	animal_powered_light_mortars = {
+	
+		sprite = animal_powered_light_mortars
+		map_icon_category = infantry
+		
+		active = no
+		priority = 692
+
+		type = {
+			artillery
+		}
+		
+		group = mountaineers_battalion
+		
+		categories = {
+			category_front_line
+			category_line_artillery
+			category_army
+			category_all_infantry
+
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 70
+		default_morale = 0.7
+		manpower = 75 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 260
+		suppression = 1.5
+		weight = 0.6
+		
+		supply_consumption = 0.07
+	
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			#apc_wheeled_equipment = 20
+			infantry_technical_means_equipment = 150
+			TRENCH_MORTAR_arch = 40
+		}
+		
+		forest = {
+			attack = 0.1
+			movement = 0.6
+		}
+		mountain = {
+			attack = 0.04
+		}
+		jungle = {
+			attack = 0.2
+			movement = 0.6
+		}
+		marsh = {
+			attack = 0.5
+			movement = 0.5
+		}
+		urban = {
+			attack = 0.5
+		}
+		amphibious = {
+			attack = 0.5
+			movement = 0.5
+		}
+	}
+}

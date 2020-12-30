@@ -1,0 +1,430 @@
+ideas = {
+
+	country = {
+	
+	    afg_underground = {
+
+			allowed = { always = no }
+	
+			removal_cost = -1
+
+			modifier = {
+				ARMY_CORE_DEFENCE_FACTOR = 1.0
+			}
+		}
+		
+		afg_nato_bombing_taliban = {			
+			allowed = {
+				original_tag = TAL
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = -0.10
+				army_morale_factor = -0.05
+				army_attack_factor = -0.10
+				army_defence_factor = -0.15
+				army_speed_factor = -0.05
+			}
+		}
+	
+		afg_nato_specops_taliban = {	
+			allowed = {
+				original_tag = TAL
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = -0.15
+				army_morale_factor = -0.20
+				army_speed_factor = -0.05
+			}
+		}
+		
+		afg_strike_narcocartels = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		
+		afg_puppet_warlords = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = 2.0
+				consumer_goods_factor = -0.05
+				drift_defence_factor = 0.5
+			}
+		}
+		
+		afg_national_lib = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.25
+				consumer_goods_factor = -0.05
+				fascism_drift = 0.02
+				democratic_drift = -0.02
+				communism_drift = -0.02
+			}
+		}
+		
+		afg_chinese_advisors = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.25
+				consumer_goods_factor = -0.05
+				drift_defence_factor = 0.5
+				democratic_drift = -0.3
+				communism_drift = 0.3
+				communism_acceptance = 100
+			}
+		}
+		
+		afg_political_unstab = {
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = -0.005
+				war_support_weekly = -0.005
+				political_power_factor = -0.30
+				consumer_goods_factor = 0.25
+				drift_defence_factor = -0.5
+				army_org_Factor = -0.20
+				
+			}
+		}
+		
+		afg_mobilized_mass = {
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = 0.40
+				army_org_Factor = -0.01
+				army_morale_Factor = -0.05
+				
+			}
+		}
+		
+		afg_infiltrate = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = {
+				tag = TAL
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		afg_islamic_republik = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.25
+				consumer_goods_factor = -0.03
+				communism_drift = 0.3
+				communism_acceptance = 20
+			}
+		}
+		
+		afg_daoud_khan = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = 0.001
+				consumer_goods_factor = -0.03
+				drift_defence_factor = 0.6
+				communism_drift = 0.1
+			}
+		}
+		
+		afg_westernisation = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    trade_opinion_factor = 0.20
+				drift_defence_factor = -0.02
+				democratic_drift = 0.05
+				democratic_acceptance = 30
+				liberalism_drift = 0.1
+				liberalism_acceptance = 30
+			}
+		}
+			
+		afg_dr_najib = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    stability_factor = 0.02
+			    political_power_factor = 0.25
+				consumer_goods_factor = 0.03
+				monthly_population = 0.15
+				production_speed_buildings_factor = 0.04
+				communism_drift = 0.05
+				reformism_drift = 0.1
+			}
+		}
+		
+		afg_khad = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				drift_defence_factor = 0.80
+				recon_factor = 0.25
+				decryption_factor = 0.2
+				encryption_factor = 0.35
+				foreign_subversive_activites = -0.6
+			}
+		}
+		
+		afg_khad_up = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				drift_defence_factor = 0.65
+				recon_factor = 0.20
+				decryption_factor = 0.2
+				encryption_factor = 0.3
+				foreign_subversive_activites = -0.6
+				rad_islamists_drift = -0.02
+				democratic_drift = -0.05
+			}
+		}
+		
+		afg_scouts = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				army_morale_factor = 0.01
+				army_org_Factor = 0.02
+			}
+		}
+		
+		afg_people_const = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = 0.005
+				political_power_gain = 2.0
+				political_power_factor = 0.25
+			    drift_defence_factor = 0.30
+				trade_opinion_factor = 0.25
+			}
+		}
+		
+		afg_beacon_democrat = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = 0.002
+			    drift_defence_factor = 1
+				justify_war_goal_time = 2
+			}
+		}
+		
+		afg_militia_forces = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+			}
+			
+			equipment_bonus = {
+				army_salw_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		afg_decentral_militia = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				army_salw_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			modifier = {
+				conscription = 0.03
+				planning_speed = 0.05
+				experience_gain_army = 0.02
+				army_org_Factor = 0.1
+			}
+		}
+		
+		afg_specnaz = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+	
+			modifier = {
+				special_forces_cap = 0.5
+		        special_forces_training_time_factor = -0.1
+				acclimatization_hot_climate_gain_factor = 0.50
+			    acclimatization_cold_climate_gain_factor = 0.50
+			}
+		}
+		
+		afg_decentral_economic = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+	
+			modifier = {
+				production_factory_max_efficiency_factor = 0.07
+                industry_air_damage_factor = -0.05
+				consumer_goods_factor = -0.01
+				industry_repair_factor = 0.05
+			}
+		}
+		
+		afg_decentral_economic_upgrade = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+	
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+                industry_air_damage_factor = -0.20
+				consumer_goods_factor = -0.05
+				industry_repair_factor = 0.1
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				industrial_capacity_factory = 0.1
+				equipment_conversion_speed = 0.20
+			}
+		}
+		
+		afg_centr_economic = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+	
+			modifier = {
+				industrial_capacity_factory = 0.15
+		        global_building_slots_factor = 0.25
+				production_factory_start_efficiency_factor = 0.05
+				local_resources_factor = 0.2
+			}
+		}
+		
+		afg_collectivist_economic = {
+			allowed = {
+				always = no
+				original_tag = AFG
+			}
+
+			removal_cost = -1
+	
+			modifier = {
+			    conscription_factor = -0.1
+				consumer_goods_factor = -0.1
+		        production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.15
+				local_resources_factor = 0.25
+				MONTHLY_POPULATION = 0.35
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		
+		AFG_license_production = {
+
+			allowed = {
+				original_tag = AFG
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				license_air_purchase_cost = -0.5
+			}
+		}
+	}
+}

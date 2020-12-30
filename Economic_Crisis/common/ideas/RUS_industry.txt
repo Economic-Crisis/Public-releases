@@ -1,0 +1,756 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		###- Производитель Гусеничной техники типа БМП\БМД , вместо легких танков, которых нету в моде
+		
+		AO_Kurganskiy_mashinostroitelniy_zavod = {
+			
+			picture = AO_Kurganskiy_mashinostroitelniy_zavod
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				armor = 0.10
+				infantry_weapons = -0.05
+			}
+			
+			cost = 800
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		# Средний танк, добавил КБ, который занимался производством Т-55 на территории РФ, помимо Харькова.
+		
+		Omskiy_zavod_transportnogo_mashinostroeniya = {
+			
+			picture = Omskiy_zavod_transportnogo_mashinostroeniya
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				armor = 0.10
+				naval_equipment = -0.10
+			}
+			
+			cost = 950
+			
+			traits = { med_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		###-Танковые завод ОБТ Т-72,Т90,Т95
+		AO_UralVagonZavod = {
+			
+			picture = AO_UralVagonZavod
+			allowed = {
+				original_tag = RUS
+			}
+
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+
+			}
+			research_bonus = {
+				armor = 0.15
+				artillery = 0.05
+			}
+			
+			cost = 1900
+			
+			traits = { heav_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		### - КБ который проектировал Т-14
+		AO_Uralskoe_KB_Mashinostroeniya = {
+			
+			picture = AO_Uralskoe_KB_Mashinostroeniya
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				armor = 0.10
+				industry = -0.10
+			}
+			
+			cost = 950
+			
+			traits = { modern_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		### - Занимается проектированием и изготовлением ПВО, ПРО (т.е. ЗРК и ракеты) - нужно подправить ресерч бонус на ЗРК и traits на ЗРК.
+		AO_Concern_Almaz_Antey = {
+			
+			cost = 700
+			
+			picture = AO_Concern_Almaz_Antey
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				armor = 0.08
+				cat_fighter_tech = -0.03
+			}
+			
+			traits = { zrk_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		### EC Вертолеты ветка Ми (транспортные) и Кa (морские)
+		### бонусы на многоцелевую и ударную ветки оба КБ РФ должны получать с фокусов или министра
+		
+		rus_rusvert = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_air_transport_tech = 0.10
+				mot_rockets = -0.05
+			
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+
+			}
+			
+			cost = 1850
+			
+			traits = { transport_helicopter_manufacturer 
+						naval_helicopter_manufacturer
+					}
+			
+			modifier = {
+			}
+		}
+		
+		
+		AO_OKB_Milya = {
+			
+			picture = AO_OKB_Milya
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_landing_helicopter_tech = 0.05
+				mot_rockets = -0.10
+			
+			}
+			
+			cost = 450
+			
+			traits = { transport_helicopter_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		OAO_KAMOV = {
+			
+			picture = OAO_KAMOV
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_naval_assault_helicopter_tech = 0.08
+				mot_rockets = -0.15
+			
+			}
+			
+			cost = 550
+			
+			traits = { naval_helicopter_manufacturer }
+			
+			modifier = {
+			}
+		}
+		###-Самолеты ветка  добавлен КБ "СУхого"
+		mig_design = {
+			
+			picture = mig_design
+			allowed = {
+				original_tag = RUS
+			}
+
+			
+			research_bonus = {
+				cat_fighter_tech = 0.12
+				armor = -0.18
+			}
+			
+			cost = 750
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		OAO_OKB_Sukhogo = {
+			
+			picture = OAO_OKB_Sukhogo
+			allowed = {
+				original_tag = RUS
+			}
+			cost = 850
+			research_bonus = {
+				cat_light_fighter_tech = 0.15
+				armor = -0.20
+			}
+			
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		il_design_bureau = {
+			
+			picture = il_design_bureau
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_ground_attack_tech = 0.08
+				armor = -0.05
+			}
+			
+			cost = 550
+			traits = { medium_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		tu_design_bureau = {
+			
+			picture = tu_design_bureau
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_attack_bomber_tech = 0.10
+				armor = -0.08
+			}
+			cost = 650
+			traits = { heavy_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		yak_design_bureau = {
+			
+			picture = yak_design_bureau
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_naval_fighter_tech = 0.05
+				armor = -0.02
+			}
+			cost = 450
+			
+			traits = { naval_aircraft_development }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	###-Промышленный комплекс
+	industrial_concern = {
+				
+		Volgograd_tfactory = {
+		
+			picture = Volgograd_tfactory
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = -0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		Moskovskiy_Technicheskiy_Universitet_Baumana = {
+			
+			picture = Moskovskiy_Technicheskiy_Universitet_Baumana
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.05
+			}
+			
+			cost = 750
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		rus_rosteh = {
+			
+			picture = rus_rosteh
+
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			
+				OR = {
+					has_idea = rus_sergei_chemezov
+				}
+
+			}
+			
+						
+			research_bonus = {
+				electronics = 0.08
+				industry = 0.08
+				
+			}
+			
+			cost = 2000
+			
+			traits = { defence_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		
+	}
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		Federalniy_NPC_Titan = {
+			
+			picture = Federalniy_NPC_Titan
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				artillery = 0.10
+				electronics = -0.10
+			}
+			
+			cost = 600
+			
+			traits = { artillery_development }
+			
+			modifier = {
+			}
+		}	
+		
+		
+		rus_techmash = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+			artillery = 0.15
+			electronics = 0.02
+			mot_rockets = 0.05
+			
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+
+			}
+			
+			cost = 1550
+			
+			traits = { artillery_development }
+			
+			modifier = {
+			}
+		}
+
+		tulskiy_oruzheinyi_zavod_TOZ = {
+			
+			picture = tulskiy_oruzheinyi_zavod_TOZ
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			cost = 1550
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		AO_Kalashnikov_Concern = {
+			
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+			}
+			research_bonus = {
+				infantry_weapons = 0.15
+				cat_motorized_equipment = 0.05
+			}
+			
+			cost = 1850
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		AO_Degtyareva_ZID = {
+			
+			picture = AO_Degtyareva_ZID
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			cost = 650
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		PO_Novosibirskiy_priborostroitelniy_Zavod = {
+			
+			picture = PO_Novosibirskiy_priborostroitelniy_Zavod
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.03
+			}
+			cost = 450
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		AO_Barnaulskiy_Stankostroitelniy_Zavod = {
+			
+			picture = AO_Barnaulskiy_Stankostroitelniy_Zavod
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.02
+			}
+			
+			cost = 250
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		###--Колесная техника + БТРы
+		Automobilnyi_Zavod_URAL = {
+			
+			picture = Automobilnyi_Zavod_URAL
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.08
+				mot_rockets = 0.08
+				artillery = 0.05
+			}
+			cost = 650
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	
+		rus_splav = {
+			
+
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.05
+				mot_rockets = 0.15
+				artillery = 0.12
+			}
+			
+			cost = 1550
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		
+		PAO_KAMAZ = {
+			
+			picture = PAO_KAMAZ
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.10
+				mot_rockets = 0.12
+				artillery = 0.03
+			}
+			
+			cost = 1750
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		Arzamasskiy_Mashinostroitelniy_Zavod = {
+			
+			picture = Arzamasskiy_Mashinostroitelniy_Zavod
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.08
+				armor = 0.10
+			}
+			
+			cost = 850
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	
+	
+		Gorkovskiy_Avto_Zavod_GAZ = {
+			
+			picture = Gorkovskiy_Avto_Zavod_GAZ
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.10
+				mot_rockets = 0.08
+			}
+			cost = 500
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+	
+		AO_Objedinennaya_Sudostroitelnaya_Corporatsiya = {
+			
+			picture = AO_Objedinennaya_Sudostroitelnaya_Corporatsiya
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_idea = rus_rosteh
+				}
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+				artillery = 0.02
+				cat_naval_attack_aircraft_tech = -0.02
+			}
+			
+			cost = 1650
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	
+		AO_Zvezdochka_Arlhangelsk = {
+			
+			picture = AO_Zvezdochka_Arlhangelsk
+			allowed = {
+				original_tag = RUS
+			}
+
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	
+	
+		AO_SEVMASH_Severodvinsk = {
+			
+			picture = AO_SEVMASH_Severodvinsk
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.08
+				artillery = 0.03
+				cat_naval_attack_drone_tech = 0.02
+			}
+			
+			cost = 1850
+			
+			traits = { navy_corporation }
+			
+			modifier = {
+			}
+		}
+	
+	
+		AO_Vladivostokskiy_Sudostroitelniy_Zavod = {
+			
+			picture = AO_Vladivostokskiy_Sudostroitelniy_Zavod
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+				mot_rockets = -0.05
+			}
+			cost = 550
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	
+	
+		AO_DalZavod_Vladivostok = {
+			
+			picture = AO_DalZavod_Vladivostok
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.08
+				cat_naval_attack_bomber_tech = -0.05
+				artillery = -0.05
+			}
+			
+			cost = 680
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+
+}

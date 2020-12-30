@@ -1,0 +1,74 @@
+﻿division_template = {
+	name = "Infantry Brigada"
+	regiments = {
+	# 1st infantry battalion on APC
+		mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+	# 3d infantry battalion on BTR
+		mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 1st tank company
+		medium_tank = { x = 3 y = 0 }
+	# 1st howitzer 
+		towed_howitzers = { x = 4 y = 0 }
+	}
+}
+division_template = {
+	name = "Gendarmes Brigade"
+	regiments = {
+	# 1st gendarmes battalion on jeep
+		gendarmes_light_motorized = { x = 0 y = 0 }
+		gendarmes_light_motorized = { x = 0 y = 1 }
+		gendarmes_light_motorized = { x = 0 y = 2 }
+	# 2d gendarmes battalion on jeep
+		gendarmes_light_motorized = { x = 1 y = 0 }
+		gendarmes_light_motorized = { x = 1 y = 1 }
+		gendarmes_light_motorized = { x = 1 y = 2 }	
+	}
+}
+
+units = {
+	division = {
+		name = "1 Republican Guard"
+		location = 12830
+		division_template = "Gendarmes Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "3 gd bn"
+		location = 12830
+		division_template = "Gendarmes Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "1 inf bn"
+		location = 12830
+		division_template = "Infantry Brigada"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+}
+
+instant_effect = {
+	add_equipment_to_stockpile = { amount = 3 type = medium_tank_g1_equipment_0 producer = RUS } #t-55
+
+	add_equipment_to_stockpile = { amount = 9 type = apc_wheeled_light_g2_equipment_0 producer = RUS } #brdm-2
+
+	add_equipment_to_stockpile = { amount = 12 type = TRENCH_MORTAR_1 producer = RUS }
+
+	add_equipment_to_stockpile = { amount = 1 type = air_transport_equipment_1 producer = USA }
+
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CAR"
+		}
+		requested_factories = 1
+		progress = 0.13
+		efficiency = 100
+	}
+}

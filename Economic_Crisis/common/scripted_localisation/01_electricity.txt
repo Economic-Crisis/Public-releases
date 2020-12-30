@@ -1,0 +1,75 @@
+defined_text = { 
+	name = electricity_text
+
+	text = {
+		trigger = { check_variable = { electricity_ratio > 0.69 } } 
+		localization_key = elect_text_good
+	}
+	text = {
+		trigger = { AND = { check_variable = { electricity_ratio > 0.39 } check_variable = { electricity_ratio < 0.7 } } }
+		localization_key = elect_text_normal
+	}
+	text = {
+		trigger = { check_variable = { electricity_ratio < 0.4 } } 
+		localization_key = elect_text_bad
+	}
+}
+
+defined_text = { 
+	name = electricity_info_1
+
+	text = {
+		trigger = { check_variable = { electricity_ratio > 0.69 } } 
+		localization_key = electricity_info_1_good
+	}
+	text = {
+		trigger = { AND = { check_variable = { electricity_ratio > 0.39 } check_variable = { electricity_ratio < 0.7 } } }
+		localization_key = electricity_info_1_normal
+	}
+	text = {
+		trigger = { check_variable = { electricity_ratio < 0.4 } } 
+		localization_key = electricity_info_1_bad
+	}
+}
+
+defined_text = { 
+	name = get_rest_electricity
+
+	text = {
+		localization_key = get_rest_electricity_text
+	}
+}
+
+defined_text = { 
+	name = get_buy_electricity
+
+	text = {
+		localization_key = get_buy_electricity_text
+	}
+}
+
+defined_text = { 
+	name = sd_electiricty_break_text
+
+	text = {
+		trigger = { check_variable = { electricity_break_text = 0 } }
+		localization_key = sd_electiricty_break_text_0
+	}
+	text = {
+		trigger = { check_variable = { electricity_break_text = 1 } }
+		localization_key = sd_electiricty_break_text_1
+	}
+}
+
+defined_text = { 
+	name = get_electricity_trade_block_deal
+
+	text = {
+		trigger = { check_variable = { electricity_trade_block_deals = 0 } }
+		localization_key = electricity_trade_block_deals_yes
+	}
+	text = {
+		trigger = { check_variable = { electricity_trade_block_deals = 2 } }
+		localization_key = electricity_trade_block_deals_no
+	}
+}

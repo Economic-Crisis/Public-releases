@@ -1,0 +1,84 @@
+## ВСЕ ТРЕЙТЫ ДЛЯ НАЧАЛЬНИКОВ ВНЕЩНЕЙ РАЗВЕДКИ, ТАКЖЕ МОГУТ ИСПОЛЬЗОВАТЬСЯ РУКОВОДИТЕЛЯМИ СПЕЦСЛУЖБ- категория идей intelligence_chief
+
+leader_traits = {
+
+	# Дипломат разведчик - СВР
+	intellegence_chief_diplomatic = {
+		random = no
+		sprite = 13
+		POLITICAL_POWER_GAIN = 0.03
+		trade_opinion_factor = 0.10
+		opinion_gain_monthly_same_ideology_factor = 0.10
+		foreign_subversive_activites = -0.13
+		research_speed_factor = 0.05
+		operative_slot = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###Гражданский персонал
+	intellegence_chief_civilian = {
+		random = no
+		sprite = 13
+		POLITICAL_POWER_GAIN = 0.01
+		trade_opinion_factor = 0.12
+		foreign_subversive_activites = -0.10
+		global_building_slots_factor = 0.05
+		consumer_goods_factor = 0.01
+		production_speed_industrial_complex_factor = 0.03
+		civilian_intel_factor = 0.1
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	intellegence_chief_political = {
+		random = no
+		sprite = 13
+		POLITICAL_POWER_GAIN = 0.05
+		opinion_gain_monthly_same_ideology_factor = 0.08
+		foreign_subversive_activites = -0.15
+		stability_weekly = 0.001
+		invasion_preparation = -0.03
+		recon_factor = 0.10
+		civilian_intel_factor = 0.1
+		army_intel_factor = 0.1
+		navy_intel_factor = 0.1
+		airforce_intel_factor = 0.1
+		
+		airforce_intel_to_others = -0.01
+		army_intel_to_others = -0.1
+		civilian_intel_to_others = -0.1
+		navy_intel_to_others = -0.1
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###Военный аналитик - кадровый аналитик военной разведки
+	intellegence_chief_analyst = {
+		random = no
+		sprite = 13
+		
+		POLITICAL_POWER_GAIN = 0.04
+		foreign_subversive_activites = -0.18
+		recon_factor = 0.05
+		stability_weekly = 0.003
+		enemy_army_bonus_air_superiority_factor = -0.07
+		air_night_penalty = -0.05
+		operative_slot = 2
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

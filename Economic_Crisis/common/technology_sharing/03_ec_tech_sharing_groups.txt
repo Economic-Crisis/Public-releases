@@ -1,0 +1,40 @@
+# Economic Crisis 2013 cleaned dummy
+
+
+technology_sharing_group = {
+
+	id = eau_research
+	name = eau_research_name
+	desc = eau_research_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+	#is_faction_sharing = yes
+
+    available = {
+        is_in_faction_with = RUS
+		OR = {	
+			has_idea = eaeu_member
+			has_idea = eau_member
+		}	
+		has_country_flag = science_aliance_eaes_member
+    }
+
+}
+
+technology_sharing_group = {
+
+	id = intermarium_research
+	name = intermarium_research_name
+	desc = intermarium_research_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+	is_faction_sharing = yes
+
+    available = {
+        is_in_faction_with = UKR	
+		has_country_flag = science_aliance_intermarium
+    }
+
+}

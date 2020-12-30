@@ -1,0 +1,158 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED LAWS (ADD ON EVENT?)
+# NOT EDITED POLITICS
+
+capital = 227
+
+add_ideas = mixed_schools
+2013.11.1 = {
+	set_variable = { budget_last_year = 46 }
+
+	load_oob = "_tech_microstate_2013"
+	load_oob = "DON_2013"
+	
+	# де-юре не признана никем (дата основания)
+	add_ideas = not_recognized_country
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+	set_country_flag = pai_nondem_totalitarian
+	set_country_flag = UKR_war_with_LDNR
+	#Склад
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_salw_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_ammunition_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = truck_g0_equipment_0
+	}
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.11.2"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 70
+		fascism = 30
+		rad_islamists = 0
+	}
+	
+	#Захарченко приходит потом
+	#create_country_leader = {
+	#	name = "Aleksandr Zakharchenko"
+	#	desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+	#	picture = "gfx/leaders/DON/portrait_aleksandr_zaharchenko.dds"
+	#	ideology = sovereign_democracy #irredentism
+	#	traits = { trait_sovereign_democracy }
+	#}
+
+	#create_country_leader = {
+	#	name = "Aleksandr Boroday"
+	#	desc = "POLITICS_ALEKSANDR_BORODAY_DESC"
+	#	picture = "gfx/leaders/DON/portrait_aleksandr_boroday.dds"
+	#	# проведение выборов
+	#	expire = "2014.8.7"
+	#	ideology = irredentism
+	#	traits = { trait_irredentism }
+	#}
+
+	create_country_leader = {
+		name = "Pavel Gubarev"
+		desc = "POLITICS_PAVEL_GUBAREV_DESC"
+		picture = "gfx/leaders/DON/portrait_pavel_gubarev.dds"
+		ideology = sovereign_democracy 
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Boris Litvinov"
+		desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+		picture = "gfx/leaders/DON/portrait_boris_litvinov.dds"
+		ideology = national_communism 
+		traits = { trait_national_communism }
+	}
+	create_country_leader = {
+		name = "Aleksandr Khodakovskiy"
+		desc = "POLITICS_ALEKSANDR_ZAHARCHENKO_DESC"
+		picture = "gfx/leaders/DON/portrait_aleksandr_khodakovskiy.dds"
+		ideology = social_democracy 
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Igor Strelkov"
+		desc = "POLITICS_IGOR_STRELKOV_DESC"
+		picture = "gfx/leaders/DON/portrait_igor_strelkov.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	#Губернатор Донецкой области
+	create_country_leader = {
+		name = "Sergey Taruta"
+		desc = "POLITICS_SERGEY_TARUTA_DESC"
+		picture = "gfx/leaders/DON/portrait_sergey_taruta.dds"
+		ideology = liberal_conservatism 
+		traits = { trait_liberal_conservatism }
+	}
+
+	#Generals
+
+	create_corps_commander = {
+		name = "Igor «Strelkov» Girkin"
+		portrait_path = "gfx/leaders/DON/portrait_igor_strelkov.dds"
+		traits = { infantry_expert }
+		skill = 3
+	  	logistics_skill = 3
+	  	defense_skill = 3
+	  	planning_skill = 3
+	 	attack_skill = 3
+	}
+
+	create_corps_commander = {
+  		name = "Mikhail «Givi» Tolstykh"
+  		portrait_path = "gfx/leaders/DON/portrait_don_general_givi.dds"
+  		traits = { specops_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_corps_commander = {
+  		name = "Arsen «Motorola» Pavlov"
+  		portrait_path = "gfx/leaders/DON/portrait_don_general_motorola.dds"
+  		traits = { specops_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	
+	create_corps_commander = {
+  		name = "Oleg «Mamay» Mamiev"
+  		portrait_path = "gfx/leaders/DON/portrait_don_general_mamai.dds"
+  		traits = { infantry_expert }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+
+}
+

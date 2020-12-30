@@ -1,0 +1,145 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 291
+
+	#  22 марта 1945 года
+    add_ideas = {
+		arab_league_member
+		NPT
+	}
+	
+1967.06.10 = {
+    add_ideas = revanchism
+}
+
+2005.12.30 = {
+	add_ideas = musulman_collapse
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = 	{
+			target = KUR
+			autonomy_state = autonomous_area
+		}
+		else = {
+			puppet = KUR
+		}
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 23460 }
+
+	set_country_flag = war_with_ISIS
+
+	oob = "IRQ_2013"
+	load_oob = "_tech_minor_2013"
+
+	add_ideas = {
+		opec_member
+	    parliamentary_republic
+	    federation
+	    secular_state
+	    cencored_media
+		respect_of_liberties
+		mixed_army
+		open_immigration
+		professional_schools
+		mixed_economic
+		state-owned_enterprise
+		obsolete_army
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		decaying_state
+		oil_spike
+	}
+
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_moderate
+	
+	set_politics = {		
+		ruling_party = democratic
+		last_election = "2010.3.7"
+		election_frequency = 48
+		elections_allowed = yes
+    }
+	set_popularities = {
+		communism = 0
+		reformism = 2
+		liberalism = 0
+		democratic = 64
+		neutrality = 24
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Fuad Masum"
+		desc = "POLITICS_FUAD_MASUM_DESC"
+		picture = "gfx/leaders/IRQ/portrait_fuad_masum.dds"
+		ideology = shia_islamism
+		traits = { trait_shia_islamism }
+    }
+
+	create_country_leader = {
+		name = "Jalal Talabani"
+		desc = "POLITICS_JALAL_TALABANI_DESC"
+		picture = "gfx/leaders/IRQ/portrait_jalal_talabani.dds"
+		ideology = shia_islamism
+		expire = "2014.6.24"
+		traits = { trait_shia_islamism }
+    }
+	
+	#create_country_leader = {
+	#	name = "Ammar al-Hakim"
+	#	desc = "POLITICS_AMMAR_AL_HAKIM_DESC"
+	#	picture = "gfx/leaders/IRQ/portrait_ammar_al-hakim.dds"
+	#	ideology = shia_islamism
+	#	traits = { trait_shia_islamism }
+    #}
+	
+	#Generals
+	create_field_marshal = {
+		name = "Abud Kanbar"
+		portrait_path = "gfx/leaders/IRQ/portrait_general_abud_kanbar.dds"
+		traits = { assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Babaker Shawkat Zebari"
+		portrait_path = "gfx/leaders/IRQ/portrait_general_babaker_shawkat_zebari.dds"
+		traits = { old_guard desert_fox }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Othman Ali-Farhood"
+		portrait_path = "gfx/leaders/IRQ/portrait_general_othman_ali-farhood.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+}
+

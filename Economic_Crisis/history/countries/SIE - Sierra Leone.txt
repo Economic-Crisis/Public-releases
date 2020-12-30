@@ -1,0 +1,88 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 700
+
+    add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 492 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SIE_2013"
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		low_terrorism
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.11.12"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 56
+		liberalism = 4
+		democratic = 0
+		neutrality = 39
+		fascism = 1
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Ernest Bai Koroma"
+		desc = "POLITICS_ERNEST_KOROMA_DESC"
+		picture = "gfx/leaders/SIE/portrait_ernest_koroma.dds"
+		ideology = democratic_socialism 
+		traits = { trait_democratic_socialism }
+	}
+	
+	create_country_leader = {
+		name = "Julius Maada Bio"
+		desc = "POLITICS_JULIUS_MAADA_BIO_DESC"
+		picture = "gfx/leaders/SIE/portrait_julius_maada_bio.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Alimamy Pallo Bangura"
+		desc = "POLITICS_ALIMAMY_PALLO_BANGURA_DESC"
+		picture = "gfx/leaders/SIE/portrait_alimamy_pallo_bangura.dds"
+		ideology = junta
+		traits = { trait_junta }
+	}
+	
+    create_country_leader = {
+		name = "Charles Margai"
+		desc = "POLITICS_CHARLES_MARGAI_DESC"
+		picture = "gfx/leaders/SIE/portrait_charles_margai.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+}

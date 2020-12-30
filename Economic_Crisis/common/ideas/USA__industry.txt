@@ -1,0 +1,937 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		###- Производитель Гусеничной техники типа IFV
+		
+		usa_bae_systems_land_armaments = {
+			
+			picture = usa_bae_systems_land_armaments
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				OR = {
+					has_idea = usa_bae_systems
+				}
+				NOT = {
+					has_idea = usa_general_dynamics_corporation
+
+				}
+			
+			}
+			
+			
+			research_bonus = {
+				armor = 0.10
+				infantry_weapons = -0.05
+			}
+			
+			cost = 900
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		
+		###-Танковые завод ОБТ Т-72,Т90,Т95
+		usa_lima_tank_plant = {
+			
+			picture = usa_lima_tank_plant
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				armor = 0.03
+				artillery = -0.03
+				cat_motorized_equipment = -0.03
+			}
+			
+			cost = 700
+			
+			traits = { heav_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		### - КБ который разрабатывал и производит М1А1, отделение General Dynamics
+		usa_general_dynamics_land_systems = {
+			
+			picture = usa_general_dynamics_land_systems
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				OR = {
+					has_idea = usa_general_dynamics_corporation
+				}
+
+			}
+			
+			research_bonus = {
+				armor = 0.12
+				industry = -0.10
+			}
+			
+			cost = 1500
+			
+			traits = { modern_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		### - Занимается проектированием и изготовлением ПВО, ПРО (т.е. ЗРК и ракеты) - нужно подправить ресерч бонус на ЗРК и traits на ЗРК.
+		usa_raytheon_company = {
+			
+			cost = 850
+			
+			picture = usa_raytheon_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				armor = 0.2
+				cat_fighter_tech = -0.1
+			}
+			
+			traits = { zrk_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		usa_aai_corporation = {
+		
+		cost = 750
+			
+			picture = usa_aai_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_textron_system_corp
+				}
+
+			}
+
+			research_bonus = {
+				armor = 0.1
+				cat_5thgen_aircrafts = 0.1
+				electronics = 0.05
+			}
+			
+			traits = { unnamed_aerial_veh_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	usa_aerovironment_inc = {
+		
+		cost = 650
+			
+			picture = usa_aerovironment_inc
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				
+				cat_vtol_tech = 0.1
+				electronics = 0.07
+			}
+			
+			traits = { unnamed_aerial_veh_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		### EC Вертолеты ветка 
+		### бонусы на многоцелевую и ударную ветки оба КБ  должны получать с фокусов или министра
+		
+		usa_bell_helicopter_textron_inc = {
+			
+			picture = usa_bell_helicopter_textron_inc
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_landing_helicopter_tech = 0.05
+				mot_rockets = -0.10
+			
+			}
+			
+			cost = 550
+			
+			traits = { transport_helicopter_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		usa_sikorsky_aircraft_corporation = {
+			
+			picture = usa_sikorsky_aircraft_corporation
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_naval_attack_helicopter_tech = 0.12
+				mot_rockets = -0.10
+			
+			}
+			
+			cost = 850
+			
+			traits = { naval_helicopter_manufacturer }
+			
+			modifier = {
+			}
+		}
+		###-golfstream дочерняя компания GD
+		usa_gulfstream_aerospace_corporation = {
+			
+			picture = usa_gulfstream_aerospace_corporation
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_light_fighter_tech = 0.05
+				armor = -0.15
+			}
+			
+			cost = 350
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_lockheed_martin_corporation = {
+			
+			picture = usa_lockheed_martin_corporation
+			allowed = {
+				original_tag = USA
+			}
+			cost = 1500
+			research_bonus = {
+				cat_interceptor_fighter_tech = 0.15
+				armor = -0.05
+			}
+			
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_boeing_company = {
+			
+			picture = usa_boeing_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_strike_fighter_tech = 0.12
+				armor = -0.03
+			}
+			
+			cost = 750
+			traits = { medium_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_northrop_grumman_corporation = {
+			
+			picture = usa_northrop_grumman_corporation
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_strike_bomber_tech = 0.05
+				armor = -0.10
+			}
+			cost = 850
+			traits = { heavy_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_mcdonnell_douglas_corporation = {
+			
+			picture = usa_mcdonnell_douglas_corporation
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_naval_attack_bomber_tech = 0.05
+				armor = -0.02
+			}
+			cost = 550
+			
+			traits = { naval_aircraft_development }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	###-Промышленный комплекс
+	industrial_concern = {
+				
+		usa_exxonmobile_corporation = {
+		
+			picture = usa_exxonmobile_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				industry = 0.12
+				electronics = -0.08
+			}
+			cost = 1250
+			traits = { refinery_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_olin_corporation = {
+		
+			picture = usa_olin_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = -0.10
+			}
+			cost = 850
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_halliburton_corporation = {
+		
+			picture = usa_olin_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				industry = 0.12
+				electronics = -0.10
+			}
+			cost = 1000
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_loral_space_comm_corp = {
+			
+			picture = usa_loral_space_comm_corp
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.02
+			}
+			
+			cost = 750
+			
+			traits = { aerospace_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		usa_carnegie_mellon_university = {
+			
+			picture = usa_carnegie_mellon_university
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.12
+				industry = -0.04
+			}
+			
+			cost = 750
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_boston_dynamics = {
+			
+			picture = usa_boston_dynamics
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.08
+				industry = -0.07
+			}
+			
+			cost = 550
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_general_electrics = {
+			
+			picture = usa_general_electrics
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.05
+			}
+			
+			cost = 900
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		usa_ibm_corporation = {
+			
+			picture = usa_ibm_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+				industry = -0.08
+				cat_motorized_equipment = 0.02
+			}
+			
+			cost = 1500
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		
+		usa_general_atomics = {
+			
+			picture = usa_general_atomics
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.05
+			}
+			
+			cost = 800
+			
+			traits = { nuclear_research_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		
+		usa_general_dynamics_corporation = {
+			
+			picture = usa_general_dynamics_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_electric_boat_corporation
+					has_idea = usa_general_motors_company
+				}
+				NOT = {
+					has_idea = usa_bae_systems
+				}
+			
+			}
+						
+			research_bonus = {
+				electronics = 0.10
+				industry = 0.10
+				
+			}
+			
+			cost = 2000
+			
+			traits = { defence_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		usa_bae_systems = {
+			
+			picture = usa_bae_systems
+			allowed = {
+				original_tag = USA
+
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_lockheed_martin_corporation
+				}
+				NOT = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+					has_government = democratic
+					has_country_flag = coalition_with_islamists
+
+				}
+			
+			}
+						
+			research_bonus = {
+				electronics = 0.05
+				industry = 0.10
+				
+			}
+			
+			cost = 1500
+			
+			traits = { defence_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		usa_textron_inc = {
+			
+			picture = usa_textron_inc
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_bell_helicopter_textron_inc
+				}
+				NOT = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+					has_government = democratic
+					has_country_flag = coalition_with_islamists
+
+				}
+			
+			}
+						
+			research_bonus = {
+				electronics = 0.10
+				industry = 0.05
+				
+			}
+			
+			cost = 1200
+			
+			traits = { defence_corporation }
+			
+			modifier = {
+			}
+		}
+
+	}
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		usa_fmc_corporation = {
+			
+			picture = usa_fmc_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				artillery = 0.10
+				electronics = -0.02
+			}
+			
+			cost = 550
+			
+			traits = { artillery_development }
+			
+			modifier = {
+			}
+		}	
+
+		usa_smith_wesson_holding_corp = {
+			
+			picture = usa_smith_wesson_holding_corp
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 550
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_colt_manufacturing_company = {
+			
+			picture = usa_colt_manufacturing_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.20
+			}
+			
+			cost = 850
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_barrett_firearms_manufacturing = {
+			
+			picture = usa_barrett_firearms_manufacturing
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.17
+			}
+			
+			cost = 650
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_winchester_repeating_arms_company = {
+			
+			picture = usa_winchester_repeating_arms_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.12
+			}
+			cost = 450
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+			
+		usa_browning_arms_company = {
+			
+			picture = usa_browning_arms_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			cost = 250
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+			
+		usa_bushmaster_firearms_international = {
+			
+			picture = usa_bushmaster_firearms_international
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			cost = 350
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}	
+		}
+		
+		###экипировка спецназа
+		usa_american_technology_network_corp = {
+			
+			picture = usa_american_technology_network_corp
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			cost = 450
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		###--Колесная техника
+		usa_textron_system_corp = {
+			
+			picture = usa_textron_system_corp
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_textron_inc
+				}
+
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.12
+
+			}
+			cost = 750
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	
+	
+		usa_general_motors_company = {
+			
+			picture = usa_general_motors_company
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				cat_motorized_equipment = 0.05
+				artillery = 0.03
+				mot_rockets = 0.02
+
+			}
+			
+			cost = 850
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		usa_oshkosh_corporation = {
+			
+			picture = usa_oshkosh_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.10
+				armor = 0.10
+			}
+			
+			cost = 650
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	
+	
+		usa_defence_technology_equipment = {
+			
+			picture = usa_defence_technology_equipment
+			allowed = {
+				original_tag = USA
+			}
+			
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.2
+				cat_helicopter_tech = 0.15
+				artillery = -0.05
+				naval_equipment = -0.10
+			}
+			cost = 500
+			traits = { motorized_equipment_development }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		usa_willard_marine_inc = {
+			
+			picture = usa_willard_marine_inc
+			allowed = {
+				original_tag = USA
+			}
+
+			research_bonus = {
+				naval_equipment = 0.03
+				cat_naval_aircrafts_tech = -0.10
+			}
+			
+			cost = 550
+			
+			traits = { naval_development }
+			
+			modifier = {
+			}
+		}
+	
+		usa_electric_boat_corporation = {
+			
+			picture = usa_electric_boat_corporation
+			allowed = {
+				original_tag = USA
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+				industry = -0.05
+			}
+			
+			cost = 600
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	
+		###Отделение GD в которую входят Bath iron works и nassco
+		usa_general_dynamics_marine_systems = {
+			
+			picture = usa_general_dynamics_marine_systems
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_general_dynamics_corporation
+				}
+
+			}
+	
+			research_bonus = {
+				naval_equipment = 0.15
+				industry = -0.10
+			}
+			
+			cost = 1250
+			
+			traits = { navy_corporation }
+			
+			modifier = {
+			}
+		}
+
+		usa_newport_news_shipbuilding = {
+			
+			picture = usa_newport_news_shipbuilding
+			allowed = {
+				original_tag = USA
+			}
+			
+			available = {
+				OR = {
+					has_idea = usa_northrop_grumman_corporation
+				}
+
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+				cat_naval_attack_drone_tech = -0.15
+			}
+			
+			cost = 800
+			
+			traits = { navy_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+
+}

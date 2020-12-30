@@ -1,0 +1,98 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Motostrelkovaya Brigada"			# Rifle Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		#recon_battalion = { x = 0 y = 0 } 		# recon_battalion bn had 16 L tanks, 10 ACs, 1x mot inf co #Eng and recon_battalion removed and they seem rather OP. Could revisit if balance changes
+		#airborne_support_company = { x = 0 y = 1 } 	# (semi-mot) airborne_support_company bn
+		artillery = { x = 0 y = 0 } 	# Heavy Arty Regiment had 1x 152mm bn + 2x 122mm bn
+	}
+}
+
+division_template = {
+	name = "Gornostrelkovaya Diviziya"		# Motor Rifle Division
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }	
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		mountaineers_motorized = { x = 2 y = 0 }	
+		mountaineers_motorized = { x = 2 y = 1 }	
+		mountaineers_motorized = { x = 2 y = 2 }	
+		mountaineers_motorized = { x = 3 y = 0 }	
+		mountaineers_motorized = { x = 3 y = 1 }	
+		mountaineers_motorized = { x = 3 y = 2 }	
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 } 		# airborne_support_company bn
+		artillery = { x = 0 y = 1 } 	# Heavy Arty Regiment had 2x 122mm bn
+	}
+}
+
+division_template = {
+	name = "Motostrelkovaya Diviziya"		# Motor Rifle Division
+											# Note: only represents Moscow Proletariat Division in 1936; after 1938-40, Motor Rifle Divisions had +1 mot regiment (3 bns) 
+	regiments = {
+		light_motorized = { x = 0 y = 0 }
+		light_motorized = { x = 0 y = 1 }
+		light_motorized = { x = 0 y = 2 }
+		light_motorized = { x = 1 y = 0 }
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+	}
+	support = {
+		#recon_battalion = { x = 0 y = 0 } 		# recon_battalion bn had 16x L tanks, 45 ACs #Eng and recon_battalion removed and they seem rather OP. Could revisit if balance changes 
+		#airborne_support_company = { x = 0 y = 1 } 	# (mot) airborne_support_company bn
+		main_battle_tank = { x = 0 y = 3 }	# Tank bn had 51 L tanks, 3 ACs - (removed)
+	}
+}
+
+division_template = {
+	name = "Mekhanizirovaniy Korpus" 				# Represents regular mechanized corps (4 existed in 1935-38); 
+													# Also represents groups of independent tank, mech brigades of the time, though groups are best represented by tank bge 
+													# (2x M/L tank + 1x mot), and 2x mech bge (2x L tank + 1x mot)
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 1 y = 0 }		
+		main_battle_tank = { x = 1 y = 1 }		
+		main_battle_tank = { x = 1 y = 2 }		
+		light_motorized = { x = 2 y = 0 }		
+		light_motorized = { x = 2 y = 1 }	
+		light_motorized = { x = 2 y = 2 }		
+		light_motorized = { x = 2 y = 3 }		
+	}
+}
+division_template = {
+	name = "Vozdushno-Desantnaya Brigada"			# Airborne Brigade
+
+	regiments = {
+		paratroopers_light_motorized = { x = 0 y = 0 }
+		paratroopers_light_motorized = { x = 0 y = 1 }
+	}
+}
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "KAR"
+		}
+		requested_factories = 3
+		progress = 0.55
+		efficiency = 100
+	}
+}

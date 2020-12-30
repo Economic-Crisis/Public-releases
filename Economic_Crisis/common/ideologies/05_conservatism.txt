@@ -1,0 +1,194 @@
+ideologies = {
+	
+	democratic = { # Консерватизм
+	
+		types = {
+			# Консервативная демократия
+			# Conservative Democracy
+			conservative_democracy = {
+			}
+			
+			# Либеральный консерватизм 
+			# Liberal Conservatism
+			liberal_conservatism = {
+			}
+			
+			# Национал-консерватизм 
+			# National Conservatism
+			national_conservatism_dem = {
+			}
+			
+			# Консервативная монархия (для партий монархистов)
+			# Conservative Monarchism
+			conservative_royalism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Социальный консерватизм
+			# Social Conservatism
+			social_conservatism = {
+			}
+			
+			# Христианская демократия
+			# Christian Democracy
+			christian_democracy_main = {
+			}
+			
+			# Неоконсерватизм
+			# Neoconservatism
+			neoconservatism = {
+			}
+			
+			# Зелёный консерватизм 
+			# Green Conservatism
+			green_conservatism = {
+			}
+			
+			# Ревизионистский сионизм
+			# Revisionist Zionism
+			revisionist_zionism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Шиитский исламизм
+			# Shia Islamism
+			shia_islamism = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Суннитский исламизм
+			# Sunni Islamism
+			sunni_islamism  = {
+			   can_be_randomly_selected = no
+			}
+
+			# Ибадитская монархия (Оман)
+			# Ibadi Monarchism (Oman)
+			ibadi_royalism  = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Шиитская монархия (Йемен, Иран, Афганистан)
+			# Shia Monarchism (Yemen, Iran, Afghanistan)
+			shia_royalism  = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Суннитская монархия
+			# Sunni Monarchism
+			sunni_royalism  = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Иламский либерализм или евроислам
+			# Islamic Liberalism (Euroislam)
+			liberalism_islamism  = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Правый ислам
+			# Right Islamism
+			right_islamism = {
+			   can_be_randomly_selected = no
+			}
+			
+			# Гюленизм
+			# Gülenism
+			gulenism = {
+			   can_be_randomly_selected = no
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_CONSERVATISM_1"
+			"FACTION_NAME_CONSERVATISM_2"
+			"FACTION_NAME_CONSERVATISM_3"
+			"FACTION_NAME_CONSERVATISM_4"
+			"FACTION_NAME_CONSERVATISM_5"
+			"FACTION_NAME_CONSERVATISM_6"
+		}
+		
+		color = { 0 80 168 } #{ 0 0 255 }
+
+		rules = {
+			#Может создавать правительство-марионетки
+			can_create_collaboration_government = yes
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = no
+			# может инициировать свержение правительства в другой стране
+			can_force_government = yes
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = no
+			# может иметь страны-марионетки
+			can_puppet = yes
+			# может понижать напряженность (?)
+			can_lower_tension = yes
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = yes
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = yes
+		}
+
+		# Может создавать правительство в изгнании
+		can_host_government_in_exile = yes		
+
+		
+		# Влияние участия страны в войне на  международную напряженность (?)
+		# war_impact_on_world_tension = -1.0		# peacemaker
+		# war_impact_on_world_tension = 0			# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		war_impact_on_world_tension = 0.4			# danger
+		# war_impact_on_world_tension = 0.75		# aggresive		
+		# war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		# faction_impact_on_world_tension = -0.1	# гарант
+		faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		# faction_impact_on_world_tension = 0.5		# агрессивный
+		# faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# Необходимо реализовать такие модификаторы:
+		# традиционность — уважение к обычаям, традициям, прошлому как к основам стабильности в обществе 
+		# консерватизм пропагандирует ценности семьи, религии, уважения к старшим;
+		# несовершенство человека — всякий человек воспринимается консерватизмом как ограниченный, зависимый, эгоистичный
+		# только жесткий социальный контроль может заставить гражданина действовать на общее благо;
+		# естественным и необходимым является существование иерархии общества и связанная с этим неравенство людей
+		# порядок — общество может существовать только в том случае, если государство установит в нем закон и порядок
+		# государственные ценности ставятся выше индивидуальных интересов
+		# умеренный патернализм — государство должно опекать индивида и контролировать его
+		# неприкосновенность частной собственности
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.3
+			# влиянеие присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.25
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.1
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.15
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 0.35
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 0.25# !Вырезано в связи с устранением данного модификатора в игре!
+			# стоимость политической власти при аннексии
+			annex_cost_factor = 0.5
+			# стоимость политической власти при создании марионетки
+			puppet_cost_factor = 0
+			# увеличение политической силы
+			political_power_factor = 1.0
+			ai_call_ally_desire_factor = -10
+			ai_join_ally_desire_factor = -10
+			ai_get_ally_desire_factor = -10
+		}
+		
+		faction_modifiers = {
+			# plus 50% trade opinion
+			faction_trade_opinion_factor = 0.50
+		}
+		
+		# uses the democratic AI behaviour
+		ai_democratic = yes
+		can_collaborate = yes
+	}
+}

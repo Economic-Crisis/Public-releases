@@ -1,0 +1,4615 @@
+focus_tree = {
+	id = iran
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = IRN
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1350 }
+	focus = {
+		id = IRN_country_up
+		icon = GFX_goal_irn_country_up
+		cost = 70
+		x = 6
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 100	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_ally
+		icon = GFX_goal_irn_ally
+		cost = 70
+		x = 23
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_stability = 0.05	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_middle_crisis
+		icon = GFX_goal_irn_middle_crisis
+		cost = 70
+		x = 45
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 150	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_territory
+		icon = GFX_goal_irn_territory
+		cost = 70
+		x = 63
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+					has_government = fascism
+					has_government = rad_islamists
+				}
+			}
+		completion_reward = { add_political_power = 150	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_army
+		icon = GFX_goal_generic_military_sphere
+		cost = 70
+		x = 80
+		y = 0
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20 
+			navy_experience = 20
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = IRN_behind_seas
+		icon = GFX_goal_irn_behind_seas
+		cost = 70
+		prerequisite = { focus = IRN_country_up }
+		x = 3
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 100	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_middle_asia
+		icon = GFX_goal_irn_middle_asia
+		cost = 70
+		prerequisite = { focus = IRN_behind_seas }
+		x = 1
+		y = 3
+		available = {
+				NOT = {
+					OR = {
+						has_government = fascism
+						has_government = rad_islamists
+					}
+				}
+		}
+		completion_reward = { 
+			custom_effect_tooltip = IRN_middle_asia_TT
+
+				hidden_effect = {
+				add_opinion_modifier = {
+					target = KAZ
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = UZB
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = TMS
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = KYR
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = TAJ
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = AFG
+					modifier = IRN_strategic_partner
+				}
+				add_opinion_modifier = {
+					target = PAK
+					modifier = IRN_strategic_partner
+				}
+
+				KAZ = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				UZB = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				TMS = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				KYR = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				TAJ = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				AFG = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+				PAK = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}	 
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_balkans
+		icon = GFX_goal_irn_balkans
+		cost = 70
+		prerequisite = { focus = IRN_behind_seas }
+		x = 2
+		y = 2
+		completion_reward = {
+				custom_effect_tooltip = IRN_balkan_TT
+	
+					hidden_effect = {
+					add_opinion_modifier = {
+						target = SER
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = BOS
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = CRO
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = SLV
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = MNT
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = KOS
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = ALB
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = MAC
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = GRE
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = ROM
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = BUL
+						modifier = IRN_strategic_partner
+					}
+
+					SER = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					BOS = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					CRO = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					SLV = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					MNT = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					KOS = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					ALB = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					MAC = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					GRE = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					ROM = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					BUL = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+				}	
+        }
+
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_middle_east
+		icon = GFX_goal_irn_middle_easti
+		cost = 70
+		prerequisite = { focus = IRN_behind_seas }
+		x = 3
+		y = 3
+		available = {
+			AND = {
+				NOT = {
+					OR = {
+						has_government = fascism
+						has_government = rad_islamists
+					}
+				}
+				has_government = democratic #islamism
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = IRN_middle_east_TT
+		
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = SAU
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = JOR
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = YEM
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = OMA
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = UAE
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = QAT
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = BHR
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = KUW
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = IRQ
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = SYR
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = ISR
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = LEB
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = ROJ
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = KUR
+						modifier = IRN_strategic_partner
+					}
+			
+					SAU = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					JOR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					YEM = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					OMA = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					UAE = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					QAT = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+		
+					BHR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					KUW = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					IRQ = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					SYR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					ISR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					LEB = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					ROJ = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					KUR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+		
+			}	
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_caucas
+		icon = GFX_goal_irn_caucas
+		cost = 70
+		prerequisite = { focus = IRN_behind_seas }
+		bypass = {
+			NOT = {
+			 country_exists = GEO  
+		     country_exists = AZR
+		 	 country_exists = ARM 
+			}
+		}
+		x = 4
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = IRN_caucas_TT
+
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = ABZ
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = SOS
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = GEO
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = AZR
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = ARM
+						modifier = IRN_strategic_partner
+					}
+					add_opinion_modifier = {
+						target = NKR
+						modifier = IRN_strategic_partner
+					}
+		
+					ABZ = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					SOS = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					GEO = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					AZR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					ARM = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+					NKR = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+
+			}	
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_europe
+		icon = GFX_goal_irn_europe
+		cost = 80
+		available = { 
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_russia
+					has_completed_focus = IRN_china
+				}
+			} 
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = rad_islamists
+				}
+			}
+		}
+		prerequisite = { focus = IRN_behind_seas }
+		x = 5
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = IRN_europe_TT
+
+			hidden_effect = { 
+				every_country = {
+					if = {
+						limit = {
+							has_idea = eu_member
+						}
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+				}
+		
+				every_country = {
+					if = {
+						limit = {
+							has_idea = eu_member
+						}
+						IRN = {
+							add_opinion_modifier = {
+								target = PREV
+								modifier = IRN_strategic_partner
+							}
+						}
+					}
+				}
+			}
+
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_strategic_partners
+		icon = GFX_goal_irn_strategic_partners
+		cost = 70
+		prerequisite = { focus = IRN_country_up	}
+		x = 10
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 100	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_germany
+		icon = GFX_goal_irn_germany
+		cost = 35
+		available = { 
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_russia
+					has_completed_focus = IRN_china
+				}
+			} 
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = rad_islamists
+				}
+			}
+		}
+		prerequisite = { focus = IRN_strategic_partners }
+		x = 7
+		y = 3
+		bypass = { NOT = { country_exists = GER } }
+		completion_reward = { 
+
+			custom_effect_tooltip = IRN_germany_TT
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = IRN_strategic_partner
+				}
+				GER = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_russia
+		icon = GFX_goal_irn_russia
+		cost = 100
+		prerequisite = { focus = IRN_strategic_partners	}
+		available = { 
+			if = { 
+				limit = { RUS = { has_government = neutrality } }
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_europe
+					has_completed_focus = IRN_germany
+					has_completed_focus = IRN_great_britain
+					has_completed_focus = IRN_usa
+					has_completed_focus = IRN_china
+				}
+			} 
+			OR = {
+				NOT = {
+					has_government = liberalism
+					has_government = rad_islamists
+				}
+				NOT = {
+					has_government = democratic
+					OR = {
+						has_idea = islam_idea_lvl_1
+						has_idea = islam_idea_lvl_2
+						has_idea = islam_idea_lvl_3
+					}
+				}
+			}
+			}
+
+		}
+		x = 8
+		y = 2
+		bypass = { NOT = { country_exists = RUS } }
+		completion_reward = { 
+			if = {
+				limit = {
+					RUS = { has_government = neutrality }
+				}
+				custom_effect_tooltip = IRN_russia_centrism_TT
+			}
+
+			if = {
+				limit = {
+					RUS = { has_government = communism }
+				}
+				custom_effect_tooltip = IRN_russia_socialism_TT
+			}
+
+			if = {
+				limit = {
+					RUS = { 
+						OR = {
+							has_government = democratic 
+							has_government = liberalism 
+							has_government = reformism
+						} 
+					}
+				}
+				custom_effect_tooltip = IRN_russia_democratic_TT
+			}
+
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = IRN_strategic_partner
+				}
+				RUS = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_japan
+		icon = GFX_goal_irn_japan
+		cost = 35
+		bypass = { NOT = { country_exists = JAP } }
+		prerequisite = { focus = IRN_strategic_partners }
+		x = 9
+		y = 3
+		completion_reward = {
+				custom_effect_tooltip = IRN_japan_TT
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = JAP
+						modifier = IRN_strategic_partner
+					}
+					JAP = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+				}
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_china
+		icon = GFX_goal_irn_china
+		cost = 100
+		available = { 
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_russia
+					has_completed_focus = IRN_europe
+					has_completed_focus = IRN_usa
+					has_completed_focus = IRN_great_britain
+					has_completed_focus = IRN_germany
+				}
+			} 
+
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = rad_islamists
+				}
+			}
+		}
+		prerequisite = { focus = IRN_strategic_partners }
+		x = 10
+		y = 2
+		completion_reward = { 
+			if = {
+				limit = {
+					CHI = { has_government = communism }
+				}
+				custom_effect_tooltip = IRN_chi_socialism_TT
+			}
+
+			if = {
+				limit = {
+					CHI = { 
+						OR = {
+							has_government = democratic 
+							has_government = liberalism 
+							has_government = reformism
+						} 
+					}
+				}
+				custom_effect_tooltip = IRN_chi_democratic_TT
+			}
+
+			if = {
+				limit = {
+					CHI = { has_government = neutrality }
+				}
+				custom_effect_tooltip = IRN_chi_centrism_TT
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = fascism
+							has_government = rad_islamists
+						}
+					}
+				}
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = CHI
+						modifier = IRN_strategic_partner
+					}
+					CHI = {
+						add_opinion_modifier = {
+							target = IRN
+							modifier = IRN_strategic_partner
+						}
+					}
+				}
+			}
+
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_turkiya
+		icon = GFX_goal_irn_turkiya
+		cost = 35
+		prerequisite = { focus = IRN_strategic_partners	}
+		x = 11
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = IRN_turkey_TT
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = IRN_strategic_partner
+				}
+				TUR = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_usa
+		icon = GFX_goal_irn_usa
+		cost = 100
+		available = { 
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_russia
+					has_completed_focus = IRN_china
+				}
+			} 
+		}
+		prerequisite = { focus = IRN_strategic_partners }
+		x = 12
+		y = 2
+		bypass = { NOT = { country_exists = USA } }
+		completion_reward = { 
+			if = { 
+				limit = { 
+					USA = { 
+						has_government = liberalism 
+					} 
+				} 
+				custom_effect_tooltip = IRN_usa_liberalism_TT
+			}
+
+			if = { 
+				limit = { 
+					USA = { 
+						has_government = democratic 
+					} 
+				} 
+				custom_effect_tooltip = IRN_usa_conservatism_TT
+			}
+
+			if = {
+				limit = {
+					USA = {
+						NOT = { OR = { has_government = democratic has_government = liberalism } }
+					}
+				}
+				custom_effect_tooltip = IRN_usa_conservatism_TT
+			}
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = IRN_strategic_partner
+				}
+				USA = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_great_britain
+		icon = GFX_goal_irn_great_britain
+		cost = 35
+		prerequisite = { focus = IRN_strategic_partners	}
+		available = { 
+			NOT = { 
+				OR = {
+					has_completed_focus = IRN_russia
+					has_completed_focus = IRN_china
+				}
+			} 
+
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = rad_islamists
+				}
+			}
+		}
+		x = 13
+		y = 3
+		completion_reward = { 
+			custom_effect_tooltip = IRN_great_britain_TT
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = ENG
+					modifier = IRN_strategic_partner
+				}
+				ENG = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_csto
+		icon = GFX_goal_irn_csto
+		cost = 100
+		prerequisite = { focus = IRN_ally }
+		mutually_exclusive = {	focus = IRN_nato
+			focus = IRN_china_help
+		}
+		available = { has_completed_focus = IRN_russia }
+		x = 17
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+					modifier = actions_positive
+			}
+			
+			RUS = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_help_syria
+		icon = GFX_goal_irn_help_syria
+		cost = 70
+		prerequisite = { focus = IRN_csto }
+		x = 16
+		y = 2
+		bypass = { NOT = { country_exists = FSA	} }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = { country_exists = FSA }
+					add_opinion_modifier = {
+						target = SYR
+						modifier = actions_positive
+					}
+			SYR = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = actions_positive
+					}
+				}
+			IRN = {
+					create_wargoal = {
+						target = FSA
+						type = liberate_wargoal
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_syria_friend
+		icon = GFX_goal_irn_syria_friend
+		cost = 70
+		prerequisite = { focus = IRN_help_syria	}
+		x = 16
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		bypass = { NOT = { country_exists = SYR	} }
+		completion_reward = {
+				add_opinion_modifier = {
+					target = SYR
+					modifier = actions_very_positive
+				}
+			SYR = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_caspian_ask
+		icon = GFX_goal_irn_caspian_ask
+		cost = 70
+		prerequisite = { focus = IRN_csto }
+		x = 18
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_ideas = IRN_caspian_ask }
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_together_school
+		icon = GFX_goal_irn_together_school
+		cost = 70
+		prerequisite = { focus = IRN_caspian_ask }
+		x = 18
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 5	}
+		completion_reward = { army_experience = 10 }
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = IRN_join_odkb
+		icon = GFX_goal_irn_join_odkb
+		cost = 70
+		prerequisite = { focus = IRN_together_school }
+		prerequisite = { focus = IRN_syria_friend }
+		x = 17
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = { RUS = { add_to_faction = IRN } }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_nato
+		icon = GFX_goal_irn_nato
+		cost = 150
+		prerequisite = { focus = IRN_ally }
+		available = { 
+			AND = {
+				has_completed_focus = IRN_europe
+				has_completed_focus = IRN_germany
+				has_completed_focus = IRN_great_britain
+				has_completed_focus = IRN_usa
+			}
+		}
+		mutually_exclusive = {	focus = IRN_csto
+			focus = IRN_china_help
+		}
+		x = 23
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+					target = USA
+					modifier = actions_positive
+				}
+			USA = {
+					add_opinion_modifier = {
+					target = IRN
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_six_razgovor
+		icon = GFX_goal_irn_six_razgovor
+		cost = 70
+		prerequisite = { focus = IRN_nato }
+		x = 22
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+					target = USA
+					modifier = actions_positive
+				}
+			USA = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = actions_positive
+					}
+				}
+			add_opinion_modifier = {
+					target = GER
+					modifier = actions_positive
+				}
+			GER = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = actions_positive
+					}
+				}
+			add_opinion_modifier = {
+					target = ENG
+					modifier = actions_positive
+				}
+			ENG = {
+					add_opinion_modifier = {
+						target = IRN
+						modifier = actions_positive
+					}
+				}
+			add_opinion_modifier = {
+					target = FRA
+					modifier = actions_positive
+				}
+			FRA = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_kurdish_ask
+		icon = GFX_goal_irn_kurdish_ask
+		cost = 70
+		prerequisite = { focus = IRN_six_razgovor
+			focus = IRN_caspian_ask
+		}
+		x = 20
+		y = 3
+		completion_reward = { add_political_power = 100	} #Лучше политочки чем большое красивое нихуя
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_opinion_saudi
+		icon = GFX_goal_irn_opinion_saudi
+		cost = 70
+		prerequisite = { focus = IRN_six_razgovor }
+		x = 22
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+					target = SAU
+					modifier = actions_positive
+					}
+			SAU = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_isr_question
+		icon = GFX_goal_irn_isr_question
+		cost = 70
+		prerequisite = { focus = IRN_nato }
+		x = 24
+		y = 2
+		completion_reward = { add_political_power = 100	} #Лучше политочки чем большое красивое нихуя
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_nato_bases
+		icon = GFX_goal_irn_nato_bases
+		cost = 70
+		prerequisite = { focus = IRN_isr_question }
+		x = 24
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 10
+			country_event = {
+				id = usa.22
+				days = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = IRN_together_nato
+		icon = GFX_goal_irn_together_nato
+		cost = 70
+		prerequisite = { focus = IRN_nato_bases }
+		prerequisite = { focus = IRN_opinion_saudi }
+		x = 23
+		y = 4
+		ai_will_do = {	factor = 1	}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		completion_reward = { USA = { add_to_faction = IRN } }
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_china_help
+		icon = GFX_goal_irn_china_help
+		cost = 80
+		prerequisite = { focus = IRN_ally }
+		mutually_exclusive = {	focus = IRN_csto
+			focus = IRN_nato
+		}
+		available = {
+			has_completed_focus = IRN_china
+		}
+		x = 28
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = CHI
+				modifier = actions_positive
+			}
+			CHI = {
+				add_opinion_modifier = {
+				target = IRN
+				modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_afghan_help
+		icon = GFX_goal_irn_afghan_help
+		cost = 70
+		prerequisite = { focus = IRN_china_help }
+		x = 27
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {  country_exists = TAL }
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = AFG
+				modifier = actions_positive
+			}
+			AFG = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_positive
+				}
+			}
+			create_wargoal = {
+				target = TAL
+				type = liberate_wargoal
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_sotr_afg
+		icon = GFX_goal_irn_sotr_afg
+		cost = 70
+		prerequisite = { focus = IRN_afghan_help }
+		x = 27
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {  country_exists = AFG }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = AFG
+				modifier = actions_very_positive
+			}
+			AFG = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_beluji_ask
+		icon = GFX_goal_irn_beluji_ask
+		cost = 70
+		prerequisite = { focus = IRN_china_help }
+		x = 29
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			country_event = {
+				id = iran.4
+				days = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_pakis_wall
+		icon = GFX_goal_irn_pakis_wall
+		cost = 70
+		prerequisite = { focus = IRN_beluji_ask	}
+		x = 29
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = PAK
+				modifier = actions_negative
+			}
+			PAK = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_alliance_knr
+		icon = GFX_goal_irn_alliance_knr
+		cost = 70
+		prerequisite = { focus = IRN_sotr_afg }
+		prerequisite = { focus = IRN_pakis_wall }
+		x = 28
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			create_faction = DALASIA
+			IRN = {	add_to_faction = CHI }
+			IRN = {	add_to_faction = PAK }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_protest_regions
+		icon = GFX_goal_irn_protest_regions
+		cost = 70
+		prerequisite = { focus = IRN_middle_crisis }
+		mutually_exclusive = {	focus = IRN_support_government
+			focus = IRN_tegeran_teract
+		}
+		x = 40
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = -0.2 }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_new_republick
+		icon = GFX_goal_irn_new_republick
+		cost = 70
+		prerequisite = { focus = IRN_protest_regions }
+		mutually_exclusive = {	focus = IRN_shah_return
+			focus = IRN_koran_democracy
+			focus = IRN_norm_gov
+			focus = IRN_radical_meri
+		}
+		x = 39
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.1
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_idea_ravenstva
+		icon = GFX_goal_irn_idea_ravenstva
+		cost = 70
+		prerequisite = { focus = IRN_new_republick }
+		x = 39
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_timed_idea = { idea = support_socialism days = 365 }
+			add_timed_idea = { idea = support_reformism days = 365 }
+			add_timed_idea = { idea = support_liberalism days = 365 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_marxism
+		icon = GFX_goal_irn_marxism
+		cost = 70
+		prerequisite = { focus = IRN_idea_ravenstva	}
+		mutually_exclusive = {	focus = IRN_rasp_res
+			focus = IRN_rad_ref
+		}
+		x = 31
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { communism > 0.3 }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_ideas = ban_on_private_enterprise
+			add_ideas = state_atheism
+			remove_ideas = { islam_idea_lvl_3 }
+			if = {
+				limit = { has_idea = sharia_law }
+				swap_ideas = { remove_idea = sharia_law add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = limitation_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = suspended_liberties }
+			}
+			else_if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = respect_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = fully_guranted_liberties }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_cent_kom
+		icon = GFX_goal_irn_cent_kom
+		cost = 70
+		prerequisite = { focus = IRN_marxism }
+		mutually_exclusive = { focus = IRN_create_veche }
+		x = 30
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+			add_stability = -0.05
+			add_ideas = directorial_republic
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_create_veche
+		icon = GFX_goal_irn_create_veche
+		cost = 70
+		prerequisite = { focus = IRN_marxism }
+		mutually_exclusive = { focus = IRN_cent_kom }
+		x = 32
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = IRN_narodnoe_sobranie
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_shah_return
+		icon = GFX_goal_irn_shah_return
+		cost = 70
+		prerequisite = { focus = IRN_protest_regions }
+		mutually_exclusive = {	focus = IRN_new_republick
+			focus = IRN_koran_democracy
+			focus = IRN_norm_gov
+			focus = IRN_radical_meri
+		}
+		x = 43
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = { fascism > 0.3 }
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_ideas = { IRN_shah_reza_pahlavi }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_support_government
+		icon = GFX_goal_irn_islam_propaganda
+		cost = 70
+		prerequisite = { focus = IRN_middle_crisis }
+		mutually_exclusive = {	focus = IRN_protest_regions
+			focus = IRN_tegeran_teract
+		}
+		x = 47
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_koran_democracy
+		icon = GFX_goal_irn_koran_democracy
+		cost = 70
+		prerequisite = { focus = IRN_protest_regions
+			focus = IRN_support_government
+		}
+		mutually_exclusive = {	focus = IRN_new_republick
+			focus = IRN_shah_return
+			focus = IRN_norm_gov
+			focus = IRN_radical_meri
+		}
+		x = 45
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	#focus = {
+	#	id = IRN_swet_state
+	#	icon = GFX_goal_unknown
+	#	cost = 70
+	#	prerequisite = { focus = IRN_koran_democracy
+	#		focus = IRN_shah_return
+	#	}
+	#	mutually_exclusive = {	focus = IRN_idea_ravenstva
+	#		focus = IRN_national_rebirth
+	#		focus = IRN_norm_ref
+	#	}
+	#	x = 41
+	#	y = 3
+	#	#cancel_if_invalid = yes
+	#	#continue_if_invalid = no
+	#	#available_if_capitulated = no
+	#	ai_will_do = { factor = 5 }
+	#	completion_reward = {
+	#		add_stability = -0.05
+	#		add_popularity = {
+	#			ideology = democratic
+	#			popularity = 0.05
+	#		}
+	#	}
+	#	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	#}
+	focus = {
+		id = IRN_rasp_res
+		icon = GFX_goal_irn_rasp_res
+		cost = 70
+		prerequisite = { focus = IRN_idea_ravenstva	}
+		mutually_exclusive = {	focus = IRN_marxism
+			focus = IRN_rad_ref
+		}
+		x = 36
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5 }
+		available = { reformism > 0.3 }
+		completion_reward = {
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.05
+			}
+			set_politics = {
+				ruling_party = reformism
+				elections_allowed = yes
+			}
+			add_ideas = nationalization_of_heavy_industry
+			add_ideas = { secular_state }
+			remove_ideas = { islam_idea_lvl_3 }
+			if = {
+				limit = { has_idea = national_social_security }
+				swap_ideas = { remove_idea = national_social_security add_idea = total_social_security }
+			}
+			else_if = {
+				limit = { has_idea = middle_social_security }
+				swap_ideas = { remove_idea = middle_social_security add_idea = national_social_security }
+			}
+			else_if = {
+				limit = { has_idea = base_social_security }
+				swap_ideas = { remove_idea = base_social_security add_idea = middle_social_security }
+			}
+			else_if = {
+				limit = { has_idea = no_social_security }
+				swap_ideas = { remove_idea = no_social_security add_idea = base_social_security }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_protect_rabochix
+		icon = GFX_goal_irn_protect_rabochix
+		cost = 70
+		prerequisite = { focus = IRN_rasp_res }
+		x = 35
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = minimum_wage }
+				swap_ideas = { remove_idea = minimum_wage add_idea = pensions }
+			}
+			else_if = {
+				limit = { has_idea = normal_working_time }
+				swap_ideas = { remove_idea = normal_working_time add_idea = minimum_wage }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = prohibition_of_forced_labour add_idea = normal_working_time }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_child_labor }
+				swap_ideas = { remove_idea = prohibition_of_child_labor add_idea = prohibition_of_forced_labour }
+			}
+			else_if = {
+				limit = { has_idea = no_labor_rights_protection }
+				swap_ideas = { remove_idea = no_labor_rights_protection add_idea = prohibition_of_child_labor }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_rejection_of_dictatorship
+		icon = GFX_goal_irn_protest_regions
+		cost = 70
+		prerequisite = { focus = IRN_protect_rabochix }
+		x = 34
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = semi-presidential_republic }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_rad_ref
+		icon = GFX_goal_irn_rad_ref
+		cost = 70
+		prerequisite = { 
+			focus = IRN_idea_ravenstva
+		}
+		mutually_exclusive = {	
+			focus = IRN_marxism
+			focus = IRN_rasp_res
+		}
+		x = 40
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5 }
+		available = { liberalism > 0.3 }
+		completion_reward = {
+			add_stability = -0.1
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.05
+			}
+			set_politics = {
+				ruling_party = liberalism
+				elections_allowed = yes
+			}
+			add_ideas = { market_economy }
+			remove_ideas = { islam_idea_lvl_3 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_liber_recshim
+		icon = GFX_goal_irn_liber_recshim
+		cost = 70
+		prerequisite = { focus = IRN_rad_ref }
+		mutually_exclusive = { focus = IRN_pexlevi_reforms }
+		x = 39
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = { support_liberalism }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_national_rebirth
+		icon = GFX_goal_irn_national_rebirth
+		cost = 70
+		prerequisite = { focus = IRN_koran_democracy
+			focus = IRN_shah_return
+		}
+		mutually_exclusive = {
+			focus = IRN_norm_ref
+		}
+		x = 43
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = { support_fascism }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_norm_ref
+		icon = GFX_goal_irn_norm_ref
+		cost = 70
+		prerequisite = { focus = IRN_koran_democracy
+			focus = IRN_shah_return
+		}
+		mutually_exclusive = {
+			focus = IRN_national_rebirth
+		}
+		x = 45
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+				}
+			add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_norm_gov
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 70
+		prerequisite = { focus = IRN_support_government	}
+		mutually_exclusive = {	focus = IRN_new_republick
+			focus = IRN_shah_return
+			focus = IRN_koran_democracy
+			focus = IRN_radical_meri
+		}
+		x = 48
+		y = 2
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = support_neutrality }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_save_reshim
+		icon = GFX_goal_irn_save_shiism
+		cost = 70
+		prerequisite = { focus = IRN_norm_gov }
+		x = 48
+		y = 3
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = support_islamists	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_tegeran_teract
+		icon = GFX_goal_irn_tegeran_teract
+		cost = 70
+		prerequisite = { focus = IRN_middle_crisis }
+		mutually_exclusive = {	focus = IRN_protest_regions
+			focus = IRN_support_government
+		}
+		x = 52
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			country_event = {
+				id = iran.1
+				days = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_radical_meri
+		icon = GFX_goal_irn_radical_meri
+		cost = 70
+		prerequisite = { focus = IRN_tegeran_teract
+			focus = IRN_protest_regions
+		}
+		mutually_exclusive = {	focus = IRN_new_republick
+			focus = IRN_shah_return
+			focus = IRN_koran_democracy
+			focus = IRN_norm_gov
+		}
+		x = 52
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = support_rad_islamists	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_wahhabism
+		icon = GFX_goal_irn_wahhabism
+		cost = 70
+		prerequisite = { focus = IRN_radical_meri }
+		x = 52
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = rad_islamists
+				popularity = 0.2
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_conserwatism
+		icon = GFX_goal_irn_conserwatism
+		cost = 70
+		prerequisite = { focus = IRN_norm_ref
+			focus = IRN_save_reshim
+		}
+		mutually_exclusive = {
+			focus = IRN_vliat_imani
+			focus = IRN_support_jixad
+		}
+		x = 45
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_upor_islam
+		icon = GFX_goal_irn_upor_islam
+		cost = 70
+		prerequisite = { focus = IRN_conserwatism }
+		mutually_exclusive = {	focus = IRN_cons_monarchy }
+		x = 47
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+					popularity = 0.2
+				}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_vliat_imani
+		icon = GFX_goal_irn_vliat_imani
+		cost = 70
+		prerequisite = { focus = IRN_wahhabism
+			focus = IRN_save_reshim
+			focus = IRN_norm_ref
+		}
+		mutually_exclusive = {	
+			focus = IRN_conserwatism 
+			focus = IRN_support_jixad
+		}
+		x = 48
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 100	} #Лучше политочки чем большое красивое нихуя
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_support_jixad
+		icon = GFX_goal_irn_support_jixad
+		cost = 70
+		prerequisite = { focus = IRN_wahhabism
+			focus = IRN_save_reshim
+		}
+		mutually_exclusive = {
+			focus = IRN_vliat_imani
+			focus = IRN_conserwatism
+		}
+		x = 52
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+				add_popularity = {
+					ideology = rad_islamists
+					popularity = 0.65
+				}
+			add_stability = -0.45
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_islam_propaganda
+		icon = GFX_goal_irn_islam_propaganda
+		cost = 70
+		prerequisite = { focus = IRN_vliat_imani
+			focus = IRN_support_jixad
+		}
+		x = 51
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = { support_islamists  support_rad_islamists }	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_right_islam
+		icon = GFX_goal_irn_right_islam
+		cost = 70
+		prerequisite = { focus = IRN_islam_propaganda }
+		mutually_exclusive = {	focus = IRN_rad_islam }
+		x = 50
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.40
+			}
+			add_stability = 0.15
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_save_shiism
+		icon = GFX_goal_irn_save_shiism
+		cost = 70
+		prerequisite = { focus = IRN_right_islam }
+		mutually_exclusive = {	focus = IRN_sunni_revolution }
+		x = 49
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = IRN_shiism
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_rad_islam
+		icon = GFX_goal_irn_rad_islam
+		cost = 70
+		prerequisite = { focus = IRN_islam_propaganda }
+		mutually_exclusive = {	focus = IRN_right_islam	}
+		x = 53
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = rad_islamists
+				popularity = 0.40
+				}
+			add_stability = -0.15
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_support_hesabola
+		icon = GFX_goal_irn_support_hesabola
+		cost = 70
+		prerequisite = { focus = IRN_rad_islam }
+		x = 53
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_opinion_modifier = {
+					target = USA
+					modifier = actions_very_negative
+				}
+			USA = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_negative
+					}
+				}
+			add_opinion_modifier = {
+					target = GER
+					modifier = actions_very_negative
+				}
+			GER = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_negative
+					}
+				}
+			add_opinion_modifier = {
+					target = ISR
+					modifier = actions_very_negative
+				}
+			ISR = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_sunnit_battle
+		icon = GFX_goal_irn_sunnit_battle
+		cost = 70
+		prerequisite = { focus = IRN_support_hesabola }
+		x = 53
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = -0.05	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_africa
+		icon = GFX_goal_irn_africa
+		cost = 70
+		prerequisite = { focus = IRN_territory }
+		x = 54
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 120	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_egypt
+		icon = GFX_goal_irn_egypt
+		cost = 70
+		prerequisite = { focus = IRN_africa }
+		x = 54
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = EGY }
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = EGY
+					is_core_of = EGY
+				}
+				add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_libya
+		icon = GFX_goal_irn_libya
+		cost = 70
+		prerequisite = { focus = IRN_egypt }
+		x = 54
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = LBA	}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = LBA
+					is_core_of = LBA
+					}
+				add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_izr_bit
+		icon = GFX_goal_irn_izr_bit
+		cost = 70
+		prerequisite = { focus = IRN_support_hesabola }
+		x = 55
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ISR
+				modifier = actions_negative
+			}
+			ISR = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_halifat
+		icon = GFX_goal_irn_halifat
+		cost = 70
+		prerequisite = { focus = IRN_sunnit_battle	}
+		prerequisite = { focus = IRN_izr_bit }
+		x = 54
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			set_politics = {
+				ruling_party = rad_islamists
+				elections_allowed = no
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_europa
+		icon = GFX_goal_irn_europa
+		cost = 70
+		prerequisite = { focus = IRN_territory
+		}
+		x = 56
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 120	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_greece
+		icon = GFX_goal_irn_greece
+		cost = 70
+		prerequisite = { focus = IRN_europa	}
+		x = 56
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = GRE }
+		completion_reward = {
+			every_state = {
+					limit = {
+						is_controlled_by = GRE
+						is_core_of = GRE
+					}
+				add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_middle_easti
+		icon = GFX_goal_irn_middle_east
+		cost = 70
+		prerequisite = { focus = IRN_territory	}
+		x = 60
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 120 }
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_turkey
+		icon = GFX_goal_irn_turkey
+		cost = 70
+		prerequisite = { focus = IRN_middle_easti }
+		x = 58
+		y = 2
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = TUR }
+		completion_reward = {
+			every_state = {
+					limit = {
+						is_controlled_by = TUR
+						is_core_of = TUR
+					}
+				add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_cyprus
+		icon = GFX_goal_irn_cyprus
+		cost = 70
+		prerequisite = { focus = IRN_greece
+						 focus = IRN_turkey
+		}
+		x = 56
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { 
+					OR = {
+						country_exists = CYP
+						country_exists = NCY
+						}
+					OR = {	country_exists = CYP
+							NOT = {	country_exists = NCY }
+						}
+					OR = {
+							country_exists = CYP
+							NOT = {	country_exists = NCY }
+						}
+				}
+		completion_reward = {
+			add_state_claim = 183
+			add_state_claim = 781
+			add_state_claim = 946
+			add_state_claim = 947
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_kurdistan
+		icon = GFX_goal_irn_kurdistan
+		cost = 70
+		prerequisite = { focus = IRN_middle_easti }
+		x = 60
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = KUR	}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = KUR
+					is_core_of = KUR
+				}
+			add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_iraq
+		icon = GFX_goal_irn_iraq
+		cost = 70
+		prerequisite = { focus = IRN_middle_easti }
+		x = 62
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = IRQ	}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = IRQ
+					is_core_of = IRQ
+				}
+			add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_syria
+		icon = GFX_goal_irn_syria
+		cost = 70
+		prerequisite = { focus = IRN_turkey
+			focus = IRN_kurdistan
+			focus = IRN_iraq
+		}
+		x = 58
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { 
+					OR = {
+							country_exists = SYR
+							country_exists = FSA
+						}
+					OR = {
+							country_exists = SYR
+							NOT = {	country_exists = FSA }
+						}
+					OR = {
+							country_exists = FSA
+							NOT = {	country_exists = SYR }
+						}
+				}
+		completion_reward = {
+			add_state_claim = 554
+			add_state_claim = 677
+			add_state_claim = 680
+			add_state_claim = 776
+			add_state_claim = 779
+			add_state_claim = 822
+			add_state_claim = 835
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_lebanon
+		icon = GFX_goal_irn_lebanon
+		cost = 70
+		prerequisite = { focus = IRN_syria }
+		x = 59
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = ISS	}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = ISS
+					is_core_of = ISS
+				}
+				add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_igl
+		icon = GFX_goal_irn_iraq
+		cost = 70
+		prerequisite = { focus = IRN_kurdistan
+						 focus = IRN_iraq
+		}
+		bypass = { NOT = {country_exists = ISS } }
+		x = 60
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = ISS }
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = ISS
+					is_core_of = ISS
+				}
+			add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_iordania
+		icon = GFX_goal_irn_iordania
+		cost = 70
+		prerequisite = { focus = IRN_syria
+						 focus = IRN_iraq
+		}
+		x = 61
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = JOR	}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = JOR
+					is_core_of = JOR
+				}
+			add_claim_by = IRN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_israil
+		icon = GFX_goal_irn_israil
+		cost = 70
+		prerequisite = { focus = IRN_lebanon
+			focus = IRN_iordania
+		}
+		x = 60
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 957
+			add_state_core = 957
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_palestine
+		icon = GFX_goal_irn_palestine
+		cost = 70
+		prerequisite = { focus = IRN_israil
+						 focus = IRN_iordania
+		}
+		x = 61
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 777
+			add_state_core = 777
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_kuveyt
+		icon = GFX_goal_irn_kuveyt
+		cost = 70
+		prerequisite = { focus = IRN_iraq }
+		x = 62
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 656
+			add_state_core = 656
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_middle_asiai
+		icon = GFX_goal_irn_middle_asiai
+		cost = 70
+		prerequisite = { focus = IRN_territory	}
+		x = 66
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 120	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_turkmenistan
+		icon = GFX_goal_irn_turkmenistan
+		cost = 70
+		prerequisite = { focus = IRN_middle_asiai }
+		x = 64
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 795
+			add_state_core = 795
+			add_state_claim = 584
+			add_state_core = 584
+			add_state_claim = 791
+			add_state_core = 791
+			add_state_claim = 792
+			add_state_core = 792
+			add_state_claim = 793
+			add_state_core = 793
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_afghanistan
+		icon = GFX_goal_irn_afghanistan
+		cost = 70
+		prerequisite = { focus = IRN_middle_asiai }
+		x = 66
+		y = 2
+		bypass = {	country_exists = TAL } 
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 415
+			add_state_core = 415
+			add_state_claim = 788
+			add_state_core = 788
+			add_state_claim = 911
+			add_state_core = 911
+			add_state_claim = 267
+			add_state_core = 267
+			add_state_claim = 816
+			add_state_core = 816
+			add_state_claim = 229
+			add_state_core = 229
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_uzbekistan
+		icon = GFX_goal_irn_uzbekistan
+		cost = 70
+		prerequisite = { 
+			focus = IRN_turkmenistan
+			focus = IRN_afghanistan
+		}
+		x = 64
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 805
+			add_state_core = 805
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_tajikistan
+		icon = GFX_goal_irn_tajikistan
+		cost = 70
+		prerequisite = {
+			focus = IRN_turkmenistan
+			focus = IRN_afghanistan
+		}
+		x = 66
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 1007
+			add_state_core = 1007
+			add_state_claim = 1006
+			add_state_core = 1006
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_pakistan
+		icon = GFX_goal_irn_pakistan
+		cost = 70
+		prerequisite = { focus = IRN_middle_asiai }
+		x = 68
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 444
+			add_state_core = 444
+			add_state_claim = 445
+			add_state_core = 445
+			add_state_claim = 827
+			add_state_core = 827
+			add_state_claim = 442
+			add_state_core = 442
+			add_state_claim = 806
+			add_state_core = 806
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_caucasus
+		icon = GFX_goal_irn_caucasus
+		cost = 70
+		prerequisite = { focus = IRN_territory }
+		x = 71
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 120	}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_armen
+		icon = GFX_goal_irn_armen
+		cost = 70
+		prerequisite = { focus = IRN_caucasus }
+		x = 70
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 230
+			add_state_core = 230
+			add_state_claim = 819
+			add_state_core = 819
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_azerbajan
+		icon = GFX_goal_irn_azerbajan
+		cost = 70
+		prerequisite = { focus = IRN_caucasus }
+		x = 72
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 796
+			add_state_core = 796
+			add_state_claim = 818
+			add_state_core = 818
+			add_state_claim = 817
+			add_state_core = 817
+			add_state_claim = 877
+			add_state_core = 877
+			add_state_claim = 816
+			add_state_core = 816
+			add_state_claim = 229
+			add_state_core = 229
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_karabakh
+		icon = GFX_goal_irn_karabakh
+		cost = 70
+		prerequisite = { focus = IRN_armen
+						 focus = IRN_azerbajan
+		}
+		x = 70
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 775
+			add_state_core = 775
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_georgia
+		icon = GFX_goal_irn_georgia
+		cost = 70
+		prerequisite = { focus = IRN_armen
+						 focus = IRN_azerbajan
+		}
+		x = 72
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 814
+			add_state_core = 814
+			add_state_claim = 812
+			add_state_core = 812
+			add_state_claim = 813
+			add_state_core = 813
+			add_state_claim = 231
+			add_state_core = 231
+			add_state_claim = 811
+			add_state_core = 811
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_abhazia
+		icon = GFX_goal_irn_abhazia
+		cost = 70
+		prerequisite = { focus = IRN_georgia }
+		x = 70
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 762
+			add_state_core = 762
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_osetia
+		icon = GFX_goal_irn_osetia
+		cost = 70
+		prerequisite = { focus = IRN_georgia }
+		x = 72
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_state_claim = 763
+			add_state_core = 763
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 70
+		prerequisite = { focus = IRN_army }
+		x = 76
+		y = 1
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		cost = 70
+		prerequisite = { focus = IRN_army_effort }
+		x = 75
+		y = 2
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		cost = 70
+		prerequisite = { focus = IRN_equipment_effort }
+		x = 75
+		y = 4
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		cost = 70
+		prerequisite = { focus = IRN_equipment_effort_2	}
+		x = 75
+		y = 6
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_equipment_effort_4
+		icon = GFX_Razvitie_sovremennogo_oruzhia_3
+		cost = 70
+		prerequisite = { focus = IRN_equipment_effort_3	}
+		x = 75
+		y = 8
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = IRN_army_effort }
+		x = 76
+		y = 3
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+				add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = IRN_doctrine_effort }
+		x = 76
+		y = 5
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = IRN_doctrine_effort_2 }
+		x = 76
+		y = 7
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		cost = 70
+		prerequisite = { focus = IRN_army_effort }
+		x = 77
+		y = 2
+		bypass = {	has_tech = tech_motorized_infantry	}
+		ai_will_do = {	factor = 4	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		cost = 70
+		prerequisite = { focus = IRN_motorization_effort }
+		x = 77
+		y = 4
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_motorized_vehicle
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		cost = 70
+		prerequisite = { focus = IRN_mechanization_effort }
+		x = 77
+		y = 6
+		ai_will_do = {	factor = 4	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_armor_effort_2
+		icon = GFX_Razvitie_bronetankovogo_korpusa
+		cost = 70
+		prerequisite = { focus = IRN_armor_effort }
+		x = 77
+		y = 8
+		ai_will_do = {	factor = 4	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_special_forces
+		icon = GFX_goal_generic_special_forces
+		cost = 70
+		prerequisite = { focus = IRN_equipment_effort_4	}
+		prerequisite = { focus = IRN_doctrine_effort_3 }
+		prerequisite = { focus = IRN_armor_effort_2 }
+		x = 76
+		y = 9
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_paratroopers
+				technology = tech_marines
+				#technology = EC_tech_mountaineers
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_paratroopers_divisions
+		icon = GFX_goal_generic_special_forces
+		cost = 70
+		prerequisite = { focus = IRN_special_forces	}
+		x = 75
+		y = 10
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+			#}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_marines_divisions
+		icon = GFX_goal_generic_special_forces
+		cost = 70
+		prerequisite = { focus = IRN_special_forces	}
+		x = 77
+		y = 10
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+			#}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		cost = 70
+		prerequisite = { focus = IRN_army }
+		x = 80
+		y = 1
+		ai_will_do = {	factor = 4	}
+		complete_tooltip = {
+			air_experience = 25
+				if = {
+					limit = {
+						has_country_flag = aviation_effort_AB
+						}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_tech_bonus = {
+					name = air_doc_bonus
+					bonus = 0.5
+					uses = 1
+					category = air_doctrine
+				}
+			}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+							building = air_base
+							size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+							}
+						}
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+						ROOT = { set_country_flag = aviation_effort_AB	}
+					}
+				}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+							level = 2
+							instant_build = yes
+						}
+					ROOT = { set_country_flag = aviation_effort_AB	}
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		cost = 70
+		prerequisite = { focus = IRN_aviation_effort }
+		mutually_exclusive = {	focus = IRN_bomber_focus }
+		x = 79
+		y = 2
+		ai_will_do = {	factor = 4	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		cost = 70
+		prerequisite = { focus = IRN_aviation_effort }
+		mutually_exclusive = {	focus = IRN_fighter_focus }
+		x = 81
+		y = 2
+		ai_will_do = {	factor = 4	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		cost = 70
+		prerequisite = { 
+			focus = IRN_bomber_focus
+			focus = IRN_fighter_focus
+		}
+		x = 80
+		y = 3
+		ai_will_do = { factor = 3 }
+		complete_tooltip = {
+			air_experience = 25
+			if = {
+				limit = { has_country_flag = aviation_effort_2_AB }
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_tech_bonus = {
+					name = air_doc_bonus
+					bonus = 0.5
+					uses = 1
+					category = air_doctrine
+				}
+			}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_CAS_effort
+		icon = GFX_goal_generic_CAS
+		cost = 70
+		prerequisite = { focus = IRN_aviation_effort_2 }
+		prerequisite = { focus = IRN_motorization_effort }
+		x = 79
+		y = 4
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = aircraft_rocket_technologies
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_rocket_effort
+		icon = GFX_focus_rocketry
+		cost = 70
+		prerequisite = { focus = IRN_aviation_effort_2 }
+		x = 80
+		y = 7
+		ai_will_do = {
+		factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 70
+		prerequisite = { focus = IRN_army }
+		x = 84
+		y = 1
+		ai_will_do = {	factor = 2	}
+		available = { 
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		completion_reward = {
+		navy_experience = 25
+		if = {
+			limit = {
+				NOT = {
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+			}
+		any_owned_state = { is_coastal = yes }
+		}
+		random_owned_state = {
+			limit = {
+				is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = naval_effort_built }
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+						any_owned_state = {
+							dockyard > 0
+								free_building_slots = {
+									building = dockyard
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+						}
+					}
+				set_country_flag = naval_effort_built }
+				if = {
+				limit = {
+					NOT = {	has_country_flag = naval_effort_built }
+						NOT = {
+							any_owned_state = {
+								free_building_slots = {
+									building = dockyard
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+					}
+				random_state = {
+					limit = {
+						controller = {	tag = ROOT	}
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = IRN_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		cost = 70
+		prerequisite = { focus = IRN_naval_effort }
+		mutually_exclusive = {	focus = IRN_large_navy }
+		x = 83
+		y = 2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 70
+		prerequisite = { focus = IRN_aviation_effort_2	}
+		prerequisite = { focus = IRN_flexible_navy }
+		x = 82
+		y = 5
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 70
+		prerequisite = { focus = IRN_naval_effort }
+		mutually_exclusive = {	focus = IRN_flexible_navy }
+		x = 85
+		y = 2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+	#focus = {
+	#	id = IRN_submarine_effort
+	#	icon = GFX_goal_generic_navy_submarine
+	#	cost = 70
+	#	prerequisite = { 
+	#		focus = IRN_flexible_navy
+	#		focus = IRN_large_navy
+	#	}
+	#	x = 83
+	#	y = 3
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 0
+	#			all_owned_state = {
+	#				OR = {
+	#					is_coastal = no
+	#					dockyard < 1
+	#				}
+	#			}
+	#		}
+	#	}
+	#	completion_reward = {
+	#		add_tech_bonus = {
+	#			name = ss_bonus
+	#			bonus = 0.5
+	#			ahead_reduction = 1
+	#			uses = 1
+	#			technology = early_submarine
+	#			technology = basic_submarine
+	#			technology = improved_submarine
+	#			technology = advanced_submarine
+	#		}
+	#	}
+	#	search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	#}
+	#focus = {
+	#	id = IRN_destroyer_effort
+	#	icon = GFX_goal_generic_wolf_pack
+	#	cost = 70
+	#	prerequisite = { focus = IRN_submarine_effort }
+	#	x = 83
+	#	y = 4
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 0
+	#			all_owned_state = {
+	#				OR = {
+	#					is_coastal = no
+	#					dockyard < 1
+	#				}
+	#			}
+	#		}
+	#	}
+	#	completion_reward = {
+	#		add_tech_bonus = {
+	#			name = dd_bonus
+	#			bonus = 0.5
+	#			ahead_reduction = 1
+	#			uses = 1
+	#			technology = early_destroyer
+	#			technology = basic_destroyer
+	#			technology = improved_destroyer
+	#			technology = advanced_destroyer
+	#		}
+	#	}
+	#	search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	#}
+	focus = {
+		id = IRN_nuclear_abandonment
+		icon = GFX_goal_irn_atom_res
+		cost = 70
+		prerequisite = { focus = IRN_protect_rabochix }
+		x = 36
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = UKR_budapest_memorandum }
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = IRN_persi_nasledie
+		icon = GFX_goal_irn_persi_nasledie
+		cost = 70
+		prerequisite = { focus = IRN_national_rebirth }
+		x = 43
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			set_cosmetic_tag = IRN_monarchy
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_pexlevi_reforms
+		icon = GFX_goal_irn_pexlevi_reforms
+		cost = 70
+		prerequisite = { focus = IRN_rad_ref }
+		mutually_exclusive = {	focus = IRN_liber_recshim }
+		x = 41
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = actions_very_positive
+				}
+			USA = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_very_positive
+				}
+			}
+			remove_ideas = { islam_idea_lvl_3 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_monarchy_choose
+		icon = GFX_goal_irn_monarchy_choose
+		cost = 70
+		prerequisite = { focus = IRN_persi_nasledie	}
+		x = 43
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 300	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_cons_monarchy
+		icon = GFX_goal_irn_cons_monarchy
+		cost = 70
+		prerequisite = { focus = IRN_conserwatism }
+		mutually_exclusive = {	focus = IRN_upor_islam }
+		x = 45
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_kurd_support
+		icon = GFX_goal_irn_kurd_support
+		cost = 70
+		prerequisite = { focus = IRN_cent_kom focus = IRN_create_veche }
+		x = 31
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		available = { country_exists = KUR	}
+		completion_reward = {
+			add_stability = 0.05
+			add_opinion_modifier = {
+				target = KUR
+				modifier = actions_positive
+				}
+			KUR = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_pensii
+		icon = GFX_goal_irn_pensii
+		cost = 70
+		prerequisite = { focus = IRN_nuclear_abandonment }
+		prerequisite = { focus = IRN_rejection_of_dictatorship }
+		x = 35
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = national_social_security }
+				swap_ideas = { remove_idea = national_social_security add_idea = total_social_security }
+			}
+			else_if = {
+				limit = { has_idea = middle_social_security }
+				swap_ideas = { remove_idea = middle_social_security add_idea = national_social_security }
+			}
+			else_if = {
+				limit = { has_idea = base_social_security }
+				swap_ideas = { remove_idea = base_social_security add_idea = middle_social_security }
+			}
+			else_if = {
+				limit = { has_idea = no_social_security }
+				swap_ideas = { remove_idea = no_social_security add_idea = base_social_security }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_econom_reforms
+		icon = GFX_goal_irn_econom_reforms
+		cost = 70
+		prerequisite = { focus = IRN_liber_recshim
+						 focus = IRN_pexlevi_reforms
+		}
+		x = 40
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			remove_ideas = { oil_spike }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_absol_mon
+		icon = GFX_goal_irn_absol_mon
+		cost = 70
+		prerequisite = { focus = IRN_monarchy_choose }
+		mutually_exclusive = {	focus = IRN_parl_mon }
+		x = 42
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = absolute_monarchy
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_parl_mon
+		icon = GFX_goal_irn_cons_monarchy
+		cost = 70
+		prerequisite = { focus = IRN_monarchy_choose
+						 focus = IRN_cons_monarchy
+		}
+		mutually_exclusive = {	focus = IRN_absol_mon }
+		x = 44
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = parliamentary_monarchy
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_dogovor_sun
+		icon = GFX_goal_irn_dogovor_sun
+		cost = 70
+		prerequisite = { focus = IRN_cons_monarchy focus = IRN_upor_islam }
+		x = 46
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = 0.05	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_women_rights
+		icon = GFX_goal_irn_women_rights
+		cost = 70
+		prerequisite = { focus = IRN_kurd_support }
+		x = 30
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = sharia_law }
+				swap_ideas = { remove_idea = sharia_law add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = limitation_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = suspended_liberties }
+			}
+			else_if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = respect_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = fully_guranted_liberties }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_rab_konst
+		icon = GFX_goal_irn_rab_konst
+		cost = 70
+		prerequisite = { focus = IRN_kurd_support }
+		x = 32
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = minimum_wage }
+				swap_ideas = { remove_idea = minimum_wage add_idea = pensions }
+			}
+			else_if = {
+				limit = { has_idea = normal_working_time }
+				swap_ideas = { remove_idea = normal_working_time add_idea = minimum_wage }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = prohibition_of_forced_labour add_idea = normal_working_time }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_child_labor }
+				swap_ideas = { remove_idea = prohibition_of_child_labor add_idea = prohibition_of_forced_labour }
+			}
+			else_if = {
+				limit = { has_idea = no_labor_rights_protection }
+				swap_ideas = { remove_idea = no_labor_rights_protection add_idea = prohibition_of_child_labor }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_social_democrat
+		icon = GFX_goal_irn_social_democrat
+		cost = 70
+		prerequisite = { focus = IRN_pensii }
+		x = 35
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = support_reformism
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.05
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_free_internet
+		icon = GFX_goal_irn_free_internet
+		cost = 70
+		prerequisite = { focus = IRN_econom_reforms }
+		x = 39
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = -0.05
+			add_ideas = { free_media }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_social_reforms
+		icon = GFX_goal_irn_social_reforms
+		cost = 70
+		prerequisite = { focus = IRN_econom_reforms }
+		x = 41
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = sharia_law }
+				swap_ideas = { remove_idea = sharia_law add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = limitation_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = suspended_liberties }
+			}
+			else_if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = respect_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = fully_guranted_liberties }
+			}
+			if = {
+				limit = { has_idea = minimum_wage }
+				swap_ideas = { remove_idea = minimum_wage add_idea = pensions }
+			}
+			else_if = {
+				limit = { has_idea = normal_working_time }
+				swap_ideas = { remove_idea = normal_working_time add_idea = minimum_wage }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = prohibition_of_forced_labour add_idea = normal_working_time }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_child_labor }
+				swap_ideas = { remove_idea = prohibition_of_child_labor add_idea = prohibition_of_forced_labour }
+			}
+			else_if = {
+				limit = { has_idea = no_labor_rights_protection }
+				swap_ideas = { remove_idea = no_labor_rights_protection add_idea = prohibition_of_child_labor }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_once_han
+		icon = GFX_goal_irn_once_han
+		cost = 70
+		prerequisite = { focus = IRN_absol_mon	}
+		x = 43
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = 0.15 }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_pol_ref
+		icon = GFX_goal_irn_pol_ref
+		cost = 70
+		prerequisite = { focus = IRN_parl_mon }
+		mutually_exclusive = {	focus = IRN_ref_kons }
+		x = 45
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_political_power = 100	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_ref_kons
+		icon = GFX_goal_irn_ref_kons
+		cost = 70
+		prerequisite = { focus = IRN_dogovor_sun }
+		mutually_exclusive = {	focus = IRN_pol_ref }
+		x = 47
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_sunni_revolution
+		icon = GFX_goal_irn_sunni_revolution
+		cost = 70
+		prerequisite = { focus = IRN_right_islam }
+		mutually_exclusive = {	focus = IRN_save_shiism	}
+		x = 51
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = IRN_sunnism
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_decentralisation
+		icon = GFX_goal_irn_decentralisation
+		cost = 70
+		prerequisite = { focus = IRN_women_rights }
+		prerequisite = { focus = IRN_rab_konst }
+		x = 31
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.05
+			random_owned_state = {add_extra_state_shared_building_slots = 3}
+			random_owned_state = {add_extra_state_shared_building_slots = 3}
+			random_owned_state = {add_extra_state_shared_building_slots = 3}
+			add_ideas = unitary_state_with_devolution
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_relig_ravenstvo
+		icon = GFX_goal_irn_relig_ravenstvo
+		cost = 70
+		prerequisite = { focus = IRN_social_reforms	}
+		x = 41
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = { secular_state }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_reform_army
+		icon = GFX_goal_irn_reform_army
+		cost = 70
+		prerequisite = { focus = IRN_once_han
+						 focus = IRN_pol_ref
+		}
+		x = 43
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { army_experience = 5	}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = IRN_reform_obsch
+		icon = GFX_goal_irn_reform_obsch
+		cost = 70
+		prerequisite = { focus = IRN_pol_ref
+						 focus = IRN_once_han
+		}
+		x = 45
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			if = {
+				limit = { has_idea = sharia_law }
+				swap_ideas = { remove_idea = sharia_law add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = limitation_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = suspended_liberties }
+			}
+			else_if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = respect_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = fully_guranted_liberties }
+			}
+			if = {
+				limit = { has_idea = minimum_wage }
+				swap_ideas = { remove_idea = minimum_wage add_idea = pensions }
+			}
+			else_if = {
+				limit = { has_idea = normal_working_time }
+				swap_ideas = { remove_idea = normal_working_time add_idea = minimum_wage }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = prohibition_of_forced_labour add_idea = normal_working_time }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_child_labor }
+				swap_ideas = { remove_idea = prohibition_of_child_labor add_idea = prohibition_of_forced_labour }
+			}
+			else_if = {
+				limit = { has_idea = no_labor_rights_protection }
+				swap_ideas = { remove_idea = no_labor_rights_protection add_idea = prohibition_of_child_labor }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_persidian_empire
+		icon = GFX_goal_irn_persidian_empire
+		cost = 70
+		prerequisite = { focus = IRN_reform_obsch }
+		prerequisite = { focus = IRN_reform_army }
+		x = 44
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.45
+			add_political_power = 200
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_cvet_democracy
+		icon = GFX_goal_irn_cvet_democracy
+		cost = 70
+		prerequisite = { focus = IRN_ref_kons }
+		x = 47
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = { support_liberalism  support_neutrality  support_conservatism  support_reformism } }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_atom_res
+		icon = GFX_goal_irn_atom_res
+		cost = 70
+		prerequisite = { focus = IRN_save_shiism }
+		x = 49
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				bonus = 0.25
+				category = nuclear_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_religiosni_ref
+		icon = GFX_goal_irn_religiosni_ref
+		cost = 70
+		prerequisite = { focus = IRN_sunni_revolution }
+		x = 51
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = 0.05	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_separate_battle
+		icon = GFX_goal_irn_separate_battle
+		cost = 70
+		prerequisite = { focus = IRN_atom_res }
+		x = 49
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = low_terrorism	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_battle_bezrabotica
+		icon = GFX_goal_irn_battle_bezrabotica
+		cost = 70
+		prerequisite = { focus = IRN_religiosni_ref }
+		x = 51
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_stability = 0.05	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_islam_republick
+		icon = GFX_goal_irn_islam_republick
+		cost = 70
+		prerequisite = { focus = IRN_separate_battle focus = IRN_battle_bezrabotica }
+		x = 50
+		y = 10
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = { add_ideas = support_islamists	}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_free_torg
+		icon = GFX_goal_irn_free_torg
+		cost = 70
+		prerequisite = { focus = IRN_relig_ravenstvo }
+		x = 42
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = { free_trade }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_chas_sobst
+		icon = GFX_goal_irn_chas_sobst
+		cost = 70
+		prerequisite = { focus = IRN_relig_ravenstvo }
+		x = 40
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = { free_market }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_state_liberalov
+		icon = GFX_goal_irn_state_liberalov
+		cost = 70
+		prerequisite = { focus = IRN_chas_sobst }
+		prerequisite = { focus = IRN_free_torg }
+		x = 41
+		y = 10
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_popularity ={
+				ideology = liberalism
+				popularity = 0.1
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_communa
+		icon = GFX_goal_irn_viva_la_petux
+		cost = 70
+		prerequisite = { focus = IRN_decentralisation }
+		x = 31
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_stability = 0.15
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_ideas = support_socialism
+			if = {
+				limit = { has_idea = sharia_law }
+				swap_ideas = { remove_idea = sharia_law add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = limitation_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = lack_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = suspended_liberties }
+			}
+			else_if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = respect_of_liberties }
+			}
+			else_if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = fully_guranted_liberties }
+			}
+			if = {
+				limit = { has_idea = minimum_wage }
+				swap_ideas = { remove_idea = minimum_wage add_idea = pensions }
+			}
+			else_if = {
+				limit = { has_idea = normal_working_time }
+				swap_ideas = { remove_idea = normal_working_time add_idea = minimum_wage }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_forced_labour }
+				swap_ideas = { remove_idea = prohibition_of_forced_labour add_idea = normal_working_time }
+			}
+			else_if = {
+				limit = { has_idea = prohibition_of_child_labor }
+				swap_ideas = { remove_idea = prohibition_of_child_labor add_idea = prohibition_of_forced_labour }
+			}
+			else_if = {
+				limit = { has_idea = no_labor_rights_protection }
+				swap_ideas = { remove_idea = no_labor_rights_protection add_idea = prohibition_of_child_labor }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = IRN_special_forces_2
+		icon = GFX_goal_generic_special_forces
+		cost = 70
+		prerequisite = { focus = IRN_special_forces }
+		x = 76
+		y = 11
+		ai_will_do = { factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 70
+		prerequisite = {
+			focus = IRN_large_navy
+			focus = IRN_flexible_navy
+		}
+		x = 85
+		y = 3
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = IRN_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		cost = 70
+		prerequisite = { focus = IRN_cruiser_effort	}
+		x = 85
+		y = 4
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+				add_tech_bonus = {
+					name = capital_ships_bonus
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 1
+					technology = body_strike_cruiser
+					technology = body_strike_cruiser_nr
+					technology = body_strike_cruiser1
+					technology = body_strike_cruiser1_nr
+					technology = body_strike_cruiser2
+					technology = body_strike_cruiser2_nr
+					technology = body_strike_cruiser3
+					technology = body_strike_cruiser3_nr
+				}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+}

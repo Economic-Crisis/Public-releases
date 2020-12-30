@@ -1,0 +1,1754 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+add_namespace = conservatism
+
+# Популярность больше 10%
+country_event = {
+	id = conservatism.1
+	title = conservatism.1.t
+	desc = conservatism.1.d
+	picture = GFX_event_conservatism_rise_10
+
+	trigger = {
+		democratic > 0.1
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_10
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_10
+	}
+
+	option = { # Коалиция с консерваторами
+		name = conservatism.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.1.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = liberalism
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				coalition_with_conservators = yes # Создать коалицию с консерваторами
+			}
+			20 = {}
+		}
+		add_conservator = yes # Можно добавить консерватора в правительство
+	}
+
+	option = { # Не враждовать с консерваторами
+		name = conservatism.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.1.b"
+		ai_chance = {
+			base = 35
+		}
+		add_conservator = yes # Можно добавить консерватора в правительство
+	}
+
+	option = { # Выступать против консерватизма
+		name = conservatism.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.1.c"
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = oppose_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.01
+		}
+		add_stability = -0.005
+		add_political_power = -20
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.1.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.1.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность больше 10%, однопартийный режим
+country_event = {
+	id = conservatism.2
+	title = conservatism.2.t
+	desc = conservatism.2.d
+	picture = GFX_event_conservatism_rise_10
+
+	trigger = {
+		democratic > 0.1
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_10
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_10
+	}
+
+	option = { # Игнорировать консерваторов
+		name = conservatism.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.2.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.2.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -20
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = conservatism.3
+	title = conservatism.3.t
+	desc = conservatism.3.d
+	picture = GFX_event_conservatism_decrease_10
+
+	trigger = {
+		has_country_flag = conservatism_10
+		democratic < 0.08
+		NOT = {
+			has_government = democratic
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = conservatism.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.3.a"
+		clr_country_flag = conservatism_10
+		clr_country_flag = oppose_conservatism
+		clr_country_flag = suppress_conservatism
+		remove_conservator = yes
+		no_coalition_with_conservators = yes
+	}
+}
+
+# Популярность больше 25%
+country_event = {
+	id = conservatism.4
+	title = conservatism.4.t
+	desc = conservatism.4.d
+	picture = GFX_event_conservatism_rise_25
+
+	trigger = {
+		has_country_flag = conservatism_10
+		democratic > 0.25
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_25
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_25
+	}
+
+	option = { # Сохранить коалицию с консерваторами
+		name = conservatism.4.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.y"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.005
+		add_political_power = 20
+		add_conservator = yes
+	}
+
+	option = { # Разорвать коалицию с консерваторами
+		name = conservatism.4.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.n"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_conservators = yes
+		add_stability = -0.01
+		add_political_power = -30
+	}
+
+	option = { # Коалиция с консерваторами
+		name = conservatism.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = liberalism
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			60 = {
+				coalition_with_conservators = yes
+			}
+			40 = {}
+		}
+		add_conservator = yes
+	}
+
+	option = { # Не враждовать с консерваторами
+		name = conservatism.4.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.b"
+		trigger = {
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_conservator = yes
+		clr_country_flag = oppose_conservatism
+	}
+
+	option = { # Выступать против консерватизма
+		name = conservatism.4.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.c"
+		trigger = {
+			has_coalition_with_conservators = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = oppose_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.03
+		}
+		add_stability = -0.015
+		add_political_power = -30
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.4.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.4.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_conservatism
+		clr_country_flag = oppose_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+	}
+}
+
+# Популярность больше 25%, однопартийный режим
+country_event = {
+	id = conservatism.5
+	title = conservatism.5.t
+	desc = conservatism.5.d
+	picture = GFX_event_conservatism_rise_25
+
+	trigger = {
+		has_country_flag = conservatism_10
+		democratic > 0.25
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_25
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_25
+	}
+
+	option = { # Пойти на уступки
+		name = conservatism.5.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.5.b"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = 0.02
+		add_political_power = -200
+		add_conservator = yes
+	}
+
+	option = { # Игнорировать консерваторов
+		name = conservatism.5.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.5.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.5.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.5.s"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = conservatism.6
+	title = conservatism.6.t
+	desc = conservatism.6.d
+	picture = GFX_event_conservatism_decrease_25
+
+	trigger = {
+		has_country_flag = conservatism_25
+		democratic < 0.2
+		NOT = {
+			has_government = democratic
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = conservatism.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.6.a"
+		clr_country_flag = conservatism_25
+		remove_conservator = yes
+	}
+}
+
+# Популярность больше 40%
+country_event = {
+	id = conservatism.7
+	title = conservatism.7.t
+	desc = conservatism.7.d
+	picture = GFX_event_conservatism_rise_40
+
+	trigger = {
+		has_country_flag = conservatism_25
+		democratic > 0.4
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_40
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_40
+	}
+
+	option = { # Сохранить коалицию с консерваторами
+		name = conservatism.7.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.y"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.015
+		add_political_power = 30
+		add_conservator = yes
+	}
+
+	option = { # Разорвать коалицию с консерваторами
+		name = conservatism.7.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.n"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_conservators = yes
+		add_stability = -0.02
+		add_political_power = -50
+	}
+
+	option = { # Коалиция с консерваторами
+		name = conservatism.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = liberalism
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			40 = {
+				coalition_with_conservators = yes
+			}
+			60 = {}
+		}
+		add_conservator = yes
+	}
+
+	option = { # Не враждовать с консерваторами
+		name = conservatism.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.b"
+		trigger = {
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_conservator = yes
+		clr_country_flag = oppose_conservatism
+	}
+
+	option = { # Выступать против консерваторов
+		name = conservatism.7.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.c"
+		trigger = {
+			has_coalition_with_conservators = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = oppose_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.7.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+		clr_country_flag = oppose_conservatism
+	}
+
+	option = { # Пойти на уступки
+		name = conservatism.7.o
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.o"
+		trigger = {
+			is_democracy = no
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = absolute_monarchy
+			}
+			swap_ideas = {
+				remove_idea = absolute_monarchy
+				add_idea = semi-parliamentary_monarchy
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+	}
+}
+
+# Популярность больше 40%, однопартийный режим
+country_event = {
+	id = conservatism.8
+	title = conservatism.8.t
+	desc = conservatism.8.d
+	picture = GFX_event_conservatism_rise_40
+
+	trigger = {
+		has_country_flag = conservatism_25
+		democratic > 0.4
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_40
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_40
+	}
+
+	option = { # Пойти на уступки
+		name = conservatism.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.8.a"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+		add_conservator = yes
+	}
+
+	option = { # Игнорировать консерваторов
+		name = conservatism.8.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.8.b"
+		trigger = {
+			government_popularity_50 = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.8.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.8.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = -0.02
+		add_political_power = -50
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = conservatism.9
+	title = conservatism.9.t
+	desc = conservatism.9.d
+	picture = GFX_event_conservatism_decrease_40
+
+	trigger = {
+		has_country_flag = conservatism_40
+		democratic < 0.32
+		NOT = {
+			has_government = democratic
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = conservatism.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.9.a"
+		clr_country_flag = conservatism_40
+		remove_conservator = yes
+	}
+}
+
+# Популярность больше 50%, демократия
+country_event = {
+	id = conservatism.10
+	title = conservatism.10.t
+	desc = conservatism.10.d
+	picture = GFX_event_conservatism_rise_50
+
+	trigger = {
+		has_country_flag = conservatism_40
+		democratic > 0.5
+		NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_50
+		}
+		is_democracy = yes
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_50
+	}
+
+	option = { # Сохранить коалицию с консерваторами
+		name = conservatism.10.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.10.y"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.02
+		add_political_power = 50
+		add_conservator = yes
+	}
+
+	option = { # Разорвать коалицию с консерваторами
+		name = conservatism.10.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.10.n"
+		trigger = {
+			has_coalition_with_conservators = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_conservators = yes
+		add_stability = -0.03
+		add_political_power = -100
+	}
+
+	option = { # Коалиция с консерваторами
+		name = conservatism.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = liberalism
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			20 = {
+				coalition_with_conservators = yes
+			}
+			80 = {}
+		}
+		add_conservator = yes
+	}
+
+	option = { # Не враждовать с консерваторами
+		name = conservatism.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.b"
+		trigger = {
+			has_coalition_with_conservators = no
+			NOT = {
+				has_country_flag = suppress_conservatism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_conservator = yes
+		clr_country_flag = oppose_conservatism
+	}
+
+	option = { # Выступать против консерваторов
+		name = conservatism.7.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.c"
+		trigger = {
+			has_coalition_with_conservators = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = oppose_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_stability = -0.03
+		add_political_power = -100
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.7.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.7.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_conservatism
+				has_country_flag = suppress_conservatism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = -0.05
+		add_political_power = -150
+		clr_country_flag = oppose_conservatism
+	}
+}
+
+# Популярность больше 50%, не демократия
+country_event = {
+	id = conservatism.11
+	title = conservatism.11.t
+	desc = conservatism.11.d
+	picture = GFX_event_conservatism_rise_50
+
+	trigger = {
+		has_country_flag = conservatism_40
+		democratic > 0.5
+	 	NOT = {
+			has_government = democratic
+			has_country_flag = conservatism_50
+		}
+		is_democracy = no
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = conservatism_50
+	}
+
+	option = { # Уступить власть
+		name = conservatism.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.11.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 850
+				has_country_flag = pai__conservator
+			}
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = democratic
+					ideology = ROOT
+					size = 0.3
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_conservatism
+		clr_country_flag = conservatism_10
+		clr_country_flag = conservatism_25
+		clr_country_flag = conservatism_40
+		clr_country_flag = conservatism_50
+	}
+
+	option = { # Пойти на уступки
+		name = conservatism.11.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.11.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		if = {
+			limit = {
+				has_idea = single-party_state
+			}
+			swap_ideas = {
+				remove_idea = single-party_state
+				add_idea = parliamentary_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_stability = 0.05
+		add_political_power = -500
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.3
+		}
+		clr_country_flag = suppress_conservatism
+	}
+
+	option = { # Ожидать развития событий
+		name = conservatism.11.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.11.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.11.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.11.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = conservatism.12
+	title = conservatism.12.t
+	desc = conservatism.12.d
+	picture = GFX_event_conservatism_decrease_50
+
+	trigger = {
+		has_country_flag = conservatism_50
+		democratic < 0.4
+		NOT = {
+			has_government = democratic
+		}
+	}
+	mean_time_to_happen = {
+		days = 180
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = conservatism.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.12.a"
+		clr_country_flag = conservatism_50
+		remove_conservator = yes
+	}
+}
+
+# Популярность больше 60%, демократия
+country_event = {
+	id = conservatism.13
+	title = conservatism.13.t
+	desc = conservatism.13.d
+	picture = GFX_event_conservatism_rise_60
+
+	trigger = {
+		has_country_flag = conservatism_50
+		democratic > 0.6
+		NOT = {
+			has_government = democratic
+			has_idea = no_early_election_idea
+		}
+		is_democracy = yes
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	option = { # Назначить досрочные выборы (консерваторы побеждают)
+		name = conservatism.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.13.a"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 150
+				has_country_flag = pai_democrat_right
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = oppose_conservatism
+		clr_country_flag = suppress_conservatism
+		clr_country_flag = conservatism_10
+		clr_country_flag = conservatism_25
+		clr_country_flag = conservatism_40
+		clr_country_flag = conservatism_50
+		clr_country_flag = conservatism_60
+	}
+
+	option = { # Нет досрочных выборов
+		name = conservatism.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.13.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		add_stability = -0.03
+		add_political_power = -100
+		set_country_flag = oppose_conservatism
+		clr_country_flag = suppress_conservatism
+		add_ideas = no_early_election_idea
+	}
+
+	option = { # Подавлять консерватизм
+		name = conservatism.13.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.13.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai_nondem_reformator
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_conservatism
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_stability = -0.05
+		add_political_power = -150
+		clr_country_flag = oppose_conservatism
+		add_ideas = no_early_election_idea
+	}
+}
+
+# Популярность больше 60%, не демократия
+country_event = {
+	id = conservatism.14
+	title = conservatism.14.t
+	desc = conservatism.14.d
+	picture = GFX_event_conservatism_rise_60
+
+	trigger = {
+		has_country_flag = conservatism_50
+		democratic > 0.6
+		NOT = {
+			has_government = democratic
+		}
+		is_democracy = no
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	option = { # Уступить власть
+		name = conservatism.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.14.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = democratic
+					ideology = ROOT
+					size = 0.25
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_conservatism
+		clr_country_flag = conservatism_10
+		clr_country_flag = conservatism_25
+		clr_country_flag = conservatism_40
+		clr_country_flag = conservatism_50
+	}
+
+	option = { # Гражданская война
+		name = conservatism.14.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): conservatism.14.b"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		start_civil_war = {
+			ideology = democratic
+			size = 0.5
+		}
+	}
+}

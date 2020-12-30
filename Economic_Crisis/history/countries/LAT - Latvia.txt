@@ -1,0 +1,240 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 12
+
+add_ideas = {
+	eu_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3025 }
+
+	oob = "LAT_2013"
+	load_oob = "_tech_nato_minor_2013"
+	
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		NPT
+		terrorism_discounted
+	}
+	
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.10.3"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 29
+		liberalism = 1
+		democratic = 39
+		neutrality = 17
+		fascism = 14
+		rad_islamists = 0
+	}
+
+	#Премьер с 2016
+	create_country_leader = {
+		name = "Māris Kučinskis"
+		desc = "POLITICS_MĀRIS_KUČINSKIS_DESC"
+		picture = "gfx/leaders/lat/portrait_maris_kucinskis.dds"
+		ideology = green_conservatism
+		traits = { trait_green_conservatism }
+	}
+
+
+	#Премьер в 2014-2016
+	create_country_leader = {
+		name = "Laimdota Straujuma"
+		desc = "POLITICS_LAIMDOTA_STRAUJUMA_DESC"
+		picture = "gfx/leaders/lat/portrait_laimdota_straujuma.dds"
+		ideology = liberal_conservatism
+		expire = "2016.2.11"	
+		traits = { trait_liberal_conservatism }
+	}
+
+	#Премьер в 2013-14
+	create_country_leader = {
+		name = "Valdis Dombrovskis"
+		desc = "POLITICS_VALDIS_DOMBROVSKIS_DESC"
+		picture = "gfx/leaders/lat/portrait_valdis_dombrovskis.dds"
+		ideology = liberal_conservatism
+		expire = "2014.1.22"
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Nils Ušakovs"
+		desc = "POLITICS_NILS_UŠAKOVS_DESC"
+		picture = "gfx/leaders/lat/portrait_nils_usakovs.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Raivis Dzintars"
+		desc = "POLITICS_RAIVIS_DZINTARS_DESC"
+		picture = "gfx/leaders/lat/portrait_raivis_dzintars.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Mārtiņš Bondars"
+		desc = "POLITICS_MARTINS_BONDARS_DESC"
+		picture = "gfx/leaders/lat/portrait_martins_bondars.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Vladimir Frolov"
+		desc = "POLITICS_VLADIMIR_FROLOV_DESC"
+		picture = "gfx/leaders/lat/portrait_vladimir_frolov.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_field_marshal = {
+		name = "Leonids Kalnins"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_leonids_kalnins.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Juris Zeibarts"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_juris_zeibarts.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Ilmars Lejins"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_tlmars_lejins.dds"
+		traits = { inspirational_leader old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Normunds Aleksis"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_normunds_aleksis.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Janis Gailis"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_janis_gailis.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Viktors Kareckis"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_viktors_kareckis.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Gvido Brenneris"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_gvido_brenneris.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Brigita Gulbe"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_brigita_gulbe.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Raivis Melnis"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_raivis_melnis.dds"
+		traits = { naval_invader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Armands Saltups"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_armands_saltups.dds"
+		traits = { winter_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Martins Liberts"
+		portrait_path = "gfx/leaders/LAT/portrait_lat_general_martins_liberts.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+}
+

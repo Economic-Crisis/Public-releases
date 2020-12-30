@@ -1,0 +1,622 @@
+﻿## Economic Crisis: Скриптовая смена лидеров
+## By Kuban Animator
+add_namespace = change_leader
+
+#Свободная сирийская армия
+country_event = {
+	id = change_leader.1
+	title = change_leader.1.t
+	desc = change_leader.1.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = FSA
+		country_exists = FSA
+		date > 2014.7.9
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.1.a"
+		create_country_leader = {
+			name = "Hadi al-Bahra"
+			picture = "gfx/leaders/FSA/portrait_hadi_al_bahra.dds"
+			expire = "2015.1.4"
+			ideology = junta
+			traits = { trait_junta }
+		}
+	}
+
+}
+
+#Свободная сирийская армия
+country_event = {
+	id = change_leader.2
+	title = change_leader.2.t
+	desc = change_leader.2.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = FSA
+		country_exists = FSA
+		date > 2015.1.1
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.2.a"
+		create_country_leader = {
+			name = "Khaled Khodja"
+			picture = "gfx/leaders/FSA/portrait_khaled_khoja.dds"
+			ideology = junta
+			expire = "2016.3.5"
+			traits = { trait_junta }
+		}
+	}
+
+}
+
+#Амбазония
+country_event = {
+	id = change_leader.3
+	title = change_leader.3.t
+	desc = change_leader.3.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = AMB
+		country_exists = AMB
+		date > 2018.2.1
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.3.a"
+		create_country_leader = {
+			name = "Samuel Ikome Sako"
+			picture = "gfx/leaders/AMB/portrait_samuel_ikome_sako.dds"
+			ideology = irredentism
+			traits = { trait_irredentism }
+		}
+	}
+
+}
+
+#Германия
+country_event = {  # Christian Lindner
+	id = change_leader.4
+	title = change_leader.4.t
+	desc = change_leader.4.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = GER
+		NOT = {	has_government = liberalism } 
+		#has_country_flag = ger_free_democratic_party
+		date > 2013.12.4
+	}
+
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.4.a"
+		create_country_leader = {
+			name = "Christian Lindner"
+			desc = "POLITICS_CHRISTIAN_LINDNER_DESC"
+			picture = "gfx/leaders/GER/portrait_christian_lindner.dds"
+			ideology = classical_liberalism
+			traits = { trait_classical_liberalism }
+		}
+	}
+
+}
+
+#Свободная сирийская армия
+country_event = {
+	id = change_leader.5
+	title = change_leader.5.t
+	desc = change_leader.5.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = FSA
+		country_exists = FSA
+		date > 2016.3.2
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.5.a"
+		create_country_leader = {
+			name = "Anas al-Abdah"
+			picture = "gfx/leaders/FSA/portrait_anas_al-abdah.dds"
+			ideology = junta
+			traits = { trait_junta }
+		}
+	}
+
+}
+
+country_event = { #Умерла лидер Партии молодых друзей небесного пути
+	id = change_leader.6
+	title = change_leader.6.t
+	desc = change_leader.6.d
+	picture = GFX_event_nko_social_democratic_party
+
+	trigger = {
+		tag = NKO
+		country_exists = NKO
+		date > 2016.11.20
+	}
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	
+	option = {
+	    name = change_leader.6.a
+		kill_ideology_leader = neutrality
+		create_country_leader = {
+			name = "Yun Jong-ho"
+			picture = "gfx/leaders/NKO/portrait_yun_jong_ho.dds"
+			ideology = centrist_democracy #pseudo-conservatism, democratic socialism
+			traits = { trait_centrist_democracy }
+		}
+	}
+	
+}
+
+country_event = {
+	id = change_leader.7
+	title = change_leader.7.t
+	desc = change_leader.7.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = VIN
+		country_exists = VIN
+		date > 2016.1.28
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.7.a"
+		create_country_leader = {
+			name = "Trần Đại Quang"
+			desc = "POLITICS_TRAN_DAI_QUANG_DESC"
+			picture = "gfx/leaders/VIN/portrait_tran_dai_quang.dds"
+			ideology = leninism
+			traits = { trait_leninism }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.8
+	title = change_leader.8.t
+	desc = change_leader.8.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = LAO
+		country_exists = LAO
+		date > 2016.1.19
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.8.a"
+		create_country_leader = {
+			name = "Bounnhang Vorachit"
+			desc = ""
+			picture = "gfx/leaders/LAO/portrait_bounnhang_vorachit.dds"
+			ideology = leninism
+			traits = { trait_leninism }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.9
+	title = change_leader.9.t
+	desc = change_leader.9.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = ROJ
+		country_exists = ROJ
+		date > 2016.7.15
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.9.a"
+		create_country_leader = {
+			name = "Mansur Selum"
+			desc = ""
+			picture = "gfx/leaders/ROJ/portrait_mansur_selum.dds"
+			ideology = democratic_socialism
+			traits = { trait_democratic_socialism }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.10
+	title = change_leader.10.t
+	desc = change_leader.10.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = SML
+		country_exists = SML
+		date > 2017.11.10
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.10.a"
+		create_country_leader = {
+			name = "Muse Bihi Abdi"
+			picture = "gfx/leaders/SML/portrait_muse_bihi_abdi.dds"
+			ideology = social_liberalism
+			traits = { trait_social_liberalism }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.11
+	title = change_leader.11.t
+	desc = change_leader.11.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = SWS
+		country_exists = SWS
+		date > 2017.11.14
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.11.a"
+		create_country_leader = {
+			name = "Sharif Hassan Sheikh Aden"
+			picture = "gfx/leaders/SWS/portrait_sharif_hassan_sheikh_aden.dds"
+			ideology = conservative_democracy
+			expire = "2018.11.7"
+			traits = { trait_conservative_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.12
+	title = change_leader.12.t
+	desc = change_leader.12.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = SWS
+		country_exists = SWS
+		date > 2018.11.4
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.12.a"
+		create_country_leader = {
+			name = "Abdulkadir Sharif Shekhuna Maye"
+			picture = "gfx/leaders/SWS/portrait_abdulkadir_sharif_maye.dds"
+			ideology = conservative_democracy
+			expire = "2018.12.19"
+			traits = { trait_conservative_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.13
+	title = change_leader.13.t
+	desc = change_leader.13.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = SWS
+		country_exists = SWS
+		date > 2018.12.16
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.13.a"
+		create_country_leader = {
+			name = "Abdiaziz Laftagaren"
+			picture = "gfx/leaders/SWS/portrait_abdiaziz_laftagareen.dds"
+			ideology = conservative_democracy
+			traits = { trait_conservative_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.14
+	title = change_leader.14.t
+	desc = change_leader.14.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = HIS
+		country_exists = HIS
+		date > 2017.8.11
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.14.a"
+		create_country_leader = {
+			name = "Ali Abdullahi Gudlawe"
+			picture = "gfx/leaders/SOM/HIS/portrait_ali_abdullahi_gudlawe.dds"
+			ideology = conservative_democracy
+			expire = "2017.9.16"
+			traits = { trait_conservative_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.15
+	title = change_leader.15.t
+	desc = change_leader.15.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = HIS
+		country_exists = HIS
+		date > 2017.9.13
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.15.a"
+		create_country_leader = {
+			name = "Mohamed Abdi Waare"
+			picture = "gfx/leaders/SOM/HIS/portrait_mohamed_abdi_waare.dds"
+			ideology = conservative_democracy
+			traits = { trait_conservative_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.16
+	title = change_leader.16.t
+	desc = change_leader.16.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = YEM
+		country_exists = YEM
+		NOT = { has_government = communism }
+		date > 2015.1.1
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.16.a"
+		create_country_leader = {
+			name = "Abdulraham Al-Saqqaf"
+			desc = "POLITICS_ABDULRAHAM_AL_SAQQAF_DESC"
+			picture = "gfx/leaders/YEM/portrait_abdulraham_al_saqqaf.dds"
+			ideology = marxism
+			traits = { trait_marxism }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.17
+	title = change_leader.17.t
+	desc = change_leader.17.d
+	fire_only_once = yes
+	picture = GFX_event_als_death_ahmed_abdi_godane
+
+	trigger = {
+		tag = ALS
+		country_exists = ALS
+		date > 2014.8.30
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.17.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.17.a"
+		add_stability = -0.1
+		hidden_effect = {
+			ALS = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			ASW = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			AWD = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			GAS = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			HAH = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			HIS = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			JUB = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			KSS = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			SML = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			SOM = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+			SWS = {
+				kill_ideology_leader = rad_islamists
+				create_country_leader = {
+					name = "Ahmad Umar"
+					picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+					ideology = wahhabism
+					traits = { trait_wahhabism }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = change_leader.18
+	title = change_leader.18.t
+	desc = change_leader.18.d
+	fire_only_once = yes
+	picture = GFX_event_tal_death_akhtar_mansour
+
+	trigger = {
+		tag = TAL
+		country_exists = TAL
+		country_exists = AFG
+		date > 2016.5.18
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.18.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.18.a"
+		add_stability = -0.1
+		create_country_leader = {
+			name = "Hibatullah Akhundzada"
+			desc = ""
+			picture = "gfx/leaders/TAL/portrait_hibatullah_akhundzada.dds"
+			ideology = wahhabism
+			traits = { trait_wahhabism }
+		}
+	}
+
+}
+

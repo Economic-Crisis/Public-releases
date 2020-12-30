@@ -1,0 +1,117 @@
+video_assign_division = {
+	video = assign_division.mp4
+	title = "VIDEO_TITLE_SELECT_CREATE_ARMY"
+	custom_icon = GFX_thumbnail_assign_division
+	trigger = { always = yes }
+	alerts = { alert_unassigned_divisions }
+}
+
+video_train_division = {
+	video = train_division.mp4
+	title = "VIDEO_TITLE_TRAIN_DEPLOY_DIVISIONS"
+	custom_icon = GFX_thumbnail_train_division
+	trigger = { always = yes }
+	alerts = { 
+		alert_not_training_divisions 
+		alert_deployment_ready
+	}
+}
+
+video_assign_offensive = {
+	video = assign_offensive.mp4
+	title = "VIDEO_TITLE_ASSIGN_OFFENSIVE_LINE"
+	custom_icon = GFX_thumbnail_assign_offensive
+	trigger = { always = yes }
+	alerts = { }
+}
+
+video_manpower = {
+	video = manpower.mp4
+	title = "VIDEO_TITLE_INCREASE_MANPOWER"
+	custom_icon = GFX_thumbnail_manpower
+	trigger = { always = yes }
+	alerts = { alert_few_manpower }
+}
+
+video_assign_fleet = {
+	video = assign_fleet.mp4
+	title = "VIDEO_TITLE_ASSIGN_FLEET_TASK"
+	custom_icon = GFX_thumbnail_assign_fleet
+	alerts = {  }
+}
+
+video_create_air = {
+	video = create_air.mp4
+	title = "VIDEO_TITLE_CREATE_AIR_WING"
+	custom_icon = GFX_thumbnail_create_air
+	trigger = { always = yes }
+	alerts = { 
+		alert_air_reserve_unused
+	}
+}
+
+video_assign_air_army = {
+	video = assign_air_army.mp4
+	title = "VIDEO_TITLE_ASSIGN_AIR_ARMY"
+	custom_icon = GFX_thumbnail_assign_air_army
+	trigger = { 
+		check_variable = { num_orders_groups > 0 }
+	}
+	alerts = { 
+		alert_air_wings_unassigned 
+	}
+}
+
+video_assign_air_region = {
+	video = assign_air_region.mp4
+	title = "VIDEO_TITLE_ASSING_AIR_REGION"
+	custom_icon = GFX_thumbnail_assign_air_region
+	trigger = { 
+		check_variable = { num_orders_groups < 1 }
+	}
+	alerts = {
+		alert_air_wings_unassigned 
+	}
+}
+
+video_military_factories = {
+	video = military_factories.mp4
+	title = "VIDEO_TITLE_MILITARY_FACTORIES"
+	custom_icon = "GFX_thumbnail_military_factories"
+	trigger = { always = yes }
+	alerts = {
+		alert_no_equipment_production
+		alert_free_military_factories
+	}
+}
+
+video_civilian_factories = {
+	video = civilian_factories.mp4
+	title = "VIDEO_TITLE_CIVILIAN_FACTORIES"
+	custom_icon = GFX_thumbnail_civilian_factories
+	alerts = { alert_free_civilian_factories }
+}
+
+video_dockyards = {
+	video = dockyards.mp4
+	title = "VIDEO_TITLE_DOCKYARDS"
+	custom_icon = GFX_thumbnail_dockyards
+	trigger = { always = yes }
+	alerts = { alert_free_naval_dockyards }
+}
+
+video_trade = {
+	video = trade.mp4
+	title = "VIDEO_TITLE_TRADE"
+	custom_icon = GFX_thumbnail_trade
+	trigger = { always = yes }
+	alerts = { alert_lack_of_resources }
+}
+
+video_declare_war = {
+	video = declare_war.mp4
+	title = "VIDEO_TITLE_DECLARE_WAR"
+	custom_icon = GFX_thumbnail_declare_war
+	trigger = { always = yes }
+	alerts = {  }
+}

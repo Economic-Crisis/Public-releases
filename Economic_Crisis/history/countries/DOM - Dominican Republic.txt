@@ -1,0 +1,60 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 319
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 6197 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = {
+		low_terrorism
+		mixed_schools
+		presidential_republic
+		NPT
+	}
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2012.5.20"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 60
+		democratic = 0
+		neutrality = 40
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Danilo Medina"
+		desc = "POLITICS_DANILO_MEDINA_DESC"
+		picture = "gfx/leaders/DOM/portrait_danilo_medina.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Hipolito Mejia"
+		desc = "POLITICS_HIPOLITO_MEJIA_DESC"
+		picture = "gfx/leaders/DOM/portrait_hipolito_mejia.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+}
+

@@ -1,0 +1,2736 @@
+focus_tree = {
+	id = isis_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ISS
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1350 }
+
+#   Шаблон
+#	focus = {
+#		id = ISS_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		relative_position_id =
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		cost = 70
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#		ai_will_do = { factor = 1 }
+#		available = { }
+#		bypass = {	}
+#		complete_tooltip = {	}
+#		completion_reward = {	}
+#	}
+
+	focus = {
+		id = IGL_jihad #Джихад!
+		icon = GFX_goal_iss_jihad
+		x = 6
+		y = 0
+		cost = 70
+		ai_will_do = { factor = 6 }
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 120
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+		id = IGL_syrian_campaign #Сирийская компания
+		prerequisite = { focus = IGL_jihad }
+		icon = GFX_goal_iss_syrian_campaign
+		x = 2
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 8 }
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 3 name = threat_IGL_syrian_campaign }
+			add_state_claim = 554
+			add_state_claim = 680
+			add_state_claim = 677
+			add_state_claim = 779
+			add_state_claim = 776
+			add_state_claim = 830
+			add_state_core = 554
+			add_state_core = 680
+			add_state_core = 677
+			add_state_core = 779
+			add_state_core = 776
+			add_state_core = 830
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_blow_to_israel #Удар по Израилю
+		prerequisite = { focus = IGL_syrian_campaign }
+		icon = GFX_goal_iss_blow_to_israel
+		x = 1
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			controls_state = 554
+			controls_state = 680
+			controls_state = 677
+		}
+		completion_reward = {
+			add_state_claim = 454
+			add_state_core = 454
+			create_wargoal = { type = annex_everything target = ISR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_faction_with_pal #Договор с Палестиной
+		mutually_exclusive = { focus = IGL_annex_pal }
+		prerequisite = { focus = IGL_blow_to_israel }
+		icon = GFX_goal_iss_faction_with_pal
+		x = 0
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			PAL = {
+				add_popularity = { ideology = rad_islamists popularity = 0.3 }
+				country_event = { id = isis.1 days = 4 }
+			}
+			effect_tooltip = { add_to_faction = PAL }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_annex_pal #Присоединение Палестины
+		mutually_exclusive = { focus = IGL_faction_with_pal }
+		prerequisite = { focus = IGL_blow_to_israel }
+		icon = GFX_goal_iss_annex_pal
+		x = 2
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_state_claim = 777
+			add_state_core = 777
+			PAL = {	country_event = isis.3	}
+			effect_tooltip = {	annex_country = { target = PAL } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_war_with_jordan #Борьба с Иорданией
+		prerequisite = { focus = IGL_faction_with_pal focus = IGL_annex_pal }
+		icon = GFX_goal_iss_war_with_jordan
+		x = 1
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = { controls_state = 554 }
+		completion_reward = {
+			add_state_claim = 455
+			add_state_core = 455
+			create_wargoal = { type = annex_everything target = JOR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_path_to_mekka #Дорога к Мекке
+		prerequisite = { focus = IGL_war_with_jordan }
+		icon = GFX_goal_iss_path_to_mekka
+		x = 1
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			NOT = {
+				country_exists = JOR
+				country_exists = ISR
+			}
+		}
+		completion_reward = {
+			add_state_claim = 292
+			add_state_core = 292
+			create_wargoal = { type = annex_everything target = SAU }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_iraqi_campaign #Иракская компания
+		prerequisite = { focus = IGL_jihad }
+		icon = GFX_goal_iss_iraqi_campaign
+		x = 5
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 8 }
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 3 name = threat_IGL_iraq_campaign }
+			add_state_claim = 778
+			add_state_claim = 291
+			add_state_claim = 675
+			add_state_claim = 676
+			add_state_core = 778
+			add_state_core = 291
+			add_state_core = 675
+			add_state_core = 656
+			add_state_core = 676
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_friends #Союзники в Афганистане
+		prerequisite = { focus = IGL_iraqi_campaign }
+		icon = GFX_goal_iss_friends
+		x = 5
+		y = 3
+		cost = 10
+		ai_will_do = { factor = 2 }
+		available = { country_exists = TAL } 
+		#bypass = { NOT = { country_exists = TAL } }
+		completion_reward = {
+			TAL = { country_event = { id = isis.10 days = 4 } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_friendsALQ #Союзники в Афганистане
+		prerequisite = { focus = IGL_iraqi_campaign }
+		icon = GFX_goal_iss_friends
+		x = 5
+		y = 2
+		cost = 10
+		ai_will_do = { factor = 2 }
+		available = { country_exists = ALQ }
+		#bypass = { NOT = { country_exists = ALQ } }
+		completion_reward = {
+			ALQ = { country_event = { id = isis.10 days = 4 } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = IGL_volya_allaxa #Воля Аллаха
+		prerequisite = { focus = IGL_iraqi_campaign }
+		prerequisite = { focus = IGL_syrian_campaign }
+		icon = GFX_goal_iss_will_of_allah
+		x = 3
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+		    ISS = {
+			    controls_state = 776
+				controls_state = 677
+				controls_state = 554
+				controls_state = 779
+				controls_state = 778
+				controls_state = 676
+				controls_state = 680
+				controls_state = 291
+				controls_state = 675
+				controls_state = 656
+			}
+		}
+		completion_reward = {
+			add_research_slot = 1
+			ADD_TIMED_IDEA = { idea = IGL_volya_allaxa_idea days = 730 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = IGL_revolt_in_asia #Восстание в Средней Азии
+		prerequisite = { focus = IGL_iraqi_campaign }
+		#prerequisite = { focus = IGL_friends }
+		icon = GFX_goal_iss_revolt_in_asia
+		x = 4
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+		    country_exists = UZB
+			country_exists = TAJ
+			country_exists = TMS
+			country_exists = KYR
+			NOT = {
+			    country_exists = SYR
+			    country_exists = IRQ
+			    country_exists = FSA
+			    country_exists = KUR
+			}
+		    has_army_manpower = { size > 50999 }
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = TAJ
+						tag = UZB
+						tag = TMS
+					}
+				}
+				add_popularity = { ideology = rad_islamists popularity = 0.3 }
+				start_civil_war = { ideology = rad_islamists size = 0.3 }
+				country_event = { id = isis.5 days = 1 }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							original_tag = TAJ
+							original_tag = UZB
+							original_tag = TMS
+						}
+						NOT = {
+							tag = TAJ
+							tag = UZB
+							tag = TMS
+						}
+						has_government = rad_islamists
+					}
+					country_event = { id = isis.10 days = 4 }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = { #Война на Кавказе
+		id = IGL_war_in_caucasus
+		prerequisite = { focus = IGL_iraqi_campaign }
+		icon = GFX_goal_iss_war_in_caucasus
+		x = 6
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			NOT = {
+			    country_exists = SYR
+			    country_exists = IRQ
+			    country_exists = FSA
+			    country_exists = KUR
+			}
+		    has_army_manpower = { size > 40099 }
+		}
+		completion_reward = {
+			hidden_effect = {
+				ISC = {
+					transfer_state = 821
+					transfer_state = 887
+					transfer_state = 820
+					transfer_state = 232
+					transfer_state = 233
+					transfer_state = 885
+					transfer_state = 886
+					transfer_state = 888
+					load_oob = "_tech_isis_2013"
+					load_oob = ISC_2013
+				}
+			}
+			country_event = isis.37
+			add_to_faction = ISC
+			hidden_effect = {
+				RUS = { declare_war_on = { target = ISC type = annex_everything } }
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						date > 2015.4.18
+						date < 2015.8.10
+					}
+					ISC = {
+						create_country_leader = {
+							name = "Magomed Suleymanov"
+							desc = ""
+							picture = "gfx/leaders/ISC/portrait_magomed_suleymanov.dds"
+							ideology = wahhabism
+							traits = { trait_wahhabism extremist }
+						}
+					}
+				}
+				if = {
+					limit = { 
+						date > 2015.8.10
+					}
+					ISC = {
+						create_country_leader = {
+							name = "Zalim Shebzukhov"
+							desc = ""
+							picture = "gfx/leaders/ISC/portrait_zalim_shebzukhov.dds"
+							ideology = wahhabism
+							#expire = "2016.8.17" #death
+							traits = { trait_wahhabism extremist }
+						}
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_war_with_iran #Усмирение шиитов
+		prerequisite = { focus = IGL_revolt_in_asia }
+		prerequisite = { focus = IGL_war_in_caucasus }
+		icon = GFX_goal_iss_war_with_iran
+		x = 5
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+		    ISS = {
+			    controls_state = 291
+				controls_state = 776
+				controls_state = 554
+				controls_state = 778
+			}
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = IRN }
+			add_state_claim = 412
+			add_state_claim = 419
+			add_state_claim = 421
+			add_state_claim = 266
+			add_state_claim = 410
+			add_state_claim = 411
+			add_state_claim = 413
+			add_state_claim = 414
+			add_state_claim = 416
+			add_state_claim = 417
+			add_state_claim = 418
+			add_state_claim = 420
+			add_state_core = 412
+			add_state_core = 419
+			add_state_core = 421
+			add_state_core = 266
+			add_state_core = 410
+			add_state_core = 411
+			add_state_core = 413
+			add_state_core = 414
+			add_state_core = 416
+			add_state_core = 417
+			add_state_core = 418
+			add_state_core = 420
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_path_to_stambul #Дорога на Стамбул
+		prerequisite = { focus = IGL_war_with_iran }
+		icon = GFX_goal_iss_path_to_stambul
+		x = 3
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+		    ISS = {
+			    controls_state = 419
+				controls_state = 421
+				controls_state = 420
+				controls_state = 266
+			}
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = TUR }
+			hidden_effect = {
+				add_state_claim = 344
+				add_state_claim = 349
+				add_state_claim = 353
+				add_state_claim = 350
+				add_state_claim = 352
+				add_state_claim = 341
+				add_state_claim = 49
+				add_state_claim = 339
+				add_state_claim = 340
+				add_state_claim = 342
+				add_state_claim = 343
+				add_state_claim = 345
+				add_state_claim = 346
+				add_state_claim = 347
+				add_state_claim = 348
+				add_state_claim = 354
+				add_state_claim = 355
+				add_state_claim = 356
+				add_state_core = 344
+				add_state_core = 349
+				add_state_core = 353
+				add_state_core = 350
+				add_state_core = 352
+				add_state_core = 341
+				add_state_core = 49
+				add_state_core = 339
+				add_state_core = 340
+				add_state_core = 342
+				add_state_core = 343
+				add_state_core = 345
+				add_state_core = 346
+				add_state_core = 347
+				add_state_core = 348
+				add_state_core = 354
+				add_state_core = 355
+				add_state_core = 356
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_revolt_in_germany #Исламская револолюция в Германии
+		prerequisite = {
+			focus = IGL_path_to_stambul
+			focus = IGL_path_to_mekka
+		}
+		icon = GFX_goal_iss_revolt_in_germany
+		x = 2
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 2 }
+	    available = {
+		    has_army_manpower = { size > 100011 }
+			NOT ={ country_exists = TUR	}
+		}
+		completion_reward = {
+			GER = {
+				add_popularity = { ideology = rad_islamists popularity = 0.25 }
+				start_civil_war = { ideology = rad_islamists size = 0.25 }
+				country_event = isis.7
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						original_tag = GER
+						NOT = { tag = GER }	has_government = rad_islamists
+					}
+					country_event = isis.7
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_revolt_in_france #Исламская револолюция в Франции
+		prerequisite = { focus = IGL_revolt_in_germany }
+		icon = GFX_goal_iss_revolt_in_france
+		x = 2
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			FRA = {
+				add_popularity = { ideology = rad_islamists popularity = 0.25 }
+				start_civil_war = { ideology = rad_islamists size = 0.25 }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						original_tag = FRA
+						NOT = {
+							tag = FRA
+						}
+						has_government = rad_islamists
+					}
+					country_event = isis.8
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_triumph_of_islam #Торжество ислама
+		prerequisite = { focus = IGL_revolt_in_france }
+		icon = GFX_goal_iss_triumph_of_islam
+		x = 2
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			add_ideas = IGL_triumph_of_islam_idea
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_libyan_campaign #Ливийская кампания
+		prerequisite = { focus = IGL_jihad }
+		icon = GFX_goal_iss_libyan_campaign
+		x = 8
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 2 }
+		bypass = {	LBA = { has_civil_war = yes } }
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 3 name = threat_IGL_libyan_campaign }
+			add_state_claim = 273
+			add_state_claim = 449
+			add_state_claim = 450
+			add_state_claim = 448
+			add_state_claim = 663
+			add_state_claim = 451
+			add_state_claim = 661
+			add_state_claim = 662
+			add_state_core = 273
+			add_state_core = 449
+			add_state_core = 450
+			add_state_core = 448
+			add_state_core = 663
+			add_state_core = 451
+			add_state_core = 661
+			add_state_core = 662
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_crusade_to_egypt #Поход на Египет
+		mutually_exclusive = { focus = IGL_revolt_in_egypt }
+		prerequisite = { focus = IGL_libyan_campaign }
+		icon = GFX_goal_iss_crusade_to_egypt
+		x = 7
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			NOT = {
+				country_exists = SYR
+				country_exists = IRQ
+			}
+			OR = {
+				controls_state = 454
+				controls_state = 455
+			}
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = EGY }
+			add_state_claim = 457
+			add_state_claim = 446
+			add_state_claim = 552
+			add_state_claim = 452
+			add_state_claim = 453
+			add_state_claim = 456
+			add_state_claim = 447
+			add_state_core = 457
+			add_state_core = 446
+			add_state_core = 552
+			add_state_core = 452
+			add_state_core = 453
+			add_state_core = 456
+			add_state_core = 447
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_revolt_in_egypt #Восстание в Египет
+		mutually_exclusive = { focus = IGL_crusade_to_egypt }
+		prerequisite = { focus = IGL_libyan_campaign }
+		icon = GFX_goal_iss_revolt_in_egypt
+		x = 9
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			NOT = {
+				country_exists = SYR
+				country_exists = IRQ
+			}
+		}
+		completion_reward = {
+			EGY = {
+				add_popularity = { ideology = rad_islamists popularity = 0.4 }
+				start_civil_war = { ideology = rad_islamists size = 0.5 }
+				country_event = isis.9
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						original_tag = EGY
+						NOT = { tag = EGY }
+						has_government = rad_islamists
+					}
+					country_event =  { id = isis.10 days = 4 }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_path_to_south #Путь на Юг
+		prerequisite = { focus = IGL_crusade_to_egypt focus = IGL_revolt_in_egypt }
+		icon = GFX_goal_iss_path_to_south
+		x = 8
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			controls_state = 446
+			has_army_manpower = { size > 45000 }
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SUD }
+			add_state_claim = 551
+			add_state_claim = 549
+			add_state_claim = 742
+			add_state_core = 551
+			add_state_core = 549
+			add_state_core = 742
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_war_with_berbers #Война с Берберами
+		prerequisite = { focus = IGL_path_to_south }
+		icon = GFX_goal_iss_war_with_berbers
+		x = 9
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			controls_state = 551
+			controls_state = 549
+			controls_state = 742
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = TUN }
+			create_wargoal = { type = annex_everything target = ALG }
+			create_wargoal = { type = annex_everything target = MOR }
+			add_state_claim = 458
+			add_state_claim = 665
+			add_state_claim = 459
+			add_state_claim = 514
+			add_state_claim = 513
+			add_state_claim = 460
+			add_state_claim = 461
+			add_state_claim = 462
+			add_state_claim = 290
+			add_state_core = 458
+			add_state_core = 665
+			add_state_core = 459
+			add_state_core = 514
+			add_state_core = 513
+			add_state_core = 460
+			add_state_core = 461
+			add_state_core = 462
+			add_state_core = 290
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_al_andalus #Аль-Андалус
+		prerequisite = { focus = IGL_war_with_berbers }
+		icon = GFX_goal_iss_al_andalus
+		x = 8
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+			controls_state = 461
+			controls_state = 462
+			controls_state = 290
+			has_army_manpower = { size > 85000 }
+		}
+		completion_reward = {
+			create_wargoal = { type = puppet_wargoal_focus target = SPR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_african_campaign #Африканская кампания
+		prerequisite = { focus = IGL_jihad }
+		icon = GFX_goal_iss_african_campaign
+		x = 11
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = {
+		    has_army_manpower = { size > 75000 }
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_named_threat = { threat = 3 name = threat_IGL_african_campaign }
+			add_state_claim = 558
+			add_state_core = 558
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_african_mujaheddines #Моджахеды с Африки
+		prerequisite = { focus = IGL_african_campaign }
+		icon = GFX_goal_iss_african_mujaheddines
+		x = 11
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			add_ideas = IGL_african_mujaheddines_idea
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_handicraft_weapons #Кустарное оружие
+		prerequisite = { focus = IGL_african_mujaheddines }
+		icon = GFX_goal_iss_handicraft_weapons
+		x = 10
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			add_ideas = IGL_handicraft_weapons_idea
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_expansion_to_niger #Экспансия в Нигер
+		prerequisite = { focus = IGL_handicraft_weapons }
+		icon = GFX_goal_iss_expansion_to_niger
+		x = 11
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = { controls_state = 558 }
+		completion_reward = {
+			add_state_claim = 515
+			add_state_core = 515
+			create_wargoal = { type = annex_everything target = NGR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_expansion_to_camerun #Экспансия в Камерун
+		prerequisite = { focus = IGL_expansion_to_niger }
+		icon = GFX_goal_iss_expansion_to_camerun
+		x = 10
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = { controls_state = 515	}
+		completion_reward = {
+			add_state_claim = 750
+			add_state_core = 750
+			create_wargoal = { type = annex_everything target = CMR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_african_caliphate #Африканский халифат
+		prerequisite = { focus = IGL_al_andalus }
+		prerequisite = { focus = IGL_expansion_to_camerun }
+		icon = GFX_goal_iss_african_caliphate
+		x = 9
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 2 }
+		available = { controls_state = 750	}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = ETH }
+			create_wargoal = { type = annex_everything target = MLI }
+			create_wargoal = { type = annex_everything target = CHA }
+			add_state_claim = 271
+			add_state_claim = 556
+			add_state_claim = 557
+			add_state_claim = 749
+			add_state_core = 271
+			add_state_core = 556
+			add_state_core = 557
+			add_state_core = 749
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_army #ВС
+		icon = GFX_goal_iss_army
+		x = 19
+		y = 0
+		cost = 70
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION}
+	}
+    focus = {
+		id = IGL_army_effort
+		icon = GFX_goal_iss_army_effort
+		prerequisite = { focus = IGL_army }
+		x = 15
+		y = 1
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_equipment_effort
+		icon = GFX_goal_assault_rifle_AK
+		prerequisite = { focus = IGL_army_effort }
+		x = 14
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_motorization_effort
+		# джипы
+		icon = GFX_goal_motorization_light_4x4_Toyota
+		prerequisite = { focus = IGL_army_effort }
+		bypass = { has_tech = tech_motorized_infantry }
+		x = 16
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IGL_army_effort }
+		x = 15
+		y = 3
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_equipment_effort_2
+		icon = GFX_goal_assault_rifle_AKM
+		prerequisite = { focus = IGL_equipment_effort }
+		x = 14
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_mechanization_effort
+		icon = GFX_goal_chi_mechanization_corps
+		#GFX_goal_motorization_IFV_MT-LB
+		prerequisite = { focus = IGL_motorization_effort }
+		x = 16
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_motorized_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IGL_doctrine_effort }
+		x = 15
+		y = 5
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IGL_doctrine_effort_2 }
+		x = 15
+		y = 7
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_equipment_effort_3
+		icon = GFX_goal_heavy_equipment_M240
+		prerequisite = { focus = IGL_equipment_effort_2 }
+		x = 14
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_equipment_effort_4
+		icon = GFX_goal_anti-tank_RPG-7
+		prerequisite = { focus = IGL_equipment_effort_3 }
+		x = 14
+		y = 8
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_armor_effort
+		icon = GFX_goal_chi_armored_corps_1
+		prerequisite = { focus = IGL_mechanization_effort }
+		x = 16
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_armor_effort_2
+		icon = GFX_goal_chi_armored_corps_2
+		prerequisite = { focus = IGL_armor_effort }
+		x = 16
+		y = 8
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = IGL_equipment_effort_4 }
+		prerequisite = { focus = IGL_doctrine_effort_3 }
+		prerequisite = { focus = IGL_armor_effort_2 }
+		x = 15
+		y = 9
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_paratroopers
+				technology = tech_marines
+				#technology = EC_tech_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_paratroopers_divisions
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = IGL_special_forces }
+		x = 14
+		y = 10
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				# category = cat_paratroopers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_special_forces_2
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = IGL_special_forces }
+		x = 15
+		y = 11
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				# category = cat_special_forces
+
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_marines_divisions
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = IGL_special_forces }
+		x = 16
+		y = 10
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				# category = cat_marines
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = IGL_aviation_effort
+		prerequisite = { focus = IGL_army }
+		icon = GFX_goal_iss_aviation_effort
+		x = 19
+		y = 1
+		cost = 70
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = IGL_fighter_focus
+		icon = GFX_goal_multirole_fighter_J-7
+		prerequisite = { focus = IGL_aviation_effort }
+		mutually_exclusive = { focus = IGL_bomber_focus }
+		x = 18
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = IGL_bomber_focus
+		icon = GFX_goal_UAV_effort
+		prerequisite = { focus = IGL_aviation_effort }
+		mutually_exclusive = { focus = IGL_fighter_focus }
+		x = 20
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category =  cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	focus = {
+		id = IGL_aviation_effort_2
+		icon = GFX_goal_iss_aviation_effort
+		prerequisite = { focus = IGL_bomber_focus focus = IGL_fighter_focus }
+		x = 19
+		y = 3
+		cost = 70
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	focus = {
+		id = IGL_CAS_effort
+		icon = GFX_goal_CAS_Su-25
+		prerequisite = { focus = IGL_aviation_effort_2 }
+		prerequisite = { focus = IGL_motorization_effort }
+		x = 18
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = aircraft_rocket_technologies
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	focus = {
+		id = IGL_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = IGL_aviation_effort_2 }
+		prerequisite = { focus = IGL_infrastructure_effort }
+		x = 19
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	focus = {
+		id = IGL_NAV_effort
+		icon = GFX_goal_GNSS_effort
+		prerequisite = { focus = IGL_aviation_effort_2 }
+		prerequisite = { focus = IGL_flexible_navy }
+		x = 20
+		y = 5
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+		id = IGL_naval_effort
+		prerequisite = { focus = IGL_army }
+		icon = GFX_goal_iss_naval_effort
+		x = 23
+		y = 1
+		cost = 70
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+		id = IGL_flexible_navy
+		icon = GFX_goal_iss_flexible_navy_effort
+		prerequisite = { focus = IGL_naval_effort }
+		mutually_exclusive = { focus = IGL_large_navy }
+		x = 22
+		y = 2
+		cost = 70
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+		id = IGL_large_navy
+		icon = GFX_goal_iss_large_navy_effort
+		prerequisite = { focus = IGL_naval_effort }
+		mutually_exclusive = { focus = IGL_flexible_navy }
+		x = 24
+		y = 2
+		cost = 70
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+		id = IGL_submarine_effort
+		icon = GFX_goal_generic_submarine_effort
+		prerequisite = { focus = IGL_flexible_navy focus = IGL_large_navy }
+		x = 22
+		y = 3
+		cost = 70
+	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+	
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+
+	focus = {
+		id = IGL_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = IGL_large_navy focus = IGL_flexible_navy }
+		x = 24
+		y = 3
+		cost = 70
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+
+	focus = {
+		id = IGL_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = IGL_submarine_effort }
+		x = 22
+		y = 4
+		cost = 70
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+
+	focus = {
+		id = IGL_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = IGL_cruiser_effort }
+		x = 24
+		y = 4
+		cost = 70
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+			}
+		}
+	}
+
+	focus = {
+		id = IGL_industrial_effort
+		icon = GFX_goal_generic_production
+		x = 27
+		y = 0
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_modern_industry
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = IGL_industrial_effort }
+		x = 27
+		y = 1
+		cost = 70
+
+	    completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		    random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IGL_modern_industry }
+		x = 26
+		y = 2
+		cost = 70
+
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IGL_modern_industry }
+		x = 28
+		y = 2
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IGL_construction_effort }
+		x = 26
+		y = 3
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IGL_construction_effort_2 }
+		x = 26
+		y = 4
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IGL_production_effort }
+		x = 28
+		y = 3
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IGL_construction_effort_3 }
+		x = 26
+		y = 5
+		cost = 70
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IGL_production_effort_2 }
+		x = 28
+		y = 4
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IGL_production_effort_3 }
+		x = 28
+		y = 5
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IGL_infrastructure_effort }
+		x = 26
+		y = 6
+		cost = 70
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IGL_infrastructure_effort }
+		x = 28
+		y = 6
+		cost = 70
+
+		ai_will_do = { factor = 1 }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = IGL_nuclear_effort
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = IGL_infrastructure_effort_2 }
+		x = 24
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = IGL_extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = IGL_infrastructure_effort_2 }
+		x = 26
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = IGL_extra_tech_slot_2
+		icon = GFX_focus_research
+		prerequisite = { focus = IGL_extra_tech_slot }
+		available = {
+			num_of_factories > 50
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 26
+		y = 8
+		cost = 70
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = IGL_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = IGL_infrastructure_effort_2 }
+		x = 28
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 4
+				category = electronics
+				category = nuclear_tech
+				category = rocketry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+}

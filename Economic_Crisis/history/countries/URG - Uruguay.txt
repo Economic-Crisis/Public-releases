@@ -1,0 +1,65 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 300
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5753 }
+	load_oob = "_tech_minor_2013"
+	oob = "URG_2013"
+
+	add_ideas = {
+		unasur_member
+		terrorism_discounted
+		mixed_schools
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.3.1"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 50
+		liberalism = 0
+		democratic = 13
+		neutrality = 0
+		fascism = 32
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Tabaré Vázquezr"
+		desc = "POLITICS_TABARE_VAZQUEZ_DESC"
+		picture = "gfx/leaders/URG/portrait_tabare_vazquez.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "José Mujica"
+		expire = 2015.3.1
+		desc = "POLITICS_JOSE_MUJICA_DESC"
+		picture = "gfx/leaders/URG/portrait_jose_mujica.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Luis Alberto Lacalle"
+		desc = "POLITICS_LUIS_ALBERTO_LACALLE_DE_HERRERA_DESC"
+		picture = "gfx/leaders/URG/portrait_luis_alberto_lacalle_de_herrera.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+}

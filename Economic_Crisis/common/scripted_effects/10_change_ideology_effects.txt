@@ -1,0 +1,1016 @@
+# Change ideology, political coalition
+
+add_communist = {
+	if = {
+		limit = {
+			has_country_flag = _3_communist_available
+		}
+		set_country_flag = _4_communist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_communist_available
+				}
+				set_country_flag = _3_communist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_communist_available
+						}
+						set_country_flag = _2_communist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_communist
+								}
+								clr_country_flag = excess_communist
+								else = {
+									set_country_flag = _1_communist_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_communist = {
+	if = {
+		limit = {
+			has_country_flag = _4_communist_available
+		}
+		clr_country_flag = _4_communist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_communist_available
+				}
+				clr_country_flag = _3_communist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_communist_available
+						}
+						clr_country_flag = _2_communist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_communist_available
+								}
+								clr_country_flag = _1_communist_available
+								else = {
+									set_country_flag = excess_communist
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_reformist = {
+	if = {
+		limit = {
+			has_country_flag = _3_reformist_available
+		}
+		set_country_flag = _4_reformist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_reformist_available
+				}
+				set_country_flag = _3_reformist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_reformist_available
+						}
+						set_country_flag = _2_reformist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_reformist
+								}
+								clr_country_flag = excess_reformist
+								else = {
+									set_country_flag = _1_reformist_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_reformist = {
+	if = {
+		limit = {
+			has_country_flag = _4_reformist_available
+		}
+		clr_country_flag = _4_reformist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_reformist_available
+				}
+				clr_country_flag = _3_reformist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_reformist_available
+						}
+						clr_country_flag = _2_reformist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_reformist_available
+								}
+								clr_country_flag = _1_reformist_available
+								else = {
+									set_country_flag = excess_reformist
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_liberal = {
+	if = {
+		limit = {
+			has_country_flag = _3_liberal_available
+		}
+		set_country_flag = _4_liberal_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_liberal_available
+				}
+				set_country_flag = _3_liberal_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_liberal_available
+						}
+						set_country_flag = _2_liberal_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_liberal
+								}
+								clr_country_flag = excess_liberal
+								else = {
+									set_country_flag = _1_liberal_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_liberal = {
+	if = {
+		limit = {
+			has_country_flag = _4_liberal_available
+		}
+		clr_country_flag = _4_liberal_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_liberal_available
+				}
+				clr_country_flag = _3_liberal_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_liberal_available
+						}
+						clr_country_flag = _2_liberal_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_liberal_available
+								}
+								clr_country_flag = _1_liberal_available
+								else = {
+									set_country_flag = excess_liberal
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_conservator = {
+	if = {
+		limit = {
+			has_country_flag = _3_conservator_available
+		}
+		set_country_flag = _4_conservator_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_conservator_available
+				}
+				set_country_flag = _3_conservator_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_conservator_available
+						}
+						set_country_flag = _2_conservator_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_conservator
+								}
+								clr_country_flag = excess_conservator
+								else = {
+									set_country_flag = _1_conservator_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_conservator = {
+	if = {
+		limit = {
+			has_country_flag = _4_conservator_available
+		}
+		clr_country_flag = _4_conservator_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_conservator_available
+				}
+				clr_country_flag = _3_conservator_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_conservator_available
+						}
+						clr_country_flag = _2_conservator_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_conservator_available
+								}
+								clr_country_flag = _1_conservator_available
+								else = {
+									set_country_flag = excess_conservator
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_centrist = {
+	if = {
+		limit = {
+			has_country_flag = _3_centrist_available
+		}
+		set_country_flag = _4_centrist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_centrist_available
+				}
+				set_country_flag = _3_centrist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_centrist_available
+						}
+						set_country_flag = _2_centrist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_centrist
+								}
+								clr_country_flag = excess_centrist
+								else = {
+									set_country_flag = _1_centrist_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_centrist = {
+	if = {
+		limit = {
+			has_country_flag = _4_centrist_available
+		}
+		clr_country_flag = _4_centrist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_centrist_available
+				}
+				clr_country_flag = _3_centrist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_centrist_available
+						}
+						clr_country_flag = _2_centrist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_centrist_available
+								}
+								clr_country_flag = _1_centrist_available
+								else = {
+									set_country_flag = excess_centrist
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_nationalist = {
+	if = {
+		limit = {
+			has_country_flag = _3_nationalist_available
+		}
+		set_country_flag = _4_nationalist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_nationalist_available
+				}
+				set_country_flag = _3_nationalist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_nationalist_available
+						}
+						set_country_flag = _2_nationalist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_nationalist
+								}
+								clr_country_flag = excess_nationalist
+								else = {
+									set_country_flag = _1_nationalist_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_nationalist = {
+	if = {
+		limit = {
+			has_country_flag = _4_nationalist_available
+		}
+		clr_country_flag = _4_nationalist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_nationalist_available
+				}
+				clr_country_flag = _3_nationalist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_nationalist_available
+						}
+						clr_country_flag = _2_nationalist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_nationalist_available
+								}
+								clr_country_flag = _1_nationalist_available
+								else = {
+									set_country_flag = excess_nationalist
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+add_islamist = {
+	if = {
+		limit = {
+			has_country_flag = _3_islamist_available
+		}
+		set_country_flag = _4_islamist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _2_islamist_available
+				}
+				set_country_flag = _3_islamist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _1_islamist_available
+						}
+						set_country_flag = _2_islamist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = excess_islamist
+								}
+								clr_country_flag = excess_islamist
+								else = {
+									set_country_flag = _1_islamist_available
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+remove_islamist = {
+	if = {
+		limit = {
+			has_country_flag = _4_islamist_available
+		}
+		clr_country_flag = _4_islamist_available
+		else = {
+			if = {
+				limit = {
+					has_country_flag = _3_islamist_available
+				}
+				clr_country_flag = _3_islamist_available
+				else = {
+					if = {
+						limit = {
+							has_country_flag = _2_islamist_available
+						}
+						clr_country_flag = _2_islamist_available
+						else = {
+							if = {
+								limit = {
+									has_country_flag = _1_islamist_available
+								}
+								clr_country_flag = _1_islamist_available
+								else = {
+									set_country_flag = excess_islamist
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+move_to_free_media = {
+	if = {
+		limit = {
+			has_idea = state_propaganda_media
+		}
+		add_ideas = state_media_only
+	}
+	if = {
+		limit = {
+			has_idea = state_media_only
+		}
+		add_ideas = cencored_media
+	}
+	if = {
+		limit = {
+			has_idea = cencored_media
+		}
+		add_ideas = mixed_media
+	}
+	if = {
+		limit = {
+			has_idea = mixed_media
+		}
+		add_ideas = commercial_media
+	}
+	if = {
+		limit = {
+			has_idea = commercial_media
+		}
+		add_ideas = free_media
+	}
+}
+
+move_to_liberties = {
+	if = {
+		limit = {
+			has_idea = sharia_law
+		}
+		add_ideas = lack_of_liberties
+	}
+	if = {
+		limit = {
+			has_idea = martial_law
+		}
+		add_ideas = emergency_law
+	}
+	if = {
+		limit = {
+			has_idea = emergency_law
+		}
+		add_ideas = lack_of_liberties
+	}
+	if = {
+		limit = {
+			has_idea = lack_of_liberties
+		}
+		add_ideas = limitation_of_liberties
+	}
+	if = {
+		limit = {
+			has_idea = limitation_of_liberties
+		}
+		add_ideas = suspended_liberties
+	}
+	if = {
+		limit = {
+			has_idea = suspended_liberties
+		}
+		add_ideas = respect_of_liberties
+	}
+	if = {
+		limit = {
+			has_idea = respect_of_liberties
+		}
+		add_ideas = fully_guranted_liberties
+	}
+}
+
+coalition_with_communists = {
+	custom_effect_tooltip = coalition_with_communists_TT
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		set_country_flag = communism_reformism_coalition
+	}
+}
+
+coalition_with_reformists = {
+	custom_effect_tooltip = coalition_with_reformists_TT
+	if = {
+		limit = {
+			has_government = communism
+		}
+		set_country_flag = communism_reformism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		set_country_flag = reformism_liberalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		set_country_flag = reformism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		set_country_flag = reformism_nationalism_coalition
+	}
+}
+
+coalition_with_liberals = {
+	custom_effect_tooltip = coalition_with_liberals_TT
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		set_country_flag = reformism_liberalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		set_country_flag = liberalism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		set_country_flag = liberalism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		set_country_flag = liberalism_nationalism_coalition
+	}
+}
+
+coalition_with_conservators = {
+	custom_effect_tooltip = coalition_with_conservators_TT
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		set_country_flag = reformism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		set_country_flag = liberalism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		set_country_flag = conservatism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		set_country_flag = conservatism_nationalism_coalition
+	}
+}
+
+coalition_with_centrists = {
+	custom_effect_tooltip = coalition_with_centrists_TT
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		set_country_flag = reformism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		set_country_flag = liberalism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		set_country_flag = conservatism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		set_country_flag = centrism_nationalism_coalition
+	}
+}
+
+coalition_with_nationalists = {
+	custom_effect_tooltip = coalition_with_nationalists_TT
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		set_country_flag = reformism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		set_country_flag = liberalism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		set_country_flag = conservatism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		set_country_flag = centrism_nationalism_coalition
+	}
+}
+
+coalition_with_islamists = {
+	custom_effect_tooltip = coalition_with_islamists_TT
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		set_country_flag = centrism_islamism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		set_country_flag = nationalism_islamism_coalition
+	}
+}
+
+no_coalition_with_communists = {
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		clr_country_flag = communism_reformism_coalition
+	}
+}
+
+no_coalition_with_reformists = {
+	if = {
+		limit = {
+			has_government = communism
+		}
+		clr_country_flag = communism_reformism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		clr_country_flag = reformism_liberalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		clr_country_flag = reformism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		clr_country_flag = reformism_nationalism_coalition
+	}
+}
+
+no_coalition_with_liberals = {
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		clr_country_flag = reformism_liberalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		clr_country_flag = liberalism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		clr_country_flag = liberalism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		clr_country_flag = liberalism_nationalism_coalition
+	}
+}
+
+no_coalition_with_conservators = {
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		clr_country_flag = reformism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		clr_country_flag = liberalism_conservatism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		clr_country_flag = conservatism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		clr_country_flag = conservatism_nationalism_coalition
+	}
+}
+
+no_coalition_with_centrists = {
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		clr_country_flag = reformism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		clr_country_flag = liberalism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		clr_country_flag = conservatism_centrism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		clr_country_flag = centrism_nationalism_coalition
+	}
+}
+
+no_coalition_with_nationalists = {
+	if = {
+		limit = {
+			has_government = reformism
+		}
+		clr_country_flag = reformism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = liberalism
+		}
+		clr_country_flag = liberalism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		clr_country_flag = conservatism_nationalism_coalition
+	}
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		clr_country_flag = centrism_nationalism_coalition
+	}
+}
+
+no_coalition_with_islamists = {
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		clr_country_flag = centrism_islamism_coalition
+	}
+	if = {
+		limit = {
+			has_government = fascism
+		}
+		clr_country_flag = nationalism_islamism_coalition
+	}
+}
+
+clr_pai = { # ???(maybe clear country flags with prefix pai_)
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_neutral
+		}
+		clr_country_flag = pai_democrat_neutral
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_anticommunist
+		}
+		clr_country_flag = pai_democrat_anticommunist
+	}
+	
+	
+	
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_antinationalist
+		}
+		clr_country_flag = pai_democrat_antinationalist
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_moderate
+		}
+		clr_country_flag = pai_democrat_moderate
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_left
+		}
+		clr_country_flag = pai_democrat_left
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_democrat_right
+		}
+		clr_country_flag = pai_democrat_right
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_nondem_neutral
+		}
+		clr_country_flag = pai_nondem_neutral
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_nondem_authoritarian
+		}
+		clr_country_flag = pai_nondem_authoritarian
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_nondem_totalitarian
+		}
+		clr_country_flag = pai_nondem_totalitarian
+	}
+	if = {
+		limit = {
+			has_country_flag = pai_nondem_reformator
+		}
+		clr_country_flag = pai_nondem_reformator
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__centrist
+		}
+		clr_country_flag = pai__centrist
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__liberal
+		}
+		clr_country_flag = pai__liberal
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__conservator
+		}
+		clr_country_flag = pai__conservator
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__nationalist
+		}
+		clr_country_flag = pai__nationalist
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__reformist
+		}
+		clr_country_flag = pai__reformist
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__communist
+		}
+		clr_country_flag = pai__communist
+	}
+	if = {
+		limit = {
+			has_country_flag = pai__islamist
+		}
+		clr_country_flag = pai__islamist
+	}
+}

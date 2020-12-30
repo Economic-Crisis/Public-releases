@@ -1,0 +1,83 @@
+sub_units = {
+
+	paratroopers_mechanized_on_ifv_airdroppable = {
+	
+		sprite = paratroopers_mechanized_on_ifv_airdroppable
+		map_icon_category = infantry
+
+		can_be_parachuted = yes
+		special_forces = yes
+		active = no
+		priority = 681
+		ai_priority = 200
+		
+		type = {
+			mechanized
+		}
+		
+		group = paratroopers_battalion
+		
+		categories = {
+			category_front_line
+			category_cavalry
+			category_all_infantry
+			category_special_corps
+			category_paratroopers
+			category_airdroppable
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 32
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 75 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 240
+		suppression = 1
+		weight = 1
+		supply_consumption = 0.2
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			ifv_airdroppable_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = ifv_airdroppable_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			ifv_airdroppable_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		forest = {
+			attack = 0.1
+		}
+		mountain = {
+			attack = 0.1
+		}
+		jungle = {
+			attack = 0.25
+		}
+		marsh = {
+			attack = 0.1
+		}
+		urban = {
+			attack = 0.2
+			defence = 0.1
+		}
+		river = {
+			attack = 0.18
+			movement = 0.15
+		}
+	}	
+}

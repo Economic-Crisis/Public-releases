@@ -1,0 +1,393 @@
+# Economic Crisis - only national ideas
+# ministers, military_staff, theorist, industrie - in separate file!
+
+ideas = {
+	country = {
+
+		GER_impact_on_eu_idea = {
+			allowed = {	has_idea = eu_member }
+			modifier = { political_power_gain = 0.5 }
+			removal_cost = -1
+		}
+		impact_of_GER = {
+			allowed = {	has_idea = eu_member }
+			modifier = {
+				political_power_gain = -0.25
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+			}
+			removal_cost = -1
+		}
+		GER_lead_eu_idea = {
+			allowed = {
+				any_country = {
+					any_owned_state = {	is_on_continent = europe }
+					is_puppet_of = GER
+				}
+			}
+			modifier = { political_power_gain = 1.0	}
+			removal_cost = -1
+		}
+		puppet_of_GER = {
+			allowed = {	is_puppet_of = GER }
+			modifier = {
+				political_power_gain = -0.5
+				industrial_capacity_factory = 0.2
+				research_speed_factor = 0.2
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+			}
+			removal_cost = -1
+		}
+		eurointegration_idea = {
+			allowed = {
+				has_idea = eu_member
+			}
+			modifier = {
+				political_power_gain = -0.25
+				industrial_capacity_factory = 0.1
+			    research_speed_factor = 0.1
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+			}
+			removal_cost = -1
+		}
+
+		unity_europe_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = { political_power_gain = 1.0	}
+			removal_cost = -1
+		}
+		GER_euroscepticism_idea = {
+			allowed = {	has_idea = eu_member }
+			allowed_civil_war = { has_government = fascism }
+			modifier = {
+				fascism_drift = 0.05
+				political_power_gain = 0.25
+				stability_weekly = -0.0005
+			}
+			removal_cost = -1
+		}
+		GER_exits_eu = {
+			modifier = {
+				stability_weekly = -0.0005
+				political_power_gain = 0.25
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+			}
+			removal_cost = -1
+		}
+		GER_democratic_idea = {
+			allowed = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				democratic_drift = 0.02
+				liberalism_drift = 0.02
+				reformism_drift = 0.02
+			}
+			removal_cost = -1
+		}
+		GER_conservatism_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = { democratic_drift = 0.05 }
+			removal_cost = -1
+		}
+		GER_liberalism_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = { liberalism_drift = 0.05 }
+			removal_cost = -1
+		}
+		GER_reformism_idea = {
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = { reformism_drift = 0.05	}
+			removal_cost = -1
+		}
+		GER_interventionism_idea = {
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {	always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				conscription = 0.01
+				generate_wargoal_tension = -0.25
+				justify_war_goal_time = -0.25
+				consumer_goods_factor = -0.05
+			}
+			removal_cost = -1
+		} 
+		GER_medcit = {
+		#picture = GER_medcit
+            allowed = { always = yes }
+            #cancel = { has_war = no }
+            removal_cost = -1
+            modifier = { MONTHLY_POPULATION = 0.1 }
+        }
+		GER_new_way_idea = {
+			allowed_civil_war = {
+				NOT = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = reformism
+				}
+			}
+			modifier = {
+				democratic_drift = -0.01
+				liberalism_drift = -0.01
+				reformism_drift = -0.01
+				stability_weekly = -0.001
+			}
+			removal_cost = -1
+		}
+		GER_communism_idea = {
+			allowed_civil_war = { has_government = communism }
+			modifier = { communism_drift = 0.1 }
+			removal_cost = -1
+		}
+		GER_gdr = {
+			allowed = { has_government = communism }
+			allowed_civil_war = { has_government = communism }
+			modifier = {
+				communism_drift = 0.05
+				political_power_gain = 0.25
+			}
+			removal_cost = -1
+		}
+		GER_nationalism_idea = {
+			allowed_civil_war = { has_government = fascism }
+			modifier = { fascism_drift = 0.1 }
+			removal_cost = -1
+		}
+		GER_reich = {
+			allowed = { has_government = fascism }
+			allowed_civil_war = { has_government = fascism	}
+			modifier = {
+				fascism_drift = 0.05
+				political_power_gain = 0.25
+			}
+			removal_cost = -1
+		}
+	#	GER_monarchism_idea = {
+	#		allowed_civil_war = {
+	#			has_government = monarchy
+	#		}
+	#		modifier = {
+	#			monarchy_drift = 0.1
+	#		}
+	#		removal_cost = -1
+	#	}
+	#	GER_empire = {
+	#		allowed = {
+	#			has_government = monarchy
+	#		}
+	#		allowed_civil_war = {
+	#			has_government = monarchy
+	#		}
+	#		modifier = {
+	#			monarchy_drift = 0.05
+	#			political_power_gain = 0.25
+	#		}
+	#		removal_cost = -1
+	#	}
+		GER_great_idea = {
+			allowed = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.25
+			}
+			rule = { can_create_factions = yes	}
+			removal_cost = -1
+		}
+		communism_unrest_GER = {
+			allowed = {	NOT = {	has_government = communism	} }
+			allowed_civil_war = { always = no }
+			modifier = {
+				communism_drift = 0.1
+				stability_weekly = -0.001
+			}
+			removal_cost = -1
+		}
+		fascism_unrest_GER = {
+			allowed = {	NOT = {	has_government = fascism } }
+			allowed_civil_war = { always = no }
+			modifier = {
+				fascism_drift = 0.1
+				stability_weekly = -0.001
+			}
+			removal_cost = -1
+		}
+	#	monarchy_unrest_GER = {
+	#		allowed = {
+	#			NOT = {
+	#				has_government = monarchy
+	#			}
+	#		}
+	#		allowed_civil_war = {
+	#			always = no
+	#		}
+	#		modifier = {
+	#			monarchy_drift = 0.1
+	#			stability_weekly = -0.001
+	#		}
+	#		removal_cost = -1
+	#	}
+
+		support_of_GER = {
+			#allowed = {
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = communism
+			#			}
+			#		}
+			#		has_government = communism
+			#	}
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = fascism
+			#			}
+			#		}
+			#		has_government = fascism
+			#	}
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = monarchy
+			#			}
+			#		}
+			#		has_government = monarchy
+			#	}
+			#}
+			#allowed_civil_war = {
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = communism
+			#			}
+			#		}
+			#		has_government = communism
+			#	}
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = fascism
+			#			}
+			#		}
+			#		has_government = fascism
+			#	}
+			#	if = {
+			#		limit = {
+			#			GER = {
+			#				has_government = monarchy
+			#			}
+			#		}
+			#		has_government = monarchy
+			#	}
+			#}
+			modifier = {
+				stability_factor = 0.25
+				army_morale_factor = 0.5
+				attrition = -0.5
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+			}
+			removal_cost = -1
+		}
+		GER_territory_return_idea = {
+			allowed = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			modifier = {
+				justify_war_goal_time = -0.5
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+			removal_cost = -1
+		}
+		communist_influence_GER = {
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = { communism_drift = 0.1 }
+			removal_cost = -1
+		}
+
+		fascist_influence_GER = {
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			modifier = { fascism_drift = 0.1 }
+			removal_cost = -1
+		}
+
+	#	monarchist_influence_GER = {
+	#		allowed_civil_war = {
+	#			has_government = monarchy
+	#		}
+	#		modifier = {
+	#			monarchy_drift = 0.1
+	#		}
+	#		removal_cost = -1
+	#	}
+	}
+	
+}

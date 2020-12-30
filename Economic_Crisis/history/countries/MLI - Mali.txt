@@ -1,0 +1,88 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 556
+
+add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1281 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "MLI_2013"
+
+	set_stability = 0.75
+	add_political_power = 0
+	set_convoys = 0
+		
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		# religion_islam
+		# religion_orthodox_christianity
+		state_media_only
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		average_terrorism
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.8.11"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 66
+		liberalism = 26
+		democratic = 0
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Ibrahim Boubacar Keïta"
+		desc = "POLITICS_IBRAHIM_BOUBACAR_KEITA_DESC"
+		picture = "gfx/leaders/MLI/portrait_ibrahim_boubacar_keita.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Tiébilé Dramé"	
+		desc = "POLITICS_TIEBILE_DRAME_DESC"	
+		picture = "gfx/leaders/MLI/portrait_tiebile_drame.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+	
+	create_country_leader = {
+		name = "Soumaïla Cissé"
+		desc = "POLITICS_SOUMAILA_CISSE_DESC"
+		picture = "gfx/leaders/MLI/portrait_soumaila_cisse.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	
+	create_country_leader = {
+		name = "Oumar Mariko"
+		desc = "POLITICS_OUMAR_MARIKO_DESC"
+		picture = "gfx/leaders/MLI/portrait_oumar_mariko.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}

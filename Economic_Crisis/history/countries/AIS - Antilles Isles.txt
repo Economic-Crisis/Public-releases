@@ -1,0 +1,49 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 963
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 500 }
+	oob = "_army_minor_2013"
+	load_oob = "_tech_insurgents_2013" 
+	
+	set_convoys = 25
+	set_stability = 0.75
+	add_political_power = 0
+	
+	add_ideas = mixed_schools
+	
+	set_politics = {		
+		ruling_party = liberalism
+		last_election = "2013.3.26"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 3
+		liberalism = 75
+		democratic = 22
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+
+	create_country_leader = {
+		name = "Emily de Jongh-Elhage"
+		desc = ""
+		picture = "gfx/leaders/AIS/portrait_emily_de_jongh-elhage.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }	
+	}
+
+}
+

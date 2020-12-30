@@ -1,0 +1,50 @@
+CSTO_membership = {
+	
+	enable = {
+		OR = {	
+			tag = KAZ			
+			tag = ARM
+			tag = KYR
+			tag = TAJ
+			tag = BLR
+		}
+
+		OR = {
+			has_government = democratic
+			has_government = liberalism
+			has_government = reformism
+			has_government = neutrality
+		}
+	
+		OR = {
+			RUS = { has_government = democratic }
+			RUS = { has_government = liberalism }
+			RUS = { has_government = reformism }
+			RUS = { has_government = neutrality }
+		}
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = RUS
+			OR = {
+				RUS = { has_government = democratic }
+				RUS = { has_government = rad_islamists }
+				RUS = { has_government = communism }
+				RUS = { has_government = reformism }
+			}
+			RUS = { exists = no }
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "RUS"
+		value = 50
+	}
+	ai_strategy = {
+		type = alliance
+		id = "RUS"
+		value = 125
+	}
+}

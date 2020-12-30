@@ -1,0 +1,41 @@
+DNR_friend_with_LNR = {
+enable = {
+		tag = DON
+		country_exists = DON
+		country_exists = LUG
+		has_government = neutrality
+	}
+	abort = {
+		NOT = {
+			country_exists = DON
+		    country_exists = LUG
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "LUG"			
+		value = 300
+	}
+}
+
+LNR_friend_with_DNR = {
+enable = {
+		tag = LUG
+		country_exists = DON
+		country_exists = LUG
+		has_government = neutrality
+	}
+	abort = {
+		NOT = {
+			country_exists = DON
+		    country_exists = LUG
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "DON"			
+		value = 300
+	}
+}

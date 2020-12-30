@@ -1,0 +1,87 @@
+﻿division_template = {
+	name = "District Force"	# For 2-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "District Brigade"	# For 1-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "District Force"
+		location = 7011
+		division_template = "District Force"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Force"
+		location = 7011
+		division_template = "District Force"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Force"
+		location = 7011
+		division_template = "District Force"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Force"
+		location = 7011
+		division_template = "District Force"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Force"
+		location = 7011
+		division_template = "District Force"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Brigade"
+		location = 7011
+		division_template = "District Brigade"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "District Brigade"
+		location = 7011
+		division_template = "District Brigade"	
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+	}
+	
+}
+
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "EGY"
+		}
+		requested_factories = 1
+		progress = 0.51
+		efficiency = 100
+	}
+}

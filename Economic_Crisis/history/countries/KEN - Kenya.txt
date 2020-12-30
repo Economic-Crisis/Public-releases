@@ -1,0 +1,92 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 547
+
+	add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5510 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "KEN_2013"
+	
+	set_convoys = 15
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		au_member
+		presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		high_terrorism
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.3.4"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 41
+		liberalism = 3
+		democratic = 53
+		neutrality = 3
+		fascism = 0
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Uhuru Kenyatta"
+		desc = "POLITICS_UHURU_KENYATTA_DESC"
+		picture = "gfx/leaders/KEN/portrait_uhuru_kenyatta.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Raila Amolo Odinga"
+		desc = "POLITICS_RAILA_AMOLO_ODINGA_DESC"
+		picture = "gfx/leaders/KEN/portrait_raila_amolo_odinga.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+
+2016.9.8 = {
+	set_party_name = { 
+		ideology = democratic 
+	    long_name = KEN_democratic_2016_party 
+	    name = KEN_democratic_2016_party 
+	}
+}
+
+2017.1.11 = {
+	set_party_name = { 
+	    ideology = reformism 
+	    long_name = KEN_reformism_2017_party 
+	    name = KEN_reformism_2017_party 
+	}
+}

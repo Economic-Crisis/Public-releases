@@ -1,0 +1,167 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 814
+1993.12.3 = {
+    add_ideas = cis_member
+    }
+	
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+	
+1997.10.10 = {
+    add_ideas = guam_member
+    }
+	
+2008.08.12 = {
+    remove_ideas = revanchism
+	add_opinion_modifier = { target = ABZ modifier = separatist }
+	add_opinion_modifier = { target = ABZ modifier = post_war }
+	add_opinion_modifier = { target = SOS modifier = separatist }
+	add_opinion_modifier = { target = SOS modifier = post_war }
+	
+	add_opinion_modifier = { target = RUS modifier = supporting_separatism }
+}
+
+2009.8.18 = {
+    remove_ideas = cis_member
+    }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1614 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "GEO_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+	create_intelligence_agency = yes
+		
+	#set_country_flag = aspiring_nato
+	
+	set_convoys = 35
+	
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		
+		average_terrorism
+		
+		#aspiring_nato
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.10.28"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 2
+		reformism = 55
+		liberalism = 2
+		democratic = 41
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Giorgi Margvelashvili"
+		desc = "POLITICS_GIORGI_MARGVELASHVILI_DESC"
+		picture = "gfx/leaders/GEO/portrait_giorgi_margvelashvili.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "David Barkladze"
+		desc = "POLITICS_DAVID_BARKLADZE_DESC"
+		picture = "gfx/leaders/GEO/portrait_david_barkladze.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+	
+	create_field_marshal = {
+		name = "Vladimer Chachibaia"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_General_vladimer_chachibaia.dds"
+		traits = { organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Vakhtang Kapanadze"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_general_vakhtang_kapanadze.dds"
+		traits = { inspirational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Zaza Chkhaidze"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_general_zaza_chkhaidze.dds"
+		traits = { trait_engineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Shalva Jabakhidze"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_general_shalva_jabakhidze.dds"
+		traits = { old_guard panzer_leader }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Dimitri Kiknadze"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_general_dimitri_kiknadze.dds"
+		traits = { commando ranger }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+		create_corps_commander = {
+		name = "Nikoloz Janjgava"
+		portrait_path = "gfx/leaders/GEO/portrait_geo_general_nikoloz_janjgava.dds"
+		traits = { hill_fighter }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+}
+

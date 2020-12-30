@@ -1,0 +1,58 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## Uzbekistan events ###
+##########################
+## Written by SuxrobGM ###
+##########################
+
+add_namespace = uzbekistan
+
+# President dies
+country_event = {
+	id = uzbekistan.1
+	title = uzbekistan.1.t
+	desc = uzbekistan.1.d
+	picture = GFX_event_obituary_islam_karimov
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = UZB
+		has_government = neutrality
+		date > 2016.9.1
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uzbekistan.1.a
+		kill_country_leader = yes
+		add_stability = -0.1
+		create_country_leader = {
+			name = "Shavkat Mirziyoyev"
+			desc = " "
+			picture = "gfx/leaders/UZB/portrait_shavkat_mirziyoyev.dds"
+			ideology = sovereign_democracy
+			traits = { trait_sovereign_democracy }
+		}
+		#hidden_effect = {
+		#    news_event = { id = news_obituary.18 hours = 3 }
+		#}
+	}
+}
+
+country_event = {
+	id = uzbekistan.2
+	title = uzbekistan.2.t
+	desc = uzbekistan.2.d
+	picture = GFX_event_election1
+
+	is_triggered_only = yes
+
+	option = {
+		name = uzbekistan.2.a
+	}
+}

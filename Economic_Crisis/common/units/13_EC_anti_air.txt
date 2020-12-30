@@ -1,0 +1,833 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	
+	portable_aa_ml = {
+		sprite = portable_aa_ml
+		map_icon_category = infantry
+		priority = 678
+		ai_priority = 7
+		active = yes
+		
+		can_be_parachuted = yes
+		
+		type = {
+			infantry
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		maximum_speed = 0.1
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 55
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			MANPADS_salw_equipment = 30
+			infantry_technical_means_equipment = 30
+			apc_wheeled_equipment = 10
+			army_salw_equipment = 20
+			army_ammunition_equipment = 20
+		}
+		transport = apc_wheeled_equipment
+		
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 55
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		essential = {
+			MANPADS_salw_equipment
+		}
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	light_self_propelled_aa_ml = {
+		sprite = light_self_propelled_aa_ml
+		map_icon_category = infantry
+		priority = 679
+		ai_priority = 8
+		active = yes
+
+		type = {
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		maximum_speed = 0.3
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+			light_utility_vehicle_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	aa_artillery = {
+		sprite = aa_artillery
+		map_icon_category = infantry
+		priority = 673
+		ai_priority = 9
+		active = yes
+
+		type = {
+			infantry
+			anti_air
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	motorized_self-propelled_aag = {
+		sprite = motorized_self-propelled_aag
+		map_icon_category = armored
+		priority = 675
+		ai_priority = 10
+		active = no
+
+		type = {
+			infantry
+			anti_air
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	truck_self_propelled_aag = {
+		sprite = truck_self_propelled_aag
+		map_icon_category = infantry
+		priority = 674
+		ai_priority = 11
+		active = yes
+
+		type = {
+			infantry
+			anti_air
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	mechanized_self_propelled_aag = {
+		sprite = mechanized_self_propelled_aag
+		map_icon_category = armored
+		priority = 676
+		ai_priority = 12
+		active = yes
+
+		type = {
+			infantry
+			anti_air
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+
+	heavy_self_propelled_aag = {
+		sprite = heavy_self_propelled_aag
+		map_icon_category = infantry
+		priority = 677
+		ai_priority = 12
+		active = yes
+
+		type = {
+			armor
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 30
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 30
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 30
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	motorized_self_propelled_aa_ml = {
+		sprite = motorized_self_propelled_aa_ml
+		map_icon_category = armored
+		priority = 680
+		ai_priority = 13
+		active = yes
+
+		type = {
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 40
+		default_morale = 0.1
+		max_strength = 0.6
+		maximum_speed = 0.2
+		manpower = 28
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+			truck_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	
+	mechanized_self_propelled_aa_ml = {
+		sprite = mechanized_self_propelled_aa_ml
+		map_icon_category = armored
+		priority = 681
+		ai_priority = 14
+		active = yes
+		
+		can_be_parachuted = yes
+		
+		type = {
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 40
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 28
+		maximum_speed = 8
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 28
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+	
+	medium_self_propelled_aa_ml = {
+		sprite = medium_self_propelled_aa_ml
+		map_icon_category = armored
+		priority = 682
+		ai_priority = 15
+		active = yes
+
+		type = {
+			anti_air
+			rocket
+		}
+
+		group = anti-air_division
+
+		categories = {
+			category_army
+			category_line_artillery
+		}
+
+		
+		combat_width = 1
+		training_time = 120
+		
+		max_organisation = 40
+		default_morale = 0.1
+		max_strength = 0.6
+		manpower = 30
+		maximum_speed = 10
+		training_time = 120
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		
+		need = {
+			anti_ar_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		
+		#Size Definitions
+		max_strength = 0.2
+		max_organisation = 20
+		default_morale = 0.1
+		manpower = 30
+		weight = 0.1
+		
+        supply_consumption = 0.1
+
+		# Support nerfs to combat abilities
+		defense = -0.4
+		breakthrough = -0.4
+		soft_attack = -0.4
+		hard_attack = -0.4
+		air_attack = -0.2
+		
+		forest = {
+			attack = -0.1
+			movement = -0.1
+		}
+
+		jungle = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+
+	}
+}
+
+

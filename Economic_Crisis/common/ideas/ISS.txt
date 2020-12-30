@@ -1,0 +1,106 @@
+# Economic Crisis - only national ideas
+# ministers, military_staff, theorist, industrie - in separate file!
+
+ideas = {
+	country = {
+		IGL_triumph_of_islam_idea = {
+			#picture =
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		IGL_african_mujaheddines_idea = {
+			#picture =
+
+			modifier = {
+				conscription = 0.05
+				army_morale_factor = 0.1
+			}
+		}
+
+		IGL_handicraft_weapons_idea = {
+			#picture =
+
+			equipment_bonus = {
+				army_salw_equipment = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+				apc_wheeled_light_equipment = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+			}
+		}
+
+		IGL_volya_allaxa_idea = {
+			#picture =
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+		        research_speed_factor = 0.1
+				PRODUCTION_SPEED_BUILDINGS_FACTOR = 0.2
+			}
+		}
+
+		IGL_bombing_of_usa = {
+			#picture =
+			modifier = {
+				stability_factor = -0.1
+				army_org_factor = -0.2
+				army_morale_factor = -0.2
+				army_speed_factor = -0.2
+				dig_in_speed_factor = -0.2
+				army_infantry_attack_factor = -0.1
+				army_infantry_defence_factor = -0.1
+#				cavalry_attack_factor = -0.1
+#				cavalry_defence_factor = -0.1
+				motorized_attack_factor = -0.1
+				motorized_defence_factor = -0.1
+				army_armor_attack_factor = -0.2
+				industrial_capacity_factory = -0.3
+				production_speed_buildings_factor = -0.3
+			}
+		}
+
+		djixad = { #Джихад
+
+			allowed = {
+				always = no
+			}
+			
+			picture = afg_dzhihad
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.50
+				conscription = 0.03
+				ARMY_MORALE_FACTOR = 0.08
+				political_power_factor = 1
+			}
+		}
+		
+		iron_heart = { #special idea for IS
+
+		   allowed = { always = no }
+			
+			picture = afg_underground
+
+			removal_cost = -1
+
+			modifier = {
+				ARMY_CORE_DEFENCE_FACTOR = 0.5
+				consumer_goods_factor = -0.2
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## SA common events  ###
+########################
+## Written by SuxrobGM #
+########################
+
+add_namespace = south_america
+
+country_event = { #Землетрясение в Эквадоре
+	id = south_america.1
+	title = south_america.1.t
+	desc = south_america.1.d
+	picture = GFX_event_earthquake_in_Ecuadore
+	
+	fire_only_once = yes
+
+	trigger = { 
+	date > 2016.4.16
+	tag = ECU
+	country_exists = ECU
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { 
+		name = south_america.1.a 
+		ai_chance = { factor = 80 }
+		305 = { add_manpower = -60000 }
+		add_stability = -0.05
+		hidden_effect = {
+		news_event = { id = news.55 days = 1 }
+		}
+	}
+	
+}

@@ -1,0 +1,1945 @@
+technologies = {
+
+	# x = (вертикаль) - type
+	@platform = -2
+	@t0 = -1
+	@t1 = 1
+	@t2 = 3
+	@t3 = 5
+	@t4 = 7
+	@t5 = 9
+	@t6 = 11
+	@t7 = 13
+	@t8 = 15
+	@t9 = 17
+	@t10 = 19
+	@t11 = 21
+	@t12 = 23
+	@t13 = 25
+	@t14 = 27
+	@t15 = 29
+	@t16 = 31
+	@t17 = 33
+	@t18 = 35
+	@t19 = 37
+	@t20 = 39
+	@t21 = 41
+	@t22 = 43
+	@t23 = 45
+	@t24 = 47
+	@t25 = 49
+	@t26 = 51
+	
+	# y = (горизонталь)
+	# g - generation
+	# d - doctine
+	# p - platform`
+	# m - modification
+	
+	@g0d = -2
+	@g0p = -1
+	@g0 = -3
+
+	@g1 = -1
+	@g1p = 0
+	
+	@g2p = 1
+	@g2 = 2
+	
+	@g3d = 5
+	@g3p = 3
+	@g3 = 4
+	@g3m = 6
+	
+	@g4d = 7
+	@g4p = 8
+	@g4 = 9
+	@g4m = 10
+	
+	@g5p = 11
+	@g5 = 12
+	@g5m = 13
+	
+	@g6p = 14
+	@g6 = 15
+	
+	@g7p = 17
+	@g7 = 18
+
+	@g8d = 19
+	@g8p = 20
+	@g8 = 21
+
+
+	concept_submarine_rocket = {
+		enable_equipment_modules = {
+			submarine_early_ballistic_rocket
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		#start_year = 1960
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @platform }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarine_rocket = {
+		enable_equipments = {
+			ship_hull_rocket_submarine_1
+		}
+
+		enable_equipment_modules = {
+			ship_armor_submarine_steel
+		}
+
+		dependencies = {
+			concept_submarine_rocket = 1
+			s_nr = 1
+			torp = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @t1 }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarine_rocket1 = {
+		enable_equipments = {
+			ship_hull_rocket_submarine_2
+		}
+
+		enable_equipment_modules = {
+			ship_armor_submarine_combined
+		}
+
+		dependencies = {
+			body_submarine_rocket = 1
+			ballistic_rocket = 1
+			torp1 = 1
+			s_nr1 = 1
+			rocket_torp = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @t4 }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarine_rocket2 = {
+		enable_equipments = {
+			ship_hull_rocket_submarine_3
+		}
+
+		enable_equipment_modules = {
+			ship_armor_submarine_perforated_steel
+		}
+
+		dependencies = {
+			body_submarine_rocket1 = 1
+			torp2 = 1
+			s_nr2 = 1
+			exp_silent3 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @t7 }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarine_rocket3 = {
+		enable_equipments = {
+			ship_hull_rocket_submarine_4
+		}
+
+		enable_equipment_modules = {
+			ship_armor_submarine_ceramic
+		}
+
+		dependencies = {
+			body_submarine_rocket2 = 1
+			SS_expe_noise_reduction = 1
+			s_nr3 = 1
+			submarine_bius = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @t10 }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarine_rocket4 = {
+		enable_equipments = {
+			ship_hull_rocket_submarine_5
+		}
+
+		dependencies = {
+			body_submarine_rocket3 = 1
+		}
+
+		# path = {
+		# 	leads_to_tech = body_submarine_rocket5
+		# 	research_cost_coeff = 1
+		# }
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0 y = @t13 }
+		}
+		
+		categories = {
+			ssgn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	# body_submarine_rocket5 = {
+	# 	enable_equipments = {
+	# 		ship_hull_rocket_submarine_6
+	# 	}
+
+	# 	dependencies = {
+	# 		body_submarine_rocket4 = 1
+	# 		s_nr5 = 1
+	# 	}
+
+	# 	# path = {
+	# 	# 	leads_to_tech = body_submarine_rocket6
+	# 	# 	research_cost_coeff = 1
+	# 	# }
+		
+	# 	research_cost = 1.5
+		
+	# 	folder = {
+	# 		name = submarines_folder
+	# 		position = { x = @g0 y = @t16 }
+	# 	}
+		
+	# 	categories = {
+	# 		ssgn_tech
+	# 	}
+		
+	# 	ai_will_do = {
+	# 		factor = 5
+	# 	}
+	# }
+	concept_speed_submarines = {
+		on_research_complete = {
+			
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @platform }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines = {
+		enable_equipments = {
+			ship_hull_speed_submarine_1
+		}
+
+		dependencies = {
+			s_nr = 1
+			torp = 1
+			concept_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t1 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines1 = {
+		enable_equipments = {
+			ship_hull_speed_submarine_2
+		}
+
+		dependencies = {
+			body_speed_submarines = 1
+			torp1 = 1
+			s_nr1 = 1
+			rocket_torp = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t4 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines2 = {
+		enable_equipments = {
+			ship_hull_speed_submarine_3
+		}
+
+		dependencies = {
+			body_speed_submarines1 = 1
+			s_nr2 = 1
+			exp_silent3 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t7 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines3 = {
+		enable_equipments = {
+			ship_hull_speed_submarine_4
+		}
+
+		dependencies = {
+			body_speed_submarines2 = 1
+			SS_RCC = 1
+			SS_expe = 1
+			s_nr3 = 1
+			submarine_bius = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t10 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines4 = {
+		enable_equipments = {
+			ship_hull_speed_submarine_5
+		}
+
+		dependencies = {
+			body_speed_submarines3 = 1
+			s_nr4 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t13 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarines5 = {
+		enable_equipments = {
+			ship_hull_speed_submarine_6
+		}
+
+		dependencies = {
+			body_speed_submarines4 = 1
+			s_nr5 = 1
+		}
+
+		# path = {
+		# 	leads_to_tech = body_speed_submarines6
+		# 	research_cost_coeff = 1
+		# }
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2 y = @t16 }
+		}
+		
+		categories = {
+			ssn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarinesA = {
+		enable_equipments = {
+			ship_hull_speed_submarineA_1
+		}
+
+		dependencies = {
+			body_submarines = 1
+			s_nr = 1
+			s_rcc = 1
+			s_torp = 1
+			torp_rocked = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4d y = @t4 }
+		}
+		
+		categories = {
+			scn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarinesA1 = {
+		enable_equipments = {
+			ship_hull_speed_submarineA_2
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+			exp_silent1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4d y = @t7 }
+		}
+		
+		categories = {
+			scn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_speed_submarinesA2 = {
+		enable_equipments = {
+			ship_hull_speed_submarineA_3
+		}
+
+		dependencies = {
+			body_speed_submarinesA1 = 1
+			progressive_RCC = 1
+			exp_silent = 1
+			s_nr6 = 1
+			submarine_bius1 = 1
+		}
+
+		# path = {
+		# 	leads_to_tech = body_speed_submarinesA3
+		# 	research_cost_coeff = 1
+		# }
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4d y = @t10 }
+		}
+		
+		categories = {
+			scn_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	# body_speed_submarinesA3 = {
+	# 	enable_equipments = {
+	# 		ship_hull_speed_submarineA_4
+	# 	}
+
+	# 	dependencies = {
+	# 		body_speed_submarinesA2 = 1
+	# 		exp_silent2 = 1
+	# 		nr7 = 1
+	# 	}
+
+	# 	# path = {
+	# 	# 	leads_to_tech = body_speed_submarinesA4
+	# 	# 	research_cost_coeff = 1
+	# 	# }
+		
+	# 	research_cost = 1.5
+		
+	# 	folder = {
+	# 		name = submarines_folder
+	# 		position = { x = @g4d y = @t13 }
+	# 	}
+		
+	# 	categories = {
+	# 		scn_tech
+	# 	}
+		
+	# 	ai_will_do = {
+	# 		factor = 5
+	# 	}
+	# }
+
+	concept_submarines_SOV = {
+		desc = SOV.naval_tech
+		on_research_complete = {
+			custom_effect_tooltip = SOV.naval_tech
+		}
+
+		dependencies = {
+			body_speed_submarines1 = 1
+			body_speed_submarinesA1 = 1
+		}
+
+		path = {
+			leads_to_tech = concept_submarines_SOV_A
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concept_submarines_SOV_B
+			research_cost_coeff = 1
+		}
+
+		allow_branch = {
+			OR = { 
+				original_tag = SOV
+				original_tag = RUS
+				original_tag = BLR
+				original_tag = UKR
+				original_tag = GEO
+				original_tag = KAZ
+				original_tag = EST
+				original_tag = LAT
+				original_tag = LIT
+				original_tag = TMS
+				original_tag = UZB
+				original_tag = TAJ
+				original_tag = KYR
+			}
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3 y = @t5 }
+		}
+		
+		categories = {
+			sc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	concept_submarines_SOV_A = {
+		enable_equipments = {
+			ship_hull_cruiser_submarineA
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3p y = @t7 }
+		}
+		
+		categories = {
+			sc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	concept_submarines_SOV_B = {
+		enable_equipments = {
+			ship_hull_cruiser_submarineB
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3m y = @t7 }
+		}
+		
+		categories = {
+			sc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	concept_submarines = {
+		on_research_complete = {
+			
+		}
+
+		path = {
+			leads_to_tech = body_submarines
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @platform }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines = {
+		enable_equipments = {
+			ship_hull_submarine_1
+		}
+
+		path = {
+			leads_to_tech = body_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t1 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines1 = {
+		enable_equipments = {
+			ship_hull_submarine_2
+		}
+
+		dependencies = {
+			body_submarines = 1
+			auto_torp = 1
+			rocket_torp2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_submarinesA
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_submarinesB
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t4 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines2 = {
+		enable_equipments = {
+			ship_hull_submarine_3
+		}
+
+		path = {
+			leads_to_tech = body_submarines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t7 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines3 = {
+		enable_equipments = {
+			ship_hull_submarine_4
+		}
+
+		dependencies = {
+			body_submarines2 = 1
+			exp_possibility = 1
+			submarine_bius1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t10 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines4 = {
+		enable_equipments = {
+			ship_hull_submarine_5
+		}
+
+		dependencies = {
+			body_submarines3 = 1
+			exp_silent2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t13 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarines5 = {
+		enable_equipments = {
+			ship_hull_submarine_6
+		}
+
+		# path = {
+		# 	leads_to_tech = body_submarines6
+		# 	research_cost_coeff = 1
+		# }
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5p y = @t16 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarinesA = {
+		enable_equipments = {
+			ship_hull_submarine_1_A
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t4 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	body_submarinesB = {
+		enable_equipments = {
+			ship_hull_submarine_1_B
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5m y = @t4 }
+		}
+		
+		categories = {
+			cc_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_1
+		}
+
+		dependencies = {
+			concept_submarine_rocket = 1
+			concept_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t0 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	torp = {
+		enable_equipment_modules = {
+			acoustic_torpedo
+		}
+
+		dependencies = {
+			concept_submarine_rocket = 1
+			concept_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t2 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	ballistic_rocket = {
+		enable_equipment_modules = {
+			submarine_small_ballistic_rocket
+		}
+
+		dependencies = {
+			body_submarine_rocket = 1
+			body_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0d y = @t3 }
+		}
+		
+		categories = {
+			naval_rocket_launcher_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	torp1 = {
+		enable_equipment_modules = {
+			submarines_homing_torpedo
+		}
+
+		dependencies = {
+			body_submarine_rocket = 1
+			body_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t3 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr1 = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_2
+		}
+
+		dependencies = {
+			body_submarine_rocket = 1
+			body_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t4 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	rocket_torp = {
+		enable_equipment_modules = {
+			submarine_small_rocket_torped
+		}
+
+		dependencies = {
+			body_submarine_rocket = 1
+			body_speed_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t5 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	torp2 = {
+		enable_equipment_modules = {
+			submarine_medium_ballistic_rocket
+		}
+
+		dependencies = {
+			body_submarine_rocket1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t6 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr2 = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_3
+		}
+
+		dependencies = {
+			body_submarine_rocket1 = 1
+			body_speed_submarines1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t7 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	exp_silent3 = {
+		enable_equipment_modules = {
+			ship_armor_submarine_silent_3
+		}
+
+		dependencies = {
+			body_submarine_rocket1 = 1
+			body_speed_submarines1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t8 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	SS_RCC = {
+		enable_equipment_modules = {
+			submarines_light_medium_rcc
+		}
+
+		dependencies = {
+			body_speed_submarines3 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2p y = @t8 }
+		}
+		
+		categories = {
+			naval_rcc
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	SS_expe = {
+		on_research_complete = {
+			
+		}
+
+		dependencies = {
+			body_speed_submarines3 = 1
+		}
+		
+		path = {
+			leads_to_tech = body_speed_submarines3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g2p y = @t9 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	SS_expe_noise_reduction = {
+		on_research_complete = {
+			
+		}
+
+		dependencies = {
+			body_submarine_rocket3 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0d y = @t9 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr3 = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_4
+		}
+
+		dependencies = {
+			body_submarine_rocket2 = 1
+			body_speed_submarines2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t10 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	submarine_bius = {
+		enable_equipment_modules = {
+			submarine_small_aegis
+		}
+
+		dependencies = {
+			body_submarine_rocket2 = 1
+			body_speed_submarines2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t11 }
+		}
+		
+		categories = {
+			naval_bius_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr4 = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_5
+		}
+
+		dependencies = {
+			body_submarine_rocket3 = 1
+			body_speed_submarines3 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarine_rocket4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarines4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t13 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr5 = {
+		enable_equipment_modules = {
+			submarine_nuclear_reactor_6
+		}
+
+		dependencies = {
+			body_submarine_rocket4 = 1
+			body_speed_submarines4 = 1
+		}
+
+		# path = {
+		# 	leads_to_tech = body_submarine_rocket5
+		# 	research_cost_coeff = 1
+		# }
+		path = {
+			leads_to_tech = body_speed_submarines5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g0p y = @t16 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	torp_rocked = {
+		enable_equipment_modules = {
+			submarine_plark_rocket_torped
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4p y = @t3 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr = {
+		enable_equipment_modules = {
+			speed_submarine_nuclear_reactor_1
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t3 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_rcc = {
+		enable_equipment_modules = {
+			submarines_speed_rcc
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t4 }
+		}
+		
+		categories = {
+			naval_rcc
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_torp = {
+		enable_equipment_modules = {
+			submarines_homing_torpedo_medium
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t5 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	progressive_RCC = {
+		enable_equipment_modules = {
+			submarines_effective_medium_rcc
+		}
+
+		dependencies = {
+			body_speed_submarinesA1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t9 }
+		}
+		
+		categories = {
+			naval_rcc
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	exp_silent = {
+		enable_equipment_modules = {
+			ship_armor_submarine_silent
+		}
+
+		dependencies = {
+			body_speed_submarinesA1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t10 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr6 = {
+		enable_equipment_modules = {
+			speed_submarine_nuclear_reactor_2
+		}
+
+		dependencies = {
+			body_speed_submarinesA1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g3d y = @t11 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	managet_rcc = {
+		enable_equipment_modules = {
+			submarines_managet_medium_rcc
+		}
+
+		dependencies = {
+			body_submarines1 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarinesA
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t6 }
+		}
+		
+		categories = {
+			naval_rcc
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	auto_torp = {
+		enable_equipment_modules = {
+			submarines_homing_torpedo_large
+		}
+
+		dependencies = {
+			body_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4m y = @t3 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	rocket_torp2 = {
+		enable_equipment_modules = {
+			submarine_dpl_rocket_torped	
+		}
+
+		dependencies = {
+			body_submarines = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g5 y = @t3 }
+		}
+		
+		categories = {
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	exp_silent1 = {
+		enable_equipment_modules = {
+			ship_armor_submarine_silent_1
+		}
+
+		dependencies = {
+			body_speed_submarinesA = 1
+		}
+
+		path = {
+			leads_to_tech = body_speed_submarinesA1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4p y = @t6 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	exp_possibility = {
+		on_research_complete = {
+			
+		}
+
+		dependencies = {
+			body_submarines2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t9 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	submarine_bius1 = {
+		enable_equipment_modules = {
+			submarine_medium_aegis
+		}
+
+		dependencies = {
+			body_submarines2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = body_speed_submarinesA2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t10 }
+		}
+		
+		categories = {
+			naval_bius_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	exp_silent2 = {
+		enable_equipment_modules = {
+			ship_armor_submarine_silent_2
+		}
+
+		dependencies = {
+			body_submarines3 = 1
+			body_speed_submarinesA2 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines4
+			research_cost_coeff = 1
+		}
+		# path = {
+		# 	leads_to_tech = body_speed_submarinesA3
+		# 	research_cost_coeff = 1
+		# }
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t13 }
+		}
+		
+		categories = {
+			stels_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	s_nr7 = {
+		enable_equipment_modules = {
+			speed_submarine_nuclear_reactor_3
+		}
+
+		dependencies = {
+			body_submarines4 = 1
+		}
+
+		path = {
+			leads_to_tech = body_submarines5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = submarines_folder
+			position = { x = @g4 y = @t16 }
+		}
+		
+		categories = {
+			nuclear_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}

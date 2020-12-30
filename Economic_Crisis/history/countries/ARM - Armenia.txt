@@ -1,0 +1,204 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 230
+
+add_ideas = {
+	ARM_surrounded_by_enemies
+	semi-presidential_republic
+}
+
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+1991.9.2 = {
+
+	give_guarantee = NKR
+
+	# Diplomacy - марионетки и зоны влияния для аддона и без него
+	 if = {
+		limit = {
+			has_dlc = "Together for Victory"
+			}
+			set_autonomy = {
+				target = NKR
+				autonomy_state = satellite_state
+				freedom_level = 0.35
+			}	
+			else = {
+				puppet = NKR
+			}
+		}
+	
+}
+
+1991.12.29 = {
+    add_ideas = {
+		mixed_schools
+		NPT
+		cis_member
+	}
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 1112 }
+	load_oob = "_tech_csto_regional_2013"
+	oob = "ARM_2013" 
+	add_ideas = average_terrorism
+
+	add_political_power = 0
+
+	set_convoys = 20
+	
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {		
+		ruling_party = democratic
+		last_election = "2014.7.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 10
+		democratic = 70
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Serzh Sargsyan"
+		desc = ""
+		picture = "gfx/leaders/ARM/portrait_serzh_sargsyan.dds"
+		ideology = national_conservatism_dem
+		traits = { trait_national_conservatism_dem }
+	}
+	create_country_leader = {
+		name = "Grant Margaryan"
+		desc = ""
+		picture = "gfx/leaders/ARM/portrait_grant_margaryan.dds"
+		ideology = stalinism
+		traits = { trait_stalinism }
+	}
+	create_country_leader = {
+		name = "Gagik Tsarukyan"
+		desc = ""
+		picture = "gfx/leaders/ARM/portrait_gagik_tsaruckyan.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+	create_country_leader = {
+		name = "Garnik Isagulyan"
+		desc = ""
+		picture = "gfx/leaders/ARM/portrait_garnik_isagulyan.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Raffi Ovanisyan"
+		desc = ""
+		picture = "gfx/leaders/ARM/portrait_raffi_ovanisyan.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+}
+
+	create_field_marshal = {
+		name = "Movses Hakobyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_movses_hakobyan.dds"
+		traits = { offensive_doctrine old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Haykaz Papik Baghmanyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_haykaz_baghmanyan.dds"
+		traits = { bearer_of_artillery }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Stepan Robert Galstyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_stepan_galstyan.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Onik Viktor Gasparyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_onik_gasparyan.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Aris Brutyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_aris_brutyan.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Artak Davtyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_artak_davtyan.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Albert Mardoyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_albert mardoyan.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Armen Vardanyan"
+		portrait_path = "gfx/leaders/ARM/portrait_arm_general_armen_vardanyan.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+

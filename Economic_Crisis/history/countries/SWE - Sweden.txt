@@ -1,0 +1,109 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 141	
+
+add_ideas = {
+	king_carl_xvi_gustaf
+	eu_member
+	neutrality_idea
+	parliamentary_monarchy
+	mixed_schools
+	NPT
+	integration_in_nordefco
+}
+
+2006.11.4 = {
+	create_faction = NORDEFCO #Североевропейский оборонительный союз
+	add_to_faction = FIN
+	add_to_faction = SWE
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 57870 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "SWE_2013"
+
+	add_ideas =  low_terrorism
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+		
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2010.9.19"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5.7
+		reformism = 31.1
+		liberalism = 16
+		democratic = 30
+		neutrality = 6
+		fascism = 11.2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jonas Sjöstedt"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_jonas_sjostedt.dds"
+		ideology = marxism #Левая партия
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Stefan Löfven"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_stefan_lofven.dds"
+		ideology = nordic_model #Социал-демократическая рабочая партия
+		traits = { trait_nordic_model }
+	}
+
+	create_country_leader = {
+		name = "Nyamko Sabuni"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_nyamko_sabuni.dds"
+		ideology = conservative_liberalism #Народная партия - либералы
+		traits = { trait_conservative_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Jan Björklund"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_jan_bjorklund.dds"
+		ideology = conservative_liberalism #Народная партия - либералы
+		expire = "2019.6.28"
+		traits = { trait_conservative_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Fredrik Reinfeldt"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_fredrik_reinfeldt.dds"
+		ideology = liberal_conservatism #Умеренная коалиционная партия
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Maud Olofsson"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_maud_olofsson.dds"
+		ideology = centrist_democracy #actually it's green_liberalism; Партия Центра
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Jimmie Åkesson"
+		desc = ""
+		picture = "gfx/leaders/SWE/portrait_jimmie_akesson.dds"
+		ideology = national_conservatism #Шведские демократы
+		traits = { trait_national_conservatism }
+	}
+
+}

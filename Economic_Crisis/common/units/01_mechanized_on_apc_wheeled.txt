@@ -1,0 +1,79 @@
+sub_units = {
+
+	# mechanized infantry on wheeled 8x8 or 6x6 armored personnel carriers (APC)
+	mechanized_on_apc_wheeled = {
+	
+		sprite = mechanized_on_apc_wheeled
+		map_icon_category = infantry
+		
+		priority = 610
+		ai_priority = 200
+		active = no
+
+		type = {
+			mechanized
+		}
+		
+		group = army_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_army
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 60
+		default_morale = 0.6
+		manpower = 116 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 1
+		weight = 0.85
+		supply_consumption = 0.15
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			apc_wheeled_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_wheeled_equipment
+	
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			apc_wheeled_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		forest = {
+			attack = 0.15
+		}
+		mountain = {
+			attack = 0.1
+			movement = 0.1
+		}
+		jungle = {
+			attack = 0.2
+		}
+		marsh = {
+			attack = 0.15
+		}
+		urban = {
+			attack = 0.1
+			defence = 0.05
+		}
+		river = {
+			attack = 0.1
+		}
+	}
+}

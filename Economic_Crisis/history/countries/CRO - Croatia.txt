@@ -1,0 +1,69 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 109
+
+
+add_ideas = {
+	mixed_schools
+	parliamentary_republic
+	eu_member
+	NPT
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 5777 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "CRO_2013"
+	
+	add_political_power = 0
+	add_ideas = terrorism_discounted
+	set_convoys = 5
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.1.11" #1.10
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 51
+		liberalism = 0
+		democratic = 49
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ivo Josipović"
+		desc = "POLITICS_IVO_JOSIPOVICH_DESC"
+		picture = "gfx/leaders/CRO/portrait_ivo_josipovich.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kolinda Grabar-Kitarović"
+		desc = "POLITICS_KOLINDA_GRABAR_KITAROVIC_DESC"
+		picture = "gfx/leaders/CRO/portrait_kolinda_grabar-kitarovic.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	#2019
+	#create_country_leader = {
+	#	name = "Zoran Milanović"
+	#	desc = "POLITICS_ZORAN_MILANOVICH_DESC"
+	#	picture = "gfx/leaders/CRO/portrait_zoran_milanovich.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+}
+

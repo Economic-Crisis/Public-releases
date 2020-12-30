@@ -1,0 +1,65 @@
+sub_units = {
+
+	# mechanized infantry on tracked armored personnel carriers (APC)
+	gendarmes_mechanized_on_apc_tracked = {
+	
+		sprite = gendarmes_mechanized_on_apc_tracked
+		map_icon_category = infantry
+		
+		active = no
+		priority = 643
+		ai_priority = 253
+
+		type = {
+			mechanized
+		}
+		
+		group = gendarmes_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_gendarmes
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 50
+		default_morale = 0.5
+		manpower = 110 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 2
+		weight = 1
+		supply_consumption = 0.18
+		
+		# Important Ability
+		suppression_factor = 0.20
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			apc_tracked_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_tracked_equipment
+	
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			apc_tracked_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		urban = {
+			defence = 0.2
+		}
+	}
+}

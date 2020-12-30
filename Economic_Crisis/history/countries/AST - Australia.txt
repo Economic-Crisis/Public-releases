@@ -1,0 +1,103 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 674
+
+	add_ideas = {
+		parliamentary_monarchy
+		queen_elizabet
+		anzus_member
+		regional_country
+		mixed_schools
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 156700 }
+
+	load_oob = "_tech_nato_regional_2013" # NATO = ANZUS
+	oob = "AST_2013"
+
+	set_stability = 0.8
+	add_political_power = 0
+	set_convoys = 100
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		NPT
+		average_terrorism
+		TPP_member
+	}
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2013.9.7"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 1
+		reformism = 41
+		liberalism = 55
+		democratic = 2
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	# снят с поста лидера партии  2015.9.15 из-за внутренних противорчеий
+	create_country_leader = {
+		name = "Anthony Abbott"
+		desc = "POLITICS_ANTHONY_ABBOTT_DESC"
+		picture = "gfx/leaders/AST/portrait_anthony_abbott.dds"
+		expire = "2015.9.15"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Bill Shorten"
+		desc = "POLITICS_BILL_SHORTEN_DESC"
+		picture = "gfx/leaders/AST/portrait_bill_shorten.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Bob Katter"
+		desc = "POLITICS_BOB_KATTER_DESC"
+		picture = "gfx/leaders/AST/portrait_bob_katter.dds"
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Bob Day"
+		desc = "POLITICS_BOB_DAY_DESC"
+		picture = "gfx/leaders/AST/portrait_bob_day.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Bob Brighton"
+		desc = "POLITICS_BOB_BRIGHTON_DESC"
+		picture = "gfx/leaders/AST/portrait_bob_brighton.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}
+
+2015.9.15 = {
+	create_country_leader = {
+		name = "Malcolm Turnbull"
+		desc = "POLITICS_MALCOLM_TURNBULL_DESC"
+		picture = "gfx/leaders/AST/portrait_malcolm_turnbull.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+}
+

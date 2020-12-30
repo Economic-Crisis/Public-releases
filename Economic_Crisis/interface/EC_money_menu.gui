@@ -1,0 +1,2366 @@
+guiTypes = {
+
+	#EC money	
+
+	containerWindowType = {
+		name = "money_menu_gui"
+		position = { x = 600 y = 300 }
+		size = { width = 784 height = 605 }
+		fade_time = 300
+        fade_type = linear
+		moveable = yes
+		
+		
+
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_money_menu_bg_2"
+			
+		}
+		
+		buttonType = {
+			name = "Close_btn"
+			quadTextureSprite = "GFX_money_menu_close_btn"
+			position = { x = 716 y = 282 }
+			clicksound = click_close
+		}
+
+
+		buttonType = {
+			name = "num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+		
+		buttonType = {
+			name = "minus_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "-"
+		}
+		
+		iconType = {
+			name ="money_menu_budget_last_year_icon"
+			spriteType = "GFX_money_menu_generic_box_454"
+			position = { x = 88 y = 75 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_budget_last_year_text"
+			position = { x = 95 y = 80 }
+			font = "hoi_18mbs"
+			text = "money_menu_budget_last_year_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+		}
+		
+		iconType = {
+			name ="money_menu_planned_budget_icon"
+			spriteType = "GFX_money_menu_generic_box_454"
+			position = { x = 88 y = 115 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_planned_budget_text"
+			position = { x = 95 y = 120 }
+			font = "hoi_18mbs"
+			text = "money_menu_planned_budget_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+		}
+		
+		buttonType = {
+			name ="money_menu_budget_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_87"
+			position = { x = 550 y = 115 }
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_budget_percen_text"
+			position = { x = 585 y = 120 }
+			font = "hoi_18mbs"
+			text = "[money_menu_budget_percen_text]"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="money_menu_current_budget_icon"
+			spriteType = "GFX_money_menu_generic_box_454"
+			position = { x = 88 y = 155 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_current_budget_text"
+			position = { x = 95 y = 160 }
+			font = "hoi_18mbs"
+			text = "money_menu_current_budget_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_current_budget_def_prof_text"
+			position = { x = 410 y = 160 }
+			font = "hoi_18mbs"
+			text = "money_menu_current_budget_def_prof_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+		}
+		
+		buttonType = {
+			name ="money_menu_budget_accept_btn"
+			spriteType = "GFX_money_menu_accept_btn"
+			position = { x = 550 y = 155 }
+			buttonText = "[money_menu_budget_accept_btn_text]"
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = money_menu_budget_accept_info
+		}
+		
+		
+		iconType = {
+			name ="money_menu_inc_exp_info"
+			spriteType = "GFX_money_menu_info_btn"
+			position = { x = 550 y = 71 }
+			pdx_tooltip = money_menu_inc_exp_info_text
+		}
+	
+
+		instantTextBoxType = {
+			name ="money_menu_budget_ministries_text"
+			position = { x = 300 y = 200 }
+			font = "hoi4_typewriter22"
+			text = "money_menu_ministries_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name ="money_menu_budget_rest_cats_percen_icon"
+			spriteType = "GFX_money_menu_generic_box_294"
+			position = { x = 254 y = 492 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="money_menu_budget_rest_cats_percen_text"
+			position = { x = 270 y = 504 }
+			font = "hoi_18mbs"
+			text = "[money_menu_budget_rest_cats_percen_text]"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+
+	
+	
+	
+	containerWindowType = {
+	name = "money_menu_categories_gui"
+	size = { width = 610 height = 381 }
+	position = { x = 91 y = 231 }
+	
+	verticalScrollbar = "right_vertical_slider"
+			margin = {top = 0 bottom = 153 }					
+				
+	background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_money_menu_bg_3"
+			
+			
+		}
+	
+	#CAT 1
+	#################################################################
+	#################################################################
+	
+		
+	
+		buttonType = {
+			name ="cat_1_open_btn"
+			spriteType = "GFX_cat_1_icon_small"
+			position = { x = 0 y = 0 }
+			
+		}
+	
+		iconType = {
+			name ="cat_1"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 10 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_1_text"
+			position = { x = 80 y = 22 }
+			font = "hoi_18mbs"
+			text = "cat_1_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_1_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 10 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_1_percen_text"
+			position = { x = 300 y = 22 }
+			font = "hoi_18mbs"
+			text = "cat_1_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_1_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 10 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_1_money_text"
+			position = { x = 410 y = 22 }
+			font = "hoi_18mbs"
+			text = "cat_1_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="cat_1_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 53 }
+			alwaystransparent = yes
+		}
+		
+		
+		
+		
+	#CAT 2
+	#################################################################
+	#################################################################
+
+	
+		buttonType = {
+			name ="cat_2_open_btn"
+			spriteType = "GFX_cat_2_icon_small"
+			position = { x = 0 y = 80 }
+		}
+	
+		iconType = {
+			name ="cat_2"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 90 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_2_text"
+			position = { x = 80 y = 102 }
+			font = "hoi_18mbs"
+			text = "cat_2_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_2_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 90 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_2_percen_text"
+			position = { x = 300 y = 102 }
+			font = "hoi_18mbs"
+			text = "cat_2_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_2_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 90 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_2_money_text"
+			position = { x = 410 y = 102 }
+			font = "hoi_18mbs"
+			text = "cat_2_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="cat_2_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 133 }
+			alwaystransparent = yes
+		}		
+
+
+	#CAT 3
+	#################################################################
+	#################################################################
+
+	
+		buttonType = {
+			name ="cat_3_open_btn"
+			spriteType = "GFX_cat_3_icon_small"
+			position = { x = 0 y = 160 }
+		}
+	
+		iconType = {
+			name ="cat_3"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 170 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_3_text"
+			position = { x = 80 y = 182 }
+			font = "hoi_18mbs"
+			text = "cat_3_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_3_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 170 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_3_percen_text"
+			position = { x = 300 y = 182 }
+			font = "hoi_18mbs"
+			text = "cat_3_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_3_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 170 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_3_money_text"
+			position = { x = 410 y = 182 }
+			font = "hoi_18mbs"
+			text = "cat_3_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="cat_3_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 213 }
+			alwaystransparent = yes
+		}
+
+
+	#CAT 4
+	#################################################################
+	#################################################################
+
+	
+		buttonType = {
+			name ="cat_4_open_btn"
+			spriteType = "GFX_cat_4_icon_small"
+			position = { x = 0 y = 240 }
+		}
+	
+		iconType = {
+			name ="cat_4"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 250 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_4_text"
+			position = { x = 80 y = 262 }
+			font = "hoi_18mbs"
+			text = "cat_4_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_4_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 250 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_4_percen_text"
+			position = { x = 300 y = 262 }
+			font = "hoi_18mbs"
+			text = "cat_4_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_4_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 250 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_4_money_text"
+			position = { x = 410 y = 262 }
+			font = "hoi_18mbs"
+			text = "cat_4_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+
+		
+		iconType = {
+			name ="cat_4_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 293 }
+			alwaystransparent = yes
+		}
+		
+	
+	#CAT 5
+	#################################################################
+	#################################################################
+
+	
+		buttonType = {
+			name ="cat_5_open_btn"
+			spriteType = "GFX_cat_5_icon_small"
+			position = { x = 0 y = 320 }
+		}
+	
+		iconType = {
+			name ="cat_5"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 330 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_5_text"
+			position = { x = 80 y = 342 }
+			font = "hoi_18mbs"
+			text = "cat_5_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_5_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 330 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_5_percen_text"
+			position = { x = 300 y = 342 }
+			font = "hoi_18mbs"
+			text = "cat_5_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_5_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 330 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_5_money_text"
+			position = { x = 410 y = 342 }
+			font = "hoi_18mbs"
+			text = "cat_5_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="cat_5_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 373 }
+			alwaystransparent = yes
+		}		
+		
+	#CAT 6
+	#################################################################
+	#################################################################
+
+	
+		buttonType = {
+			name ="cat_6_open_btn"
+			spriteType = "GFX_cat_6_icon_small"
+			position = { x = 0 y = 400 }
+		}
+	
+		iconType = {
+			name ="cat_6"
+			spriteType = "GFX_money_menu_generic_box_486"
+			position = { x = 72 y = 410 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_6_text"
+			position = { x = 80 y = 422 }
+			font = "hoi_18mbs"
+			text = "cat_6_text_main"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name ="cat_6_percen_btn"
+			spriteType = "GFX_money_menu_generic_box_76"
+			position = { x = 280 y = 410 }
+		}
+		
+		instantTextBoxType = {
+			name ="cat_6_percen_text"
+			position = { x = 300 y = 422 }
+			font = "hoi_18mbs"
+			text = "cat_6_percen_text"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name ="cat_6_money_icon"
+			spriteType = "GFX_money_menu_generic_box_145"
+			position = { x = 380 y = 410 }
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cat_6_money_text"
+			position = { x = 410 y = 422 }
+			font = "hoi_18mbs"
+			text = "cat_6_text_money_2"
+			format = left
+			maxWidth = 751
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name ="cat_6_bar"
+			spriteType = "GFX_cat_bar"
+			position = { x = 72 y = 453 }
+			alwaystransparent = yes
+		}		
+		
+		
+	}
+
+}
+
+#CAT 1 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_1_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_1_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 100 y = 280 }
+			font = "hoi4_typewriter16"
+			text = "cat_1_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_1_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+
+#Sections
+
+#SEC 1
+	iconType = {
+				name = "sec_1_icon"
+				position = { x = 415 y = 100 }
+				spriteType = "GFX_cat_1_sec_1_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_box"
+				position = { x = 485 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_1_box_2"
+				position = { x = 495 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_1_text_percen"
+			position = { x= 510 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_1_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_1_text_money"
+			position = { x= 600 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_1_ratio_icon"
+				position = { x = 405 y = 100 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_1_ratio_text_tp"
+			}		
+	iconType = {
+				name = "sec_1_bar"
+				position = { x = 485 y = 152 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+#SEC 2
+	iconType = {
+				name = "sec_2_icon"
+				position = { x = 415 y = 200 }
+				spriteType = "GFX_cat_1_sec_2_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_2_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_2_box"
+				position = { x = 485 y = 210 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_2_box_2"
+				position = { x = 495 y = 210 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_2_text_percen"
+			position = { x= 510 y = 223 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_2_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_2_text_money"
+			position = { x= 600 y = 223 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_2_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_2_ratio_icon"
+				position = { x = 405 y = 200 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_2_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_2_bar"
+				position = { x = 485 y = 252 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+
+#SEC 3
+	iconType = {
+				name = "sec_3_icon"
+				position = { x = 415 y = 300 }
+				spriteType = "GFX_cat_1_sec_3_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_3_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_3_box"
+				position = { x = 485 y = 310 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_3_box_2"
+				position = { x = 495 y = 310 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_3_text_percen"
+			position = { x= 510 y = 323 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_3_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_3_text_money"
+			position = { x= 600 y = 323 }
+			font = "hoi_18mbs"
+			text = "cat_1_sec_3_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_3_ratio_icon"
+				position = { x = 405 y = 300 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_1_sec_3_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_3_bar"
+				position = { x = 485 y = 352 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}			
+
+	}
+
+#CAT 2 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_2_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_2_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 100 y = 290 }
+			font = "hoi4_typewriter16"
+			text = "cat_2_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_2_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_2_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+	
+
+
+#Sections
+
+#SEC 1
+	iconType = {
+		name = "sec_1_icon"
+		position = { x = 415 y = 100 }
+		spriteType = "GFX_cat_2_sec_1_icon"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_1_ratio_text_tp"
+	}
+	iconType = {
+		name = "sec_1_box"
+		position = { x = 485 y = 110 }
+		spriteType = "GFX_money_menu_generic_box_214"
+		alwaystransparent = yes
+	}
+	buttonType = {
+		name = "sec_1_box_2"
+		position = { x = 495 y = 110 }
+		spriteType = "GFX_money_menu_generic_box_76"
+	}
+	instantTextBoxType = {
+		name ="sec_1_text_percen"
+		position = { x= 510 y = 123 }
+		font = "hoi_18mbs"
+		text = "cat_2_sec_1_text_percen"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	instantTextBoxType = {
+		name ="sec_1_text_money"
+		position = { x= 600 y = 123 }
+		font = "hoi_18mbs"
+		text = "cat_2_sec_1_text_money"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "sec_1_ratio_icon"
+		position = { x = 405 y = 100 }
+		spriteType = "GFX_money_menu_ratio_strip"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_1_ratio_text_tp"
+	}		
+	iconType = {
+		name = "sec_1_bar"
+		position = { x = 485 y = 152 }
+		spriteType = "GFX_cat_sec_bar"
+		alwaystransparent = yes
+	}
+	#SEC 2
+	iconType = {
+		name = "sec_2_icon"
+		position = { x = 415 y = 200 }
+		spriteType = "GFX_cat_2_sec_2_icon"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_2_ratio_text_tp"
+	}
+	iconType = {
+		name = "sec_2_box"
+		position = { x = 485 y = 214 }
+		spriteType = "GFX_money_menu_generic_box_214"
+		alwaystransparent = yes
+	}
+	buttonType = {
+		name = "sec_2_box_2"
+		position = { x = 495 y = 214 }
+		spriteType = "GFX_money_menu_generic_box_76"
+	}
+	instantTextBoxType = {
+		name ="sec_2_text_percen"
+		position = { x= 510 y = 223 } 
+		font = "hoi_18mbs"
+		text = "cat_2_sec_2_text_percen"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	instantTextBoxType = {
+		name ="sec_2_text_money"
+		position = { x= 600 y = 223 }
+		font = "hoi_18mbs"
+		text = "cat_2_sec_2_text_money"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "sec_2_ratio_icon"
+		position = { x = 405 y = 200 }
+		spriteType = "GFX_money_menu_ratio_strip"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_2_ratio_text_tp"
+	}		
+	iconType = {
+		name = "sec_2_bar"
+		position = { x = 485 y = 252 }
+		spriteType = "GFX_cat_sec_bar"
+		alwaystransparent = yes
+	}
+	#SEC 3
+	iconType = {
+		name = "sec_3_icon"
+		position = { x = 415 y = 300 }
+		spriteType = "GFX_cat_2_sec_3_icon"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_3_ratio_text_tp"
+	}
+	iconType = {
+		name = "sec_3_box"
+		position = { x = 485 y = 314 }
+		spriteType = "GFX_money_menu_generic_box_214"
+		alwaystransparent = yes
+	}
+	buttonType = {
+		name = "sec_3_box_2"
+		position = { x = 495 y = 314 }
+		spriteType = "GFX_money_menu_generic_box_76"
+	}
+	instantTextBoxType = {
+		name ="sec_3_text_percen"
+		position = { x= 510 y = 323 } 
+		font = "hoi_18mbs"
+		text = "cat_2_sec_3_text_percen"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	instantTextBoxType = {
+		name ="sec_3_text_money"
+		position = { x= 600 y = 323 }
+		font = "hoi_18mbs"
+		text = "cat_2_sec_3_text_money"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "sec_3_ratio_icon"
+		position = { x = 405 y = 300 }
+		spriteType = "GFX_money_menu_ratio_strip"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_3_ratio_text_tp"
+	}		
+	iconType = {
+		name = "sec_3_bar"
+		position = { x = 485 y = 352 }
+		spriteType = "GFX_cat_sec_bar"
+		alwaystransparent = yes
+	}
+	#SEC 4
+	iconType = {
+		name = "sec_4_icon"
+		position = { x = 415 y = 400 }
+		spriteType = "GFX_cat_2_sec_4_icon"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_4_ratio_text_tp"
+	}
+	iconType = {
+		name = "sec_4_box"
+		position = { x = 485 y = 414 }
+		spriteType = "GFX_money_menu_generic_box_214"
+		alwaystransparent = yes
+	}
+	buttonType = {
+		name = "sec_4_box_2"
+		position = { x = 495 y = 414 }
+		spriteType = "GFX_money_menu_generic_box_76"
+	}
+	instantTextBoxType = {
+		name ="sec_4_text_percen"
+		position = { x= 510 y = 423 } 
+		font = "hoi_18mbs"
+		text = "cat_2_sec_4_text_percen"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	instantTextBoxType = {
+		name ="sec_4_text_money"
+		position = { x= 600 y = 423 }
+		font = "hoi_18mbs"
+		text = "cat_2_sec_4_text_money"
+		format = left
+		maxWidth = 300
+		maxHeight = 400
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "sec_4_ratio_icon"
+		position = { x = 405 y = 400 }
+		spriteType = "GFX_money_menu_ratio_strip"
+		alwaystransparent = no
+		pdx_tooltip = "cat_2_sec_4_ratio_text_tp"
+	}		
+	iconType = {
+		name = "sec_4_bar"
+		position = { x = 485 y = 452 }
+		spriteType = "GFX_cat_sec_bar"
+		alwaystransparent = yes
+	}
+}
+
+#CAT 3 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_3_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_3_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 95 y = 290 }
+			font = "hoi4_typewriter16"
+			text = "cat_3_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_3_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_3_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+	
+
+
+#Sections
+
+#SEC 1	
+	iconType = {
+				name = "sec_1_icon"
+				position = { x = 415 y = 100 }
+				spriteType = "GFX_cat_3_sec_1_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_3_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_box"
+				position = { x = 485 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_1_box_2"
+				position = { x = 495 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_1_text_percen"
+			position = { x= 510 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_3_sec_1_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_1_text_money"
+			position = { x= 580 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_3_sec_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_1_ratio_icon"
+				position = { x = 405 y = 100 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_3_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_bar"
+				position = { x = 485 y = 152 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+
+
+	}
+	
+	
+	
+#CAT 4 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_4_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_4_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 95 y = 290 }
+			font = "hoi4_typewriter16"
+			text = "cat_4_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_4_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_4_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+	
+
+
+#Sections
+
+#SEC 1	
+	iconType = {
+				name = "sec_1_icon"
+				position = { x = 415 y = 100 }
+				spriteType = "GFX_cat_4_sec_1_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_4_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_box"
+				position = { x = 485 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_1_box_2"
+				position = { x = 495 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_1_text_percen"
+			position = { x= 510 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_4_sec_1_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_1_text_money"
+			position = { x= 580 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_4_sec_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_1_ratio_icon"
+				position = { x = 405 y = 100 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_4_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_bar"
+				position = { x = 485 y = 152 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+	}
+	
+	#CAT 5 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_5_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_5_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 95 y = 290 }
+			font = "hoi4_typewriter16"
+			text = "cat_5_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_5_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_5_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+	
+
+
+#Sections
+
+#SEC 1	
+	iconType = {
+				name = "sec_1_icon"
+				position = { x = 415 y = 100 }
+				spriteType = "GFX_cat_5_sec_1_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_5_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_box"
+				position = { x = 485 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_1_box_2"
+				position = { x = 495 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_1_text_percen"
+			position = { x= 510 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_5_sec_1_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_1_text_money"
+			position = { x= 580 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_5_sec_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_1_ratio_icon"
+				position = { x = 405 y = 100 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_5_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_bar"
+				position = { x = 485 y = 152 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+	}
+
+
+#CAT 6 #########################################################################
+
+	containerWindowType = {
+	name = "money_menu_cat_6_gui"
+	fade_time = 300
+        fade_type = linear
+		show_sound = menu_open_window
+	moveable = yes
+	size = { width = 784 height = 605 }	
+	
+	buttonType = {
+			name = "sec_num_1"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "1"
+		}
+		
+		buttonType = {
+			name = "sec_num_2"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "2"
+		}
+		
+		buttonType = {
+			name = "sec_num_3"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "3"
+		}
+		
+		buttonType = {
+			name = "sec_num_4"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "4"
+		}
+		
+		buttonType = {
+			name = "sec_num_5"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "5"
+		}
+		
+		buttonType = {
+			name = "sec_num_6"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "6"
+		}
+		
+		buttonType = {
+			name = "sec_num_7"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "7"
+		}
+		
+		buttonType = {
+			name = "sec_num_8"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "8"
+		}
+		
+		buttonType = {
+			name = "sec_num_9"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "9"
+		}
+		
+		buttonType = {
+			name = "sec_num_0"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "0"
+		}
+		
+		buttonType = {
+			name = "sec_num_clear_btn"
+			quadTextureSprite = "GFX_closebutton"
+			scale = 0.00001
+			position = { x = 15 y = 305 }
+			shortcut = "BACKSPACE"
+		}
+	
+		background = {
+			name ="cat_bg"
+			spriteType = "GFX_money_menu_bg"
+		}
+		
+		
+		
+	buttonType = {
+				name = "cat_close_btn"
+				position = { x = 716 y = 282 }
+				spriteType = "GFX_money_menu_close_btn"
+				alwaystransparent = no
+			}	
+		
+	iconType = {
+				name = "cat_icon"
+				position = { x = 116 y = 85 }
+				spriteType = "GFX_cat_6_icon"
+				alwaystransparent = no
+			}	
+		
+	instantTextBoxType = {
+			name ="cat_text"
+			position = { x= 95 y = 290 }
+			font = "hoi4_typewriter16"
+			text = "cat_6_text"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+	iconType = {
+				name = "cat_box"
+				position = { x = 100 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_money"
+			position = { x= 120 y = 490 }
+			font = "hoi_18mbs"
+			text = "cat_6_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}
+
+
+	iconType = {
+				name = "cat_box_2"
+				position = { x = 500 y = 480 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+
+	instantTextBoxType = {
+			name ="cat_text_rest_percen"
+			position = { x= 520 y = 490 }
+			font = "hoi_18mbs"
+			text = "[cat_6_text_rest_percen]"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+		}		
+
+
+	
+
+
+#Sections
+
+#SEC 1	
+	iconType = {
+				name = "sec_1_icon"
+				position = { x = 415 y = 100 }
+				spriteType = "GFX_cat_6_sec_1_icon"
+				alwaystransparent = no
+				pdx_tooltip = "cat_6_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_box"
+				position = { x = 485 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_214"
+				alwaystransparent = yes
+			}
+	buttonType = {
+				name = "sec_1_box_2"
+				position = { x = 495 y = 110 }
+				spriteType = "GFX_money_menu_generic_box_76"
+			}
+	instantTextBoxType = {
+			name ="sec_1_text_percen"
+			position = { x= 510 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_6_sec_1_text_percen"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	instantTextBoxType = {
+			name ="sec_1_text_money"
+			position = { x= 580 y = 123 }
+			font = "hoi_18mbs"
+			text = "cat_6_sec_1_text_money"
+			format = left
+			maxWidth = 300
+			maxHeight = 400
+			alwaystransparent = yes
+		}
+	iconType = {
+				name = "sec_1_ratio_icon"
+				position = { x = 405 y = 100 }
+				spriteType = "GFX_money_menu_ratio_strip"
+				alwaystransparent = no
+				pdx_tooltip = "cat_6_sec_1_ratio_text_tp"
+			}
+	iconType = {
+				name = "sec_1_bar"
+				position = { x = 485 y = 152 }
+				spriteType = "GFX_cat_sec_bar"
+				alwaystransparent = yes
+			}
+
+	}
+
+	containerWindowType = {
+		name = "budget_alert_gui"
+		position = { x = 580 y = 40 }
+		size = { width = 200 height = 100 }
+		
+		show_position = { x = 520 y = 84 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		
+		fade_time = 300
+        fade_type = linear
+		
+		moveable = no
+		show_sound = menu_open_window
+		
+		
+		buttonType = {
+			name = "budget_menu_btn"
+			quadTextureSprite = "GFX_ec_popup_154"
+			position = { x = 0 y = 0 }
+			clicksound = click_send
+			pdx_tooltip = budget_alert_info
+		}	
+		
+		iconType = {
+				name = "icon"
+				position = { x = 2 y = 2 }
+				spriteType = "GFX_budget_alert_icon"
+				alwaystransparent = yes
+			}	
+	
+}
+
+
+
+}
+

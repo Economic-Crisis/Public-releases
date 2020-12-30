@@ -1,0 +1,352 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#AMZ бронеавтомобили
+		AMZ = {
+
+			picture = AMZ
+			allowed = {
+				original_tag = POL
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Polish Navy Shipyard судостроительная компания
+		Polish_Navy_Shipyard = {
+			
+			picture = Polish_Navy_Shipyard
+			
+			allowed = {
+				original_tag = POL
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#PZL Mielec авиастроительная компания
+		PZL_Mielec = {
+			
+			picture = PZL_Mielec
+			
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#FB стрелковое вооружение
+		FB = {
+			
+			picture = FB
+			allowed = {
+				original_tag = POL
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#Zakłady Mechaniczne Tarnów стрелковое вооружение
+		Zakady_Mechaniczne_Tarnow = {
+			
+			picture = Zakady_Mechaniczne_Tarnow
+			allowed = {
+				original_tag = POL
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#Mesko боеприпасы для стрелкового вооружения
+		Mesko = {
+			
+			picture = Mesko
+			allowed = {
+				original_tag = POL
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+				#Доп. Средства = 0.1
+			}
+			
+			cost = 750
+			
+			traits = { support_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#Jelcz автомобилестроение
+		Jelcz = {
+			
+			picture = Jelcz
+			allowed = {
+				original_tag = POL
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#Solaris автомобилестроение
+		Solaris = {
+			
+			picture = Solaris
+			allowed = {
+				original_tag = POL
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#Kompania Węglowa горнодобывающая компания
+		Kompania_Weglowa = {
+
+			picture = Kompania_Weglowa
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		#Ursus тяжелая промышленность
+		Ursus = {
+
+			picture = Ursus
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.11
+			}
+			cost = 650
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				
+			}
+		}
+		
+		#Electro Holding электротехническая компания
+		Electro_Holding = {
+
+			picture = Electro_Holding
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#ASSECO айти- компания
+		ASSECO = {
+
+			picture = ASSECO
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Hortex продукты питания
+		Hortex = {
+
+			picture = Hortex
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		#PESA железнодорожная компания
+		PESA = {
+
+			picture = PESA
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { railway_corporation }
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				#slots_from_infrasturucture_factor = 0.1
+			}
+		}
+		
+		#PGNIK нефтегазовая компания
+		PGNIK = {
+
+			picture = PGNIK
+			allowed = {
+				original_tag = POL
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 25
+					}
+				}
+			}
+		}
+	}
+}	

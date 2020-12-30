@@ -1,0 +1,59 @@
+﻿######################
+### Economic Crisis ##
+######################
+
+add_namespace = minister
+
+country_event = {
+	id = minister.1
+	title = minister.1.t
+
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_idea_with_trait = foreign_ministers_addiction_USA
+	}
+	
+	option = {
+		country_event = { days = 10 id = minister.1 }
+		ROOT = { add_opinion_modifier = { target = USA modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+		USA = { add_opinion_modifier = { target = ROOT modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+	}
+}
+
+country_event = {
+	id = minister.2
+	title = minister.2.t
+
+	hidden = yes
+	is_triggered_only = yes	
+	
+	trigger = {
+		has_idea_with_trait = foreign_ministers_addiction_RUS
+	}
+	
+	option = {
+		country_event = { days = 10 id = minister.2 }
+		ROOT = { add_opinion_modifier = { target = RUS modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+		RUS = { add_opinion_modifier = { target = ROOT modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+	}
+}
+
+country_event = {
+	id = minister.3
+	title = minister.3.t
+
+	hidden = yes
+	is_triggered_only = yes	
+	
+	trigger = {
+		has_idea_with_trait = foreign_ministers_addiction_CHI
+	}
+	
+	option = {
+		country_event = { days = 10 id = minister.3 }
+		ROOT = { add_opinion_modifier = { target = CHI modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+		CHI = { add_opinion_modifier = { target = ROOT modifier = minister } } #Тут надо добавить модификатор который уже существующего в файл opinion_modifier
+	}
+}

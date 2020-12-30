@@ -1,0 +1,791 @@
+### КРАЙНЕ ЖЕЛАТЕЛЬНО ВЕРНУТЬ ИМ ВАНИЛЬНЫЕ НАЗВАНИЯ из ванильного файла 00_traits! 
+## ДЛЯ НИХ АВТОГЕНЕРАЦИЮ ПЕРЕПИСЫВАТЬ МНЕ СОВСЕМ НЕ ХОЧЕТСЯ!
+## Также здесь затесались теоретики похоже. Их перенести в 00_theorist_traits
+
+leader_traits = {
+
+	
+	#Light vehicle manufacturer
+	light_vehicle_manufacturer = {
+		random = no
+		equipment_bonus = {
+			truck_equipment = {
+				maximum_speed = 0.05
+			}
+			light_utility_vehicle_equipment = {
+				maximum_speed = 0.05 hardness = 0.05
+			}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# EC add all (or multirole) helicopter manufacturer
+	helicopter_manufacturer = {
+		random = no
+		equipment_bonus = {
+	#		CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}
+	#		cv_CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# EC add transport helicopter manufacturer
+	
+	transport_helicopter_manufacturer = {
+		random = no
+		equipment_bonus = {
+	#		CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}
+	#		cv_CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# EC add attack helicopter manufacturer
+	
+	attack_helicopter_manufacturer = {
+		random = no
+		equipment_bonus = {
+	#		CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}
+	#		cv_CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# EC add naval helicopter manufacturer
+	
+	naval_helicopter_manufacturer = {
+		random = no
+		equipment_bonus = {
+	#		CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}
+	#		cv_CAS_equipment = {
+	#			air_ground_attack = 0.15 reliability = 0.12
+	#		}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ifv_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				maximum_speed = 0.02 reliability = 0.08 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	apc_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				maximum_speed = 0.05 reliability = 0.08 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	zrk_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				reliability = 0.02 soft_attack = 0.01
+			}
+		}
+		navy_anti_air_attack_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###Замена fast tank manufacturer
+	light_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				maximum_speed = 0.05 reliability = 0.05 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	med_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05 soft_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	heav_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				armor_value = 0.06 hard_attack = 0.06
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	modern_tank_manufacturer = {
+		random = no
+		#generic
+
+		equipment_bonus = {
+			armor = {
+				reliability = 0.1
+				armor_value = 0.08 hard_attack = 0.08
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+
+
+	
+	### замена light aircraft manufacturer
+	light_aircraft_development = {
+		random = no
+		equipment_bonus = {
+			light_fighter = {
+				air_agility = 0.05 maximum_speed = 0.05
+			}
+			interceptor_fighter = {
+				air_agility = 0.05 maximum_speed = 0.10
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	###Замена CAS_manufacturer
+	CAS_development = {
+		random = no
+		equipment_bonus = {
+			attack_aircraft_equipment = {
+				air_ground_attack = 0.05 reliability = 0.10
+			}
+			attack_bomber_equipment = {
+				air_ground_attack = 0.08 reliability = 0.10
+			}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	###-Замена medium aircraft manufacturer
+	medium_aircraft_development = {
+		random = no
+		equipment_bonus = {
+			superior_fighter = {
+				reliability = 0.10
+			}
+			strike_fighter = {
+				air_ground_attack = 0.10 reliability = 0.03
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Замена heavy aircraft manufacturer
+	heavy_aircraft_development = {
+		random = no
+		equipment_bonus = {
+
+			strike_bomber_equipment = {
+				air_bombing = 0.12
+			}
+			nuclear_bomber_equipment = {
+				air_bombing = 0.18
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Замена naval aircraft manufacturer
+	naval_aircraft_development = {
+		random = no
+		equipment_bonus = {
+			# TODO: how about we boost all carrier plane versions here a bit?
+			naval_attack_bomber_equipment = {
+				air_range = 0.08 naval_strike_attack = 0.08
+			}
+			naval_anti_submarine_air_equipment = {
+				air_range = 0.12 naval_strike_attack = 0.10
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	naval_corporation = { #longer ranged, CVs favor larger hangers over armor
+		random = no
+		equipment_bonus = {
+			light_carrier = {
+				carrier_size = 0.05
+				armor_value = -0.15
+				naval_range = 0.05
+			}
+			light_carrier_nr = {
+				carrier_size = 0.05
+				armor_value = -0.15
+				naval_range = 0.05
+			}
+			heavy_carrier = {
+				carrier_size = 0.05
+				armor_value = -0.15
+				naval_range = 0.05
+			}
+			heavy_carrier_nr = {
+				carrier_size = 0.05
+				armor_value = -0.15
+				naval_range = 0.05
+			}
+			capital_ship = {
+				naval_range = 0.05
+			}
+			screen_ship = {
+				naval_range = 0.03
+			}
+			submarine = {
+				naval_range = 0.08
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	navy_corporation = { #armored carriers, slightly buffed cap ships
+		random = no
+		equipment_bonus = {
+			carrier = {
+				armor_value = 0.10 
+			}
+			capital_ship = {
+				armor_value = 0.05 sub_detection = 0.03 #  attack = 0.03
+			}
+			screen_ship = {
+				armor_value = 0.05 sub_detection = 0.05 # attack = 0.03
+			}
+			submarine = {
+				armor_value = 0.02 # attack = 0.10
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	
+		###-замена pacific fleet naval manufacturer
+	pacific_fleet_development = { #longer ranged, CVs favor larger hangers over armor
+		random = no
+		equipment_bonus = {
+			carrier = {
+				carrier_size = 0.03 armor_value = -0.10 naval_range = 0.03
+			}
+			capital_ship = {
+				naval_range = 0.03
+			}
+			screen_ship = {
+				naval_range = 0.02
+			}
+			submarine = {
+				naval_range = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###-замена atlantic fleet naval manufacturer
+	atlantic_fleet_development = { #armored carriers, slightly buffed cap ships
+		random = no
+		equipment_bonus = {
+			carrier = {
+				armor_value = 0.03 
+			}
+			capital_ship = {
+				armor_value = 0.03 # attack = 0.07
+			}
+			#screen_ship = {
+			#	
+			#}
+			#submarine = {
+			#	
+			#}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###-замена raiding fleet naval manufacturer
+	raiding_fleet_development = {
+		random = no
+		equipment_bonus = {
+			carrier = {
+				surface_visibility = -0.02 naval_speed = 0.03 carrier_size = -0.03
+			}
+			capital_ship = {
+				surface_visibility = -0.02 naval_speed = 0.03 # attack = -0.01
+			}
+			screen_ship = {
+				surface_visibility = -0.05 naval_speed = 0.05
+			}
+			submarine = {
+				sub_visibility = -0.05 surface_visibility = -0.05 naval_speed = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###-замена convoy escort naval manufacturer
+	convoy_escort_development = {
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				naval_range = 0.10 sub_detection = 0.08 naval_speed = 0.05 build_cost_ic = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###-замена coastal defence naval manufacturer
+	coastal_defence_development = {
+		random = no
+		equipment_bonus = {
+			carrier = {
+				build_cost_ic = -0.03 carrier_size = 0.01 naval_range = 0.03
+			}
+			capital_ship = {
+				build_cost_ic = -0.05 armor_value = -0.02 naval_range = 0.5 #  attack = -0.1
+			}
+			screen_ship = {
+				build_cost_ic = -0.05 naval_range = -0.03
+			}
+			submarine = {
+				build_cost_ic = -0.01 naval_range = -0.03
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###замена naval_manufacturer
+	naval_development = {
+		random = no
+		#generic
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###замена artillery manufacturer
+	artillery_development = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###замена infantry equipment manufacturer
+	infantry_equipment_development = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###замена motorized equipment manufacturer
+	motorized_equipment_development = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	unnamed_aerial_veh_manufacturer = {
+		random = no
+		
+		# equipment_bonus = {
+			# CAS_equipment = {
+				# air_ground_attack = 0.03
+			# }
+			# cv_CAS_equipment = {
+				# air_ground_attack = 0.03
+			# }		
+		# }
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	####Ванильные трейтсы
+		
+	light_aircraft_manufacturer = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				air_agility = 0.1 maximum_speed = 0.1
+			}
+			cv_fighter_equipment = {
+				air_agility = 0.1 maximum_speed = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	CAS_manufacturer = {
+		random = no
+		equipment_bonus = {
+			CAS_equipment = {
+				air_ground_attack = 0.1 reliability = 0.1
+			}
+			cv_CAS_equipment = {
+				air_ground_attack = 0.1 reliability = 0.1
+			}		
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	medium_aircraft_manufacturer = {
+		random = no
+		equipment_bonus = {
+			heavy_fighter_equipment = {
+				reliability = 0.2
+			}
+			tac_bomber_equipment = {
+				reliability = 0.2
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	heavy_aircraft_manufacturer = {
+		random = no
+		equipment_bonus = {
+
+			strat_bomber_equipment = {
+				air_bombing = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	naval_aircraft_manufacturer = {
+		random = no
+		equipment_bonus = {
+			# TODO: how about we boost all carrier plane versions here a bit?
+			nav_bomber_equipment = {
+				air_range = 0.1 naval_strike_attack = 0.1
+			}
+			cv_nav_bomber_equipment = {
+				air_range = 0.1 naval_strike_attack = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	fast_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				maximum_speed = 0.05 reliability = 0.1 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	medium_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05 soft_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	heavy_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				armor_value = 0.05 hard_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tank_manufacturer = {
+		random = no
+		#generic
+
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	pacific_fleet_naval_manufacturer = { #longer ranged, CVs favor larger hangers over armor
+		random = no
+		equipment_bonus = {
+			carrier = {
+				carrier_size = 0.25 armor_value = -0.15 naval_range = 0.25
+			}
+			capital_ship = {
+				naval_range = 0.25
+			}
+			screen_ship = {
+				naval_range = 0.25
+			}
+			submarine = {
+				naval_range = 0.25
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	atlantic_fleet_naval_manufacturer = { #armored carriers, slightly buffed cap ships
+		random = no
+		equipment_bonus = {
+			carrier = {
+				armor_value = 0.5 
+			}
+			capital_ship = {
+				armor_value = 0.1 # attack = 0.1
+			}
+			#screen_ship = {
+			#	
+			#}
+			#submarine = {
+			#	
+			#}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	raiding_fleet_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			carrier = {
+				surface_visibility = -0.1 naval_speed = 0.1 carrier_size = -0.1
+			}
+			capital_ship = {
+				surface_visibility = -0.1 naval_speed = 0.1 # attack = -0.1
+			}
+			screen_ship = {
+				surface_visibility = -0.1 naval_speed = 0.1
+			}
+			submarine = {
+				sub_visibility = -0.1 surface_visibility = -0.1 naval_speed = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	convoy_escort_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				naval_range = 0.3 sub_detection = 0.1 naval_speed = 0.1 build_cost_ic = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	coastal_defence_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			carrier = {
+				build_cost_ic = -0.25 carrier_size = -0.2 naval_range = -0.5
+			}
+			capital_ship = {
+				build_cost_ic = -0.25 armor_value = -0.2 naval_range = -0.5 # attack = -0.2
+			}
+			screen_ship = {
+				build_cost_ic = -0.25 naval_range = -0.5
+			}
+			submarine = {
+				build_cost_ic = -0.25 naval_range = -0.5
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	naval_manufacturer = {
+		random = no
+		#generic
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	artillery_manufacturer = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	infantry_equipment_manufacturer = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	support_equipment_manufacturer = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	motorized_equipment_manufacturer = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+			
+}

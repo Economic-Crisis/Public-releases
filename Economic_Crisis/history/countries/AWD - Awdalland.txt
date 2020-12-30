@@ -1,0 +1,70 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 988
+
+    add_ideas = {
+		not_recognized_country
+		presidential_republic
+		mixed_schools
+		musulman_collapse
+		integration_in_fgs
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 535 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "AWD_2013"
+	
+	set_stability = 0.35
+	add_ideas = high_terrorism
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 95
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 5
+	}
+	
+	create_country_leader = {
+		name = "Mahdi Isaaq"
+		desc = ""
+		picture = "gfx/leaders/SOM/AWD/portrait_mahdi_isaaq.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Government of Autonomy"
+		desc = ""
+		picture = "gfx/leaders/SOM/government_of_autonomy.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+}
+

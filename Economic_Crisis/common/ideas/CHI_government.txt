@@ -1,0 +1,1038 @@
+# Economic Crisis - only ministers
+
+
+# NOT idea chi_wu_den-yih -  former Vice President of the Republic of China
+
+ideas = {
+
+	head_of_government = {
+
+	# POLITICAL
+		chi_jiang_shusheng_hog = { 
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_centrist  limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+				news_event = political_party.32
+			}
+
+		#	do_effect = {
+		#		NOT = {
+		#			has_government = neutrality
+		#		}
+		#	}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+		chi_zhou_tienong_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_reformist  limit = 1 }
+					}
+				}
+			}
+
+			traits = {  party_leader_reformist
+						pm_reformist
+					}
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+		#	do_effect = {
+		#		NOT = {
+		#			has_government = reformism
+		#		}
+		#	}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_zheng_cunzhu_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_liberal limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_liberal
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		chi_li_keqiang_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_communist limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_communist
+						pm_communist
+					}
+
+			on_add = {
+				country_event = political.1
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		chi_xu_wenli_hog = {
+		
+			picture = gfx/interface/ideas/China/chi_xu_wenli.dds
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_conservative
+						pm_conservative
+					}
+
+			on_add = {
+				news_event = political.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		chi_fang_ning_hog = {
+		
+			picture = gfx/interface/ideas/China/chi_fang_ning.dds
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_nationalist
+						pm_nationalist
+					}
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+	}
+
+	defence_minister = {
+
+		chi_chang_wanquan_defm = { 
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { defence_minister_regime_loyalist }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_liang_guanglie_defm = { 
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { defence_minister_distinguished_military }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_chen_bingde_defm = { 
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { defence_minister_analyst }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	foreign_minister = {
+
+		chi_wang_yi_fgm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { foreign_minister_policy_defender
+						master_negotiations }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wang_guangya_fgm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = {  foreign_minister_policy_conversation }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	economic_minister = {
+
+		chi_ma_kai_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { economic_minister_public_administration }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_xiao_jio_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { economic_minister_banking_credit_system }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_han_changfu_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { economic_minister_public_administration }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	secret_service_chief = {
+
+		chi_guo_shengkun_ssch = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_geng_huichang_ssch = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { secret_service_chief_spy }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+		
+	political_advisor = {
+		
+		chi_fan_changlong = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { military_education_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+		chi_zhang_gaoli = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { backroom_manipulator
+						communist_revolutionary }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wang_huning = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { police_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wang_yang = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { reformism_demagogue
+						infrastructure_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_liu_yandong = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { medicine_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_zhang_dejiang = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { backstage_assistant
+						communist_revolutionary }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wang_qishan = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { tek_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_fang_jio = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { fascist_demagogue
+						cultura_reformer			}
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wan_gang = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = {  research_reformer
+						centrist_puppet_opposition }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_wang_zhaoguo = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = {  master_negotiations
+						reformism_demagogue }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_lu_yongxiang = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = {  industry_developer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_yang_jing = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = {  quartermaster_general }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_hua_jianmin = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { industry_top_managment }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_chen_zhili = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { propaganda_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_li_jianguo = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { oboronexpo_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_yan_junqi = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { democratic_puppet_opposition
+						armaments_organizer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_chen_changzhi = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { democratic_puppet_opposition
+						smooth_talking_charmer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_zhu_yufu = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					democratic > 0.5
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { liberalism_reformer
+						captain_of_industry }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		chi_liu_xianbin = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					democratic > 0.5
+				}
+			}
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			traits = { liberalism_demagogue
+						popular_person }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}

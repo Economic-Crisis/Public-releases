@@ -1,0 +1,34 @@
+﻿division_template = {
+	name = "Infantry Division"			# All divisions except 6th were reserves assigned to various military districts
+										# All but 6th are at reserve levels with low experience, older equipment
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized = { x = 2 y = 3 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }  
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "PNG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

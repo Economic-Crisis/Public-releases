@@ -1,0 +1,324 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## Yemen events      ###
+########################
+## Written by SuxrobGM #
+########################
+
+add_namespace = yemen
+
+country_event = {  #Yemen civil war 2014
+	id = yemen.1
+	title = yemen.1.t
+	desc = yemen.1.d
+	picture = GFX_event_yemen_civilwar
+	
+	fire_only_once = yes
+
+	immediate = { 
+		hidden_effect = {	
+			add_named_threat = { threat = 3	name = threat_YEM_civilwar_2014	}
+		}
+	}
+	
+	trigger = { 
+	    tag = YEM
+		date > 2014.9.19
+	    country_exists = YEM
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = yemen.1.a       #Поддержать Хуситов
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): yemen.1.a"
+		set_capital = 783
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.5
+			states = { 659 293 825 782 }
+		}
+		#set_equipment_fraction = 0.3
+		set_stability = 0.9	
+		
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.9
+		}
+		random_other_country = {
+			limit = {
+				original_tag = YEM
+				has_government = neutrality
+			}
+			#set_equipment_fraction = 0.3
+			set_stability = 0.9
+			set_capital = 659
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+		}
+		hidden_effect = {
+			set_country_flag = YEM_civil_war
+		    news_event = { id = yemen_news.1 days = 1 }
+			country_event = yemen.2
+		}	
+	}
+	
+	option = {
+		name = yemen.1.b     #Поддержать Хади
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): yemen.1.b"
+		set_capital = 659
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = democratic
+			size = 0.5
+			states = { 826 783 }
+		}
+		#set_equipment_fraction = 0.3
+		set_stability = 0.9	
+		
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
+		random_other_country = {
+			limit = {
+				original_tag = YEM
+				has_government = democratic
+			}
+			#set_equipment_fraction = 0.3
+			set_stability = 0.9
+			set_capital = 783
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.9
+			}
+		}
+		hidden_effect = {
+			set_country_flag = YEM_civil_war
+		    news_event = { id = yemen_news.1 days = 1 }
+			country_event = yemen.2
+		}
+	}
+}	
+	
+country_event = {  
+	id = yemen.2
+	title = yemen.2.t
+	desc = yemen.2.d
+	picture = GFX_event_yemen_civilwar
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+	    hidden_effect = {
+		    ALQ = { 
+				transfer_state = 784
+				784 = { add_core_of = ALQ }
+				set_province_controller = 13224
+				set_stability = 0.95
+				set_country_flag = YEM_civilwar
+				load_oob = "_tech_isis_2013"
+				load_oob = "ALQ_2013"
+			}
+			ALQ = { 
+			    declare_war_on = { 
+				    target = YEM 
+				    type = annex_everything 
+				} 
+			}
+			
+			if = {
+				limit = {
+					D01 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				} 
+				ALQ = { declare_war_on = { target = D01 type = annex_everything } }
+				D01 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D02 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						} 
+					}
+				}
+				ALQ = { declare_war_on = { target = D02 type = annex_everything } }
+				D02 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D03 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						} 
+					}
+				}
+				ALQ = { declare_war_on = { target = D03 type = annex_everything } }
+				D03 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D04 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D04 type = annex_everything } }
+				D04 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D05 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D05 type = annex_everything } }
+				D05 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D06 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D06 type = annex_everything } }
+				D07 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D07 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D07 type = annex_everything } }
+				D07 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D08 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D08 type = annex_everything } }
+				D08 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D09 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D09 type = annex_everything } }
+				D09 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D10 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D10 type = annex_everything } }
+				D10 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D11 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D11 type = annex_everything } }
+				D11 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D12 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D12 type = annex_everything } }
+				D12 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D13 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D13 type = annex_everything } }
+				D13 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D14 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D14 type = annex_everything } }
+				D14 = { set_country_flag = YEM_civilwar }
+			}
+			if = {
+				limit = {
+					D15 = { 
+						OR = {
+							controls_state = 659
+							controls_state = 783
+						}
+					}
+				}
+				ALQ = { declare_war_on = { target = D15 type = annex_everything } }
+				D15 = { set_country_flag = YEM_civilwar }
+			}
+		}
+	}
+	
+	option = {
+		name = yemen.2.b  
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): yemen.2.b"
+    }
+}	

@@ -1,0 +1,1594 @@
+armor_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		#cat_heavy_tracked_vehicle
+		armor
+	}
+	
+	upgrade_prio = {
+		factor = 2.17
+
+		modifier = {
+			factor = 7
+			OR = {
+				has_tech = medium_tank_t1
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			has_tech = main_battle_tank_t3
+		}
+	}
+	
+	match_to_count = 0.5
+
+	medium_tank_default = {
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		production_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		can_upgrade_in_field = {
+			has_equipment = { medium_tank_equipment < 100 } 
+		}
+		
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			2.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 4000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				medium_tank = 5
+				motorized = 4
+			}
+		}
+		
+		allowed_types = {
+			medium_tank
+			motorized
+			airborne_support_company
+			recon_battalion
+			#artillery
+		}
+		
+		replace_at_match = 0.4
+		replace_with = main_battle_tank_default
+		target_min_match = 0.5
+	}
+
+
+	main_battle_tank_default = {
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			10.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.5
+			match_value = 1000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				logistics_battalion = 1
+				airborne_support_company = 1
+			}
+			
+			regiments = {
+				main_battle_tank = 6
+				motorized = 3
+			}
+		}
+		
+		allowed_types = {
+			main_battle_tank
+			
+			motorized
+			mechanized_on_apc_wheeled
+
+			#Cheaper but slower might be worth considering
+			light_motorized
+			artillery_brigade
+			airborne_support_company
+			recon_battalion
+			airborne_support_company
+			logistics_battalion
+			
+			#artillery
+
+		}
+		
+		replace_at_match = 0.4
+		replace_with = main_battle_tank_te_default
+		target_min_match = 0.5
+	}
+
+	main_battle_tank_te_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 4
+			}
+		}
+		
+		target_width = 20.0
+		width_weight = 1.5
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			1.60 #-- hardness
+			1.00 #-- soft_attack
+			2.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			50.00 #-- max_organisation
+			0.80 #-- max_strength
+			1.0 #-- maximum_speed
+			10.0 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+
+		target_template = {
+			weight = 0.9
+			match_value = 5000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				airborne_support_company = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				main_battle_tank_te = 6
+				motorized = 4
+			}
+		}
+
+		allowed_types = {
+			main_battle_tank_te
+			main_battle_tank
+			motorized
+			mechanized_on_apc_tracked
+			light_motorized
+			airborne_support_company
+			recon_battalion
+			airborne_support_company
+			logistics_battalion
+			
+			#artillery
+		}
+		
+		replace_at_match = 0.8
+		replace_with = ng_battle_tank_default
+		target_min_match = 0.5
+	}
+
+
+	ng_battle_tank_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 2.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			50.00 #-- max_organisation
+			0.80 #-- max_strength
+			10.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 5000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				airborne_support_company = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				ng_battle_tank = 6
+				mechanized_on_ifv_tracked = 3
+			}
+		}
+		
+
+		allowed_types = {
+			ng_battle_tank
+			main_battle_tank
+			motorized
+			mechanized_on_apc_tracked
+			mechanized_on_apc_wheeled
+			airborne_support_company
+			recon_battalion
+			airborne_support_company
+			logistics_battalion
+			
+			#artillery
+		}
+	}
+
+}
+
+garrison_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+	
+	roles = {
+		garrison
+	}
+	
+	upgrade_prio = {
+		factor = 80
+
+		modifier = {
+			factor = 0
+			ai_has_role_template = garrison
+		}
+	}
+	
+	match_to_count = 0.60
+
+	garrison_generic = {
+	
+		reinforce_prio = 0
+		custom_icon = 7
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 6.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			0.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			3.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			#support = { 
+			#	
+			#}
+			
+			regiments = {
+				gendarmes_light_motorized = 6
+				gendarmes_motorized = 3
+			}
+		}
+		
+		allowed_types = {
+			gendarmes_light_motorized
+			militia
+		}
+	}
+}
+
+infantry_motorized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		#cat_infantry_motorized
+		infantry
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+	match_to_count = 0.10
+	
+	infantry_motorized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				medical_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				light_motorized = 7
+				motorized = 3
+				#artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			light_motorized	
+			motorized			
+			airborne_support_company
+			recon_battalion
+			medical_company
+			logistics_battalion
+			
+			#artillery
+			rocket_artillery
+			artillery_brigade
+		}
+	}
+}
+
+infantry_mechanized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_infantry_mechanized
+		infantry
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 5
+		}
+	}
+
+	match_to_count = 0.10
+	
+	infantry_mechanized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- build_cost_ic
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				airborne_support_company = 1
+				recon_battalion = 1
+				medical_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				mechanized_on_apc_wheeled = 7
+				mechanized_on_apc_tracked = 3
+				#artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			mechanized_on_apc_wheeled
+			mechanized_on_apc_tracked			
+			airborne_support_company
+			recon_battalion
+			medical_company
+			logistics_battalion
+			
+			#artillery
+			rocket_artillery
+			artillery_brigade
+		}
+	}
+}
+
+mountaineers_motorized_generic = {
+
+	#blocked_for = { }
+
+	roles = {
+		#cat_mountaineers_motorized
+		mountaineers
+	}
+	
+	upgrade_prio = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {	has_tech = tech_mountaineers }
+		}
+	}
+	
+	match_to_count = 0.45
+
+	mountaineers_motorized_default = {
+		upgrade_prio = {
+			factor = 2
+			modifier = { factor = 1	}
+		}
+	
+		target_width = 20.0
+		width_weight = 2.0
+		column_swap_factor = 0.2
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			0.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			1.00 #-- max_organisation
+			1.00 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.00 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.5
+			match_value = 3000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				mountaineers_light_motorized = 8
+				mountaineers_motorized = 2
+				artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			mountaineers_light_motorized
+			mountaineers_motorized
+			#artillery
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+		}
+	}
+}
+
+mountaineers_mechanized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_mountaineers_mechanized
+		mountaineers
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_mountaineers_mechanized_on_apc_wheeled
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+
+	mountaineers_mechanized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+	
+		target_width = 20.0
+		width_weight = 2.0
+		column_swap_factor = 0.2
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			0.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00  #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			1.00 #-- max_organisation
+			1.00 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.00 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.5
+			match_value = 3000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				mountaineers_light_motorized = 8
+				mountaineers_motorized = 2
+				#artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			mountaineers_light_motorized
+			mountaineers_motorized
+			#artillery
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+		}
+	}
+}
+
+marines_motorized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_marines_motorized
+		marines
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_marines
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+
+	marines_motorized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+	
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.05 #-- hardness
+			3.00 #-- soft_attack
+			0.01 #-- hard_attack
+			0.00 #-- recon
+			2.20 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			-0.1 #-- supply_consumption_factor
+			-0.1 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.05 #-- armor_value
+			0.00 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-0.2 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				recon_battalion = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				marines_light_motorized = 6
+				marines_motorized = 3
+			}
+		}
+
+		
+		allowed_types = {
+			marines_light_motorized
+			marines_motorized
+			airborne_support_company
+			logistics_battalion
+		}
+	}
+}
+
+marines_mechanized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_marines_mechanized
+		marines
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_marines_mechanized_on_apc_wheeled
+				has_tech = tech_marines_mechanized_on_apc_tracked
+				has_tech = tech_marines_mechanized_on_ifv_tracked
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+
+	marines_mechanized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+	
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.05 #-- hardness
+			3.00 #-- soft_attack
+			0.01 #-- hard_attack
+			0.00 #-- recon
+			2.20 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			-0.1 #-- supply_consumption_factor
+			-0.1 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- maximum_speed
+			0.05 #-- armor_value
+			0.00 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-0.2 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				recon_battalion = 1
+				logistics_battalion = 1
+			}
+			
+			regiments = {
+				marines_mechanized_on_apc_tracked = 3
+				marines_mechanized_on_ifv_tracked = 4
+				marines_mechanized_on_apc_wheeled = 2
+			}
+		}
+
+		
+		allowed_types = {
+			marines_mechanized_on_apc_tracked
+			marines_mechanized_on_apc_wheeled
+			marines_mechanized_on_ifv_tracked
+			airborne_support_company
+			logistics_battalion
+		}
+	}
+}
+
+
+paratroopers_motorized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_paratroopers_motorized
+		paratrooper
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_paratroopers
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+	
+	paratroopers_motorized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.20 #-- default_morale
+			1.00 #-- defense
+			0.20 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.10 #-- hard_attack
+			0.05 #-- recon
+			0.20 #-- entrenchment
+			0.20 #-- initiative
+			0.05 #-- casualty_trickleback
+			-1.0 #-- supply_consumption_factor
+			-1.0 #-- supply_consumption
+			0.01 #-- suppression
+			0.01 #-- suppression_factor
+			0.05 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.01 #-- air_attack
+			#-- Common Values
+			0.6 #-- max_organisation
+			0.4 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-1.0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				paratroopers_light_motorized = 6
+				paratroopers_motorized = 3
+			}
+		}
+		
+		allowed_types = {
+			paratroopers_light_motorized
+			paratroopers_motorized
+			airborne_support_company
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+			militia
+			#artillery
+			rocket_artillery
+		}
+	}
+}
+
+paratroopers_mechanized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		#cat_paratroopers_mechanized
+		paratrooper
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_paratroopers_mechanized_on_apc_wheeled
+				has_tech = tech_paratroopers_mechanized_on_apc_tracked
+				has_tech = tech_paratroopers_mechanized_on_ifv_airdroppable
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+	
+	paratroopers_mechanized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.20 #-- default_morale
+			1.00 #-- defense
+			0.20 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.10 #-- hard_attack
+			0.05 #-- recon
+			0.20 #-- entrenchment
+			0.20 #-- initiative
+			0.05 #-- casualty_trickleback
+			-1.0 #-- supply_consumption_factor
+			-1.0 #-- supply_consumption
+			0.01 #-- suppression
+			0.01 #-- suppression_factor
+			0.05 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
+			#-- Air Values
+			0.01 #-- air_attack
+			#-- Common Values
+			0.6 #-- max_organisation
+			0.4 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-1.0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				paratroopers_mechanized_on_apc_tracked = 3
+				#paratroopers_mechanized_on_ifv_tracked = 4
+				paratroopers_mechanized_on_apc_wheeled = 2
+			}
+		}
+		
+		allowed_types = {
+			paratroopers_mechanized_on_apc_tracked
+			#paratroopers_mechanized_on_ifv_tracked
+			paratroopers_mechanized_on_apc_wheeled
+			airborne_support_company
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+			militia
+			#artillery
+			rocket_artillery
+		}
+	}
+}
+
+
+special_forces_motorized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_special_forces_motorized
+		special_forces
+		infantry
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_special_forces
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+	
+	special_forces_motorized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.20 #-- default_morale
+			1.00 #-- defense
+			0.20 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.10 #-- hard_attack
+			0.05 #-- recon
+			0.20 #-- entrenchment
+			0.20 #-- initiative
+			0.05 #-- casualty_trickleback
+			-1.0 #-- supply_consumption_factor
+			-1.0 #-- supply_consumption
+			0.01 #-- suppression
+			0.01 #-- suppression_factor
+			0.05 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity	
+			#-- Air Values
+			0.01 #-- air_attack
+			#-- Common Values
+			0.6 #-- max_organisation
+			0.4 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-1.0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				special_forces_light_motorized = 6
+				special_forces_motorized = 3
+			}
+		}
+		
+		allowed_types = {
+			special_forces_light_motorized
+			special_forces_motorized
+			airborne_support_company
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+			militia
+			#artillery
+			rocket_artillery
+		}
+	}
+}
+
+special_forces_mechanized_generic = {
+
+	#blocked_for = {
+	#	
+	#}
+
+	roles = {
+		cat_special_forces_mechanized
+		special_forces
+		infantry
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_special_forces_mechanized_on_apc_wheeled
+				has_tech = tech_special_forces_mechanized_on_apc_tracked
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+	
+	special_forces_mechanized_default = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		
+		stat_weights = {
+			0.20 #-- default_morale
+			1.00 #-- defense
+			0.20 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.10 #-- hard_attack
+			0.05 #-- recon
+			0.20 #-- entrenchment
+			0.20 #-- initiative
+			0.05 #-- casualty_trickleback
+			-1.0 #-- supply_consumption_factor
+			-1.0 #-- supply_consumption
+			0.01 #-- suppression
+			0.01 #-- suppression_factor
+			0.05 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity	
+			#-- Air Values
+			0.01 #-- air_attack
+			#-- Common Values
+			0.6 #-- max_organisation
+			0.4 #-- max_strength
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-1.0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			-0.1 #-- build_cost_ic
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				airborne_support_company = 1
+				#artillery = 1
+			}
+			
+			regiments = {
+				special_forces_mechanized_on_apc_tracked = 4
+				special_forces_mechanized_on_apc_wheeled = 5
+			}
+		}
+		
+		allowed_types = {
+			special_forces_mechanized_on_apc_tracked
+			special_forces_mechanized_on_apc_wheeled
+			airborne_support_company
+			recon_battalion
+			signal_company
+			medical_company
+			logistics_battalion
+			
+			militia
+			#artillery
+			rocket_artillery
+		}
+	}
+}
+
+
+# REGIMENTS:
+# infantry
+# militia
+# gendarmes_light_motorized
+# gendarmes_motorized
+# gendarmes_mechanized_on_apc_wheeled
+# gendarmes_mechanized_on_apc_tracked
+# light_motorized
+# motorized
+# mechanized_on_apc_wheeled
+# mechanized_on_apc_tracked
+# mechanized_on_ifv_tracked
+# paratroopers_light_motorized
+# paratroopers_motorized
+# paratroopers_mechanized_on_apc_wheeled
+# paratroopers_mechanized_on_apc_tracked
+# paratroopers_mechanized_on_ifv_airdroppable
+# paratroopers_mechanized_on_apc_airdroppable
+# mountaineers_light_motorized
+# mountaineers_motorized
+# mountaineers_mechanized_on_apc_wheeled
+# mountaineers_mechanized_on_apc_tracked
+# marines_light_motorized
+# marines_motorized
+# marines_mechanized_on_apc_wheeled
+# marines_mechanized_on_apc_tracked
+# marines_mechanized_on_ifv_tracked
+# special_forces_light_motorized
+# special_forces_motorized
+# special_forces_mechanized_on_apc_wheeled
+# special_forces_mechanized_on_apc_tracked
+# airdroppable_light_tank
+# light_recon_battalionnaissance_tank
+# unmanned_tank
+# main_battle_tank
+# main_battle_tank_te
+# medium_tank
+# ng_battle_tank
+
+
+# SUPPORT:
+#airborne_support_company
+#recon_battalion
+#signal_company
+#maintenance_company
+#medical_company
+#logistics_battalion
+

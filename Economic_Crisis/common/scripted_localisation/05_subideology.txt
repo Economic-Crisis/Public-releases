@@ -1,0 +1,767 @@
+#Written by Kuban Animator
+
+defined_text = { 
+	name = GetSubideology
+
+	###################
+	###  SOCIALISM  ###
+	###################
+
+	#Default
+	text = {
+		trigger = { 
+			has_government = communism
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_marxism
+					has_country_leader_with_trait = trait_leninism
+					has_country_leader_with_trait = trait_china_socialism
+					has_country_leader_with_trait = trait_stalinism	
+					has_country_leader_with_trait = trait_trotskizm	
+					has_country_leader_with_trait = trait_maoism
+					has_country_leader_with_trait = trait_titoism
+					has_country_leader_with_trait = trait_labor_zionism
+					has_country_leader_with_trait = trait_juche
+					has_country_leader_with_trait = trait_anarchism
+					has_country_leader_with_trait = trait_national_communism
+					has_country_leader_with_trait = trait_progressive_socialism
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_SOCIALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_marxism
+		} 
+		localization_key = SUBIDEOLOGY_MARXISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_leninism				
+		} 
+		localization_key = SUBIDEOLOGY_LENINISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_china_socialism				
+		} 
+		localization_key = SUBIDEOLOGY_CHINA_SOCIALISM
+	}
+
+	text = {
+		trigger = { 
+			AND = {
+				has_country_leader_with_trait = trait_china_socialism
+				tag = CHI
+			}				
+		} 
+		localization_key = SUBIDEOLOGY_CHINA_SOCIALISM_CHI
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_stalinism				
+		} 
+		localization_key = SUBIDEOLOGY_STALINISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_trotskizm				
+		} 
+		localization_key = SUBIDEOLOGY_TROTSKIZM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_maoism				
+		} 
+		localization_key = SUBIDEOLOGY_MAOISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_titoism				
+		} 
+		localization_key = SUBIDEOLOGY_TITOISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_labor_zionism			
+		} 
+		localization_key = SUBIDEOLOGY_LABOR_ZIONISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_juche				
+		} 
+		localization_key = SUBIDEOLOGY_JUCHE
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_anarchism				
+		} 
+		localization_key = SUBIDEOLOGY_ANARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_communism				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_COMMUNISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_progressive_socialism				
+		} 
+		localization_key = SUBIDEOLOGY_PROGRESSIVE_SOCIALISM
+	}
+	
+	###################
+	###  REFORMISM  ###
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = reformism
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_social_democracy
+					has_country_leader_with_trait = trait_democratic_socialism
+					has_country_leader_with_trait = trait_nordic_model
+					has_country_leader_with_trait = trait_reformist_royalism	
+					has_country_leader_with_trait = trait_reformist_monarchism	
+					has_country_leader_with_trait = trait_religious_socialism
+					has_country_leader_with_trait = trait_green_politics
+					has_country_leader_with_trait = trait_progressivism
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_REFORMISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_social_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_SOCIAL_DEMOCRACY
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_democratic_socialism				
+		} 
+		localization_key = SUBIDEOLOGY_DEMOCRATIC_SOCIALISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_nordic_model				
+		} 
+		localization_key = SUBIDEOLOGY_NORDIC_MODEL
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_reformist_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_REFORMIST_ROYALISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_reformist_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_REFORMIST_MONARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_religious_socialism				
+		} 
+		localization_key = SUBIDEOLOGY_RELIGIOUS_SOCIALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_green_politics				
+		} 
+		localization_key = SUBIDEOLOGY_GREEN_POLITICS
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_progressivism				
+		} 
+		localization_key = SUBIDEOLOGY_PROGRESSIVISM
+	}
+	
+	###################
+	### LIBERALISM  ###
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = liberalism
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_classical_liberalism
+					has_country_leader_with_trait = trait_liberal_democracy
+					has_country_leader_with_trait = trait_conservative_liberalism
+					has_country_leader_with_trait = trait_national_liberalism_lib
+					has_country_leader_with_trait = trait_liberal_royalism	
+					has_country_leader_with_trait = trait_liberal_monarchism	
+					has_country_leader_with_trait = trait_libertarianism
+					has_country_leader_with_trait = trait_social_liberalism
+					has_country_leader_with_trait = trait_green_liberalism
+					has_country_leader_with_trait = trait_christian_democracy
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_LIBERALISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_classical_liberalism				
+		} 
+		localization_key = SUBIDEOLOGY_CLASSICAL_LIBERALISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_liberal_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERAL_DEMOCRACY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_conservative_liberalism				
+		} 
+		localization_key = SUBIDEOLOGY_CONSERVATIVE_LIBERALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_liberalism_lib			
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_LIBERALISM_LIB
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_liberal_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERAL_ROYALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_liberal_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERAL_MONARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_libertarianism				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERTARIANISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_social_liberalism				
+		} 
+		localization_key = SUBIDEOLOGY_SOCIAL_LIBERALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_green_liberalism				
+		} 
+		localization_key = SUBIDEOLOGY_GREEN_LIBERALISM
+	}
+		
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_christian_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_CHRISTIAN_DEMOCRACY
+	}
+
+	###################
+	## CONSERVATISM & ISLAMISM  ##
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = democratic
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_conservative_democracy
+					has_country_leader_with_trait = trait_liberal_conservatism
+					has_country_leader_with_trait = trait_national_conservatism_dem
+					has_country_leader_with_trait = trait_conservative_royalism
+					has_country_leader_with_trait = trait_conservative_monarchism	
+					has_country_leader_with_trait = trait_social_conservatism	
+					has_country_leader_with_trait = trait_christian_democracy_main
+					has_country_leader_with_trait = trait_neoconservatism
+					has_country_leader_with_trait = trait_green_conservatism
+					has_country_leader_with_trait = trait_revisionist_zionism
+					has_country_leader_with_trait = trait_christian_democracy
+
+					has_country_leader_with_trait = trait_shia_islamism
+					has_country_leader_with_trait = trait_sunni_islamism
+					has_country_leader_with_trait = trait_ibadi_royalism
+					has_country_leader_with_trait = trait_ibadi_monarchism
+					has_country_leader_with_trait = trait_shia_royalism	
+					has_country_leader_with_trait = trait_shia_monarchism	
+					has_country_leader_with_trait = trait_sunni_royalism	
+					has_country_leader_with_trait = trait_sunni_monarchism
+					has_country_leader_with_trait = trait_liberalism_islamism
+					has_country_leader_with_trait = trait_right_islamism
+					has_country_leader_with_trait = trait_gulenism
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_CONSERVATISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_conservative_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_CONSERVATIVE_DEMOCRACY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_liberal_conservatism				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERAL_CONSERVATISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_conservatism_dem			
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_CONSERVATISM_DEM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_conservative_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_CONSERVATIVE_ROYALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_conservative_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_CONSERVATIVE_MONARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_social_conservatism				
+		} 
+		localization_key = SUBIDEOLOGY_SOCIAL_CONSERVATISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_christian_democracy_main				
+		} 
+		localization_key = SUBIDEOLOGY_CHRISTIAN_DEMOCRACY_MAIN
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_neoconservatism				
+		} 
+		localization_key = SUBIDEOLOGY_NEOCONSERVATISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_green_conservatism				
+		} 
+		localization_key = SUBIDEOLOGY_GREEN_CONSERVATISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_revisionist_zionism				
+		} 
+		localization_key = SUBIDEOLOGY_REVISIONIST_ZIONISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_shia_islamism				
+		} 
+		localization_key = SUBIDEOLOGY_SHIA_ISLAMISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_sunni_islamism				
+		} 
+		localization_key = SUBIDEOLOGY_SUNNI_ISLAMISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_ibadi_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_IBADI_ROYALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_ibadi_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_IBADI_MONARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_shia_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_SHIA_ROYALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_shia_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_SHIA_MONARCHISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_sunni_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_SUNNI_ROYALISM
+	}
+		
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_sunni_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_SUNNI_MONARCHISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_liberalism_islamism				
+		} 
+		localization_key = SUBIDEOLOGY_LIBERALISM_ISLAMISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_right_islamism		
+		} 
+		localization_key = SUBIDEOLOGY_RIGHT_ISLAMISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_gulenism				
+		} 
+		localization_key = SUBIDEOLOGY_GULENISM
+	}
+
+	###################
+	###  CENTRISM   ###
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = neutrality
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_centrist_democracy
+					has_country_leader_with_trait = trait_authoritarian_democracy	
+					has_country_leader_with_trait = trait_sovereign_democracy
+					has_country_leader_with_trait = sovereign
+					has_country_leader_with_trait = trait_royalism
+					has_country_leader_with_trait = trait_monarchism	
+					has_country_leader_with_trait = trait_oligarchy	
+					has_country_leader_with_trait = trait_populism		
+					has_country_leader_with_trait = trait_corporatocracy
+					has_country_leader_with_trait = trait_christian_theocracy
+					has_country_leader_with_trait = trait_religious_zionism
+					has_country_leader_with_trait = trait_euroscepticism
+					has_country_leader_with_trait = trait_erdoganism
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_CENTRISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_centrist_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_CENTRIST_DEMOCRACY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_authoritarian_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_AUTHORITARIAN_DEMOCRACY
+	}
+
+	text = {
+		trigger = { 
+			OR = {
+				has_country_leader_with_trait = trait_sovereign_democracy	
+				has_country_leader_with_trait = sovereign #Putin
+			} 
+		} 
+		localization_key = SUBIDEOLOGY_SOVEREIGN_DEMOCRACY
+	}
+		
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_royalism				
+		} 
+		localization_key = SUBIDEOLOGY_ROYALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_monarchism				
+		} 
+		localization_key = SUBIDEOLOGY_MONARCHISM
+	}
+		
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_oligarchy				
+		} 
+		localization_key = SUBIDEOLOGY_OLIGARCHY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_populism			
+		} 
+		localization_key = SUBIDEOLOGY_POPULISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_corporatocracy				
+		} 
+		localization_key = SUBIDEOLOGY_CORPORATOCRACY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_christian_theocracy				
+		} 
+		localization_key = SUBIDEOLOGY_CHRISTIAN_THEOCRACY
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_religious_zionism				
+		} 
+		localization_key = SUBIDEOLOGY_RELIGIOUS_ZIONISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_euroscepticism				
+		} 
+		localization_key = SUBIDEOLOGY_EUROSCEPTICISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_erdoganism			
+		} 
+		localization_key = SUBIDEOLOGY_ERDOGANISM
+	}
+
+	###################
+	### NATIONALISM ###
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = fascism
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_national_socialism
+					has_country_leader_with_trait = trait_national_conservatism
+					has_country_leader_with_trait = trait_national_liberalism
+					has_country_leader_with_trait = trait_national_democracy
+					has_country_leader_with_trait = trait_national_populism		
+					has_country_leader_with_trait = trait_classical_fascism	
+					has_country_leader_with_trait = trait_irredentism	
+					has_country_leader_with_trait = trait_racism	
+					has_country_leader_with_trait = trait_neo-ottomanism
+					has_country_leader_with_trait = trait_pancasila
+					has_country_leader_with_trait = trait_junta
+					has_country_leader_with_trait = trait_national_royalist
+					has_country_leader_with_trait = trait_national_monarchist
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_NATIONALISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_socialism				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_SOCIALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_conservatism				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_CONSERVATISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_liberalism				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_LIBERALISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_democracy				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_DEMOCRACY
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_populism			
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_POPULISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_classical_fascism				
+		} 
+		localization_key = SUBIDEOLOGY_CLASSICAL_FASCISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_irredentism				
+		} 
+		localization_key = SUBIDEOLOGY_IRREDENTISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_racism				
+		} 
+		localization_key = SUBIDEOLOGY_RACISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_neo-ottomanism		
+		} 
+		localization_key = SUBIDEOLOGY_NEO-OTTOMANISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_pancasila				
+		} 
+		localization_key = SUBIDEOLOGY_PANCASILA
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_junta				
+		} 
+		localization_key = SUBIDEOLOGY_JUNTA
+	}
+		
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_royalist				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_ROYALIST
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_national_monarchist				
+		} 
+		localization_key = SUBIDEOLOGY_NATIONAL_MONARCHIST
+	}
+
+	###################
+	##EXTREMIST ISLAM##
+	###################
+	
+	#Default
+	text = {
+		trigger = { 
+			has_government = rad_islamists
+			NOT = {
+				OR = {
+					has_country_leader_with_trait = trait_wahhabism
+					has_country_leader_with_trait = trait_jihadism
+					has_country_leader_with_trait = trait_sunni_panislamism
+				}
+			}
+		} 
+		localization_key = SUBIDEOLOGY_DEFAULT_EXTREMIST_ISLAM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_wahhabism				
+		} 
+		localization_key = SUBIDEOLOGY_WAHHABISM
+	}
+	
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_jihadism				
+		} 
+		localization_key = SUBIDEOLOGY_JIHADISM
+	}
+
+	text = {
+		trigger = { 
+			has_country_leader_with_trait = trait_sunni_panislamism				
+		} 
+		localization_key = SUBIDEOLOGY_SUNNI_PANISLAMISM
+	}
+
+}
+

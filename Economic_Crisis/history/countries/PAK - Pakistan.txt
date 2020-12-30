@@ -1,0 +1,134 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 440
+
+add_ideas = {
+	regional_country
+	
+	overpopulation
+	nuclear_country
+	
+	islam_idea_lvl_3
+}
+
+1971.12.17 = {
+    add_ideas = revanchism
+}
+	
+2015.7.10 = {
+    add_ideas = sco_member
+}
+
+ 2004.1.1 = {
+	declare_war_on = {
+		target = WAZ
+		type = return_national_territory
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 23120 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "PAK_2013"
+	
+	add_ideas = {
+		semi-presidential_republic
+		administrative_federation
+		state_religion
+		state_media_only
+		sharia_law
+		contract_army
+		mixed_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_heavy_industry
+	
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		decaying_state
+	}
+	
+	diplomatic_relation = {
+		country = DJI
+		relation = military_access
+		active = yes
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.9.8"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 90
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Hussain Mamnoon"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_mamnoon_hussain.dds"
+		ideology = shia_islamism
+		traits = { trait_shia_islamism }
+	}
+
+	create_country_leader = {
+		name = "Nawaz Sharif"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_nawaz_sharif.dds"
+		ideology = conservative_democracy
+		expire = "2017.7.28"
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Altaf Hussain"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_altaf_hussain.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	create_country_leader = {
+		name = "Asif Ali Zardari"
+		desc = ""
+		picture = "gfx/leaders/PAK/portrait_asif_ali_zardari.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#create_country_leader = {
+		#name = "Asfandyar Wali Khan"
+		#desc = ""
+		#picture = "gfx/leaders/PAK/portrait_asfandyar_wali_khan.dds"
+		#ideology = social_democracy
+		#traits = { trait_social_democracy }
+	#}
+
+	#create_country_leader = {
+		#name = "Siraj ul Haq"
+		#desc = ""
+		#picture = "gfx/leaders/PAK/portrait_siraj_ul_haq.dds"
+		#ideology = sunni_royalism
+		#traits = { trait_sunni_royalism }
+	#}
+}
+

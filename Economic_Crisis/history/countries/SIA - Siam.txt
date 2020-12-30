@@ -1,0 +1,86 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 289
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 42050 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SIA_2013"
+
+	add_ideas = {
+		king_bhumibol_adulyadej
+		asean_member
+		NPT
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.2.2" #for 2014 elections
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 80
+		fascism = 20
+		rad_islamists = 0
+	}
+
+	add_ideas = {
+		parliamentary_monarchy
+		unitary_state
+		secular_state
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+
+	create_country_leader = {
+		name = "Yingluck Shinawatra"
+		desc = ""
+		picture = "gfx/leaders/SIA/portrait_yingluck_shinawatra.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+
+	#Врио обязанности
+	#create_country_leader = {
+	#	name = "Niwatthamrong Boonsongpaisan"
+	#	desc = ""
+	#	picture = "gfx/leaders/SIA/portrait_niwatthamrong_boonsongpaisan.dds"
+	#	ideology = populism
+	#	traits = { trait_populism }
+	#}
+
+	#Должен прийти в ходе переворота
+	#create_country_leader = {
+	#	name = "Prayut Chan-o-Cha"
+	#	desc = ""
+	#	picture = "gfx/leaders/SIA/portrait_prayut_chan-o-cha.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+}

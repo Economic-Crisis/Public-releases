@@ -1,0 +1,195 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 49
+
+add_ideas = {
+	regional_country
+	mixed_schools
+	NPT
+	parliamentary_republic
+	kurd_separatism
+}
+
+1992.1.1 = {
+	give_guarantee = AZR
+}
+	
+1994.6.10 = {
+	give_guarantee = NCY
+	add_ideas = bsec_member
+	add_ideas = Turkic_Council
+}
+
+2013.11.1 = {
+
+	load_oob = "_tech_nato_regional_2013"
+	oob = "TUR_2013"
+	
+	# government
+	add_ideas = {
+		tur_recep_erdogan_hog
+		tur_ismet_yilmaz_defm
+		tur_ahmet_davutoglu_fgm
+		tur_nihat_zeybekci_ecm
+		tur_efkan_ala_ssch
+		
+		integration_in_nato
+	}
+
+	add_ideas = {
+		high_terrorism
+		mixed_army
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 60
+    create_intelligence_agency = yes
+
+	set_variable = { budget_last_year = 95060 }
+
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.6.12"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 38
+		liberalism = 1
+		democratic = 3
+		neutrality = 41
+		fascism = 16
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Recep Tayyip Erdogan"
+		desc = "POLITICS_RECEP_TAYYIP_ERDOGAN_DESC"
+		picture = "gfx/leaders/TUR/portrait_recep_tayyip_erdogan.dds"
+		ideology = erdoganism
+		traits = { trait_erdoganism }
+	}
+
+	create_country_leader = {
+		name = "Abdullah Gül"
+		desc = "POLITICS_ABDULLAH_GYUL_DESC"
+		picture = "gfx/leaders/TUR/portrait_abdullah_gyul.dds"
+		ideology = erdoganism
+		expire = "2014.8.10"
+		traits = { trait_erdoganism }
+	}
+
+	create_country_leader = {
+		name = "Ekmeleddin İhsanoğlu"
+		desc = "POLITICS_EKMELEDDIN_IHSANOGLU_DESC"
+		picture = "gfx/leaders/TUR/portrait_ekmeleddin_ihsanoglu.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+	
+	#Generals
+	create_field_marshal = {
+  		name = "Ilker Bashbug"
+  		portrait_path = "gfx/leaders/TUR/portrait_general_ilker_bashbug.dds"
+  		traits = { old_guard organisational_leader offensive_doctrine }
+  		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+  	}
+	
+	create_corps_commander = {
+		name = "Galip Mendi"
+		portrait_path = "gfx/leaders/TUR/portrait_General_galip_mendi.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Ishik Koshaner"
+		portrait_path = "gfx/leaders/TUR/portrait_general_ishik_koshaner.dds"
+		traits = { old_guard }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+
+	}
+	create_corps_commander = {
+		name = "Ilyas Bozkurt"
+		portrait_path = "gfx/leaders/TUR/portrait_General_ilyas_bozkurt.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Kamil Basoglu"
+		portrait_path = "gfx/leaders/TUR/portrait_general_kamil_basoglu.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Koksal Karabay"
+		portrait_path = "gfx/leaders/TUR/portrait_general_koksal_karabay.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Musa Avsever"
+		portrait_path = "gfx/leaders/TUR/portrait_general_musa_avsever.dds"
+		traits = { artillery_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Omer Pac"
+		portrait_path = "gfx/leaders/TUR/portrait_general_omer_pac.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Yilmaz Uyar"
+		portrait_path = "gfx/leaders/TUR/portrait_general_yilmaz_uyar.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+}
+
+2017.4.17 = {
+	add_ideas = {
+		presidential_republic
+	}
+}

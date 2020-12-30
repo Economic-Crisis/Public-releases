@@ -1,0 +1,150 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 779
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 13 }
+	
+	load_oob = "_tech_insurgents_2013" 
+	oob = "ROJ_2013"
+	
+	add_ideas = {
+		partially_recognized_country
+		high_degree_autonomous_region
+		mixed_schools
+	}
+	
+	set_country_flag = war_with_ISIS
+	set_stability = 0.5
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 70
+		liberalism = 0
+		democratic = 0
+		neutrality = 25
+		fascism = 5
+		rad_islamists = 0
+	}
+	
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_salw_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_ammunition_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = truck_g0_equipment_0
+	}
+	
+	create_country_leader = {
+		name = "Mansur Selum"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_mansur_selum.dds"
+		ideology = democratic_socialism
+		traits = { trait_democratic_socialism }
+	}
+
+	create_country_leader = {
+		name = "Hediya Yoosef"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_hediya_yoosef.dds"
+		ideology = democratic_socialism
+		expire = "2018.7.18"
+		traits = { trait_democratic_socialism }
+	}
+
+	create_country_leader = {
+		name = "Ibrahim Biro"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_ibrahim_biro.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	#Let the Consul stand on other ideologies
+
+	create_country_leader = {
+		name = "Council of the Rojava"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_council_rojava.dds"
+		ideology = progressive_socialism
+		traits = { trait_progressive_socialism }
+	}
+
+	create_country_leader = {
+		name = "Council of the Rojava"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_council_rojava.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Council of the Rojava"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_council_rojava.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Council of the Rojava"
+		desc = ""
+		picture = "gfx/leaders/ROJ/portrait_council_rojava.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	#Generals
+	create_field_marshal = {
+  		name = "Nuri Mahmoud"
+  		portrait_path = "gfx/leaders/ROJ/portrait_general_nuri_mahmoud.dds"
+  		traits = { organisational_leader }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	
+	create_corps_commander = {
+		name = "Sipan Hemo"
+		portrait_path = "gfx/leaders/ROJ/portrait_general_sipan_hemo.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Ciwan_Ibrahim"
+		portrait_path = "gfx/leaders/ROJ/portrait_general_ciwan_ibrahim.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+}
+

@@ -1,0 +1,96 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 784
+	
+2014.2.12 = { 
+	add_to_war = { targeted_alliance = ISS enemy = SYR }   
+	add_to_war = { targeted_alliance = ISS enemy = IRQ }
+	add_to_war = { targeted_alliance = ISS enemy = KUR }
+	add_to_war = { targeted_alliance = ISS enemy = LBA }
+	add_to_war = { targeted_alliance = TAL enemy = AFG }
+	#declare_war_on = { target = YER type = annex_everything }
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 500 }
+	
+	load_oob = "_tech_microstate_2013"
+	oob = "ALQ_2013"
+	add_political_power = 0
+	set_convoys = 5
+	set_country_flag = YEM_civilwar
+	set_stability = 0.95
+	
+	add_ideas = {
+		not_recognized_country
+		dictatorship_state
+		unitary_state
+		theocracy
+		state_media_only
+		religious_schools
+		contract_army
+		sharia_law
+		close_borders
+		mixed_economic
+		free_market
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		#afg_underground
+		djixad
+	}
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 100
+	}
+
+	create_country_leader = {
+		name = "Al-Bagdadi"
+		desc = ""
+		picture = "gfx/leaders/generic/islamists/portrait_islamist_5.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ayman al-Zawahiri"
+		desc = ""
+		picture = "gfx/leaders/ALQ/portrait_ayman_az-zavaxiri.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	create_country_leader = {
+		name = "Ghazi bin Faisal"
+		desc = ""
+		picture = "gfx/leaders/generic/islamists/portrait_islamist_4.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Khalid Bakdash"
+		desc = ""
+		picture = "gfx/leaders/generic/islamists/portrait_islamist_1.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}
+

@@ -1,0 +1,278 @@
+﻿##############################
+###### Economic Crisis #######
+##############################
+###### Maldives events #######
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = maldives
+
+country_event = {  #Выборы в Мальдивах: 2013
+	id = maldives.1
+	title = maldives.1.t
+	desc = maldives.1.desc
+	picture = GFX_event_maldives_elections_2013
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = MLD
+		country_exists = MLD
+		date > 2013.11.15
+	}
+
+	immediate = {
+		set_country_flag = maldives_elections_2013
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Абдулла Ямин
+		name = maldives.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.1.a"
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+
+		add_popularity = {
+			ideology = reformism
+			popularity = -0.05
+		}
+
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.04
+		}
+			
+		trigger = {
+			democratic > 0.25
+		}
+	}
+	
+	option = {	#Мохамед Нашид
+		name = maldives.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.1.b"
+		ai_chance = { 
+			factor = 49 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.06
+		}
+		
+		trigger = {
+			liberalism > 0.25
+		}
+	}
+
+	option = {	#Мохаммед Вахид Хассан Маник
+		name = maldives.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.1.c"
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.14
+		}
+		
+		trigger = {
+			reformism > 0.25
+		}
+	}
+
+	option = {	#Касим Ибрагим
+		name = maldives.1.d
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.1.d"
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+
+		hidden_effect = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.24
+			}
+
+		    create_country_leader = {
+				name = "Qasim Ibrahim"
+				desc = ""
+				picture = "gfx/leaders/MLD/portrait_qasim_ibrahim.dds"
+				ideology = social_conservatism
+				traits = { trait_social_conservatism }
+			}
+
+			set_party_name = {
+				ideology = democratic
+				long_name = MLD_qasim_party
+				name = MLD_qasim_party
+			}
+		}
+
+		trigger = {
+			democratic > 0.25
+		}
+	}
+
+}
+
+country_event = {  #Выборы в Мальдивах: 2018
+	id = maldives.2
+	title = maldives.2.t
+	desc = maldives.2.d
+	picture = GFX_event_maldives_elections_2018
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		original_tag = MLD
+		has_elections = yes
+		country_exists = MLD
+		date > 2018.9.21
+	}
+
+	immediate = {
+		set_country_flag = maldives_elections_2018
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Ибрагим Мохамед Солих
+		name = maldives.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.2.a"
+		ai_chance = { 
+			factor = 58
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.03
+		}
+			
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.19
+		}
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Ibrahim Mohamed Solih"
+				desc = ""
+				picture = "gfx/leaders/MLD/portrait_ibrahim_mohamed_solih.dds"
+				ideology = liberal_democracy
+				traits = { trait_liberal_democracy }
+			}
+		}
+		
+		trigger = {
+			liberalism > 0.25
+		}
+	}
+	
+	option = {	#Абдулла Ямин
+		name = maldives.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.2.b"
+		ai_chance = { 
+			factor = 41 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.06
+		}
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Abdulla Yameen"
+				desc = ""
+				picture = "gfx/leaders/MLD/portrait_abdulla_yameen.dds"
+				ideology = sunni_islamism
+				traits = { trait_sunni_islamism }
+			}
+
+			set_party_name = {
+				ideology = democratic
+				long_name = MLD_democratic_party
+				name = MLD_democratic_party
+			}		
+		}
+
+		trigger = {
+			democratic > 0.25
+		}
+	}
+
+	option = {	#Мохаммед Вахид Хассан Маник (запасной вариант)
+		name = maldives.2.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): maldives.2.c"
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+
+		trigger = {
+			reformism > 0.25
+		}
+	}
+	
+}

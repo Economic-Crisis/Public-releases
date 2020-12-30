@@ -1,0 +1,399 @@
+﻿##########################
+## Economic Crisis     ###
+##########################
+## Religion events     ###
+##########################
+## Written by |ZoidberG| #
+##########################
+
+add_namespace = religion
+
+country_event = {
+	id = religion.1
+	title = religion.1.t
+	desc = religion.1.d
+	picture = GFX_event_religion
+	
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = {
+			has_christianity = yes
+		}
+		
+		name = religion.1.a 
+
+		ai_chance = { factor = 20 }
+
+		hidden_effect = {
+			switch_to_christianity_lvl_1 = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_buddhism = yes
+		}
+		
+		name = religion.1.b 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_buddhism_lvl_1 = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_islam = yes
+		}
+		
+		name = religion.1.c 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_islam_lvl_1 = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_judaism = yes
+		}
+		
+		name = religion.1.e 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_judaism_lvl_1 = yes
+		}
+	}
+	option = { 
+		trigger = {
+			has_sintoism = yes
+		}
+		
+		name = religion.1.j
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_sintoism_lvl_1 = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_hinduism = yes
+		}
+		
+		name = religion.1.f 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_hinduism_lvl_1 = yes
+		}
+	}
+}
+
+country_event = {
+	id = religion.2
+	title = religion.2.t
+	desc = religion.2.d
+	picture = GFX_event_religion
+	
+	is_triggered_only = yes
+	
+	
+	#######################TEST ONLY###########################
+	#       is_triggered_only needs to be disabled			  #
+	#trigger = {											  #
+	#	NOT = { has_main_religion = yes }					  #
+	#}														  #
+	#														  #
+	#mean_time_to_happen = {								  #
+	#	days = 7											  #	
+	#}														  #
+	###########################################################
+	
+	option = { 
+		trigger = {
+			has_christianity = yes
+		}
+		
+		name = religion.2.a 
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_christianity_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_buddhism = yes
+		}
+		
+		name = religion.2.b 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_buddhism_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_islam = yes
+		}
+		
+		name = religion.2.c 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_islam_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_judaism = yes
+		}
+		
+		name = religion.2.e 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_judaism_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			has_hinduism = yes
+		}
+		
+		name = religion.2.f 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_hinduism_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	option = { 
+		trigger = {
+			has_sintoism = yes
+		}
+		
+		name = religion.2.j 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_sintoism_lvl_2 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	# option = {
+		# trigger = {
+			# NOT = { is_ai = yes }
+		# }
+		
+		# name = religion.2.g
+		
+		# ai_chance = { factor = 0 }
+	# }
+}
+
+country_event = {
+	id = religion.3
+	title = religion.3.t
+	desc = religion.3.d
+	picture = GFX_event_religion
+	
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = {
+			OR = {
+				christianity_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_christianity = yes
+				#}
+			}
+		}
+		
+		name = religion.3.a 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_christianity_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			OR = {
+				buddhism_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_buddhism = yes
+				#}
+			}
+		}
+		
+		name = religion.3.b 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_buddhism_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			OR = {
+				islam_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_islam = yes
+				#}
+			}
+		}
+		
+		name = religion.3.c 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_islam_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			OR = {
+				judaism_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_judaism = yes
+				#}
+			}
+		}
+		
+		name = religion.3.e 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_judaism_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	
+	option = { 
+		trigger = {
+			OR = {
+				hinduism_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_hinduism = yes
+				#}
+			}
+		}
+		
+		name = religion.3.f 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_hinduism_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+	option = { 
+		trigger = {
+			OR = {
+				sintoism_is_main = yes
+				#AND = {
+					#has_country_flag = religion_checked
+				#	has_hinduism = yes
+				#}
+			}
+		}
+		
+		name = religion.3.f 
+		
+		ai_chance = { factor = 20 }
+		
+		hidden_effect = {
+			switch_to_sintoism_lvl_3 = yes
+			add_religious_opinion_modifiers = yes
+		}
+	}
+}
+
+country_event = {
+	id = religion.4
+	title = religion.4.t
+	desc = religion.4.d
+	picture = GFX_event_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+		}
+		
+		name = religion.4.a
+		
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			remove_religious_opinion_modifiers = yes
+		}
+	}
+}
+
+#Пока требует доработки
+# country_event = {
+	# id = religion.5
+	# hidden = yes
+	# #fire_only_once = yes
+	# trigger = {
+		# NOT = { has_country_flag = religion_checked }
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 5
+	# }
+	
+	# immediate = {
+		# set_country_flag = religion_checked
+		
+	# }
+	
+	# option = {
+	# }
+	
+# }

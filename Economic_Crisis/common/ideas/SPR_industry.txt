@@ -1,0 +1,232 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#Santa Bárbara Sistemas компания по производству и модернизации бронетехники
+		Santa_Barbara_Sistemas = {
+
+			picture = Santa_Barbara_Sistemas
+			allowed = {
+				original_tag = SPR
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Astilleros y Talleres del Noroeste судостроение
+		Astilleros_y_Talleres_del_Noroeste = {
+			
+			picture = Astilleros_y_Talleres_del_Noroeste
+			
+			allowed = {
+				original_tag = SPR
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#CASA авиастроение
+		CASA = {
+			
+			picture = CASA
+			
+			allowed = {
+				original_tag = SPR
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+		
+		#CATUAV производство беспилотников
+		CATUAV = {
+			
+			picture = CATUAV
+			
+			allowed = {
+				original_tag = SPR
+			}
+
+			research_bonus = {
+				cat_air_drone_tech = 0.1
+				cat_fighter_tech = 0.1
+			}
+			
+			available = {
+				#has_tech = 
+			}
+			
+			cost = 900
+			
+			traits = { 
+				CAS_development
+			}
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#INDRA производство вооружения
+		INDRA = {
+			
+			picture = INDRA
+			allowed = {
+				original_tag = SPR
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+				artillery = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#CIE Automotive автомобилестроение
+		CIE_Automotive = {
+			
+			picture = CIE_Automotive
+			allowed = {
+				original_tag = SPR
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 750
+			
+			traits = { apc_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#SEAT автомобилестроение
+		SEAT = {
+			
+			picture = SEAT
+			allowed = {
+				original_tag = SPR
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#Acerinox металлургия
+		Acerinox = {
+
+			picture = Acerinox
+			allowed = {
+				original_tag = SPR
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		#Telefónica телекоммуникация
+		Telefonica = {
+
+			picture = Telefonica
+			allowed = {
+				original_tag = SPR
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+	}
+}	

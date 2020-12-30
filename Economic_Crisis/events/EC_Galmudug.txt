@@ -1,0 +1,54 @@
+##############################
+###### Economic Crisis #######
+##############################
+###### Galmudug events #######
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = galmudug
+
+country_event = {  #Смена флага в 2015 году
+	id = galmudug.1
+	title = galmudug.1.t
+	desc = galmudug.1.desc
+	picture = GFX_event_galmudug_new_flag
+	
+	is_triggered_only = yes
+	
+	trigger = { 
+		tag = GAS
+		country_exists = GAS
+		date > 2015.6.15
+		date < 2015.7.1
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Меняем флаг
+		name = galmudug.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): galmudug.1.a"
+		ai_chance = { factor = 70 }
+		add_stability = 0.01
+		set_cosmetic_tag = GAS_new_flag
+	}
+
+	option = {	#Оставляем как есть
+		name = galmudug.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): galmudug.1.b"
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+
+}
+	
+
+

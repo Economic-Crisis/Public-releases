@@ -1,0 +1,52 @@
+
+afganistan_civilwar_end_peace = {
+	enable = {
+		OR = {
+		    tag = AFG
+			tag = TAL
+		}	
+		AFG = { has_country_flag = AFG_civilwar }
+		TAL = { has_country_flag = AFG_civilwar }
+	}
+
+	annex_randomness = 0
+	liberate_randomness = 0
+	puppet_randomness = 0
+	take_states_randomness = 0
+	force_government_randomness = 0
+	
+	
+	annex = {
+		factor = 900	
+		
+	}
+	
+	take_states = {
+		factor = 0
+	}
+	
+	# ROOT = Taker, FROM = Liberated
+	liberate = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	force_government = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet_state = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet_all = {
+		factor = 0
+	}
+}

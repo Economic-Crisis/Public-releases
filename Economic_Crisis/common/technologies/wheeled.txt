@@ -1,0 +1,2954 @@
+technologies = {
+	
+	# ifv_wheeled убрана из списка 
+
+	# y = (горизонталь)
+	@platform = 0
+	@vhce_base = 2
+	@vhce_mk1 = 4
+	@vhce_mk2 = 6
+	@vhce_mk3 = 8
+	@vhce_mk4 = 10
+	@vhce_mk5 = 12
+	@vhce_mk6 = 14
+	@vhce_mk7 = 16
+	@vhce_mk8 = 18
+	@vhce_mk9 = 20
+	@vhce_mk10 = 22
+	@vhce_mk11 = 24
+	
+	# x = (вертикаль)
+	@vhce_b0 = -2
+	@vhce_1 = -1
+	@vhce_b1 = 1
+	@vhce_2 = 4
+	@vhce_b2 = 4
+	@vhce_3 = 7
+	@vhce_b3 = 7
+	@vhce_4 = 10
+	@vhce_b4 = 9
+	@vhce_5 = 15
+	@vhce_b5 = 13
+	@vhce_6 = 14
+	@vhce_b6 = 16
+	@vhce_7 = 17
+	@vhce_8 = 20
+	@vhce_9 = 23
+	
+
+	########## ТЕХНИКА ПОДРАЗДЕЛЕНИЙ ###############
+	
+	# Military light utility vehicle (4x4), used light motorized infantry
+	
+	#ЗиС-151 
+	truck_t0  = { 
+
+		enable_equipments = {
+			truck_g0_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = vehicular_industry_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = truck_t1
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_b0 y = @platform }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Автомобильная промышленность 1970-х
+	vehicular_industry_t2  = { 
+		
+		path = {
+			leads_to_tech = vehicular_industry_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = truck_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = 3 y = @platform }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Автомобильная промышленность 1980-х
+	# vehicular_industry_t3  = { 
+		
+		# path = {
+			# leads_to_tech = vehicular_industry_t4
+			# research_cost_coeff = 1
+		# }
+		
+		
+		# research_cost = 1
+		# start_year = 1947
+		# folder = {
+			# name = wheeled_folder
+			# position = { x = @vhce_b2 y = @platform }
+		# }
+		
+		# ai_will_do = {
+			# factor = 6
+		# }
+		
+		# categories = {
+			
+			# cat_wheeled_vehicle
+		# }
+	# }
+	
+	#Автомобильная промышленность 1980-х
+	vehicular_industry_t4  = { 
+		
+		path = {
+			leads_to_tech = vehicular_industry_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = truck_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1980
+		folder = {
+			name = wheeled_folder
+			position = { x = 10 y = @platform }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Современная автомобильная промышленность
+	vehicular_industry_t5  = { 
+		
+		path = {
+			leads_to_tech = vehicular_industry_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = truck_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1990
+		folder = {
+			name = wheeled_folder
+			position = { x = 15 y = @platform }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Автомобильная промышленность будущего
+	vehicular_industry_t6  = { 
+		
+		
+		path = {
+			leads_to_tech = truck_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1990
+		folder = {
+			name = wheeled_folder
+			position = { x = 20 y = @platform }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	
+	
+	#Урал-375Д
+	truck_t1  = { 
+
+		enable_equipments = {
+			truck_g1_equipment_0
+		}
+		
+		#path = {
+			#leads_to_tech = truck_t1
+			#research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_1 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#Урал-4320
+	truck_t2  = { 
+
+		enable_equipments = {
+			truck_g2_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = truck_t3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1977
+		folder = {
+			name = wheeled_folder
+			position = { x = 4 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#КамАЗ-4310
+	truck_t3  = { 
+
+		enable_equipments = {
+			truck_g3_equipment_0
+		}
+		
+		#path = {
+			#leads_to_tech = truck_t1
+			#research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		start_year = 1979
+		folder = {
+			name = wheeled_folder
+			position = { x = 7 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#КамАЗ-5350
+	truck_t4  = { 
+
+		enable_equipments = {
+			truck_g4_equipment_0
+		}
+		
+		research_cost = 1.5
+		start_year = 2005
+		folder = {
+			name = wheeled_folder
+			position = { x = 11 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#«Тайфун» (2011-2014)
+	truck_t5  = { 
+
+		enable_equipments = {
+			truck_g5_equipment_0
+		}
+		
+		research_cost = 1.5
+		start_year = 2011
+		folder = {
+			name = wheeled_folder
+			position = { x = 16 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#Перспективные бронированные грузовики
+	truck_t6  = { 
+
+		enable_equipments = {
+			truck_g6_equipment_0
+		}
+		path = {
+			leads_to_tech = truck_t7
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2015
+		folder = {
+			name = wheeled_folder
+			position = { x = 21 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	#Перспективные бронированные грузовики
+	truck_t7  = { 
+
+		enable_equipments = {
+			truck_g7_equipment_0
+		}
+		
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = wheeled_folder
+			position = { x = 24 y = @vhce_base }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_truck_vehicle
+		}
+	}
+	
+	
+	# Джипы
+	#GAZ-69
+	light_utility_vehicle_t1  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g1_equipment_0
+		}
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_1 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#УАЗ-469 / УАЗ-3153
+	light_utility_vehicle_t2  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g2_equipment_0
+		}
+		path = {
+			leads_to_tech = light_utility_vehicle_t3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = 4 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#ГАЗ-3937 «Водник» (1985-2013)
+	light_utility_vehicle_t3  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g3_equipment_0
+		}
+		
+		dependencies = {
+           vehicular_industry_t4 = 1
+		   concept_wheeled_armored_vehicles_t4 = 1
+        }
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = 7 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#ГАЗ «Тигр» (2005)
+	light_utility_vehicle_t4  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g4_equipment_0
+		}
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = 11 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#ГАЗ «Медведь» (2008-2015)
+	light_utility_vehicle_t5  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g5_equipment_0
+		}
+		
+		dependencies = {
+			vehicular_industry_t5 = 1
+			concept_wheeled_armored_vehicles_t6 = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1961
+		folder = {
+			name = wheeled_folder
+			position = { x = 16 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#ГАЗ «Волк» (2010-2015)
+	light_utility_vehicle_t6  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g6_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = light_utility_vehicle_t7
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2015
+		folder = {
+			name = wheeled_folder
+			position = { x = 21 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#Бронеавтомобиль будущего
+	light_utility_vehicle_t7  = { 
+
+		enable_equipments = {
+			light_utility_vehicle_g7_equipment_0
+		}
+		
+		
+		research_cost = 1.5
+		start_year = 2025
+		folder = {
+			name = wheeled_folder
+			position = { x = 24 y = @vhce_mk1 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+			cat_light_utility_vehicle
+		}
+	}
+	
+	#Концепции
+	apc_wheeled_light_t0 = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g0_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_light_t1
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_t1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_b0 y = @vhce_mk3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+
+	#Концепция колесной бронетехники Холодной Войны
+	# concept_wheeled_armored_vehicles_t2 = {
+	
+		# path = {
+			# leads_to_tech = concept_wheeled_armored_vehicles_t3 
+			# research_cost_coeff = 1
+		# }
+		
+		
+		
+		# #Убрана из техи
+		# #path = { 
+		# #	leads_to_tech = ifv_wheeled_t2
+		# #	research_cost_coeff = 1
+		# #}
+		
+		# research_cost = 1
+		# start_year = 1947
+		# folder = {
+			# name = wheeled_folder
+			# position = { x = @vhce_b1 y = @vhce_mk3 }
+		# }
+		
+		# ai_will_do = {
+			# factor = 6
+		# }
+		
+		# categories = {
+			
+			# cat_wheeled_vehicle
+		# }
+	# }
+	
+	#Концепция колесной бронетехники конца Холодной Войны
+	concept_wheeled_armored_vehicles_t3 = {
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_light_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_t3
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = ifv_wheeled_t3
+		#	research_cost_coeff = 1
+		#}
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_light_t3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1970
+		folder = {
+			name = wheeled_folder
+			position = { x = 3 y = @vhce_mk3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Концепция вооруженных легко защищенных внедорожников
+	########Открывает доступ к изучению light_utility_vehicle_t3#######
+	concept_wheeled_armored_vehicles_t4 = {
+		
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = 4 y = @vhce_mk2 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Современная концепция колесной бронетехники
+	concept_wheeled_armored_vehicles_t5 = {
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_light_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_t4
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = ifv_wheeled_t4
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_4 y = @vhce_mk3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Открывает truck_t5 и light_utility_vehicle_t5
+	#Концепция защищенного военного автотранспорта (доктрина)
+	concept_wheeled_armored_vehicles_t6 = {
+		
+		#path = {
+			#leads_to_tech = 
+			#research_cost_coeff = 1
+		#}
+		
+		#path = {
+		#	leads_to_tech = 
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_b4 y = @vhce_mk2 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Концепция перспективной колесной бронетехники
+	concept_wheeled_armored_vehicles_t7 = {
+		
+		path = {
+			leads_to_tech = concept_wheeled_armored_vehicles_t8
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_wheeled_t5
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = ifv_wheeled_t5
+		#	research_cost_coeff = 1
+		#}
+		
+		path = {
+			leads_to_tech = apc_wheeled_light_t5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_5 y = @vhce_mk3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#Концепция колесной бронетехники будущего
+	concept_wheeled_armored_vehicles_t8 = {
+		
+		path = {
+			leads_to_tech = apc_wheeled_t6
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = ifv_wheeled_t6
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = 20 y = @vhce_mk3 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	###########################################################
+	####################### Легкиe БТР ########################
+	###########################################################
+	
+	################### БРДМ-1 ###############################
+	apc_wheeled_light_t1  = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g1_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_light_t1_1
+			apc_wheeled_light_t1_2
+			apc_wheeled_light_t1_3
+			apc_wheeled_light_t1_4
+			apc_wheeled_light_t1_5
+			#apc_wheeled_light_t1_6
+		}
+		
+		on_research_complete = {
+		
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2_1
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2_2
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2_3
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2_4
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t2_5
+				bonus = 0.1
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t3
+				bonus = 0.05
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+			
+			add_tech_bonus = {
+				name = apc_wheeled_light_t4
+				bonus = 0.025
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		
+		research_cost = 2
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_1 y = @vhce_mk4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t1_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g1
+		}	
+		
+		dependencies = {
+			apc_wheeled_light_t1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1954
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t1_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t1_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1958
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t1_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t1_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1958
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t1_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t1_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1958
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t1_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t1_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1958
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	####################################################################
+	
+	######################## БРДМ-2 ####################################
+	apc_wheeled_light_t2  = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g2_equipment_0
+		}
+
+		sub_technologies = {
+			apc_wheeled_light_t2_1
+			apc_wheeled_light_t2_2
+			apc_wheeled_light_t2_3
+			apc_wheeled_light_t2_4
+			apc_wheeled_light_t2_5
+		}
+		
+		research_cost = 2
+		start_year = 1954
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_2 y = @vhce_mk4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#БРДМ-2 «Лиса»
+	apc_wheeled_light_t2_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#БРДМ-2А 
+	apc_wheeled_light_t2_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t2_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t2_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t2_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t2_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t2_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t2_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t2_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+###################################################################
+#                       Легкий БТР III 4х4                        #
+###################################################################
+	apc_wheeled_light_t3  = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g3_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_light_t3_1
+			apc_wheeled_light_t3_2
+			apc_wheeled_light_t3_3
+			apc_wheeled_light_t3_4
+			apc_wheeled_light_t3_5
+		}
+		
+		research_cost = 2
+		start_year = 1963
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_3 y = @vhce_mk4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t3_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t3_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t3_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t3_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t3_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t3_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t3_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t3_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t3_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	###############################################################
+	
+	###################### БРМ «Выдра» ############################
+	apc_wheeled_light_t4  = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g4_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_light_t4_1
+			apc_wheeled_light_t4_2
+			apc_wheeled_light_t4_3
+			apc_wheeled_light_t4_4
+			apc_wheeled_light_t4_5
+		}
+		
+		research_cost = 2
+		start_year = 1963
+		folder = {
+			name = wheeled_folder
+			position = { x = 11 y = @vhce_mk4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t4_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t4_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t4_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t4_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t4_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t4_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t4_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t4_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t4_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+###################################################################
+#                       Легкий БТР V 4х4                        #
+###################################################################
+	apc_wheeled_light_t5  = { 
+
+		enable_equipments = {
+			apc_wheeled_light_g5_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_light_t5_1
+			apc_wheeled_light_t5_2
+			apc_wheeled_light_t5_3
+			apc_wheeled_light_t5_4
+			apc_wheeled_light_t5_5
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = wheeled_folder
+			position = { x = 16 y = @vhce_mk4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t5_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t5 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_light_t5_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t5_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t5_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t5_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t5_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t5_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	apc_wheeled_light_t5_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_light_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_light_t5_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	###############################################################################
+	
+	#Послевоенныe колесный БТР 8x8
+	#################################### БТР-152 ##################################
+	apc_wheeled_t1  = { 
+
+		enable_equipments = {
+			apc_wheeled_g1_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t1_1
+			apc_wheeled_t1_2
+			apc_wheeled_t1_3
+			apc_wheeled_t1_4
+			apc_wheeled_t1_5
+		}
+		
+		research_cost = 2
+		start_year = 1947
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_1 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t1_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_t1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t1_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_t1_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t1_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_t1_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t1_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_t1_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t1_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g1
+		}
+		
+		dependencies = {
+			apc_wheeled_t1_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#######################################################################
+	
+	######################### БТР-60П #####################################
+	apc_wheeled_t2  = { 
+
+		enable_equipments = {
+			apc_wheeled_g2_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t2_1
+			apc_wheeled_t2_2
+			apc_wheeled_t2_3
+			apc_wheeled_t2_4
+			apc_wheeled_t2_5
+		}
+		
+		research_cost = 2
+		start_year = 1956
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_2 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t2_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_t2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t2_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_t2_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t2_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_t2_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t2_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_t2_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t2_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g2
+		}
+		
+		dependencies = {
+			apc_wheeled_t2_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#######################################################################
+	
+	################################ БТР-80 ###############################
+	apc_wheeled_t3  = { 
+
+		enable_equipments = {
+			apc_wheeled_g3_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t3_1
+			apc_wheeled_t3_2
+			apc_wheeled_t3_3
+			apc_wheeled_t3_4
+			apc_wheeled_t3_5
+		}
+		
+		research_cost = 2
+		start_year = 1982
+		folder = {
+			name = wheeled_folder
+			position = { x = @vhce_3 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t3_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_t3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t3_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_t3_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t3_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_t3_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t3_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_t3_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t3_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g3
+		}
+		
+		dependencies = {
+			apc_wheeled_t3_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	####################################################################
+	
+	####################### БТР-90 «Гильза» ############################
+	apc_wheeled_t4  = { 
+
+		enable_equipments = {
+			apc_wheeled_g4_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t4_1
+			apc_wheeled_t4_2
+			apc_wheeled_t4_3
+			apc_wheeled_t4_4
+			apc_wheeled_t4_5
+		}
+		
+		research_cost = 2
+		start_year = 1982
+		folder = {
+			name = wheeled_folder
+			position = { x = 11 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t4_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_t4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t4_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_t4_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t4_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_t4_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t4_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_t4_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t4_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g4
+		}
+		
+		dependencies = {
+			apc_wheeled_t4_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	##########################################################################
+	
+	####################### К-16 с 6П49 ######################################
+	apc_wheeled_t5  = { 
+
+		enable_equipments = {
+			apc_wheeled_g5_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t5_1
+			apc_wheeled_t5_2
+			apc_wheeled_t5_3
+			apc_wheeled_t5_4
+			apc_wheeled_t5_5
+		}
+		
+		research_cost = 2
+		start_year = 2015
+		folder = {
+			name = wheeled_folder
+			position = { x = 16 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t5_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_t5 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t5_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_t5_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t5_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_t5_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t5_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_t5_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t5_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g5
+		}
+		
+		dependencies = {
+			apc_wheeled_t5_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 1963
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	######################################################################
+	
+	###################### Колесные БТР будущего #########################
+	apc_wheeled_t6  = { 
+
+		enable_equipments = {
+			apc_wheeled_g6_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_wheeled_t6_1
+			apc_wheeled_t6_2
+			apc_wheeled_t6_3
+			apc_wheeled_t6_4
+			apc_wheeled_t6_5
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = wheeled_folder
+			position = { x = 21 y = @vhce_mk5 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t6_1 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g6
+		}
+		
+		dependencies = {
+			apc_wheeled_t6 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t6_2 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g6
+		}
+		
+		dependencies = {
+			apc_wheeled_t6_1 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t6_3 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g6
+		}
+		
+		dependencies = {
+			apc_wheeled_t6_2 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t6_4 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g6
+		}
+		
+		dependencies = {
+			apc_wheeled_t6_3 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#
+	apc_wheeled_t6_5 = {
+		
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_wheeled_g6
+		}
+		
+		dependencies = {
+			apc_wheeled_t6_4 = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		
+		ai_will_do = {
+			factor = 6
+		}
+		
+		categories = {
+			
+			cat_wheeled_vehicle
+		}
+	}
+	
+	#############################################################################
+	#				УБРАНА ИЗ СПИСКА, НЕ ИСПОЛЬЗУЕТСЯ
+	############колесные БМП#################
+	#ГАЗ-50
+	#ifv_wheeled_t2  = { 
+	#
+	#	enable_equipments = {
+	#		ifv_wheeled_g2_equipment_0
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1972
+	#	folder = {
+	#		name = wheeled_folder
+	#		position = { x = @vhce_2 y = @vhce_mk6 }
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	###############################################################################
+	#
+	################################# БТР-80А #####################################
+	#ifv_wheeled_t3  = { 
+	#
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_0
+	#	}
+	#	
+	#	sub_technologies = {
+	#		ifv_wheeled_t3_1
+	#		ifv_wheeled_t3_2
+	#		ifv_wheeled_t3_3
+	#		ifv_wheeled_t3_4
+	#		ifv_wheeled_t3_5
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1994
+	#	folder = {
+	#		name = wheeled_folder
+	#		position = { x = @vhce_3 y = @vhce_mk6 }
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	#ifv_wheeled_t3_1 = {
+	#	
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_1
+	#	}
+	#	
+	#	dependencies = {
+	#		ifv_wheeled_t3 = 1
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1963
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	#ifv_wheeled_t3_2 = {
+	#	
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_2
+	#	}
+	#	
+	#	dependencies = {
+	#		ifv_wheeled_t3_1 = 1
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1963
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	#ifv_wheeled_t3_3 = {
+	#	
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_3
+	#	}
+	#	
+	#	dependencies = {
+	#		ifv_wheeled_t3_2 = 1
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1963
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	#ifv_wheeled_t3_4 = {
+	#	
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_4
+	#	}
+	#	
+	#	dependencies = {
+	#		ifv_wheeled_t3_3 = 1
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1963
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#
+	#ifv_wheeled_t3_5 = {
+	#	
+	#	enable_equipments = {
+	#		ifv_wheeled_g3_equipment_5
+	#	}
+	#	
+	#	dependencies = {
+	#		ifv_wheeled_t3_4 = 1
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1963
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	############################################################################
+	#
+	######################## БТР-90 «Росток» ###################################
+	#ifv_wheeled_t4  = { 
+	#
+	#	enable_equipments = {
+	#		ifv_wheeled_g4_equipment_0
+	#	}
+	#	
+	#	sub_technologies = {
+	#		ifv_wheeled_t4_1
+	#		ifv_wheeled_t4_2
+	#		ifv_wheeled_t4_3
+	#		ifv_wheeled_t4_4
+	#		ifv_wheeled_t4_5
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 1999
+	#	folder = {
+	#		name = wheeled_folder
+	#		position = { x = @vhce_4 y = @vhce_mk6 }
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#####################################################################################
+	#
+	################################ БТР-90 «Росток» #####################################
+	#ifv_wheeled_t5  = { 
+	#
+	#	enable_equipments = {
+	#		ifv_wheeled_g5_equipment_0
+	#	}
+	#	
+	#	sub_technologies = {
+	#		ifv_wheeled_t5_1
+	#		ifv_wheeled_t5_2
+	#		ifv_wheeled_t5_3
+	#		ifv_wheeled_t5_4
+	#		ifv_wheeled_t5_5
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 2015
+	#	folder = {
+	#		name = wheeled_folder
+	#		position = { x = @vhce_5 y = @vhce_mk6 }
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+	#
+	#####################################################################
+	#
+	####################### БТР-90 «Росток» #############################
+	#ifv_wheeled_t6  = { 
+	#
+	#	enable_equipments = {
+	#		ifv_wheeled_g6_equipment_0
+	#	}
+	#	
+	#	sub_technologies = {
+	#		ifv_wheeled_t6_1
+	#		ifv_wheeled_t6_2
+	#		ifv_wheeled_t6_3
+	#		ifv_wheeled_t6_4
+	#		ifv_wheeled_t6_5
+	#	}
+	#	
+	#	research_cost = 1
+	#	start_year = 2015
+	#	folder = {
+	#		name = wheeled_folder
+	#		position = { x = @vhce_6 y = @vhce_mk6 }
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 6
+	#	}
+	#	
+	#	categories = {
+	#		
+	#		cat_wheeled_vehicle
+	#	}
+	#}
+}	

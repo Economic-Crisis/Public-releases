@@ -1,0 +1,212 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 111
+
+add_ideas = {
+	mixed_schools
+	eu_member
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 27000 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "FIN_2013"
+		
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		NPT
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		average_terrorism
+		
+		integration_in_nordefco
+	}
+
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.1.22"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 6
+		reformism = 27
+		liberalism = 0
+		democratic = 38
+		neutrality = 19
+		fascism = 10
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Sauli Niinistö"
+		desc = "POLITICS_SAULI_NIYNISTE_DESC"
+		picture = "gfx/leaders/FIN/portrait_sauli_niyniste.dds"
+		#expire = "1965.1.1"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Pekka Haavisto"
+		desc = "POLITICS_PEKKA_HAAVISTO_DESC"
+		picture = "gfx/leaders/FIN/portrait_pekka_haavisto.dds"
+		ideology = green_politics
+		traits = { trait_green_politics }
+	}
+
+	create_country_leader = {
+		name = "Paavo Vayrynen"
+		desc = "POLITICS_PAAVO_VAYRYNEN_DESC"
+		picture = "gfx/leaders/FIN/portrait_paavo_vayrynen.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Timo Soini"
+		desc = "POLITICS_TIMO_SOINI_DESC"
+		picture = "gfx/leaders/FIN/portrait_timo_soini.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Paavo Arhinmaki"
+		desc = "POLITICS_PAAVO_ARHINMÄKI_DESC"
+		picture = "gfx/leaders/FIN/portrait_paavo_arhinmaki.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+	
+	create_field_marshal = {
+		name = "Seppo Toivonen"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_seppo_toivonen.dds"
+		traits = { offensive_doctrine panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Jarmo Lindberg"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_jarmo_lindberg.dds"
+		traits = { old_guard trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Petri Hulkko"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_petri_hulkko.dds"
+		traits = { organisational_leader winter_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Pekka Järvi"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_pekka_jaervi.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Ahti Kurvinen"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_ahti_kurvinen.dds"
+		traits = { ranger winter_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Antti Lehtisalo"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_antti_lehtisalo.dds"
+		traits = { urban_assault_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}  
+	
+	create_corps_commander = {
+	    name = "Vesa Virtanen"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_vesa_virtanen.dds"
+		traits = { hill_fighter }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Jari Kallio"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_jari_kallio.dds"
+		traits = { commando winter_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Arto-Pekka Nurminen"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_artto-pekka_nurminen.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Ali Mättölä"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_ali_maettoelae.dds"
+		traits = { fortress_buster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+	    name = "Ilkka Laitinen"
+		portrait_path = "gfx/leaders/FIN/portrait_fin_general_ilkka_laitinen.dds"
+		traits = { winter_specialist }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+}

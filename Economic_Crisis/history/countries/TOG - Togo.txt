@@ -1,0 +1,74 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+
+capital = 746
+
+	add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 14 }
+
+	set_country_flag = pai_nondem_authoritarian
+	
+	load_oob = "_tech_microstate_2013"
+	oob = "TOG_2013"
+    
+	#laws
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		terrorism_discounted
+	}
+		
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2010.3.4"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 36
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 64
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jean-Pierre Fabre" #Жан-Пьер Фабр
+		desc = ""
+		picture = "gfx/leaders/TOG/portrait_jean_pierre_fabre.dds"
+		ideology = social_democracy #Национальный альянс за перемены 
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Faure Gnassingbé" #Фор Гнассингбе
+		desc = ""
+		picture = "gfx/leaders/TOG/portrait_faure_gnassingbe.dds"
+		ideology = national_conservatism #Союз за республику
+		traits = { trait_national_conservatism }
+	}
+
+}
+

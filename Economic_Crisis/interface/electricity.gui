@@ -1,0 +1,349 @@
+guiTypes = {
+
+#EC electricity	
+		containerWindowType = {
+		name = "electricity_menu"
+		position = { x = 0 y = 0 }	
+		
+		buttonType ={
+			name ="electricity_bg"
+			spriteType = "GFX_generic_box_80"
+			position = { x = 780 y = 5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = electricity_info_1
+			pdx_tooltip_delayed = electricity_info_2
+		}
+		iconType ={
+			name ="electricity_bar_bg"
+			spriteType = "GFX_electricity_bar_bg"
+			position = { x = 804 y = 20 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name ="electricity_bar"
+			spriteType = "GFX_electricity_bar"
+			position = { x = 804 y = 20 }
+			alwaystransparent = yes
+		}		
+		iconType = {
+			name ="electricity_icon"
+			spriteType = "GFX_electricity_icon"
+			position = { x = 778 y = 4 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="electricity_value"
+			position = { x = 800 y = 2 } 
+			font = "hoi_18mbs"
+			text = "[electricity_text]"
+			format = center
+			maxWidth = 59
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "electricity_trade_menu_gui"
+		position = { x = 600 y = 300 }
+		size = { width = 300 height = 600 }
+		fade_time = 300
+        fade_type = linear
+		moveable = yes
+		
+		
+
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_electricity_trade_menu_bg"
+			
+		}
+		
+		instantTextBoxType = {            #HAH EMBRO
+			name ="electricity_time" 
+			position = { x = 31 y = 15 }
+			font = "hoi4_typewriter16"
+			text = "[?global.date.GetDateString|§5]"
+			format = left
+			maxWidth = 30
+			maxHeight = 50
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextBoxType = {
+				name ="title_name"
+				position = { x = 30 y = 50 }
+				font = "hoi_18mbs"
+				text = "ELECTRICITY_TITLE"
+				format = center
+				maxWidth = 240
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		
+		containerWindowType = {
+            name = "electricity_trade_menu_list"
+            position = { x=25 y =80 }
+            size = { width = 300 height=100 }
+            margin = { top = 10 bottom = 10 }
+            verticalScrollbar = "right_vertical_slider"
+            
+            background = {
+                name = "Background"
+                quadTextureSprite ="GFX_tiled_window_transparent"
+            }
+            
+            gridboxType = {
+                name ="electricity_trade_countries_list"
+                position = { x = 0 y = 0 }
+                padding = { top = 25 bottom = 25 }
+                size = { width = 100%% height = 100%% }
+                slotsize = { width = 100 height = 35 }
+                format = "UPPER_LEFT"
+                #add_horizontal = no
+                max_slots_horizontal = 1
+            }
+        }
+		
+		buttonType ={
+			name ="electricity_mail_btn"
+			spriteType = "GFX_electricity_trade_menu_mail"
+			position = { x = 210 y = 500 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = electricity_mail_info
+		}
+	}
+
+	containerWindowType = {
+		name = "electricity_trade_menu_countries"
+	
+		iconType = {
+			name ="electricity_icon"
+			spriteType = "GFX_flag_small2"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = get_electricity_trade_country_name_and_time
+		}
+		iconType = {
+			name ="electricity_box_icon"
+			spriteType = "GFX_electricity_trade_menu_generic_box_206"
+			position = { x = 43 y = 0 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="electricity_box_text"
+			position = { x = -10 y = 6 }
+			font = "hoi_16mbs"
+			text = "electricity_trade_menu_countries_text"
+			format = center
+			maxWidth = 320
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+	
+	
+	
+	containerWindowType = {
+		name = "sd_electiricty_action_gui"
+		position = { x = 0 y = 0 }	
+		size = { width=500 height = 385 }
+		
+		background = {
+			name = "Background"	
+			quadTextureSprite ="GFX_ec_trade_offer_popup_win"
+			alwaystransparent = yes
+		}
+				
+		
+		instantTextBoxType = {
+			name ="sd_electricity_title"
+			position = { x = 102 y = 30 }
+			font = "hoi_24header"
+			text = "SD_ELECTRICITY_TITLE"
+			format = center
+			maxWidth = 320
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="sd_electricity_info_1"
+			position = { x = 20 y = 93 }
+			font = "hoi_18mbs"
+			text = "sd_electiricty_country_text_1"
+			format = center
+			maxWidth = 250
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="sd_electricity_info_2"
+			position = { x = 250 y = 93 }
+			font = "hoi_18mbs"
+			text = "sd_electiricty_country_text_2"
+			format = center
+			maxWidth = 250
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="sd_electricity_info_3"
+			position = { x = 115 y = 270 }
+			font = "hoi_18mbs"
+			text = "sd_electiricty_country_text_3"
+			format = center
+			maxWidth = 250
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="buy_text"
+			position = { x = 20 y = 184 }
+			font = "hoi_18mbs"
+			text = "sd_electiricty_buy_text"
+			format = center
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		iconType ={
+			name ="sd_electricity_buy_icon"
+			spriteType = "GFX_generic_box_80"
+			position = { x = 230 y = 180 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		instantTextBoxType = {
+			name ="buy_text_2"
+			position = { x = 220 y = 185 }
+			font = "hoi_18mbs"
+			text = "sd_electiricty_buy_text_2"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+	}
+	
+	containerWindowType = {
+		name = "sd_electiricty_break_gui"
+		position = { x = -225 y = -160 }
+		size = { width = 584 height = 280 }
+		orientation= center
+		moveable = yes
+		fade_time = 200
+		fade_type = linear
+		show_sound = diplomatic_notification
+		hide_sound = menu_close_window
+		click_to_front = yes
+		
+		background = {
+			name = "Background"	
+			quadTextureSprite ="GFX_tiled_bg"
+		}
+
+		iconType =
+		{
+			name ="diplo_popup_header_bg"
+			spriteType = "GFX_diplo_popup_header_bg_large"
+			position = { x= 0 y = 8 }
+			alwaystransparent = yes
+		}	
+		
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 132 y = 30 }
+			textureFile = ""
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "sd_electiricty_break_TITLE"	
+			maxWidth = 320
+			maxHeight = 24
+			fixedsize = yes
+			format = centre
+			vertical_alignment = center			
+		}
+		
+		iconType = {
+			name = "first_flag"
+			quadTextureSprite ="GFX_shield_medium"
+			position = { x= 24 y = 18 }
+			Orientation = "UPPER_LEFT"
+		}	
+
+		iconType =
+		{
+			name ="first_flag_frame"
+			spriteType = "GFX_large_flag_frame"
+			position = { x= 19 y = 16 }
+		}		
+		
+		iconType = {
+			name = "second_flag"
+			quadTextureSprite ="GFX_shield_medium"
+			position = { x= 476 y = 18 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType =
+		{
+			name ="second_flag_frame"
+			spriteType = "GFX_large_flag_frame"
+			position = { x= 472 y = 16 }
+		}
+
+		
+		instantTextBoxType = {
+			name = "description"
+			position = { x = 105 y = 95 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "[sd_electiricty_break_text]"	
+			maxWidth = 325
+			maxHeight = 130
+			format = centre
+			scrollbartype = "standardtext_slider"
+		}
+		
+		iconType = {
+			name ="diplo_popup_bottom"
+			spriteType = "GFX_diplo_popup_bottom_large"
+			position = { x= 0 y = 218 }
+		}
+
+		buttonType ={
+			name ="ok_btn"
+			spriteType = "GFX_button_123x34"
+			position = { x = 222 y = 230 }
+			Orientation = "UPPER_LEFT"
+			buttonFont = "hoi_16mbs"
+			buttonText = "sd_electiricty_break_confirm"
+		}		
+		
+
+
+	}	
+	
+}

@@ -1,0 +1,377 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+capital = 527
+
+oob = "NKO_2013"
+set_convoys = 25
+
+add_ideas = {
+	nuclear_country
+	obsolete_army
+	regional_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 97950 }
+
+	load_oob = "_tech_major_2013"
+	oob = "NKO_2013"
+	
+	add_ideas = {
+		prk_pang_pong_ju_hog 
+		prk_pak_ui_chun_fgm
+		prk_choe_pu_il_defm
+		prk_choe_kwang_jin_ecm
+		prk_jang_jong_nam_ssch
+		women_in_service
+		sanctions
+		sanctions1
+		sanctions2
+		sanctions3
+		sanctions4
+	}
+
+	set_stability = 0.15
+	set_convoys = 50
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	add_opinion_modifier = { target = KOR modifier = juche_enemy_modifier }
+	add_opinion_modifier = { target = USA modifier = juche_enemy_modifier }
+	add_opinion_modifier = { target = GER modifier = juche_enemy_modifier }
+	add_opinion_modifier = { target = FRA modifier = juche_enemy_modifier }
+	add_opinion_modifier = { target = POL modifier = juche_enemy_modifier }
+	add_opinion_modifier = { target = ENG modifier = juche_enemy_modifier }
+	add_ideas = {
+	    state_atheism
+		single-party_state
+		cencored_media
+		limitation_of_liberties
+		mandatory_urgent_service
+		professional_schools
+		close_borders
+		military_industry_focus
+	    partial_economic_mobilisation
+		no_social_security
+		no_labor_rights_protection	
+		terrorism_discounted
+	}
+
+	set_country_flag = pai_nondem_totalitarian
+	set_politics = {
+		ruling_party = communism
+		last_election = "2009.3.8" #parliament
+		election_frequency = 60
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 90
+		reformism = 10
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kim Jong-un"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_kim_chen_in.dds"
+		ideology = juche
+		traits = { trait_juche dictator }
+	}
+
+	create_country_leader = {
+		name = "Pak Yong-il"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_pak_yong_il.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kim Yong-dae"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_kim_yong_dae.dds"
+		ideology = social_democracy
+		expire = "2019.8.28"
+		traits = { trait_social_democracy }
+	}
+
+	#Кандидат при демократизации КНДР (Бойцы за Свободную Северную Корею)
+	create_country_leader = {
+		name = "Park Sang-hak"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_park_sang_hak.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Choi Jung-hoon"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_choi_jung_hoon.dds"
+		ideology = conservative_democracy 
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ri Myong-chol"
+		desc = ""
+		picture = "gfx/leaders/portrait_no_photo.dds"
+		ideology = centrist_democracy #pseudo-conservatism, democratic socialism
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ryu Mi-yong"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_ryu_mi_yong.dds"
+		ideology = centrist_democracy #pseudo-conservatism, democratic socialism
+		expire = "2016.11.23" #death
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kim Han-sol"
+		desc = ""
+		picture = "gfx/leaders/NKO/portrait_no_photo.dds"
+		ideology = national_democracy 
+		traits = { exiled }
+	}
+
+	#Корейская христианская федерация
+	#create_country_leader = {
+	#	name = "Kang Myung-chol"
+	#	desc = ""
+	#	picture = "gfx/leaders/portrait_kang_myung_chol.dds"
+	#	ideology = conservative_democracy 
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	#Известный перебежчик 
+	#create_country_leader = {
+	#	name = "Kang Chol-hwan"
+	#	desc = ""
+	#	picture = "gfx/leaders/NKO/portrait_kang_chol_hwan.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	create_field_marshal = {
+		name = "Ri Myong Su"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_Ri_myong_su.dds"
+		traits = { commando organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+    }
+	
+	create_field_marshal = {
+		name = "Ri Yong Gil"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_ri_yong_gil.dds"
+		traits = { old_guard fast_planner }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+    }
+	
+	create_field_marshal = {
+		name = "Hyon Yong Chol"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_hyon_yong_chol.dds"
+		traits = { old_guard panzer_leader ranger }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+    }
+	
+	create_navy_leader = {
+		name = "Kim Gong Ok"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_gun_ok.dds"
+		traits = { submarine_fleet_commander }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+    }
+	
+	create_corps_commander = {
+		name = "Cho Ryong Hae"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_cho_ryong_hae.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Choe Pu Il"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_choe_pu_il.dds"
+		traits = { trickster commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Hwang Pyong So"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_hwang_pyong_so.dds"
+		traits = { old_guard panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Jo Chun Ryong"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_jo_chun_ryong.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim En Chol"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_en_chol.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Chun Sop"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_chun_sop.dds"
+		traits = { infantry_leader old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Jo Kyong Chol"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_jo_kyong_chol.dds"
+		traits = { infantry_leader panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Kyok Sik"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_kyok_sik.dds"
+		traits = { infantry_expert }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Gu Yi"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_gu_yi.dds"
+		traits = { infantry_expert }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Myong Kuk"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_myong_kuk.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim E Xon"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_e_xon.dds"
+		traits = { old_guard organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Won Hong"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_won_hong.dds"
+		traits = { panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Yan Phan Gi"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_yan_phan_gi.dds"
+		traits = { old_guard panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Kim Yong Chun"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_kim_yong_chun.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+    }
+	
+	create_corps_commander = {
+		name = "Pak Yong Sik"
+		portrait_path = "gfx/leaders/NKO/portrait_nko_general_pak_yong_sik.dds"
+		traits = { ambusher }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+}
+
+2016.1.6 = {
+	add_named_threat = {
+		threat = 4
+		name = threat_NKO_nuclear_program
+	}
+}

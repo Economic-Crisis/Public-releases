@@ -1,0 +1,441 @@
+﻿########################
+## Economic Crisis   ###
+########################
+##     JAPAN         ###     
+######################## 
+
+add_namespace = japan
+
+# Japan Saipan Island - USA Folds
+country_event = {
+	id = japan.1
+	title = japan.1.t
+	desc = japan.1.d
+	picture = GFX_event_japan_usa
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.1.a
+		JAP = { 
+			transfer_state = 646
+			add_state_core = 646
+		}
+	}
+}
+
+# Japan Saipan Island - USA Rejects Demand
+country_event = {
+	id = japan.2
+	title = japan.2.t
+	desc = japan.2.d
+	picture = GFX_event_japan_usa
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = japan.2.a	
+			add_state_claim = 646
+		}
+	}
+
+
+# Japan Kuril Islands - RUS Folds
+country_event = {
+	id = japan.3
+	title = japan.3.t
+	desc = japan.3.d
+	picture = GFX_event_japan_russia
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.3.a
+		JAP = { 
+			transfer_state = 555
+			transfer_state = 1046
+			add_state_core = 555
+			add_state_core = 1046
+		}
+	}
+}
+
+# Japan Kuril Islands - RUS Rejects Demand
+country_event = {
+	id = japan.4
+	title = japan.4.t
+	desc = japan.4.d
+	picture = GFX_event_japan_russia
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = japan.4.a	}
+	}
+	
+	
+# Japan Caroline Islands - USA Folds
+country_event = {
+	id = japan.5
+	title = japan.5.t
+	desc = japan.5.d
+	picture = GFX_event_japan_usa
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.5.a
+		annex_country = { target = FSM transfer_troops = yes }
+		}
+	}
+
+# Japan Caroline Islands - USA Rejects Demand
+country_event = {
+	id = japan.6
+	title = japan.6.t
+	desc = japan.6.d
+	picture = GFX_event_japan_usa
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = japan.6.a	
+	add_state_claim = 684 }
+	}
+	
+# Japan dissolution of the lower chamber
+country_event = {
+	id = japan.7
+	title = japan.7.t
+	desc = japan.7.d
+	picture = GFX_event_japan_start_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.7.a
+		}
+	}
+	
+# Japan election date
+country_event = {
+	id = japan.8
+	title = japan.8.t
+	desc = japan.8.d
+	picture = GFX_event_japan_flag
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.8.a
+		}
+	}
+	
+#Parliamentary elections in Japan (2014)
+country_event = {  
+	id = japan.9
+	title = japan.9.t
+	desc = japan.9.d
+	picture = GFX_event_japan_election
+	
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = JAP
+		date > 2014.12.14
+	    country_exists = JAP
+	}
+	
+	option = { #Renho Murata
+		name = japan.9.a
+		ai_chance = { factor = 60 }
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.1
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Renho"
+	        desc = ""
+	        picture = "gfx/leaders/JAP/portrait_renho.dds"
+	        ideology = liberal_democracy
+	        traits = { trait_liberal_democracy }
+        }
+		hidden_effect = {
+			news_event = { id = japnews.1  days = 1 }
+		}
+	}
+	
+	option = { #Shinzo Abe
+		name = japan.9.b
+		ai_chance = { factor = 25 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Shinzo Abe"
+	        desc = ""
+	        picture = "gfx/leaders/JAP/portrait_shinzo_abe.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+        }
+		hidden_effect = {
+		    news_event = { id = japnews.2  days = 1 }
+		}
+	}
+	
+	option = { #Takeo Hiranuma
+		name = japan.9.c
+		ai_chance = { factor = 15 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.45
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Takeo Hiranuma"
+	        desc = ""
+	        picture = "gfx/leaders/JAP/portrait_takeo_hiranuma.dds"
+	        ideology = national_liberalism
+	        traits = { trait_national_liberalism }
+        }
+		hidden_effect = {
+		    news_event = { id = japnews.3  days = 1 }
+		}
+	}
+	
+	option = { #Kazuo Shii
+		name = japan.9.f
+		ai_chance = { factor = 15 }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.45
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Kazuo Shii"
+	        desc = ""
+	        picture = "gfx/leaders/JAP/portrait_kazuo_shii.dds"
+	        ideology = leninism
+	        traits = { trait_leninism }
+        }
+		hidden_effect = {
+		    news_event = { id = japnews.4  days = 1 }
+		}
+	}
+	
+	option = { #Natsuo Yamaguchi
+		name = japan.9.e
+		ai_chance = { factor = 15 }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.45
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Natsuo Yamaguchi"
+	        desc = ""
+	        picture = "gfx/leaders/JAP/portrait_natsuo_yamaguchi.dds"
+	        ideology = centrist_democracy
+	        traits = { trait_centrist_democracy }
+        }
+		hidden_effect = {
+		    news_event = { id = japnews.5  days = 1 }
+		}
+	}
+}
+
+# Japan election date
+country_event = {
+	id = japan.10
+	title = japan.10.t
+	desc = japan.10.d
+	picture = GFX_event_japan_army
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.10.a
+		army_experience = 150
+		}
+	}
+	
+# Japan imperor flot
+country_event = {
+	id = japan.11
+	title = japan.11.t
+	desc = japan.11.d
+	picture = GFX_event_imperor_flot
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.11.a
+		}
+	}
+	
+# Japan naval base
+country_event = {
+	id = japan.12
+	title = japan.12.t
+	desc = japan.12.d
+	picture = GFX_event_japan_navy
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.12.a
+		}
+	}
+	
+# Japan-USA Pact
+country_event = {
+	id = japan.13
+	title = japan.13.t
+	desc = japan.13.d
+	picture = GFX_event_japan_usa2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.13.a
+		}
+	}
+	
+# Japan Annexes USA Bases
+country_event = {
+	id = japan.14
+	title = japan.14.t
+	desc = japan.14.d
+	picture = GFX_event_japan_usa_base
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.14.a
+		JAP = { 
+			transfer_state = 1045
+			add_state_core = 1045
+		}
+		    transfer_state = 1044
+			add_state_core = 1044
+		}
+	}
+
+#Focus Tree: Invitation to the Japan/Korea Union	
+country_event = { 
+	id = japan.15
+	title = japan.15.t
+	desc = japan.15.d
+	picture = GFX_event_japan_korea
+	
+	is_triggered_only = yes
+	
+	option = {	#We accept!
+		name = japan.15.a
+		JAP = { add_to_faction = ROOT }
+		hidden_effect = {
+		    news_event = { id = japnews.7  days = 1 }
+		}
+		set_country_flag = seeks_japan_korea_union
+		ai_chance = { 
+			base = 90
+			modifier = {
+				is_faction_leader = yes
+				add = -100
+			}
+		}
+	}
+	
+	option = {	#We refuse!
+		name = japan.15.b
+		add_political_power = 20
+		}
+	}
+	
+# Japan New Capital
+country_event = {
+	id = japan.16
+	title = japan.16.t
+	desc = japan.16.d
+	picture = GFX_event_japan_capital
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.16.a
+		add_political_power = 200
+		}
+	}
+	
+# Japan Kuril Islands - RUS Folds
+country_event = {
+	id = japan.17
+	title = japan.17.t
+	desc = japan.17.d
+	picture = GFX_event_japan_russia
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.17.a
+		JAP = { 
+			transfer_state = 537
+			transfer_state = 655
+			add_state_core = 537
+			add_state_core = 655
+		}
+	}
+}
+
+# Japan Kuril Islands - RUS Rejects Demand
+country_event = {
+	id = japan.18
+	title = japan.18.t
+	desc = japan.18.d
+	picture = GFX_event_japan_russia
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = japan.18.a }
+}
+
+#Терроризм на базе США
+country_event = {
+	id = japan.19
+	title = japan.19.t
+	desc = japan.19.d
+	#picture = GFX_event_
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = japan.19.a
+		JAP = { subtract_from_variable = { budget_reserve = 10 } }
+		USA = { subtract_from_variable = { budget_reserve = -10 } }
+		custom_effect_tooltip = JAP_USA_event_19
+	}
+	option = {
+		name = japan.19.b
+		
+	}
+}

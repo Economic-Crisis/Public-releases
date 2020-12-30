@@ -1,0 +1,52 @@
+﻿#NON-EXISTENT ON START GAME STATE
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+	capital = 884
+
+	load_oob = "_tech_csto_minor_2013"
+	load_oob = "_tech_csto_regional_2013"
+	set_convoys = 25
+
+2013.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2018.8.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 20
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 70
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Egor Borisov"
+		desc = ""
+		picture = "gfx/leaders/SAK/portrait_egor_borisov.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+}
+
+2018.8.1 = {
+	create_country_leader = {
+		name = "Aleksandr Gabyshev"
+		desc = ""
+		picture = "gfx/leaders/SAK/portrait_aleksandr_gabyshev.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	set_party_name = {
+		ideology = fascism
+		long_name = SAK_shaman_party
+		name = SAK_shaman_party
+	}
+}

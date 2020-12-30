@@ -1,0 +1,25 @@
+
+country_government_reform = {
+
+    generic_govreform = {
+	
+        icon = generic_civil_support
+	    visible = {
+		    has_completed_focus = generic_political_effort
+		}
+		allowed = {
+			always = yes
+		}
+		available = { }
+        fire_only_once = yes
+		
+		days_remove = 60
+		cost = 2000
+		ai_will_do = { factor = 1 }
+
+		remove_effect = { 
+			add_ideas = parliamentary_republic
+			add_ideas = confederation
+		}
+	}
+}

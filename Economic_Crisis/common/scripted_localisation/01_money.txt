@@ -1,0 +1,497 @@
+
+
+defined_text = { 
+	name = money_budget_text
+
+	text = {
+		trigger = { NOT = { has_country_flag = money_trillions } }
+		localization_key = money_budget_text_millions
+	}
+	text = {
+		trigger = { has_country_flag = money_trillions }
+		localization_key = money_budget_text_billions
+	}
+
+}
+
+
+defined_text = { 
+	name = money_menu_budget_accept_btn_text
+
+	text = {
+		trigger = { check_variable = { budget_alert = 1 }
+				has_all_minist = yes }
+		localization_key = money_menu_budget_accept_btn_text_enabled
+	}
+	text = {
+		trigger = { OR = { check_variable = { budget_alert = 0 }
+				has_all_minist = no } }
+		localization_key = money_menu_budget_accept_btn_text_not_enabled
+	}
+
+}
+
+
+
+defined_text = { 
+	name = money_menu_btn_text
+
+	text = {
+		localization_key = money_menu_btn_text
+	}
+
+}
+
+defined_text = { 
+	name = TotalMoney_text
+
+	text = {
+		trigger = { check_variable = { money_balance < 0 } }
+		localization_key = TotalMoney_text_bad
+	}
+	text = {
+		trigger = { check_variable = { money_balance = 0 } }
+		localization_key = TotalMoney_text_normal
+	}
+	text = {
+		trigger = { check_variable = { money_balance > 0 } }
+		localization_key = TotalMoney_text_good
+	}	
+
+}
+
+defined_text = { 
+	name = money_menu_budget_percen_text
+
+	text = {
+		trigger = { check_variable = { budget_percen > 0 } }
+		localization_key = money_menu_budget_percen_text_green
+	}
+	text = {
+		trigger = { check_variable = { budget_percen = 0 } }
+		localization_key = money_menu_budget_percen_text_yellow
+	}
+	text = {
+		trigger = { check_variable = { budget_percen < 0 } }
+		localization_key = money_menu_budget_percen_text_red
+	}
+
+}
+
+defined_text = { 
+	name = money_menu_budget_rest_cats_percen_text
+
+	text = {
+		trigger = { check_variable = { budget_rest_cats_percen > 0 } }
+		localization_key = money_menu_budget_rest_cats_percen_green
+	}
+	text = {
+		trigger = { check_variable = { budget_rest_cats_percen = 0 } }
+		localization_key = money_menu_budget_rest_cats_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = def_prof_text
+
+	text = {
+		trigger = { check_variable = { def_prof_switch = 1 } }
+		localization_key = def_prof_text_prof
+	}
+	
+	text = {
+		trigger = { check_variable = { def_prof_switch = 0 } }
+		localization_key = def_prof_text_def
+	}
+
+}
+
+
+defined_text = { 
+	name = cat_1_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_1_rest_sections_percen > 0 } }
+		localization_key = cat_1_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_1_rest_sections_percen = 0 } }
+		localization_key = cat_1_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_1_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_1_sec_1_ratio_st = 3 } }
+		localization_key = cat_1_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_1_ratio_st = 2 } }
+		localization_key = cat_1_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_1_ratio_st < 2 } }
+		localization_key = cat_1_sec_1_ratio_text_bad
+	}
+
+}
+
+defined_text = {
+
+	name = cat_1_sec_2_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_1_sec_2_ratio_st = 3 } }
+		localization_key = cat_1_sec_2_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_2_ratio_st = 2 } }
+		localization_key = cat_1_sec_2_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_2_ratio_st < 2 } }
+		localization_key = cat_1_sec_2_ratio_text_bad
+	}
+
+}
+
+defined_text = {
+
+	name = cat_1_sec_3_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_1_sec_3_ratio_st = 3 } }
+		localization_key = cat_1_sec_3_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_3_ratio_st = 2 } }
+		localization_key = cat_1_sec_3_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_1_sec_3_ratio_st < 2 } }
+		localization_key = cat_1_sec_3_ratio_text_bad
+	}
+
+}
+
+defined_text = { 
+	name = cat_2_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_2_rest_sections_percen > 0 } }
+		localization_key = cat_2_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_2_rest_sections_percen = 0 } }
+		localization_key = cat_2_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_2_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_2_sec_1_ratio_st = 3 } }
+		localization_key = cat_2_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_1_ratio_st = 2 } }
+		localization_key = cat_2_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_1_ratio_st < 2 } }
+		localization_key = cat_2_sec_1_ratio_text_bad
+	}
+
+}
+
+defined_text = {
+ 
+	name = cat_2_sec_2_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_2_sec_2_ratio_st = 3 } }
+		localization_key = cat_2_sec_2_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_2_ratio_st = 2 } }
+		localization_key = cat_2_sec_2_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_2_ratio_st < 2 } }
+		localization_key = cat_2_sec_2_ratio_text_bad
+	}
+
+}
+
+defined_text = {
+ 
+	name = cat_2_sec_3_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_2_sec_3_ratio_st = 3 } }
+		localization_key = cat_2_sec_3_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_3_ratio_st = 2 } }
+		localization_key = cat_2_sec_3_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_3_ratio_st < 2 } }
+		localization_key = cat_2_sec_3_ratio_text_bad
+	}
+
+}
+
+defined_text = {
+ 
+	name = cat_2_sec_4_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_2_sec_4_ratio_st = 3 } }
+		localization_key = cat_2_sec_4_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_4_ratio_st = 2 } }
+		localization_key = cat_2_sec_4_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_2_sec_4_ratio_st < 2 } }
+		localization_key = cat_2_sec_4_ratio_text_bad
+	}
+
+}
+
+defined_text = { 
+	name = cat_3_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_3_rest_sections_percen > 0 } }
+		localization_key = cat_3_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_3_rest_sections_percen = 0 } }
+		localization_key = cat_3_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_3_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_3_sec_1_ratio_st = 3 } }
+		localization_key = cat_3_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_3_sec_1_ratio_st = 2 } }
+		localization_key = cat_3_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_3_sec_1_ratio_st < 2 } }
+		localization_key = cat_3_sec_1_ratio_text_bad
+	}
+
+}
+
+defined_text = { 
+	name = cat_4_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_4_rest_sections_percen > 0 } }
+		localization_key = cat_4_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_4_rest_sections_percen = 0 } }
+		localization_key = cat_4_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_4_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_4_sec_1_ratio_st = 3 } }
+		localization_key = cat_4_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_4_sec_1_ratio_st = 2 } }
+		localization_key = cat_4_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_4_sec_1_ratio_st < 2 } }
+		localization_key = cat_4_sec_1_ratio_text_bad
+	}
+
+}
+
+
+
+defined_text = { 
+	name = cat_5_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_5_rest_sections_percen > 0 } }
+		localization_key = cat_5_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_5_rest_sections_percen = 0 } }
+		localization_key = cat_5_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_5_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_5_sec_1_ratio_st = 3 } }
+		localization_key = cat_5_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_5_sec_1_ratio_st = 2 } }
+		localization_key = cat_5_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_5_sec_1_ratio_st < 2 } }
+		localization_key = cat_5_sec_1_ratio_text_bad
+	}
+
+}
+
+
+defined_text = { 
+	name = cat_6_text_rest_percen
+
+	text = {
+		trigger = { check_variable = { cat_6_rest_sections_percen > 0 } }
+		localization_key = cat_6_text_rest_percen_green
+	}
+	text = {
+		trigger = { check_variable = { cat_6_rest_sections_percen = 0 } }
+		localization_key = cat_6_text_rest_percen_yellow
+	}
+
+}
+
+defined_text = {
+
+	name = cat_6_sec_1_ratio_text
+
+	text = {
+		trigger = { check_variable = { cat_6_sec_1_ratio_st = 3 } }
+		localization_key = cat_6_sec_1_ratio_text_good
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_6_sec_1_ratio_st = 2 } }
+		localization_key = cat_6_sec_1_ratio_text_normal
+	}
+	
+	text = {
+		trigger = { check_variable = { cat_6_sec_1_ratio_st < 2 } }
+		localization_key = cat_6_sec_1_ratio_text_bad
+	}
+
+}
+
+
+
+defined_text = {
+
+	name = cat_1_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_1_rest_sections_percen > 0 } }
+		localization_key = cat_1_ratio_check_alert
+	}
+
+}
+
+defined_text = {
+
+	name = cat_2_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_2_rest_sections_percen > 0 } }
+		localization_key = cat_2_ratio_check_alert
+	}
+
+}
+
+defined_text = {
+
+	name = cat_3_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_3_rest_sections_percen > 0 } }
+		localization_key = cat_3_ratio_check_alert
+	}
+
+}
+
+defined_text = {
+
+	name = cat_4_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_4_rest_sections_percen > 0 } }
+		localization_key = cat_4_ratio_check_alert
+	}
+
+}
+
+defined_text = {
+
+	name = cat_5_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_5_rest_sections_percen > 0 } }
+		localization_key = cat_5_ratio_check_alert
+	}
+
+}
+
+
+defined_text = {
+
+	name = cat_6_ratio_check
+
+	text = {
+		trigger = { check_variable = { cat_6_rest_sections_percen > 0 } }
+		localization_key = cat_6_ratio_check_alert
+	}
+
+}

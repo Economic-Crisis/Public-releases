@@ -1,0 +1,81 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 459
+set_convoys = 25
+# 16 августа 1962 года
+    add_ideas = {
+		arab_league_member
+		au_member
+		semi-presidential_republic
+		unitary_state
+		preference_religion
+		mixed_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		average_terrorism
+		gaz_trader
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 20980 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "ALG_2013"
+
+	add_ideas = {
+		opec_member
+	}  
+
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2009.4.9"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 80
+		liberalism = 20
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_intelligence_agency = yes
+	
+	create_country_leader = {
+		name = "Abdelaziz Bouteflika"
+		desc = ""
+		picture = "gfx/leaders/ALG/portrait_abdel_aziz_boutefelika.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Louisa Hanoune"
+		desc = ""
+		picture = "gfx/leaders/ALG/portrait_louisa_hanoune.dds"
+		ideology = trotskizm
+		traits = { trait_trotskizm }
+	}
+
+}
+

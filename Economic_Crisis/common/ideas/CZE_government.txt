@@ -1,0 +1,1253 @@
+#Shaak Ti
+
+ideas = {
+
+	head_of_government = {
+	
+		CZE_Andrey_Babish_hog = {
+
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = {
+					has_idea = CZE_Andrey_Babish_sm
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_centrist
+				pm_centrist
+				oligarch
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		
+		}
+		
+		CZE_Boguslav_Sobotka_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+				date > 2014.1.29
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_reformist
+				pm_reformist
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+		
+		}
+		
+		CZE_Jirzhy_Rusnok_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				date < 2014.1.29
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_reformist
+				pm_reformist
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		
+		}
+		
+		CZE_Pavel_Belobradek_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_liberal
+				pm_liberal
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+		
+		}
+		
+		CZE_Petr_Fiala_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_conservative
+				pm_conservative
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		
+		}
+		
+		CZE_Vojtech_Filip_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_communist
+				pm_communist
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		
+		}
+		
+		CZE_Tomio_Okamura_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_nationalist
+				pm_nationalist
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		
+		}
+		
+		CZE_Karel_Schwarzenberg_hog = {
+		
+			cost = 1000
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = {
+					has_idea =  CZE_Karel_Schwarzenberg_fgm
+					has_idea =  CZE_Karel_Schwarzenberg
+				}
+			}
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			traits = {
+				party_leader_liberal
+				pm_liberal
+			}
+			
+			ai_will_do = {
+				factor = 5
+			}
+		
+		}
+		
+		CZE_Ivan_Bartos_hog = {
+			#Пиратская партия
+			cost = 1000
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+					}
+			}
+			
+			traits = {
+				party_leader_liberal
+				pm_liberal
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Jan_Hamacek_hog = {
+			#Чешская социал-демократическая партия, второе правительство Андрея Бабиша (2018-н.в.)
+			#Снят с должности 15 октября 2018 года
+			cost = 1000
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+					}
+					NOT = { has_idea = CZE_Jan_Hamacek_fgm }
+			}
+			
+			traits = {
+				party_leader_reformist
+				pm_reformist
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+	}
+	
+	foreign_minister = {
+	
+		CZE_Lubomir_Zaoralek_fgm = {
+			#Чешская социал-демократическая партия, правительство Богуслава Соботки (2014-2017)
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+					}
+			}
+			
+			traits = {
+				foreign_minister_addiction_CHI
+				foreign_minister_policy_defender_3
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Jan_Kohout_fgm = {
+			#Беспартийный, правительство Иржи Руснока (2013-2014)
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				foreign_minister_policy_defender_2
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Martin_Stropnicky_fgm = {
+			#АНО 2011, первое правительство Андрея Бабиша (2017-2018) и правительство Богуслава Соботки (2014-2017)
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = neutrality
+						has_country_flag = coalition_with_centrists
+					}
+					NOT = {
+						has_idea =  CZE_Martin_Stropnicky_defm
+						has_idea =  CZE_Martin_Stropnicky
+					}
+			}
+			
+			traits = {
+				foreign_minister_addiction_USA
+				foreign_minister_non-alignment_2
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Tomas_Petricek_fgm = {
+			#Чешская социал-демократическая партия, второе правительство Андрея Бабиша (2018-н.в.)
+			#Назначен 16 октября 2018 года
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+					}
+			}
+			
+			traits = {
+				foreign_minister_policy_conversation
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Jan_Hamacek_fgm = {
+			#Чешская социал-демократическая партия, второе правительство Андрея Бабиша (2018-н.в.)
+			#Снят с должности 15 октября 2018 года
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+					}
+					NOT = { has_idea = CZE_Jan_Hamacek_hog }
+			}
+			
+			traits = {
+				foreign_minister_policy_conversation
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Karel_Schwarzenberg_fgm = {
+			#ТОП 09
+			#Был министром иностранных дел в правительстве Петра Нечаса (2010-2013)
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+					OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+					}
+					NOT = {
+						has_idea = CZE_Karel_Schwarzenberg_hog
+						has_idea = CZE_Karel_Schwarzenberg
+					}
+			}
+			
+			traits = {
+				foreign_minister_policy_conversation
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+	}
+	
+	defence_minister = {
+		
+		CZE_Vlastimil_Picek_defm = {
+			
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				NOT = { has_idea = CZE_Vlastimil_Picek_chogs }
+			}
+			
+			traits = {
+				defence_minister_distinguished_military				
+				army_chief_reform_3		
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Martin_Stropnicky_defm = {
+			#АНО 2011, первое правительство Андрея Бабиша (2017-2018) и правительство Богуслава Соботки (2014-2017)
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = {
+					has_idea = CZE_Martin_Stropnicky_fgm
+					has_idea = CZE_Martin_Stropnicky
+				}
+			}
+			
+			traits = {
+				defence_minister_regime_loyalist
+				army_chief_reform_2			
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Karla_Slechtova_defm = {
+			
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				defence_minister_distinguished_military
+				army_chief_reform_1		
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Lubomir_Metnar_defm = {
+			
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				defence_minister_army_order
+				army_chief_reform_2	
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+	}
+	
+	economic_minister = {
+	
+		CZE_Alena_Schillerova_sm = {#Министр финансов в 1 и 2 кабинетах Бабиша
+
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				economic_minister_business_protege
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+	
+		CZE_Ivan_Pilny_sm = {#Министр финансов в кабинете Соботки от АНО 2011
+
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			traits = {
+				economic_minister_public_administration_2
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Jan_Mladek_sm = {#Министр промышленности и торговли в кабинете Соботки от ЧСДП
+
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			traits = {
+				economic_minister_business_protege_3
+				tek_reformer
+			}
+			
+			ai_will_do = {
+				factor = 4
+			}
+			
+		}
+		
+		CZE_Jiri_Havlicek_sm = {#Министр промышленности и торговли в кабинете Соботки от ЧСДП
+
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			traits = {
+				economic_minister_public_administration
+				industry_developer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Marta_Novakova_sm = {#Министр промышленности и торговли во 2 кабинете Бабиша
+			
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			traits = {
+				economic_minister_business_protege_1
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Karel_Havlicek_sm = {#Министр промышленности и торговли во 2 кабинете Бабиша
+			
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				economic_minister_public_administration
+				research_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Andrey_Babish_sm = {#Министр финансов в кабинете Соботки
+
+			cost = 500
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = {
+					has_idea = CZE_Andrey_Babish_hog
+				}
+			}
+			
+			traits = {
+				economic_minister_international_trade_3
+				oligarch
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+		CZE_Tomas_Huner_sm = {#Министр промышленности и торговли в 1 кабинете Бабиша
+			
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				economic_minister_public_administration_2
+				tek_reformer
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Jan_Fischer_sm = {#Министр финансов в кабинете Руснока
+		
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				economic_minister_public_administration
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Jiri_Cienciala_sm = {#Министр промышленности и торговли в кабинете Руснока
+			
+			cost = 350
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				economic_minister_public_administration
+				industry_developer
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+		}
+		
+	}
+	
+	secret_service_chief = {
+		
+		CZE_Michal_Koudelka_ssch = {#Директор Службы безопасности и информации с 2016 г.
+			
+			cost = 550
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				secret_service_chief_spy
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Jiri_Lang_ssch = {#Директор Службы безопасности и информации 2003 - 2016 гг.
+			
+			cost = 550
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				NOT = { has_idea = CZE_Jiri_Lang_isch }
+			}
+			
+			traits = {
+				secret_service_chief_counterespionage_1
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Jiri_Ruzek_ssch = {#Директор Службы безопасности и информации 1999 - 2003 гг.
+			
+			cost = 550
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				secret_service_chief_spy_2
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+	}
+	
+	political_advisor = {
+	
+		CZE_Lubomir_Zaoralek = {
+		
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+				NOT = {
+					has_idea = CZE_Lubomir_Zaoralek_fgm
+				}
+			}
+			
+			traits = {
+				cultura_reformer
+			}
+			
+			ai_will_do = {
+				factor = 4
+			}
+			
+		}
+		
+		CZE_Ilja_Smid = {
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				cultura_reformer
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Dan_Tok = {
+		
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				infrastructure_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Vladimir_Kremlik = {
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				infrastructure_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Adam_Vojtech1 = { #Министр здравоохранения во втором кабинете Андрея Бабиша
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+				date < 2014.6.1
+			}
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+			
+			traits = {
+				medicine_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Adam_Vojtech2 = {
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+				date > 2014.6.1
+			}
+			
+			available = {
+				
+			}
+			
+			traits = {
+				medicine_reformer
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+		
+		CZE_Robert_Plaga = { #Министр образования, молодежи и спорта во втором кабинете Андрея Бабиша
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			
+			traits = {
+				research_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+		
+		CZE_Daniel_Benes = { #Генеральный директор ČEZ
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				has_idea = CZE_CEZ
+			}
+			
+			traits = {
+				tek_reformer
+			}
+			
+			ai_will_do = {
+				factor = 4
+			}
+			
+		}
+		
+		CZE_Milan_Chovanec = { #Министр внутренних дел в кабинете Богуслава Соботки
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			
+			traits = {
+				police_reformer
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+
+		CZE_Martin_Pecina = { #Министр внутренних дел в кабинете Иржи Руснока
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+
+			}
+			
+			traits = {
+				police_reformer
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+
+		CZE_Lubomir_Kovarik = { #Председатель и президент Česká zbrojovka Group
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				has_idea = CZE_Ceska_zbrojovka_Uhersky_Brod
+			}
+			
+			traits = {
+				oboronexpo_reformer
+			}
+			
+			ai_will_do = {
+				factor = 5
+			}
+			
+		}
+
+		CZE_Karel_Schwarzenberg = {
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = {
+					has_idea = CZE_Karel_Schwarzenberg_fgm
+					has_idea = CZE_Karel_Schwarzenberg_hog
+				}
+			}
+			
+			traits = {
+				master_negotiations
+			}
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+		}
+
+		CZE_Martin_Stropnicky = {
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = {
+					has_idea = CZE_Martin_Stropnicky_defm
+					has_idea = CZE_Martin_Stropnicky_fgm
+				}
+			}
+			
+			traits = {
+				master_negotiations
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+
+		CZE_Marek_Rojicek = { #председатель Чешского статистического управления с марта 2018
+
+			cost = 150
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = "CZE"
+			}
+			
+			available = {
+			
+			}
+			
+			traits = {
+				backroom_manipulator
+			}
+			
+			ai_will_do = {
+				factor = 3
+			}
+			
+		}
+
+	}
+	
+}

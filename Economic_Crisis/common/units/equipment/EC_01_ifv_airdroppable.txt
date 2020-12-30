@@ -1,0 +1,220 @@
+equipments = {
+
+	#Авиадесантируемая боевая машина пехоты (БМД)
+	
+	ifv_airdroppable_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			armor
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+		
+		maximum_speed = 13.5 #+1.5
+		reliability = 0.8 
+		
+		#Defensive Abilities
+		defense = 16 #+2
+		breakthrough = 9 #+4
+		armor_value = 24 #+3
+		hardness = 0.36 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 13.5 #+4% 
+		hard_attack = 7.5 #+4%
+		ap_attack = 10 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 5.5 #+1
+
+		build_cost_ic = 9 #+1
+		fuel_consumption = 1.4
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 1
+			#money = 3
+		}
+	}
+	
+	#I
+	ifv_airdroppable_g2_equipment_0 = {
+		archetype = ifv_airdroppable_equipment
+		#parent = ifv_airdroppable_equipment
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 15.0 #+1.5
+		reliability = 0.8 
+		
+		#Defensive Abilities
+		defense = 18 #+2
+		breakthrough = 13 #+4
+		armor_value = 27 #+3
+		hardness = 0.37 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 14.0 #+4% 
+		hard_attack = 7.8 #+4%
+		ap_attack = 10.6 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 6.5 #+1
+
+		build_cost_ic = 10 #+0.5
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 1
+			#money = 4
+		}
+	}
+	
+	
+	#II
+	ifv_airdroppable_g3_equipment_0 = {
+		archetype = ifv_airdroppable_equipment
+		parent = ifv_airdroppable_g2_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 16.5 #+1.5
+		reliability = 0.85 
+		
+		#Defensive Abilities
+		defense = 20 #+2
+		breakthrough = 17 #+4
+		armor_value = 30 #+3
+		hardness = 0.41 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 17.8 #+4% 
+		hard_attack = 9.9 #+4%
+		ap_attack = 15 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 7.5 #+1
+
+		build_cost_ic = 11 #+0.5
+		resources = {
+			steel = 3
+			polymers = 4
+			alloy_steel = 1
+			#money = 4
+		}
+	}
+	
+	#III
+	ifv_airdroppable_g4_equipment_0 = {
+		archetype = ifv_airdroppable_equipment
+		parent = ifv_airdroppable_g3_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 18.0 #+1.5
+		reliability = 0.85
+		
+		#Defensive Abilities
+		defense = 22 #+2
+		breakthrough = 21 #+4
+		armor_value = 33 #+3
+		hardness = 0.47 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 22.5 #+4% 
+		hard_attack = 12.5 #+4%
+		ap_attack = 21.3 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 8.5 #+1
+
+		build_cost_ic = 12 #+0.5
+		resources = {
+			steel = 4
+			polymers = 4
+			alloy_steel = 2
+			#money = 5
+		}
+	}
+	
+	#IV
+	ifv_airdroppable_g5_equipment_0 = {
+		archetype = ifv_airdroppable_equipment
+		parent = ifv_airdroppable_g4_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 19.5 #+1.5
+		reliability = 0.85
+		
+		#Defensive Abilities
+		defense = 24 #+2
+		breakthrough = 25 #+4
+		armor_value = 36 #+3
+		hardness = 0.53 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 28.4 #+4% 
+		hard_attack = 15.8 #+4%
+		ap_attack = 30.3 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 9.5 #+1
+
+		build_cost_ic = 13 #+0.5
+		resources = {
+			steel = 4
+			polymers = 6
+			alloy_steel = 2
+			#money = 5
+		}
+	}
+	
+	#V
+	ifv_airdroppable_g6_equipment_0 = {
+		archetype = ifv_airdroppable_equipment
+		parent = ifv_airdroppable_g5_equipment_0
+		priority = 30
+		visual_level = 5
+
+		maximum_speed = 21.0 #+1.5
+		reliability = 0.9
+		
+		#Defensive Abilities
+		defense = 28 #+2
+		breakthrough = 29 #+4
+		armor_value = 39 #+3
+		hardness = 0.63 #+2%
+		
+		#Offensive Abilities
+		soft_attack = 36.0 #+4% 
+		hard_attack = 20.0 #+4%
+		ap_attack = 42.9 #+6%
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10.5 #+1
+
+		build_cost_ic = 14 #+0.5
+		resources = {
+			steel = 5
+			polymers = 8
+			alloy_steel = 2
+			#money = 6
+		}
+	}
+}

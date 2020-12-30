@@ -1,0 +1,583 @@
+## ВСЕ ТРЕЙТЫ ДЛЯ КОМАНДУЩИХ АРМИЕЙ, ТАКЖЕ МОГУТ ИСПОЛЬЗОВАТЬСЯ МИНИСТРАМИ ОБОРОНЫ И НАЧАЛЬНИКАМИ ГЕНШТАБА - категория идей army_chief 
+
+leader_traits = {
+
+		###EC2013//////////////////////////////////////////////////////////////
+		
+		army_combat_training = { 
+		
+		sprite = 5
+		
+		training_time_army_factor = -0.02
+		army_armor_attack_factor = 0.02
+	    army_armor_defence_factor = 0.02
+		cavalry_attack_factor = 0.02
+		cavalry_defence_factor = 0.01
+		motorized_attack_factor = 0.02
+		motorized_defence_factor = 0.02
+		army_artillery_attack_factor = 0.02
+		army_artillery_defence_factor = 0.01
+		experience_gain_army_factor = 0.02
+		attrition = -0.01
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+		landing_forces_training = { 
+		
+		sprite = 5
+		
+		training_time_army_factor = -0.03
+		air_paradrop_attack_factor = 0.03
+		air_paradrop_defence_factor = 0.02
+		air_paradrop_agility_factor = 0.03
+		special_forces_attack_factor = 0.02
+	    special_forces_defence_factor = 0.01
+		army_artillery_attack_factor = 0.02
+		army_artillery_defence_factor = 0.01
+		army_speed_factor = 0.02
+		experience_gain_army_factor = 0.02
+		attrition = -0.01
+		army_org_factor = 0.01
+
+		
+		ai_will_do = { factor = 2 }
+	}
+	
+	
+	
+		specops_training = { 
+		
+		sprite = 5
+		
+		training_time_army_factor = -0.02
+		special_forces_attack_factor = 0.02
+	    special_forces_defence_factor = 0.02
+		army_artillery_attack_factor = 0.03
+		army_artillery_defence_factor = 0.01
+		air_paradrop_attack_factor = 0.02
+		air_paradrop_defence_factor = 0.01
+		air_paradrop_agility_factor = 0.03
+		amphibious_invasion = 0.01
+		experience_gain_army_factor = 0.03
+		army_speed_factor = 0.03
+		attrition = -0.02
+		army_org_factor = 0.02
+		army_morale_factor = 0.02
+
+		
+		ai_will_do = { factor = 3 }
+	}
+	
+	
+	###Ваниль//////////////////////////////////////////////////////
+		army_chief_defensive_1 = { # +5 Defensive efficiency
+		sprite = 9
+		army_defence_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_defensive_2 = { # +10 Defensive efficiency
+		sprite = 9
+		army_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_defensive_3 = { # +15 Defensive efficiency
+		sprite = 9
+		army_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_chief_offensive_1 = { # +5 Offensive efficiency
+		sprite = 7
+		army_attack_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_offensive_2 = { # +10 Offensive efficiency
+		sprite = 7
+		army_attack_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_offensive_3 = { # +15 Offensive efficiency
+		sprite = 7
+		army_attack_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	army_chief_old_guard = { # Rate at which field experience is gained decreases by 10%
+		sprite = 5 # Should not need sprite, should mostly be secondary
+		experience_gain_army_factor = -0.1
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_drill_1 = { # Decreases training time for ground units
+		sprite = 5
+		training_time_army_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_drill_2 = { # Decreases training time for ground units
+		sprite = 5
+		training_time_army_factor = -0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_drill_3 = { # Decreases training time for ground units
+		sprite = 5
+		training_time_army_factor = -0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_chief_reform_1 = { # Rate at which field experience is gained increases by 5%
+		sprite = 5
+		experience_gain_army_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_reform_2 = { # Rate at which field experience is gained increases by 10%
+		sprite = 5
+		experience_gain_army_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_reform_3 = { # Rate at which field experience is gained increases by 15%
+		sprite = 5
+		experience_gain_army_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_chief_organizational_1 = { # Ground units get 4 more Organization
+		sprite = 5
+		army_org_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_organizational_2 = { # Ground units get 8 more Organization
+		sprite = 5
+		army_org_factor = 0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_organizational_3 = { # Ground units get 12 more Organization
+		sprite = 5
+		army_org_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_chief_morale_1 = { # Ground units get 4 more Morale
+		sprite = 5
+		army_morale_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_morale_2 = { # Ground units get 8 more Morale
+		sprite = 5
+		army_morale_factor = 0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_morale_3 = { # Ground units get 12 more Morale
+		sprite = 5
+		army_morale_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_chief_maneuver_1 = { # Ground units move 5% faster
+		sprite = 5
+		army_speed_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_chief_maneuver_2 = { # Ground units move 10% faster
+		sprite = 5
+		army_speed_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_chief_maneuver_3 = { # Ground units move 15% faster
+		sprite = 5
+		army_speed_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_entrenchment_1 = { # Ground units entrench 4% faster
+		sprite = 9
+		dig_in_speed_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_entrenchment_2 = { # Ground units entrench 8% faster
+		sprite = 9
+		dig_in_speed_factor = 0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_entrenchment_3 = { # Ground units entrench 12% faster
+		sprite = 9
+		dig_in_speed_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_armored_1 = { # +4 armor efficiency
+		sprite = 8
+		army_armor_attack_factor = 0.05
+	    army_armor_defence_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_armored_2 = { # +8 armor efficiency
+		sprite = 8
+		army_armor_attack_factor = 0.1
+	    army_armor_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_armored_3 = { # +12 armor efficiency
+		sprite = 8
+		army_armor_attack_factor = 0.15
+	    army_armor_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_artillery_1 = { # +4 artillery efficiency
+		sprite = 8
+		army_artillery_attack_factor = 0.1
+		army_artillery_defence_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_artillery_2 = { # +8 artillery efficiency
+		sprite = 8
+		army_artillery_attack_factor = 0.15
+		army_artillery_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_artillery_3 = { # +12 artillery efficiency
+		sprite = 8
+		army_artillery_attack_factor = 0.2
+		army_artillery_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_infantry_1 = { # +4 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.05
+		army_infantry_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_infantry_2 = { # +8 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.1
+		army_infantry_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_infantry_3 = { # +12 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.15
+		army_infantry_defence_factor = 0.2
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_commando_1 = { # +4 paratrooper/marine/mountain efficiency
+		sprite = 5
+		special_forces_attack_factor = 0.1
+	    special_forces_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_commando_2 = { # +8 paratrooper/marine/mountain efficiency
+		sprite = 5
+		special_forces_attack_factor = 0.15
+	    special_forces_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_commando_3 = { # +12 paratrooper/marine/mountain efficiency
+		sprite = 5
+		special_forces_attack_factor = 0.2
+	    special_forces_defence_factor = 0.2
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_cavalry_1 = { # +4 cavalry/motorized efficiency
+		sprite = 8
+		cavalry_attack_factor = 0.05
+		cavalry_defence_factor = 0.05
+		motorized_attack_factor = 0.05
+		motorized_defence_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_cavalry_2 = { # +8 cavalry/motorized efficiency
+		sprite = 8
+		cavalry_attack_factor = 0.1
+		cavalry_defence_factor = 0.1
+		motorized_attack_factor = 0.1
+		motorized_defence_factor =0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_cavalry_3 = { # +12 cavalry/motorized efficiency
+		sprite = 8
+		cavalry_attack_factor = 0.15
+		cavalry_defence_factor = 0.15
+		motorized_attack_factor = 0.15
+		motorized_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_regrouping_1 = { # Org regenerates 4% faster
+		sprite = 5
+		army_morale_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_regrouping_2 = { # Org regenerates 8% faster
+		sprite = 5
+		army_morale_factor = 0.08
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_regrouping_3 = { # Org regenerates 12% faster
+		sprite = 5
+		army_morale_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_concealment_1 = { # Ground units take less damage from air attacks
+		sprite = 9
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_concealment_2 = { # Ground units take less damage from air attacks
+		sprite = 9
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_concealment_3 = { # Ground units take less damage from air attacks
+		sprite = 9
+		enemy_army_bonus_air_superiority_factor = -0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	
+	army_logistics_1 = {  # Ground units suffer 4% less attrition
+		sprite = 6
+		attrition = -0.04
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	army_logistics_2 = {  # Ground units suffer 8% less attrition
+		sprite = 6
+		attrition = -0.08
+		
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	
+	army_logistics_3 = {  # Ground units suffer 12% less attrition
+		sprite = 6
+		attrition = -0.12
+		
+		ai_will_do = {
+			factor = 6
+		}
+	}
+		
+	air_airborne_1 = { # Paratrooper drop efficiency increased by 4%
+		sprite = 1
+		air_paradrop_attack_factor = 0.01
+		air_paradrop_defence_factor = 0.03
+		air_paradrop_agility_factor = 0.03
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	air_airborne_2 = { # Paratrooper drop efficiency increased by 8%
+		sprite = 1
+		air_paradrop_attack_factor = 0.02
+		air_paradrop_defence_factor = 0.05
+		air_paradrop_agility_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	air_airborne_3 = { # Paratrooper drop efficiency increased by 12%
+		sprite = 1
+		air_paradrop_attack_factor = 0.03
+		air_paradrop_defence_factor = 0.07
+		air_paradrop_agility_factor = 0.07
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+}

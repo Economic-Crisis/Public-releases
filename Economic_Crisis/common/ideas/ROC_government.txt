@@ -1,0 +1,978 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+	# POLITICAL
+		roc_lin_ruey-shiung_hog = {
+			
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			allowed = {
+				original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_centrist  limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist			
+					}
+
+			on_add = {
+				news_event = political_party.32
+			}
+
+		#	do_effect = {
+		#		NOT = {
+		#			has_government = neutrality
+		#		}
+		#	}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+		roc_lee_keng-cheng_hog = {
+			
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = reformism
+						has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_reformist  limit = 1 }
+					}
+				}
+			}
+
+			traits = {  party_leader_reformist
+						pm_reformist	
+					}
+
+			on_add = {
+				news_event = political_party.1
+			}
+
+		#	do_effect = {
+		#		NOT = {
+		#			has_government = reformism
+		#		}
+		#	}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_su_jia-chyuan_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_liberal limit = 1 }
+					}
+				}
+			}
+
+			traits = {
+				party_leader_liberal
+				pm_liberal			
+			}
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_li_keqiang_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = communism
+						has_country_flag = coalition_with_socialists
+				}
+			}
+
+			allowed = {
+				original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = party_leader_communist limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_communist
+						pm_communist		
+					}
+
+			on_add = {
+				country_event = political.1
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_wu_den-yih_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = {
+			original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+					}
+				}
+			}
+
+			traits = { 
+				party_leader_conservative 
+				pm_conservative
+			}
+
+			on_add = {
+				news_event = political.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_huang_kun-huei_hog = {
+	
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = fascism
+						has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			allowed = {
+				original_tag = ROC
+				NOT = {
+					OR = {
+						has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+					}
+				}
+			}
+
+			traits = { party_leader_nationalist 
+						pm_nationalist
+					}
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+	}
+
+	defence_minister = {
+
+		roc_yen_ming_defm = {
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { defence_minister_bureaucrat }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_kao_kuang-chi_defm = {
+		
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { defence_minister_analyst }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_chiu_chiu_kuo-cheng_defm = {
+			
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { defence_minister_distinguished_military }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	foreign_minister = {
+
+		roc_david_lin_fgm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { foreign_minister_policy_defender }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_timothy_yang_fgm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = {  foreign_minister_policy_conversation }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_david_lee_ta-wei_fgm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = {  foreign_minister_policy_conversation }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	economic_minister = {
+
+		roc_chang_sheng-ford_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { economic_minister_banking_credit_system   }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_chang_chia-juch_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { economic_minister_international_trade  }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_woody_duh_ecm = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { economic_minister_public_administration  }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_john_deng_ecm = {
+		
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { economic_minister_social_reformer  }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	secret_service_chief = {
+
+		roc_luo_ying-shay_ssch = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { secret_service_chief_counterespionage  }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_chen_ming-tang_ssch = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	political_advisor = {
+
+		roc_vanessa_shih = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { smooth_talking_charmer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_karen_yu = {
+		
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { popular_figurehead
+						reformism_demagogue }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_lin_chih-chia = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_cyrus_chu = {
+			
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { research_reformer
+						smooth_talking_charmer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_chang_san-cheng = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { research_reformer
+						silent_workhorse }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_lung_ying-tai = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { cultura_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_chiu_wen-ta = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { medicine_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_yeh_kuang-shih = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { infrastructure_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_pan_shih-wei = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { captain_of_industry
+						democratic_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+		roc_chiang_wei-ling = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { liberalism_demagogue
+						compassionate_gentleman }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_lin_chuan = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { backroom_manipulator
+						quartermaster_general }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_hsu_hsin-ying = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { ideologue_theorist
+						popular_figurehead }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_lien_chan = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { neutrality_reformer }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_yok_mu-ming = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { war_industrialist
+						regime_defender }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		roc_hung_hsiu-chu = {
+			
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+
+			}
+
+			allowed = {
+				original_tag = ROC
+			}
+
+			traits = { ideological_crusader }
+
+			on_add = {
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}

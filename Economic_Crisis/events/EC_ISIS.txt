@@ -1,0 +1,2764 @@
+﻿## Economic Crisis
+## ISIS events
+## Written by SuxrobGM
+add_namespace = isis
+
+# Invite Palestine to Faction
+country_event = {
+	id = isis.1
+	title = isis.1.t
+	desc = isis.1.d
+	picture = GFX_event_IGL_army1
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = { # Accept
+		name = isis.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.1.a"
+		ai_chance = { factor = 70 }
+		add_popularity = { ideology = rad_islamists popularity = 30 }
+		set_politics = { ruling_party = rad_islamists elections_allowed = no }
+		ISS = {	add_to_faction = PAL }
+	}
+
+	option = { # Reject
+		name = isis.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.1.b"
+		ai_chance = { factor = 35 }
+		ISS = {
+			country_event = { id = isis.2 days = 5 }
+			effect_tooltip = {
+				create_wargoal = { type = puppet_wargoal_focus target = PAL }
+			}
+		}
+	}
+}
+
+# Palestine Rejected Inviting
+country_event = {
+	id = isis.2
+	title = isis.2.t
+	desc = isis.2.d
+	picture = GFX_event_IGL_army2
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.2.a"
+		create_wargoal = { type = puppet_wargoal_focus target = PAL }
+	}
+}
+
+# isis Wants to Annex Palestine
+country_event = {
+	id = isis.3
+	title = isis.3.t
+	desc = isis.3.d
+	picture = GFX_event_IGL_army2
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = { # Accept
+		name = isis.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.3.a"
+		ai_chance = { factor = 60 }
+		ISS = {
+			annex_country = { target = PAL }
+		}
+	}
+
+	option = { # Reject
+		name = isis.3.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.3.b"
+		ai_chance = { factor = 40 }
+		ISS = {
+			country_event = { id = isis.4 days = 5 }
+			effect_tooltip = {
+				declare_war_on = { type = annex_everything target = PAL }
+			}
+		}
+	}
+}
+
+# Palestine Rejected Annexing
+country_event = {
+	id = isis.4
+	title = isis.4.t
+	desc = isis.4.d
+	picture = GFX_event_IGL_army3
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.4.a"
+		declare_war_on = { type = annex_everything target = PAL }
+	}
+}
+
+# Revolt in Asia
+country_event = {
+	id = isis.5
+	title = isis.5.t
+	desc = isis.5.d
+	picture = GFX_event_IGL_army4
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.5.a"
+	}
+}
+
+#country_event = {
+#	id = isis.6
+#	hidden = yes
+#
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		ISS = { create_faction = great_islamic_caliphate }
+#		ISS = {
+#			add_to_faction = ROOT
+#		}
+#	}
+#}
+
+# Revolt in Germany
+country_event = {
+	id = isis.7
+	title = isis.7.t
+	desc = isis.7.d
+	picture = GFX_event_IGL_army5
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.7.a"
+	}
+}
+
+# Revolt in France
+country_event = {
+	id = isis.8
+	title = isis.8.t
+	desc = isis.8.d
+	picture = GFX_event_IGL_army6
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.8.a"
+	}
+}
+
+# Revolt in Egypt
+country_event = {
+	id = isis.9
+	title = isis.9.t
+	desc = isis.9.d
+	picture = GFX_event_revolt_in_Egypt
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.9.a"
+	}
+}
+
+# IGIL Suggested Union
+country_event = {
+	id = isis.10
+	title = isis.10.t
+	desc = isis.10.d
+	picture = GFX_event_IGL_parad
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = isis.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.10.a"
+		ai_chance = { factor = 70 }
+		ISS = { add_to_faction = ROOT }
+	}
+
+	#immediate = {
+	#	ISS = { create_faction = great_islamic_caliphate }
+	#}
+
+	option = { # Reject
+		name = isis.10.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.10.b"
+		ai_chance = { factor = 35 }
+	}
+}
+
+country_event = {
+	id = isis.11
+	title = isis.11.t
+	desc = isis.11.d
+	picture = GFX_event_IGL_parad
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	    OR = {
+			has_country_flag = IGL_friends
+			has_country_flag = IGL_revolt_in_asia
+			has_country_flag = IGL_faction_with_pal
+		}
+	}
+
+	immediate = {
+		ISS = { create_faction = great_islamic_caliphate }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Accept
+		name = isis.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.11.a"
+	}
+}
+
+country_event = { #Annex ISIS Libya
+	id = isis.12
+	title = isis.12.t
+	desc = isis.12.d
+	picture = GFX_event_IGL_army2
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		ISS = { #Victory by Syria, Iraq and Kurdistan
+			controls_state = 776
+			controls_state = 677
+			controls_state = 554
+			controls_state = 779
+			controls_state = 778
+			controls_state = 676
+			controls_state = 680
+			controls_state = 291
+			controls_state = 675
+		}
+		country_exists = ISL
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Accept
+		name = isis.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.12.a"
+		ISS = { annex_country = { target = ISL transfer_troops = yes } }
+	}
+}
+
+country_event = { #Annex ISIS Nigeria
+	id = isis.13
+	title = isis.13.t
+	desc = isis.13.d
+	picture = GFX_event_IGL_army4
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		AND = {
+			ISA = {
+			    controls_state = 809
+			    controls_state = 558
+		    }
+		    ISS = {
+			    controls_state = 776
+			    controls_state = 677
+			    controls_state = 554
+			    controls_state = 779
+			    controls_state = 778
+			    controls_state = 676
+			    controls_state = 680
+			    controls_state = 291
+			    controls_state = 675
+		    }
+		}
+		country_exists = ISN 
+		country_exists = ISS
+	}
+
+	mean_time_to_happen = {	days = 1 }
+
+	option = { # Accept
+		name = isis.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.13.a"
+		ISS = { annex_country = { target = ISN transfer_troops = yes } }
+	}
+}
+
+country_event = { #Annex ISIS Afghanistan
+	id = isis.14
+	title = isis.14.t
+	desc = isis.14.d
+	picture = GFX_event_IGL_army3
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		ISS = {
+			controls_state = 421
+			controls_state = 413
+			controls_state = 411
+			controls_state = 412
+			controls_state = 414
+			controls_state = 410
+		}
+		country_exists = ISA 
+		country_exists = ISS
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Accept
+		name = isis.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.14.a"
+		ISS = { annex_country = { target = ISA transfer_troops = yes } }
+	}
+}
+
+country_event = { #For clean country flag
+	id = isis.15
+	title = isis.15.t
+	desc = isis.15.d
+	picture = GFX_event_IGL_army3
+
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+	    tag = ISS
+		ISS = { #Victory by Iraq and Syria
+			controls_state = 776
+			controls_state = 677
+			controls_state = 554
+			controls_state = 779
+			controls_state = 778
+			controls_state = 676
+			controls_state = 680
+			controls_state = 291
+			controls_state = 675
+			controls_state = 822 #Er-Rakka
+			controls_state = 823
+		}
+		country_exists = ISS
+	}
+
+	immediate = {
+	    clr_country_flag = war_with_Iraq_and_Syria
+	}
+
+	option = {
+		name = isis.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.15.a"
+	}
+}
+
+country_event = { #Захвать оружие после оккупации города Дамаск
+	id = isis.16
+	title = isis.16.t
+	desc = isis.16.d
+	picture = GFX_event_IGL_army1
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		ISS = {	controls_state = 554 }
+	}
+
+	option = {
+		name = isis.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.16.a"
+		hidden_effect = { 
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_salw_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_ammunition_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = ATGM_salw_equipment_0
+			}
+		}
+	}
+}
+
+country_event = { #Захвать оружие после оккупации города Алеппо
+	id = isis.17
+	title = isis.16.t
+	desc = isis.16.d
+	picture = GFX_event_IGL_army1
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		ISS = {	controls_state = 776 }
+	}
+
+	option = {
+		name = isis.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.16.a"
+		hidden_effect = { 
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_salw_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_ammunition_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = ATGM_salw_equipment_0
+			}
+		}
+	}
+}
+
+country_event = { #Захвать оружие после оккупации города Мосул
+	id = isis.18
+	title = isis.16.t
+	desc = isis.16.d
+	picture = GFX_event_IGL_army1
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		ISS = {	controls_state = 676 }
+	}
+
+	option = {
+		name = isis.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.18.a"
+		hidden_effect = { 
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_salw_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_ammunition_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = ATGM_salw_equipment_0
+			}
+		}
+	}
+}
+
+country_event = { #Захвать оружие после оккупации города Деир-ез-Зур
+	id = isis.19
+	title = isis.16.t
+	desc = isis.16.d
+	picture = GFX_event_IGL_army1
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		ISS = {
+			controls_state = 680
+		}
+	}
+
+	option = {
+		name = isis.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.19.a"
+		hidden_effect = { 
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_salw_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_ammunition_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = ATGM_salw_equipment_0
+			}
+		}
+	}
+}
+
+country_event = { #Захвать оружие после оккупации города Багдад
+	id = isis.20
+	title = isis.16.t
+	desc = isis.16.d
+	picture = GFX_event_IGL_army1
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		ISS = {	controls_state = 291 }
+	}
+
+	option = {
+		name = isis.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.20.a"
+		hidden_effect = { 
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_salw_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 60000
+				type = army_ammunition_equipment_1
+			}
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = ATGM_salw_equipment_0
+			}
+		}
+	}
+}
+
+# Change name ISIS to IS
+country_event = {
+	id = isis.25
+	title = isis.25.t
+	desc = isis.25.d
+	picture = GFX_event_IGL_parad
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		has_government = rad_islamists
+		date > 2014.1.1
+		ISS = {
+			controls_state = 822
+			controls_state = 680
+			controls_state = 676
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = isis.25.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.25.a"
+		set_cosmetic_tag = ISIS_Islamic_State
+	}
+}
+
+# Border war with neighbor country
+country_event = {
+	id = isis.26
+	title = isis.26.t
+	desc = isis.26.d
+	picture = GFX_event_IGL_army4
+
+	#fire_only_once = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+		ISS = {
+			has_government = rad_islamists
+			is_neighbor_of = FROM 
+			any_owned_state = {
+				any_neighbor_state = { is_owned_by = FROM }
+				ISS = {
+					divisions_in_state = {
+						state = PREV
+						size > 1
+					}
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = border_war_with_ISIS_1
+			has_government = rad_islamists
+			is_subject_of = ISS
+			ISS = { has_war_with = FROM }
+		}
+		NOT = {
+			tag = SYR
+			tag = KUR
+			tag = IRQ
+			tag = FSA
+			tag = ROJ
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_state = {
+				limit = { any_neighbor_state = { is_owned_by = ISS } }
+				set_border_war = yes
+			}
+			ISS = {
+				random_owned_state = {
+					limit = { any_neighbor_state = { is_owned_by = FROM } }
+					set_border_war = yes
+				}
+				country_event = { id = isis.27 }
+			}
+			set_country_flag = border_war_with_ISIS_1
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 12
+	}
+
+	option = {
+		name = isis.26.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.26.a"
+		add_opinion_modifier = {
+			target = ISS
+			modifier = attacked_in_our_border
+		}
+	}
+}
+
+# This event for ISIS, message about border war
+country_event = {
+	id = isis.27
+	title = isis.27.t
+	desc = isis.27.d
+	picture = GFX_event_IGL_army6
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.27.a
+	}
+}
+
+#FROM defeated in border war (FROM is anyone country which neighbor of ISIS)
+country_event = {
+	id = isis.28
+	title = isis.28.t
+	desc = isis.28.d
+	picture = GFX_event_border_conflict
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = FROM
+		NOT = {
+			tag = UKR
+			tag = CRM
+			tag = DON
+			tag = LUG
+			tag = ISS
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_state = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = isis.28.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.28.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		ISS = { country_event = { id = isis.29 } }
+	}
+}
+
+# Event for country which won in border war
+country_event = {
+	id = isis.29
+	title = isis.29.t
+	desc = isis.29.d
+	picture = GFX_event_border_conflict
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.29.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.29.a"
+		add_political_power = 200
+		add_stability = 0.05
+		if = {
+			limit = { tag = ISS }
+			ISS = { set_country_flag = ISIS_won_border_war }
+		}
+	}
+}
+
+#ISIS defeated in border war
+country_event = {
+	id = isis.30
+	title = isis.30.t
+	desc = isis.30.d
+	picture = GFX_event_djihads_divisions
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ISS
+		country_exists = ISS
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_state = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+	option = {
+		name = isis.30.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.3.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		FROM = { country_event = { id = isis.29 } }
+	}
+}
+
+country_event = {
+	id = isis.31
+	title = isis.31.t
+	desc = isis.31.d
+	picture = GFX_event_revolt_in_Egypt
+	
+	fire_only_once = yes
+	
+	trigger = {
+		country_exists = ISS
+		tag = SYR
+		IRQ = {	owns_state = 822 }
+	}
+	
+	immediate = { }
+	option = {
+		name = isis.31.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.31.a"
+		SYR = {
+			transfer_state = 822
+			822 = { add_core_of = SYR }
+			}
+		}
+	}
+	
+country_event = {
+	id = isis.32
+	title = isis.32.t
+	desc = isis.32.d
+	picture = GFX_event_revolt_in_Egypt
+	fire_only_once = yes
+	
+	trigger = {
+		country_exists = ISS
+		tag = ISL
+		NOT = { has_government = rad_islamists }
+	}
+	
+	option = {
+		name = isis.32.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.32.a"
+		set_politics = {
+			ruling_party = rad_islamists
+			elections_allowed = no
+		}
+	add_popularity = { ideology = rad_islamists popularity = 1 }
+	}
+}
+
+country_event = {
+	id = isis.33
+	title = isis.33.t
+	desc = isis.33.d
+	picture = GFX_event_revolt_in_Egypt
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ISN
+		NOT = { has_government = rad_islamists }
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.33.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.33.a"
+		set_politics = {
+			ruling_party = rad_islamists
+			elections_allowed = no
+			}
+		add_popularity = { ideology = rad_islamists popularity = 1 }
+	}
+}
+
+country_event = {
+	id = isis.34
+	title = isis.34.t
+	desc = isis.34.d
+	picture = GFX_event_revolt_in_Egypt
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ISA
+		NOT = { has_government = rad_islamists }
+		country_exists = ISS
+	}
+	
+	option = {
+		name = isis.34.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.34.a"
+		set_politics = {
+			ruling_party = rad_islamists
+			elections_allowed = no
+		}
+		add_popularity = { ideology = rad_islamists popularity = 1 }
+	}
+}
+
+country_event = {
+	id = isis.35
+	title = isis.35.t
+	desc = isis.35.d
+	picture = GFX_event_IGL_army1
+	is_triggered_only = yes
+	trigger = {
+		tag = ISS
+		has_government = rad_islamists
+	}
+	immediate = {
+		set_variable = { temp_army_tax = -1.0 }
+		add_to_variable = { ROOT.money = temp_army_tax }
+	}
+	option = {
+		name = isis.35.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.35.a"
+		load_oob = "ISL_2013"
+		#clear_variable = temp_army_tax
+	}
+}
+news_event = {
+	id = isis.36
+	title = isis.36.t
+	desc = isis.36.d
+	picture = GFX_event_nafta_bomb
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { country_exists = ISS }
+		has_idea = IGL_bombing_of_usa
+	}
+	option = {
+		name = isis.36.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.36.a"
+	}
+}
+
+country_event = {
+	id = isis.37
+	title = isis.37.t
+	desc = isis.37.d
+	picture = GFX_event_revolt_in_Egypt
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.37.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.37.a"
+	}
+}
+
+news_event = {
+	id = isis.38
+	title = isis.38.t
+	desc = isis.38.d
+	picture = GFX_event_isis_terrorism_1
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.38.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.38.a"
+	}
+}
+news_event = {
+	id = isis.39
+	title = isis.39.t
+	desc = isis.39.d
+	picture = GFX_event_isis_terrorism_2
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.39.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.39.a"
+	}
+}
+news_event = {
+	id = isis.40
+	title = isis.40.t
+	desc = isis.40.d
+	picture = GFX_event_isis_terrorism_3
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.40.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.40.a"
+	}
+}
+news_event = {
+	id = isis.41
+	title = isis.41.t
+	desc = isis.41.d
+	picture = GFX_event_isis_terrorism_4
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.41.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.41.a"
+	}
+}
+news_event = {
+	id = isis.42
+	title = isis.42.t
+	desc = isis.42.d
+	picture = GFX_event_isis_terrorism_5
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.42.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.42.a"
+	}
+}
+news_event = {
+	id = isis.43
+	title = isis.43.t
+	desc = isis.43.d
+	picture = GFX_event_isis_terrorism_6
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.43.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.43.a"
+	}
+}
+news_event = {
+	id = isis.44
+	title = isis.44.t
+	desc = isis.44.d
+	picture = GFX_event_isis_terrorism_7
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.44.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.44.a"
+	}
+}
+news_event = {
+	id = isis.45
+	title = isis.45.t
+	desc = isis.45.d
+	picture = GFX_event_isis_terrorism_8
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.45.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.45.a"
+	}
+}
+news_event = {
+	id = isis.46
+	title = isis.46.t
+	desc = isis.46.d
+	picture = GFX_event_isis_terrorism_8
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.46.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.46.a"
+	}
+}
+news_event = {
+	id = isis.47
+	title = isis.47.t
+	desc = isis.47.d
+	picture = GFX_event_isis_terrorism_9
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.47.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.47.a"
+	}
+}
+news_event = {
+	id = isis.48
+	title = isis.48.t
+	desc = isis.48.d
+	picture = GFX_event_isis_terrorism_10
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.48.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.48.a"
+	}
+}
+news_event = {
+	id = isis.49
+	title = isis.49.t
+	desc = isis.49.d
+	picture = GFX_event_isis_terrorism_11
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.49.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.49.a"
+	}
+}
+news_event = {
+	id = isis.50
+	title = isis.50.t
+	desc = isis.50.d
+	picture = GFX_event_isis_terrorism_12
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.50.a
+		add_manpower = 23
+		add_threat = 1
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.50.a"
+	}
+}
+news_event = {
+	id = isis.51
+	title = isis.51.t
+	desc = isis.51.d
+	picture = GFX_event_isis_terrorism_13
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.51.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.51.a"
+	}
+}
+news_event = {
+	id = isis.52
+	title = isis.52.t
+	desc = isis.52.d
+	picture = GFX_event_isis_terrorism_14
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.52.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.52.a"
+	}
+}
+news_event = {
+	id = isis.53
+	title = isis.53.t
+	desc = isis.53.d
+	picture = GFX_event_isis_terrorism_15
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.53.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.53.a"
+	}
+}
+news_event = {
+	id = isis.54
+	title = isis.54.t
+	desc = isis.54.d
+	picture = GFX_event_isis_terrorism_16
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.54.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.54.a"
+	}
+}
+news_event = {
+	id = isis.55
+	title = isis.55.t
+	desc = isis.55.d
+	picture = GFX_event_isis_terrorism_17
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.55.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.55.a"
+	}
+}
+news_event = {
+	id = isis.56
+	title = isis.56.t
+	desc = isis.56.d
+	picture = GFX_event_isis_terrorism_18
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.56.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.56.a"
+	}
+}
+news_event = {
+	id = isis.57
+	title = isis.57.t
+	desc = isis.57.d
+	picture = GFX_event_isis_terrorism_19
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.57.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.57.a"
+	}
+}
+news_event = {
+	id = isis.58
+	title = isis.58.t
+	desc = isis.58.d
+	picture = GFX_event_isis_terrorism_20
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.58.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.58.a"
+	}
+}
+news_event = {
+	id = isis.59
+	title = isis.59.t
+	desc = isis.59.d
+	picture = GFX_event_isis_terrorism_21
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.59.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.59.a"
+	}
+}
+news_event = {
+	id = isis.60
+	title = isis.60.t
+	desc = isis.60.d
+	picture = GFX_event_isis_terrorism_22
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.60.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.60.a"
+	}
+}
+news_event = {
+	id = isis.61
+	title = isis.61.t
+	desc = isis.61.d
+	picture = GFX_event_isis_terrorism_23
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.61.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.61.a"
+	}
+}
+news_event = {
+	id = isis.62
+	title = isis.62.t
+	desc = isis.62.d
+	picture = GFX_event_isis_terrorism_24
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.62.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.62.a"
+	}
+}
+news_event = {
+	id = isis.63
+	title = isis.63.t
+	desc = isis.63.d
+	picture = GFX_event_isis_terrorism_25
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.63.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.63.a"
+	}
+}
+news_event = {
+	id = isis.64
+	title = isis.64.t
+	desc = isis.64.d
+	picture = GFX_event_isis_terrorism_26
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.64.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.64.a"
+	}
+}
+news_event = {
+	id = isis.65
+	title = isis.65.t
+	desc = isis.65.d
+	picture = GFX_event_isis_terrorism_27
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.65.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.65.a"
+	}
+}
+news_event = {
+	id = isis.66
+	title = isis.66.t
+	desc = isis.66.d
+	picture = GFX_event_isis_terrorism_28
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.66.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.66.a"
+	}
+}
+news_event = {
+	id = isis.67
+	title = isis.67.t
+	desc = isis.67.d
+	picture = GFX_event_isis_terrorism_29
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.67.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.67.a"
+	}
+}
+news_event = {
+	id = isis.68
+	title = isis.68.t
+	desc = isis.68.d
+	picture = GFX_event_isis_terrorism_30
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.68.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.68.a"
+	}
+}
+news_event = {
+	id = isis.69
+	title = isis.69.t
+	desc = isis.69.d
+	picture = GFX_event_isis_terrorism_31
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.69.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.69.a"
+	}
+}
+news_event = {
+	id = isis.70
+	title = isis.70.t
+	desc = isis.70.d
+	picture = GFX_event_isis_terrorism_32
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.70.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.70.a"
+	}
+}
+news_event = {
+	id = isis.71
+	title = isis.71.t
+	desc = isis.71.d
+	picture = GFX_event_isis_terrorism_33
+
+	trigger = { }
+	
+	is_triggered_only = yes
+
+	option = {
+		name = isis.71.a
+		add_threat = 1
+		add_manpower = 23
+		terrorism_increased = yes
+		random_owned_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				arms_factory > 0
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_stability = -0.01
+		if = {
+			limit = { has_government = communism }
+			add_popularity = { ideology = communism popularity = -0.01 }	
+		}
+        if = {
+			limit = { has_government = reformism }
+			add_popularity = { ideology = reformism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = liberalism }
+			add_popularity = { ideology = liberalism popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = democratic }
+			add_popularity = { ideology = democratic popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_popularity = { ideology = neutrality popularity = -0.01 }	
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.01 }	
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis.71.a"
+	}
+}

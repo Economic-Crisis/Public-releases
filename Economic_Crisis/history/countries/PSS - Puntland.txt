@@ -1,0 +1,90 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 990
+
+#   
+    add_ideas = {
+		not_recognized_country
+		mixed_schools
+		musulman_collapse
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 535 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "PSS_2013"
+	
+	set_stability = 0.35
+	add_ideas = high_terrorism
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2009.1.8"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 55
+		neutrality = 37
+		fascism = 0
+		rad_islamists = 8
+	}
+
+	#create_country_leader = {
+	#	name = "Said Abdullahi Dani"
+	#	desc = ""
+	#	picture = "gfx/leaders/SOM/PSS/portrait_said_abdullahi_dani.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	##}
+
+	create_country_leader = {
+		name = "Abdirahman Mohamud Farole"
+		desc = ""
+		picture = "gfx/leaders/SOM/PSS/portrait_abdirahman_mohamud_farole.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Abdiweli Mohamed Ali"
+		desc = ""
+		picture = "gfx/leaders/SOM/PSS/portrait_abdiweli_mohamed_ali.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	create_corps_commander = { 
+		name = "Saeed Mohamed Hersi"
+		picture = "gfx/leaders/SOM/PSS/portrait_pss_general_saeed_mohamed_hersi.dds"
+		traits = { commando } 
+		skill = 1
+	}
+
+	create_corps_commander = { 
+		name = "Abdisamad Ali Shire"
+		picture = "gfx/leaders/SOM/PSS/portrait_pss_general_abdisamad_ali_shire.dds"
+		traits = { politically_connected } 
+		skill = 1
+	}
+
+}

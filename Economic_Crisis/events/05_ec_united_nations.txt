@@ -1,0 +1,1032 @@
+﻿########################
+## Economic Crisis   ###
+############################
+## United Nations events ###
+############################
+## Written by SuxrobGM   ###
+############################
+
+add_namespace = UN_event
+
+country_event = { #Запрос вступление в ООН
+	id = UN_event.1
+	title = UN_event.1.t
+	desc = UN_event.1.d
+	picture = GFX_event_zapros_na_vstuplenie_UN
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = UN_event.1.a
+		ai_chance = { factor = 95 }
+		news_event = { days = 1 id = news.49 }
+		USA = { country_event = { id = UN_event.2 days = 2 } }
+		ENG = { country_event = { id = UN_event.3 days = 4 } }
+		FRA = { country_event = { id = UN_event.4 days = 6 } }
+		RUS = { country_event = { id = UN_event.5 days = 8 } }
+		CHI = { country_event = { id = UN_event.6 days = 10 } }
+	}
+	
+	option = {
+		name = UN_event.1.b
+		ai_chance = { factor = 5 }
+	}
+}
+
+country_event = { #Голос США
+	id = UN_event.2
+	title = {
+		text = UN_event_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = UN_event_title_text_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_voting_process
+	
+	is_triggered_only = yes
+
+	option = { #За 
+		name = UN_event.2.a
+		ai_chance = { 
+		    factor = 35 
+			modifier = {
+			    factor = 90
+				AND = {    
+					USA = {  
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }
+				    }
+				    FROM = { 
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }	
+				    }
+			    }
+		    }
+			modifier = {
+				factor = 100
+				FROM = { has_country_flag = country_justifying_wargoal }
+				USA = {  
+				    OR = {   
+					    has_government = democratic
+						has_government = liberalism
+					}
+				}
+				FROM = {
+					tag = NKO
+				}
+				NKO = {
+					has_government = communism
+					OR = {
+						is_justifying_wargoal_against = KOR
+						is_justifying_wargoal_against = JAP
+						has_wargoal_against = KOR
+						has_wargoal_against = JAP
+					}
+				}
+			}
+		}
+		FROM = { set_country_flag = USA_accepted_new_member_UN }
+	    
+		custom_effect_tooltip = vote_accept
+		hidden_effect = { news_event = { id = news.50 hours = 6 } }
+	}
+	
+	option = { #Против
+		name = UN_event.2.b
+		ai_chance = { factor = 65 }
+		FROM = { set_country_flag = USA_refused_new_member_UN }
+	
+	    custom_effect_tooltip = vote_demand
+		hidden_effect = { news_event = { id = news.51 hours = 6 } }
+	}
+}
+
+country_event = { #Голос Великобритании
+	id = UN_event.3
+	title = {
+		text = UN_event_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = UN_event_title_text_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_voting_protsess
+	
+	is_triggered_only = yes
+
+	option = { #За 
+		name = UN_event.3.a
+		ai_chance = { 
+		    factor = 40 
+			modifier = {
+			    factor = 90
+				AND = {    
+					ENG = {  
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+					    }
+				    }
+				    FROM = { 
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+					    }	
+				    }
+			    }
+		    }
+			modifier = {
+				factor = 100
+				FROM = { has_country_flag = country_justifying_wargoal }
+				ENG = {  
+				    OR = {   
+					    has_government = democratic
+						has_government = liberalism
+					}
+				}
+			}
+		}
+		FROM = { set_country_flag = ENG_accepted_new_member_UN }
+		
+		custom_effect_tooltip = vote_accept
+		hidden_effect = { news_event = { id = news.50 hours = 6 } }
+	}
+	
+	option = { #Против
+		name = UN_event.3.b
+		ai_chance = { factor = 60 }
+		FROM = { set_country_flag = ENG_refused_new_member_UN }
+		
+		custom_effect_tooltip = vote_demand
+		hidden_effect = { news_event = { id = news.51 hours = 6 } }
+	}
+}
+
+country_event = { #Голос Франция
+	id = UN_event.4
+	title = {
+		text = UN_event_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = UN_event_title_text_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_voting_protsess
+	
+	is_triggered_only = yes
+
+	option = { #За 
+		name = UN_event.4.a
+		ai_chance = { 
+		    factor = 35 
+			modifier = {
+			    factor = 90
+				AND = {    
+					FRA = {  
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }
+				    }
+				    FROM = { 
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }	
+				    }
+			    }
+		    }
+			modifier = {
+				factor = 100
+				FROM = { has_country_flag = country_justifying_wargoal }
+				FRA = {  
+				    OR = {   
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}
+				}
+			}
+		}
+		FROM = { set_country_flag = FRA_accepted_new_member_UN }
+		
+		custom_effect_tooltip = vote_accept
+		hidden_effect = { news_event = { id = news.50 hours = 6 } }
+	}
+	
+	option = { #Против
+		name = UN_event.4.b
+		ai_chance = { factor = 60 }
+		FROM = { set_country_flag = FRA_refused_new_member_UN }
+		
+		custom_effect_tooltip = vote_demand
+		hidden_effect = { news_event = { id = news.51 hours = 6 } }
+	}
+}
+
+country_event = { #Голос Россия
+	id = UN_event.5
+	title = {
+		text = UN_event_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = UN_event_title_text_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_voting_protsess
+	
+	is_triggered_only = yes
+
+	option = { #За 
+		name = UN_event.5.a
+		ai_chance = { 
+		    factor = 55 
+			modifier = {
+			    factor = 15
+				AND = {    
+					RUS = {  
+				        NOT = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }
+				    }
+				    FROM = { 
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }	
+				    }
+			    }
+		    }
+		}
+		FROM = { set_country_flag = RUS_accepted_new_member_UN }
+		
+		custom_effect_tooltip = vote_accept
+		hidden_effect = { news_event = { id = news.50 hours = 6 } }
+	}
+	
+	option = { #Против
+		name = UN_event.5.b
+		ai_chance = { factor = 45 }
+		FROM = { set_country_flag = RUS_refused_new_member_UN }
+		
+		custom_effect_tooltip = vote_demand
+		hidden_effect = { news_event = { id = news.51 hours = 6 } }	
+	}
+}
+
+country_event = { #Голос Китай
+	id = UN_event.6
+	title = {
+		text = UN_event_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = UN_event_title_text_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = UN_event_desc_about_event_sanctions
+		trigger = {
+			FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_voting_protsess
+	
+	is_triggered_only = yes
+
+	option = { #За 
+		name = UN_event.6.a
+		ai_chance = { 
+		    factor = 55 
+			modifier = {
+			    factor = 15
+				AND = {    
+					CHI = {  
+				        NOT = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }
+				    }
+				    FROM = { 
+				        OR = {   
+					        has_government = democratic
+						    has_government = liberalism
+						    has_government = reformism
+					    }	
+				    }
+			    }
+		    }
+			modifier = {
+				factor = 100
+				CHI = {
+					OR = {
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				FROM = {
+					OR = {
+						has_government = communism
+						has_government = reformism
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				FROM = {
+					tag = NKO
+					has_country_flag = country_justifying_wargoal
+				}
+				CHI = {
+					OR = {
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				FROM = {
+					OR = {
+						has_government = communism
+						has_government = reformism
+					}
+				}
+			}
+		}
+		FROM = { set_country_flag = CHI_accepted_new_member_UN }
+		
+		custom_effect_tooltip = vote_accept
+		hidden_effect = { news_event = { id = news.50 hours = 6 } }
+	}
+	
+	option = { #Против
+		name = UN_event.6.b
+		ai_chance = { factor = 45 }
+		FROM = { set_country_flag = CHI_refused_new_member_UN }
+		
+		custom_effect_tooltip = vote_demand
+		hidden_effect = { news_event = { id = news.51 hours = 6 } }
+	}
+}
+
+country_event = { #Сбор Голосов Окончание Конференеци 1
+	id = UN_event.7
+	title = UN_event.7.t
+	desc = UN_event.7.d
+	picture = GFX_event_unknown
+
+	hidden = yes
+	
+	trigger = {
+	FROM = { 
+		OR = {
+		    AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN 
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN 
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+		}
+		}
+	}
+	
+	immediate = {
+	    FROM = {  
+			if = {
+				limit = {
+					has_country_flag = applicaton_for_joining_into_UN	
+					has_idea = partially_recognized_country
+				}
+				news_event = { id = news.52 hours = 6 }
+				country_event = { id = UN_event.9 }
+				swap_ideas = { remove_idea = partially_recognized_country add_idea = minor_country  }
+				set_country_flag = joined_into_UN
+			}
+			if = {
+				limit = {
+					has_country_flag = country_justifying_wargoal
+				}
+				country_event = { id = UN_event.11 days = 2 }
+				country_event = { id = UN_event.12 days = 1 } #remove flag
+				#news_event = { id = news.75 hours = 6 }
+			}
+	    }
+	}
+	
+	option = {  
+		name = UN_event.7.a
+	}
+	
+	mean_time_to_happen = {
+		days = 4
+	}	
+}
+
+country_event = { #Сбор Голосов Окончание Конференеци 2
+	id = UN_event.8
+	title = UN_event.8.t
+	desc = UN_event.8.d
+	picture = GFX_event_unknown
+
+	hidden = yes
+	
+	trigger = {
+	FROM = { 
+		OR = {
+		    AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_accepted_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_accepted_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_refused_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_accepted_new_member_UN
+		        has_country_flag = RUS_refused_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+			AND = { 
+			    has_country_flag = USA_refused_new_member_UN
+				has_country_flag = ENG_refused_new_member_UN 
+		        has_country_flag = FRA_refused_new_member_UN
+		        has_country_flag = RUS_accepted_new_member_UN
+		        has_country_flag = CHI_accepted_new_member_UN
+			}
+		}
+		}
+	}
+	
+	immediate = {
+	    FROM = { 
+	        if = {
+				limit = {
+					has_country_flag = applicaton_for_joining_into_UN
+				}
+				news_event = { id = news.53 hours = 6 }
+				country_event = { id = UN_event.9 }
+			}
+			if = {
+				limit = {
+					has_country_flag = country_justifying_wargoal
+				}
+				country_event = { id = UN_event.12 days = 1 } #remove flag
+				#country_event
+			}
+	    }
+	}
+	
+	option = {  
+		name = UN_event.8.a
+	}
+	
+	mean_time_to_happen = {
+		days = 4
+	}
+}
+
+country_event = { #(hidden event remove country flag)
+	id = UN_event.9
+	title = UN_event.9.t
+	desc = UN_event.9.d
+	picture = GFX_event_unknown
+
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	    FROM = {    
+			if = {  
+		        limit = { has_country_flag = ENG_accepted_new_member_UN }
+			    clr_country_flag = ENG_accepted_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = ENG_accepted_new_member_UN }
+			    clr_country_flag = ENG_refused_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = FRA_accepted_new_member_UN }
+			    clr_country_flag = FRA_accepted_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = FRA_refused_new_member_UN }
+			    clr_country_flag = FRA_refused_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = RUS_accepted_new_member_UN }
+			    clr_country_flag = RUS_accepted_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = RUS_refused_new_member_UN }
+			    clr_country_flag = RUS_refused_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = ITA_accepted_new_member_UN }
+			    clr_country_flag = USA_accepted_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = ITA_refused_new_member_UN }
+			    clr_country_flag = USA_refused_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = CHI_accepted_new_member_UN }
+			    clr_country_flag = CHI_accepted_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = CHI_refused_new_member_UN }
+			    clr_country_flag = CHI_refused_new_member_UN
+			}
+			if = {  
+		        limit = { has_country_flag = applicaton_for_joining_into_UN }
+			    clr_country_flag = applicaton_for_joining_into_UN
+			}
+			#if = {  
+		    #    limit = { has_country_flag = country_justifying_wargoal }
+			#    clr_country_flag = country_justifying_wargoal
+			#}
+		}
+	}
+	
+	option = {  
+		name = UN_event.9.a
+	}
+}
+
+country_event = { #Заседания СовБез ООН(hidden)
+	id = UN_event.10
+	title = UN_event.10.t
+	desc = UN_event.10.d
+	picture = GFX_event_zapros_na_vstuplenie_UN
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		USA = { country_event = { id = UN_event.2 days = 2 } }
+		ENG = { country_event = { id = UN_event.3 days = 2 } }
+		FRA = { country_event = { id = UN_event.4 days = 2 } }
+		RUS = { country_event = { id = UN_event.5 days = 3 } }
+		CHI = { country_event = { id = UN_event.6 days = 3 } }
+		news_event = { id = news.75 days = 1 } #allowed
+	}
+	
+	option = {
+		name = UN_event.10.a
+	}
+}
+
+country_event = { #ООН вводил новый пакет санкции
+	id = UN_event.11
+	title = UN_event.11.t
+	desc = UN_event.11.d
+	picture = GFX_event_konferensiya_UN
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		#hidden_effect = {	
+			every_country = {
+				limit = {
+					AND = {
+						has_idea = unsc_member
+						has_idea = eu_member }
+				}
+				add_opinion_modifier = {
+					target = FROM
+					modifier = embargo
+				}
+			}
+			if = {
+				limit = { NOT = { has_idea = sanctions } }
+				add_ideas = sanctions
+			}
+			else_if = {
+				limit = { has_idea = sanctions NOT = { has_idea = sanctions1 } }  
+				add_ideas = sanctions1
+			}
+			else_if = {
+				limit = { AND = { has_idea = sanctions1 has_idea = sanctions } NOT = { has_idea = sanctions2 } }
+				add_ideas = sanctions2
+			}
+			else_if = {
+				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions2 } NOT = { has_idea = sanctions3 } }
+				add_ideas = sanctions3
+			}
+			else_if = {
+				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2 }  NOT = { has_idea = sanctions4 } }
+				add_ideas = sanctions4
+			}
+			else_if = {
+				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2 has_idea = sanctions4 }  }
+				every_country = {
+					limit = { has_idea = unsc_member }
+					declare_war_on = { target = ROOT type = war_with_aggressor } 
+				}
+			}
+			
+		#}	
+	}
+	option = {
+		name = UN_event.11.a
+		add_opinion_modifier = {
+			target = USA
+			modifier = actions_negative
+		}
+		add_opinion_modifier = {
+			target = ENG
+			modifier = actions_negative
+		}
+		add_opinion_modifier = {
+			target = FRA
+			modifier = actions_negative
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_government = neutrality
+					RUS = { has_government = neutrality }
+				}
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_negative
+			}
+		}	
+		if = {
+			limit = {
+				NOT = {
+					OR = {	
+						has_government = communism
+						has_government = reformism
+					}	
+					CHI = { 
+						OR = {	
+							has_government = communism
+							has_government = reformism
+						}
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = CHI
+				modifier = actions_negative
+			}
+		}
+	}
+}
+
+country_event = { #Remove justifying_wargoal flag
+	id = UN_event.12
+	title = UN_event.12.t
+	desc = UN_event.12.d
+	picture = GFX_event_konferensiya_UN
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		FROM = {
+			if = {  
+		        limit = { has_country_flag = country_justifying_wargoal }
+			    clr_country_flag = country_justifying_wargoal
+			}
+		}
+	}
+	
+	option = {
+		name = UN_event.12.a
+	}
+}

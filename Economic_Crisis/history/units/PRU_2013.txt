@@ -1,0 +1,84 @@
+﻿division_template = {
+	name = "División de Infanteria"			# Divisions were at reserve levels during peacetime
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	##### Ejército del Perú #####
+	division= {	
+		name = "1era Div. de Infantería 'Bolognesi'"
+		location = 12997 # Lima
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "2da División de Infantería"
+		location = 2210 # Arequipa
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "3era División de Infantería"
+		location = 2156 # Plura
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "4ta División de Infantería"
+		location = 8149 # Iquitos
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+				
+}
+
+air_wings = {
+	### Cuerpo de Aviación del Perú -- Lima
+	303 = {
+		# Fighter Air Group -- Curtis F11s, NiD 123s, Ca.114s
+		light_fighter_equipment_0 =  {
+			owner = "PRU" 
+			amount = 27
+		}
+		# CAS Air Group -- Ca.111s, Fairey Foxes
+		strike_fighter_equipment_1 =  {
+			owner = "PRU" 
+			amount = 18
+		}
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "PRU"
+		}
+		requested_factories = 1
+		progress = 0.79
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_fighter_equipment_0
+			creator = "PRU"
+		}
+		requested_factories = 1
+		progress = 0.27
+		efficiency = 100
+	}
+}

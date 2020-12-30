@@ -1,0 +1,344 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 282
+subtract_from_variable = { budget_reserve = -113200 }
+
+add_ideas = {
+	JAP_trudogolism
+	JAP_obschina
+}
+
+1947.05.03 = { add_ideas = { JAP_article_9 } }
+set_war_support = 0
+2013.11.1 = {
+	set_variable = { budget_last_year = 515600 }
+
+	load_oob = "_tech_nato_major_2013" # not NATO, but tehnologies level is comparable
+	oob = "JAP_2013"
+	
+	add_ideas = {
+		mixed_army
+		emperor_akixito
+		major_country
+		severe_recession
+		NPT	
+		unstable_tectonic_plates
+	# government
+		jap_taro_aso_hog
+		jap_fumio_kishida_fgm
+		jap_itsunori_onodera_defm
+		jap_taro_aso_ecm
+		jap_hachiro_okonogi_ssch
+	}
+	
+	diplomatic_relation = {
+		country = DJI
+		relation = military_access
+		active = yes
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 523
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		parliamentary_monarchy
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		tech_schools
+		civilian_economy
+		electronics_industry_focus
+		national_social_security
+		pensions
+		mixed_economic
+		low_corruption
+		low_terrorism
+		mixed_schools
+		high_taxes
+		free_trade
+	}
+	
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.12.16"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 6
+		reformism = 8
+		liberalism = 16
+		democratic = 37
+		neutrality = 12
+		fascism = 21
+		rad_islamists = 0
+	}
+	
+	create_import = {
+		resource = uran
+		factories = 5
+		exporter = AST
+	}
+	create_import = {
+		resource = iron_ore
+		factories = 3
+		exporter = AST
+	}
+	create_import = {
+		resource = iron_ore
+		factories = 3
+		exporter = BRA
+	}
+	create_import = {
+		resource = iron_ore
+		factories = 2
+		exporter = IND
+	}
+	create_import = {
+		resource = energy_resource
+		factories = 4
+		exporter = USA
+	}
+	
+	#Агенты, разведчики
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Shigeru Kitamura"
+			GFX = GFX_portrait_shigeru_kitamura
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { JAP }
+		}
+	}
+
+	create_country_leader = {
+		name = "Shinzo Abe"
+		desc = "POLITICS_SHINZO_ABE_DESC"
+		picture = "gfx/leaders/JAP/portrait_shinzo_abe.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Renho"
+		desc = "POLITICS_RENHO_DESC"
+		picture =  "gfx/leaders/JAP/portrait_renho.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	create_country_leader = {
+		name = "Banri Kaeda"
+		desc = "POLITICS_BANRI_KAEDA_DESC"
+		picture =  "gfx/leaders/JAP/portrait_banri_kaeda.dds"
+		expire = "2016.6.1"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+	create_country_leader = {
+		name = "Takeo Hiranuma"
+		desc = "POLITICS_TAKEO_HIRANUMA_DESC"
+		picture =  "gfx/leaders/JAP/portrait_takeo_hiranuma.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+	create_country_leader = {
+		name = "Shintaro Ishihara"
+		desc = "POLITICS_SHINTARO_ISHIHARA_DESC"
+		picture =  "gfx/leaders/JAP/portrait_shintaro_ishihara.dds"
+		expire = "2014.12.1"
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+	create_country_leader = {
+		name = "Kazuo Shii"
+		desc = "POLITICS_KAZUO_SHII_DESC"
+		picture =  "gfx/leaders/JAP/portrait_kazuo_shii.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	create_country_leader = {
+		name = "Tadatomo Yoshida"
+		desc = "POLITICS_TADATOMO_YOSHIDA_DESC"
+		picture =  "gfx/leaders/JAP/portrait_tadatomo_yoshida.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Mizuho Fukushima"
+		desc = "POLITICS_MIZUHO_FUKUSHIMA_DESC"
+		picture =  "gfx/leaders/JAP/portrait_mizuho_fukushima.dds"
+		expire = "2013.10.10"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Natsuo Yamaguchi"
+		desc = "POLITICS_NATSUO_YAMAGUCHI_DESC"
+		picture =  "gfx/leaders/JAP/portrait_natsuo_yamaguchi.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+    create_field_marshal = {
+		name = "Kiyofumi Iwata"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_kiyofumi_iwata.dds"
+		traits = { old_guard trickster }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Toshiya Okabe"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_toshiya_okabe.dds"
+		traits = { panzer_leader ranger }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_field_marshal = {
+		name = "Makiya Ota"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_makiya_ota.dds"
+		traits = { desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Kazuaki Sumida"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_kazuaki_sumida.dds"
+		traits = { ambusher }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Takayuki Onozuka"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_takayuki_onozuka.dds"
+		traits = { trait_engineer old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Jiro Hiroe"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_jiro_hiroe.dds"
+		traits = { old_guard commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Ichiro Kawasaki"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_ichiro_kawasaki.dds"
+		traits = { fast_planner panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Masahiro Nagai"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_masahira_nagai.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Shigeru Kobayashi"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_general_shigeru_kobayashi.dds"
+		traits = { tanks_commander offensive_doctrine }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Katsutoshi Kawano"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_admiral_katsutoshi_kawano.dds"
+		traits = { old_guard_navy }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Tomohisa Takei"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_admiral_tomohisa_takei.dds"
+		traits = { fleet_commander }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Yoshihisa Inui"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_admiral_yoshihisa_inui.dds"
+		traits = { submarine_fleet_commander }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Takashi Nishimura"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_admiral_takashi_nishimura.dds"
+		traits = { superior_tactician fleet_commander }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+	
+	create_navy_leader = {
+		name = "Keiji Akahoshi"
+		portrait_path = "gfx/leaders/JAP/portrait_jap_admiral_keiji_akahoshi.dds"
+		traits = { submarine_fleet_commander spotter }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+}

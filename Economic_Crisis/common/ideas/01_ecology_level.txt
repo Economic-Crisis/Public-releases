@@ -1,0 +1,86 @@
+# Economic Crisis ecology level
+	
+ideas = {
+
+	ecology_security = {
+		
+		full_protect = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 1
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.1
+			}
+		}
+		
+		big_protect = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 3
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		
+		normal_protect = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 4
+			default = yes
+			
+			picture = idea_normal_protect
+			modifier = {
+			    stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		
+		low_protect = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 5
+			
+			#picture = civilian_economy1
+			
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.15
+			}
+		}
+		
+		no_protect = {
+			cost = 500
+			removal_cost = -1
+			available = { always = no }
+			cancel_if_invalid = no
+			level = 6
+			
+			#picture = civilian_economy1
+			
+			on_add = {
+				
+			}
+			
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = -0.25
+			}
+		}
+	}
+}

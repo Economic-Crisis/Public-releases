@@ -1,0 +1,59 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 106
+
+	add_ideas = {
+		mixed_schools
+		#aspiring_nato
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1082 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "MAC_2013"
+	add_ideas = low_terrorism
+	set_stability = 0.5
+	add_ideas = NPT
+	add_political_power = 0
+
+	set_convoys = 10
+	set_country_flag = VETO_alliance_country.NATO
+	#set_country_flag = aspiring_nato
+
+
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2009.4.27"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 30
+		liberalism = 0
+		democratic = 55
+		neutrality = 0		
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Gjorge Ivanov"
+		desc = ""
+		picture = "gfx/leaders/MAC/portrait_gjorge_ivanov.dds"
+		ideology = national_conservatism_dem 
+		traits = { trait_national_conservatism_dem }
+	}
+
+}
+
+#Северная Македония
+2019.1.14 = {
+	set_cosmetic_tag = MAC_NORTH_MACEDONIA
+}

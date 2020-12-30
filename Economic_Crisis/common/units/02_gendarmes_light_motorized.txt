@@ -1,0 +1,68 @@
+sub_units = {
+	# light motorized infantry on armored cars and utility vehicles
+	gendarmes_light_motorized = {
+
+		sprite = gendarmes_light_motorized
+		map_icon_category = infantry
+	
+		# helicopter_landing = yes
+		active = no
+		priority = 641
+		ai_priority = 251
+		
+		type = {
+			motorized
+		}
+		
+		group = gendarmes_battalion
+		
+		categories = {
+			category_front_line
+			category_motorized
+			category_all_infantry
+			category_gendarmes
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 15
+		max_organisation = 40
+		default_morale = 0.6
+		manpower = 110 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 100
+		suppression = 1
+		weight = 0.75
+		supply_consumption = 0.11
+		
+		# Important Ability
+		suppression_factor = 0.20
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			light_utility_vehicle_equipment
+			apc_wheeled_light_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = light_utility_vehicle_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			light_utility_vehicle_equipment = 20
+			apc_wheeled_light_equipment = 10
+			infantry_technical_means_equipment = 160
+		}
+		
+		urban = {
+			defence = 0.1
+		}
+	}
+}

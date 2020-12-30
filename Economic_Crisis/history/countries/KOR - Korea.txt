@@ -1,0 +1,178 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 525 #South Korea - Seoul or Busan
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 130600 }
+
+	load_oob = "_tech_major_2013"
+	oob = "KOR_2013"
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	give_military_access = USA
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		professional_schools
+		civilian_economy
+		electronics_industry_focus
+		national_social_security
+		pensions
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+	add_opinion_modifier = { target = NKO modifier = eternal_enemy_modifier }
+	diplomatic_relation = { country = USA relation = docking_rights active = yes }
+	add_ideas = {
+		regional_country
+	}
+	
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.12.19"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 10
+		liberalism = 41
+		democratic = 49
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	#Лидер Сэнури на выборах в парламент в 2016
+	create_country_leader = {
+		name = "Kim Moo-sung"
+		desc = "POLITICS_KIM_MOO_SUNG_DESC"
+		picture = "gfx/leaders/KOR/portrait_kim_moo-sung.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kim Chong-in" #Нет, это не Ким Чен Ын
+		desc = "POLITICS_KIM_CHONG_IN_DESC"
+		picture = "gfx/leaders/KOR/portrait_kim_chong-in.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Park Geun Hye"
+		desc = "POLITICS_PAK_GEUN_HYE_DESC"
+		picture = "gfx/leaders/KOR/portrait_park_geun_hye.dds"
+		ideology = conservative_democracy
+		expire = "2016.11.1" #Ей уже объявлен импичмент
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Lee Jeong-hee"
+		desc = "POLITICS_LEE_JEONG_HEE_DESC"
+		picture = "gfx/leaders/KOR/portrait_lee_jeong-hee.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#Generals and admirals
+	create_corps_commander = {
+		name = "Han Min-goo"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_han_min_goo.dds"
+		traits = {}
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Jang Jun-gyu"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_jang_jun_gyu.dds"
+		traits = {}
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Jeong Seung-jo"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_jeong_seung_jo.dds"
+		traits = {}
+		skill = 5
+		logistics_skill = 5
+		defense_skill = 5
+		planning_skill = 5
+		attack_skill = 5
+	}
+
+	create_corps_commander = {
+		name = "Kim Kwan-jin"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_kim_kwan_jin.dds"
+		traits = {}
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Lee Sang-hoon"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_lee_sang_hoon.dds"
+		traits = {}
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Lee Sun-jin"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_general_lee_sun_jin.dds"
+		traits = {}
+		skill = 6
+		logistics_skill = 6
+		defense_skill = 6
+		planning_skill = 6
+		attack_skill = 6
+	}
+
+	create_navy_leader = {
+		name = "Jung Ho-sub"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_admiral_jung_ho_sub.dds"
+		traits = {}
+		skill = 4
+		coordination_skill = 4
+		defense_skill = 4
+		maneuvering_skill = 4
+		attack_skill = 4
+	}
+
+	create_navy_leader = {
+		name = "Sim Seung-seob"
+		portrait_path = "gfx/leaders/KOR/portrait_kor_admiral_sim_seung_seob.dds"
+		traits = {}
+		skill = 4
+		coordination_skill = 4
+		defense_skill = 4
+		maneuvering_skill = 4
+		attack_skill = 4
+	}
+
+}
+

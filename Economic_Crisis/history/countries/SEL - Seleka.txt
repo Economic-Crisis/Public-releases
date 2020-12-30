@@ -1,0 +1,77 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+
+capital = 660
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 151 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SEL_2013"
+
+	set_country_flag = pai_nondem_authoritarian
+
+	declare_war_on = { target = CAR type = civil_war }
+
+	add_ideas = {
+		mixed_schools
+		presidential_republic
+		not_recognized_country
+		
+		islam_idea_lvl_3
+	}
+
+	set_convoys = 15
+	set_stability = 0.4
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.1.23"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Michel Djotodia"
+		desc = "POLITICS_MICHEL_DJOTODIA_DESC"
+		picture = "gfx/leaders/CAR/portrait_michel_djotodia.dds"
+		ideology = junta 
+		traits = { trait_junta }
+	}
+
+	create_country_leader = {
+		name = "Michel Djotodia"
+		desc = "POLITICS_MICHEL_DJOTODIA_DESC"
+		picture = "gfx/leaders/CAR/portrait_michel_djotodia.dds"
+		ideology = sunni_islamism 
+		traits = { trait_sunni_islamism }
+	}
+
+	#Главнокомандующий - Мишель Джотодия
+	create_corps_commander = {
+		name = "Michel Djotodia"
+		portrait_path = "gfx/leaders/CAR/portrait_sel_general_michel_djotodia.dds"
+		traits = {}
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+}
+

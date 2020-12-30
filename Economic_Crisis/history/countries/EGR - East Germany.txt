@@ -1,0 +1,61 @@
+﻿# NOT USED in Economic Crisis 2013 scenario
+
+capital = 64
+
+1985.11.1 = {
+	set_variable = { budget_last_year = 0 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	# laws
+	add_ideas = {
+		parliamentary_republic
+		federation
+		secular_state
+		mixed_media
+		fully_guranted_liberties
+		contract_army 
+		mixed_schools
+		schengen_area_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		high_taxes
+		total_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_stability = 0.4
+	add_political_power = 0
+
+	set_politics = {		
+		ruling_party = communism
+		last_election = "1985.1.1"
+		election_frequency = 60
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		communism = 70
+		reformism = 0
+		liberalism = 7.5
+		democratic = 15
+		neutrality = 0
+		fascism = 7.5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Erich Honecker"
+		desc = ""
+		picture = "gfx/leaders/GER/portrait_erich_honecker.dds"
+		ideology = leninism
+		expire = "1989.10.13"
+		traits = { trait_leninism }
+	}
+
+}

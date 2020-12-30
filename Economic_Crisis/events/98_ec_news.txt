@@ -1,0 +1,459 @@
+﻿#########################
+## Economic Crisis     ##
+#########################
+## Global news events  ##
+#########################
+
+
+add_namespace = news
+	
+news_event = {
+	id = news.38   #Trigger Euro-2016 (hidden)
+	title = news.38.t
+	desc = news.38.d
+	picture = GFX_event_nuclear_bomb_news
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 2016.6.6
+		
+		country_exists = FIN
+		country_exists = USA
+		country_exists = GER
+		country_exists = ITA
+		JAP = { has_war = no }
+		FIN = { has_war = no }
+		ITA = { has_war = no }
+		RUS = { has_war = no }
+		GER = { has_war = no }
+		FRA = { has_war = no }
+		ENG = { has_war = no }
+		USA = { has_war = no }
+	}
+	
+	    immediate = {
+	    set_global_flag = Euro-2016
+	    news_event = { id = news.39 hours = 6 }
+	    }
+	
+	    option = {
+	    name = news.38.a
+	
+	    }
+	}
+	
+news_event = {
+	id = news.39   #Euro-2016
+	title = news.39.t
+	desc = news.39.d
+	picture = GFX_event_euro_2016_news
+
+	 is_triggered_only = yes
+		
+	
+	    option = {
+	    name = news.39.a
+	
+	    }
+	}
+
+news_event = {
+	id = news.41   #FROM вступает в НАТО
+	title = news.41.t
+	desc = news.41.d
+	picture = GFX_event_to_NATO_2
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = news.41.a
+	}
+}
+	
+news_event = {
+	id = news.42   #США отказывает выступление в НАТО FROM
+	title = news.42.t
+	desc = news.42.d
+	picture = GFX_event_flag_USA
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = news.42.a
+	}
+}
+	
+news_event = {
+	id = news.49   #Начинается конфренции ООН
+	title = news.49.t
+	desc = news.49.d
+	picture = GFX_event_konferensiya_UN
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = news.49.a	
+	}
+}
+	
+news_event = {
+	id = news.50   #FROM vote on confrence UN 
+	title = {
+		text = news.50_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM.FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = news.50_title_text_about_event_sanctions
+		trigger = {
+			FROM.FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = news.50_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM.FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = news.50_desc_about_event_sanctions
+		trigger = {
+			FROM.FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_accept_vote_UN
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+	name = news.50.a
+	}
+}
+	
+news_event = {
+	id = news.51   #FROM refuse vote on confrence UN 
+	title = {
+		text = news.51_title_text_about_event_joining_into_UN
+		trigger = {		
+			FROM.FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+			}	
+		}
+	}
+	title ={
+		text = news.51_title_text_about_event_sanctions
+		trigger = {
+			FROM.FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	desc = {
+		text = news.51_desc_about_event_joining_into_UN
+		trigger = {		
+			FROM.FROM = {
+				has_country_flag = applicaton_for_joining_into_UN
+				#NOT = { has_country_flag = country_justifying_wargoal }
+			}	
+		}
+	}
+	desc = {
+		text = news.51_desc_about_event_sanctions
+		trigger = {
+			FROM.FROM = {
+				has_country_flag = country_justifying_wargoal
+			}	
+		}
+	}
+	picture = GFX_event_demand_vote_UN
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = news.51.a	
+	}
+}
+	
+news_event = {
+	id = news.52   #Конфренция ООН закончена государства FROM принимается 
+	title = news.52.t
+	desc = news.52.d
+	picture = GFX_event_konfrensiya1_UN
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+	name = news.52.a
+	}
+}
+	
+news_event = {
+	id = news.53   #Конфренция ООН закончена государства FROM непринимается 
+	title = news.53.t
+	desc = news.53.d
+	picture = GFX_event_konfrensiya2_UN
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = news.53.a
+    }
+}
+
+news_event = {
+	id = news.55   #Землетрясение в Эквадоре
+	title = news.55.t
+	desc = news.55.d
+	picture = GFX_event_news_earthquake_in_Ecuadore
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = news.55.a
+	}
+}
+
+news_event = {
+	id = news.58   #Государство [FROM.GetName] присоединился к [SOV.GetName] 
+	title = {
+	    text = news.58.t
+		trigger = {
+		    RUS = { exists = no }
+			SOV = { has_government = communism }
+		}
+	}
+	title = {
+	    text = news.58.t1
+		trigger = {
+		    SOV = { exists = no }
+			RUS = { has_government = communism }
+		}
+	}
+	desc = news.58.d
+	picture = GFX_event_map_USSR
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+    name = news.58.a
+	trigger = {
+	    OR = { 
+		tag = SOV
+		tag = RUS
+		}
+	}
+	}
+	
+	option = {
+    name = news.58.b
+	trigger = { 
+		NOT = { 
+		tag = SOV 
+		tag = RUS
+		}
+	}
+	}
+}
+
+# 59
+# 61 removed_id
+# 62 removed_id
+# 66
+# 67
+# 68
+# 69
+# 70
+
+news_event = {
+	id = news.71 #FIFA World Cup 2014
+	title = news.71.t
+	desc = news.71.d
+	picture = GFX_event_fifa_worldcup2014
+
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+	    country_exists = BRA
+		date > 2014.6.1
+		date < 2014.7.1
+	}
+
+	option = {
+		name = news.71.a
+	}
+}
+
+news_event = {
+	id = news.74 #Военная провокация
+	title = news.74.t
+	desc = news.74.d
+	picture = GFX_event_RUS_army3_news
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	major = yes
+	
+	#trigger = {
+	#	FROM = {
+	#		NOT = { has_country_flag = country_justifying_wargoal }
+	#	}
+	#}
+	
+	#immediate = {
+	#	hidden_effect = {
+	#		FROM = {
+	#			country_event = {
+	#				id = UN_event.10 days = 5
+	#			}
+	#			set_country_flag = country_justifying_wargoal
+	#		}
+	#	}
+	#}
+
+	option = {
+		name = news.74.a
+	}
+}
+
+news_event = {
+	id = news.75 #Заседания СовБез ООН, обсуждение санкции против провокатора
+	title = news.75.t
+	desc = news.75.d
+	picture = GFX_event_konfrensiya2_UN
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = news.75.a
+	}
+}
+
+news_event = {
+	id = news.76 #Обвал нефти в 2014
+	title = news.76.t
+	desc = news.76.d
+	picture = GFX_event_graph_2014
+
+	trigger = {
+		date > 2014.9.29
+	}
+
+	major = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { oil_inc = 0.2 }
+		set_variable = { oil_exp = 0.2 }
+	}
+
+	option = {
+		name = news.76.a
+	}
+}
+
+news_event = {
+	id = news.77 #Подъём нефти в 2018
+	title = news.77.t
+	desc = news.77.d
+	picture = GFX_event_graph_2018
+
+	trigger = {
+		date > 2018.7.30
+	}
+
+	major = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { oil_inc = 0.4 }
+		set_variable = { oil_exp = 0.4 }
+	}
+
+	option = {
+		name = news.77.a
+	}
+}
+
+news_event = {
+	id = news.78 #Спад нефти в 2020
+	title = news.78.t
+	desc = news.78.d
+	picture = GFX_event_graph_2020_low
+
+	trigger = {
+		date > 2020.3.30
+	}
+
+	major = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { oil_inc = -0.02 }
+		set_variable = { oil_exp = -0.02 }
+	}
+
+	option = {
+		name = news.78.a
+	}
+}
+
+news_event = {
+	id = news.79 #Подъём нефти в 2020
+	title = news.79.t
+	desc = news.79.d
+	picture = GFX_event_graph_2020_high
+
+	trigger = {
+		date > 2020.5.30
+	}
+
+	major = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { oil_inc = 0.1 }
+		set_variable = { oil_exp = 0.1 }
+	}
+
+	option = {
+		name = news.79.a
+	}
+}

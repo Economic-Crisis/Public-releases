@@ -1,0 +1,104 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 44
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1278 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+	
+	set_country_flag = pai_democrat_neutral
+	
+	add_ideas = {
+		parliamentary_republic 
+		unitary_state
+		theocracy 
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		low_terrorism
+	}
+
+	create_intelligence_agency = yes
+
+	set_politics = {		
+		ruling_party = reformism
+		last_election = "2014.3.5"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 55
+		liberalism = 3
+		democratic = 40
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	set_convoys = 5
+
+	#create_country_leader = {
+	#	name = "Bujar Nishani"
+	#	desc = ""
+	#	picture = "gfx/leaders/ALB/portrait_bujar_nishani.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+	
+	create_country_leader = {
+		name = "Edi Rama"
+		desc = ""
+		picture = "gfx/leaders/ALB/portrait_edi_rama.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Lulzim Basha"
+		desc = ""
+		picture = "gfx/leaders/ALB/portrait_lulzim_basha.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Shpëtim Idrizi"
+		desc = ""
+		picture = "gfx/leaders/ALB/portrait_shpetim_idrizi.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Qemal Cicollari"
+		desc = ""
+		picture = "gfx/leaders/ALB/portrait_qemal_cicollari.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+}

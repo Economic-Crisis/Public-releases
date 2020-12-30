@@ -1,0 +1,76 @@
+﻿
+add_namespace = budget_event
+
+
+
+country_event = { 
+	id = budget_event.1
+	title = budget_event.1.t
+	desc = budget_event.1.d
+	picture = GFX_budget_credit
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = budget_event.1.a
+		custom_effect_tooltip = budget_event_1_text
+		set_variable = { budget_credit = budget_reserve }
+		multiply_variable = { budget_credit = -1 }
+	}
+}
+
+country_event = { 
+	id = budget_event.2
+	title = budget_event.2.t
+	desc = budget_event.2.d
+	picture = GFX_budget_credit
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = budget_event.2.a
+		custom_effect_tooltip = budget_event_2_text
+		subtract_from_variable = { budget_credit = budget_reserve }
+		hidden_effect = {
+			if = { limit = { NOT = { has_country_flag = has_2_credits } } set_country_flag = has_2_credits }
+			else_if = { limit = { AND = { has_country_flag = has_2_credits NOT = { has_country_flag = has_3_credits } } } set_country_flag = has_3_credits }
+		}
+	}
+}
+
+country_event = { 
+	id = budget_event.3
+	title = budget_event.3.t
+	desc = budget_event.3.d
+	picture = GFX_budget_credit
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = budget_event.3.a
+		custom_effect_tooltip = budget_event_3_text
+		set_variable = { budget_credit = 0 }
+		set_variable = { credit_exp = 0 }
+		clr_country_flag = has_2_credits
+		clr_country_flag = has_3_credits
+		#Какой то дебаф
+		
+	}
+}
+
+country_event = { 
+	id = budget_event.4
+	title = budget_event.4.t
+	desc = budget_event.4.d
+	picture = GFX_budget_credit
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = budget_event.4.a
+		set_variable = { budget_credit = 0 }
+		set_variable = { credit_exp = 0 }
+		set_variable = { budget_reserve = 100 }
+		
+	}
+}

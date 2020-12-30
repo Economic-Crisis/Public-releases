@@ -1,0 +1,84 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 753
+
+	add_ideas = au_member
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 1522 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "ZIM_2013"
+
+	add_ideas = {
+	    presidential_republic
+		unitary_state
+		secular_state
+		commercial_media 
+		respect_of_liberties
+		contract_army
+		mixed_schools
+		civilian_economy
+		mixed_economic
+		free_market
+		balanced_industry
+		normal_taxes
+		base_social_security
+		pensions
+		terrorism_discounted
+    }
+
+	set_stability = 0.75
+	add_political_power = 0
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "2013.7.31"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 61
+		reformism = 37
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 2
+		rad_islamists = 0
+	}
+    
+	create_country_leader = {
+		name = "Robert Mugabe"
+		desc = "POLITICS_ROBERT_MUGABE_DESC"
+		picture = "gfx/leaders/ZIM/portrait_robert_mugabe.dds"
+		ideology = china_socialism
+		traits = { trait_china_socialism }
+    }
+	
+	create_country_leader = {
+		name = "Morgan Tsvangirai"
+		desc = "POLITICS_MORGAN_TSVANGIRAI_DESC"
+		picture = "gfx/leaders/ZIM/portrait_morgan_tsvangirai.dds"
+		ideology = social_democracy
+		expire = "2018.2.14" #death
+		traits = { trait_social_democracy }
+	}
+    
+
+	create_corps_commander = {
+		name = "Constantine Chiwenga"
+		portrait_path = "gfx/leaders/ZIM/portrait_zim_general_constantine_hiwenga.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+}	
+

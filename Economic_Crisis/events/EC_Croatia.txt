@@ -1,0 +1,219 @@
+﻿##############################
+###### Economic Crisis #######
+##############################
+###### Croatia events #######
+##############################
+#  Written by Kuban Animator #
+##############################
+
+
+add_namespace = croatia
+
+country_event = {  #Выборы в Хорватии: 2014-2015
+	id = croatia.1
+	title = croatia.1.t
+	desc = croatia.1.d
+	picture = GFX_event_croatia_elections_2015
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = CRO
+		country_exists = CRO
+		date > 2015.1.10
+	}
+
+	immediate = {
+		set_country_flag = croatia_elections_2015
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Иво Йосипович
+		name = croatia.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.1.a"
+		ai_chance = { 
+			factor = 49
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.02
+		}
+
+			
+		trigger = {
+			reformism > 0.25
+		}
+	}
+	
+	option = {	#Колинда Грабар-Китарович
+		name = croatia.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.1.b"
+		ai_chance = { 
+			factor = 51 
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.06
+		}
+		
+		trigger = {
+			democratic > 0.25
+		}
+	}
+
+	option = {	#Другой кандидат
+		name = croatia.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.1.c"
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					reformism < 0.25
+					democratic < 0.25
+				}
+			}
+		}
+		
+		trigger = {
+			OR = {
+				reformism < 0.25
+				democratic < 0.25
+			}
+		}
+	}
+	
+}
+
+country_event = {  #Выборы в Хорватии: 2019-2020
+	id = croatia.2
+	title = croatia.2.t
+	desc = croatia.2.d
+	picture = GFX_event_croatia_elections_2018
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = CRO
+		country_exists = CRO
+		date > 2020.1.4
+	}
+
+	immediate = {
+		set_country_flag = croatia_elections_2018
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	#Зоран Миланович
+		name = croatia.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.2.a"
+		ai_chance = { 
+			factor = 52
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = reformism
+			elections_allowed = yes
+		}
+			
+		add_popularity = {
+			ideology = reformism
+			popularity = 0.05
+		}
+		
+		hidden_effect = {
+			create_country_leader = {
+				name = "Zoran Milanović"
+				desc = "POLITICS_ZORAN_MILANOVICH_DESC"
+				picture = "gfx/leaders/CRO/portrait_zoran_milanovich.dds"
+				ideology = social_democracy
+				traits = { trait_social_democracy }
+			}
+		}
+		
+		trigger = {
+			reformism > 0.25
+		}
+	}
+	
+	option = {	#Колинда Грабар-Китарович
+		name = croatia.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.2.b"
+		ai_chance = { 
+			factor = 47
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = reformism
+			popularity = -0.04
+		}
+	
+		trigger = {
+			democratic > 0.25
+		}
+	}
+
+	option = {	#Другой кандидат
+		name = croatia.2.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): croatia.2.c"
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					reformism < 0.25
+					democratic < 0.25
+				}
+			}
+		}
+		
+		trigger = {
+			OR = {
+				reformism < 0.25
+				democratic < 0.25
+			}
+		}
+	}
+	
+}

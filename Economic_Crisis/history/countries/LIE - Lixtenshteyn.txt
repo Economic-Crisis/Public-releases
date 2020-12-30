@@ -1,0 +1,86 @@
+# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 767
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 639 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_war_support = 0
+
+	set_convoys = 10
+	
+	add_ideas = {
+		parliamentary_monarchy
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		national_social_security
+		pensions
+		mixed_economic
+		NPT
+	}
+	
+	set_country_flag = pai_democrat_moderate
+	set_country_flag = coalition_with_liberals
+	set_country_flag = coaliton_with_conservators
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.2.3" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 9
+		liberalism = 31
+		democratic = 35
+		neutrality = 25
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Hans-Adam II"
+		desc = ""
+		picture = "gfx/leaders/LIE/portrait_hans_adam.dds"
+		ideology = royalism
+		traits = { trait_royalism }
+	}
+
+	create_country_leader = {
+		name = "Adrian Hasler"
+		desc = ""
+		picture = "gfx/leaders/LIE/portrait_adrian_hasler.dds"
+		ideology = christian_democracy
+		traits = { trait_christian_democracy }
+	}
+
+	create_country_leader = {
+		name = "Thomas Zwiefelhofer"
+		desc = ""
+		picture = "gfx/leaders/LIE/portrait_thomas_zwiefelhofer.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+
+}
+

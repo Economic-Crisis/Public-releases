@@ -1,0 +1,101 @@
+﻿### Economic Crisis ##
+### Cameroon event by Veneficus
+
+add_namespace = Cameroon
+#CMR = { news_event = { id = Cameroon.2 days = 3 }  }
+news_event = {
+	id = Cameroon.1
+	title = Cameroon.1.t
+	desc = Cameroon.1.d
+	picture = GFX_event_Cameroon1
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = CMR
+		date > 2016.11.01
+	    country_exists = CMR
+	}
+
+	option = {
+		name = Cameroon.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Cameroon.1.a"
+	}
+}
+
+country_event = {
+	id = Cameroon.2
+	title = Cameroon.2.t
+	desc = Cameroon.2.d
+	picture = GFX_event_Cameroon2
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = CMR
+		date > 2016.11.06
+	    country_exists = CMR
+	}
+
+	option = {
+		name = Cameroon.2.a #Подавить
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Cameroon.2.a"
+		ai_chance = { factor = 80 }
+		set_country_flag = Cameroon_crushed_coffin_revolution
+	}
+	option = {
+		name = Cameroon.2.b #Пойти на уступки
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Cameroon.2.b"
+		ai_chance = { factor = 20 }
+		set_country_flag = Cameroon_made_concessions
+		set_stability = -0.4
+	}
+}
+
+news_event = {
+	id = Cameroon.3
+	title = Cameroon.3.t
+	desc = Cameroon.3.d
+	picture = GFX_event_Cameroon3
+	fire_only_once = yes
+	
+	trigger = { 
+		date > 2016.12.23
+	    country_exists = CMR
+		has_country_flag = Cameroon_crushed_coffin_revolution
+	}
+
+	option = {
+		name = Cameroon.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Cameroon.3.a"
+		CMR = { add_ideas = CMR_Anglophone_Crisis }
+	}
+}
+
+news_event = {
+	id = Cameroon.4
+	title = Cameroon.4.t
+	desc = Cameroon.4.d
+	picture = GFX_event_Cameroon4
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CMR
+	    country_exists = CMR
+		has_country_flag = Cameroon_crushed_coffin_revolution
+		has_stability > 0.2
+	}
+
+	option = {
+		name = Cameroon.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Cameroon.4.a"
+		
+		AMB = {
+			hidden_effect = { 
+				transfer_state = 1062
+				load_oob = "_tech_minor_2013"
+				load_oob = "AMB_2013"
+				set_war_support = 0.7
+			}
+			declare_war_on = { target = CMR type = civil_war }
+		}
+	}
+}

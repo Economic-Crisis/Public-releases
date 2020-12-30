@@ -1,0 +1,59 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+
+capital = 375
+add_ideas = mixed_schools
+2013.11.1 = {
+	set_variable = { budget_last_year = 5 }
+	oob = "_army_microstate_2013"
+	load_oob = "_army_minor_2013"
+
+	add_political_power = 0
+	
+	add_ideas = {
+		parliamentary_republic
+	}
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.11.8"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 12
+		liberalism = 23
+		democratic = 54
+		neutrality = 0
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Greg Abbott"
+	#	desc = ""
+	#	picture = "gfx/leaders/TEX/portrait_greg_abbott.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Rick Perry"
+		desc = ""
+		picture = "gfx/leaders/TEX/portrait_rick_perry.dds"
+		ideology = conservative_democracy
+		expire = "2015.1.20"
+		traits = { trait_conservative_democracy }
+	}
+
+}
+

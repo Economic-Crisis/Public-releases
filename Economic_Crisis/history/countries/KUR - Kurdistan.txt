@@ -1,0 +1,122 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 778
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 10 }
+	
+	load_oob = "_tech_insurgents_2013" 
+	oob = "KUR_2013"
+	
+	add_ideas = {
+		partially_recognized_country
+		high_degree_autonomous_region
+	}
+	
+	set_country_flag = war_with_ISIS
+		
+	set_convoys = 10
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		parliamentary_republic
+		preference_religion
+		mixed_media
+		suspended_liberties
+		restricted_immigration
+		mixed_army
+		mixed_schools
+		partial_economic_mobilisation
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.9.21"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 80
+		fascism = 20
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mesud Barzani"
+		desc = ""
+		picture = "gfx/leaders/KUR/portrait_mesud_barzani.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+	
+	
+	#Generals
+	create_field_marshal = {
+		name = "Hossein Yazdanpan"
+		portrait_path = "gfx/leaders/KUR/portrait_general_hossein_yazdanpan.dds"
+		traits = { assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Abdulla Musla"
+		portrait_path = "gfx/leaders/KUR/portrait_general_abdulla_musla.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Karzan Mahmpud Ahmed"
+		portrait_path = "gfx/leaders/KUR/portrait_general_karzan_mahmpud_ahmed.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Sherko Shwani"
+		portrait_path = "gfx/leaders/KUR/portrait_general_sherko_shwani.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Hussein Mansor"
+		portrait_path = "gfx/leaders/KUR/portrait_general_hussein_mansor.dds"
+		traits = {  }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+}
+

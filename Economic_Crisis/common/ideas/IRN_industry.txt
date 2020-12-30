@@ -1,0 +1,368 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#Shahid Kolah-Dooz Industrial Complex бронетанковый завод
+		Shahid_Kolah-Dooz_Industrial_Complex = {
+
+			picture = Shahid_Kolah-Dooz_Industrial_Complex
+			allowed = {
+				original_tag = IRN
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Marine Industries Organization (MIO) Судостроительный
+		Marine_Industries_Organization = {
+			
+			picture = Marine_Industries_Organization
+			
+			allowed = {
+				original_tag = IRN
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#AIO Организация авиационной промышленности
+		AIO = {
+			
+			picture = AIO
+			
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				cat_light_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+		
+		#Iran Aircraft Manufacturing самолетостроение
+		Iran_Aircraft_Manufacturing = {
+			
+			picture = Iran_Aircraft_Manufacturing
+			
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				cat_strike_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 900
+			
+			traits = { 
+				medium_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+		
+		#IHSRC вертолетостроение
+		IHSRC = {
+			
+			picture = IHSRC
+			
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				#cat_air_drone_tech = 0.1
+				cat_fighter_tech = 0.1
+			}
+			
+			available = {
+				#has_tech = 
+			}
+			
+			cost = 750
+			
+			traits = { 
+				CAS_development
+			}
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#HADID Industrial Complex стрелковое вооружение
+		HADID_Industrial_Complex = {
+			
+			picture = HADID_Industrial_Complex
+			allowed = {
+				original_tag = IRN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#Fajr - стрелковое вооружение и гранатометы
+		Fajr = {
+			
+			picture = Fajr
+			allowed = {
+				original_tag = IRN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+				#Доп. Средства = 0.1
+			}
+			
+			cost = 750
+			
+			traits = { support_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#IKCO автомобили
+		IKCO = {
+			
+			picture = IKCO
+			allowed = {
+				original_tag = IRN
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#SAIPA автомобилистроение (БМП и БТР)
+		SAIPA = {
+			
+			picture = SAIPA
+			allowed = {
+				original_tag = IRN
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#Shahid Hemmat Industries Group - SHIG Ракетное баллистическое вооружение ???
+		Shahid_Hemmat_Industries_Group = {
+			
+			picture = Shahid_Hemmat_Industries_Group
+			allowed = {
+				original_tag = IRN
+			}
+			
+			research_bonus = {
+				rocketry = 0.1
+				nuclear_tech = 0.1
+			}
+			
+			cost = 1250
+			
+			traits = { nuclear_research_corporation }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#Iran Mine House горнодобывающее предприятие
+		Iran_Mine_House = {
+
+			picture = Iran_Mine_House
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		#Iran Communications Industries ICI радиоэлектроника 
+		Iran_Communications_Industries = {
+
+			picture = Iran_Communications_Industries
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Shiraz Electronic Industries радиоэлектроника
+		Shiraz_Electronic_Industries = {
+
+			picture = Shiraz_Electronic_Industries
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Iran Dairy Industries продукты питания
+		Iran_Dairy_Industries = {
+
+			picture = Iran_Dairy_Industries
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		#NIOC нефтяная компания
+		NIOC = {
+
+			picture = NIOC
+			allowed = {
+				original_tag = IRN
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 25
+					}
+				}
+			}
+		}
+	}
+}	

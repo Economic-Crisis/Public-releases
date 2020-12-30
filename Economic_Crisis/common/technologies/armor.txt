@@ -1,0 +1,1227 @@
+technologies = {
+
+	# x = (вертикаль) - type
+	@mbt_platform = 0
+	@t0 = 4
+	@t1 = 2
+	@t2 = 6
+	@t3 = 8
+	@t4 = 10
+	@t5 = 12
+	@t6 = 14
+	@t7 = 16
+	@t8 = 18
+	@t9 = 29
+	@t10 = 32
+	@t11 = 35
+	
+	# y = (горизонталь)
+	# g - generation
+	# d - doctine
+	# p - platform`
+	# m - modification
+	
+	@g0 = -3
+	@g1 = -1
+	
+	@g2p = 1
+	@g2 = 2
+	
+	@g3d = 5
+	@g3p = 3
+	@g3 = 4
+	@g3m = 7
+	
+	@g4d = 7
+	@g4p = 8
+	@g4 = 9
+	@g4m = 9
+	
+	@g5p = 11
+	@g5 = 12
+	@g5m = 12
+	
+	@g6d = 13
+	@g6p = 14
+	@g6 = 15
+	
+	@g7p = 17
+	@g7 = 18
+
+	@g8d = 19
+	@g8p = 20
+	@g8 = 21
+	
+
+	mbt_turbo_engine = {
+			
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4d  y = @t2 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_mbt_te
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 20
+				tag = RUS
+			}
+			
+						
+			modifier = {
+				factor = 30
+				tag = USA
+			}
+		}	
+	}		
+
+
+	mbt_unmanned_turret = {
+			
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6d  y = @t3 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_unmanned_turret_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				tag = RUS
+			}
+
+			modifier = {
+				factor = 5
+				tag = USA
+			}			
+			
+			modifier = {
+				factor = 10
+				tag = JOR
+			}
+
+			modifier = {
+				factor = 10
+				tag = SAF
+			}
+			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
+			
+		}
+		
+	}		
+
+	mbt_unmanned_full = {
+			
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8d  y = @t4 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_unmanned_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+			
+			modifier = {
+				factor = 20
+				tag = USA
+			}
+			
+		}
+		
+	}	
+
+	
+	concept_heavy_tracked_vehicle_1 = {
+		
+		enable_equipments = {
+			medium_tank_g0_equipment_0
+		}
+		
+		enable_subunits = {
+			medium_tank
+		}
+		
+		path = {
+			leads_to_tech = medium_tank_t1
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g0  y = @mbt_platform  }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_2 = {
+		
+		path = {
+			leads_to_tech = medium_tank_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g2p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_3 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = medium_tank_t3
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = concept_tank_te
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g3p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_4 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_5
+			research_cost_coeff = 1
+		}
+		
+		# path = {
+			# leads_to_tech = medium_tank_t4
+			# research_cost_coeff = 1
+		# }
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_5 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = medium_tank_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g5p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_6 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+		
+	}
+	
+	concept_heavy_tracked_vehicle_7 = {
+		
+		path = {
+			leads_to_tech = main_battle_tank_t7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = main_battle_tank_te_t7
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_heavy_tracked_vehicle_8
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t7
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g7p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }	
+	}
+	
+	concept_heavy_tracked_vehicle_8 = {
+		
+		path = {
+			leads_to_tech = ng_battle_tank_t8
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = concept_heavy_tracked_vehicle_9
+		#	research_cost_coeff = 1
+		#}
+		
+		path = {
+			leads_to_tech = unmanned_tank_t8
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8p  y = @mbt_platform }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	#Т-54 обр. 1951
+	medium_tank_t1 = {
+	
+		enable_equipments = {
+			medium_tank_g1_equipment_0
+		}
+		
+		enable_subunits = {
+			medium_tank
+		}
+				
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+
+		#sub_technologies = {
+	
+		#}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = armour_folder
+			position = { x = @g1  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	#Т-62
+	medium_tank_t2 = {
+	
+		enable_equipments = {
+			medium_tank_g2_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+
+		#sub_technologies = {
+	
+		#}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @g2  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# Mass MBT strategy
+	mass_mbt_doctrine = {
+			
+	
+		research_cost = 1.5
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g3d  y = @t1 }
+		}
+	
+		categories = {
+			cat_tank_doctrine
+			cat_mass_mbt_doctrine
+		}
+
+		ai_will_do = {
+			
+			factor = 1
+
+			modifier = {
+				factor = 20
+				tag = SOV
+			}
+			
+			modifier = {
+				factor = 20
+				tag = RUS
+			}
+			
+			modifier = {
+				factor = 20
+				tag = CHI
+			}
+			
+			modifier = {
+				factor = 20
+				tag = IRN
+			}
+		}
+		
+	}
+	
+	#Т-72 «Урал»
+	medium_tank_t3 = {
+	
+		enable_equipments = {
+			medium_tank_g3_equipment_0
+		}
+		
+		dependencies = {
+			mass_mbt_doctrine = 1
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}	
+		
+		research_cost = 2
+		start_year = 1965
+		folder = {
+			name = armour_folder
+			position = { x = @g3m  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# #Т-72А
+	# medium_tank_t4 = {
+	
+		# enable_equipments = {
+			# medium_tank_g4_equipment_0
+		# }
+
+		# dependencies = {
+			# mass_mbt_doctrine = 1
+		# }
+
+		# sub_technologies = {
+		# }			
+		
+		# research_cost = 2
+		# start_year = 1965
+		# folder = {
+			# name = armour_folder
+			# position = { x = @g4m  y = @t1 }
+		# }
+		
+		# on_research_complete = {
+			# if = {
+				# limit = {
+					# NOT = {
+						# has_template_containing_unit = medium_tank
+					# }
+				# }
+				# hidden_effect = {
+					# load_oob = "unlock_medium_tank"
+				# }			
+				# custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			# }
+		# }
+		
+		# categories = {
+			# cat_heavy_tracked_vehicle
+			# cat_medium_tank
+		# }
+		
+		# ai_will_do = {
+			# factor = 5
+		# }
+	# }
+	
+	#Т-72Б
+	medium_tank_t5 = {
+	
+		enable_equipments = {
+			medium_tank_g5_equipment_0
+		}
+
+		dependencies = {
+			mass_mbt_doctrine = 1
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = medium_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_medium_tank"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1985
+		folder = {
+			name = armour_folder
+			position = { x = @g5m  y = @t1 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_medium_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+
+	
+	########################
+	## MBT
+	########################
+
+	#Т-64
+	main_battle_tank_t3 = {
+	
+		enable_equipments = {
+			main_battle_tank_g3_equipment_0
+		}
+		
+		enable_subunits = {
+			main_battle_tank
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1965
+		folder = {
+			name = armour_folder
+			position = { x = @g3  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	#Т-64Б
+	main_battle_tank_t4 = {
+	
+		enable_equipments = {
+			main_battle_tank_g4_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1975
+		folder = {
+			name = armour_folder
+			position = { x = @g4  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80УД / Т-84
+	main_battle_tank_t5 = {
+	
+		enable_equipments = {
+			main_battle_tank_g5_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1985
+		folder = {
+			name = armour_folder
+			position = { x = @g5  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+	# Т-90A
+	main_battle_tank_t6 = {
+	
+		enable_equipments = {
+			main_battle_tank_g6_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = armour_folder
+			position = { x = @g6  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-90М
+	main_battle_tank_t7 = {
+	
+		enable_equipments = {
+			main_battle_tank_g7_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt"
+					load_oob = "unlock_tanks_mot"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = armour_folder
+			position = { x = @g7  y = @t0 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80, M1 Abrams
+	main_battle_tank_te_t4 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g4_equipment_0
+		}
+
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		enable_subunits = {
+			main_battle_tank_te
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1965
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g4m  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# Т-80У, M1A1
+	main_battle_tank_te_t5 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g5_equipment_0
+		}
+		
+
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}		
+		
+		research_cost = 2
+		start_year = 1985
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g5  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-80УМ-2 «Чёрный Орёл», M1A2
+	main_battle_tank_te_t6 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g6_equipment_0
+		}
+				
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}			
+		
+		research_cost = 2
+		
+		start_year = 1985
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g6  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# M1A3
+	main_battle_tank_te_t7 = {
+	
+		enable_equipments = {
+			main_battle_tank_te_g7_equipment_0
+		}
+
+	
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = main_battle_tank_te
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_te"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
+		
+		start_year = 2018
+		
+		dependencies = {
+			mbt_turbo_engine = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g7  y = @t2 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_mass_mbt
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-95 
+	ng_battle_tank_t6 = {
+	
+		enable_equipments = {
+			ng_battle_tank_g6_equipment_0
+		}
+		
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
+		enable_subunits = {
+			ng_battle_tank
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}	
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = armour_folder
+			position = { x = @g6 y = @t3 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	# Т-14 «Армата»
+	ng_battle_tank_t7 = {
+	
+		enable_equipments = {
+			ng_battle_tank_g7_equipment_0
+		}
+
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
+		start_year = 2015
+		folder = {
+			name = armour_folder
+			position = { x = @g7 y = @t3 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+	# ОБТ будущего
+	ng_battle_tank_t8 = {
+	
+		enable_equipments = {
+			ng_battle_tank_g8_equipment_0
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = ng_battle_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_modern"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
+		start_year = 2025
+		
+		dependencies = {
+			mbt_unmanned_turret = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8  y = @t3 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+	unmanned_tank_t8 = {
+	
+		enable_equipments = {
+			unmanned_tank_g8_equipment_0
+		}
+		
+		enable_subunits = {
+			unmanned_tank
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = unmanned_tank
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_mbt_future"
+				}			
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		
+		dependencies = {
+			mbt_unmanned_full = 1
+		}
+		
+		folder = {
+			name = armour_folder
+			position = { x = @g8  y = @t4 }
+		}
+		
+		categories = {
+			cat_heavy_tracked_vehicle
+			cat_main_battle_tank
+		}
+		
+		ai_will_do = { factor = 5 }
+	}
+}

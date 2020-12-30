@@ -1,0 +1,120 @@
+scripted_diplomatic_actions = {
+
+	sd_electricity = {
+	
+	
+	
+		allowed = { #if action is valid
+			always = yes
+		}
+		visible = { #if action is visible on gui
+			always = yes
+		}
+		selectable = { #if action is selectable on gui
+		
+			check_variable = { ROOT.electricity_buy_bool_sel_country = 0 }
+			check_variable = { ROOT.electricity_ratio < 1 }
+			check_variable = { this.electricity_ratio_rest > 0 }
+			check_variable = { this.electricity_value_inc > 5 }
+			is_neighbor_of = ROOT
+			NOT = { 
+				  is_in_array = {
+					array = ROOT.electricity_arr_country_name
+					value = this.id
+				}
+				has_war_with = ROOT
+				has_country_flag = on_traiding
+			}		
+		}
+		requires_acceptance = yes # if true the action will require acceptance of target country
+		cost = 0 # pp cost, can be zero
+		command_power = 0 # cp cost, can be zero
+	
+		icon = 1
+	
+	can_be_sent = { # send button will be disabled if no
+			NOT = { 
+				  is_in_array = {
+					array = ROOT.electricity_arr_country_name
+					value = this.id
+				}
+			}
+		}
+	
+		on_sent_effect = {
+			set_variable = { ROOT.electricity_buy_bool_sel_country = 1 }
+		}
+
+		complete_effect = { 
+			subtract_from_variable = { electricity_ratio_rest = ROOT.electricity_ratio_trade_menu_recieve }
+			add_to_variable = { ROOT.electricity_ratio = ROOT.electricity_from_buy_ratio } 
+			
+			ROOT = { 
+				set_electricity_ratio_visible = yes
+				add_to_electricity_ratio_percen = yes 
+				set_variable = { electricity_from_buy_ratio = 0 } 
+				set_variable = { electricity_buy_bool_sel_country = 0 } 
+				if = { limit = { check_variable = { electricity_ratio < 1 } }
+				set_variable = { electricity_ratio_need = 1 } subtract_from_variable = { electricity_ratio_need = electricity_ratio }	
+				}
+			}
+				clr_country_flag = on_traiding
+		}
+
+		reject_effect = {
+			ROOT = { set_variable = { electricity_from_buy_ratio = 0 } set_variable = { electricity_buy_bool_sel_country = 0 } }
+			clr_country_flag = on_traiding
+		}
+	
+	send_scripted_gui = sd_electiricty_action_menu
+	
+	reset_send_effect = {
+			ROOT = { set_variable = { electricity_buy_selected_country = PREV.id }
+			set_electricity_buy_ratio = yes
+			}
+				set_country_flag = on_traiding
+	}
+	
+	
+		receive_description = electricity_receive_description
+	
+	
+		ai_acceptance = {
+			sd_electricity_condition_0 = { # name is used for loc
+				base = 5
+			}
+			sd_electricity_condition_1 = { # name is used for loc
+				modifier = {
+					add = this.opinion@ROOT
+				}
+			}
+		}
+		
+		
+		ai_desire = {
+			base = -1
+			modifier = {
+			ROOT = {
+				check_variable = { current_budget > 10 }
+				check_variable = { electricity_ratio < 1 }
+				is_neighbor_of = PREV
+			}
+				this = { check_variable = { electricity_ratio_rest > 0 } check_variable = { electricity_trade_block_deals = 0 } }
+				add = 1000
+			}
+			modifier = {
+				  is_in_array = {
+					array = ROOT.electricity_arr_country_name
+					value = this.id
+				}
+				add = -10000
+			}
+		}
+	
+	
+	}
+
+
+
+
+}

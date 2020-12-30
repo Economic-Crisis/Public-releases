@@ -1,0 +1,4492 @@
+#List of filters / Список фильтров
+#FOCUS_FILTER_DOMESTIC_POLICY - domestic policy (внутренняя политика)
+#FOCUS_FILTER_FOREIGN_POLICY - foreign policy (внешняя политика)
+#FOCUS_FILTER_INDUSTRY - industry (промышленность)
+#FOCUS_FILTER_RESEARCH - research (исследования)
+#FOCUS_FILTER_ARMY - army (армия)
+#FOCUS_FILTER_NAVY - navy (флот)
+#FOCUS_FILTER_AVIATION - aviation (авиация)
+#FOCUS_FILTER_ECONOMIC - economy (экономика)
+
+focus_tree = {
+	id = japan
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JAP
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 4150 y = 1000 }
+	focus = {
+		id = JAP_econ_start
+		icon = GFX_JAP_econ_start
+		available = { has_completed_focus = JAP_pol_start5 }
+		cost = 50
+		x = 28
+		y = 0  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start1
+		icon = GFX_JAP_econ_start1
+		prerequisite = { focus = JAP_econ_start }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_start1_TTT
+				check_variable = { budget_reserve > 3000 }
+			}
+		}
+		cost = 120
+		x = 27
+		y = 2 
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start1_TT
+			subtract_from_variable = { budget_reserve = 3000 }
+			add_stability = 0.07
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start2
+		icon = GFX_JAP_econ_start2
+		prerequisite = { focus = JAP_econ_start }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_start2_TTT
+				check_variable = { budget_reserve > 3000 }
+			}
+		}
+		cost = 120
+		x = 29
+		y = 2 
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start2_TT
+			subtract_from_variable = { budget_reserve = 3000 }
+			add_stability = 0.04
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start3
+		icon = GFX_JAP_econ_start3
+		prerequisite = {
+			focus = JAP_econ_start1
+			focus = JAP_econ_start2
+		}
+		cost = 120
+		x = 28
+		y = 3 
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start3_TT
+			subtract_from_variable = { budget_reserve = -5400 }
+			add_stability = 0.01
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_econ_start4
+		icon = GFX_JAP_econ_start4
+		prerequisite = { focus = JAP_econ_start3 }
+		cost = 120
+		x = 28
+		y = 4 
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start4_TT
+			subtract_from_variable = { budget_reserve = -1800 }
+			add_stability = 0.01
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start5
+		icon = GFX_JAP_econ_start5
+		prerequisite = {
+			focus = JAP_econ_start1
+			focus = JAP_econ_start4
+		}
+		cost = 120
+		x = 27
+		y = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start5_TT
+			subtract_from_variable = { budget_reserve = -1800 }
+			add_stability = 0.02
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start6
+		icon = GFX_JAP_econ_start6
+		prerequisite = {
+			focus = JAP_econ_start4
+			focus = JAP_econ_start2
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_start6_TTT
+				check_variable = { budget_reserve > 2600 }
+			}
+		}
+		cost = 120
+		x = 29
+		y = 5
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start6_TT
+			subtract_from_variable = { budget_reserve = 26000 }
+			add_stability = 0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start7
+		icon = GFX_JAP_econ_start7
+		prerequisite = { focus = JAP_econ_start5 }
+		
+		cost = 120
+		x = 27
+		y = 6
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_start7_TT
+			subtract_from_variable = { budget_reserve = -2400 }
+			add_stability = 0.01
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_start8
+		icon = GFX_JAP_econ_start8
+		prerequisite = { focus = JAP_econ_start6 }
+		prerequisite = { focus = JAP_econ_start6 }
+		cost = 120
+		x = 29
+		y = 6
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			add_ideas = JAP_angry_rich
+			subtract_from_variable = { budget_reserve = -3800 }
+			add_stability = 0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray
+		icon = GFX_JAP_econ_murray
+		prerequisite = { focus = JAP_econ_start }
+		mutually_exclusive = { focus = JAP_econ_roosevelt }
+		available = { has_political_power > 800 }
+		cost = 100
+		x = 24
+		y = 1  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		} 
+		completion_reward = {
+			add_political_power = -800
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray1
+		icon = GFX_JAP_econ_murray1
+		prerequisite = { focus = JAP_econ_murray }
+		cost = 100
+		x = 23
+		y = 2  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			add_stability = -0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray2
+		icon = GFX_JAP_econ_murray2
+		prerequisite = { focus = JAP_econ_murray }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_murray2_TTT
+				check_variable = { budget_reserve > 3500 }
+			}
+		}
+		cost = 100
+		x = 25
+		y = 2  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray2_TT
+			subtract_from_variable = { budget_reserve = 3500 }
+			add_stability = -0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray3
+		icon = GFX_JAP_econ_murray3
+		prerequisite = { focus = JAP_econ_murray1 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_murray3_TTT
+				check_variable = { budget_reserve > 2400 }
+			}
+		}
+		cost = 100
+		x = 22
+		y = 3  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray3_TT
+			subtract_from_variable = { budget_reserve = 2400 }
+			add_stability = -0.04
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray4
+		icon = GFX_JAP_econ_murray4
+		prerequisite = { focus = JAP_econ_murray1 }
+		prerequisite = { focus = JAP_econ_murray2 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_murray4_TTT
+				check_variable = { budget_reserve > 4400 }
+			}
+		}
+		cost = 100
+		x = 24
+		y = 3  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray4_TT
+			subtract_from_variable = { budget_reserve = 4400 }
+			add_stability = -0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray5
+		icon = GFX_JAP_econ_murray5
+		prerequisite = { focus = JAP_econ_murray2 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_murray5_TTT
+				check_variable = { budget_reserve > 1700 }
+			}
+		}
+		cost = 100
+		x = 26
+		y = 3  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray5_TT
+			subtract_from_variable = { budget_reserve = 1700 }
+			add_stability = -0.07
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray6
+		icon = GFX_JAP_econ_murray6
+		prerequisite = { focus = JAP_econ_murray4 }
+		prerequisite = { focus = JAP_econ_murray5 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_murray6_TTT
+				check_variable = { budget_reserve > 5100 }
+			}
+		}
+		cost = 100
+		x = 23
+		y = 4  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray6_TT
+			subtract_from_variable = { budget_reserve = 5100 }
+			add_stability = -0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray7
+		icon = GFX_JAP_econ_murray7
+		prerequisite = { focus = JAP_econ_murray3 }
+		prerequisite = { focus = JAP_econ_murray4 }
+		available = {
+			# custom_trigger_tooltip = {
+			# 	tooltip = JAP_econ_murray7_TTT
+			# 	check_variable = { budget_reserve > 5100 }
+			# }
+		}
+		cost = 100
+		x = 25
+		y = 4  
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+
+			add_stability = -0.06
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_murray8
+		icon = GFX_JAP_econ_murray8
+		prerequisite = { focus = JAP_econ_murray6 }
+		prerequisite = { focus = JAP_econ_murray7 }
+		cost = 100
+		x = 24
+		y = 5 
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_murray8_TT
+			subtract_from_variable = { budget_reserve = -8400 }
+			if = {
+				limit = { has_idea = severe_recession }
+				swap_ideas = { remove_idea = severe_recession add_idea = average_recession }
+			}
+			if = {
+				limit = { has_idea = average_recession }
+				remove_ideas = average_recession 
+				add_timed_idea = { idea = weak_recession days = 230 }
+			}
+			add_stability = -0.04
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt
+		icon = GFX_JAP_econ_roosevelt
+		prerequisite = { focus = JAP_econ_start }
+		mutually_exclusive = { focus = JAP_econ_murray }
+		available = { has_political_power > 600 }
+		cost = 140
+		x = 32
+		y = 1
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			add_political_power = -600
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt1
+		icon = GFX_JAP_econ_roosevelt1
+		prerequisite = { focus = JAP_econ_roosevelt }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_roosevelt1_TTT
+				check_variable = { budget_reserve > 3400 }
+			}
+		}
+		cost = 140
+		x = 31
+		y = 2
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt1_TT
+			subtract_from_variable = { budget_reserve = 3400 }
+			add_stability = -0.02
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt2
+		icon = GFX_JAP_econ_roosevelt2
+		prerequisite = { focus = JAP_econ_roosevelt }
+		cost = 140
+		x = 33
+		y = 2
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt2_TT
+			subtract_from_variable = { budget_reserve = -8400 }
+			add_stability = -0.06
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt3
+		icon = GFX_JAP_econ_roosevelt3
+		prerequisite = { focus = JAP_econ_roosevelt }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_roosevelt3_TTT
+				check_variable = { budget_reserve > 5400 }
+			}
+		}
+		cost = 140
+		x = 30
+		y = 3
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt3_TT
+			subtract_from_variable = { budget_reserve = 5400 }
+			add_stability = -0.01
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt4
+		icon = GFX_JAP_econ_roosevelt4
+		prerequisite = { focus = JAP_econ_roosevelt }
+		cost = 140
+		x = 32
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			add_stability = -0.04
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt5
+		icon = GFX_JAP_econ_roosevelt5
+		prerequisite = { focus = JAP_econ_roosevelt }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_roosevelt5_TTT
+				check_variable = { budget_reserve > 4400 }
+			}
+		}
+		cost = 140
+		x = 34
+		y = 3
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt5_TT
+			subtract_from_variable = { budget_reserve = 4400 }
+			add_stability = -0.03
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt6
+		icon = GFX_JAP_econ_roosevelt6
+		prerequisite = { focus = JAP_econ_roosevelt3 }
+		cost = 140
+		x = 30
+		y = 4
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			add_stability = -0.04
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt7
+		icon = GFX_JAP_econ_roosevelt7
+		prerequisite = { focus = JAP_econ_roosevelt3 }
+		prerequisite = { focus = JAP_econ_roosevelt4 }
+		prerequisite = { focus = JAP_econ_roosevelt5 }
+		cost = 140
+		x = 32
+		y = 4
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt7_TT
+			subtract_from_variable = { budget_reserve = -2400 }
+			add_stability = -0.01
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt8
+		icon = GFX_JAP_econ_roosevelt8
+		prerequisite = { focus = JAP_econ_roosevelt5 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_roosevelt8_TTT
+				check_variable = { budget_reserve > 7700 }
+			}
+		}
+		cost = 140
+		x = 34
+		y = 4
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_roosevelt8_TT
+			subtract_from_variable = { budget_reserve = 7700 }
+			add_stability = -0.02
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_roosevelt9
+		icon = GFX_JAP_econ_roosevelt9
+		prerequisite = { focus = JAP_econ_roosevelt6 }
+		prerequisite = { focus = JAP_econ_roosevelt7 }
+		prerequisite = { focus = JAP_econ_roosevelt8 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_econ_roosevelt9_TTT
+				check_variable = { budget_reserve > 6200 }
+			}
+		}
+		cost = 140
+		x = 32
+		y = 5
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = { has_idea = severe_recession }
+				swap_ideas = { remove_idea = severe_recession add_idea = average_recession }
+			}
+			if = {
+				limit = { has_idea = average_recession }
+				remove_ideas = average_recession 
+				add_timed_idea = { idea = weak_recession days = 230 }
+			}
+			custom_effect_tooltip = JAP_econ_roosevelt9_TT
+			subtract_from_variable = { budget_reserve = 6200 }
+			add_stability = -0.02
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_end
+		icon = GFX_JAP_econ_end
+		prerequisite = {
+			focus = JAP_econ_roosevelt9
+			focus = JAP_econ_murray8
+		}
+		prerequisite = {
+			focus = JAP_econ_start7
+			focus = JAP_econ_start8
+		}
+		cost = 70
+		x = 28
+		y = 7
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_econ_roosevelt9
+				}
+				if = {
+					limit = { has_idea = severe_recession }
+					swap_ideas = { remove_idea = severe_recession add_idea = average_recession }
+				}
+				if = {
+					limit = { has_idea = average_recession }
+					remove_ideas = average_recession 
+					add_timed_idea = { idea = weak_recession days = 531 }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = JAP_econ_murray8
+				}
+				if = {
+					limit = { has_idea = severe_recession }
+					swap_ideas = { remove_idea = severe_recession add_idea = average_recession }
+				}
+				if = {
+					limit = { has_idea = average_recession }
+					remove_ideas = average_recession 
+					add_timed_idea = { idea = weak_recession days = 240 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_completed_focus = JAP_econ_murray8
+							has_completed_focus = JAP_econ_roosevelt9
+						}
+					}
+				}
+				custom_effect_tooltip = JAP_econ_end_TT
+			}
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_econ_industry
+		icon = GFX_goal_generic_agreement
+		prerequisite = { focus = JAP_econ_end }
+		cost = 70
+		x = 28
+		y = 8
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_industry_TT
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = JAP_econ_industry }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 26
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry2
+		icon = GFX_goal_generic_construct_infrastructure_red
+		prerequisite = { focus = JAP_econ_industry }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 28
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry3
+		icon = GFX_goal_generic_construct_civ_factory_red
+		prerequisite = { focus = JAP_econ_industry }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 30
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry4
+		icon = GFX_goal_generic_repairments
+		prerequisite = { focus = JAP_econ_industry1 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 25
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			536 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry5
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = JAP_econ_industry1 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 27
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			282 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry6
+		icon = GFX_goal_generic_raw_materials
+		prerequisite = { focus = JAP_econ_industry3 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 29
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry7
+		icon = GFX_goal_generic_repairments
+		prerequisite = { focus = JAP_econ_industry3 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 31
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			531 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry8
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = JAP_econ_industry2 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 28
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry9
+		icon = GFX_goal_generic_peace
+		prerequisite = { focus = JAP_econ_industry2 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 26
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_industry10
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = JAP_econ_industry2 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 30
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy
+		icon = GFX_goal_continuous_boost_freedom
+		prerequisite = { focus = JAP_econ_end }
+		cost = 70
+		x = 35
+		y = 8
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			custom_effect_tooltip = JAP_econ_energy_TT
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy1
+		icon = GFX_goal_generic_construct_ecolog_energy_station
+		prerequisite = { focus = JAP_econ_energy }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 33
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			529 = {
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = JAP_econ_energy2
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = JAP_econ_energy }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 35
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			528 = {
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy3
+		icon = GFX_goal_generic_construct_nuclear_energy_station
+		prerequisite = { focus = JAP_econ_energy }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 37
+		y = 9
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			1077 = {
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy4
+		icon = GFX_goal_generic_construct_ecolog_energy_station
+		prerequisite = { focus = JAP_econ_energy1 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 33
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			529 = {
+				add_building_construction = {
+					type = eco_power_plant
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy5
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = JAP_econ_energy2 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 35
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			533 = {
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy6
+		icon = GFX_goal_generic_construct_nuclear_energy_station
+		prerequisite = { focus = JAP_econ_energy3 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 37
+		y = 10
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			526 = {
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy7
+		icon = GFX_goal_generic_construct_ecolog_energy_station
+		prerequisite = { focus = JAP_econ_energy4 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 33
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			1079 = {
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+			1075 = {
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+			529 = {
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy8
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = JAP_econ_energy5 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 35
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			536 = {
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_econ_energy9
+		icon = GFX_goal_generic_construct_nuclear_energy_station
+		prerequisite = { focus = JAP_econ_energy6 }
+		available = { num_of_available_civilian_factories > 25 }
+		cost = 70
+		x = 37
+		y = 11
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			536 = {
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	# focus = {
+	# 	id = JAP_econ_mega
+	# 	icon = GFX_JAP_econ_mega
+	# 	prerequisite = { focus = JAP_econ_end }
+	# 	cost = 70
+	# 	x = 41
+	# 	y = 8
+	# 	ai_will_do = { factor = 5 } 
+	# 	completion_reward = {
+
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+	# }
+	# focus = {
+	# 	id = JAP_econ_mega1
+	# 	icon = GFX_JAP_econ_mega1
+	# 	prerequisite = { focus = JAP_econ_mega }
+	# 	cost = 70
+	# 	x = 39
+	# 	y = 9
+	# 	ai_will_do = { factor = 5 }
+	# 	select_effect = {
+			
+	# 	}
+	# 	completion_reward = {
+
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+	# }
+	# focus = {
+	# 	id = JAP_econ_mega2
+	# 	icon = GFX_JAP_econ_mega2
+	# 	prerequisite = { focus = JAP_econ_mega }
+	# 	cost = 70
+	# 	x = 41
+	# 	y = 9
+	# 	ai_will_do = { factor = 5 }
+	# 	select_effect = {
+			
+	# 	}
+	# 	completion_reward = {
+
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+	# }
+	# focus = {
+	# 	id = JAP_econ_mega3
+	# 	icon = GFX_JAP_econ_mega3
+	# 	prerequisite = { focus = JAP_econ_mega }
+	# 	cost = 70
+	# 	x = 43
+	# 	y = 9
+	# 	ai_will_do = { factor = 5 }
+	# 	select_effect = {
+			
+	# 	}
+	# 	completion_reward = {
+
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+	# }
+
+	focus = {
+		id = JAP_start
+		icon = GFX_JAP_start
+		cost = 70
+		x = 15
+		y = 0
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			country_event = { id = japan.7 }
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start
+		icon = GFX_JAP_pol_start
+		prerequisite = { focus = JAP_start }
+		cost = 70
+		x = 15
+		y = 1
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			add_timed_idea = { idea = JAP_election_campaign days = 100 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start1
+		icon = GFX_JAP_pol_start1
+		prerequisite = { focus = JAP_pol_start }
+		mutually_exclusive = {
+			focus = JAP_pol_start2
+			focus = JAP_pol_start3
+			focus = JAP_pol_start4
+		}
+		available = {
+			fascism > 0.2
+			has_idea = generic_nationalists_leader
+		}
+		cost = 100
+		x = 13
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_kadjuyo_yana
+			hidden_effect = { add_ideas = JAP_qestionable_elections }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start2
+		icon = GFX_JAP_pol_start2
+		prerequisite = { focus = JAP_pol_start }
+		mutually_exclusive = {
+			focus = JAP_pol_start1
+			focus = JAP_pol_start3
+			focus = JAP_pol_start4
+		}
+		available = {
+			neutrality > 0.2
+			has_idea = generic_centrists_leader
+		}
+		cost = 100
+		x = 14
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_shigeuki_nakamae
+			hidden_effect = { add_ideas = JAP_qestionable_elections }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start3
+		icon = GFX_JAP_pol_start3
+		prerequisite = { focus = JAP_pol_start }
+		mutually_exclusive = {
+			focus = JAP_pol_start1
+			focus = JAP_pol_start2
+			focus = JAP_pol_start4
+		}
+		available = {
+			communism > 0.2
+			has_idea = generic_socialists_leader
+		}
+		cost = 100
+		x = 16
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_ikeda_maki
+			hidden_effect = { add_ideas = JAP_qestionable_elections }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start4
+		icon = GFX_JAP_pol_start4
+		prerequisite = { focus = JAP_pol_start }
+		mutually_exclusive = {
+			focus = JAP_pol_start1
+			focus = JAP_pol_start2
+			focus = JAP_pol_start3
+		}
+		available = {
+			OR = {
+				AND = {
+					liberalism > 0.2
+					has_idea = generic_liberals_leader
+				}
+				AND = {
+					reformism > 0.2 
+					has_idea = generic_reformists_leader
+				}
+				AND = {
+					democratic > 0.2
+					has_idea = generic_conservators_leader
+				}
+			}
+		}
+		cost = 100
+		x = 17
+		y = 2
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_nobutaka_machimura
+			hidden_effect = { add_ideas = JAP_qestionable_elections }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start5
+		icon = GFX_JAP_pol_start5
+		prerequisite = {
+			focus = JAP_pol_start1
+			focus = JAP_pol_start2
+			focus = JAP_pol_start3
+			focus = JAP_pol_start4
+		}
+		cost = 70
+		x = 15
+		y = 4
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_start5_TT
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start6
+		icon = GFX_JAP_pol_start6
+		prerequisite = { focus = JAP_pol_start5 }
+		cost = 70
+		x = 12
+		y = 5
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_financed_private_housing
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_pol_start7
+		icon = GFX_JAP_pol_start7
+		prerequisite = { focus = JAP_pol_start5 }
+		cost = 70
+		x = 14
+		y = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			if = {
+				limit = { has_idea = very_low_taxes }
+				swap_ideas = { remove_idea = very_low_taxes add_idea = low_taxes }
+				custom_effect_tooltip = JAP_pol_start7_TT
+				add_political_power = -650
+			}
+			if = {
+				limit = { has_idea = low_taxes }
+				swap_ideas = { remove_idea = low_taxes add_idea = normal_taxes }
+				custom_effect_tooltip = JAP_pol_start7_TT
+				add_political_power = -550
+			}
+			if = {
+				limit = { has_idea = normal_taxes }
+				swap_ideas = { remove_idea = normal_taxes add_idea = high_taxes }
+				custom_effect_tooltip = JAP_pol_start7_TT
+				add_political_power = -450
+			}
+			if = {
+				limit = { has_idea = high_taxes }
+				swap_ideas = { remove_idea = high_taxes add_idea = very_high_taxes }
+				custom_effect_tooltip = JAP_pol_start7_TT
+				add_political_power = -350
+			}
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_pol_start8
+		icon = GFX_JAP_pol_start8
+		prerequisite = { focus = JAP_pol_start5 }
+		cost = 70
+		x = 16
+		y = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_pol_start8_TT
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start9
+		icon = GFX_JAP_pol_start9
+		prerequisite = { focus = JAP_pol_start5 }
+		cost = 70
+		x = 18
+		y = 5
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_high_requirements
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_pol_start11
+		icon = GFX_JAP_pol_start11
+		prerequisite = { focus = JAP_pol_start5 }
+		available = {
+			has_idea = generic_nationalists_leader
+		}
+		cost = 70
+		x = 11
+		y = 6
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			
+			add_ideas = JAP_left_advancing
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start12
+		icon = GFX_JAP_pol_start12
+		prerequisite = {
+			focus = JAP_pol_start6
+			focus = JAP_pol_start7
+			focus = JAP_pol_start8
+			focus = JAP_pol_start9
+		}
+		available = {
+			has_completed_focus = JAP_econ_end
+		}
+		cost = 70
+		x = 15
+		y = 6
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			add_timed_idea = { idea = JAP_election_campaign days = 100 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start13
+		icon = GFX_JAP_pol_start13
+		prerequisite = { focus = JAP_pol_start5 }
+		available = {
+			has_idea = generic_socialists_leader
+		}
+		cost = 70
+		x = 19
+		y = 6
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			
+			add_ideas = JAP_right_advancing
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start14
+		icon = GFX_JAP_pol_start14
+		prerequisite = { focus = JAP_pol_start12 }
+		prerequisite = {
+			focus = JAP_pol_start11
+			focus = JAP_pol_start13
+		}
+		cost = 100
+		x = 15
+		y = 7
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_pol_start14_TT
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start15
+		icon = GFX_JAP_pol_start15
+		prerequisite = { focus = JAP_pol_start14 }
+		cost = 70
+		x = 15
+		y = 8
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start16
+		icon = GFX_JAP_pol_start16
+		prerequisite = { focus = JAP_pol_start15 }
+		mutually_exclusive = {
+			focus = JAP_pol_start17
+			focus = JAP_pol_start18
+			focus = JAP_pol_start19
+		}
+		available = {
+			neutrality > 0.3
+			has_idea = generic_centrists_leader
+		}
+		cost = 70
+		x = 14
+		y = 9
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_start16_TT
+			hidden_effect = { add_ideas = JAP_natsuo_yamaguchi }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start17
+		icon = GFX_JAP_pol_start17
+		prerequisite = { focus = JAP_pol_start15 }
+		mutually_exclusive = {
+			focus = JAP_pol_start16
+			focus = JAP_pol_start18
+			focus = JAP_pol_start19
+		}
+		available = {
+			fascism > 0.3
+			has_idea = generic_nationalists_leader
+		}
+		cost = 70
+		x = 16
+		y = 9
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_start17_TT
+			hidden_effect = { add_ideas = JAP_masasi_nakano }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start18
+		icon = GFX_JAP_pol_start18
+		prerequisite = { focus = JAP_pol_start15 }
+		mutually_exclusive = {
+			focus = JAP_pol_start16
+			focus = JAP_pol_start17
+			focus = JAP_pol_start19
+		}
+		available = {
+			reformism > 0.3
+			has_idea = generic_reformists_leader
+		}
+		cost = 70
+		x = 13
+		y = 10
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_start18_TT
+			hidden_effect = { add_ideas = JAP_akira_koike }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start19
+		icon = GFX_JAP_pol_start19
+		prerequisite = { focus = JAP_pol_start15 }
+		mutually_exclusive = {
+			focus = JAP_pol_start16
+			focus = JAP_pol_start17
+			focus = JAP_pol_start18
+		}
+		available = {
+			OR = {
+				AND = {
+					liberalism > 0.3
+					has_idea = generic_liberals_leader
+				}
+				AND = {
+					democratic > 0.3
+					has_idea = generic_conservators_leader
+				}
+			}
+		}
+		cost = 70
+		x = 17
+		y = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_start19_TT
+			hidden_effect = { add_ideas = JAP_masaaki_yamazaki }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_cen
+		icon = GFX_JAP_pol_cen
+		prerequisite = { focus = JAP_pol_start16 }
+		cost = 70
+		x = 11
+		y = 10
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_cen_TT
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_pol_cen1
+		icon = GFX_JAP_pol_cen1
+		prerequisite = { focus = JAP_pol_cen }
+		cost = 70
+		x = 12
+		y = 11
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			CHI = { add_opinion_modifier = { target = JAP modifier = actions_positive } }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_pol_cen2
+		icon = GFX_JAP_pol_cen2
+		prerequisite = { focus = JAP_pol_cen1 }
+		cost = 70
+		x = 13
+		y = 12
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			CHI = { add_opinion_modifier = { target = JAP modifier = actions_positive } }
+			add_ideas = JAP_chines_study
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_pol_nat
+		icon = GFX_JAP_pol_nat
+		prerequisite = { focus = JAP_pol_start17 }
+		cost = 70
+		x = 19
+		y = 10
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = terrorism_discounted
+			add_stability = -0.15
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_nat1
+		icon = GFX_JAP_pol_nat1
+		prerequisite = { focus = JAP_pol_nat }
+		cost = 70
+		x = 18
+		y = 11
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_command_power = 30
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_pol_soc_dem
+		icon = GFX_JAP_pol_soc_dem
+		prerequisite = { focus = JAP_pol_start18 }
+		cost = 70
+		x = 10
+		y = 11
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_soc_dem_TT
+			add_stability = 0.04
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_soc_dem1
+		icon = GFX_JAP_pol_soc_dem1
+		prerequisite = { focus = JAP_pol_soc_dem }
+		cost = 70
+		x = 8
+		y = 12
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			custom_effect_tooltip = JAP_pol_soc_dem1_TT
+			subtract_from_variable = { budget_reserve = 6200 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_start23
+		icon = GFX_JAP_pol_start23
+		prerequisite = {
+			focus = JAP_pol_start16
+			focus = JAP_pol_start17
+			focus = JAP_pol_start18
+			focus = JAP_pol_start19
+		}
+		cost = 70
+		x = 15
+		y = 11
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { 
+			news_event = japnews.12
+			#hidden_effect = {
+				swap_ideas = {
+					remove_idea = emperor_akixito
+					add_idea = emperor_naruhito
+				}
+			#}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_lib_dem
+		icon = GFX_JAP_pol_lib_dem
+		prerequisite = { focus = JAP_pol_start19 }
+		cost = 70
+		x = 20
+		y = 11
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_ideas = JAP_labor_law_reform
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_pol_lib_dem1
+		icon = GFX_JAP_pol_lib_dem1
+		prerequisite = { focus = JAP_pol_lib_dem }
+		cost = 70
+		x = 22
+		y = 12
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = JAP_start2
+		icon = GFX_JAP_start2
+		cost = 70
+		x = 15
+		y = 12
+		prerequisite = { focus = JAP_pol_start23 }
+		available = {
+			has_idea = emperor_naruhito
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {  
+			country_event = { id = japan.8 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start3
+		icon = GFX_JAP_start3
+		cost = 70
+		x = 15
+		y = 13
+		prerequisite = { focus = JAP_start2 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { add_timed_idea = { idea = JAP_election_campaign days = 70 }   }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start4
+		icon = GFX_JAP_start4
+		cost = 70
+		x = 4
+		y = 14
+		prerequisite = { focus = JAP_start3 }
+		mutually_exclusive = {
+			focus = JAP_start6
+			focus = JAP_start5
+		}
+		ai_will_do = { factor = 5 } 
+		completion_reward = { add_ideas = JAP_communism_idea }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start5
+		icon = GFX_JAP_start5
+		cost = 70
+		x = 15
+		y = 14
+		prerequisite = { focus = JAP_start3 }
+		mutually_exclusive = {
+			focus = JAP_start6
+			focus = JAP_start4
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = { add_ideas = JAP_Central }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start6
+		icon = GFX_JAP_start6
+		cost = 70
+		x = 21
+		y = 14
+		prerequisite = { focus = JAP_start3 }
+		mutually_exclusive = {
+			focus = JAP_start5
+			focus = JAP_start4
+		}
+		ai_will_do = { factor = 5 } 
+		completion_reward = { add_ideas = JAP_tokugawa  }
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start7
+		icon = GFX_JAP_start7
+		cost = 70
+		x = 21
+		y = 15
+		prerequisite = { focus = JAP_start6 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				news_event = japnews.13
+				hidden_effect = {
+					add_ideas = average_terrorism
+					USA = { country_event = japan.19 }
+					282 = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					530 = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					526 = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					1024 = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start8
+		icon = GFX_JAP_start8
+		cost = 70
+		x = 21
+		y = 16
+		prerequisite = { focus = JAP_start7 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				hidden_effect = { kill_ideology_leader = communism }
+				news_event = japnews.14
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_start9
+		icon = GFX_JAP_start9
+		available = {
+			has_country_leader = {
+				name = "Shinzo Abe"
+				ruling_only = yes
+			}
+		}
+		cost = 70
+		x = 21
+		y = 17
+		prerequisite = { focus = JAP_start8 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				news_event = japnews.15
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_start10
+		icon = GFX_JAP_start10
+		cost = 70
+		x = 21
+		y = 18
+		prerequisite = { focus = JAP_start9 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				news_event = japnews.16
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_main1 
+		icon = GFX_JAP_main1 
+		cost = 70
+		x = 15
+		y = 15
+		prerequisite = { focus = JAP_start5 }
+		mutually_exclusive = { focus = JAP_cen }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_political_power = 200
+				add_ideas = market_economy
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_main2
+		icon = GFX_JAP_main2
+		cost = 70
+		x = 15
+		y = 16
+		prerequisite = { focus = JAP_main1 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_ideas = JAP_dzaibatsu_Never_gonna_give_you_down
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_main3
+		icon = GFX_JAP_main3
+		cost = 70
+		x = 13
+		y = 18
+		prerequisite = { focus = JAP_main12 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				army_experience = 40
+				air_experience = 40
+				navy_experience = 40
+				USA = { add_opinion_modifier = { target = ENG modifier = actions_positive } }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_main12
+		icon = GFX_JAP_main12
+		cost = 70
+		x = 13
+		y = 17
+		prerequisite = { focus = JAP_main2 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_political_power = 200
+				add_ideas = JAP_war
+				country_event = { id = japan.10 }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_main4
+		icon = GFX_JAP_main4
+		cost = 70
+		x = 13
+		y = 19
+		prerequisite = { focus = JAP_main3 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+			navy_experience = 200
+			country_event = { id = japan.12 }
+			528 = {
+				add_building_construction = {
+					type = naval_base
+					province = 9950
+					level = 3
+					instant_build = yes
+				}
+			}
+			993 = {
+				add_building_construction = {
+					type = naval_base
+					province = 7072
+					level = 2
+					instant_build = yes
+				}
+			}
+			993 = {
+				add_building_construction = {
+					type = naval_base
+					province = 1136
+					level = 3
+					instant_build = yes
+				}
+			}
+			282 = {
+				add_building_construction = {
+					type = naval_base
+					province = 9998
+					level = 3
+					instant_build = yes
+				}
+			}
+			533 = {
+				add_building_construction = {
+					type = naval_base
+					province = 9859
+					level = 2
+					instant_build = yes
+				}
+			}
+			526 = {
+				add_building_construction = {
+					type = naval_base
+					province = 11932
+					level = 1
+					instant_build = yes
+				}
+			}
+			645 = {
+				add_building_construction = {
+					type = naval_base
+					province = 13025
+					level = 1
+					instant_build = yes
+				}
+			}
+			648 = {
+				add_building_construction = {
+					type = naval_base
+					province = 13026
+					level = 1
+					instant_build = yes
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_main5
+		icon = GFX_JAP_main5
+		cost = 70
+		x = 15
+		y = 17
+		prerequisite = { focus = JAP_main2 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_ideas = JAP_medcit
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_main6
+		icon = GFX_JAP_main6
+		cost = 70
+		x = 15
+		y = 18
+		prerequisite = { focus = JAP_main5 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_ideas = JAP_product
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_main7
+		icon = GFX_JAP_main7
+		cost = 70
+		x = 17
+		y = 16
+		prerequisite = { focus = JAP_main1 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_ideas = attract_immigrants
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_main8
+		icon = GFX_JAP_main8
+		cost = 70
+		x = 17
+		y = 17
+		prerequisite = { focus = JAP_main7 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				add_ideas = JAP_laborofForeigners 
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_main9
+		icon = GFX_JAP_main9
+		cost = 70
+		x = 16
+		y = 19
+		prerequisite = { focus = JAP_main6 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				USA = {
+					country_event = { id = usa.23 } 
+					country_event = { id = usa.24 }
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_main10
+		icon = GFX_JAP_main10
+		cost = 70
+		x = 16
+		y = 20
+		prerequisite = { focus = JAP_main9 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+			add_ideas = EU_free_trade_area
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_main13
+		icon = GFX_JAP_main13
+		cost = 70
+		x = 14
+		y = 20
+		prerequisite = { focus = JAP_main6 }
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				corruption_decreased = yes
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_main14
+		icon = GFX_JAP_main14
+		cost = 70
+		x = 15
+		y = 21
+		prerequisite = {
+			focus = JAP_main10
+			focus = JAP_main13
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start19
+				}
+				every_country = {
+					if = {
+						limit = { has_idea = eu_member }
+						PREV = { add_opinion_modifier = { target = JAP modifier = actions_positive } }
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start19 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_com 
+		icon = GFX_JAP_com
+		cost = 70
+		x = 5
+		y = 15
+		prerequisite = { focus = JAP_start4 }
+		mutually_exclusive = { focus = JAP_soc }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 120
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_com1
+		icon = GFX_JAP_com1
+		cost = 70
+		x = 5
+		y = 16
+		prerequisite = { focus = JAP_com }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = JAP_nationalization 
+				add_ideas = weak_recession
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_com2
+		icon = GFX_JAP_com2
+		cost = 70
+		x = 5
+		y = 17
+		prerequisite = { focus = JAP_com1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = ban_on_private_enterprise
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_com3
+		icon = GFX_JAP_com3
+		cost = 70
+		x = 7
+		y = 17
+		prerequisite = { focus = JAP_com1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				RUS = { country_event = { id = russia.21 } }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com4
+		icon = GFX_JAP_com4
+		cost = 70
+		x = 7
+		y = 19
+		prerequisite = { focus = JAP_com12 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_state_claim = 524
+				add_state_claim = 967
+				add_state_claim = 968
+				add_state_claim = 964
+				add_state_claim = 965
+				news_event = { id = japnews.8 days = 1 }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com5
+		icon = GFX_JAP_com5
+		cost = 70
+		x = 7
+		y = 20
+		prerequisite = { focus = JAP_com4 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = { 
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				country_event = { id = japan.14 }
+				USA = { country_event = { id = usa.25 } }
+				USA = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+				transfer_state = 1045
+				transfer_state = 1044
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com6
+		icon = GFX_JAP_com6
+		cost = 70
+		x = 5
+		y = 18
+		prerequisite = { focus = JAP_com2 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = single-party_state
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com7
+		icon = GFX_JAP_com7
+		cost = 70
+		x = 5
+		y = 19
+		prerequisite = { focus = JAP_com6 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				country_event = { id = japan.13 }
+				diplomatic_relation = {
+					country = USA
+					relation = guarantee
+					active = no
+				}
+				diplomatic_relation = {
+					country = USA
+					relation = military_access
+					active = no
+				}
+				diplomatic_relation = {
+					country = USA
+					relation = non_aggression_pact
+					active = no
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_com8
+		icon = GFX_JAP_com8
+		cost = 70
+		x = 5
+		y = 20
+		prerequisite = { focus = JAP_com7 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 300
+				add_ideas = normal_working_time
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com9
+		icon = GFX_JAP_com9
+		cost = 70
+		x = 5
+		y = 21
+		prerequisite = { focus = JAP_com8 }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 300
+				add_ideas = total_social_security
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_com10
+		icon = GFX_JAP_com10
+		cost = 70
+		x = 5
+		y = 22
+		prerequisite = { focus = JAP_com9 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = JAP_multiplicatio
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_com11
+		icon = GFX_JAP_com11
+		cost = 70
+		x = 5
+		y = 23
+		prerequisite = { focus = JAP_com10 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					OR = {
+						is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					OR = {
+						is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+								NOT = {
+									owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = industrial_complex
+												size > 0
+												include_locked = yes
+											}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+							OR = {
+								is_in_home_area = yes
+									NOT = {
+										owner = {
+											any_owned_state = {
+												free_building_slots = {
+													building = industrial_complex
+													size > 0
+													include_locked = yes
+												}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+							OR = {
+								is_in_home_area = yes
+									NOT = {
+										owner = {
+											any_owned_state = {
+												free_building_slots = {
+													building = infrastructure
+													size > 0
+												}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+							OR = {
+								is_in_home_area = yes
+									NOT = {
+										owner = {
+											any_owned_state = {
+												free_building_slots = {
+													building = infrastructure
+													size > 0
+												}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+							OR = {
+								is_in_home_area = yes
+									NOT = {
+										owner = {
+											any_owned_state = {
+												free_building_slots = {
+													building = infrastructure
+													size > 0
+												}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+						OR = {
+							is_in_home_area = yes
+								NOT = {
+									owner = {
+										any_owned_state = {
+											free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_com12
+		icon = GFX_JAP_com12
+		cost = 70
+		x = 7
+		y = 18
+		prerequisite = { focus = JAP_com2 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = planned_economy
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_com13
+		icon = GFX_JAP_com13
+		cost = 70
+		x = 7
+		y = 21
+		prerequisite = { focus = JAP_com5 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = big_protect
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc 
+		icon = GFX_JAP_soc
+		cost = 70
+		x = 3
+		y = 15
+		prerequisite = { focus = JAP_start4 }
+		mutually_exclusive = { focus = JAP_com }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 120
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_soc1
+		icon = GFX_JAP_soc1
+		cost = 70
+		x = 3
+		y = 16
+		prerequisite = { focus = JAP_soc }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = JAP_Fearradiation
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc2
+		icon = GFX_JAP_soc2
+		cost = 70
+		x = 3
+		y = 17
+		prerequisite = { focus = JAP_soc1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = attract_immigrants
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		} 
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc3
+		icon = GFX_JAP_soc3
+		cost = 70
+		x = 3
+		y = 18
+		prerequisite = { focus = JAP_soc2 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 120
+				USA = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc4
+		icon = GFX_JAP_soc4
+		cost = 70
+		x = 3
+		y = 19
+		prerequisite = { focus = JAP_soc3 }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 200
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc5
+		icon = GFX_JAP_soc5
+		cost = 70
+		x = 3
+		y = 20
+		prerequisite = { focus = JAP_soc4 }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_ideas = free_market
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_soc6
+		icon = GFX_JAP_soc6
+		cost = 70
+		x = 3
+		y = 21
+		prerequisite = { focus = JAP_soc5 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 120
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_soc7
+		icon = GFX_JAP_soc7
+		cost = 70
+		x = 3
+		y = 22
+		prerequisite = { focus = JAP_soc6 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 120
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_soc8
+		icon = GFX_JAP_soc8
+		cost = 70
+		x = 3
+		y = 23
+		prerequisite = { focus = JAP_soc7 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				add_political_power = 300
+				hidden_effect = { add_ideas = fully_guranted_liberties }
+				hidden_effect = { add_ideas = total_social_security }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_soc10
+		icon = GFX_JAP_soc10
+		cost = 70
+		x = 1
+		y = 22
+		prerequisite = { focus = JAP_soc6 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				swap_ideas = {
+					remove_idea = NPT
+					add_idea = UN_convention_on_nuclear_weapons
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_soc11
+		icon = GFX_JAP_soc11
+		cost = 70
+		x = 1
+		y = 23
+		prerequisite = { focus = JAP_soc7 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start18
+				}
+				533 = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 2
+					}
+				}
+				531 = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 1
+					}
+				}
+				528 = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 1
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start18 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_nac1
+		icon = GFX_JAP_nac1
+		cost = 70
+		x = 23
+		y = 19
+		prerequisite = { focus = JAP_start10 }
+		mutually_exclusive = { focus = JAP_imp }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = JAP_fascism_party1
+					name = JAP_fascism_party1
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac2
+		icon = GFX_JAP_nac2
+		cost = 150
+		x = 23
+		y = 20
+		prerequisite = { focus = JAP_nac1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = average_terrorism
+				set_politics = { ruling_party = fascism	}
+				set_popularities = {
+						democratic = 2 
+						fascism = 90 
+						communism = 2 
+						neutrality = 2 
+						reformism =  2 
+						liberalism =  2 
+					}
+				hold_election = ROOT
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac3
+		icon = GFX_JAP_nac3
+		cost = 70
+		x = 23
+		y = 21
+		prerequisite = { focus = JAP_nac2 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				hidden_effect = { add_ideas = no_social_security }
+				add_political_power = 200
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac4
+		icon = GFX_JAP_nac4
+		cost = 70
+		x = 23
+		y = 22
+		prerequisite = { focus = JAP_nac3 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = dictatorship_state
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_sintoism
+		icon = GFX_JAP_sintoism
+		cost = 70
+		x = 21
+		y = 23
+		prerequisite = { focus = JAP_nac4 focus = JAP_imp3 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = state_religion
+				#add_ideas = sintoism_idea_lvl_2
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac5
+		icon = GFX_JAP_nac5
+		cost = 70
+		x = 23
+		y = 23
+		prerequisite = { focus = JAP_nac4 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				swap_ideas = { 
+					remove_idea = JAP_obschina
+					add_idea = JAP_fidelity 
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac11
+		icon = GFX_JAP_nac11
+		cost = 70
+		x = 21
+		y = 25
+		prerequisite = { focus = JAP_nac12 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_political_power = 400
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_nac6
+		icon = GFX_JAP_nac6
+		cost = 70
+		x = 21
+		y = 26
+		prerequisite = { focus = JAP_nac11 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = close_borders
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_nac12
+		icon = GFX_JAP_nac12
+		cost = 70
+		x = 21
+		y = 24
+		prerequisite = { focus = JAP_nac5 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = JAP_samurai
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_nac7
+		icon = GFX_JAP_nac7
+		cost = 70
+		x = 23
+		y = 25
+		prerequisite = { focus = JAP_nac10 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = very_high_taxes
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_nac8
+		icon = GFX_JAP_nac8
+		cost = 70
+		x = 23
+		y = 26
+		prerequisite = { focus = JAP_nac7 }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = state_propaganda_media
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_nac9
+		icon = GFX_JAP_nac9
+		cost = 70
+		x = 23
+		y = 27
+		prerequisite = { focus = JAP_nac8 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = nuclear_country
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_nac10
+		icon = GFX_JAP_nac10
+		cost = 140
+		x = 23
+		y = 24
+		prerequisite = { focus = JAP_nac5 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_political_power = -500
+				set_cosmetic_tag = JAP_Yamato
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_imp
+		icon = GFX_JAP_imp
+		cost = 70
+		x = 19
+		y = 19
+		prerequisite = { focus = JAP_start10 }
+		mutually_exclusive = { focus = JAP_nac1 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = weak_recession
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_imp1
+		icon = GFX_JAP_imp1
+		cost = 70
+		x = 19
+		y = 20
+		prerequisite = { focus = JAP_imp }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = JAP_Meidzi
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = JAP_imp2
+		icon = GFX_JAP_imp2
+		cost = 70
+		x = 19
+		y = 21
+		prerequisite = { focus = JAP_imp1 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				hidden_effect = { add_ideas = absolute_monarchy }
+				news_event = { id = japnews.11 }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_imp3
+		icon = GFX_JAP_imp3
+		cost = 70
+		x = 19
+		y = 22
+		prerequisite = { focus = JAP_imp2 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = JAP_know
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_imp4
+		icon = GFX_JAP_imp4
+		cost = 70
+		x = 19
+		y = 23
+		prerequisite = { focus = JAP_imp3 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				add_ideas = JAP_partia
+				hidden_effect = {
+					set_politics = { ruling_party = fascism }
+					set_popularities = {
+						democratic = 0 
+						fascism = 100
+						communism = 0 
+						neutrality =  0 
+						reformism = 0 
+						liberalism =  0 
+					}
+				}
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_imp5
+		icon = GFX_JAP_imp5
+		cost = 70
+		x = 19
+		y = 24
+		prerequisite = { focus = JAP_imp4 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				hidden_effect = { set_capital = 531 } 
+				country_event = { id = japan.16 }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+		focus = {
+		id = JAP_imp6
+		icon = GFX_JAP_imp6
+		cost = 70
+		x = 19
+		y = 25
+		prerequisite = { focus = JAP_imp5 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start17
+				}
+				#Доработать
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_cen
+		icon = GFX_JAP_cen
+		cost = 70
+		x = 10
+		y = 15
+		prerequisite = { focus = JAP_start5 }
+		mutually_exclusive = { focus = JAP_main1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = unitary_state_with_devolution
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_cen1
+		icon = GFX_JAP_cen1
+		cost = 70
+		x = 10
+		y = 16
+		prerequisite = { focus = JAP_cen }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = corruption_discounted
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_cen2
+		icon = GFX_JAP_cen2
+		cost = 70
+		x = 10
+		y = 17
+		prerequisite = { focus = JAP_cen1 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				#Доработать
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = JAP_cen3
+		icon = GFX_JAP_cen3
+		cost = 70
+		x = 10
+		y = 18
+		prerequisite = { focus = JAP_cen2 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = JAP_subKoreitsu
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}	
+	focus = {
+		id = JAP_cen4
+		icon = GFX_JAP_cen4
+		cost = 70
+		x = 10
+		y = 19
+		prerequisite = { focus = JAP_cen3 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = JAP_medkit
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
+		id = JAP_cen5
+		icon = GFX_JAP_cen5
+		cost = 70
+		x = 10
+		y = 20
+		prerequisite = { focus = JAP_cen4 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				RUS = { add_opinion_modifier = { target = JAP modifier = bristaySkandinav } }
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}	
+	focus = {
+		id = JAP_cen6
+		icon = GFX_JAP_cen6
+		cost = 70
+		x = 10
+		y = 21
+		prerequisite = { focus = JAP_cen5 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = JAP_cheapmedicine
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}	
+	focus = {
+		id = JAP_cen7
+		icon = GFX_JAP_cen7
+		cost = 70
+		x = 10
+		y = 22
+		prerequisite = { focus = JAP_cen6 }
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = JAP_pol_start16
+				}
+				add_ideas = JAP_dzaibatsu_Never_gonna_give_you_down
+			}
+			if = { limit = { NOT = { has_completed_focus = JAP_pol_start16 } } custom_effect_tooltip = JAP_null_effect_TT }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = JAP_army
+		icon = GFX_JAP_army
+		available = {
+			has_completed_focus = JAP_pol_nat1
+		}
+		cost = 70
+		x = 45
+		y = 0
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+
+		}
+		search_filters = {
+			FOCUS_FILTER_ARMY
+			FOCUS_FILTER_NAVY
+			FOCUS_FILTER_AVIATION
+		}
+	}
+	focus = {
+		id = JAP_army_land
+		icon = GFX_JAP_army_land
+		prerequisite = { focus = JAP_army }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+			}
+		}
+		cost = 70
+		x = 42
+		y = 1
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			army_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_army_land1
+		icon = GFX_JAP_army_land1
+		prerequisite = { focus = JAP_army_land }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+				has_government = fascism
+			}
+		}
+		cost = 70
+		x = 37
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			custom_effect_tooltip = JAP_army_land1_TT
+			add_equipment_to_stockpile = {
+				amount = 3500
+				type = army_salw_equipment_6
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_army_land2
+		icon = GFX_JAP_army_land2
+		prerequisite = { focus = JAP_army_land }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+				has_government = fascism
+			}
+			custom_trigger_tooltip = {
+				tooltip = JAP_army_land2_TTT
+				check_variable = { budget_reserve > 100 }
+			}
+		}
+		cost = 70
+		x = 39
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			GER = {
+				send_equipment = {
+					target = JAP
+					type = army_ammunition_equipment_6
+					amount = 3200
+				}
+				send_equipment = {
+					target = JAP
+					type = army_salw_equipment_6
+					amount = 3200
+				}
+				send_equipment = {
+					target = JAP
+					type = special_ammunition_equipment_6
+					amount = 3200
+				}
+				subtract_from_variable = { budget_reserve = -100 }
+			}
+			custom_effect_tooltip = JAP_army_land2_TT
+			subtract_from_variable = { budget_reserve = 100 }
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_army_land3
+		icon = GFX_JAP_army_land3
+		prerequisite = { focus = JAP_army_land }
+		cost = 70
+		x = 41
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			army_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_army_land4
+		icon = GFX_JAP_army_land4
+		prerequisite = { focus = JAP_army_land1 }
+		cost = 70
+		x = 37
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = JAP_army_land5
+		icon = GFX_JAP_army_land5
+		prerequisite = { focus = JAP_army_land2 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_army_land5_TTT
+				check_variable = { budget_reserve > 379 }
+			}
+		}
+		cost = 70
+		x = 39
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			USA = {
+				send_equipment = {
+					target = JAP
+					type = ifv_tracked_g3_equipment_0
+					amount = 120
+				}
+				subtract_from_variable = { budget_reserve = -379 }
+			}
+			custom_effect_tooltip = JAP_army_land5_TT
+			subtract_from_variable = { budget_reserve = 379 }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_army_JAP_KOR
+		icon = GFX_JAP_army_JAP_KOR
+		prerequisite = { focus = JAP_army_land3 }
+		prerequisite = { focus = JAP_army_air1 }
+		cost = 70
+		x = 42
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_AVIATION FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_army_air
+		icon = GFX_JAP_army_air
+		prerequisite = { focus = JAP_army }
+		cost = 70
+		x = 45
+		y = 1
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			air_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_army_air1
+		icon = GFX_JAP_army_air1
+		prerequisite = { focus = JAP_army_air }
+		cost = 70
+		x = 43
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			air_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_army_air2
+		icon = GFX_JAP_army_air2
+		prerequisite = { focus = JAP_army_air }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+				has_government = fascism
+			}
+			custom_trigger_tooltip = {
+				tooltip = JAP_army_air2_TTT
+				check_variable = { budget_reserve > 393 }
+			}
+		}
+		cost = 70
+		x = 45
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			USA = {
+				send_equipment = {
+					target = JAP
+					type = interceptor_fighter_equipment_5
+					amount = 33
+				}
+				subtract_from_variable = { budget_reserve = -393 }
+			}
+			custom_effect_tooltip = JAP_army_air2_TT
+			subtract_from_variable = { budget_reserve = 393 }
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_army_air3
+		icon = GFX_JAP_army_air3
+		prerequisite = { focus = JAP_army_air }
+		cost = 70
+		x = 47
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			air_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_army_air4
+		icon = GFX_JAP_army_air4
+		prerequisite = { focus = JAP_army_air2 }
+		cost = 70
+		x = 44
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			add_tech_bonus = {
+				name = light_fighter_T7
+				bonus = 1.5
+				uses = 1
+				category = cat_5thgen_aircrafts
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
+		id = JAP_army_air5
+		icon = GFX_JAP_army_air5
+		prerequisite = { focus = JAP_army_air2 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_army_air5_TTT
+				check_variable = { budget_reserve > 1500 }
+			}
+		}
+		cost = 70
+		x = 46
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			USA = {
+				create_production_license = {
+					target = JAP
+					equipment = { type = superior_fighter_equipment_7 }
+					cost_factor = 3
+				}
+				subtract_from_variable = { budget_reserve = -1500 }
+			}
+			custom_effect_tooltip = JAP_army_air5_TT
+			subtract_from_variable = { budget_reserve = 1500 }
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = JAP_army_JAP_USA
+		icon = GFX_JAP_army_JAP_USA
+		prerequisite = { focus = JAP_army_air3 }
+		prerequisite = { focus = JAP_army_navy1 }
+		cost = 70
+		x = 48
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_AVIATION FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy
+		icon = GFX_JAP_army_navy
+		prerequisite = { focus = JAP_army }
+		cost = 70
+		x = 48
+		y = 1
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			navy_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy1
+		icon = GFX_JAP_army_navy1
+		prerequisite = { focus = JAP_army_navy }
+		cost = 70
+		x = 49
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			navy_experience = 100
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy2
+		icon = GFX_JAP_army_navy2
+		prerequisite = { focus = JAP_army_navy }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+				has_government = fascism
+			}
+		}
+		cost = 70
+		x = 51
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			create_equipment_variant = { 
+				name = "Maya class" 
+				type = ship_hull_frigate_6
+				modules = {
+					fixed_ship_battery_slot = ship_large_tasm_rcc
+					fixed_ship_anti_air_slot = ship_sam_large_strike
+					fixed_ship_fire_control_system_slot = ship_medium_aegis_strike
+					fixed_ship_radar_slot = ship_radar_7
+					fixed_ship_engine_slot = light_ship_engine_7
+					fixed_ship_torpedo_slot = ship_torpedo_7
+					mid_1_custom_slot = homing_torpedoes_large
+					rear_1_custom_slot = ship_mine_layer_1
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_frigate_6
+					creator = "JAP" 
+					version_name = "Maya class"
+				}
+				name = "JS Maya" 
+				requested_factories = 6
+				progress = 0.3
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_frigate_6
+					creator = "JAP" 
+					version_name = "Maya class"
+				}
+				name = "JS Haguro" 
+				requested_factories = 3
+				progress = 0.3
+				amount = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy3
+		icon = GFX_JAP_army_navy3
+		prerequisite = { focus = JAP_army_navy }
+		available = {
+			OR = {
+				has_completed_focus = JAP_main12
+				has_government = fascism
+			}
+		}
+		cost = 70
+		x = 53
+		y = 2
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			528 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 10011
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy4
+		icon = GFX_JAP_army_navy4
+		prerequisite = { focus = JAP_army_navy2 }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JAP_army_navy4_TTT
+				check_variable = { budget_reserve > 470 }
+			}
+		}
+		cost = 70
+		x = 51
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			USA = {
+				# transfer_ship = {
+				# 	prefer_name = "HMS Achilles"
+				# 	type = light_cruiser
+				# 	target = JAP
+				# }
+				# transfer_ship = {
+				# 	prefer_name = "HMS Achilles"
+				# 	type = light_cruiser
+				# 	target = JAP
+				# }
+				# transfer_ship = {
+				# 	prefer_name = "HMS Achilles"
+				# 	type = light_cruiser
+				# 	target = JAP
+				# }
+				subtract_from_variable = { budget_reserve = -470 }
+			}
+			subtract_from_variable = { budget_reserve = 470 }
+			custom_effect_tooltip = JAP_army_navy4_TT
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy5
+		icon = GFX_JAP_army_navy5
+		prerequisite = { focus = JAP_army_navy3 }
+		cost = 70
+		x = 53
+		y = 3
+		ai_will_do = { factor = 5 } 
+		completion_reward = {
+			531 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 7072
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+	focus = {
+		id = JAP_army_navy6
+		icon = GFX_JAP_army_navy6
+		prerequisite = { focus = JAP_army_navy5 }
+		available = { has_war = yes }
+		cost = 20
+		x = 53
+		y = 4
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_mines = { region = 79 amount = 327 }
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+	}
+}

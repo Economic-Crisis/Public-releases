@@ -1,0 +1,74 @@
+﻿##### Brigades Templates #####
+
+division_template = {
+	name = "Narodnoye Opolchenie"
+	regiments = {
+		light_motorized = { x = 0 y = 0 }
+		light_motorized = { x = 0 y = 1 }
+		light_motorized = { x = 0 y = 2 }
+		light_motorized = { x = 1 y = 0 }
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 2 y = 0 }
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+	}
+}
+
+##### Units #####
+
+units = {
+	division = {
+		name = "1st Narodnoye Opolchenie"
+		location = 3722
+		division_template = "Narodnoye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "2nd Narodnoye Opolchenie"
+		location = 3722
+		division_template = "Narodnoye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "3rd Narodnoye Opolchenie"
+		location = 9680
+		division_template = "Narodnoye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "4st Narodnoye Opolchenie"
+		location = 3686
+		division_template = "Narodnoye Opolchenie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CRM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = army_ammunition_equipment_1
+			creator = "CRM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

@@ -1,0 +1,84 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 1099
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 151 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "CAR_2013"
+
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		high_terrorism
+	}
+
+	set_convoys = 15
+	set_stability = 0.4
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.1.23"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 0
+		reformism = 60
+		liberalism = 0
+		democratic = 30
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "François Bozizé"
+		desc = "POLITICS_FRANCOIS_BOZIZE_DESC"
+		picture = "gfx/leaders/CAR/portrait_francois_bozize.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#Лидер исламской группировки "Селека"
+	create_country_leader = {
+		name = "Michel Djotodia"
+		desc = "POLITICS_MICHEL_DJOTODIA_DESC"
+		picture = "gfx/leaders/CAR/portrait_michel_djotodia.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_corps_commander = {
+		name = "Marcel Mombeka"
+		portrait_path = "gfx/leaders/CAR/portrait_car_general_marcel_mombeka.dds"
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+}
+

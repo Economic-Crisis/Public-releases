@@ -1,0 +1,61 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 658
+
+#  6 декабря 1971 года
+    add_ideas = {
+		arab_league_member
+		parliamentary_monarchy
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 39040 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "UAE_2013"
+
+	add_ideas = {
+		opec_member
+		gcc_member
+		absolute_monarchy
+		terrorism_discounted
+		mixed_schools
+		oil_spike
+		gaz_trader
+		NPT
+		
+		integration_in_ccasg
+	}
+
+	add_political_power = 0
+	set_convoys = 20
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 80
+		neutrality = 10
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Khalifa Bin Zayed Al Nahayan"
+		desc = ""
+		picture = "gfx/leaders/UAE/portrait_khalifa_bin_Zayed_al_nahyan.dds"
+		ideology = sunni_royalism
+		traits = { trait_sunni_royalism }
+	}
+}

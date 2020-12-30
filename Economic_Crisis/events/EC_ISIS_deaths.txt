@@ -1,0 +1,460 @@
+﻿########################
+## Economic Crisis #####
+#######################################
+## ISIS leaders deaths events     #####
+#######################################
+## Written by SemyonMinich #####
+################################
+
+add_namespace = isis_death
+
+#Death of Abu Ala Al-Afri
+country_event = {
+	id = isis_death.1
+	title = isis_death.1.t
+	desc = isis_death.1.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.3.25
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.1.a"
+		custom_effect_tooltip = Abu_Ala_Al_Afri_killed
+		set_country_flag = isis_Abu_Ala_Al_Afri_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Ala_Al-Afri_hog
+		}
+	}
+}
+
+#Death of Abu Ayman al-Iraqi
+country_event = {
+	id = isis_death.2
+	title = isis_death.2.t
+	desc = isis_death.2.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2014.11.7
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.2.a"
+		custom_effect_tooltip = Abu_Ayman_al_Iraqi_killed
+		set_country_flag = isis_Abu_Ayman_al_Iraqi_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Ayman_al-Iraqi_defm
+		}
+	}
+}
+
+#Death of Haji Bekir
+country_event = {
+	id = isis_death.3
+	title = isis_death.3.t
+	desc = isis_death.3.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2014.2.1
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = { # Ok
+		name = isis_death.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.3.a"
+		custom_effect_tooltip = Haji_Bekir_killed
+		set_country_flag = isis_Haji_Bekir_killed
+		hidden_effect = {
+			remove_ideas = IGL_Haji_Bekir_defm
+		}
+	}
+}
+
+#Death of Abu Muhammad al-Adnani
+country_event = {
+	id = isis_death.4
+	title = isis_death.4.t
+	desc = isis_death.4.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.8.30
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = { # Ok
+		name = isis_death.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.4.a"
+		custom_effect_tooltip = Abu_Muhammad_al_Adnani_killed
+		set_country_flag = isis_Abu_Muhammad_al_Adnani_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Muhammad_al-Adnani_fgm
+			remove_ideas = IGL_Abu_Muhammad_al-Adnani
+		}
+	}
+}
+
+#Death of Muafak Mustafa Mohammed al-Karmush
+country_event = {
+	id = isis_death.5
+	title = isis_death.5.t
+	desc = isis_death.5.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2017.2.13
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = { # Ok
+		name = isis_death.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.5.a"
+		custom_effect_tooltip = Muafak_Mustafa_Mohammed_al_Karmush_killed
+		set_country_flag = isis_Muafak_Mustafa_Mohammed_al_Karmush_killed
+		hidden_effect = {
+			remove_ideas = IGL_Muafak_Mustafa_Mohammed_al_Karmush_ecm
+		}
+	}
+}
+
+#Death of Haji Imam
+country_event = {
+	id = isis_death.6
+	title = isis_death.6.t
+	desc = isis_death.6.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.3.25
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.6.a"
+		custom_effect_tooltip = Haji_Imam_killed
+		set_country_flag = isis_Haji_Imam_killed
+		hidden_effect = {
+			remove_ideas = IGL_Haji_Imam_ecm
+		}
+	}
+}
+
+#Death of Mohammed Zaalyan Al-Afri
+country_event = {
+	id = isis_death.7
+	title = isis_death.7.t
+	desc = isis_death.7.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2015.6.24
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.7.a"
+		custom_effect_tooltip = Mohammed_Zaalyan_Al_Afri_killed
+		set_country_flag = isis_Mohammed_Zaalyan_Al_Afri_killed
+		hidden_effect = {
+			remove_ideas = IGL_Mohammed_Zaalyan_Al-Afri_ecm
+		}
+	}
+}
+
+#Death of Jihadi John
+country_event = {
+	id = isis_death.8
+	title = isis_death.8.t
+	desc = isis_death.8.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2015.11.12
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.8.a"
+		custom_effect_tooltip = Jihadi_John_killed
+		set_country_flag = isis_Jihadi_John_killed
+		hidden_effect = {
+			remove_ideas = IGL_Jihadi_John
+		}
+	}
+}
+
+#Death of Abu Muslim At-Turkmani
+country_event = {
+	id = isis_death.9
+	title = isis_death.9.t
+	desc = isis_death.9.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2015.8.18
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.9.a"
+		custom_effect_tooltip = Abu_Muslim_At-Turkmani_killed
+		set_country_flag = isis_Abu_Muslim_At-Turkmani_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Muslim_At-Turkmani
+		}
+	}
+}
+
+#Death of Anatoly Zemlyanka
+country_event = {
+	id = isis_death.10
+	title = isis_death.10.t
+	desc = isis_death.10.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.10.21
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.10.a"
+		custom_effect_tooltip = Anatoly_Zemlyanka_killed
+		set_country_flag = isis_Anatoly_Zemlyanka_killed
+		hidden_effect = {
+			remove_ideas = IGL_Anatoly_Zemlyanka
+		}
+	}
+}
+
+#Death of Abu Wahib
+country_event = {
+	id = isis_death.11
+	title = isis_death.11.t
+	desc = isis_death.11.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.5.6
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.11.a"
+		custom_effect_tooltip = Abu_Wahib_killed
+		set_country_flag = isis_Abu_Wahib_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Wahib_chogs
+		}
+	}
+}
+
+#Death of Abu Hajar al-Souri
+country_event = {
+	id = isis_death.12
+	title = isis_death.12.t
+	desc = isis_death.12.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2014.9.4
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.12.a"
+		custom_effect_tooltip = Abu_Hajar_al_Souri_killed
+		set_country_flag = isis_Abu_Hajar_al_Souri_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Hajar_al_Souri_chogf
+		}
+	}
+}
+
+#Death of Abu Hamza al-Ansari
+country_event = {
+	id = isis_death.13
+	title = isis_death.13.t
+	desc = isis_death.13.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2014.10.28
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.13.a"
+		custom_effect_tooltip = Abu_Hamza_al_Ansari_killed
+		set_country_flag = isis_Abu_Hamza_al_Ansari_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Hamza_al_Ansari_chogf
+		}
+	}
+}
+
+#Death of Abu Abdulrahman al-Bilwai
+country_event = {
+	id = isis_death.14
+	title = isis_death.14.t
+	desc = isis_death.14.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2014.6.4
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.14.a"
+		custom_effect_tooltip = Abu_Abdulrahman_al_Bilwai_killed
+		set_country_flag = isis_Abu_Abdulrahman_al_Bilwai_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Abdulrahman_al_Bilwai_mhc
+		}
+	}
+}
+
+#Death of Abu Umar al-Shishani
+country_event = {
+	id = isis_death.15
+	title = isis_death.15.t
+	desc = isis_death.15.d
+	picture = GFX_event_IGL_isis_death_of_leader
+
+	fire_only_once = yes
+
+	trigger = {
+	    tag = ISS
+		  date > 2016.7.13
+			has_war = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Ok
+		name = isis_death.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): isis_death.15.a"
+		custom_effect_tooltip = Abu_Umar_al_Shishani_killed
+		set_country_flag = isis_Abu_Umar_al_Shishani_killed
+		hidden_effect = {
+			remove_ideas = IGL_Abu_Umar_al_Shishani_mhc
+		}
+	}
+}

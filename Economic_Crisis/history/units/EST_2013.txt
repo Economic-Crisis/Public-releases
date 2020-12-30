@@ -1,0 +1,40 @@
+﻿division_template = {
+	name = "Jalaväebrigaad"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		artillery_brigade = { x = 1 y = 0 }
+	}
+  support = {
+    recon_battalion = { x = 0 y = 0 }
+    engineer_battalion = { x = 0 y = 1 }
+  }
+}
+division_template = {
+	name = "Vahipataljon"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		light_motorized = { x = 1 y = 0 }
+	}
+	support = {
+		sniper_company = { x = 0 y = 0 }
+	}
+}
+units = {
+	####### Regional Command "Maaväe Staap" #######
+	division= {
+		name = "1. Jalaväebrigaad"
+		location = 3152
+		division_template = "Jalaväebrigaad"
+		start_equipment_factor = 0.8
+	}
+	division= {
+		name = "2. Vahipataljon"
+		location = 9221
+		division_template = "Vahipataljon"
+		start_equipment_factor = 0.5
+	}
+}

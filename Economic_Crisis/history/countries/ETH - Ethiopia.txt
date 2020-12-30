@@ -1,0 +1,80 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 271
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4765 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	add_ideas = {
+		au_member
+		parliamentary_republic
+		high_terrorism
+		mixed_schools
+		NPT
+	}
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 0
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.5.24"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 64
+		liberalism = 0
+		democratic = 26
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Hailemariam Desalegn"
+		desc = ""
+		picture = "gfx/leaders/ETH/portrait_hailemariam_desalegn.dds"
+		ideology = democratic_socialism
+		traits = { trait_democratic_socialism  }
+    }
+
+	#create_country_leader = {
+	#	name = "Mulatu Teshome"
+	#	desc = ""
+	#	picture = "gfx/leaders/ETH/portrait_mulatu_teshome.dds"
+	#	ideology = democratic_socialism
+	#	traits = { trait_democratic_socialism  }
+   # }
+
+	create_corps_commander = {
+		name = "Samora Yunis"
+		portrait_path = "gfx/leaders/ETH/portrait_eth_general_samora_yunis.dds"
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Birhanu Julla"
+		portrait_path = "gfx/leaders/ETH/portrait_eth_general_birhanu_julla.dds"
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+}
+

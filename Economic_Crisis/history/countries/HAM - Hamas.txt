@@ -1,0 +1,65 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 833
+
+2013.11.1 = {
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		not_recognized_country
+		dictatorship_state
+		unitary_state
+		limitation_of_liberties
+		mixed_schools
+		high_terrorism
+		high_corruption
+
+		sanctions
+		sanctions1
+		sanctions2
+		sanctions3
+	}
+
+	declare_war_on = { target = PAL type = civil_war }
+
+	add_political_power = 0
+	set_country_flag = pai_nondem_totalitarian
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.1"
+		election_frequency = 72
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ismail Haniyeh"
+		picture = "gfx/leaders/HAM/portrait_ismail_haniyeh.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Khaled Mashal"
+		picture = "gfx/leaders/HAM/portrait_khaled_mashal.dds"
+		ideology = sunni_islamism
+		expire = "2017.5.6"
+		traits = { trait_sunni_islamism }
+	}
+
+}

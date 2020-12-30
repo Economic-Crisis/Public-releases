@@ -1,0 +1,66 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 690
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 852 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_microstate_2013"
+
+	set_stability = 0.75
+	add_ideas = { 
+		parliamentary_monarchy
+		queen_elizabet
+		NPT
+	}
+	
+	add_political_power = 0
+
+	set_convoys = 10
+	
+
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2012.5.8"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 92
+		democratic = 0
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+
+	#create_country_leader = {
+	#	name = "Hubert Minnis"
+	#	desc = "POLITICS_HUBERT_MINNIS_DESC"
+	#	picture = "gfx/leaders/BAH/portrait_hubert_minnis.dds"
+	#	ideology = conservative_democracy
+	# 	traits = { trait_conservative_democracy}
+	#}
+
+	create_country_leader = {
+		name = "Perry Christie"
+		desc = "POLITICS_PERRY_CHRISTIE_DESC"
+		picture = "gfx/leaders/BAH/portrait_perry_christie.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}
+
+#2017.5.11 = {
+#	set_politics = {
+#		ruling_party = democratic
+#	}
+#}

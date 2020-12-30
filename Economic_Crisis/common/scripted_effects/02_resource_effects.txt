@@ -1,0 +1,303 @@
+### EC 
+
+clr_num_of_factories = {
+	set_variable = { ROOT.num_of_uran_factory = 0 }
+	set_variable = { ROOT.num_of_steel_factory = 0 }
+	set_variable = { ROOT.num_of_aluminium_factory = 0 }
+	set_variable = { ROOT.num_of_alloy_steel_factory = 0 }
+	set_variable = { ROOT.num_of_rare_earth_factory = 0 }
+}
+
+set_num_of_factories = {
+	
+	this.Owner = { 
+		
+	add_to_variable = { num_of_uran_factory = PREV.building_level@uran_factory }
+	add_to_variable = { num_of_steel_factory = PREV.building_level@steel_factory }
+	add_to_variable = { num_of_aluminium_factory = PREV.building_level@aluminium_factory }
+	add_to_variable = { num_of_alloy_steel_factory = PREV.building_level@alloy_steel_factory }
+	add_to_variable = { num_of_rare_earth_factory = PREV.building_level@rare_earth_factory }
+	add_to_variable = { num_of_cl_steel_factory = building_level@cl_alloy_steel_factory }
+	}
+	
+
+
+}
+
+clr_oil_cons = {
+	set_variable = { total_oil_cons = 0 }
+}
+
+set_oil_cons = {
+
+	set_temp_variable = { oil_cons_state = state_population_k }
+	
+			if = { limit = { has_state_category = enclave } 		multiply_temp_variable = { oil_cons_state = 0.1 } }	
+			if = { limit = { has_state_category = wasteland } 		multiply_temp_variable = { oil_cons_state = 0.2 } }	
+			if = { limit = { has_state_category = small_island } 	multiply_temp_variable = { oil_cons_state = 0.3 } }	
+			if = { limit = { has_state_category = tiny_island } 	multiply_temp_variable = { oil_cons_state = 0.4 } }	
+			if = { limit = { has_state_category = pastoral }		multiply_temp_variable = { oil_cons_state = 0.5 } }	
+			if = { limit = { has_state_category = rural }			multiply_temp_variable = { oil_cons_state = 0.6 } }	
+			if = { limit = { has_state_category = town }			multiply_temp_variable = { oil_cons_state = 0.7 } }	
+			if = { limit = { has_state_category = large_town }		multiply_temp_variable = { oil_cons_state = 0.8 } }	
+			if = { limit = { has_state_category = city }			multiply_temp_variable = { oil_cons_state = 0.9 } }	
+			if = { limit = { has_state_category = large_city }		multiply_temp_variable = { oil_cons_state = 1.0 } }	
+			if = { limit = { has_state_category = metropolis }		multiply_temp_variable = { oil_cons_state = 1.1 } }	
+			if = { limit = { has_state_category = megalopolis } 	multiply_temp_variable = { oil_cons_state = 1.2 } }
+			
+	add_to_variable = { PREV.total_oil_cons = oil_cons_state } 
+	
+}
+
+set_total_oil_cons = {
+	
+	divide_variable = { total_oil_cons = 500 }
+	round_variable = total_oil_cons
+	
+	#Winter
+	if = { limit = { check_variable = { global.current_season = 1 } } multiply_variable = { total_oil_cons = -2 } }
+	#Spring
+	if = { limit = { check_variable = { global.current_season = 2 } } multiply_variable = { total_oil_cons = -1 } }
+	#Summer
+	if = { limit = { check_variable = { global.current_season = 3 } } multiply_variable = { total_oil_cons = -0.8 } }
+	#Autumn
+	if = { limit = { check_variable = { global.current_season = 4 } } multiply_variable = { total_oil_cons = -1 } }
+	
+	round_variable = total_oil_cons
+	
+	set_variable = { total_oil_cons_visible = total_oil_cons }
+	multiply_variable = { total_oil_cons_visible = -1 }
+	
+	add_fuel = total_oil_cons
+	
+}
+
+
+
+set_null_production_of_uran_factory = {
+	if = { limit = { check_variable = { num_of_uran_factory > 0 } }
+	
+	
+		if = { 
+			limit = { check_variable = { resource@uran < 0 } }
+		
+			set_temp_variable = { temp_resource_ratio = resource@uran }
+			divide_temp_variable = { temp_resource_ratio = -8 }
+			round_temp_variable = temp_resource_ratio
+		if = { 
+			limit = { 
+				check_variable = {
+					var = temp_resource_ratio
+					value = NUM_cl_uran_factory
+					compare = not_equals
+				}		
+		    }
+			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
+			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_uran_factory }
+			add_offsite_building = { type = cl_uran_factory level = temp_resource_ratio_add }
+			set_variable = { NUM_cl_uran_factory = temp_resource_ratio }
+		}
+	
+		}
+		
+		else_if = { limit = { AND = { check_variable = { NUM_cl_uran_factory > 0 } check_variable = { resource@uran > -1 } } }
+			multiply_variable = { NUM_cl_uran_factory = -1 }
+			add_offsite_building = { type = cl_uran_factory level = NUM_cl_uran_factory }
+			set_variable = { NUM_cl_uran_factory = 0 }
+		}
+	
+	}
+}
+
+set_null_production_of_steel_factory = {
+
+	if = { limit = { check_variable = { num_of_steel_factory > 0 } }
+	
+	
+		if = { 
+			limit = { check_variable = { resource@iron_ore < 0 } }
+		
+			set_temp_variable = { temp_resource_ratio = resource@iron_ore }
+			divide_temp_variable = { temp_resource_ratio = -8 }
+			round_temp_variable = temp_resource_ratio
+		if = { 
+			limit = { 
+				check_variable = {
+					var = temp_resource_ratio
+					value = NUM_cl_steel_factory
+					compare = not_equals
+				}		
+		    }
+			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
+			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_steel_factory }
+			add_offsite_building = { type = cl_steel_factory level = temp_resource_ratio_add }
+			set_variable = { NUM_cl_steel_factory = temp_resource_ratio }
+		}
+	
+		}
+		
+		else_if = { limit = { AND = { check_variable = { NUM_cl_steel_factory > 0 } check_variable = { resource@iron_ore > -1 } } }
+			multiply_variable = { NUM_cl_steel_factory = -1 }
+			add_offsite_building = { type = cl_steel_factory level = NUM_cl_steel_factory }
+			set_variable = { NUM_cl_steel_factory = 0 }
+		}
+	
+	}
+}
+
+set_null_production_of_aluminium_factory = {
+
+if = { limit = { check_variable = { num_of_aluminium_factory > 0 } }
+	
+	
+		if = { 
+			limit = { check_variable = { resource@bauxite < 0 } }
+		
+			set_temp_variable = { temp_resource_ratio = resource@bauxite }
+			divide_temp_variable = { temp_resource_ratio = -2 }
+			round_temp_variable = temp_resource_ratio
+		if = { 
+			limit = { 
+				check_variable = {
+					var = temp_resource_ratio
+					value = NUM_cl_aluminium_factory
+					compare = not_equals
+				}		
+		    }
+			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
+			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_aluminium_factory }
+			add_offsite_building = { type = cl_aluminium_factory level = temp_resource_ratio_add }
+			set_variable = { NUM_cl_aluminium_factory = temp_resource_ratio }
+		}
+	
+		}
+		
+		else_if = { limit = { AND = { check_variable = { NUM_cl_aluminium_factory > 0 } check_variable = { resource@bauxite > -1 } } }
+			multiply_variable = { NUM_cl_aluminium_factory = -1 }
+			add_offsite_building = { type = cl_aluminium_factory level = NUM_cl_aluminium_factory }
+			set_variable = { NUM_cl_aluminium_factory = 0 }
+		}
+	
+	}
+}
+
+set_null_production_of_alloy_steel_factory = {
+
+
+
+if = { limit = { check_variable = { num_of_alloy_steel_factory > 0 } }
+	
+	if = { limit = { check_variable = { resource@alloy_ore < resource@steel } } set_temp_variable = { needed_resource = resource@alloy_ore } }
+	else = { set_temp_variable = { needed_resource = resource@steel } }
+	
+		if = { 
+			limit = { check_variable = { needed_resource < 0 } }
+		
+			set_temp_variable = { temp_resource_ratio = needed_resource }
+			divide_temp_variable = { temp_resource_ratio = -1 }
+			round_temp_variable = temp_resource_ratio
+		if = { 
+			limit = { 
+				check_variable = {
+					var = temp_resource_ratio
+					value = NUM_cl_alloy_steel_factory
+					compare = not_equals
+				}		
+		    }
+			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
+			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_alloy_steel_factory }
+			add_offsite_building = { type = cl_alloy_steel_factory level = temp_resource_ratio_add }
+			set_variable = { NUM_cl_alloy_steel_factory = temp_resource_ratio }
+		}
+	
+		}
+		
+		else_if = { limit = { AND = { check_variable = { NUM_cl_alloy_steel_factory > 0 } check_variable = { needed_resource > -1 } } }
+			multiply_variable = { NUM_cl_alloy_steel_factory = -1 }
+			add_offsite_building = { type = cl_alloy_steel_factory level = NUM_cl_alloy_steel_factory }
+			set_variable = { NUM_cl_alloy_steel_factory = 0 }
+		}
+	
+	}
+}
+
+set_null_production_of_rare_earth_factory = {
+
+if = { limit = { check_variable = { num_of_rare_earth_factory > 0 } }
+	
+	
+		if = { 
+			limit = { check_variable = { resource@rare_earth_ore < 0 } }
+		
+			set_temp_variable = { temp_resource_ratio = resource@rare_earth_ore }
+			divide_temp_variable = { temp_resource_ratio = -4 }
+			round_temp_variable = temp_resource_ratio
+		if = { 
+			limit = { 
+				check_variable = {
+					var = temp_resource_ratio
+					value = NUM_cl_rare_earth_factory
+					compare = not_equals
+				}		
+		    }
+			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
+			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_rare_earth_factory }
+			add_offsite_building = { type = cl_rare_earth_factory level = temp_resource_ratio_add }
+			set_variable = { NUM_cl_rare_earth_factory = temp_resource_ratio }
+		}
+	
+		}
+		
+		else_if = { limit = { AND = { check_variable = { NUM_cl_rare_earth_factory > 0 } check_variable = { resource@rare_earth_ore > -1 } } }
+			multiply_variable = { NUM_cl_rare_earth_factory = -1 }
+			add_offsite_building = { type = cl_rare_earth_factory level = NUM_cl_rare_earth_factory }
+			set_variable = { NUM_cl_rare_earth_factory = 0 }
+		}
+	
+	}
+}
+
+
+set_native_resources = {
+
+	set_variable = { native_resource_iron_ore = num_of_steel_factory }
+	multiply_variable = { native_resource_iron_ore = 8 }
+	add_to_variable = { native_resource_iron_ore = resource_produced@iron_ore }
+	set_variable = { native_resource_ratio_iron_ore = resource_produced@iron_ore }
+	divide_variable = { native_resource_ratio_iron_ore = native_resource_iron_ore }
+
+	set_variable = { native_resource_bauxite = num_of_aluminium_factory }
+	multiply_variable = { native_resource_bauxite = 2 }
+	add_to_variable = { native_resource_bauxite = resource_produced@bauxite }
+	set_variable = { native_resource_ratio_bauxite = resource_produced@bauxite }
+	divide_variable = { native_resource_ratio_bauxite = native_resource_bauxite }
+
+	set_variable = { native_resource_alloy_ore  = num_of_alloy_steel_factory }
+	multiply_variable = { native_resource_alloy_ore  = 2 }
+	add_to_variable = { native_resource_alloy_ore  = resource_produced@alloy_ore  }
+	set_variable = { native_resource_ratio_alloy_ore  = resource_produced@alloy_ore  }
+	divide_variable = { native_resource_ratio_alloy_ore  = native_resource_alloy_ore  }
+
+	set_variable = { native_resource_steel = num_of_alloy_steel_factory }
+	multiply_variable = { native_resource_steel = 5 }
+	add_to_variable = { native_resource_steel = resource_produced@steel }
+	set_variable = { native_resource_ratio_steel = resource_produced@steel }
+	divide_variable = { native_resource_ratio_steel = native_resource_steel }
+
+	set_variable = { native_resource_rare_earth_ore = num_of_rare_earth_factory }
+	multiply_variable = { native_resource_rare_earth_ore = 3 }
+	add_to_variable = { native_resource_rare_earth_ore = resource_produced@rare_earth_ore }
+	set_variable = { native_resource_ratio_rare_earth_ore = resource_produced@rare_earth_ore }
+	divide_variable = { native_resource_ratio_rare_earth_ore = native_resource_rare_earth_ore }
+
+	set_variable = { native_resource_uran = num_of_uran_factory }
+	#local_resources_uran = -1
+	add_to_variable = { native_resource_uran = resource_produced@uran }
+	set_variable = { native_resource_ratio_uran = resource_produced@uran }
+	divide_variable = { native_resource_ratio_uran = native_resource_uran }
+	
+	
+	
+}
+
+

@@ -1,0 +1,1563 @@
+# Economic Crisis 2013 added
+ideas = {
+
+	head_of_government = {
+
+	ukr_nikolay_azarov_hog = {
+
+	picture = GFX_idea_ukr_nikolay_azarov_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_centrist
+                       pm_centrist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_yaroslav_moskalenko_hog = {
+		picture = GFX_idea_ukr_yaroslav_moskalenko_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+				NOT = { has_country_leader = { id = 110008 ruling_only = yes name = "Viktor Yanukovych"} }
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_centrist
+                       pm_oligarchy }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_borys_kolesnikov_hog = {
+		picture = GFX_idea_ukr_borys_kolesnikov_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_centrist 
+			           pm_oligarchy }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_juliya_timoshenko_hog = {
+		picture = GFX_idea_ukr_juliya_timoshenko_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = { has_country_leader = { id = 110008 ruling_only = yes name = "Viktor Yanukovych"} }
+			}
+			allowed = {	original_tag = "UKR" }
+
+			traits = { party_leader_liberal
+                       pm_liberal }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_arseniy_yatsenyuk_hog = {
+		picture = GFX_idea_ukr_arseniy_yatsenyuk_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_liberal
+                       pm_reformist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_oleh_bereziuk_hog = {
+	    picture = GFX_idea_ukr_oleh_bereziuk_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_liberal
+                       pm_liberal }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_kovalchuk_vitaliy_hog = {
+		picture = GFX_idea_ukr_kovalchuk_vitaliy_hog
+	
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = {
+					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+				}
+			}
+			traits = { party_leader_conservative
+                       pm_conservative }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_vladimir_groysman_hog = {
+		picture = GFX_idea_ukr_vladimir_groysman_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = { has_available_idea_with_traits = { idea = democratic_reformer limit = 1 } }
+			}
+			traits = { party_leader_conservative
+                       pm_oligarchy	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_natalia_korolevska_hog = {
+		picture = GFX_idea_ukr_natalia_korolevska_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+
+			traits = { party_leader_reformist
+                       pm_reformist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_suslov_eugene_hog = { 
+		 picture = GFX_idea_ukr_suslov_eugene_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			allowed = {	original_tag = "UKR" }
+			traits = { party_leader_reformist
+                       pm_oligarchy	}
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_petro_symonenko_hog = {
+		picture = GFX_idea_ukr_petro_symonenko_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = {
+					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+			}
+			traits = {  party_leader_communist
+                        pm_communist }
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = {	factor = 0	}
+		}
+		
+		ukr_nataliya_vitrenko_hog = {
+		picture = GFX_idea_ukr_nataliya_vitrenko_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = {	has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 } }
+			}
+			traits = {  party_leader_communist
+                        pm_communist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_dmytro_yarosh_hog = {
+		picture = GFX_idea_ukr_dmytro_yarosh_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+				NOT = { 
+					has_country_leader = { id = 110008 ruling_only = yes name = "Viktor Yanukovych"}
+					has_government = neutrality
+					has_government = communism
+				}
+			}
+	
+			allowed = {
+				original_tag = "UKR"
+				NOT = { has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }	}
+			}
+			traits = { party_leader_nationalist
+                       pm_reformist }
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_oleh_tyahnybok_hog = {
+		picture = GFX_idea_ukr_oleh_tyahnybok_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+				NOT = { 
+						has_government = neutrality
+						has_government = communism
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = { has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 } }
+			}
+			traits = { party_leader_nationalist
+                       pm_conservative }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_andriy_biletsky_hog = {
+		picture = GFX_idea_ukr_andriy_biletsky_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+				NOT = { 
+					has_government = neutrality
+					has_government = communism
+					has_government = liberalism
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = {	has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }	}
+			}
+			traits = { party_leader_nationalist
+                       pm_reformist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_oleh_lyashko_hog = {
+		picture = GFX_idea_ukr_oleh_lyashko_hog
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = {
+				original_tag = "UKR"
+				NOT = {	has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }	}
+			}
+
+			traits = { party_leader_nationalist
+                       pm_centrist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_mostafa_jamilev_hog = {
+            picture = GFX_idea_ukr_mostafa_jamilev_hog
+			cost = 1000
+			#removal_cost = -1
+            available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_islamists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { party_leader_islamist
+                       pm_islamist }
+			on_add = {
+			#	country_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_refat_chubarov_hog = {
+            picture = GFX_idea_ukr_refat_chubarov_hog
+			cost = 1000
+			#removal_cost = -1
+            available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_islamists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { party_leader_islamist
+                       pm_islamist }
+			on_add = {
+				news_event = head_of_government.1
+			}
+			ai_will_do = { factor = 0 }
+		}
+	}
+	
+	defence_minister = {
+		ukr_pavel_lebedev_defm = {
+		picture = GFX_idea_ukr_pavel_lebedev_defm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { defence_minister_regime_loyalist_1
+                       oboronexpo_reformer }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_igor_tenyuh_defm = {
+		picture = GFX_idea_ukr_igor_tenyuh_defm
+			cost = 500
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { defence_minister_analyst_3
+                       navy_combat_training_expert }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_mikhaylo_koval_defm = {
+		picture = GFX_idea_ukr_mikhaylo_koval_defm
+			cost = 150
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { defence_minister_distinguished_military_1 }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_valeriy_geletey_defm = {
+		picture = GFX_idea_ukr_valeriy_geletey_defm
+			cost = 250
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { defence_minister_regime_loyalist_2 }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_stepan_poltorak_defm = {
+		picture = GFX_idea_ukr_stepan_poltorak_defm
+			cost = 500
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { defence_minister_serve_and_protect_1
+                       army_combat_training }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+}		
+		
+	    foreign_minister ={	
+		ukr_leonid_kojara_fgm = {
+		picture = GFX_idea_ukr_leonid_kojara_fgm
+			cost = 100
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { foreign_minister_policy_conversation }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_andrey_deshchitsa_fgm = {
+		picture = GFX_idea_ukr_andrey_deshchitsa_fgm
+			cost = 100
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { foreign_minister_policy_defender_2
+                       foreign_minister_addiction_EU }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_pavel_klimkin_fgm = {
+		picture = GFX_idea_ukr_pavel_klimkin_fgm
+			cost = 100
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { foreign_minister_policy_conversation
+                       foreign_minister_addiction_USA }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+}	
+		
+		economic_minister = {
+		ukr_yuri_kolobov_ecm = {
+		picture = GFX_idea_ukr_yuri_kolobov_ecm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_banking_credit_system }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_oleksandr_slapak_ecm = {
+		picture = GFX_idea_ukr_oleksandr_slapak_ecm
+			cost = 150
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_international_trade }
+			on_add = { }
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_natalie_jaresko_ecm = {
+		picture = GFX_idea_ukr_natalie_jaresko_ecm
+			cost = 350
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_business_protege_2
+                       foreign_minister_addiction_USA }
+			on_add = {	}
+			do_effect = {	}
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_alexandr_danilyuk_ecm = {
+		picture = GFX_idea_ukr_alexandr_danilyuk_ecm
+			cost = 250
+			#removal_cost = -1
+			available = {	}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_public_administration_2 }
+			on_add = { }
+			do_effect = { }
+			ai_will_do = { factor = 0 }
+		}
+		
+}		
+		secret_service_chief = {
+		
+		ukr_oleksandr_yakymenko_ssch = {
+		picture = GFX_idea_ukr_oleksandr_yakymenko_ssch
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { secret_service_chief_executioner_1 }
+			on_add = {	}
+			do_effect = { }
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_valentin_nalivaychenko_ssch = {
+		picture = GFX_idea_ukr_valentin_nalivaychenko_ssch
+			cost = 350
+			#removal_cost = -1
+			available = { }
+			allowed = { original_tag = UKR }
+			traits = { secret_service_chief_eminence_grise_2 }
+			on_add = {	}
+			do_effect = { }
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_vasiliy_gritsak_ssch = {
+		picture = GFX_idea_ukr_vasiliy_gritsak_ssch
+			cost = 250
+			#removal_cost = -1
+			available = { }
+			allowed = { original_tag = UKR }
+			traits = { secret_service_chief_counterespionage_1 }
+			on_add = {	}
+			do_effect = { }
+			ai_will_do = { factor = 0 }
+		}
+	}	
+		
+		political_advisor = {
+		ukr_taisia_povaliy_sm = {
+		picture = GFX_idea_ukr_taisia_povaliy_sm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { popular_person }
+		}	
+
+        ukr_vitali_klitschko_sm = {
+		picture = GFX_idea_ukr_vitali_klitschko_sm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { popular_person }
+		}			
+		
+		ukr_serhiy_lyovochkin_sm = {
+		picture = GFX_idea_ukr_serhiy_lyovochkin_sm
+			cost = 450
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { backstage_assistant }
+		}	
+
+        ukr_boris_lozhkin_sm = {
+		picture = GFX_idea_ukr_boris_lozhkin_sm
+			cost = 450
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { backstage_assistant }
+		}			
+		
+		ukr_nestor_shufrych_sm = {
+		picture = GFX_idea_ukr_nestor_shufrych_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { ideologue_theorist }
+		}	
+
+        ukr_oleksandr_turchynov_sm = {
+		picture = GFX_idea_ukr_oleksandr_turchynov_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { ideologue_theorist }
+		}			
+		
+		ukr_leonid_kuchma_sm = {
+		picture = GFX_idea_ukr_leonid_kuchma_sm
+			cost = 350
+			#removal_cost = -1
+			available = { }
+			allowed = { original_tag = UKR }
+			traits = { master_negotiations }
+		}	
+
+        ukr_viktor_medvedchuk_sm = {
+		picture = GFX_idea_ukr_viktor_medvedchuk_sm
+			cost = 450
+			#removal_cost = -1
+			available = { }
+			allowed = { original_tag = UKR }
+			traits = { rus_oligarch }
+		}			
+		
+		ukr_vitaliy_zakharchenko_sm = {
+		picture = GFX_idea_ukr_vitaliy_zakharchenko_sm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { police_reformer }
+		}	
+
+        ukr_arsen_avakov_sm = {
+		picture = GFX_idea_ukr_arsen_avakov_sm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { police_reformer }
+		}			
+		
+		ukr_dmytro_sadovnyk_sm = {
+		picture = GFX_idea_ukr_dmytro_sadovnyk_sm
+			cost = 150
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { regime_defender }
+		}	
+
+        ukr_hennadiy_moskal_sm = {
+		picture = GFX_idea_ukr_hennadiy_moskal_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { military_education_reformer }
+		}			
+		
+		ukr_gromov_sergey_sm = {
+		picture = GFX_idea_ukr_gromov_sergey_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_military_industry_1 }
+		}	
+
+        ukr_roman_romanov_sm = {
+		picture = GFX_idea_ukr_roman_romanov_sm
+			cost = 450
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { economic_minister_military_industry_2 }
+		}			
+		
+		ukr_volodymyr_kozak_sm = {
+		picture = GFX_idea_ukr_volodymyr_kozak_sm
+			cost = 300
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { infrastructure_reformer }
+		}	
+
+        ukr_andriy_pyvovarsky_sm = {
+		picture = GFX_idea_ukr_andriy_pyvovarsky_sm
+			cost = 300
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { infrastructure_reformer }
+		}			
+		
+		ukr_eduard_stavytsky_sm = {
+		picture = GFX_idea_ukr_eduard_stavytsky_sm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { tek_reformer }
+		}	
+
+        ukr_volodymyr_demchyshyn_sm = {
+		picture = GFX_idea_ukr_volodymyr_demchyshyn_sm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { tek_reformer }
+		}			
+		
+		ukr_ihor_prasolov_sm = {
+		
+		picture = GFX_idea_ukr_ihor_prasolov_sm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { industry_developer }
+		}	
+
+        ukr_aivaras_abromavicius_sm = {
+		picture = GFX_idea_ukr_aivaras_abromavicius_sm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { industry_developer }
+		}			
+		
+		ukr_dmytro_firtash_sm = {
+		picture = GFX_idea_ukr_dmytro_firtash_sm
+			cost = 450
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { industry_top_managment }
+		}	
+
+        ukr_ihor_kolomoyskyi_sm = {
+		picture = GFX_idea_ukr_ihor_kolomoyskyi_sm
+			cost = 450
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { industry_top_managment }
+		}			
+		
+		ukr_dmytro_tabachnyk_sm = {
+		picture = GFX_idea_ukr_dmytro_tabachnyk_sm
+			cost = 400
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { research_reformer }
+
+		}	
+        ukr_serhiy_kvit_sm = {
+		picture = GFX_idea_ukr_serhiy_kvit_sm
+			cost = 400
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { research_reformer }
+
+		}			
+		ukr_raisa_bogatyrova_sm = {
+		picture = GFX_idea_ukr_raisa_bogatyrova_sm
+			cost = 350
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { medicine_reformer }
+		}	
+
+        ukr_oleh_musiy_sm = {
+		
+		picture = GFX_idea_ukr_arsen_avakov_sm
+		
+			cost = 350
+			#removal_cost = -1
+
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { medicine_reformer }
+		}			
+		
+		ukr_leonid_novokhatko_sm = {
+		picture = GFX_idea_ukr_leonid_novokhatko_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = neutrality
+					has_government = reformism			
+					has_government = communism
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { cultura_reformer }
+		}	
+
+        ukr_vyacheslav_kyrylenko_sm = {
+		picture = GFX_idea_ukr_vyacheslav_kyrylenko_sm
+			cost = 250
+			#removal_cost = -1
+			available = {
+                OR = {
+					has_government = liberalism
+					has_government = democratic			
+					has_government = fascism
+					has_country_flag = coalition_with_liberals
+					has_country_flag = coalition_with_conservators
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+			allowed = { original_tag = UKR }
+			traits = { cultura_reformer }
+		}			
+		
+		ukr_arseniy_yatsenyuk_sm = {
+		picture = GFX_idea_ukr_arseniy_yatsenyuk_sm
+			cost = 400
+			#removal_cost = -1
+			available = { liberalism > 0.03	NOT = {	has_idea = ukr_arseniy_yatsenyuk_hog }	}
+			allowed = {	original_tag = "UKR" }
+			traits = { liberalism_demagogue }
+			on_add = {
+				news_event = political_party.26
+			}
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_juliya_timoshenko_sm = {
+			
+		picture = GFX_idea_ukr_juliya_timoshenko_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+					liberalism > 0.03
+					neutrality < 0.25
+				NOT = {
+					has_idea = ukr_juliya_timoshenko_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.26
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_andriy_parubiy_sm = {
+			
+		picture = GFX_idea_ukr_andriy_parubiy_sm
+			
+			cost = 500
+			#removal_cost = -1
+				
+			available = {
+					democratic > 0.05
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political_party.13
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_mikhail_saakashvili_sm = {
+			
+		picture = GFX_idea_ukr_mikhail_saakashvili_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+			        democratic > 0.25
+			    OR = {
+				    has_country_flag = UKR_own_way
+				    has_country_flag = UKR_democratization
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political_party.13
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_natalia_korolevska_sm = {
+			
+		picture = GFX_idea_ukr_natalia_korolevska_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+					reformism > 0.04
+				NOT = {
+					has_idea = ukr_natalia_korolevska_hog
+				      }
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { reformism_demagogue }
+
+			on_add = {
+				news_event = political_party.1
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_suslov_eugene_sm = {
+			
+		picture = GFX_idea_ukr_suslov_eugene_sm
+			
+			cost = 500
+			#removal_cost = -1
+				
+			available = {
+					reformism > 0.10
+				NOT = {
+					has_idea = ukr_suslov_eugene_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { reformism_demagogue }
+
+			on_add = {
+				news_event = political_party.1
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_petro_symonenko_sm = {
+			
+		picture = GFX_idea_ukr_petro_symonenko_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+					communism > 0.07
+				NOT = {
+					has_idea = ukr_petro_symonenko_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { communist_revolutionary }
+
+			on_add = {
+				news_event = political_party.1
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_nataliya_vitrenko_sm = {
+		
+		picture = GFX_idea_ukr_nataliya_vitrenko_sm
+			
+			cost = 650
+			#removal_cost = -1
+				
+			available = {
+					communism > 0.15
+				NOT = {
+					has_idea = ukr_nataliya_vitrenko_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { communist_revolutionary }
+
+			on_add = {
+				news_event = political_party.1
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_oleh_tyahnybok_sm = {
+			
+		picture = GFX_idea_ukr_oleh_tyahnybok_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+					fascism > 0.02
+				NOT = {
+					has_idea = ukr_oleh_tyahnybok_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { fascist_demagogue }
+
+			on_add = {
+			         country_event =  political.7
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_oleh_lyashko_sm = {
+		
+		picture = GFX_idea_ukr_oleh_lyashko_sm
+			
+			cost = 400
+			#removal_cost = -1
+				
+			available = {
+					fascism > 0.05
+				NOT = {
+					has_idea = ukr_oleh_lyashko_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { fascist_demagogue }
+
+			on_add = {
+			          country_event =  political.7
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+	
+		}
+		
+		ukr_oleksandr_yefremov_sm = {
+			
+		picture = GFX_idea_ukr_oleksandr_yefremov_sm
+			
+			cost = 450
+			#removal_cost = -1
+				
+			available = {
+					neutrality > 0.02
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { neutrality_reformer }
+
+			on_add = {
+				news_event =  political_party.30
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_mikhail_dobkin_sm = {
+			
+		picture = GFX_idea_ukr_mikhail_dobkin_sm
+			
+			cost = 550
+			#removal_cost = -1
+				
+			available = {
+			        has_country_flag = UKR_federalization
+					neutrality > 0.10		            
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { neutrality_reformer }
+
+			on_add = {
+				news_event =  political_party.30
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_mostafa_jamilev_sm = {
+			
+		picture = GFX_idea_ukr_mostafa_jamilev_sm
+			
+			cost = 700
+			#removal_cost = -1
+				
+			available = {
+				democratic > 0.10
+				NOT = {
+					has_idea = ukr_mostafa_jamilev_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { islamists_demagogue }
+
+			on_add = {
+			         country_event =  political.7
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+		}
+		
+		ukr_refat_chubarov_sm = {
+			
+		picture = GFX_idea_ukr_refat_chubarov_sm
+			
+			cost = 700
+			#removal_cost = -1
+				
+			available = {
+				democratic > 0.15
+				NOT = {
+					has_idea = ukr_refat_chubarov_hog
+				}
+			}
+			
+			allowed = {
+				original_tag = "UKR"
+			}
+	
+			traits = { islamists_demagogue }
+
+			on_add = {
+			         country_event =  political.7
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = { factor = 0 }
+		}
+	}	
+}

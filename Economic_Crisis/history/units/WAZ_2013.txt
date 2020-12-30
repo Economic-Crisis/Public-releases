@@ -1,0 +1,81 @@
+﻿division_template = {
+	name = "Waziristan militants"	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+        motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+        motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+units = {
+    #### Djixat`s Army ####
+
+	division = {
+		name = "1st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "2st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "3st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "4st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "5st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "6st Waziristan militants"
+		location = 4998
+		division_template = "Waziristan militants"	
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_to_stockpile = {
+		amount = 30000
+		type = army_salw_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 30000
+		type = army_ammunition_equipment_1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "WAZ"
+		}
+		requested_factories = 1
+		progress = 0.86
+		efficiency = 100
+	}
+}

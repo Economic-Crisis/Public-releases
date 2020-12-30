@@ -1,0 +1,87 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 754
+
+2013.11.1 = {
+		set_variable = { budget_last_year = 551 }
+
+		oob = "MLW_2013"
+		load_oob = "_tech_minor_2013"
+		set_convoys = 0
+		add_political_power = 0
+		
+		# laws
+		add_ideas = {
+			presidential_republic
+			au_member
+			administrative_federation
+			preference_religion
+			mixed_media
+			suspended_liberties
+			mixed_economic
+			balanced_industry
+			civilian_economy
+			normal_taxes
+			terrorism_discounted
+			mixed_schools
+		}
+
+		set_politics = {
+			ruling_party = democratic
+			last_election = "2012.4.7"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		set_popularities = {
+			communism = 0
+			reformism = 0
+			liberalism = 42
+			democratic = 27
+			neutrality = 31
+			fascism = 0
+			rad_islamists = 0
+		}
+
+		create_country_leader = {
+			name = "Joyce Banda" #Джойс Банда 
+			desc = ""
+			picture = "gfx/leaders/MLW/portrait_joyce_banda.dds"
+			ideology = conservative_democracy #Народный фронт
+			traits = { trait_conservative_democracy }
+		}
+
+		create_country_leader = {
+			name = "Peter Mutharika" #Питер Мутарика; с 2014 президент Малави
+			desc = ""
+			picture = "gfx/leaders/MLW/portrait_peter_mutharika.dds"
+			ideology = liberal_democracy #Демократическая прогрессивная партия
+			traits = { trait_liberal_democracy }
+		}
+
+		create_country_leader = {
+			name = "Lazarus Chakwera" #Лазарус Чаквера
+			desc = ""
+			picture = "gfx/leaders/MLW/portrait_lazarus_chakwera.dds"
+			ideology = centrist_democracy #Партия Конгресса Малави
+			traits = { trait_centrist_democracy }
+		}
+
+	}
+
+			2014.5.31 = { 
+				MLW = {
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.03
+					}
+
+					set_politics = {
+						ruling_party = liberalism
+					}
+				}
+			}
+
+
+

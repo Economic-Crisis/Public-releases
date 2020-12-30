@@ -1,0 +1,118 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 335 # Jakarta
+
+add_ideas = {
+	regional_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 91250 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "INS_2013"
+
+	add_ideas = {
+		asean_member
+		opec_member
+		NPT
+    }
+
+	add_political_power = 0
+	set_stability = 0.5
+	set_convoys = 20
+	create_intelligence_agency = yes
+	
+		# laws
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		preference_religion
+		free_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		mixed_economic
+		nationalization_of_extractive_industries
+		
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		base_social_security
+		pensions
+		average_terrorism
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2009.7.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 7
+		reformism = 13
+		liberalism = 20
+		democratic = 7
+		neutrality = 13
+		fascism = 40
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Joko Widodo"
+		desc = "POLITICS_JOKO_WIDODO_DESC"
+		picture = "gfx/leaders/INS/portrait_joko_widodo.dds"
+		ideology = pancasila
+		traits = { trait_pancasila }
+	}
+	
+	create_country_leader = {
+		name = "Susilo Bambang Yudhoyono"
+		desc = "POLITICS_SUSILO_BAMBANG_YUDHOYONO_DESC"
+		picture = "gfx/leaders/INS/portrait_susilo_bambang_yudhoyono.dds"
+		ideology = pancasila
+		expire = "2014.7.9"
+		traits = { trait_pancasila }
+	}
+
+	create_country_leader = {
+		name = "Aburizal Bakrie"
+		desc = ""
+		picture = "gfx/leaders/INS/portrait_aburizal_kakrie.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Muhaimin Iskandar"
+		desc = ""
+		picture = "gfx/leaders/INS/portrait_muhaimin_iskandar.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Eros Djarot"
+		desc = ""
+		picture = "gfx/leaders/INS/portrait_eros_djarot.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+}
+
+
+2014.7.9 = {
+	set_party_name = { 
+	    ideology = fascism 
+	    long_name = INS_fascism_2014_party
+	    name = INS_fascism_2014_party 
+	}
+}
+

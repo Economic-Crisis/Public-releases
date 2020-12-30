@@ -1,0 +1,572 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#IMFMGC танкостроение
+		IMFMGC = {
+
+			picture = IMFMGC
+			allowed = {
+				original_tag = CHI
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+				
+			}
+		}
+		
+		#Zoomlion тяжелое машиностроение
+		Zoomlion = {
+
+			picture = Zoomlion
+			allowed = {
+				original_tag = CHI
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 900
+
+			traits = { heav_tank_manufacturer }
+
+			modifier = {
+				army_armor_speed_factor = 0.1
+				license_armor_purchase_cost = -0.1
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Hudong-Zhonghua Shipbuilding судостроение
+		Hudong-Zhonghua_Shipbuilding = {
+			
+			picture = Hudong-Zhonghua_Shipbuilding
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#AVIC авиастроение
+		AVIC = {
+			
+			picture = AVIC
+			
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+		
+		#Shenyang Aircraft Corporation авиастроение
+		Shenyang_Aircraft_Corporation = {
+			
+			picture = Shenyang_Aircraft_Corporation
+			
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				cat_naval_aircrafts_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 900
+			
+			traits = { 
+				medium_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+		
+		#CAIC вертолето строение
+		CAIC = {
+			
+			picture = CAIC
+			
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				#cat_air_drone_tech = 0.1
+				cat_fighter_tech = 0.1
+			}
+			
+			available = {
+				#has_tech = 
+			}
+			
+			cost = 750
+			
+			traits = { 
+				CAS_development
+			}
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#NORINCO стрелковое вооружение - ПВО - РСЗО.
+		NORINCO = {
+			
+			picture = NORINCO
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#FAW Group автомобилестроение
+		FAW_Group = {
+			
+			picture = FAW_Group
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#GAC Group автомобилистроение
+		GAC_Group = {
+			
+			picture = GAC_Group
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#Geely автомобилистроение
+		Geely = {
+			
+			picture = Geely
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				cat_wheeled_vehicle = 0.12
+			}
+			
+			cost = 900
+			
+			traits = { apc_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#ZX Avto автомобилестроение 
+		ZX_Avto = {
+			
+			picture = ZX_Avto
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.1
+			}
+			
+			cost = 850
+			
+			traits = { zrk_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#CNNC ядерная промышленность
+		CNNC_nuclear_concern = {
+			
+			picture = CNNC_nuclear_concern
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				rocketry = 0.1
+				nuclear_tech = 0.1
+			}
+			
+			cost = 1250
+			
+			traits = { nuclear_research_corporation }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#CSCEC инженерно конструкторская корпорация
+		CSCEC = {
+
+			picture = CSCEC
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.1
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Fushi Copperweld электротехника
+		Fushi_Copperweld = {
+
+			picture = Fushi_Copperweld
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Harbin power engineering электротехника
+		Harbin_power_engineering = {
+
+			picture = Harbin_power_engineering
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				electronics = 0.1
+			}
+			cost = 750
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Lenovo электроника
+		Lenovo = {
+
+			picture = Lenovo
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#MEIZU электроника
+		MEIZU = {
+
+			picture = MEIZU
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#TP-Link электроника
+		TP-Link = {
+
+			picture = TP-Link
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#Xiaomi Inc. электроника
+		Xiaomi_Inc = {
+
+			picture = Xiaomi_Inc
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#ZTE электроника
+		ZTE = {
+
+			picture = ZTE
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#HUAWEI электроника
+		HUAWEI = {
+
+			picture = HUAWEI
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		#CNPC нефтяная корпорация
+		CNPC = {
+
+			picture = CNPC
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 25
+					}
+				}
+			}
+		}
+		
+		#Sinopec нефтяная и химическая компания
+		Sinopec = {
+
+			picture = Sinopec
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 13
+					}
+				}
+			}
+		}
+		
+		#ICBC индустриальный банк
+		ICBC = {
+
+			picture = ICBC
+			allowed = {
+				original_tag = CHI
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 900
+			traits = { industrial_bank }
+
+			modifier = {
+				#production_speed_bank_factor = 0.1
+			}
+			
+			on_add = {
+				#random_owned_state = {
+				#	limit = {
+				#		is_in_home_area = yes
+				#	}
+				#	add_resource = {
+				#		type = money
+				#		amount = 45
+				#	}
+				#}
+			}
+		}
+	}
+}	

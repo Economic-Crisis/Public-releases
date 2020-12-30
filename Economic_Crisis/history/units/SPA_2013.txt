@@ -1,0 +1,258 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "División de Infantería" 		# Regular infantry divisions, all at reserve levels in 1939
+	# Note: Spanish divisions were 2x brigades of 2x2 rgts each, + support
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Spanish Arty Rgt/Bge had 2 Bn 105mm arty
+		airborne_support_company = { x = 0 y = 1 }   
+	}
+}
+
+###### OOB ######
+units = {
+	#####LAND UNITS #####
+	### Ejército de Tierra de España ###		
+	# I Cuerpo # 
+	division = {			
+		name = "11a División de Infantería"		
+		location = 3938  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "12a División de Infantería"		
+		location = 3938  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "13a División de Infantería"		
+		location = 3938  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+	# II Cuerpo # 
+	division = {			
+		name = "21a División de Infantería"		
+		location = 7183  # Sevilla
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "22a División de Infantería"		
+		location = 7183  # Sevilla
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "23a División de Infantería"		
+		location = 7183  # Sevilla
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}		
+	
+	# III Cuerpo # 
+	division = {			
+		name = "31a División de Infantería"		
+		location = 6906  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "32a División de Infantería"		
+		location = 6906  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}	
+
+	# IV Cuerpo # 
+	division = {			
+		name = "41a División de Infantería"		
+		location = 3816  # Zaragosa
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = {			
+		name = "42a División de Infantería"		
+		location = 3816  # Zaragosa
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = {			
+		name = "43a División de Infantería"		
+		location = 3816  # Zaragosa
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+
+	# V Cuerpo # 
+	division = {			
+		name = "51a División de Infantería"		
+		location = 9764  # Barcelona
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "52a División de Infantería"		
+		location = 9764  # Barcelona
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+	# VI Cuerpo # 
+	division = {			
+		name = "61a División de Infantería"		
+		location = 740  #Bilbao
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "62a División de Infantería"		
+		location = 740  #Bilbao
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+	# VII Cuerpo # 
+	division = {			
+		name = "71a División de Infantería"		
+		location = 885  # Burgos
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division = {			
+		name = "72a División de Infantería"		
+		location = 11825  # Valladolid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+	### Island Garrisons ###
+	division = {			
+		name = "Comandancia de Baleares"		
+		location = 9793  #Mallorca
+		division_template = "División de Infantería"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}			
+	division = {			
+		name = "Comandancia de Canarias"		
+		location = 13071  # Canary Islands
+		division_template = "División de Infantería"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+
+}
+
+### Air Wings
+air_wings = {
+	41 = { 														# Madrid (Getafe)
+		light_fighter_equipment_0 = { owner = "SPR" amount = 80 }		# I/1a Región Aérea Centro -- CR.32, He 51 fighters
+		strike_fighter_equipment_1 = { owner = "SPR" amount = 24 }			# II/1a Región Aérea Centro -- BR.20, Do 17E bombers
+	}
+	169 = {														# Sevilla
+		attack_bomber_equipment_1 = { owner = "SPR" amount = 60 }	# 2a Región Aérea del Estrecho -- SM.79-I bombers
+		light_fighter_equipment_0 = { owner = "SPR" amount = 24 }		# I/5a Región Aérea Atlantico -- CR.32 fighters
+		attack_bomber_equipment_1 = { owner = "SPR" amount = 30 }	# II/5a Región Aérea Atlantico -- SM.81 bombers
+		strike_fighter_equipment_1 = { owner = "SPR" amount = 24 }			# III/5a Región Aérea Atlantico -- He 45, Ca.310 bombers
+	}
+	166 = {														# Barcelona
+		light_fighter_equipment_0 = { owner = "SPR" amount = 64 }		# 3a Región Aérea Levante -- Polikarpov I-15 fighters
+	}
+	173 = {														# Galacia
+		light_fighter_equipment_1 = { owner = "SPR" amount = 30 }		# I/4a Región Aérea Levante -- Bf 109B fighters
+		attack_bomber_equipment_1 = { owner = "SPR" amount = 40 }	# II/4a Región Aérea Levante -- He 111 bombers
+	}
+	290 = {														# Morocco
+		light_fighter_equipment_1 = { owner = "SPR" amount = 36 }		# I/4a Región Aérea Levante -- G.50, He 112, CR.32 fighters
+	}
+}
+
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.60
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.80
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = apc_tracked_g1_equipment_0
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.80
+		efficiency = 100
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = light_fighter_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.30
+		efficiency = 100
+	}
+}

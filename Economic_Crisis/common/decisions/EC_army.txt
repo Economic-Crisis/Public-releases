@@ -1,0 +1,526 @@
+army = {
+	militarization_devisions = {
+		icon = generic_prepare_civil_war
+		available = { NOT = { has_country_flag = militarization_campaign } }
+		#visible = {	}
+		fire_only_once = no
+		days_remove = 90
+		days_re_enable = 180
+		cost = 100
+		modifier = {
+			war_support_weekly = 0.005
+			stability_weekly = -0.001
+		}
+		complete_effect = {	set_country_flag = militarization_campaign	}
+		remove_effect = {	clr_country_flag = militarization_campaign	}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war_support < 0.4
+				has_war = yes
+			}
+		}
+	}
+	demilitarization_devisions = {
+		icon = generic_prepare_civil_war
+		available = { NOT = { has_country_flag = demilitarization_campaign } }
+		#visible = {	}
+		fire_only_once = no
+		days_remove = 90
+		days_re_enable = 180
+		cost = 100
+		modifier = {
+			war_support_weekly = -0.005
+			stability_weekly = 0.001
+		}
+		complete_effect = {	set_country_flag = demilitarization_campaign	}
+		remove_effect = {	clr_country_flag = demilitarization_campaign	}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war_support < 0.4
+				has_war = no
+			}
+		}
+	}
+	calling_wave = {
+		icon = generic_prepare_civil_war
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		modifier = {
+			conscription = 0.01
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 5
+				has_war = yes
+			}
+		}
+	}
+	reserve_mobilization = {
+		icon = generic_prepare_civil_war
+		fire_only_once = yes
+		days_remove = 1
+		cost = 50
+		modifier = {
+			conscription_factor = 0.2
+		} 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 20
+				has_war = yes
+			}
+		}
+	}
+	calling_wave1 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		modifier = {
+			conscription = 0.02
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave1 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 4
+				has_war = yes
+			}
+		}
+	}
+	calling_wave2 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave1 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		modifier = {
+			conscription = 0.03
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave2 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 3
+				has_war = yes
+			}
+		}
+	}
+	calling_wave3 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave2 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		modifier = {
+			conscription = 0.4
+		}
+		remove_effect = {
+			set_country_flag = decisions_calling_wave3
+			hidden_effect = { news_event = emigration_war.1 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave4 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave3 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.05
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave4 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave5 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave4 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.06
+			stability_factor = -0.05
+			war_support_factor = -0.05
+		}
+		remove_effect = { 
+			set_country_flag = decisions_calling_wave5
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave6 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave5 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.07
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave6 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave7 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave6 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.08
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave7 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave8 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave7 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.09
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave8 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave9 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave8 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.1
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave9 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave10 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave9 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.11
+			stability_factor = -0.08
+			war_support_factor = -0.08
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave10 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave11 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave10 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.12
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave11 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave12 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave11 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.13
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave12 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave13 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave12 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.14
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave13 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave14 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave13 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.15
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave14 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave15 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave14 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.16
+			stability_factor = -0.12
+			war_support_factor = -0.12
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave15 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave16 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave15 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.17
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave16 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave17 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave16 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.18
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave17 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave18 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave17 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.19
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave18 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave19 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave18 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.2
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave19 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave20 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave19 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.21
+			stability_factor = -0.24
+			war_support_factor = -0.24
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave20 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave21 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave20 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.22
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave21 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave22 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave21 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.23
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave22 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave23 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave22 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.24
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave23 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+	calling_wave24 = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = decisions_calling_wave23 }
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		modifier = {
+			conscription = 0.25
+		}
+		remove_effect = { set_country_flag = decisions_calling_wave24 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 2
+				has_war = yes
+			}
+		}
+	}
+}

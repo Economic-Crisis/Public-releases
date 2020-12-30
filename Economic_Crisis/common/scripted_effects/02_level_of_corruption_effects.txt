@@ -1,0 +1,59 @@
+#########################################
+## Economic Crisis 
+#########################################
+## Increase/decrease level of corruption
+#########################################
+
+corruption_decreased = {
+	if = {
+		limit = {
+			has_idea = oligarchy
+		}
+		swap_ideas = { remove_idea = oligarchy add_idea = high_corruption }
+	}
+	else_if = {
+		limit = {
+			has_idea = high_corruption
+		}
+		swap_ideas = { remove_idea = high_corruption add_idea = average_corruption }
+	}
+	else_if = {
+		limit = {
+			has_idea = average_corruption
+		}
+		swap_ideas = { remove_idea = average_corruption add_idea = low_corruption }
+	}
+	else_if = {
+		limit = {
+			has_idea = low_corruption
+		}
+		swap_ideas = { remove_idea = low_corruption add_idea = corruption_discounted }
+	}
+}
+
+corruption_increased = {
+	if = {
+		limit = {
+			has_idea = high_corruption
+		}
+		swap_ideas = { remove_idea = high_corruption add_idea = oligarchy }
+	}
+	else_if = {
+		limit = {
+			has_idea = average_corruption
+		}
+		swap_ideas = { remove_idea = average_corruption add_idea = high_corruption }
+	}
+	else_if = {
+		limit = {
+			has_idea = low_corruption
+		}
+		swap_ideas = { remove_idea = low_corruption add_idea = average_corruption }
+	}
+	else_if = {
+		limit = {
+			has_idea = corruption_discounted
+		}
+		swap_ideas = { remove_idea = corruption_discounted add_idea = low_corruption }
+	}
+}

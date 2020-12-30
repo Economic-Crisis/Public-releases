@@ -1,0 +1,64 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 1085
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2405 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_minor_2013"
+	
+	set_convoys = 100
+	set_stability = 0.5
+	add_political_power = 0
+
+	add_ideas =  {
+		parliamentary_monarchy
+		queen_elizabet
+	}	
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 60
+		liberalism = 0
+		democratic = 40
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Timothy Harris"
+		desc = ""
+		picture = "gfx/leaders/SKN/portrait_timothy_harris.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Denzil Douglas"
+		desc = ""
+		picture = "gfx/leaders/SKN/portrait_denzil_douglas.dds"
+		ideology = social_democracy
+		expire = "2015.2.18"
+		traits = { trait_social_democracy }
+	}
+
+}
+

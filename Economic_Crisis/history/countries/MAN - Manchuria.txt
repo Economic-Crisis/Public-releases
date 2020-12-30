@@ -1,0 +1,39 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 328
+# capital = 604
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 100 }
+
+	load_oob = "_tech_csto_minor_2013"  # not CSTO, but tehnologies level is comparable
+	oob = "_army_minor_2013"
+	
+	set_stability = 0.5
+	
+	add_political_power = 0
+	add_ideas = terrorism_discounted 
+	set_convoys = 0
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 20
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 80
+		fascism = 0
+		rad_islamists = 0
+	}
+}

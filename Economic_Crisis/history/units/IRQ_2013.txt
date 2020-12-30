@@ -1,0 +1,181 @@
+﻿division_template = {
+	name = "Alfurqat Almasha"				# Infantry Division
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+division_template = {
+	name = "Alfurqat Aljabalia"				# Mountain Division
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		mountaineers_motorized = { x = 2 y = 0 }
+		mountaineers_motorized = { x = 2 y = 1 }
+		mountaineers_motorized = { x = 2 y = 2 }
+	}
+}
+
+
+units = {
+	##### Royal Iraq Army #####
+	division = {
+		name = "1 Alfurqat"
+		location = 2097
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	
+	division = {
+		name = "3 Alfurqat"
+		location = 2097
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "5 Alfurqat"
+		location = 13313
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "6 Alfurqat"
+		location = 12413
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "7 Alfurqat"
+		location = 3795
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "9 Alfurqat"
+		location = 10793
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	
+	division = {
+		name = "Alfurqat"
+		location = 13206
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 12839
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 3916
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 8123
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 10106
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 1600
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 3795
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 13310
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alfurqat"
+		location = 13310
+		division_template = "Alfurqat Almasha"	
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+
+
+air_wings = {
+	### Royal Iraqi Air Force (RIrAF)
+	291 = {
+		strike_fighter_equipment_1 =  { owner = "IRQ"  amount = 40 }			# 1st Squadron -- Hawker Nisr, Northrup 8A-4
+		light_fighter_equipment_1 =  { owner = "IRQ"  amount = 90 }		# 2nd Squadron -- Gladiator, Breda Ba.65
+	}
+}
+
+
+instant_effect = {
+	add_equipment_to_stockpile = {
+		amount = 2000
+		type = army_salw_equipment_2
+	}
+	add_equipment_to_stockpile = {
+		amount = 2000
+		type = army_ammunition_equipment_2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "IRQ"
+		}
+		requested_factories = 1
+		progress = 0.38
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = army_ammunition_equipment_1
+			creator = "IRQ"
+		}
+		requested_factories = 3
+		progress = 0.5
+		efficiency = 100
+	}
+}

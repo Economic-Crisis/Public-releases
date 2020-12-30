@@ -1,0 +1,111 @@
+﻿# NON-EXISTENT ON START GAME STATE
+
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS (ON ACTION ONLY)
+
+capital = 821
+
+add_ideas = {
+	not_recognized_country
+	iron_heart #Unshakable Faith
+	djixad
+	military_schools
+	mandatory_urgent_service
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 12 }
+	
+	load_oob = "_tech_isis_2013"
+	oob = "ISC_2013"
+
+	add_ideas = djixad
+	
+	set_convoys = 0
+	set_stability = 0.5
+	set_war_support = 1
+
+	add_political_power = 0
+	
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		oligarchy
+		# djixad
+		closed_economy
+		military_industry_focus
+	    war_economy
+		planned_economy
+		traditional_economy
+		no_protect
+		decaying_state
+		no_social_security
+		no_labor_rights_protection	
+	}
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 100
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_salw_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = army_ammunition_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = truck_g0_equipment_0
+	}
+	
+	create_country_leader = {
+		name = "Zalim Shebzukhov"
+		desc = ""
+		picture = "gfx/leaders/ISS/portrait_zalim_shebzukhov.dds"
+		ideology = wahhabism
+		#expire = "2016.8.17" #death
+		traits = { trait_wahhabism extremist }
+	}
+	
+	create_country_leader = {
+		name = "Magomed Suleymanov"
+		desc = ""
+		picture = "gfx/leaders/ISS/portrait_magomed_suleymanov.dds"
+		ideology = wahhabism
+		expire = "2015.8.11" #death
+		traits = { trait_wahhabism extremist }
+	}
+
+	create_country_leader = {
+		name = "Aliaskhab Kebekov"
+		desc = ""
+		picture = "gfx/leaders/ISS/portrait_aliaskhab_kebekov.dds"
+		ideology = wahhabism
+		expire = "2015.4.19" #death
+		traits = { trait_wahhabism extremist }
+	}
+	
+}

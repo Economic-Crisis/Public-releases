@@ -1,0 +1,114 @@
+##############################
+###### Economic Crisis #######
+##############################
+####### Lebanon events #######
+##############################
+
+add_namespace = lebanon
+add_namespace = lebanon_news
+
+country_event = { #Определяем-с шанс взрыва в Бейруте; hidden event
+	id = lebanon.1
+	title = lebanon.1.t
+	desc = lebanon.1.desc
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = { 
+		tag = LEB
+		country_exists = LEB
+		date > 2020.8.1
+	}
+
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		hidden_effect = {
+			LEB = {
+				random_list = {
+					60 = {
+						country_event = { id = lebanon.2 days = 2 }
+					}
+					40 = {
+						country_event = { id = lebanon.3 days = 2 }
+						modifier = {
+							factor = 0
+							is_historical_focus_on = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {	
+		name = lebanon.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lebanon.1.a"
+	}
+
+}
+
+country_event = { #Взрыв произошёл
+	id = lebanon.2
+	title = lebanon.2.t
+	desc = lebanon.2.desc
+	picture = GFX_event_leb_explode_successful
+	
+	is_triggered_only = yes
+
+	option = {	
+		name = lebanon.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lebanon.2.a"
+		add_stability = -0.15
+		add_political_power = -300
+		553 = {
+			damage_building = {
+				type = naval_base
+				damage = 4
+				province = 792
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		subtract_from_variable = { budget_reserve = 15000 }
+		custom_effect_tooltip = lebanon.2_tt
+		hidden_effect = { news_event = { id = lebanon_news.1 hours = 3 } }
+	}
+
+}
+
+
+country_event = { #Взрыв предотвращён
+	id = lebanon.3
+	title = lebanon.3.t
+	desc = lebanon.3.desc
+	picture = GFX_event_leb_explode_failed
+	
+	is_triggered_only = yes
+
+	option = {	
+		name = lebanon.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): lebanon.3.a"
+		add_stability = 0.03
+	}
+	
+}
+
+news_event = { 
+	id = lebanon_news.1
+	title = lebanon_news.1.t
+	desc = lebanon_news.1.d
+	picture = GFX_event_leb_explode_successful_news
+
+	is_triggered_only = yes
+
+	major = yes 
+	
+	option = {
+	    name = lebanon_news.1.a
+	}
+}

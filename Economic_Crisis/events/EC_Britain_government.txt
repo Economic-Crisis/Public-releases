@@ -1,0 +1,731 @@
+﻿#####################
+## Economic Crisis ##
+#####################
+
+add_namespace = britain_government
+add_namespace = britain_brexit
+add_namespace = britain_comintern
+
+country_event = {  # Philip_Hammond
+	id = britain_government.1
+	hidden = yes
+	is_triggered_only = yes
+		
+	immediate = {
+		if = {
+			limit = { 
+				ENG = {
+					has_country_flag = ENG_Philip_Hammond_defm
+				}
+			}
+			ENG = { 
+				remove_ideas = ENG_Philip_Hammond_fgm
+				remove_ideas = ENG_Philip_Hammond
+				clr_country_flag = ENG_Philip_Hammond_defm
+			}
+		}
+		if = {
+			limit = { 
+				ENG = {
+					has_country_flag = ENG_Philip_Hammond_fgm
+				}
+					
+			}
+			ENG = { 
+				remove_ideas = ENG_Philip_Hammond_defm
+				remove_ideas = ENG_Philip_Hammond
+				clr_country_flag = ENG_Philip_Hammond_fgm
+			}
+		}
+		if = {
+			limit = { 
+				ENG = {
+					has_country_flag = ENG_Philip_Hammond
+				}
+			}
+			ENG = { 
+				remove_ideas = ENG_Philip_Hammond_fgm
+				remove_ideas = ENG_Philip_Hammond_defm
+				clr_country_flag = ENG_Philip_Hammond
+			}
+		}
+	}
+	
+	option = {
+		name = britain_government.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_government.1.a"
+	}
+}
+
+####################################################################
+#
+# 	2. Brexit branch / Ветка Брексита
+#
+####################################################################
+
+country_event = {  # Ивент: Брексит
+	id = britain_brexit.1
+	picture = GFX_event_britain_flag
+	title = britain_brexit.1.t
+	desc = britain_brexit.1.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.1.a #Этот день войдет в историю!	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.1.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Новое правительство
+	id = britain_brexit.2
+	picture = GFX_event_britain_flag
+	title = britain_brexit.2.t
+	desc = britain_brexit.2.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.2.a #Новые люди для новой Британии
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.2.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Досрочные выборы
+	id = britain_brexit.3
+	picture = GFX_event_britain_flag
+	title = britain_brexit.3.t
+	desc = britain_brexit.3.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.3.a # Консерваторы одержали большинство
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.3.a"
+		hidden_effect = { set_politics = { ruling_party = democratic elections_allowed = yes } }
+    }
+
+    option = {
+		name = britain_brexit.3.b # Лейбористы взяли верх
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.3.b"
+		set_politics = { ruling_party = reformism elections_allowed = yes }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Программа по выходу
+	id = britain_brexit.4
+	picture = GFX_event_britain_flag
+	title = britain_brexit.4.t
+	desc =  britain_brexit.4.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.4.a # А без бюрократии никак? 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.4.a"
+    }
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Начало деинтеграции
+	id = britain_brexit.5
+	picture = GFX_event_britain_flag
+	title = britain_brexit.5.t
+	desc =  britain_brexit.5.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.5.a # Скоро Британия станет свободной!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.5.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Переговорный процесс
+	id = britain_brexit.6
+	picture = GFX_event_britain_flag
+	title = britain_brexit.6.t
+	desc = britain_brexit.6.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.6.a # Надеюсь, что переговоры пройдут успешно
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.6.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Свобода перемещения
+	id = britain_brexit.7
+	picture = GFX_event_britain_flag
+	title = britain_brexit.7.t
+	desc = britain_brexit.7.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.7.a # Нужно решить этот вопрос как можно скорее
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.7.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Финансовые обязательства
+	id = britain_brexit.8
+	picture = GFX_event_britain_flag
+	title = britain_brexit.8.t
+	desc = britain_brexit.8.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.8.a # Стоит ли платить подобную сумму?
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.8.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Свобода перемещения
+	id = britain_brexit.9
+	picture = GFX_event_britain_flag
+	title = britain_brexit.9.t
+	desc = britain_brexit.9.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.9.a # Статус переселенца только один из вариантов
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.9.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Зона Свободной Торговли
+	id = britain_brexit.10
+	picture = GFX_event_britain_flag
+	title = britain_brexit.10.t
+	desc = britain_brexit.10.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.10.a # Торговля - важный источник дохода
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.10.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Ирландский вопрос
+	id = britain_brexit.11
+	picture = GFX_event_britain_flag
+	title = britain_brexit.11.t
+	desc = britain_brexit.11.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.11.a # Провести Северо-Ирландский референдум.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.11.a"
+		country_event = { id = britain_brexit.12 days = 1 }
+	}
+
+	option = {
+		name = britain_brexit.11.b # Оспорить Белфастский договор.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.11.b"
+		country_event = { id = britain_brexit.13 days = 1 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Свобода самоопределения 
+	id = britain_brexit.12
+	picture = GFX_event_britain_flag
+	title = britain_brexit.12.t
+	desc = britain_brexit.12.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.12.a # Скоро будет новый референдум
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.12.a"
+		country_event = { id = britain_brexit.14 days = 1 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Дипломатический скандал
+	id = britain_brexit.13
+	picture = GFX_event_britain_flag
+	title = britain_brexit.13.t
+	desc = britain_brexit.13.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.13.a # Евросоюзу это врядли понравится 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.13.a"
+		country_event = { id = britain_brexit.15 days = 1 }
+
+		every_country = {
+			limit = {
+				has_idea = eu_member
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = eu_member_eng_negative_modifier
+			}
+		}		
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Северо-Ирландский референдум 
+	id = britain_brexit.14
+	picture = GFX_event_britain_flag
+	title = britain_brexit.14.t
+	desc = britain_brexit.14.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.14.a # Интересно, каким будет результат? 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.14.a"
+		random_list = {
+				80 = { ENG = { country_event = { id = britain_brexit.21 hours = 24 } } } 
+				20 = { ENG = { country_event = { id = britain_brexit.22 hours = 24 } } } 
+			}
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Новый Британо-Ирландский конфликт?
+	id = britain_brexit.15
+	picture = GFX_event_britain_flag
+	title = britain_brexit.15.t
+	desc = britain_brexit.15.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.15.a # Закрыть границу с Ирландией!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.15.a"
+		every_country = {
+			add_opinion_modifier = {
+				target = IRE
+				modifier = ireland_negative
+			}
+			IRE = { add_opinion_modifier = { target = ENG modifier = ireland_negative } }
+		}		
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: 2-й Шотландский референдум
+	id = britain_brexit.16
+	picture = GFX_event_britain_flag
+	title = britain_brexit.16.t
+	desc = britain_brexit.16.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.16.a # Провести второй Шотландский референдум.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.16.a"
+		country_event = { id = britain_brexit.17 days = 1 }
+	}
+
+	option = {
+		name = britain_brexit.17.b # Шотландия уже высказала свое мнение!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.17.b"
+		country_event = { id = britain_brexit.19 days = 1 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Выбор
+	id = britain_brexit.17
+	picture = GFX_event_britain_flag
+	title = britain_brexit.17.t
+	desc = britain_brexit.17.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.17.a # Референдум? Снова?
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.17.a"
+		country_event = { id = britain_brexit.18 days = 1 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Шотландский эпилог
+	id = britain_brexit.18
+	picture = GFX_event_britain_flag
+	title = britain_brexit.18.t
+	desc = britain_brexit.18.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.18.a # Скоро узнаем.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.18.a"
+		random_list = {
+				75 = { ENG = { country_event = { id = britain_brexit.24 hours = 24 } } } 
+				25 = { ENG = { country_event = { id = britain_brexit.23 hours = 24 } } } 
+			}
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Свобода самоопределения.
+	id = britain_brexit.19
+	picture = GFX_event_britain_flag
+	title = britain_brexit.19.t
+	desc = britain_brexit.19.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.19.a # Принять Абердинский акт!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.19.a"
+		country_event = { id = britain_brexit.20 days = 1 }
+		add_political_power = -250	
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Свобода самоопределения.
+	id = britain_brexit.20
+	picture = GFX_event_britain_flag
+	title = britain_brexit.20.t
+	desc = britain_brexit.20.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.20.a # Нет, Шотландскому сепаратизму!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.20.a"
+
+		every_country = {
+			limit = {
+				has_idea = eu_member
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = eu_member_eng_negative_two_modifier
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Северная Ирландия присоединилась к Ирландской Республики
+	id = britain_brexit.21
+	picture = GFX_event_britain_flag
+	title = britain_brexit.21.t
+	desc = britain_brexit.21.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.21.a # Очень жаль.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.21.a"
+
+		IRE = { 
+			transfer_state = 119
+		}
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Северная Ирландия останется в Великобритании
+	id = britain_brexit.22
+	picture = GFX_event_britain_flag
+	title = britain_brexit.22.t
+	desc = britain_brexit.22.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_brexit.22.a # Это было ожидаемо
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.22.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Шотландия останется в Великобритании
+	id = britain_brexit.23
+	picture = GFX_event_britain_flag
+	title = britain_brexit.23.t
+	desc = britain_brexit.23.d
+	is_triggered_only = yes
+		
+	option = { 
+		name = britain_brexit.23.a # Шотландия часть Великобритании
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.23.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {  # Ивент: Шотландия получает независимость
+	id = britain_brexit.24
+	picture = GFX_event_britain_flag
+	title = britain_brexit.24.t
+	desc = britain_brexit.24.d
+	is_triggered_only = yes
+		
+	option = {  
+		name = britain_brexit.24.a  # Шотландия покидает Великобританию
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_brexit.24.a"
+
+		SCO = { 
+			transfer_state = 120
+			transfer_state = 136
+			transfer_state = 133
+			transfer_state = 121
+		}
+	}
+}
+
+####################################################################
+#
+# 	3. Commi branch / Коммунистическая ветка
+#
+####################################################################
+
+country_event = {	  # Ивент: Красное знамья
+	id = britain_comintern.1
+	picture = GFX_event_britain_flag
+	title = britain_comintern.1.t
+	desc = britain_comintern.1.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.1.a # Вставай, Британский рабочий народ!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.1.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Народные Бригады
+	id = britain_comintern.2
+	picture = GFX_event_britain_flag
+	title = britain_comintern.2.t
+	desc = britain_comintern.2.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.2.a # Мы объяденим людей, перед общей угрозой!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.2.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Пять пунктов Каллиникоса
+	id = britain_comintern.3
+	picture = GFX_event_britain_flag
+	title = britain_comintern.3.t
+	desc = britain_comintern.3.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.3.a # 1
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.a"
+	}
+
+	option = {
+		name = britain_comintern.3.b # 2
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.b"
+	}
+
+	option = {
+		name = britain_comintern.3.c # 3
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.c"
+	}
+
+	option = {
+		name = britain_comintern.3.e # 4
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.e"
+	}
+
+	option = {
+		name = britain_comintern.3.f # 5
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.f"
+	}
+
+	option = {
+		name = britain_comintern.3.g # а
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.3.g"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Народная узурпация
+	id = britain_comintern.4
+	picture = GFX_event_britain_flag
+	title = britain_comintern.4.t
+	desc = britain_comintern.4.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.4.a # Мы не отнимаем его. Мы просто хорошо знаем наш народ, чтобы самим сделать правельный выбор 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.4.a"
+	}
+
+	option = {
+		name = britain_comintern.4.b # Пусть народ сам определит свою судьбу!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.4.b"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Общепартийный съезд
+	id = britain_comintern.5
+	picture = GFX_event_britain_flag
+	title = britain_comintern.5.t
+	desc = britain_comintern.5.d
+	is_triggered_only = yes
+	
+	option = {
+		name = britain_comintern.5.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.5.a"
+	}
+}	
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Задержание красных лидеров
+	id = britain_comintern.6
+	picture = GFX_event_britain_flag
+	title = britain_comintern.6.t
+	desc = britain_comintern.6.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.6.a # Тучи сгущяюстя
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.6.a"
+		country_event = { id = britain_comintern.7 days = 10 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Лондонское побоище
+	id = britain_comintern.7
+	picture = GFX_event_britain_flag
+	title = britain_comintern.7.t
+	desc = britain_comintern.7.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.7.a # Скоро все изменится
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.7.a"
+		country_event = { id = britain_comintern.8 days = 10 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Взятие Латчмер-хауза
+	id = britain_comintern.8
+	picture = GFX_event_britain_flag
+	title = britain_comintern.8.t
+	desc = britain_comintern.8.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.8.a # Пора изменить правила игры!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.8.a"
+		country_event = { id = britain_comintern.9 days = 15 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Эпилог
+	id = britain_comintern.9
+	picture = GFX_event_britain_flag
+	title = britain_comintern.9.t
+	desc = britain_comintern.9.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.9.a # Слава Британским героям!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.9.a"
+		
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Каллинисты и Парламентеры
+	id = britain_comintern.10
+	picture = GFX_event_britain_flag
+	title = britain_comintern.10.t
+	desc = britain_comintern.10.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.10.a # Сейчас не время для разговоров!
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.10.a"
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Стратфордский инцидент
+	id = britain_comintern.11
+	picture = GFX_event_britain_flag
+	title = britain_comintern.11.t
+	desc = britain_comintern.11.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.11.a # Им стоит обратится на Бейкер Стрит
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.11.a"
+		country_event = { id = britain_comintern.12 days = 70 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Взрыв в Лондовском метро
+	id = britain_comintern.12
+	picture = GFX_event_britain_flag
+	title = britain_comintern.12.t
+	desc = britain_comintern.12.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.12.a # Им повезло, что он остался жив.
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.12.a"
+		country_event = { id = britain_comintern.13 days = 40 }
+	}
+}
+
+#------------------------------------------------------------------
+
+country_event = {	  # Ивент: Внутренний раскол
+	id = britain_comintern.13
+	picture = GFX_event_britain_flag
+	title = britain_comintern.13.t
+	desc = britain_comintern.13.d
+	is_triggered_only = yes
+		
+	option = {
+		name = britain_comintern.13.a # Скоро узнаем
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain_comintern.13.a"
+	}
+}
+
+#------------------------------------------------------------------

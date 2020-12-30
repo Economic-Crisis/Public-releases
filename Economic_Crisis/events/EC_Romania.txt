@@ -1,0 +1,34 @@
+﻿add_namespace = romania
+country_event = { 
+	id = romania.1
+	title = romania.1.t
+	desc = romania.1.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.1.a
+		ai_chance = {
+			factor = 100
+		}
+		annex_country = { target = MOL transfer_troops = yes }
+	}
+}	
+country_event = { 
+	id = romania.2
+	title = romania.2.t
+	desc = romania.2.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = romania.2.a
+		ai_chance = {
+			factor = 100
+		}
+		puppet = MOL
+	set_autonomy = { target = MOL autonomy_state = sphere_of_influence }
+	}
+}

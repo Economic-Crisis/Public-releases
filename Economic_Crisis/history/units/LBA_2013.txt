@@ -1,0 +1,164 @@
+﻿division_template = {
+	name = "Government Army"	# For 2-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "District Brigade"	# For 1-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	##### National Army #####
+	division = {
+		name = "Government Army"
+		location = 1130
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 11954
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 1198
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 7076
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 8069
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13073
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13073
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13261
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 7985
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 1994
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13255
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13267
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13253
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 13250
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 10067
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Government Army"
+		location = 1189
+		division_template = "Government Army"	
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+}	
+
+instant_effect = {
+
+	# Добавление вооружения
+	add_equipment_to_stockpile = {
+		amount = 5000
+		type = army_salw_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 5000
+		type = army_ammunition_equipment_1
+	}
+	add_equipment_to_stockpile = {
+		amount = 5000
+		type = truck_g0_equipment_0
+	}	
+
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "LBA"
+		}
+		requested_factories = 1
+		progress = 0.51
+		efficiency = 100
+	}
+}

@@ -1,0 +1,74 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 773
+
+add_ideas = {
+	small_country
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 6197 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+
+	add_ideas = {
+		alba_member
+		low_terrorism
+		mixed_schools
+		NPT
+		
+		integration_in_rss
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.8.16"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 61
+		liberalism = 0
+		democratic = 4
+		neutrality = 34
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Roosevelt Skerrit"
+		desc = "POLITICS_ROOSEVELT_SKERRIT_DESC"
+		picture = "gfx/leaders/DMA/portrait_roosevelt_skerrit.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ezekiel Bazil"
+		desc = "POLITICS_EZEKIEL_BAZIL_DESC"
+		picture = "gfx/leaders/DMA/portrait_ezekiel_bazil.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Michael Astaphan"
+		desc = "POLITICS_MICHAEL_ASTAPHAN_DESC"
+		picture = "gfx/leaders/DMA/portrait_michael_astaphan.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+}
+

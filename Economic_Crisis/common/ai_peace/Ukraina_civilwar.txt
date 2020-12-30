@@ -1,0 +1,51 @@
+UKR_war_with_LDNR_end_peace = {
+	enable = {
+		tag = UKR
+		OR = {
+		    UKR = { HAS_WAR_WITH = NRU }
+			UKR = { HAS_WAR_WITH = DON }
+			UKR = { HAS_WAR_WITH = LUG }
+		}
+	}
+
+	annex_randomness = 0
+	liberate_randomness = 0
+	puppet_randomness = 0
+	take_states_randomness = 0
+	force_government_randomness = 0
+	
+	
+	annex = {
+		factor = 900		
+		
+	}
+	
+	take_states = {
+		factor = 100
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet_state = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet_all = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Liberated
+	liberate = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet = {
+		factor = 0
+	}
+
+	# ROOT = Taker, FROM = Giver
+	force_government = {
+		factor = 0
+	}
+}

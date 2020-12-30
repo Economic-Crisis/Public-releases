@@ -1,0 +1,139 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 762
+set_convoys = 0
+
+# де-юре не признано никем, признание в августе 2008
+1994.11.26 = {
+	add_ideas = partially_recognized_country
+	add_ideas = not_alliance_nation
+}
+
+2000.11.20 = {
+	add_ideas = cis_2_member
+}
+
+2013.10.1 = {
+	set_variable = { budget_last_year = 26 }
+	load_oob = "_tech_insurgents_2013"
+	oob = "ABZ_2013"
+	add_political_power = 0
+	set_convoys = 0
+	set_country_flag = pai_nondem_authoritarian
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+	}
+
+	create_intelligence_agency = yes
+	
+	add_political_power = 0
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2011.8.26"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 5
+		reformism = 3
+		liberalism = 5
+		democratic = 20
+		neutrality = 65
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Aslan Bzhania"
+		desc = "POLITICS_ASLAN_BZHANIA_DESC"
+		picture = "gfx/leaders/ABZ/portrait_aslan_bzhania.dds"
+		ideology = sovereign_democracy 
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Raul Khajimba"
+		desc = "POLITICS_RAUL_KHAJIMBA_DESC"
+		picture = "gfx/leaders/ABZ/portrait_raul_khajimba.dds"
+		ideology = sovereign_democracy 
+		expire = "2020.3.22"
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Aleksandr Ankvab"
+		desc = "POLITICS_ALEXANDER_ANKVAB_DESC"
+		picture = "gfx/leaders/ABZ/portrait_alexander_ankvab.dds"
+		expire = "2014.6.1"
+		ideology = sovereign_democracy 
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Lev Shamba"
+		desc = "POLITICS_LEV_SHAMBA_DESC"
+		picture = "gfx/leaders/ABZ/portrait_lev_shamba.dds"
+		#expire = "2020.4.14"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Gennadiy Alamia"
+		desc = "POLITICS_GENNADIY_ALAMIA_DESC"
+		picture = "gfx/leaders/ABZ/portrait_gennadiy_alamia.dds"
+		ideology = social_democracy 
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Beslan Butba"
+		desc = "POLITICS_BESLAN_BUTBA_DESC"
+		picture = "gfx/leaders/ABZ/portrait_beslan_butba.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_field_marshal = {
+		name = "Anatoly Khrulyov"
+		portrait_path = "gfx/leaders/ABZ/portrait_anatoliy_khrulyov.dds"
+		skill = 1
+		traits = { }
+	}
+}
+
+2014.6.1 = {
+	set_party_name = { 
+		ideology = neutrality 
+		long_name = ABZ_neutrality_2014_party 
+		name = ABZ_neutrality_2014_party 
+	}
+}
+
+2020.3.22 = {
+	set_party_name = { 
+		ideology = neutrality 
+		long_name = ABZ_neutrality_party 
+		name = ABZ_neutrality_party 
+	}
+}

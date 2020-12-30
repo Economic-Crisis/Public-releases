@@ -1,0 +1,427 @@
+scripted_diplomatic_actions = {
+
+	confession = { # будет использоваться в большинстве локализаций
+	
+		# root is the initiator of action and this is the target country
+		allowed = { #if action is valid
+			always = yes
+		}
+		visible = { #if action is visible on gui
+			OR = {
+				original_tag = KOS
+				original_tag = SER
+
+				original_tag = PAL
+				original_tag = ISR
+
+				original_tag = CHI
+				original_tag = ROC
+
+				original_tag = NKO
+				original_tag = KOR
+
+				original_tag = WES
+				original_tag = MOR
+
+				original_tag = CYP
+				original_tag = NCY
+
+				original_tag = SOM
+				original_tag = SML
+
+				original_tag = MOL
+				original_tag = TMD
+
+				original_tag = NKR
+				original_tag = AZR
+
+				original_tag = ABZ
+				original_tag = GEO
+				original_tag = SOS
+				
+				#has_idea = partially_recognized_country
+				#has_idea = not_recognized_country
+			}
+			
+		}
+		selectable = { #если действие выбирается в графическом интерфейсе
+			if = {
+				limit = {
+					ROOT = { tag = KOS }
+					}
+				NOT = { tag = SRB }
+			}
+			if = { limit = { ROOT = { tag = SRB } } NOT = { tag = KOS }	}
+
+			if = { limit = { ROOT = { tag = ISR } } NOT = { tag = PAL }	}
+			if = { limit = { ROOT = { tag = PAL } } NOT = { tag = ISR }	}
+
+			if = { limit = { ROOT = { tag = CHI } } NOT = { tag = ROC }	}
+			if = { limit = { ROOT = { tag = ROC } } NOT = { tag = CHI }	}
+
+			if = { limit = { ROOT = { tag = NKO } } NOT = { tag = KOR }	}
+			if = { limit = { ROOT = { tag = KOR } } NOT = { tag = NKO }	}
+
+			if = { limit = { ROOT = { tag = WES } } NOT = { tag = MOR }	}
+			if = { limit = { ROOT = { tag = MOR } } NOT = { tag = WES }	}
+
+			if = { limit = { ROOT = { tag = CYP } } NOT = { tag = NCY }	}
+			if = { limit = { ROOT = { tag = NCY } } NOT = { tag = CYP }	}
+
+			if = { limit = { ROOT = { tag = SOM } } NOT = { tag = SML }	}
+			if = { limit = { ROOT = { tag = SML } } NOT = { tag = SOM }	}
+
+			if = { limit = { ROOT = { tag = MOL } } NOT = { tag = TMD }	}
+			if = { limit = { ROOT = { tag = TMD } } NOT = { tag = MOL }	}
+
+			if = { limit = { ROOT = { tag = NKR } } NOT = { tag = AZR }	}
+			if = { limit = { ROOT = { tag = AZR } } NOT = { tag = NKR }	}
+
+			if = { limit = { ROOT = { tag = ABZ } } NOT = { tag = GEO }	}
+			if = { limit = { ROOT = { tag = GEO } } NOT = { tag = ABZ }	}
+			if = { limit = { ROOT = { tag = GEO } } NOT = { tag = SOS }	}
+			if = { limit = { ROOT = { tag = SOS } } NOT = { tag = GEO }	}
+
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = KOS
+							tag = SER
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = KOS.SER.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = ISR
+							tag = PAL
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = ISR.PAL.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = CHI
+							tag = ROC
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = CHI.ROC.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = NKO
+							tag = KOR
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = NKO.KOR.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = WES
+							tag = MOR
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = WES.MOR.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = CYP
+							tag = NCY
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = CYP.NCY.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = SOM
+							tag = SML
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = SOM.SML.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = MOL
+							tag = TMD
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = MOL.TMD.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = NKR
+							tag = AZR
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = NKR.AZR.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = GEO
+							tag = ABZ
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = GEO.ABZ.recognition	} }
+			}
+			if = {
+				limit = {
+					THIS = {
+						OR = {
+							tag = GEO
+							tag = SOS
+						}
+					}
+				}
+				NOT = {	ROOT = { has_country_flag = GEO.SOS.recognition	} }
+			}
+		}
+
+		requires_acceptance = no # если true, действие потребует принятия целевой страны
+		cost = 300 # pp cost, can be zero
+		#command_power = 10 # cp cost, can be zero
+
+		#cost_string = loc_key #если у вас есть пользовательская стоимость, используйте эту локацию, чтобы отобразить ее
+		show_acceptance_on_action_button = yes # установите в no, если на кнопке действия не должно отображаться подтверждение
+
+		icon = 1 # icon frame to use in notification
+
+      #for effects/triggers/variables, root это отправитель, а this получатель
+
+		# запускается при отправке действия
+		on_sent_effect = {
+			#THIS = { set_country_flag = universal_recognition  }
+		}
+
+		# запускается, когда действие правильно отправлено и принято
+		complete_effect = {
+			#THIS = { set_country_flag = universal_recognition  }
+			if = { limit = { THIS = { tag = KOS } } 
+				SER = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				KOS = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = KOS.SER.recognition }
+			}
+			if = { limit = { THIS = { tag = SER } } 
+				KOS = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				SER = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = KOS.SER.recognition }
+			}
+
+			if = { limit = { THIS = { tag = ISR } } 
+				PAL = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				ISR = { add_opinion_modifier = { target = ROOT modifier = support } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = ISR.PAL.recognition }
+			}
+			if = { limit = { THIS = { tag = PAL } } 
+				ISR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				PAK = { add_opinion_modifier = { target = ROOT modifier = support } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = ISR.PAL.recognition }
+			}
+
+			if = { limit = { THIS = { tag = CHI } } 
+				ROC = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				CHI = { add_opinion_modifier = { target = ROOT modifier = support } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = CHI.ROC.recognition }
+			}
+			if = { limit = { THIS = { tag = ROC } } 
+				CHI = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				ROC = { add_opinion_modifier = { target = ROOT modifier = support } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = CHI.ROC.recognition }
+			}
+			
+			if = { limit = { THIS = { tag = NKO } } 
+				KOR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				NKO = { add_opinion_modifier = { target = ROOT modifier = support } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				CHI = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = NKO.KOR.recognition }
+			}
+			if = { limit = { THIS = { tag = KOR } } 
+				NKO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				KOR = { add_opinion_modifier = { target = ROOT modifier = support } }
+				CHI = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = NKO.KOR.recognition }
+			}
+
+			if = { limit = { THIS = { tag = WES } } 
+				MOR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				WES = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = WES.MOR.recognition }
+			}
+			if = { limit = { THIS = { tag = MOR } } 
+				WES = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				MOR = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = WES.MOR.recognition }
+			}
+
+			if = { limit = { THIS = { tag = CYP } } 
+				NCY = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				CYP = { add_opinion_modifier = { target = ROOT modifier = support } }
+				GRE = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				TUR = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = CYP.NCY.recognition }
+			}
+			if = { limit = { THIS = { tag = NCY } } 
+				CYP = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				NCY = { add_opinion_modifier = { target = ROOT modifier = support } }
+				TUR = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				GRE = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = CYP.NCY.recognition }
+			}
+
+			if = { limit = { THIS = { tag = SOM } } 
+				SML = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				SOM = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = SOM.SML.recognition }
+			}
+			if = { limit = { THIS = { tag = SML } } 
+				SOM = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				SML = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ROOT = { set_country_flag = SOM.SML.recognition }
+			}
+
+			if = { limit = { THIS = { tag = MOL } } 
+				TMD = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				MOL = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = MOL.TMD.recognition }
+			}
+			if = { limit = { THIS = { tag = TMD } } 
+				MOL = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				TMD = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = MOL.TMD.recognition }
+			}
+
+			if = { limit = { THIS = { tag = NKR } } 
+				AZR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				NKR = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ARM = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = NKR.AZR.recognition }
+			}
+			if = { limit = { THIS = { tag = AZR } } 
+				NKR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				AZR = { add_opinion_modifier = { target = ROOT modifier = support } }
+				ARM = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = NKR.AZR.recognition }
+			}
+
+			if = { limit = { THIS = { tag = GEO } } 
+				ABZ = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				GEO = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = GEO.ABZ.recognition }
+			}
+			if = { limit = { THIS = { tag = ABZ } } 
+				GEO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				ABZ = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = GEO.ABZ.recognition }
+			}
+			if = { limit = { THIS = { tag = SOS } } 
+				GEO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				SOS = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+				ROOT = { set_country_flag = GEO.SOS.recognition }
+			}
+			if = { limit = { THIS = { tag = GEO } } 
+				SOS = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+				GEO = { add_opinion_modifier = { target = ROOT modifier = support } }
+				RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+				ROOT = { set_country_flag = GEO.SOS.recognition }
+			}
+		}
+
+		# запускается, когда действие правильно отправлено и отклонено
+		reject_effect = {
+		}
+
+		# SEND POPUP CUSTOMIZATION
+		# использовать Diplomatic_action в качестве контекста в скрипте GUI
+		# send_scripted_gui = send_scripted_gui_name # если указано, дипломатическое действие будет использовать этот скриптовый графический интерфейс перед отправкой запроса. игрок (или ai) может вносить изменения в этот графический интерфейс и сохранять вещи как переменные для настройки действий
+		reset_send_effect = { # если действие имеет отправку скриптового интерфейса, этот эффект будет использоваться для очистки состояния графического интерфейса пользователя (будет запускаться, когда игрок открывает скриптовый интерфейс, отправляя действие или когда ai предлагает действие
+			# clear action
+			if = {
+				limit = { 
+					root = {
+						is_ai = yes
+					}
+				}
+				# initialize for ai
+			}
+		}
+		can_be_sent = { # Кнопка отправки будет отключена, если нет
+			always = yes
+		}
+		send_description = loc_confession_send # если нет скриптового интерфейса, этот desc будет использоваться во всплывающем окне send yes / no
+
+
+		# RECEIVE POPUP CUSTOMIZATION
+		# использовать Diplomatic_action в качестве контекста в скрипте GUI
+		# receive_scripted_gui = receive_scripted_gui_name #если указано, получатель действия получит этот скрипт вместо всплывающего окна да-нет при получении предложения.
+		reset_receive_effect = {
+			# clear action
+			if = {
+				limit = { 
+					is_ai = yes
+				}
+				# change stuff for ai
+			}
+		}
+		can_be_accepted = { # Кнопка подтверждения будет отключена, если нет
+			always = yes
+		}
+		receive_description = loc_key_receive # если нет скриптового интерфейса, этот desc будет использоваться во всплывающем окне send yes / no
+
+		
+		# PLAYER FEEDBACK ON ACCEPT/REJECT
+		accept_title = loc_key_accept #можно изменить, чтобы настроить принятые / отклоненные всплывающие окна для отправителя
+		accept_description = loc_key_accept_desc
+		reject_title = loc_key_reject
+		reject_description = loc_key_reject_desc
+	
+		
+		# AI
+		# a list of ai_will_do записи, которые будут использоваться, чтобы решить, должен ли AI принять или отклонить запрос
+		ai_acceptance = {
+		}
+
+		# ai_will_do to decide если AI должен отправить это действие или нет
+		ai_desire = {
+			base = -1
+		}
+	}
+}

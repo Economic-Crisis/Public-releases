@@ -1,0 +1,867 @@
+# List of intelligence agency upgrades, and their effects
+# For documentation, there is a file _documentation.info in the same folder.
+
+branch_intelligence = {
+
+	upgrade_civilian_intelligence = {
+		picture = GFX_agency_civilian_intelligence
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_civilian_intelligence_TTT
+				check_variable = { budget_reserve > 643 }
+			}
+		}
+
+		ai_will_do = { factor = 2 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				civilian_intel_factor = 0.11
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_civilian_intelligence_TT
+				subtract_from_variable = { budget_reserve = 643 }
+			}
+		}
+	}
+	
+	upgrade_satellite_intelligence = {
+		picture = GFX_agency_satellite_intelligence
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+		
+		ai_will_do = { factor = 2 }
+
+		available = {
+			has_tech = satellite_2
+			custom_trigger_tooltip = {
+				tooltip = upgrade_satellite_intelligence_TTT
+				check_variable = { budget_reserve > 2100 }
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				army_intel_factor = 0.03
+				civilian_intel_factor = 0.08
+				navy_intel_factor = 0.07
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_satellite_intelligence_TT
+				subtract_from_variable = { budget_reserve = 2100 }
+			}
+		}
+		
+	}
+	
+	upgrade_department_cryptanalysis = {
+		picture = GFX_agency_department_cryptanalysis
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_department_cryptanalysis_TTT
+				check_variable = { budget_reserve > 324 }
+			}
+		}
+		
+		ai_will_do = { factor = 2 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				decryption_power = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_department_cryptanalysis_TT
+				subtract_from_variable = { budget_reserve = 324 }
+			}
+		}
+
+		level = {
+			modifier = {
+				decryption_power = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_department_cryptanalysis1_TT
+				subtract_from_variable = { budget_reserve = 324 }
+			}
+		}		
+	}
+}
+
+branch_defense = {
+	upgrade_counterintelligence = {
+		picture = GFX_agency_counterintelligence
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_counterintelligence_TTT
+				check_variable = { budget_reserve > 120 }
+			}
+		}
+		
+		ai_will_do = { factor = 2 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1.5
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counterintelligence_TT
+				subtract_from_variable = { budget_reserve = 120 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counterintelligence1_TT
+				subtract_from_variable = { budget_reserve = 120 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counterintelligence2_TT
+				subtract_from_variable = { budget_reserve = 120 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counterintelligence3_TT
+				subtract_from_variable = { budget_reserve = 120 }
+			}
+		}
+	}
+
+	upgrade_counter_separatist_war = {
+		picture = GFX_agency_counter_separatist_war
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_counter_separatist_war_TTT
+				check_variable = { budget_reserve > 420 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				root_out_resistance_effectiveness_factor = 0.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counter_separatist_war_TT
+				subtract_from_variable = { budget_reserve = 420 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				root_out_resistance_effectiveness_factor = 0.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_counter_separatist_war1_TT
+				subtract_from_variable = { budget_reserve = 420 }
+			}
+		}
+	}
+
+	upgrade_school_of_cryptography = {
+		picture = GFX_agency_school_of_cryptography
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_school_of_cryptography_TTT
+				check_variable = { budget_reserve > 70 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				crypto_department_enabled = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_school_of_cryptography_TT
+				subtract_from_variable = { budget_reserve = 70 }
+			}
+		}
+		level = {
+			modifier = {
+				decryption_power = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_school_of_cryptography1_TT
+				subtract_from_variable = { budget_reserve = 70 }
+			}
+		}
+		level = {
+			modifier = {
+				decryption_power = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_school_of_cryptography2_TT
+				subtract_from_variable = { budget_reserve = 70 }
+			}
+		}
+	}
+
+	upgrade_botnet_center = {
+		picture = GFX_agency_botnet_center
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+		
+		ai_will_do = { factor = 1 }
+
+		available = {
+			has_tech = beginning_globalization_of_computer_networks
+			custom_trigger_tooltip = {
+				tooltip = upgrade_botnet_center_TTT
+				check_variable = { budget_reserve > 320 }
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.03
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_botnet_center_TT
+				subtract_from_variable = { budget_reserve = 320 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.04
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_botnet_center1_TT
+				subtract_from_variable = { budget_reserve = 320 }
+			}
+		}
+
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.05
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_botnet_center2_TT
+				subtract_from_variable = { budget_reserve = 320 }
+			}
+		}
+	}
+	
+}
+
+branch_operation = {
+	upgrade_industrial_espionage = {
+		picture = GFX_agency_industrial_espionage
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_industrial_espionage_TTT
+				check_variable = { budget_reserve > 140 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				operation_steal_tech_outcome = 0.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_industrial_espionage_TT
+				subtract_from_variable = { budget_reserve = 140 }
+			}
+		}
+	}
+	
+	upgrade_targeted_terrorism = {
+		picture = GFX_agency_targeted_terrorism
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = { factor = 1 }
+	
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_targeted_terrorism_TTT
+				check_variable = { budget_reserve > 560 }
+			}
+		}
+
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.07
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_targeted_terrorism_TT
+				subtract_from_variable = { budget_reserve = 560 }
+			}
+		}
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.11
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_targeted_terrorism1_TT
+				subtract_from_variable = { budget_reserve = 560 }
+			}
+		}
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.17
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_targeted_terrorism2_TT
+				subtract_from_variable = { budget_reserve = 560 }
+			}
+		}
+		level = {
+			complete_effect = {
+				custom_effect_tooltip = upgrade_targeted_terrorism3_TT
+				subtract_from_variable = { budget_reserve = 560 }
+			}
+		}
+		
+	}
+	
+	upgrade_flow_religious_war = {
+		picture = GFX_agency_flow_religious_war
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_flow_religious_war_TTT
+				check_variable = { budget_reserve > 630 }
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				boost_resistance_factor = 0.1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_flow_religious_war_TT
+				subtract_from_variable = { budget_reserve = 630 }
+			}
+		}
+		level = {
+			modifier = {
+				boost_resistance_factor = 0.1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_flow_religious_war1_TT
+				subtract_from_variable = { budget_reserve = 630 }
+			}
+		}
+		level = {
+			modifier = {
+				boost_resistance_factor = 0.1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_flow_religious_war2_TT
+				subtract_from_variable = { budget_reserve = 630 }
+			}
+		}
+		level = {
+			modifier = {
+				boost_resistance_factor = 0.1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_flow_religious_war3_TT
+				subtract_from_variable = { budget_reserve = 630 }
+			}
+		}
+		
+	}
+	
+	upgrade_radio_freedom_propaganda = {
+		picture = GFX_agency_radio_freedom_propaganda
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_radio_freedom_propaganda_TTT
+				check_variable = { budget_reserve > 350 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.1
+				boost_resistance_factor = 0.1
+				control_trade_mission_factor = 0.1
+				diplomatic_pressure_mission_factor = 0.1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_radio_freedom_propaganda_TT
+				subtract_from_variable = { budget_reserve = 350 }
+			}
+		}
+		
+	}
+	
+	upgrade_DDOS_attack = {
+		picture = GFX_agency_DDOS_attack
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = { factor = 1 }
+
+		available = {
+			has_tech = beginning_globalization_of_computer_networks
+			custom_trigger_tooltip = {
+				tooltip = upgrade_DDOS_attack_TTT
+				check_variable = { budget_reserve > 200 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				#operative_death_on_capture_chance = 0.1
+				intel_from_operatives_factor = 0.15
+				target_sabotage_factor = 0.07
+				own_operative_detection_chance = -0.1
+			}
+
+			complete_effect = {
+				custom_effect_tooltip = upgrade_DDOS_attack_TT
+				subtract_from_variable = { budget_reserve = 200 }
+			}
+		}
+		
+	}
+	
+}
+
+branch_operative = {
+	
+	upgrade_training_centers = {
+	
+		picture = GFX_agency_localized_training_center
+		Sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_training_centers_TTT
+				check_variable = { budget_reserve > 200 }
+			}
+		}
+		
+		ai_will_do = { factor = 2 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 10
+		}
+		
+		level = {
+			modifier = {
+				enemy_operative_recruitment_chance = 0.25
+				occupied_operative_recruitment_chance = 0.25
+				new_operative_slot_bonus = 2
+			}
+			
+			complete_effect = {
+				unlock_decision_category_tooltip = lar_local_recruitment
+				custom_effect_tooltip = upgrade_training_centers_TT
+				subtract_from_variable = { budget_reserve = 200 }
+			}
+		}
+		
+	}
+	
+	# upgrade_commando_training = {
+	
+	# 	picture = GFX_agency_commando_training
+	# 	sound = Spy_Agency_Training_Facilities_Upgrades_Confirm	
+
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+		
+	# 	modifiers_during_progress = {
+	# 		civilian_factory_use = 5
+	# 	}
+		
+	# 	level = {
+	# 		modifier = {
+	# 			commando_trait_chance_factor = 1 # +100%
+	# 		}
+	# 	}
+		
+	# }
+	
+	upgrade_interrogation_techniques = {
+	
+		picture = GFX_agency_interrogation_techniques
+		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_interrogation_techniques_TTT
+				check_variable = { budget_reserve > 130 }
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				enemy_operative_capture_chance_factor = 1 # +100%
+				enemy_operative_intel_extraction_rate = 0.25 # +25%
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_interrogation_techniques_TT
+				subtract_from_variable = { budget_reserve = 130 }
+			}
+		}
+		
+	}
+	
+	upgrade_diplo_training = {
+		picture = GFX_agency_diplomatic_training
+		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_agency_diplomatic_training_TTT
+				check_variable = { budget_reserve > 420 }
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				control_trade_mission_factor = 0.25
+				diplomatic_pressure_mission_factor = 0.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_diplo_training_TT
+				subtract_from_variable = { budget_reserve = 420 }
+			}
+		}
+		
+	}
+	
+	upgrade_psycho_warfare = {
+	
+		picture = GFX_agency_psychological_warfare
+		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = upgrade_psycho_warfare_TTT
+				check_variable = { budget_reserve > 560 }
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				propaganda_mission_factor = 0.25
+				boost_ideology_mission_factor = 0.25
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_psycho_warfare_TT
+				subtract_from_variable = { budget_reserve = 560 }
+			}
+		}
+		
+	}
+	
+}
+
+branch_crypto = {
+	upgrade_dynamic_encryption = {
+		picture = GFX_agency_dynamic_encryption
+		sound = Spy_Agency_Cryptology_Upgrades_Confirm
+		
+		ai_will_do = { factor = 2 }
+
+		available = {
+			has_tech = military_network
+			custom_trigger_tooltip = {
+				tooltip = upgrade_dynamic_encryption_TTT
+				check_variable = { budget_reserve > 302 }
+			}	
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				#crypto_department_enabled = 1
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_dynamic_encryption_TT
+				subtract_from_variable = { budget_reserve = 302 }
+			}
+		}
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_dynamic_encryption1_TT
+				subtract_from_variable = { budget_reserve = 302 }
+			}
+		}
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_dynamic_encryption2_TT
+				subtract_from_variable = { budget_reserve = 302 }
+			}
+		}
+		
+	}
+	
+	upgrade_rokenization = {
+		picture = GFX_agency_rokenization
+		sound = Spy_Agency_Cryptology_Upgrades_Confirm
+		
+		ai_will_do = { factor = 2 }
+		
+		available = {
+			has_tech = beginning_globalization_of_computer_networks
+			custom_trigger_tooltip = {
+				tooltip = upgrade_rokenization_TTT
+				check_variable = { budget_reserve > 860 }
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_rokenization_TT
+				subtract_from_variable = { budget_reserve = 860 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_rokenization1_TT
+				subtract_from_variable = { budget_reserve = 860 }
+			}
+		}		
+	}
+
+	upgrade_end_to_end_ectryption = {
+		picture = GFX_agency_end_to_end_ectryption
+		sound = Spy_Agency_Cryptology_Upgrades_Confirm
+		
+		ai_will_do = { factor = 1 }
+		
+		available = {
+			has_tech = fourth_generation_computers
+			custom_trigger_tooltip = {
+				tooltip = upgrade_end_to_end_ectryption_TTT
+				check_variable = { budget_reserve > 570 }
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 10 
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_end_to_end_ectryption_TT
+				subtract_from_variable = { budget_reserve = 570 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_end_to_end_ectryption1_TT
+				subtract_from_variable = { budget_reserve = 570 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_end_to_end_ectryption2_TT
+				subtract_from_variable = { budget_reserve = 570 }
+			}
+		}
+		
+	}
+	
+	upgrade_quantum_ectryption = {
+		picture = GFX_agency_quantum_ectryption
+		sound = Spy_Agency_Cryptology_Upgrades_Confirm
+		
+		ai_will_do = { factor = 2 }
+		
+		available = {
+			has_tech = quantum_computer_1
+			custom_trigger_tooltip = {
+				tooltip = upgrade_quantum_ectryption_TTT
+				check_variable = { budget_reserve > 1600 }
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_quantum_ectryption_TT
+				subtract_from_variable = { budget_reserve = 1600 }
+			}
+		}
+		
+		level = {
+			modifier = {
+				crypto_strength = 1
+			}
+			complete_effect = {
+				custom_effect_tooltip = upgrade_quantum_ectryption1_TT
+				subtract_from_variable = { budget_reserve = 1600 }
+			}
+		}
+	}
+	
+	# upgrade_crypto_strength_2 = {
+	
+	# 	picture = GFX_agency_cryptology_1
+	# 	sound = Spy_Agency_Cryptology_Upgrades_Confirm
+		
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+		
+	# 	available = {
+			
+	# 		#has_tech = mechanical_computing
+	# 	}
+		
+	# 	modifiers_during_progress = {
+	# 		civilian_factory_use = 15
+	# 	}
+		
+	# 	level = {
+	# 		modifier = {
+	# 			crypto_strength = 2
+	# 		}
+	# 	}
+		
+	# 	level = {
+	# 		modifier = {
+	# 			crypto_strength = 2
+	# 		}
+	# 	}
+		
+	# 	level = {
+	# 		modifier = {
+	# 			crypto_strength = 2
+	# 		}
+	# 	}
+	# }
+	
+}

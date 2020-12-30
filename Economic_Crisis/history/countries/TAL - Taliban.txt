@@ -1,0 +1,98 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+ 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 788
+
+add_ideas = {
+	not_recognized_country
+}
+
+2013.2.2 = { declare_war_on = { target = AFG type = annex_everything } }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 15 }
+	
+	load_oob = "_tech_isis_2013"
+	oob = "TAL_2013"
+	
+	add_ideas = {
+		afg_underground
+		dictatorship_state
+		djixad
+	}
+	set_country_flag = AFG_civilwar
+	set_convoys = 0
+	set_war_support = 1
+	add_political_power = 0
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2013.10.10"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 20
+		neutrality = 5
+		fascism = 0
+		rad_islamists = 75
+	}
+
+	create_country_leader = {
+		name = "Hibatullah Akhundzada"
+		desc = ""
+		picture = "gfx/leaders/TAL/portrait_hibatullah_akhundzada.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	create_country_leader = {
+		name = "Akhtar Mansour"
+		desc = ""
+		picture = "gfx/leaders/TAL/portrait_akhtar_mohammad_mansour.dds"
+		ideology = wahhabism
+		expire = "2016.5.21"
+		traits = { trait_wahhabism }
+	}
+
+	create_corps_commander = {
+		name = "Jalaluddin Haqqani"
+		picture = "gfx/leaders/TAL/portrait_tal_general_jalaluddin_haqqani.dds"
+		traits = { commando harsh_leader }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Mullah Muhammad Hasan Rehmani"
+		picture = "gfx/leaders/TAL/portrait_tal_general_mullah_muhammad_hasan_rehmani.dds"
+		traits = { politically_connected }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_field_marshal = {
+		name = "Mufti Nemat"
+		picture = "gfx/leaders/TAL/portrait_tal_general_mufti_nemat.dds"
+		traits = { media_personality }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+}
+

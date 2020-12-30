@@ -1,0 +1,676 @@
+guiTypes = {
+	@INCREASE_BTN_Y_POS = 305
+	@DECREASE_BTN_Y_POS = 320
+	@FAST_INCREASE_BTN_Y_POS = 295
+	@FAST_DECREASE_BTN_Y_POS = 330
+	@RESOURCE_ICON_Y_POS = 285
+	@RESOURCE_VALUE_Y_POS = 310
+	@BOTTOM_BTN_Y_POS = 380
+	
+	### TRADE TAB
+	# Attached to trade tab
+	containerWindowType = {
+		name = "main_trade_window_top_container"
+		position = { x = 0 y = 50 }
+		size = { width = 516 height = 35 }
+		
+		
+	}
+	
+	containerWindowType = {
+		name = "main_trade_window_middle_container"
+		position = { x = 0 y = 285 }
+		size = { width = 350 height = 300 }
+ 
+		iconType = {
+			name ="money_topbar_icon"
+			spriteType = "GFX_money_topbar_icon"
+			position = { x= 930 y = -234  }
+		}		
+		
+		###
+		instantTextBoxType = {
+			name ="spent_money_trading_text"
+			position = { x= 580 y = -234  }
+			font = "hoi_18mbs"
+			text = "SPENT_MONEY_FOR_TRADING"
+			format = right
+			maxWidth = 350
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+			
+			pdx_tooltip = "SPENT_MONEY_FOR_TRADING_TOOLTIP"
+		}
+ 
+		
+		instantTextBoxType = {
+			name ="cost_of_resources_text"
+			position = { x= 600 y = -5 }
+			font = "hoi_18mbs"
+			text = "COST_OF_RESOURCES_TEXT"
+			format = center
+			maxWidth = 400
+			maxHeight = 50
+			fixedsize = yes
+			#alwaystransparent = yes
+			pdx_tooltip = "world_cost_resources_tooltip"
+			pdx_tooltip_delayed = "world_cost_resources_tooltip1"
+		}
+		
+		instantTextBoxType = {
+			name ="cost_of_oil_value"
+			position = { x= 480 y = 20 }
+			font = "hoi_18mbs"
+			text = "COST_OF_OIL"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name ="cost_of_energy_resource_value"
+			position = { x=  620 y = 20 }
+			font = "hoi_18mbs"
+			text = "COST_OF_ENERGY_RESOURCE"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name ="cost_of_iron_ore_value"
+			position = { x=  760 y = 20 }
+			font = "hoi_18mbs"
+			text = "COST_OF_IRON_ORE"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name ="cost_of_steel_value"
+			position = { x= 900 y = 20 }
+			font = "hoi_18mbs"
+			text = "COST_OF_STEEL"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="cost_of_boxit_value"
+			position = { x= 480 y = 45 }
+			font = "hoi_18mbs"
+			text = "COST_OF_BAUXITE"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_aluminium_value"
+			position = { x= 620 y = 45 }
+			font = "hoi_18mbs"
+			text = "COST_OF_ALUMINIUM"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_alloy_ore_value"
+			position = { x= 760 y = 45 }
+			font = "hoi_18mbs"
+			text = "COST_OF_ALLOY_ORE"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_alloy_steel_value"
+			position = { x= 900 y = 45 }
+			font = "hoi_18mbs"
+			text = "COST_OF_ALLOY_STEEL"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_rare_earth_ore_value"
+			position = { x= 480 y = 70 }
+			font = "hoi_18mbs"
+			text = "COST_OF_RARE_EARTH_ORE"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_rare_metals_value"
+			position = { x= 620 y = 70 }
+			font = "hoi_18mbs"
+			text = "COST_OF_RARE_METALS"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_uran_value"
+			position = { x= 760 y = 70 }
+			font = "hoi_18mbs"
+			text = "COST_OF_URAN"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_enr_uran_value"
+			position = { x= 900 y = 70 }
+			font = "hoi_18mbs"
+			text = "COST_OF_ENR_URAN"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="cost_of_polymers_value"
+			position = { x= 680 y = 90 }
+			font = "hoi_18mbs"
+			text = "COST_OF_POLYMERS"
+			format = center
+			maxWidth = 140
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+	}	
+	
+	containerWindowType = {
+		name = "tradeoffer_window_container"
+		position = { x= 200 y= 160 }	
+		size = { width = 527 height = 437 }
+		
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_ec_trade_offer_popup_win"
+		}
+		
+		instantTextBoxType = {
+			name = "country_name_text_title"
+			position = { x = 100 y = 30 }
+			font = "hoi_24header"
+			text = "COUNTRY_NAME_TEXT"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "country_body"
+			position = { x = 20 y = 85 }
+			font = "hoi_20bs"
+			text = "COUNTRY_TEXT"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "country_name_text_body"
+			position = { x = 115 y = 85 }
+			font = "hoi_20bs"
+			text = "COUNTRY_NAME_TEXT"
+			format = left
+			maxWidth = 300
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "country_could_trade_max_body"
+			position = { x = 20 y = 100 }
+			font = "hoi_20bs"
+			text = "COUNTRY_COULD_TRADE_MAX_TEXT"
+			format = left
+			maxWidth = 400
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "oil_max_value_body"
+			position = { x = 20 y = 120 }
+			font = "hoi_20bs"
+			text = "OIL_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "aluminium_max_value_body"
+			position = { x = 20 y = 140 }
+			font = "hoi_18mbs"
+			text = "ALUMINIUM_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "rubber_max_value_body"
+			position = { x = 20 y = 160 }
+			font = "hoi_20bs"
+			text = "RUBBER_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "tungsten_max_value_body"
+			position = { x = 20 y = 180 }
+			font = "hoi_20bs"
+			text = "TUNGSTEN_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "steel_max_value_body"
+			position = { x = 20 y = 200 }
+			font = "hoi_20bs"
+			text = "STEEL_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "chromium_max_value_body"
+			position = { x = 20 y = 220 }
+			font = "hoi_20bs"
+			text = "CHROMIUM_MAX_VALUE"
+			format = left
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="total_spend_money_text"
+			position = { x = 10 y = 260 }
+			font = "hoi_18mbs"
+			text = "TOTAL_SPEND_MONEY_TEXT"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "buy_button"
+			position = { x = 340 y = @BOTTOM_BTN_Y_POS }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonFont = "hoi_16mbs"
+			buttonText = "BUY_RESOURCE"			
+			clicksound = click_send	
+			pdx_tooltip = "SEND"
+		}
+		
+		buttonType = {
+			name = "cancel_button"
+			position = { x = 50 y = @BOTTOM_BTN_Y_POS }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonFont = "hoi_16mbs"
+			buttonText = "CLOSE"
+			shortcut = "ESCAPE"
+			clicksound = click_close
+			pdx_tooltip = "CANCEL"
+		}
+		
+		
+		#### RESOURCES GRID ####
+		### OIL Grid		
+		buttonType = {
+			name = "fast_increase_oil_btn"
+			position = { x = 25 y = @FAST_INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_up_fast"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "increase_oil_btn"
+			position = { x = 25 y = @INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_up"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "decrease_oil_btn"
+			position = { x = 25 y = @DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_down"
+			frame = 1
+			clicksound = click_default
+		}
+
+		buttonType = {
+			name = "fast_decrease_oil_btn"
+			position = { x = 25 y = @FAST_DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_down_fast"
+			frame = 1
+			clicksound = click_default
+		}
+
+		iconType = {
+			name = "oil_icon"
+			quadTextureSprite ="GFX_oil_small"
+			position = { x = 35 y = @RESOURCE_ICON_Y_POS }
+		}
+		
+		instantTextBoxType = {
+			name ="buy_oil_value"
+			position = { x= 20 y = @RESOURCE_VALUE_Y_POS }
+			font = "hoi_18mbs"
+			text = "BUY_OIL_VALUE"
+			format = center
+			maxWidth = 60
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		###
+		
+		
+		### Aluminium Grid		
+		buttonType = {
+			name = "fast_increase_aluminium_btn"
+			position = { x = 70 y = @FAST_INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_up_fast"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "increase_aluminium_btn"
+			position = { x = 70 y = @INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_up"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "decrease_aluminium_btn"
+			position = { x = 70 y = @DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_down"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "fast_decrease_aluminium_btn"
+			position = { x = 70 y = @FAST_DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_down_fast"
+			frame = 1
+			clicksound = click_default
+		}
+
+		iconType = {
+			name = "aluminium_icon"
+			quadTextureSprite ="GFX_aluminium_small"
+			position = { x = 80 y = @RESOURCE_ICON_Y_POS }	
+		}
+		
+		instantTextBoxType = {
+			name ="buy_aluminium_value"
+			position = { x= 65 y = @RESOURCE_VALUE_Y_POS }
+			font = "hoi_18mbs"
+			text = "BUY_ALUMINIUM_VALUE"
+			format = center
+			maxWidth = 60
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		###		
+		
+		### STEEL Grid
+		buttonType = {
+			name = "fast_increase_steel_btn"
+			position = { x = 205 y = @FAST_INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_up_fast"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "increase_steel_btn"
+			position = { x = 205 y = @INCREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_up"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "decrease_steel_btn"
+			position = { x = 205 y = @DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_scroll_down"
+			frame = 1
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "fast_decrease_steel_btn"
+			position = { x = 205 y = @FAST_DECREASE_BTN_Y_POS }
+			quadTextureSprite = "GFX_ec_scroll_down_fast"
+			frame = 1
+			clicksound = click_default
+		}
+
+		iconType = {
+			name = "steel_icon"
+			quadTextureSprite ="GFX_steel_small"
+			position = { x = 215 y = @RESOURCE_ICON_Y_POS }
+		}
+		
+		instantTextBoxType = {
+			name ="buy_steel_value"
+			position = { x= 200 y = @RESOURCE_VALUE_Y_POS }
+			font = "hoi_18mbs"
+			text = "BUY_STEEL_VALUE"
+			format = center
+			maxWidth = 60
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		###
+		
+	}
+	
+	containerWindowType = {
+		name = "trade_export_changer_window_container"
+		position = { x = 380 y = 150 }
+		size = { width = 250 height = 140 }		
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}
+		
+		instantTextBoxType = {
+			name ="trade_export_changer_title"
+			position = { x= 20 y = 25 }
+			font = "hoi_18mbs"
+			text = "TRADE_EXPORT_CHANGER_TITLE"
+			maxWidth = 200
+			maxHeight = 35
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		
+		#iconType = {
+		#	name = "chromium_icon"
+		#	quadTextureSprite ="GFX_chromium_small"
+		#	position = { x = 20 y = 50 }
+		#}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = 210 y = 5 }
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		
+		
+		buttonType = {
+			name = "zero_percent_export_btn"
+			position = { x = 20 y = 50 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "0%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "ten_percent_export_btn"
+			position = { x = 60 y = 50 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "10%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "twenty_percent_export_btn"
+			position = { x = 100 y = 50 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "20%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "thirty_percent_export_btn"
+			position = { x = 140 y = 50 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "30%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "fourty_percent_export_btn"
+			position = { x = 180 y = 50 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "40%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "fifty_percent_export_btn"
+			position = { x = 20 y = 75 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "50%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "sixty_percent_export_btn"
+			position = { x = 60 y = 75 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "60%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}				
+		buttonType = {
+			name = "seventy_percent_export_btn"
+			position = { x = 100 y = 75 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "70%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "eighty_percent_export_btn"
+			position = { x = 140 y = 75 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "80%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "ninety_percent_export_btn"
+			position = { x = 180 y = 75 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "90%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}	
+		buttonType = {
+			name = "hundred_percent_export_btn"
+			position = { x = 20 y = 100 }
+			quadTextureSprite = "GFX_ec_button_40x22"
+			buttonText = "100%"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+		}
+		
+		buttonType = {
+			name = "export_accept_button"
+			position = { x = 105 y = 95 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonFont = "hoi_16mbs"
+			buttonText = "EXPORT_ACCEPT"			
+			clicksound = click_send				
+		}
+	}
+	
+	
+}	

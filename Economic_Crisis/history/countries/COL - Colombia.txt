@@ -1,0 +1,66 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 306
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 38020 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "COL_2013"
+
+	add_ideas = {
+		unasur_member
+		high_terrorism
+		mixed_schools
+		NPT
+	}
+
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2010.8.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 2
+		reformism = 25
+		liberalism = 38
+		democratic = 29
+		neutrality = 5
+		fascism = 1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Juan Manuel Santos Calderón"		
+		desc = "POLITICS_JUAN_MANUEL_SANTOS_DESC"
+		picture = "gfx/leaders/COL/portrait_juan_manuel_santos.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Antanas Mockus Šivickas"
+		desc = "POLITICS_ANTANAS_MOCKUS_SIVICKAS_DESC"
+		picture = "gfx/leaders/COL/portrait_antanas_mockus_sivickas.dds"
+		ideology = green_politics
+		traits = { trait_green_politics }
+	}
+
+	create_country_leader = {
+		name = "Óscar Iván Zuluaga"
+		desc = "POLITICS_OSCAR_IVAN_ZULUAGA_DESC"
+		picture = "gfx/leaders/COL/portrait_oscar_ivan_zuluaga.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+}

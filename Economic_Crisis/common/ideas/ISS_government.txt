@@ -1,0 +1,559 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		IGL_Abu_Arkan_al-Amiri_hog = {
+
+		picture = IGL_Muhammad_Abdul_Barin_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+			}
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = { party_leader_rad_islamist 
+						pm_rad_islamist
+					}
+
+			on_add = {
+				# country_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		IGL_Abu_Ala_Al-Afri_hog = {
+
+		picture = Abu_Ala_Al_Afri
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+				NOT = { has_country_flag = isis_Abu_Ala_Al_Afri_killed }
+			}
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = { party_leader_rad_islamist 
+						pm_rad_islamist
+					}
+
+			on_add = {
+				# country_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		IGL_Taryk_Al_Hashimi_hog = {
+
+		picture = IGL_Muhammad_Abdul_Barin_hog
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = rad_islamists
+						has_country_flag = coalition_with_rad_islamists
+				}
+			}
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = { party_leader_rad_islamist
+						pm_rad_islamist
+					}
+
+			on_add = {
+				# country_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+
+	}
+
+
+	defence_minister = {
+
+		IGL_Abu_Ayman_al-Iraqi_defm = {
+
+			cost = 200
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+			available =	{
+			NOT = { has_country_flag = isis_Abu_Ayman_al_Iraqi_killed }
+ 			}
+
+			traits = {
+				defence_minister_serve_and_protect_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		IGL_Abu_Suleiman_al-Nasir_Lidinilla_defm = {
+
+			cost = 250
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			traits = {
+				defence_minister_bureaucrat_3
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		IGL_Haji_Bekir_defm = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Haji_Bekir_killed }
+ 			}
+
+			traits = {
+				defence_minister_serve_and_protect_3
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	foreign_minister = {
+
+		IGL_Abu_Muhammad_al-Adnani_fgm = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Abu_Muhammad_al_Adnani_killed }
+ 			}
+
+			traits = { foreign_minister_addiction_irredentist_3 }
+		}
+
+		IGL_Abu_Ahmad_fgm = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = { foreign_minister_addiction_irredentist_3 }
+		}
+
+		IGL_Abu_Turab_al-Mudagassi_fgm = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = {
+				foreign_minister_policy_defender_3
+			}
+		}
+
+	}
+
+	economic_minister = {
+
+  		IGL_Muafak_Mustafa_Mohammed_al_Karmush_ecm = {
+
+			cost = 350
+			picture = IGL_Muhammad_Abdul_Barin_hog
+			allowed = {
+				original_tag = ISS
+			}
+			available =	{
+			NOT = { has_country_flag = isis_Muafak_Mustafa_Mohammed_al_Karmush_killed }
+			}
+
+			traits = { economic_minister_public_administration_3 }
+ 	 	}
+
+		IGL_Haji_Imam_ecm = {
+
+			cost = 450
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Haji_Imam_killed }
+			}
+
+			traits = { economic_minister_military_industry_3 }
+		}
+
+		IGL_Abu_Mutaza_Katani_ecm = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			traits = { economic_minister_banking_credit_system_1 }
+		}
+
+
+
+		IGL_Mohammed_Zaalyan_Al-Afri_ecm = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Mohammed_Zaalyan_Al_Afri_killed }
+			}
+
+			traits = { economic_minister_military_industry_2 }
+		}
+
+
+
+	}
+
+	secret_service_chief = {
+		IGL_Abu_Safwan_al_Rifai_ssch = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+			original_tag = ISS
+			}
+
+
+			traits = { secret_service_chief_executioner_3 }
+ 		}
+
+		IGL_Abu_Ali_al-Anbari_ssch = {
+
+			cost = 350
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { secret_service_chief_spy_3 }
+		}
+	}
+
+	political_advisor = {
+
+		IGL_Jihadi_John = {
+
+			cost = 250
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Jihadi_John_killed }
+			}
+
+
+			traits = { popular_person }
+		}
+
+
+		IGL_Abu_Muslim_At-Turkmani = {
+
+			cost = 400
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = "ISS"
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Abu_Muslim_At-Turkmani_killed }
+			}
+
+			traits = { backstage_assistant }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		IGL_Taryk_Al_Hashimi = {
+
+			cost = 250
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+
+			traits = { ideologue_theorist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		IGL_Abu_Muhammad_al-Adnani = {
+
+			cost = 200
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =	{
+			NOT = { has_country_flag = isis_Abu_Muhammad_al_Adnani_killed }
+			}
+
+			traits = { master_negotiations }
+		}
+
+
+		IGL_Anatoly_Zemlyanka = {
+
+			cost = 250
+
+			allowed = {
+				original_tag = ISS
+			}
+			available =	{
+			NOT = { has_country_flag = isis_Anatoly_Zemlyanka_killed }
+			}
+
+
+			traits = { propaganda_reformer }
+		}
+
+		IGL_Haji_Bekir = {
+
+			cost = 250
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+			NOT = { has_country_flag = isis_Haji_Bekir_killed }
+			}
+
+			traits = { military_education_reformer }
+		}
+
+		IGL_Abu_Fatim_Al_Chehshey = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { oboronexpo_reformer }
+		}
+
+		IGL_Abdukadir_Shen = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { backroom_manipulator }
+		}
+
+    IGL_Abdul_Rahman_al_Afari = {
+
+			cost = 200
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { prince_of_terrors }
+		}
+
+    IGL_Abu_Mohammed_al_Aani = {
+
+			cost = 250
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { regime_defender }
+		}
+
+    IGL_Muhammad_Hamid_al_Dulaimi = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { infrastructure_reformer }
+		}
+
+    IGL_Abu_al_Athir_Amr_al_Absi = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { cultura_reformer }
+		}
+
+    IGL_Salam_Ahmed_Abdullah_al_Mashadani = {
+
+			cost = 300
+
+			picture = IGL_Muhammad_Abdul_Barin_hog
+
+			allowed = {
+				original_tag = ISS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { industry_top_managment }
+		}
+	}	
+}

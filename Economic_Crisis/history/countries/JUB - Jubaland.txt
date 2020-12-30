@@ -1,0 +1,69 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 994
+
+#   
+    add_ideas = {
+		not_recognized_country
+		mixed_schools
+		presidential_republic
+		musulman_collapse
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 535 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "JUB_2013"
+	
+	set_stability = 0.35
+	add_ideas = high_terrorism
+	add_political_power = 0
+
+	set_convoys = 10
+	
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 90
+		rad_islamists = 10
+	}
+	
+	create_country_leader = {
+		name = "Ahmed Mohamed Islam"
+		desc = ""
+		picture = "gfx/leaders/SOM/JUB/portrait_ahmed_mohamed_islam.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	create_country_leader = {
+		name = "Government of Autonomy"
+		picture = "gfx/leaders/SOM/government_of_autonomy.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+}
+

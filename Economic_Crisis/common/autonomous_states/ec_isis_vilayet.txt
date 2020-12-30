@@ -1,0 +1,77 @@
+autonomy_state = {
+	id = isis_vilayet
+	
+	default = yes
+	is_puppet = yes
+	use_overlord_color = yes
+	
+	min_freedom_level = 0.0
+	
+	manpower_influence = 1
+	
+	rule = {
+		can_not_declare_war = no # не может объявлять войну сам
+		can_decline_call_to_war = yes # может отклонять требование мажора вступить в войну
+		units_deployed_to_overlord = yes # управляет ли мажор развернутыми войсками
+		can_send_volunteers = yes # может ли отправлять волонетров
+		can_guarantee_other_ideologies = no # может гарантировать независимость другой стране
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 0.0 # доля населения, отдаваемая мажору
+		can_master_build_for_us = 1 # может ли мажор строить на нашей территории
+		conscription_factor = -0.5 # % излишков сырья отдаваемые мажору
+		extra_trade_to_overlord_factor = 1 # % излишков сырья отдаваемые мажору
+		overlord_trade_cost_factor = -0.9 # фaктор стоимости нашей продукции для мажора
+	#	cic_to_overlord_factor = 0.25 # % фабрик, работающих на мажора
+		mic_to_overlord_factor = 0.5 # % военных заводов, работающих на мажора
+		research_sharing_per_country_bonus_factor = 1 # бонус от времени на совместное с мажором исслеование технологий
+		drift_defence_factor = 0.5 # защита от смены идеологии	
+		license_subject_master_purchase_cost = -1 # стоимость получение лицензии от мажора
+		autonomy_gain_global_factor = -0.5 # увеличение уровня автономии
+		send_volunteer_size = 10 # + к текущему количеству отправляемых бригад волонтеров
+		send_volunteers_tension = -1  # минус % от напряженности для отправки добровольцев
+		send_volunteer_divisions_required = -0.8 # минус % от количества дивизий, необходимых для отправки добровольцев
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 0.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		has_dlc = "Together for Victory"
+		has_government = rad_islamists
+		OVERLORD = { original_tag = ISS }
+	}
+	
+	allowed_levels_filter = {
+		isis_vilayet
+	}
+
+	#ROOT is puppet - FROM is potential OVERLORD
+	use_for_peace_conference_weight = {
+		base = 0
+		modifier = {
+			add = 100
+			FROM = {
+				has_government = rad_islamists
+			}
+		}
+	}
+	
+	can_take_level = {
+		#trigger here
+	}
+
+	can_lose_level = {
+		#trigger here
+	}
+}

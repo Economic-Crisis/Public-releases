@@ -1,0 +1,359 @@
+equipments = {
+	ship_hull_corvette = {
+		year = 1950
+
+		is_archetype = yes
+		is_buildable = no
+		type = screen_ship
+		interface_category = interface_category_screen_ships
+		alias = corvette
+		priority = 2000
+
+		upgrades = {
+			ship_torpedo_upgrade
+			destroyer_engine_upgrade
+			ship_ASW_upgrade
+			ship_anti_air_upgrade
+		}
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_light_battery }
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_fire_control_system_slot = {
+				required = no
+				allowed_module_categories = { ship_sonar }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar }
+			}
+			fixed_ship_torpedo_slot = {
+				required = no
+				allowed_module_categories = { ship_torpedo }
+			}
+			fixed_ship_engine_slot = {
+				required = yes
+				allowed_module_categories = { light_ship_engine }
+			}
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_anti_air
+					ship_depth_charge
+				}
+			}
+			rear_1_custom_slot = mid_1_custom_slot
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		module_count_limit = {
+			category = ship_sonar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 1
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 7
+		naval_speed = 25
+		reliability = 0.90
+		
+		naval_range = 4000
+		
+		max_strength = 15
+		
+
+		fuel_consumption = 0
+		
+		build_cost_ic = 700
+		resources = {
+			steel = 2
+		}
+		
+		manpower = 168
+	}
+
+	ship_hull_corvette_1 = {
+		year = 1960
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		#alias = corvette
+		
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_1
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+
+	ship_hull_corvette_2 = {
+		year = 1980
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_1
+		#alias = destroyer_2
+		
+		module_slots = inherit
+
+		default_modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_small_aegis_bius
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_2
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_depth_charge_2
+		}
+
+		reliability = 0.90
+		naval_range = 4000
+		max_strength = 40
+		build_cost_ic = 750
+		resources = {
+			steel = 2
+		}
+		manpower = 83
+	}
+
+	ship_hull_corvette_3 = {
+		year = 2020
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_2
+		#alias = destroyer_3
+
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_torpedo_slot = inherit
+		}
+
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 3700
+		max_strength = 50
+		build_cost_ic = 800
+		manpower = 110
+	}
+	ship_hull_corvette_4 = {
+		year = 2020
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_3
+		#alias = destroyer_3
+
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_torpedo_slot = inherit
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_depth_charge
+					ship_anti_air
+					ship_light_battery
+				}
+			}
+		}
+
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 5500
+		max_strength = 50
+		build_cost_ic = 850
+		manpower = 210
+	}
+	ship_hull_corvette_5 = {
+		year = 2020
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_4
+		#alias = destroyer_3
+
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = {
+				required = no
+				allowed_module_categories = { ship_fire_control_system ship_sonar }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar ship_sonar }
+			}
+			fixed_ship_engine_slot = inherit
+			fixed_ship_torpedo_slot = inherit
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_depth_charge
+					ship_anti_air
+					ship_light_battery
+				}
+			}
+		}
+
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 6400
+		max_strength = 50
+		build_cost_ic = 900
+		manpower = 120
+	}
+	ship_hull_corvette_6 = {
+		year = 2020
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_5
+		#alias = destroyer_3
+
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_torpedo_slot = inherit
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_depth_charge
+					ship_anti_air
+					ship_light_battery
+				}
+			}
+		}
+
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 7400
+		max_strength = 50
+		build_cost_ic = 950
+		manpower = 100
+	}
+	ship_hull_corvette_7 = {
+		year = 2020
+
+		archetype = ship_hull_corvette
+		priority = 2000
+		parent = ship_hull_corvette_6
+		#alias = destroyer_3
+
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_torpedo_slot = inherit
+
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_mine_warfare
+					ship_mine_layer
+					ship_depth_charge
+					ship_anti_air
+					ship_light_battery
+				}
+			}
+		}
+
+		
+		resources = {
+			steel = 3
+		}
+
+		surface_detection = 20
+		surface_visibility = 10
+		reliability = 0.90
+		naval_range = 11100
+		max_strength = 50
+		build_cost_ic = 1000
+		manpower = 80
+	}
+}

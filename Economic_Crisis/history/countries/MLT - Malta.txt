@@ -1,0 +1,47 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 116
+
+add_ideas = {
+	mixed_schools
+	parliamentary_republic
+	small_country
+	eu_member
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 1013 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.3.9" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 51
+		liberalism = 0
+		democratic = 49
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "George Abela"
+		desc = ""
+		picture = "gfx/leaders/MLT/portrait_george_abela.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+

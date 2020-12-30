@@ -1,0 +1,95 @@
+﻿
+division_template = {
+	name = "Peshmerga"				# Represents groups of independent infantry brigades
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+	}
+}
+units = {
+	
+	division = {
+		name = "1st Peshmerga"
+		location = 10804
+		division_template = "Peshmerga"		
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "2nd Peshmerga"
+		location = 10811
+		division_template = "Peshmerga"		
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "3rd Peshmerga"
+		location = 5014
+		division_template = "Peshmerga"		
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "4th Peshmerga"
+		location = 13209
+		division_template = "Peshmerga"		
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "5th Peshmerga"
+		location = 13210
+		division_template = "Peshmerga"		
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.5
+
+	}
+}	
+
+instant_effect = {
+	# Add start equipment
+	add_equipment_to_stockpile = {
+		amount = 30000
+		type = army_salw_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 30000
+		type = army_ammunition_equipment_1
+	}
+
+	add_equipment_to_stockpile = {
+		amount = 10000
+		type = truck_g0_equipment_0
+	}
+	# Add start equipment production
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "KUR"
+		}
+		requested_factories = 2
+		progress = 0.5
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = army_ammunition_equipment_1
+			creator = "KUR"
+		}
+		requested_factories = 3
+		progress = 0.5
+		efficiency = 100
+	}
+}

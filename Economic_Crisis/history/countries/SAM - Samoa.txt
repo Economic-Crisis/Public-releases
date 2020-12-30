@@ -1,0 +1,62 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 1072
+
+add_ideas = {
+	small_country	
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 419 }
+	
+	oob = "_army_microstate_2013"
+	load_oob = "_tech_microstate_2013"
+	
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	
+	add_ideas = {
+		mixed_schools
+		parliamentary_republic
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.9.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 7
+		liberalism = 0
+		democratic = 68
+		neutrality = 25
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Va'aletoa Sualauvi II"
+		desc = ""
+		picture = "gfx/leaders/SAM/portrait_vaaletoa_sualauvi_ii.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Tuiatua Tupua Tamasese Efi"
+		desc = ""
+		picture = "gfx/leaders/SAM/portrait_tuiatua_tupua.dds"
+		ideology = conservative_democracy
+		expire = "2017.7.21"
+		traits = { trait_conservative_democracy }
+	}
+
+}
+

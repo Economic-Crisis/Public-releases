@@ -1,0 +1,91 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 774
+
+# де-юре не признано никем
+1990.9.2 = {
+	add_ideas = not_recognized_country
+	add_ideas = not_alliance_nation
+}
+
+2000.11.20 = {
+    # crating CIS-2 (СНГ-2)
+	add_ideas = cis_2_member
+}
+
+2013.10.1 = {
+
+	load_oob = "_tech_csto_minor_2013" 
+	oob = "TMD_2013"
+
+	add_ideas = {
+        TRN_surrounded_by_enemies
+	    mixed_schools
+    }
+	
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+		
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.12.11"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 2
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 98
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Vadim Krasnoselskiy"
+		desc = ""
+		picture = "gfx/leaders/TMD/portrait_vadim_krasnoselskiy.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Evgeniy Shevchuk"
+		desc = ""
+		picture = "gfx/leaders/TMD/portrait_yevgeny_shevchuk.dds"
+		ideology = sovereign_democracy
+		expire = "2016.12.16"
+		traits = { trait_sovereign_democracy}
+	}
+
+	create_country_leader = {
+		name = "Oleg Khorzhan"
+		desc = ""
+		picture = "gfx/leaders/TMD/portrait_oleg_khorzhan.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Roman Khudyakov"
+		desc = ""
+		picture = "gfx/leaders/TMD/portrait_roman_khudyakov.dds"
+		ideology = national_populism
+		traits = { trait_national_populism }
+	}
+
+	create_country_leader = {
+		name = "Yuriy Gervasyuk"
+		desc = ""
+		picture = "gfx/leaders/TMD/portrait_yuriy_gervasyuk.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}

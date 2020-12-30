@@ -1,0 +1,812 @@
+# Economic Crisis - only industry
+
+ideas = {
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		###-Львовский бронетанковый завод
+		urk_lbtz = {
+		
+		picture = GFX_idea_urk_lbtz
+		
+				allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				armor = 0.02
+			}
+			
+			cost = 500
+			
+			traits = { ifv_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+	urk_hzsm = {
+		
+		picture = GFX_idea_urk_hzsm
+		
+				allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				armor = 0.01
+			}
+			
+			cost = 400
+			
+			traits = { apc_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+	    ukr_kiev_bt_plant = {
+			
+		picture = GFX_idea_ukr_kiev_bt_plant
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			cost = 600
+			
+			traits = { light_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		###-Танковые завод ОБТ Т-54, Т-55 до 14 модернизаций, Т-64, Т-80, Т-80У, Т-80УД. Харьковский бронетанковый завод
+		ukr_hztm = {
+			
+		picture = GFX_idea_ukr_hztm
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}	
+			
+			research_bonus = {
+				armor = 0.03
+			}
+			
+			cost = 700
+			
+			traits = { medium_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_malyshev_factory = {
+		
+        picture = GFX_idea_ukr_malyshev_factory
+			
+			allowed = {
+				original_tag = UKR
+			}
+						
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+
+			
+			research_bonus = {
+				armor = 0.04
+			}
+			
+			cost = 800
+			
+			traits = {  
+						heavy_tank_manufacturer
+					}
+			
+			modifier = {
+			}
+		}
+		
+		###-Харьковское конструкторское бюро по машиностроению - Оплот и т.д.
+		ukr_hkbm = {
+		
+        picture = GFX_idea_ukr_hkbm
+			
+			allowed = {
+				original_tag = UKR
+			}
+						
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+
+			
+			research_bonus = {
+				armor = 0.05
+			}
+			
+			cost = 800
+			
+			traits = {  
+						modern_tank_manufacturer
+					}
+			
+			modifier = {
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		### - Судостроительный завод Океан.
+		ukr_ocean = {
+			
+			picture = GFX_idea_ukr_ocean
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				UKR = { owns_state = 137 }
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { naval_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		###-Запорожский судостроительно-судоремонтный завод
+		ukr_zssplant = {
+			
+		picture = GFX_idea_ukr_zssplant
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				naval_equipment = 0.20
+			}
+			
+			traits = { naval_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		###-Черноморский судостроительный завод
+		ukr_chernomor_sudostr_plant = {
+			
+		picture = GFX_idea_ukr_chernomor_sudostr_plant
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				naval_equipment = 0.25
+			}
+			
+			traits = { naval_manufacturer }
+			
+			modifier = {
+			}
+		}	
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		###-Вертолеты ветка КТ-112 (многоцелевые)
+		
+		ukr_kb_vertikal = {
+		
+        picture = GFX_idea_ukr_kb_vertikal		
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				cat_landing_helicopter_tech = 0.01
+			}
+			
+			
+			cost = 300
+			
+			traits = { transport_helicopter_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		
+		###-Харьковское государственное авиационное производственное предприятие
+	
+		ukr_hgapp = {
+			
+		picture = GFX_idea_ukr_hgapp
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+		
+			research_bonus = {
+				cat_light_fighter_tech = 0.03
+			}
+			
+			cost = 450
+			
+			traits = { light_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		
+		ukr_motor_sich = {
+		
+        picture = GFX_idea_ukr_motor_sich		
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				cat_strike_fighter_tech = 0.05
+			}
+			
+			cost = 700
+			
+			traits = { medium_aircraft_development }
+			
+			modifier = {
+			}
+		}
+		
+		
+		### - КБ Антонова
+		ukr_an_design_bureau	 = {
+			
+		picture = GFX_idea_ukr_an_design_bureau	
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				cat_attack_bomber_tech = 0.08
+			}
+			
+			cost = 900
+			
+			traits = { heavy_aircraft_development }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		
+		ukr_kb_arty = {
+
+		picture = GFX_idea_ukr_kb_arty
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				artillery = 0.05
+			}
+			
+			cost = 600
+			
+			traits = { artillery_development }
+			
+			modifier = {
+			}
+		}	
+		
+		ukr_lorta = {
+			
+		picture = GFX_idea_ukr_lorta
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				artillery = 0.02
+			}
+			
+			cost = 300
+			
+			traits = { artillery_development }
+			
+			modifier = {
+			}
+		}	
+	
+		###-Луганский патронный завод
+		ukr_lugansk_ammo_plant = {
+		
+        picture = GFX_idea_ukr_lugansk_ammo_plant	
+			
+			allowed = {
+				original_tag = UKR
+				date < 2014.03.6
+			}
+			
+
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			cost = 500
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_mayak = {
+			
+		picture = GFX_idea_ukr_mayak
+			
+			allowed = {
+				original_tag = UKR
+			}
+					
+					
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}	
+
+			
+			research_bonus = {
+				infantry_weapons = 0.03
+			}
+			
+			cost = 450
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_npo_vallar = {
+			
+		picture = GFX_idea_ukr_npo_vallar	
+			
+			allowed = {
+				original_tag = UKR
+			}
+					
+					
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}	
+
+			
+			research_bonus = {
+				infantry_weapons = 0.01
+			}
+			
+			cost = 250
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		
+		
+		### Научно-производственное объединение „Форт“
+		ukr_npo_fort = {
+			
+		picture = GFX_idea_ukr_npo_fort
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}	
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			cost = 700
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+
+		ukr_lkmz = {
+			
+		picture = GFX_idea_ukr_lkmz
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_upec
+				}
+
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.05
+
+			}
+			
+			cost = 750
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+				
+		###--Колесная техника + БТРы
+		
+		### Кременчугский автомобильный завод
+		ukr_kraz = {
+			
+		picture = GFX_idea_ukr_kraz
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.03
+				mot_rockets = 0.02
+			}
+			
+			cost = 450
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+	
+		###-Львовский автобусный завод
+		ukr_laz = {
+			
+		picture = GFX_idea_ukr_laz
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.02
+				mot_rockets = 0.01
+			}
+			
+			cost = 350
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		### - Бориспольский автозавод
+		ukr_baz = {
+			
+		picture = GFX_idea_ukr_baz
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				cat_motorized_equipment = 0.02
+
+			}
+			
+			cost = 250
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	}
+	
+	###-Промышленный комплекс
+	industrial_concern = {
+		
+		
+		### Харьковский национальный университет радиоэлектроники
+		ukr_kharkov_nat_univ = {
+			
+		picture = GFX_idea_ukr_kharkov_nat_univ
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.03
+			}
+			
+			cost = 500
+			
+			traits = { electronics_concern_dev }
+			
+			modifier = {
+			}
+		}
+
+		ukr_yuzhnoe = {
+			
+		picture = GFX_idea_ukr_yuzhnoe	
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.02
+			}
+			
+			cost = 750
+			
+			traits = { aerospace_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_yuzhmash = {
+			
+		picture = GFX_idea_ukr_yuzhmash	
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+				OR = {
+					has_idea = ukr_ukroboronprom
+				}
+
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = -0.02
+			}
+			
+			cost = 750
+			
+			traits = { aerospace_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_arcelor_mittal = {
+			
+		picture = GFX_idea_ukr_arcelor_mittal	
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				industry = 0.08
+			}
+			
+			cost = 1000
+			
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_mariupol_factory = {
+			
+		picture = GFX_idea_ukr_mariupol_factory
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+
+			
+			research_bonus = {
+				industry = 0.05
+			}
+			
+			cost = 800
+			
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}
+		
+		
+						
+		ukr_ukroboronprom = {
+			
+		picture = GFX_idea_ukr_ukroboronprom
+
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+
+			}
+			
+						
+			research_bonus = {
+				electronics = 0.05
+				industry = 0.02
+				
+			}
+			
+			cost = 2000
+			
+			traits = { defence_corporation }
+			
+			modifier = {
+			}
+		}
+		
+		ukr_upec = {
+			
+		picture = GFX_idea_ukr_upec
+			
+			allowed = {
+				original_tag = UKR
+			}
+			
+			available = {
+
+			}
+			
+						
+			research_bonus = {
+				electronics = 0.03
+				industry = 0.03
+				
+			}
+			
+			cost = 1200
+			
+			traits = { industrial_concern_dev }
+			
+			modifier = {
+			}
+		}			
+		
+	}
+}	

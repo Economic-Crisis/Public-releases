@@ -1,0 +1,138 @@
+ideas = {
+	hidden_ideas = {
+		RUS_support_opposities = { #boosting opposite fronts
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				democratic_drift = 0.03
+				liberalism_drift = 0.03
+				reformism_drift = 0.03
+			}
+		}
+		RUS_support_centrism_nationalism = { #boosting centrism nationalism and communism
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.03
+				fascism_drift = 0.03
+				communism_drift = 0.03
+			}
+		}
+		RUS_counter_sanctions_ideas = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.03
+				stability_weekly = 0.002
+			}
+		}
+	}
+	country = {
+		RUS_support_putin = { #Поддержка Путина
+			allowed = {	always = no	}
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				stability_factor = 0.05
+				POLITICAL_POWER_GAIN = 0.25
+				neutrality_drift = 0.03
+			}
+		}
+		RUS_influence_of_usa = {
+			allowed_civil_war = { always = no }
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				democratic_drift = 0.05
+				liberalism_drift = 0.05
+			}
+			removal_cost = -1
+		}
+		RUS_impaired_by_usa = {
+			allowed_civil_war = { always = no }
+			#picture =
+			modifier = {
+				neutrality_drift = -0.01
+				stability_factor = -0.2
+				political_power_gain = -0.5
+			}
+			removal_cost = -1
+		}
+		RUS_protests_of_opposition = {
+			allowed_civil_war = { always = no }
+			#picture = 
+			modifier = {
+				democratic_drift = 0.03
+				liberalism_drift = 0.03
+				reformism_drift = 0.03
+				neutrality_drift = -0.01
+				stability_factor = -0.2
+				political_power_gain = -0.5
+				stability_weekly = -0.001
+			}
+			removal_cost = -1
+		}
+		RUS_intensified_sanctions_of_usa = {
+			allowed_civil_war = { has_government = neutrality }
+			#picture = 
+			modifier = {
+				consumer_goods_factor = 0.17
+				production_speed_buildings_factor = -0.2
+				industrial_capacity_factory = -0.2
+			}
+			removal_cost = -1
+		}
+		RUS_disapproval_policy_idea = {
+			allowed_civil_war = { always = no }
+			#picture = 
+			modifier = {
+				fascism_drift = 0.05
+				communism_drift = 0.05
+				reformism_drift = 0.1
+				stability_factor = -0.1
+				political_power_gain = -0.25
+			}
+			removal_cost = -1
+		}
+		RUS_cyber_arms_idea = {
+			allowed_civil_war = { always = no }
+			#picture = 
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.25
+				#SPY_ACQUIRE_INTEL_EFFICIENCY = -0.25
+				SUBVERSIVE_ACTIVITES_UPKEEP = -0.25
+				LOCAL_INTEL_TO_ENEMIES = -0.25
+			}
+			removal_cost = -1
+		}
+		podavlenie_vostani = {
+			allowed = {	always = no	}
+			#picture = 
+			modifier = {
+				stability_weekly = -0.01
+				production_speed_buildings_factor = -0.5
+				POLITICAL_POWER_GAIN = -0.25
+			}
+			removal_cost = -1
+		}
+		volunteers_corps = {
+			allowed = {	always = no	}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_volunteer_expedition_bonus
+			rule = { can_send_volunteers = yes	}
+			modifier = {
+				send_volunteer_divisions_required = -0.8
+				send_volunteer_size = 5
+			}
+		}
+		RUS_towers_kreml = { 
+			allowed = {	always = no	}
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				POLITICAL_POWER_GAIN = -0.1
+				drift_defence_factor = -0.2
+			}
+		}
+	}
+}

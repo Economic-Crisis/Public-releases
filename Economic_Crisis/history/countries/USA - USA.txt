@@ -1,0 +1,717 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 930
+
+add_opinion_modifier = { target = NKO modifier = embargo }
+
+
+1985.1.1 = {
+	create_faction = NATO
+	add_to_faction = ENG
+	add_to_faction = FRA
+	add_to_faction = CAN
+	add_to_faction = TUR
+	add_to_faction = SPR
+	add_to_faction = BEL
+	add_to_faction = HOL
+	add_to_faction = ITA
+	add_to_faction = GER
+	add_to_faction = DEN
+	add_to_faction = POR
+	add_to_faction = NOR
+	add_to_faction = LUX
+	add_to_faction = ICE
+	add_to_faction = GRE
+	add_to_faction = EUR
+	add_ideas = integration_in_nato
+
+	give_guarantee = JAP
+	give_guarantee = KOR
+	give_guarantee = ROC
+	give_guarantee = AST
+	give_guarantee = NZL
+	give_guarantee = ARG
+	give_guarantee = MOR
+	give_guarantee = TUN
+	give_guarantee = EGY
+	give_guarantee = ISR
+	give_guarantee = PAK
+	give_guarantee = SIA
+	give_guarantee = PHI
+	#give_guarantee = JOR #This affected in civilwar Afghanistan and war with ISIS
+	#give_guarantee = AFG
+	give_guarantee = KUW
+	give_guarantee = BHR
+
+	if = {
+		limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = {
+				target = PUE
+				autonomy_state = associated_state
+				freedom_level = 0.26
+			}
+		else = {
+			puppet = PUE
+		}
+	}
+}
+
+1999.3.12 = {
+
+	set_global_flag = NATO_expansions1
+
+    USA = {
+        add_to_faction = HUN
+	    add_to_faction = POL
+	    add_to_faction = CZE
+    }
+
+}
+
+2004.3.29 = {
+
+	set_global_flag = NATO_expansions2
+
+    USA = {
+        add_to_faction = BUL
+	    add_to_faction = LAT
+	    add_to_faction = LIT
+	    add_to_faction = EST
+	    add_to_faction = SLO
+	    add_to_faction = SLV
+	    add_to_faction = ROM
+    }
+}
+
+2009.4.1 = {
+    USA = {
+        add_to_faction = ALB
+	    add_to_faction = CRO
+    }
+}
+
+2013.11.1 = {
+
+	oob = "USA_2013"
+	load_oob = "USA_tech_2013"
+	
+	#send_equipment = { target = SAU type = main_battle_tank_g6_equipment_0	amount = 115 }
+	
+	set_convoys = 2000
+	set_stability = 0.8
+	add_political_power = 0
+	create_intelligence_agency = yes
+	set_variable = { budget_last_year = 1669000 }
+	
+	# laws
+	add_ideas = {
+		superstate
+		presidential_republic
+		administrative_federation
+		secular_state
+		free_media
+		respect_of_liberties
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		market_economy
+		state-owned_enterprise
+		TPP_member
+		balanced_industry
+		civilian_economy
+		high_taxes
+		middle_social_security
+		pensions
+		average_terrorism
+		NPT
+		home_of_the_free
+		nuclear_country
+		unsc_member
+		anzus_member
+		nafta_member
+		free_trade
+	# Goverment
+		usa_joseph_biden_hog
+		usa_charles_hagel_defm 
+		usa_john_kerry_fgm
+		usa_jacob_lew_ecm
+		usa_jeh_johnson_ssch
+		usa_sally_jewell
+	# Military Command
+		usa_martin_dempsey
+		usa_raymond_odierno 
+		usa_jonathan_greenert
+		usa_mark_welsh
+		usa_james_amos
+		usa_james_clapper
+		
+		USA_SBIRS
+	}
+	
+	set_autonomy = {
+		target = PLW
+		autonomy_state = autonomous_area
+		freedom_level = 0.1
+	}
+	set_autonomy = {
+		target = FSM
+		autonomy_state = autonomous_area
+		freedom_level = 0.1
+	}
+	set_autonomy = {
+		target = MIS
+		autonomy_state = autonomous_area
+		freedom_level = 0.1
+	}
+
+	diplomatic_relation = {
+		country = DJI
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = AFG
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = RCG
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = BHR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KUW
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IRQ
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = OMA
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = UAE
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = YEM
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = EGY
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = JOR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = MOR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = JAP
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KOR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KOS
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = ROC
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SAU
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = CUB
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = BRA
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = PAK
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IND
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IRQ
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SER
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = OMA
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = TAJ
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = GAB
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = EGY
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = MRT
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = MLI
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = AST
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = ISR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = SIA
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = UAE
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = TUN
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = COL
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = ECU
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = PRU
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = NZL
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = PHI
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = UZB
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KYR
+		relation = military_access
+		active = yes
+	}
+	diplomatic_relation = {
+		country = GEO
+		relation = military_access
+		active = yes
+	}
+		
+	diplomatic_relation = {
+		country = AFG
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = AFG
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = RCG
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = BHR
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KUW
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = IRQ
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = OMA
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = UAE
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = YEM
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = EGY
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = JOR
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = MOR
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = JAP
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KOR
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = KOS
+		relation = non_aggression_pact
+		active = yes
+	}
+	diplomatic_relation = {
+		country = ROC
+		relation = non_aggression_pact
+		active = yes
+	}
+	add_opinion_modifier = { target = NKO modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = RUS modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = ISS modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = CHI modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = TAL modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = ISL modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = ALS modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = IRN modifier = eternal_enemy_modifier }
+	add_opinion_modifier = { target = VEN modifier = eternal_enemy_modifier }
+	
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2012.11.8"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 2
+		liberalism = 52
+		democratic = 46
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jill Stein"
+		desc = "POLITICS_JILL_STEIN_DESC"
+		picture = "gfx/leaders/USA/portrait_jill_stein.dds"
+		ideology = green_politics
+		traits = { trait_green_politics }
+	}
+
+	create_country_leader = {
+		name = "Hillary Clinton"
+		id = 100004
+		desc = "POLITICS_HILLARY_CLINTON_DESC"
+		picture = "gfx/leaders/USA/portrait_hillary_clinton.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Barack Obama"
+		desc = "POLITICS_BARACK_OBAMA_DESC"
+		picture = "gfx/leaders/USA/portrait_barack_obama.dds"
+		expire = "2016.12.1"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Donald Trump"
+		id = 100005
+		desc = "POLITICS_DONALD_TRUMP_DESC"
+		picture = "gfx/leaders/USA/portrait_donald_trump.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Frank Fluckiger"
+		desc = "POLITICS_FRANK_FLUCKIGER_DESC"
+		picture = "gfx/leaders/USA/portrait_frank_fluckiger.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "John Bachtell"
+		desc = "POLITICS_JOHN_BACHTELL_DESC"
+		picture = "gfx/leaders/USA/portrait_john_bachtell.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "David Duke"
+		desc = "POLITICS_DAVID_DUKE_DESC"
+		picture = "gfx/leaders/USA/portrait_david_duke.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Rocky Suhayda"
+	#	desc = "POLITICS_ROCKY_SUHAYDA_DESC"
+	#	picture = "gfx/leaders/USA/portrait_rocky_suhayda.dds"
+	#	ideology = national_socialism
+	#	traits = { trait_national_socialism }
+	#}
+
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Nada Bakos"
+			GFX = GFX_portrait_nada_bakos
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			female = yes
+			nationalities = { USA }
+		}
+		create_operative_leader = {
+			name = "Nada Nadim Prouty"
+			GFX = GFX_portrait_nada_nadim_prouty
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			female = yes
+			nationalities = { LBA }
+		}
+	}
+	
+	create_field_marshal = {
+		name = "Martin Dempsey"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_martin_dempsey.dds"
+		traits = { old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_field_marshal = {
+		name = "Curtis Scaparrotti"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_curtis_scaparrotti.dds"
+		traits = { logistics_wizard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Dennis Reimer"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_dennis_reimer.dds"
+		traits = { commando old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Raymond Odierno"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_raymond_odierno.dds"
+		traits = { desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "John M. Keane"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_jack_keane.dds"
+		traits = { winter_specialist }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Thomas A. Schwartz"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_thomas_a_schwartz.dds"
+		traits = { urban_assault_specialist }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Robert B. Abrams"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_robert_b_abrams.dds"
+		traits = { hill_fighter }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Thomas D. Waldhauser"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_thomas_d_waldhauser.dds"
+		traits = { commando }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Andrew_P_Poppas"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_andrew_p_poppas.dds"
+		traits = { trickster }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Kurt W. Tidd"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_kurt_w_tidd.dds"
+		traits = { swamp_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Christopher G. Cavoli"
+		portrait_path = "gfx/leaders/USA/portrait_usa_general_christopher_g_cavoli.dds"
+		traits = { old_guard organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_navy_leader = {
+		name = "Jonathan Greenert"
+		portrait_path = "gfx/leaders/USA/portrait_usa_admiral_jonathan_greenert.dds"
+		traits = { old_guard_navy }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+	create_navy_leader = {
+		name = "John Richardson"
+		portrait_path = "gfx/leaders/USA/portrait_usa_admiral_john_richardson.dds"
+		traits = { seawolf }
+		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+	}
+}
+
+2017.6.5 = {
+	add_to_faction = MNT
+}
+
+2020.3.27 = {
+	add_to_faction = MAC
+}

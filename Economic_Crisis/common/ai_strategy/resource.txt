@@ -1,0 +1,483 @@
+# Written by Henrik "Groogy" Hansson
+# Modified by Daniel "Da9L" Sjöberg
+# EC 2013: AI tweaks written by SuxrobGM
+
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+
+
+ai_build_5_steel_factory = {
+	enable = {
+		check_variable = { resource@iron_ore > 40 }
+		check_variable = { native_resource_ratio_iron_ore > 0.39 }
+	}
+	
+	abort = {	
+		check_variable = { resource@iron_ore < 40 }
+		check_variable = { native_resource_ratio_iron_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = steel_factory		
+		value = 5
+	}
+}
+
+ai_build_4_steel_factory = {
+	enable = {
+		check_variable = { resource@iron_ore > 32 }
+		check_variable = { resource@iron_ore < 40 }
+		check_variable = { native_resource_ratio_iron_ore > 0.39 }
+	}
+	
+	abort = {
+		check_variable = { resource@iron_ore < 32 }
+		check_variable = { resource@iron_ore > 40 }
+		check_variable = { native_resource_ratio_iron_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = steel_factory		
+		value = 4
+	}
+}
+
+ai_build_3_steel_factory = {
+	enable = {
+		check_variable = { resource@iron_ore > 24 }
+		check_variable = { resource@iron_ore < 32 }
+		check_variable = { native_resource_ratio_iron_ore > 0.39 }
+	}
+	
+	abort = {
+		check_variable = { resource@iron_ore < 24 }
+		check_variable = { resource@iron_ore > 32 }
+		check_variable = { native_resource_ratio_iron_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = steel_factory		
+		value = 3
+	}
+}
+
+ai_build_2_steel_factory = {
+	enable = {
+		check_variable = { resource@iron_ore > 16 }
+		check_variable = { resource@iron_ore < 24 }
+		check_variable = { native_resource_ratio_iron_ore > 0.39 }
+	}
+	
+	abort = {
+		check_variable = { resource@iron_ore < 16 }
+		check_variable = { resource@iron_ore > 24 }
+		check_variable = { native_resource_ratio_iron_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = steel_factory		
+		value = 2
+	}
+}
+
+ai_build_1_steel_factory = {
+	enable = {
+		check_variable = { resource@iron_ore > 8 }
+		check_variable = { resource@iron_ore < 16 }
+		check_variable = { native_resource_ratio_iron_ore > 0.39 }
+	}
+	
+	abort = {
+		check_variable = { resource@iron_ore < 8 }
+		check_variable = { resource@iron_ore > 16 }
+		check_variable = { native_resource_ratio_iron_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = steel_factory		
+		value = 1
+	}
+}
+
+#Bauxite
+
+ai_build_5_aluminium_factory = {
+	enable = {
+		check_variable = { resource@bauxite > 10 }
+		check_variable = { native_resource_ratio_bauxite > 0.39 }
+	}
+	
+	abort = {	
+		check_variable = { resource@bauxite < 10 }
+		check_variable = { native_resource_ratio_bauxite < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminium_factory		
+		value = 5
+	}
+}
+
+ai_build_4_aluminium_factory = {
+	enable = {
+		check_variable = { resource@bauxite > 8 }
+		check_variable = { resource@bauxite < 10 }
+		check_variable = { native_resource_ratio_bauxite > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@bauxite < 8 }
+		check_variable = { resource@bauxite > 10 }
+		}
+		check_variable = { native_resource_ratio_bauxite < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminium_factory		
+		value = 4
+	}
+}
+
+ai_build_3_aluminium_factory = {
+	enable = {
+		check_variable = { resource@bauxite > 6 }
+		check_variable = { resource@bauxite < 8 }
+		check_variable = { native_resource_ratio_bauxite > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@bauxite < 6 }
+		check_variable = { resource@bauxite > 8 }
+		}
+		check_variable = { native_resource_ratio_bauxite < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminium_factory		
+		value = 3
+	}
+}
+
+ai_build_2_aluminium_factory = {
+	enable = {
+		check_variable = { resource@bauxite > 4 }
+		check_variable = { resource@bauxite < 6 }
+		check_variable = { native_resource_ratio_bauxite > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@bauxite < 4 }
+		check_variable = { resource@bauxite > 6 }
+		}
+		check_variable = { native_resource_ratio_bauxite < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminium_factory		
+		value = 2
+	}
+}
+
+ai_build_1_aluminium_factory = {
+	enable = {
+		check_variable = { resource@bauxite > 2 }
+		check_variable = { resource@bauxite < 4 }
+		check_variable = { native_resource_ratio_bauxite > 0.39 }
+	}
+	
+	abort = {
+	OR ={
+		check_variable = { resource@bauxite < 2 }
+		check_variable = { resource@bauxite > 4 }
+		}
+		check_variable = { native_resource_ratio_bauxite < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = aluminium_factory		
+		value = 1
+	}
+}
+
+
+#alloy_steel
+
+ai_build_2_alloy_steel_factory = {
+	enable = {
+		check_variable = { resource@alloy_ore > 4 }
+		check_variable = { resource@steel > 9 }
+		check_variable = { native_resource_ratio_alloy_ore > 0.39 }
+	}
+	
+	abort = {
+		check_variable = { resource@alloy_ore < 4 }
+		check_variable = { native_resource_ratio_alloy_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = alloy_steel_factory		
+		value = 2
+	}
+}
+
+ai_build_1_alloy_steel_factory = {
+	enable = {
+		check_variable = { resource@steel > 4 }
+		check_variable = { resource@alloy_ore > 2 }
+		check_variable = { resource@alloy_ore < 4 }
+		check_variable = { native_resource_ratio_alloy_ore > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@alloy_ore < 2 }
+		check_variable = { resource@alloy_ore > 4 }
+		}
+		check_variable = { native_resource_ratio_alloy_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = alloy_steel_factory		
+		value = 1
+	}
+}
+
+
+
+#rare_earth_ore
+
+ai_build_5_rare_earth_factory = {
+	enable = {
+		check_variable = { resource@rare_earth_ore > 15 }
+		check_variable = { native_resource_ratio_rare_earth_ore > 0.39 }
+	}
+	
+	abort = {	
+		check_variable = { resource@rare_earth_ore < 15 }
+		check_variable = { native_resource_ratio_rare_earth_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = rare_earth_factory		
+		value = 5
+	}
+}
+
+ai_build_4_rare_earth_factory = {
+	enable = {
+		check_variable = { resource@rare_earth_ore > 12 }
+		check_variable = { resource@rare_earth_ore < 15 }
+		check_variable = { native_resource_ratio_rare_earth_ore > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@rare_earth_ore < 12 }
+		check_variable = { resource@rare_earth_ore > 15 }
+		}
+		check_variable = { native_resource_ratio_rare_earth_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = rare_earth_factory		
+		value = 4
+	}
+}
+
+ai_build_3_rare_earth_factory = {
+	enable = {
+		check_variable = { resource@rare_earth_ore > 9 }
+		check_variable = { resource@rare_earth_ore < 12 }
+		check_variable = { native_resource_ratio_rare_earth_ore > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@rare_earth_ore < 9 }
+		check_variable = { resource@rare_earth_ore > 12 }
+		}
+		check_variable = { native_resource_ratio_rare_earth_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = rare_earth_factory		
+		value = 3
+	}
+}
+
+ai_build_2_rare_earth_factory = {
+	enable = {
+		check_variable = { resource@rare_earth_ore > 6 }
+		check_variable = { resource@rare_earth_ore < 12 }
+		check_variable = { native_resource_ratio_rare_earth_ore > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@rare_earth_ore < 6 }
+		check_variable = { resource@rare_earth_ore > 12 }
+		}
+		check_variable = { native_resource_ratio_rare_earth_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = rare_earth_factory		
+		value = 2
+	}
+}
+
+ai_build_1_rare_earth_factory = {
+	enable = {
+		check_variable = { resource@rare_earth_ore > 3 }
+		check_variable = { resource@rare_earth_ore < 6 }
+		check_variable = { native_resource_ratio_rare_earth_ore > 0.39 }
+	}
+	
+	abort = {
+	OR ={
+		check_variable = { resource@rare_earth_ore < 3 }
+		check_variable = { resource@rare_earth_ore > 6 }
+		}
+		check_variable = { native_resource_ratio_rare_earth_ore < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = rare_earth_factory		
+		value = 1
+	}
+}
+
+#uran
+
+ai_build_5_uran_factory = {
+	enable = {
+		check_variable = { resource@uran > 5 }
+		check_variable = { native_resource_ratio_uran > 0.39 }
+	}
+	
+	abort = {	
+		check_variable = { resource@uran < 5 }
+		check_variable = { native_resource_ratio_uran < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = uran_factory		
+		value = 5
+	}
+}
+
+ai_build_4_uran_factory = {
+	enable = {
+		check_variable = { resource@uran = 4 }
+		check_variable = { native_resource_ratio_uran > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@uran < 4 }
+		check_variable = { resource@uran > 4 }
+		}
+		check_variable = { native_resource_ratio_uran < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = uran_factory		
+		value = 4
+	}
+}
+
+ai_build_3_uran_factory = {
+	enable = {
+		check_variable = { resource@uran = 3 }
+		check_variable = { native_resource_ratio_uran > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@uran < 3 }
+		check_variable = { resource@uran > 3 }
+		}
+		check_variable = { native_resource_ratio_uran < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = uran_factory		
+		value = 3
+	}
+}
+
+ai_build_2_uran_factory = {
+	enable = {
+		check_variable = { resource@uran = 2 }
+		check_variable = { native_resource_ratio_uran > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@uran < 2 }
+		check_variable = { resource@uran > 2 }
+		}
+		check_variable = { native_resource_ratio_uran < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = uran_factory		
+		value = 2
+	}
+}
+
+ai_build_1_uran_factory = {
+	enable = {
+		check_variable = { resource@uran = 1 }
+		check_variable = { native_resource_ratio_uran > 0.39 }
+	}
+	
+	abort = {
+	OR = {
+		check_variable = { resource@uran < 1 }
+		check_variable = { resource@uran > 1 }
+		}
+		check_variable = { native_resource_ratio_uran < 0.4 }		
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = uran_factory		
+		value = 1
+	}
+}

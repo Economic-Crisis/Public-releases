@@ -1,0 +1,396 @@
+# Economic Crisis - only military command
+
+ideas = {
+
+
+	general_staff_chief = {
+
+		ENG_David_Richards_chogs = {
+
+		picture = GFX_idea_ENG_David_Richards_chogs
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			cost = 850
+
+			traits = { special_operation_force  }
+
+		}
+
+
+	ENG_Frederick_Forsyth_chogs = {
+		picture = GFX_idea_ENG_Frederick_Forsyth_chogs
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			cost = 650
+
+			traits = { military_intel }
+		}
+
+
+
+	ENG_Patrick_Sanders_chogs = {
+		picture = GFX_idea_ENG_Patrick_Sanders_chogs
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			cost = 350
+			traits = { army_analyst }
+		}
+
+	}
+
+	intelligence_chief = {
+
+	ENG_David_Reddaway_isch  = {
+		picture = GFX_idea_ENG_David_Reddaway_isch
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			cost = 450
+			traits = { intellegence_chief_analyst }
+		}
+
+	}
+
+	army_chief = {
+
+		ENG_David_Richards_chogf = {
+
+			picture = GFX_idea_ENG_David_Richards_chogf
+			allowed = {
+				original_tag = ENG
+				NOT = {
+					has_idea = ENG_David_Richards_chogs
+				}
+			}
+
+			cost = 350
+
+			traits = { army_combat_training }
+
+			ai_will_do = {
+				factor = 1
+
+			}
+
+			#cancel_if_invalid = yes
+		}
+
+		ENG_Nick_Houghton_chogf = {
+		picture = GFX_idea_ENG_Nick_Houghton_chogf
+
+
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			cost = 450
+
+			traits = { landing_forces_training }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Stuart_Peach_chogf = {
+		picture = GFX_idea_ENG_Stuart_Peach_chogf
+
+
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			cost = 250
+
+			traits = { army_chief_defensive_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Jock_Stirrup_chogf= {
+		picture = GFX_idea_ENG_Jock_Stirrup_chogf
+
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			cost = 250
+
+			traits = { army_chief_organizational_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+
+	}
+
+	navy_chief = {
+
+		ENG_Trevor_Soar_chonf = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Trevor_Soar_chonf
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { navy_chief_decisive_battle_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Michael_Boyce_chonf = {
+
+			cost = 150
+
+			picture = GFX_idea_ENG_Michael_Boyce_chonf
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { navy_chief_commerce_raiding_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_George_Zambellas_chonf = {
+
+			cost = 350
+
+
+			picture = GFX_idea_ENG_George_Zambellas_chonf
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { navy_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Jonathon_Band_chonf = {
+
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Jonathon_Band_chonf
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { navy_submarine_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		ENG_Stephen_Hillier_choaf = {
+
+			cost = 450
+
+			picture = GFX_idea_ENG_Stephen_Hillier_choaf
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { air_close_air_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Andrew_Pulford_choaf = {
+
+			cost = 150
+
+			picture = GFX_idea_ENG_Andrew_Pulford_choaf
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { air_chief_reform_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Stephen_Dalton_choaf = {
+
+			cost = 350
+
+			picture = GFX_idea_ENG_Stephen_Dalton_choaf
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { air_chief_ground_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+	high_command = {
+
+		ENG_Nick_Houghton_mhc = {
+
+
+			picture = GFX_idea_ENG_Nick_Houghton_mhc
+			allowed = {
+				original_tag = ENG
+				NOT = {
+					has_idea = ENG_Nick_Houghton_chogf
+				}
+			}
+
+			cost = 150
+
+			traits = { army_mass_defence }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Nicholas_Carter_mhc = {
+
+			picture = GFX_idea_ENG_Nicholas_Carter_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			cost = 250
+
+			traits = { army_mass_assault }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Adrian_Bradshaw_mhc = {
+
+			picture = GFX_idea_ENG_Adrian_Bradshaw_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			cost = 450
+
+			traits = { airborne_assault_operations_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Barry_North_mhc = {
+
+			picture = GFX_idea_ENG_Barry_North_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			cost = 450
+
+			traits = { air_special_operation }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Greg_Bagwell_mhc = {
+
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Greg_Bagwell_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { air_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Ben_Key_mhc = {
+
+			cost = 150
+
+			picture = GFX_idea_ENG_Ben_Key_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { navy_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_Mark_Stanhope_mhc = {
+
+			cost = 250
+
+			picture = GFX_idea_ENG_Mark_Stanhope_mhc
+			allowed = {
+				original_tag = ENG
+
+			}
+
+			traits = { submarine_combat_training_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

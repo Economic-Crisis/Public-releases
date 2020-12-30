@@ -1,0 +1,84 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 689
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1428 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "JAM_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		parliamentary_monarchy
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		terrorism_discounted
+	}
+
+	
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2012.1.5"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 52
+		liberalism = 0
+		democratic = 48
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Portia Simpson-Miller"
+		desc = "POLITICS_PORTIA_SIMPSON-MILLER_DESC"
+		picture = "gfx/leaders/JAM/portrait_portia_simpson-miller.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Andrew Holness"
+		desc = "POLITICS_ANDREW_HOLNESS_DESC"
+		picture = "gfx/leaders/JAM/portrait_andrew_holness.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+}
+
+
+	2016.2.25 = { 
+		JAM = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.03
+			}
+
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+	}

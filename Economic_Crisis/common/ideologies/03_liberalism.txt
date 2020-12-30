@@ -1,0 +1,140 @@
+ideologies = {
+
+	liberalism = { 
+	
+		# Либерализм
+		# Liberalism 
+		
+		types = {
+			# Классический либерализм
+			# Classical Liberalism
+			classical_liberalism = {
+			}
+			
+			# Либеральная демократия
+			# Liberal Democracy
+			liberal_democracy = {
+			}
+			
+			# Консервативный либерализм 
+			# Conservative Liberalism
+			conservative_liberalism = {
+			}
+			
+			# Национал-либерализм
+			# National Liberalism
+			national_liberalism_lib = {
+			}
+			
+			# Либеральная монархия (для партий монархистов)
+			# Liberal Monarchy
+			liberal_royalism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Либертарианство
+			# Libertarianism
+			libertarianism = {
+			}
+			
+			# Социал-либерализм
+			# Social Liberalism
+			social_liberalism = {
+			}
+			
+			# Зелёный либерализм 
+			# Green Liberalism
+			green_liberalism = {
+			}
+			
+			# Христианская демократия (либерализм)
+			# Christian Democracy 
+			christian_democracy = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_LIBERALISM_1"
+			"FACTION_NAME_LIBERALISM_2"
+			"FACTION_NAME_LIBERALISM_3"
+			"FACTION_NAME_LIBERALISM_4"
+			"FACTION_NAME_LIBERALISM_5"
+			"FACTION_NAME_LIBERALISM_6"
+		}
+		
+		color = { 255 170 30 } #{ 255 204 51 }
+		
+		rules = {
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = no
+			# может инициировать свержение правительства в другой стране
+			can_force_government = yes
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = no
+			# может иметь страны-марионетки
+			can_puppet = no
+			# может понижать напряженность (?)
+			can_lower_tension = yes
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = yes
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = yes
+		}
+
+		# Может создавать правительство в изгнании
+		can_host_government_in_exile = yes		
+
+		# Влияние участия страны в войне на  международную напряженность (?)
+		# war_impact_on_world_tension = -1.0		# peacemaker
+		war_impact_on_world_tension = 0				# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		# war_impact_on_world_tension = 0.4			# danger
+		# war_impact_on_world_tension = 0.75		# aggresive		
+		# war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		faction_impact_on_world_tension = -0.1		# гарант
+		# faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		# faction_impact_on_world_tension = 0.5		# агрессивный
+		# faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# Необходимо реализовать такие модификаторы:
+		# индивидуализм — на первом месте находятся интересы личности, а не общества или другой социальной группы;
+		# свобода - свободе отдается приоритет перед другим и ценностями, считается, что она может быть ограничена только свободой другого человека; гарантируется также свобода предпринимательства;
+		# разум — самое рациональное решение будет самым правильным, а эмоции, чувства и привязанности имеют второстепенное значение;
+		# равноправие — все имеют равные гражданские и политические права и свободы (однако это не означает, что у всех должны быть одинаковые доходы или социальное положение);
+		# толерантность — все должны терпимо и уважительно относиться к иным взглядам, мнениям, убеждениям, верованиям; приветствуется и политический плюрализм;
+		# согласие - политические и другие социальные отношения должны основываться на взаимных договоренностях (например, на демократических выборах), а не на насилии;
+		# конституционализм — власть ограничивается законом, а система политических сдержек и противовесов должна быть оговорена в конституции.
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.3
+			# влиянеие присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.25
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.3
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.15
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 0.35
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 0.25# !Вырезано в связи с устранением данного модификатора в игре!
+			# стоимость политической власти при аннексии
+			annex_cost_factor = 0.5
+			# стоимость политической власти при создании марионетки
+			puppet_cost_factor = 0 
+		}
+		
+		faction_modifiers = {
+			# plus 50% trade opinion
+			faction_trade_opinion_factor = 0.50
+			# уменьшение времени исследований технологий
+			research_speed_factor = 0.1
+		}
+		
+		# uses the democratic AI behaviour
+		ai_democratic = yes 
+		can_collaborate = yes
+	}
+}

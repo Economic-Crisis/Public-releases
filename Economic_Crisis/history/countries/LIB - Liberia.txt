@@ -1,0 +1,87 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 298
+
+	add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 194 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		high_corruption
+	}
+	
+    add_ideas = {
+		presidential_republic
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		low_terrorism
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+		
+	set_politics = {
+		ruling_party = liberalism 
+		last_election = "2011.11.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 60
+		democratic = 0
+		neutrality = 40
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Ellen Johnson Sirleaf" #Элен Джонсон-Серлиф
+		desc = "POLITICS_ELLEN_JOHNSON_SIRLEAF_DESC"
+		picture = "gfx/leaders/LIB/portrait_ellen_johnson_sirleaf.dds"
+		ideology = liberal_democracy #Партия единства
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "George Weah"
+		desc = ""
+		picture = "gfx/leaders/LIB/portrait_george_weah.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}	
+}
+
+	2017.12.26 = { 
+		LIB = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}
+
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+	}

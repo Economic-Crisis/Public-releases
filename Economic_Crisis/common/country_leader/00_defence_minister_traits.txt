@@ -1,0 +1,341 @@
+### Traits for Defence Ministers
+### Скиллы ТОЛЬКО для министров обороны
+### Могут в идеях министров сочетаться со скиллами идеологий и военного командования
+
+leader_traits = {
+
+	defence_minister_army_order = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.03
+		political_power_factor = 0.02
+		training_time_army_factor = -0.02
+		attrition = -0.02
+		stability_factor = 0.002
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	defence_minister_bureaucrat = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army_factor = 0.01
+		production_speed_arms_factory_factor = 0.01
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = 0.02
+		trade_opinion_factor = 0.02 ### Докинул бафф для торговли
+		attrition = 0.03 ##Дебаф
+		democratic_drift = 0.01 ##бафф бюрократическим режимам, где для согласования военных расходов и операций нужны кучи бумаг и мнений.
+		liberalism_drift = 0.01 
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	# Заслуженный военный (пример в РФ - генерал-полковник Валерий Третьяков от Справделивой России или маршал Игорь Сергеев)
+	defence_minister_distinguished_military = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.02
+		political_power_factor = 0.02
+		training_time_army_factor = -0.02
+		attrition = -0.02
+		stability_factor = 0.001 
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Сильный аналитик (пример в РФ - генерал-лейтенант Александр Лебедь)
+	defence_minister_analyst = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = -0.02
+		attrition = 0.02 ###Дебаф связан с тем, что аналитики долго планируют операции что приводит иногда с задержкам в снабжении и более длительным подготовкам, отсюда время тренировки дивизий имеет небольшой бафф.
+		stability_factor = 0.001 
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Служить и защищать - ветеран старых войн, через политику попавший в кресло министра (пример в РФ - Франц Клинцевич, Сергей Миронов)
+	defence_minister_serve_and_protect = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.01
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		opinion_gain_monthly_same_ideology_factor = 0.01
+		stability_factor = 0.001 
+		
+		ai_will_do = { factor = 1 }
+	}
+# Партийный ставленник (пример в РФ - Иванов)
+	defence_minister_regime_loyalist = { 
+		sprite = 5
+		experience_gain_army_factor = 0.01
+		production_speed_arms_factory_factor = 0.03
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = -0.01
+		attrition = -0.01
+		stability_factor = 0.001 
+		
+		ai_will_do = { factor = 1 }
+	}	
+
+###################################################################################### Министры 1лвл by Monweal
+	# Опытный бюрократ (пример в РФ - Сердюков)
+	defence_minister_bureaucrat_1 = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army_factor = 0.01
+		production_speed_arms_factory_factor = 0.02
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = 0.02
+		trade_opinion_factor = 0.03 ### Докинул бафф для торговли
+		attrition = 0.03 ##Дебаф
+		democratic_drift = 0.01 ##бафф бюрократическим режимам, где для согласования военных расходов и операций нужны кучи бумаг и мнений.
+		liberalism_drift = 0.01 
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	# Заслуженный военный (пример в РФ - генерал-полковник Валерий Третьяков от Справделивой России или маршал Игорь Сергеев)
+	defence_minister_distinguished_military_1 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.02
+		political_power_factor = 0.02
+		training_time_army_factor = -0.03
+		attrition = -0.02
+		stability_factor = 0.002
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Сильный аналитик (пример в РФ - генерал-лейтенант Александр Лебедь)
+	defence_minister_analyst_1 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.1
+		political_power_factor = 0.02
+		training_time_army_factor = -0.03
+		attrition = 0.01 ###Дебаф связан с тем, что аналитики долго планируют операции что приводит иногда с задержкам в снабжении и более длительным подготовкам, отсюда время тренировки дивизий имеет небольшой бафф.
+		stability_factor = 0.002 
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Служить и защищать - ветеран старых войн, через политику попавший в кресло министра (пример в РФ - Франц Клинцевич, Сергей Миронов)
+	defence_minister_serve_and_protect_1 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.01
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		opinion_gain_monthly_same_ideology_factor = 0.01
+		stability_factor = 0.001
+		
+		
+		
+		ai_will_do = { factor = 1 }
+	}
+# Партийный ставленник (пример в РФ - Иванов)
+	defence_minister_regime_loyalist_1 = { 
+		sprite = 5
+		experience_gain_army_factor = 0.02
+		production_speed_arms_factory_factor = 0.03 # Армейский порядок - сделает армию из чего угодно (пример в РФ - Сергей Шойгу)
+		production_speed_dockyard_factor = 0.03
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = -0.02
+		attrition = -0.02
+		stability_factor = 0.002 
+			
+		
+		ai_will_do = { factor = 1 }
+	}	
+############################################################################################
+	# Опытный бюрократ (пример в РФ - Сердюков)
+	defence_minister_bureaucrat_2 = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army_factor = 0.01
+		production_speed_arms_factory_factor = 0.03
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = 0.01
+		trade_opinion_factor = 0.03 ### Докинул бафф для торговли
+		attrition = 0.03 ##Дебаф
+		democratic_drift = 0.01 ##бафф бюрократическим режимам, где для согласования военных расходов и операций нужны кучи бумаг и мнений.
+		liberalism_drift = 0.01 
+		
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	# Заслуженный военный (пример в РФ - генерал-полковник Валерий Третьяков от Справделивой России или маршал Игорь Сергеев)
+	defence_minister_distinguished_military_2 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.02
+		political_power_factor = 0.02
+		training_time_army_factor = -0.04
+		attrition = -0.02
+		stability_factor = 0.002
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Сильный аналитик (пример в РФ - генерал-лейтенант Александр Лебедь)
+	defence_minister_analyst_2 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.03
+		political_power_factor = 0.02
+		training_time_army_factor = -0.03
+		attrition = 0.01 ###Дебаф связан с тем, что аналитики долго планируют операции что приводит иногда с задержкам в снабжении и более длительным подготовкам, отсюда время тренировки дивизий имеет небольшой бафф.
+		stability_factor = 0.001
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Служить и защищать - ветеран старых войн, через политику попавший в кресло министра (пример в РФ - Франц Клинцевич, Сергей Миронов)
+	defence_minister_serve_and_protect_2 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.01
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.02
+		opinion_gain_monthly_same_ideology_factor = 0.01
+		stability_factor = 0.001
+			
+		
+		ai_will_do = { factor = 1 }
+	}
+# Партийный ставленник (пример в РФ - Иванов)
+	defence_minister_regime_loyalist_2 = { 
+		sprite = 5
+		experience_gain_army_factor = 0.02
+		production_speed_arms_factory_factor = 0.03 # Армейский порядок - сделает армию из чего угодно (пример в РФ - Сергей Шойгу)
+		production_speed_dockyard_factor = 0.03
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = -0.02
+		attrition = -0.02
+		stability_factor = 0.002
+		
+		
+		ai_will_do = { factor = 1 }
+	}	
+######################################################################################
+	# Опытный бюрократ (пример в РФ - Сердюков)
+	defence_minister_bureaucrat_3 = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army_factor = 0.02
+		production_speed_arms_factory_factor = 0.03
+		production_speed_dockyard_factor = 0.02
+		#production_speed_anti_air_building_factor = 0.02
+		political_power_factor = 0.01
+		training_time_army_factor = 0.01
+		trade_opinion_factor = 0.03 ### Докинул бафф для торговли
+		attrition = 0.03 ##Дебаф
+		democratic_drift = 0.1 ##бафф бюрократическим режимам, где для согласования военных расходов и операций нужны кучи бумаг и мнений.
+		liberalism_drift = 0.1 
+
+
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	# Заслуженный военный (пример в РФ - генерал-полковник Валерий Третьяков от Справделивой России или маршал Игорь Сергеев)
+	defence_minister_distinguished_military_3 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.03
+		political_power_factor = 0.002
+		training_time_army_factor = -0.04
+		attrition = -0.02
+		stability_factor = 0.002
+
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Сильный аналитик (пример в РФ - генерал-лейтенант Александр Лебедь)
+	defence_minister_analyst_3 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.04
+		political_power_factor = 0.02
+		training_time_army_factor = -0.03
+		attrition = 0.1 ###Дебаф связан с тем, что аналитики долго планируют операции что приводит иногда с задержкам в снабжении и более длительным подготовкам, отсюда время тренировки дивизий имеет небольшой бафф.
+		stability_factor = 0.001
+	
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Служить и защищать - ветеран старых войн, через политику попавший в кресло министра (пример в РФ - Франц Клинцевич, Сергей Миронов)
+	defence_minister_serve_and_protect_3 = {
+		random = no
+		sprite = 13
+		
+		production_speed_arms_factory_factor = 0.02
+		production_speed_dockyard_factor = 0.03
+		#production_speed_anti_air_building_factor = 0.03
+		political_power_factor = 0.02
+		opinion_gain_monthly_same_ideology_factor = 0.02
+		stability_factor = 0.002
+		
+		
+		ai_will_do = {	factor = 1 }
+	}
+# Партийный ставленник (пример в РФ - Иванов)
+	defence_minister_regime_loyalist_3 = { 
+		sprite = 5
+		experience_gain_army_factor = 0.02
+		production_speed_arms_factory_factor = 0.04 # Армейский порядок - сделает армию из чего угодно (пример в РФ - Сергей Шойгу)
+		production_speed_dockyard_factor = 0.03
+		#production_speed_anti_air_building_factor = 0.03
+		political_power_factor = 0.02
+		training_time_army_factor = -0.02
+		attrition = -0.02
+		stability_factor = 0.002
+		
+		
+		ai_will_do = { factor = 1 }
+	}	
+}

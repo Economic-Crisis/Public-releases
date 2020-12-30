@@ -1,0 +1,31 @@
+﻿division_template = {
+	name = "Gelezinis Vilkas"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 1 y = 0 }
+		mechanized_on_apc_tracked = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+  support = {
+    #artillery = { x = 0 y = 0}
+    logistics_battalion = { x = 0 y = 1}
+  }
+}
+
+units = {
+	####### Regional Command "Geležinis Vilkas" #######
+	division= {
+		name = "pirmasis Motorizuotoji pėstininkų brigada «Geležinis Vilkas»"
+		location = 13822
+		division_template = "Gelezinis Vilkas"
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "«Geležinis Vilkas» motorizuotos pėstininkų brigados būstinė"
+		location = 6296
+		division_template = "Gelezinis Vilkas"
+		start_equipment_factor = 0.7
+	}
+}

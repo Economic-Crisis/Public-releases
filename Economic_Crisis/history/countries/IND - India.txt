@@ -1,0 +1,139 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 439
+
+add_ideas = {
+	obsolete_army
+	overpopulation
+	nuclear_country
+	major_country
+}
+
+# первый саммит БРИК
+2009.6.16 = {
+    add_ideas = brics_member
+}
+
+2015.7.10 = {
+    add_ideas = sco_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 185700 }
+
+	load_oob = "_tech_major_2013"
+	oob = "IND_2013"
+	
+	# government
+	add_ideas = {
+		ind_manmohan_singh_hog
+		ind_ak_antony_defm
+		ind_salman_kurshid_fgm
+		ind_p_chidambaram_ecm
+		ind_sushlikumar_shinde_ssch
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		contract_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		minimum_wage
+		mixed_economic
+		
+		free_market
+		high_terrorism
+	}
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2009.5.13"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 10
+		reformism = 40
+		liberalism = 0
+		democratic = 47
+		neutrality = 0
+		fascism = 3
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Rahul Ghandi"
+		desc = "POLITICS_RAHUL_GHANDI_DESC"
+		picture = "gfx/leaders/IND/portrait_rahul_ghandi.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Manmohan Singh"
+		desc = "POLITICS_MANMOHAN_SINGH_DESC"
+		picture = "gfx/leaders/IND/portrait_manmohan_singh.dds"
+		ideology = social_democracy
+		expire = "2014.6.1"
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Narendra Modi"
+		desc = "POLITICS_NARENDRA_MODI_DESC"
+		picture = "gfx/leaders/IND/portrait_narendra_modi.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Prakash Karat"
+		desc = "POLITICS_PRAKASH_KARAT_DESC"
+		picture = "gfx/leaders/IND/portrait_prakash_karat.dds"
+		ideology = marxism
+		traits = { trait_marxism }
+	}
+
+	create_country_leader = {
+		name = "Uddhav Thackeray"
+		desc = "POLITICS_UDDHAV_THACKERAY_DESC"
+		picture = "gfx/leaders/IND/portrait_uddhav_thackeray.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Jaya Prakash Narayana"
+		desc = "POLITICS_Jayaprakash_Narayan_DESC"
+		picture = "gfx/leaders/IND/portrait_jayaprakash_narayan.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+
+	#Let there be a President on the centrists
+	create_country_leader = {
+		name = "Pranab Mukherjee"
+		desc = "POLITICS_PRANAB_MUKHERJEE_DESC"
+		picture = "gfx/leaders/IND/portrait_pranab_mukherjee.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+}
+

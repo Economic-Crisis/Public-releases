@@ -1,0 +1,5369 @@
+focus_tree = {
+	id = british_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}
+
+    continuous_focus_position = { x = 4400 y = 2250 }
+	default = no
+	reset_on_civilwar = no
+
+
+	focus = {
+		id = ENG_start
+		icon = GFX_ENG_start
+		cost = 70
+		x = 30
+		y = 0
+		mutually_exclusive = { focus = ENG_startM }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = 100 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_start1
+		icon = GFX_ENG_start1
+		cost = 70
+		x = 28
+		y = 1
+		prerequisite = { focus = ENG_start }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start2
+		icon = GFX_ENG_start2
+		cost = 70
+		x = 32
+		y = 1
+		prerequisite = { focus = ENG_start }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.30 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start3
+		icon = GFX_ENG_start3
+		cost = 70
+		x = 28
+		y = 2
+		prerequisite = { focus = ENG_start1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start4
+		icon = GFX_ENG_start4
+		cost = 70
+		x = 32
+		y = 2
+		prerequisite = { focus = ENG_start2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start5
+		icon = GFX_ENG_start5
+		cost = 1
+		x = 28
+		y = 3
+		prerequisite = { focus = ENG_start3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.29 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start6
+		icon = GFX_ENG_start6
+		cost = 70
+		x = 31
+		y = 3
+		prerequisite = { focus = ENG_start4 }
+		mutually_exclusive = { focus = ENG_start7 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.31 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_start7
+		icon = GFX_ENG_start7
+		cost = 70
+		x = 33
+		y = 3
+		prerequisite = { focus = ENG_start4 }
+		mutually_exclusive = { focus = ENG_start6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.32 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_bristay
+		icon = GFX_ENG_bristay
+		cost = 0
+		x = 20
+		y = 4
+		available = { has_country_flag = ENG_bristay }
+		prerequisite = { focus = ENG_start5 }
+		mutually_exclusive = { focus = ENG_brexit }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		} 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay1
+		icon = GFX_ENG_bristay1
+		cost = 70
+		x = 20
+		y = 5
+		prerequisite = { focus = ENG_bristay }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			GER = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+			FRA = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay2
+		icon = GFX_ENG_bristay2
+		cost = 70
+		x = 22
+		y = 5
+		prerequisite = { focus = ENG_bristay }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.33 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = ENG_bristay3
+		icon = GFX_ENG_bristay3
+		cost = 70
+		x = 22
+		y = 6
+		prerequisite = { focus = ENG_bristay1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			SPR = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			POR = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay4
+		icon = GFX_ENG_bristay4
+		cost = 70
+		x = 20
+		y = 6
+		prerequisite = { focus = ENG_bristay1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			LUX = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			BEL = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			HOL = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay5
+		icon = GFX_ENG_bristay5
+		cost = 70
+		x = 18
+		y = 6
+		prerequisite = { focus = ENG_bristay1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			FIN = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			ICE = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			NOR = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			SWE = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+			DEN = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay6
+		icon = GFX_ENG_bristay6
+		cost = 70
+		x = 20
+		y = 7
+		prerequisite = { focus = ENG_bristay5 }
+		prerequisite = { focus = ENG_bristay4 }
+		prerequisite = { focus = ENG_bristay3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.34 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay7
+		icon = GFX_ENG_bristay7
+		cost = 30
+		x = 20
+		y = 8
+		prerequisite = { focus = ENG_bristay6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.35 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay8
+		icon = GFX_ENG_bristay8
+		cost = 70
+		x = 20
+		y = 9
+		prerequisite = { focus = ENG_bristay7 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.36 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro
+		icon = GFX_ENG_euro
+		cost = 70
+		x = 19
+		y = 10
+		available = { has_country_flag = ENG_euro_flag }
+		prerequisite = { focus = ENG_bristay8 }
+		mutually_exclusive = { focus = ENG_con }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.37 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_con
+		icon = GFX_ENG_con
+		cost = 70
+		x = 21
+		y = 10
+		available = { has_country_flag = ENG_con_flag } 
+		prerequisite = { focus = ENG_bristay8 }
+		mutually_exclusive = { focus = ENG_euro } 
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.38 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay11
+		icon = GFX_ENG_bristay11
+		cost = 14
+		x = 20
+		y = 11
+		prerequisite = { 
+			focus = ENG_euro
+			focus = ENG_con
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.39 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay12
+		icon = GFX_ENG_bristay12
+		cost = 30
+		x = 20
+		y = 12
+		prerequisite = { focus = ENG_bristay11 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay13
+		icon = GFX_ENG_bristay13
+		cost = 70
+		x = 20
+		y = 13
+		bypass = { MAC = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { MAC = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay14
+		icon = GFX_ENG_bristay14
+		cost = 70
+		x = 14
+		y = 13
+		bypass = { ALB = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { ALB = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay15
+		icon = GFX_ENG_bristay15
+		cost = 70
+		x = 16
+		y = 13
+		bypass = { KOS = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { KOS = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay16
+		icon = GFX_ENG_bristay16
+		cost = 70
+		x = 18
+		y = 13
+		bypass = { SER = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { SER = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay17
+		icon = GFX_ENG_bristay17
+		cost = 70
+		x = 22
+		y = 13
+		bypass = { MNT = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { MNT = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay18
+		icon = GFX_ENG_bristay18
+		cost = 70
+		x = 24
+		y = 13
+		bypass = { TUR = { exists = yes } }
+		prerequisite = { focus = ENG_bristay12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { TUR = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay19
+		icon = GFX_ENG_bristay19
+		cost = 30
+		x = 20
+		y = 14
+		prerequisite = { 
+			focus = ENG_bristay13
+			focus = ENG_bristay14
+			focus = ENG_bristay16
+			focus = ENG_bristay17
+			focus = ENG_bristay18
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay20
+		icon = GFX_ENG_bristay20
+		cost = 70
+		x = 20
+		y = 15
+		available = { GEO = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { GEO = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay21
+		icon = GFX_ENG_bristay21
+		cost = 70
+		x = 18
+		y = 15
+		available = { MOL = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { MOL = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay22
+		icon = GFX_ENG_bristay22
+		cost = 70
+		x = 16
+		y = 15
+		available = { UKR = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { UKR = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay23
+		icon = GFX_ENG_bristay23
+		cost = 70
+		x = 14
+		y = 15
+		available = { ALB = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { BLR = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay24
+		icon = GFX_ENG_bristay24
+		cost = 70
+		x = 22
+		y = 15
+		available = { ARM = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { ARM = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_bristay25
+		icon = GFX_ENG_bristay25
+		cost = 70
+		x = 24
+		y = 15
+		available = { AZR = { exists = yes } }
+		prerequisite = { focus = ENG_bristay19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { AZR = { country_event = { id = britain.40 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro1
+		icon = GFX_ENG_euro1
+		cost = 70
+		x = 12
+		y = 13
+		prerequisite = { focus = ENG_euro }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_opinion_modifier = { target = PREV modifier = bristaySkandinav }	}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro2
+		icon = GFX_ENG_euro2
+		cost = 140
+		x = 12
+		y = 14
+		prerequisite = { focus = ENG_euro1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_timed_idea = { idea = ENG_Negotiation_process days = 365 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro3
+		icon = GFX_ENG_euro3
+		cost = 70
+		x = 12
+		y = 15
+		prerequisite = { focus = ENG_euro2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = {
+					if = {
+					limit = { has_idea = eu_member }
+					PREV = { add_ideas = ENG_Promotion_Eurocentrism }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro4
+		icon = GFX_ENG_euro4
+		cost = 280
+		x = 12
+		y = 16
+		prerequisite = { focus = ENG_euro3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_ideas = ENG_European_integration_process
+			add_stability = -0.2
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro5
+		icon = GFX_ENG_euro5
+		cost = 70
+		x = 12
+		y = 17
+		prerequisite = { focus = ENG_euro4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.42 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro6
+		icon = GFX_ENG_euro6
+		cost = 70
+		x = 12
+		y = 18
+		prerequisite = { focus = ENG_euro5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro7
+		icon = GFX_ENG_euro7
+		cost = 70
+		x = 12
+		y = 19
+		prerequisite = { focus = ENG_euro6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.64 days = 1 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro8
+		icon = GFX_ENG_euro8
+		cost = 140
+		x = 12
+		y = 20
+		prerequisite = { focus = ENG_euro7 }
+		prerequisite = { focus = ENG_euroL4 }
+		prerequisite = { focus = ENG_euroR4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_timed_idea = { idea = ENG_combination_EU days = 730 }
+			add_stability = 0.1
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euro9
+		icon = GFX_ENG_euro9
+		cost = 30
+		x = 12
+		y = 21
+		prerequisite = { focus = ENG_euro8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			remove_ideas = ENG_European_integration_process
+			country_event = { id = European_Union.16 }
+		} 
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroL
+		icon = GFX_ENG_euroL
+		cost = 70
+		x = 10
+		y = 17
+		prerequisite = { focus = ENG_euro4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.41 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroL1
+		icon = GFX_ENG_euroL1
+		cost = 70
+		x = 10
+		y = 18
+		prerequisite = { focus = ENG_euroL }
+		mutually_exclusive = {
+			focus = ENG_euroL2
+			focus = ENG_euroL3
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = unitary_state_with_devolution }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroL2
+		icon = GFX_ENG_euroL2
+		cost = 70
+		x = 8
+		y = 18
+		prerequisite = { focus = ENG_euroL }
+		mutually_exclusive = {
+			focus = ENG_euroL3
+			focus = ENG_euroL1
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = confederation }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroL3
+		icon = GFX_ENG_euroL3
+		cost = 70
+		x = 6
+		y = 18
+		prerequisite = { focus = ENG_euroL }
+		mutually_exclusive = {
+			focus = ENG_euroL2
+			focus = ENG_euroL1
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = federation }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroL4
+		icon = GFX_ENG_euroL4
+		cost = 70
+		x = 8
+		y = 19
+		prerequisite = {
+			focus = ENG_euroL1
+			focus = ENG_euroL2
+			focus = ENG_euroL3
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.63 days = 1 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_euroR
+		icon = GFX_ENG_euroR
+		cost = 70
+		x = 14
+		y = 17
+		prerequisite = { focus = ENG_euro4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.43 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_euroR1
+		icon = GFX_ENG_euroR1
+		cost = 70
+		x = 16
+		y = 18
+		prerequisite = { focus = ENG_euroR }
+		mutually_exclusive = {
+			focus = ENG_euroR2
+			focus = ENG_euroR3
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = mixed_army }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_euroR2
+		icon = GFX_ENG_euroR2
+		cost = 70
+		x = 18
+		y = 18
+		prerequisite = { focus = ENG_euroR }
+		mutually_exclusive = {
+			focus = ENG_euroR3
+			focus = ENG_euroR1
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = mandatory_urgent_service }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_euroR3
+		icon = GFX_ENG_euroR3
+		cost = 70
+		x = 14
+		y = 18
+		prerequisite = { focus = ENG_euroR }
+		mutually_exclusive = {
+			focus = ENG_euroR2
+			focus = ENG_euroR1
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas =  contract_army }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_euroR4
+		icon = GFX_ENG_euroR4
+		cost = 70
+		x = 16
+		y = 19
+		prerequisite = {
+			focus = ENG_euroR1
+			focus = ENG_euroR2
+			focus = ENG_euroR3
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.65 days = 1 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_con1
+		icon = GFX_ENG_con1
+		cost = 70
+		x = 26
+		y = 13
+		prerequisite = { focus = ENG_con }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			GER = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+			FRA = { add_opinion_modifier = { target = ENG modifier = bristayLondon } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_con2
+		icon = GFX_ENG_con2
+		cost = 70
+		x = 25
+		y = 14
+		prerequisite = { focus = ENG_con1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { SPR = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_con3
+		icon = GFX_ENG_con3
+		cost = 70
+		x = 27
+		y = 14
+		prerequisite = { focus = ENG_con1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { POL = { add_opinion_modifier = { target = ENG modifier = bristaySkandinav } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_con4
+		icon = GFX_ENG_con4
+		cost = 70
+		x = 26
+		y = 15
+		prerequisite = { focus = ENG_con2 }
+		prerequisite = { focus = ENG_con3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = 100 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_con5
+		icon = GFX_ENG_con5
+		cost = 70
+		x = 26
+		y = 16
+		prerequisite = { focus = ENG_con4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = -50 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_con6
+		icon = GFX_ENG_con6
+		cost = 70
+		x = 24
+		y = 17
+		prerequisite = { focus = ENG_con5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.59 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC FOCUS_FILTER_RESEARCH} 
+	}
+	focus = {
+		id = ENG_con7
+		icon = GFX_ENG_con7
+		cost = 70
+		x = 26
+		y = 17
+		prerequisite = { focus = ENG_con5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.60 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_con8
+		icon = GFX_ENG_con8
+		cost = 70
+		x = 28
+		y = 17
+		prerequisite = { focus = ENG_con5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.61 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_con9
+		icon = GFX_ENG_con9
+		cost = 140
+		x = 26
+		y = 18
+		prerequisite = { focus = ENG_con8 }
+		prerequisite = { focus = ENG_con7 }
+		prerequisite = { focus = ENG_con6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = -150
+			news_event = { id = britain.62 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_con10
+		icon = GFX_ENG_con10
+		cost = 280
+		x = 26
+		y = 19
+		prerequisite = { focus = ENG_con9 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 300
+			add_stability = 0.10
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit
+		icon = GFX_ENG_brexit
+		cost = 1
+		x = 32
+		y = 4
+		available = { has_country_flag = ENG_brexit }
+		prerequisite = { focus = ENG_start5 }
+		mutually_exclusive = { focus = ENG_bristay } 
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+			modifier = {
+				factor = 0 
+				is_historical_focus_on = no
+			} 
+		} 
+		completion_reward = {
+			add_stability = 0.10
+			PREV = { add_opinion_modifier = { target = ENG modifier = no_eu_more } }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	} 
+	focus = {
+		id = ENG_brexit1
+		icon = GFX_ENG_brexit1
+		cost = 30
+		x = 32
+		y = 5
+		prerequisite = { focus = ENG_brexit }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = britain.44 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexit2
+		icon = GFX_ENG_brexit2
+		cost = 70
+		x = 32
+		y = 6
+		prerequisite = { focus = ENG_brexit1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_timed_idea = { idea = ENG_Disintegration_Preparation days = 180 }
+			country_event = { id = britain.46 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexit3
+		icon = GFX_ENG_brexit3
+		cost = 70
+		x = 32
+		y = 7
+		prerequisite = { focus = ENG_brexit2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_timed_idea = { idea = ENG_Disintegration days = 730 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexit4
+		icon = GFX_ENG_brexit4
+		cost = 70
+		x = 32
+		y = 8
+		prerequisite = { focus = ENG_brexit3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_ideas = ENG_Negotiations_EuropeanCommission
+			news_event = { id = britain.47 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit6
+		icon = GFX_ENG_brexit6
+		cost = 70
+		x = 31
+		y = 9
+		prerequisite = { focus = ENG_brexit4 }
+		mutually_exclusive = { focus = ENG_brexit7 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristaySkandinav }
+				}
+			}
+			add_political_power = -250
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit7
+		icon = GFX_ENG_brexit7
+		cost = 70
+		x = 33
+		y = 9
+		prerequisite = { focus = ENG_brexit4 }
+		mutually_exclusive = { focus = ENG_brexit6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristayLondon }
+				}
+			}
+			add_political_power = -250
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit8
+		icon = GFX_ENG_brexit8
+		cost = 70
+		x = 31
+		y = 10
+		prerequisite = { focus = ENG_brexit6 }
+		mutually_exclusive = { focus = ENG_brexit9 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristaySkandinav }
+				}
+			}
+			add_timed_idea = { idea = ENG_Fulfillment_financial_obligations days = 365 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = ENG_brexit9
+		icon = GFX_ENG_brexit9
+		cost = 70
+		x = 33
+		y = 10
+		prerequisite = { focus = ENG_brexit7 }
+		mutually_exclusive = { focus = ENG_brexit8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristayLondon }
+				}
+			}
+			add_political_power = -100
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = ENG_brexit10
+		icon = GFX_ENG_brexit10
+		cost = 70
+		x = 31
+		y = 11
+		prerequisite = { focus = ENG_brexit8 }
+		mutually_exclusive = { focus = ENG_brexit11 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristaySkandinav }
+				}
+			}
+			add_political_power = -50
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit11
+		icon = GFX_ENG_brexit11
+		cost = 70
+		x = 33
+		y = 11
+		prerequisite = { focus = ENG_brexit9 }
+		mutually_exclusive = { focus = ENG_brexit10 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristayLondon }
+				}
+			}
+			add_political_power = 100
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit12
+		icon = GFX_ENG_brexit12
+		cost = 70
+		x = 31
+		y = 12
+		prerequisite = { focus = ENG_brexit10 }
+		mutually_exclusive = { focus = ENG_brexit13 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = ENG_brexit13
+		icon = GFX_ENG_brexit13
+		cost = 70
+		x = 33
+		y = 12
+		prerequisite = { focus = ENG_brexit11 }
+		mutually_exclusive = { focus = ENG_brexit12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			every_country = { 
+				if = {
+					limit = { has_idea = eu_member }
+					add_opinion_modifier = { target = ENG modifier = bristayLondon }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY} 
+	}
+	focus = {
+		id = ENG_brexit14
+		icon = GFX_ENG_brexit14
+		cost = 70
+		x = 32
+		y = 13
+		prerequisite = { focus = ENG_brexit12 focus = ENG_brexit13 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.48 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY} 
+	}
+	focus = {
+		id = ENG_brexit15
+		icon = GFX_ENG_brexit15
+		cost = 70
+		x = 32
+		y = 14
+		prerequisite = { focus = ENG_brexit14 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.50 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit16
+		icon = GFX_ENG_brexit16
+		cost = 70
+		x = 32
+		y = 15
+		prerequisite = { focus = ENG_brexit15 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { remove_ideas = ENG_Negotiations_EuropeanCommission }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit17
+		icon = GFX_ENG_brexit17
+		cost = 70
+		x = 32
+		y = 16
+		prerequisite = { focus = ENG_brexit16 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+		    country_event = { id = britain.51 }
+			remove_ideas = eu_member
+			add_political_power = 100
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit18
+		icon = GFX_ENG_brexit18
+		cost = 70
+		x = 32
+		y = 17
+		prerequisite = { focus = ENG_brexit17 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = 100 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit19
+		icon = GFX_ENG_brexit19
+		cost = 70
+		x = 32
+		y = 18
+		prerequisite = { focus = ENG_brexit18 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = -300 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+		id = ENG_brexit2000
+		icon = GFX_ENG_brexit2000
+		cost = 70
+		x = 38
+		y = 18
+		prerequisite = { focus = ENG_brexit18 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexit20
+		icon = GFX_ENG_brexit20
+		cost = 70
+		x = 38
+		y = 19
+		prerequisite = { focus = ENG_brexit2000 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = -500 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexit21
+		icon = GFX_ENG_brexit21
+		cost = 70
+		x = 38
+		y = 20
+		prerequisite = { focus = ENG_brexit20 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = ENG_brexit21_idea
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexit22
+		icon = GFX_ENG_brexit22
+		cost = 70
+		x = 36
+		y = 20
+		prerequisite = { focus = ENG_brexit20 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexit23
+		icon = GFX_ENG_brexit23
+		cost = 70
+		x = 40
+		y = 20
+		prerequisite = { focus = ENG_brexit20 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = ENG_brexit24
+		icon = GFX_ENG_brexit24
+		cost = 70
+		x = 36
+		y = 21
+		prerequisite = { focus = ENG_brexit22 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_speed_building }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = ENG_brexit25
+		icon = GFX_ENG_brexit25
+		cost = 70
+		x = 38
+		y = 21
+		prerequisite = { focus = ENG_brexit21 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = ENG_brexit25_idea
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexit26
+		icon = GFX_ENG_brexit26
+		cost = 70
+		x = 40
+		y = 21
+		prerequisite = { focus = ENG_brexit23 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexit27
+		icon = GFX_ENG_brexit27
+		cost = 70
+		x = 36
+		y = 22
+		prerequisite = { focus = ENG_brexit24 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexit28
+		icon = GFX_ENG_brexit28
+		cost = 70
+		x = 38
+		y = 22
+		prerequisite = { focus = ENG_brexit25 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = ENG_brexit28_idea
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexit29
+		icon = GFX_ENG_brexit29
+		cost = 70
+		x = 40
+		y = 22
+		prerequisite = { focus = ENG_brexit26 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_to_variable = { money = 5.0 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = ENG_brexit30
+		icon = GFX_ENG_brexit30
+		cost = 70
+		x = 38
+		y = 23
+		prerequisite = { focus = ENG_brexit27 }
+		prerequisite = { focus = ENG_brexit29 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			#add_political_power = -500
+			add_stability = 0.05
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL
+		icon = GFX_ENG_brexitL
+		cost = 70
+		x = 30
+		y = 19
+		prerequisite = { focus = ENG_brexit19 }
+		mutually_exclusive = { focus = ENG_brexitR }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+			add_political_power = -100
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL1
+		icon = GFX_ENG_brexitL1
+		cost = 70
+		x = 30
+		y = 20
+		prerequisite = { focus = ENG_brexitL }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			USA = { remove_from_faction = FROM }
+			news_event = { id = britain.53 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL2
+		icon = GFX_ENG_brexitL2
+		cost = 70
+		x = 30
+		y = 21
+		prerequisite = { focus = ENG_brexitL1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_stability = 0.02 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL3
+		icon = GFX_ENG_brexitL3
+		cost = 70
+		x = 30
+		y = 22
+		prerequisite = { focus = ENG_brexitL2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			hidden_effect = { create_faction = "Commonwealth" }
+			news_event = { id = britain.56 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL4
+		icon = GFX_ENG_brexitL4
+		cost = 70
+		x = 28
+		y = 23
+		prerequisite = { focus = ENG_brexitL3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { AST = { country_event = { id = britain.57 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL5
+		icon = GFX_ENG_brexitL5
+		cost = 70
+		x = 30
+		y = 23
+		prerequisite = { focus = ENG_brexitL3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { CAN = { country_event = { id = britain.57 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL51
+		icon = GFX_ENG_brexitL51
+		cost = 70
+		x = 32
+		y = 23
+		prerequisite = { focus = ENG_brexitL3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { SAF = { country_event = { id = britain.57 } } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL6
+		icon = GFX_ENG_brexitL6
+		cost = 70
+		x = 30
+		y = 24
+		prerequisite = { focus = ENG_brexitL4 }
+		prerequisite = { focus = ENG_brexitL5 }
+		prerequisite = { focus = ENG_brexitL51 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+			navy_experience = 100
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = ENG_brexitL12
+		icon = GFX_ENG_brexitL12
+		cost = 70
+		x = 32
+		y = 24
+		available = { is_in_faction = yes }
+		prerequisite = { focus = ENG_brexitL4 }
+		prerequisite = { focus = ENG_brexitL5 }
+		prerequisite = { focus = ENG_brexitL51 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapons_bonus
+				bonus = 0.1
+				uses = 10
+				category = infantry_weapons
+			}
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_brexitL7
+		icon = GFX_ENG_brexitL7
+		cost = 70
+		x = 28
+		y = 25
+		prerequisite = { focus = ENG_brexitL6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = ENG_brexitL8
+		icon = GFX_ENG_brexitL8
+		cost = 70
+		x = 30
+		y = 25
+		prerequisite = { focus = ENG_brexitL6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+			IND = { country_event = { id = britain.57 } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitL9
+		icon = GFX_ENG_brexitL9
+		cost = 70
+		x = 32
+		y = 25
+		prerequisite = { focus = ENG_brexitL6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = ENG_brexitL10
+		icon = GFX_ENG_brexitL10
+		cost = 70
+		x = 34
+		y = 25
+		prerequisite = { focus = ENG_brexitL6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = ENG_brexitL11
+		icon = GFX_ENG_brexitL11
+		cost = 140
+		x = 30
+		y = 26
+		prerequisite = { focus = ENG_brexitL8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR
+		icon = GFX_ENG_brexitR
+		cost = 70
+		x = 34
+		y = 19
+		prerequisite = { focus = ENG_brexit19 }
+		mutually_exclusive = { focus = ENG_brexitL }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_political_power = 100
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_very_positive } }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR1
+		icon = GFX_ENG_brexitR1
+		cost = 70
+		x = 34
+		y = 20
+		prerequisite = { focus = ENG_brexitR }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { news_event = { id = britain.54 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR2
+		icon = GFX_ENG_brexitR2
+		cost = 70
+		x = 34
+		y = 21
+		prerequisite = { focus = ENG_brexitR1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR3
+		icon = GFX_ENG_brexitR3
+		cost = 70
+		x = 32
+		y = 22
+		prerequisite = { focus = ENG_brexitR2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_stability = 0.10
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_negative } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR4
+		icon = GFX_ENG_brexitR4
+		cost = 70
+		x = 34
+		y = 22
+		prerequisite = { focus = ENG_brexitR2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_stability = -0.10
+			USA = { add_opinion_modifier = { target = ENG modifier = actions_positive } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_brexitR5
+		icon = GFX_ENG_brexitR5
+		cost = 70
+		x = 34
+		y = 23
+		prerequisite = { focus = ENG_brexitR4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.55 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_startM
+		icon = GFX_goal_eng_restoring_empire
+		cost = 1
+		x = 51
+		y = 0
+		mutually_exclusive = { focus = ENG_start }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com
+		icon = GFX_goal_eng_red_banner
+		cost = 35
+		x = 45
+		y = 1
+		prerequisite = { focus = ENG_startM }
+		mutually_exclusive = { focus = ENG_imp }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		select_effect = { add_ideas = ENG_britain_revolution }
+		completion_reward = { 
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			country_event = { id = britain.16 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com1
+		icon = GFX_goal_eng_peoples_brigades
+		cost = 35
+		x = 44
+		y = 2
+		prerequisite = { focus = ENG_com }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_timed_idea = { idea = ENG_idea_communism days = 120 }
+			country_event = { id = britain.18 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_com2
+		icon = GFX_goal_eng_callinicos_conditions
+		cost = 70
+		x = 46
+		y = 2
+		prerequisite = { focus = ENG_com }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			country_event = { id = britain.17 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com3
+		icon = GFX_goal_eng_british_revolution
+		cost = 140
+		x = 45
+		y = 3
+		prerequisite = { focus = ENG_com1 }
+		prerequisite = { focus = ENG_com2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		select_effect = {
+			remove_ideas = ENG_britain_revolution
+			country_event = { id = britain.19 days = 75 }
+		}
+		completion_reward = { add_timed_idea = { idea = ENG_Provisional_Council days = 70 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com4
+		icon = GFX_goal_eng_proletariat_dictatorship
+		cost = 70
+		x = 45
+		y = 4
+		prerequisite = { focus = ENG_com3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_timed_idea = { idea = ENG_Conflict_resolution days = 365 }
+			country_event = { id = britain.23 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com5
+		icon = GFX_goal_eng_red_congress
+		cost = 14
+		x = 45
+		y = 5
+		prerequisite = { focus = ENG_com4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_political_power = 150
+			country_event = { id = britain.24 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com6
+		icon = GFX_goal_eng_totalitarists
+		cost = 35
+		x = 45
+		y = 6
+		prerequisite = { focus = ENG_com5 }
+		mutually_exclusive = { focus = ENG_comL }
+		mutually_exclusive = { focus = ENG_comR }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_totalitarian_party
+				name = ENG_totalitarian_party
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com7
+		icon = GFX_goal_eng_central_committe
+		cost = 70
+		x = 45
+		y = 7
+		prerequisite = { focus = ENG_com6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_timed_idea = { idea = ENG_Cleaning days = 365 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL
+		icon = GFX_goal_eng_british_trotskyists
+		cost = 35
+		x = 39
+		y = 6
+		prerequisite = { focus = ENG_com5 }
+		mutually_exclusive = { focus = ENG_com6 }
+		mutually_exclusive = { focus = ENG_comR }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_trotskism_party
+				name =  ENG_trotskism_party
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL1
+		icon = GFX_goal_eng_debates_in_temporary_council
+		cost = 35
+		x = 39
+		y = 7
+		prerequisite = { focus = ENG_comL }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_ideas = ENG_Government_split
+			country_event = { id = britain.25 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL2
+		icon = GFX_goal_eng_hundred_days
+		cost = 100
+		x = 37
+		y = 8
+		prerequisite = { focus = ENG_comL1 }
+		available = {
+			has_idea = ENG_Ministry_Information1
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		select_effect = { country_event = { id = britain.26 days = 30 }	}
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL3
+		icon = GFX_goal_eng_restoring_mi_seven
+		cost = 35
+		x = 41
+		y = 8
+		prerequisite = {
+			focus = ENG_comL1
+			focus = ENG_com7
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_idea_mi7 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_comL4
+		icon = GFX_goal_eng_support_callinicos
+		cost = 14
+		x = 35
+		y = 9
+		prerequisite = { focus = ENG_comL2 }
+		mutually_exclusive = { 
+			focus = ENG_comL5 
+			focus = ENG_comL6
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_Kallinists_party
+				name = ENG_Kallinists_party
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL5
+		icon = GFX_goal_eng_liverpool_compromise
+		cost = 35
+		x = 37
+		y = 9
+		prerequisite = { focus = ENG_comL2 }
+		mutually_exclusive = { 
+			focus = ENG_comL4 
+			focus = ENG_comL6
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { remove_ideas = ENG_Government_split }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL6
+		icon = GFX_goal_eng_support_council
+		cost = 14
+		x = 39
+		y = 9
+		prerequisite = { focus = ENG_comL2 }
+		mutually_exclusive = { 
+			focus = ENG_comL4
+			focus = ENG_comL5
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_Council_supporters
+				name = ENG_Council_supporters
+			}		
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL7
+		icon = GFX_goal_eng_power_of_callinists
+		cost = 140
+		x = 35
+		y = 10
+		prerequisite = { focus = ENG_comL4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Kallinists }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL8
+		icon = GFX_goal_eng_council_and_leader
+		cost = 35
+		x = 37
+		y = 10
+		prerequisite = { focus = ENG_comL5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Council_and_leader }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL9
+		icon = GFX_goal_eng_power_of_council
+		cost = 140
+		x = 39
+		y = 10
+		prerequisite = { focus = ENG_comL6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_ideas = ENG_Council_supporters
+			add_political_power = 100
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comL10
+		icon = GFX_goal_eng_sandhurst_point
+		cost = 70
+		x = 41
+		y = 9
+		prerequisite = { focus = ENG_comL3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { army_experience = 250 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_com8
+		icon = GFX_goal_eng_political_purges
+		cost = 140
+		x = 45
+		y = 8
+		prerequisite = { focus = ENG_com7 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_ideas = ENG_Cleaning
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	#focus = {
+	#	id = ENG_com9
+	#	#icon = GFX_
+	#	cost = 70
+	#	x = 47
+	#	y = 8
+	#	prerequisite = { focus = ENG_com7 }
+	#	#cancel_if_invalid = yes
+	#	#continue_if_invalid = no
+	#	#available_if_capitulated = no
+	#	ai_will_do = { factor = 10 } 
+	#	completion_reward = {  }
+	#   search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	#}
+	focus = {
+		id = ENG_com10
+		icon = GFX_goal_eng_ministry_of_information_reorg
+		cost = 35
+		x = 43
+		y = 8
+		prerequisite = {
+			focus = ENG_comL1
+			focus = ENG_com7
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Ministry_Information }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = ENG_com11
+		icon = GFX_goal_eng_new_propaganda_technologies
+		cost = 35
+		x = 43
+		y = 9
+		prerequisite = { focus = ENG_com10 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			#hidden_effect = {
+				swap_ideas = {
+					remove_idea = ENG_Ministry_Information
+					add_idea = ENG_Ministry_Information1
+				}
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_com12
+		icon = GFX_goal_eng_affirmation_of_people_chairman
+		cost = 70
+		x = 45
+		y = 9
+		prerequisite = { focus = ENG_com8 }
+		#prerequisite = { focus = ENG_com9 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_com13
+		icon = GFX_goal_eng_project_albion
+		cost = 140
+		x = 42
+		y = 10
+		prerequisite = { focus = ENG_com11 }
+		prerequisite = { focus = ENG_comL10 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			FRA = { add_ideas = ENG_Communism_influence }
+			SPR = { add_ideas = ENG_Communism_influence }
+			POL = { add_ideas = ENG_Communism_influence }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_com14
+		icon = GFX_goal_eng_braun_constitution
+		cost = 70
+		x = 45
+		y = 10
+		prerequisite = { focus = ENG_com12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = 300 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_com15
+		icon = GFX_ENG_com15
+		cost = 70
+		x = 40
+		y = 11
+		prerequisite = {
+			focus = ENG_comL7
+			focus = ENG_comL8
+			focus = ENG_comL9
+		}
+		prerequisite = { focus = ENG_com13 focus = ENG_com14 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = 150 }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com16
+		icon = GFX_ENG_com16
+		cost = 70
+		x = 40
+		y = 12
+		prerequisite = { focus = ENG_com15 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_ideas = ENG_justify_war_goal_time
+			hidden_effect = { IRE = { create_faction = "Defense Alliance" } }
+			IRE = { add_opinion_modifier = { target = ENG modifier = perceive_as_threat } }
+			WLS = { add_opinion_modifier = { target = ENG modifier = perceive_as_threat } }
+			SCO = { add_opinion_modifier = { target = ENG modifier = perceive_as_threat } }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com17
+		icon = GFX_ENG_com17
+		cost = 70
+		x = 42
+		y = 12
+		prerequisite = { focus = ENG_com15 }
+		prerequisite = { focus = ENG_com13 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com18
+		icon = GFX_ENG_com18
+		cost = 35
+		x = 40
+		y = 13
+		available = { country_exists = IRE }
+		prerequisite = { focus = ENG_com16 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_state_claim = 285
+			add_state_claim = 113
+			add_state_claim = 135
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com19
+		icon = GFX_ENG_com19
+		cost = 35
+		x = 38
+		y = 13
+		available = { country_exists = SCO }
+		prerequisite = { focus = ENG_com16 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_state_claim = 133
+			add_state_claim = 121
+			add_state_claim = 120
+			add_state_claim = 136
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com20
+		icon = GFX_ENG_com20
+		cost = 35
+		x = 36
+		y = 13
+		available = { country_exists = WLS }
+		prerequisite = { focus = ENG_com16 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_state_claim = 112 }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_com21
+		icon = GFX_ENG_com21
+		cost = 70
+		x = 38
+		y = 14
+		prerequisite = { focus = ENG_com19 }
+		prerequisite = { focus = ENG_com20 }
+		prerequisite = { focus = ENG_com18 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = IRE }
+			create_wargoal = { type = annex_everything target = SCO }
+			create_wargoal = { type = annex_everything target = WLS }
+			hidden_effect = { news_event = news.74 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_comR
+		icon = GFX_goal_eng_anarcho_communists
+		cost = 35
+		x = 49
+		y = 6
+		prerequisite = { focus = ENG_com5 }
+		mutually_exclusive = { focus = ENG_comL }
+		mutually_exclusive = { focus = ENG_com6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { 
+			add_political_power = 50
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_anarho_com
+				name = ENG_anarho_com
+			}	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comR1
+		icon = GFX_goal_eng_people_assembly
+		cost = 70
+		x = 49
+		y = 7
+		prerequisite = { focus = ENG_comR }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Peoples_Assembly }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY } 
+	}
+	focus = {
+		id = ENG_comR2
+		icon = GFX_goal_eng_fight_with_bureaucracy
+		cost = 70
+		x = 48
+		y = 8
+		prerequisite = { focus = ENG_comR1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Weakening_bureaucracy }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = ENG_comR3
+		icon = GFX_goal_eng_decentralisation
+		cost = 70
+		x = 50
+		y = 8
+		prerequisite = { focus = ENG_comR1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = unitary_state_with_devolution }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comR4
+		icon = GFX_goal_eng_state_transformation
+		cost = 70
+		x = 49
+		y = 9
+		prerequisite = { focus = ENG_comR3 }
+		prerequisite = { focus = ENG_comR2 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Equality_Project }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_comR5
+		icon = GFX_goal_eng_project_equality
+		cost = 35
+		x = 49
+		y = 10
+		prerequisite = { focus = ENG_comR4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Equality_Project }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH} 
+	}
+	focus = {
+		id = ENG_comR6
+		icon = GFX_goal_eng_project_freedome
+		cost = 35
+		x = 51
+		y = 10
+		prerequisite = { focus = ENG_comR4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Freedom_project }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH} 
+	}
+	focus = {
+		id = ENG_comR7
+		icon = GFX_goal_eng_project_mutual_aid
+		cost = 35
+		x = 47
+		y = 10
+		prerequisite = { focus = ENG_comR4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Mutual_aid_project }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH} 
+	}
+	focus = {
+		id = ENG_comR8
+		icon = GFX_goal_eng_edwards_doctrine
+		cost = 140
+		x = 49
+		y = 11
+		prerequisite = { focus = ENG_comR5 }
+		prerequisite = { focus = ENG_comR7 }
+		prerequisite = { focus = ENG_comR6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY} 
+	}
+	focus = {
+		id = ENG_comR9
+		icon = GFX_goal_eng_support_wales_communists
+		cost = 70
+		x = 47
+		y = 12
+		prerequisite = { focus = ENG_comR8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { WLS = { add_ideas = ENG_Communism_influence } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_comR10
+		icon = GFX_goal_eng_support_scotish_communists
+		cost = 70
+		x = 49
+		y = 12
+		prerequisite = { focus = ENG_comR8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { SCO = { add_ideas = ENG_Communism_influence } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_comR11
+		icon = GFX_goal_eng_support_irish_communists
+		cost = 70
+		x = 51
+		y = 12
+		prerequisite = { focus = ENG_comR8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { IRE = { add_ideas = ENG_Communism_influence } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_comR12
+		icon = GFX_goal_eng_rise_red_britain
+		cost = 70
+		x = 49
+		y = 13
+		prerequisite = { focus = ENG_comR10 }
+		prerequisite = { focus = ENG_comR9 }
+		prerequisite = { focus = ENG_comR11 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			WLS = {
+				start_civil_war = {
+					#ruling_party = communism
+					ideology = ROOT
+					size = 0.8
+					#only_own_territory = no
+					capital = 112
+					states = { 112	}
+					#keep_unit_leaders = { 407 253 331 }
+				}
+			}
+			SCO = {
+				start_civil_war = {
+					#ruling_party = communism
+					ideology = ROOT
+					size = 0.8
+					#only_own_territory = no
+					capital = 113
+					states = { 113 120 }
+					#keep_unit_leaders = { 3273 11218 3150 }
+				}
+			}
+			IRE = {
+				start_civil_war = {
+					#ruling_party = communism
+					ideology = ROOT
+					size = 0.8
+					#only_own_territory = no
+					capital = 119
+					states = { 112 134 }
+					#keep_unit_leaders = { 3242 11238 3396 }
+				}
+			}	
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+
+	focus = {
+		id = ENG_imp
+		icon = GFX_goal_eng_trafalgar_march
+		cost = 1
+		x = 58
+		y = 1
+		prerequisite = { focus = ENG_startM }
+		mutually_exclusive = { focus = ENG_com }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.1 } }	
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp1
+		icon = GFX_goal_eng_london_congress
+		cost = 70
+		x = 58
+		y = 2
+		prerequisite = { focus = ENG_imp }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.2 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp2
+		icon = GFX_goal_eng_fate_of_britain
+		cost = 35
+		x = 58
+		y = 3
+		prerequisite = { focus = ENG_imp1 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.3 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp3
+		icon = GFX_goal_eng_sulla
+		cost = 35
+		x = 57
+		y = 4
+		prerequisite = { focus = ENG_imp2 }
+		mutually_exclusive = { focus = ENG_imp5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.4 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp4
+		icon = GFX_ENG_imp4
+		cost = 70
+		x = 57
+		y = 5
+		prerequisite = { focus = ENG_imp3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.13 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp5
+		icon = GFX_ENG_imp5
+		cost = 35
+		x = 59
+		y = 4
+		prerequisite = { focus = ENG_imp2 }
+		mutually_exclusive = { focus = ENG_imp3 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			country_event = { id = britain.5 }
+			hidden_effect = { add_ideas = absolute_monarchy }
+			#hidden_effect = { add_ideas = semi-parliamentary_monarchy }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp6
+		icon = GFX_ENG_imp6
+		cost = 70
+		x = 59
+		y = 5
+		prerequisite = { focus = ENG_imp5 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.14 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp7
+		icon = GFX_goal_eng_approval_of_authority
+		cost = 70
+		x = 58
+		y = 6
+		prerequisite = {
+			focus = ENG_imp4
+			focus =  ENG_imp6
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.6 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp8
+		icon = GFX_ENG_imp8
+		cost = 70
+		x = 57
+		y = 7
+		prerequisite = { focus = ENG_imp7 }
+		mutually_exclusive = { focus = ENG_imp10 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.11 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp9
+		icon = GFX_ENG_imp9
+		cost = 70
+		x = 56
+		y = 8
+		prerequisite = { focus = ENG_imp8 }
+		prerequisite = { focus = ENG_imp4 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.8 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp10
+		icon = GFX_ENG_imp10
+		cost = 70
+		x = 59
+		y = 7
+		prerequisite = { focus = ENG_imp7 }
+		mutually_exclusive = { focus = ENG_imp8 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.12 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp11
+		icon = GFX_ENG_imp11
+		cost = 70
+		x = 60
+		y = 8
+		prerequisite = { focus = ENG_imp10 }
+		prerequisite = { focus = ENG_imp6 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			add_ideas = ENG_senat
+			country_event = { id = britain.7 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp12
+		icon = GFX_ENG_imp12
+		cost = 70
+		x = 56
+		y = 9
+		prerequisite = { focus = ENG_imp9 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Special_department }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp13
+		icon = GFX_ENG_imp13
+		cost = 35
+		x = 56
+		y = 10
+		prerequisite = { focus = ENG_imp12 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.15 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp14
+		icon = GFX_ENG_imp14
+		cost = 70
+		x = 60
+		y = 9
+		prerequisite = { focus = ENG_imp11 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.9 } }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_imp16
+		icon = GFX_ENG_imp16
+		cost = 35
+		x = 56
+		y = 11
+		prerequisite = { focus = ENG_imp13 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_political_oppression }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp18
+		icon = GFX_ENG_imp18
+		cost = 30
+		x = 56
+		y = 12
+		prerequisite = { focus = ENG_imp16 }
+		available = { NOT = { has_idea = ENG_political_oppression } }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp19
+		icon = GFX_ENG_imp19
+		cost = 70
+		x = 62
+		y = 10
+		prerequisite = { focus = ENG_imp14 }
+		mutually_exclusive = { focus = ENG_imp23 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ENG_senat
+				add_idea = ENG_senat1
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp20
+		icon = GFX_ENG_imp20
+		cost = 70
+		x = 60
+		y = 10
+		prerequisite = { focus = ENG_imp14 }
+		available = {
+			NOT = {
+				has_completed_focus = ENG_imp23
+			}
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = -400 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp21
+		icon = GFX_ENG_imp21
+		cost = 70
+		x = 58
+		y = 10
+		prerequisite = { focus = ENG_imp14 }
+		available = {
+			NOT = {
+				has_completed_focus = ENG_imp23
+			}
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_political_power = -300 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp22
+		icon = GFX_ENG_imp22
+		cost = 70
+		x = 60
+		y = 11
+		prerequisite = { focus = ENG_imp21 }
+		prerequisite = { focus = ENG_imp20 }
+		prerequisite = { focus = ENG_imp19 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Aristocratic  } 
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp23
+		icon = GFX_ENG_imp23
+		cost = 70
+		x = 66
+		y = 10
+		prerequisite = { focus = ENG_imp14 }
+		mutually_exclusive = { focus = ENG_imp19 } 
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp24
+		icon = GFX_ENG_imp24
+		cost = 70
+		x = 60
+		y = 12
+		prerequisite = { focus = ENG_imp22 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Balance_power }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp25
+		icon = GFX_ENG_imp25
+		cost = 70
+		x = 66
+		y = 11
+		prerequisite = { focus = ENG_imp23 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp26
+		icon = GFX_ENG_imp26
+		cost = 70
+		x = 66
+		y = 12
+		prerequisite = { focus = ENG_imp25 }
+		available = { has_civil_war = no }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp27
+		icon = GFX_ENG_imp27
+		cost = 35
+		x = 56
+		y = 13
+		prerequisite = { focus = ENG_imp18 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp28
+		icon = GFX_ENG_imp28
+		cost = 35
+		x = 54
+		y = 13
+		prerequisite = { focus = ENG_imp18 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = ENG_imp29
+		icon = GFX_ENG_imp29
+		cost = 35
+		x = 55
+		y = 14
+		prerequisite = { focus = ENG_imp28 }
+		prerequisite = { focus = ENG_imp27 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp30
+		icon = GFX_ENG_imp30
+		cost = 70
+		x = 60
+		y = 13
+		prerequisite = { focus = ENG_imp24 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_center_business }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp31
+		icon = GFX_ENG_imp31
+		cost = 70
+		x = 63
+		y = 13
+		prerequisite = { focus = ENG_imp24 focus = ENG_imp26 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = ENG_imp32
+		icon = GFX_ENG_imp32
+		cost = 70
+		x = 66
+		y = 13
+		prerequisite = { focus = ENG_imp26 }
+		available = { NOT = { has_idea = absolute_monarchy } }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {
+			hidden_effect = { load_oob = "UKI_2013" }
+			add_political_power = 50
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_imp33
+		icon = GFX_ENG_imp33
+		cost = 35
+		x = 62
+		y = 14
+		prerequisite = { focus = ENG_imp31 }
+		mutually_exclusive = { focus = ENG_imp34 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { add_ideas = ENG_Chamberlain }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp34
+		icon = GFX_ENG_imp34
+		cost = 35
+		x = 64
+		y = 14
+		prerequisite = { focus = ENG_imp31 }
+		mutually_exclusive = { focus = ENG_imp33 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = { country_event = { id = britain.10 } }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp41
+		icon = GFX_ENG_imp41
+		cost = 35
+		x = 62
+		y = 15
+		prerequisite = { focus = ENG_imp33 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp35
+		icon = GFX_ENG_imp35
+		cost = 35
+		x = 60
+		y = 15
+		prerequisite = { focus = ENG_imp33 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp36
+		icon = GFX_ENG_imp36
+		cost = 35
+		x = 58
+		y = 15
+		prerequisite = { focus = ENG_imp33 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp37
+		icon = GFX_ENG_imp37
+		cost = 35
+		x = 64
+		y = 15
+		prerequisite = { focus = ENG_imp34 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp38
+		icon = GFX_ENG_imp38
+		cost = 35
+		x = 66
+		y = 15
+		prerequisite = { focus = ENG_imp34 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp39
+		icon = GFX_ENG_imp39
+		cost = 35
+		x = 68
+		y = 15
+		prerequisite = { focus = ENG_imp34 }
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = ENG_imp40
+		icon = GFX_ENG_imp40
+		cost = 14
+		x = 63
+		y = 16
+		prerequisite = { 
+			focus = ENG_imp41
+			focus = ENG_imp35
+			focus = ENG_imp36
+			focus = ENG_imp37
+			focus = ENG_imp38
+			focus = ENG_imp39
+		}
+		available = {
+			OR = {
+				ENG = {
+					controls_state = 122
+					controls_state = 133
+					controls_state = 121
+					controls_state = 136
+					controls_state = 120
+					controls_state = 119
+					controls_state = 113
+					controls_state = 134
+					controls_state = 135
+				}
+				WLS = { is_subject_of = ENG }
+				IRE = { is_subject_of = ENG }
+				SCO = { is_subject_of = ENG }
+			}
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 10 } 
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+		id = ENG_generic_government_reforms
+		icon = GFX_goal_generic_demand_territory
+		x = 73
+		y = 0
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+		id = ENG_generic_education_reforms
+		prerequisite = { focus = ENG_generic_government_reforms }
+		icon = GFX_goal_generic_education_reforms
+		x = 69
+		y = 1
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		completion_reward = {
+		add_ideas = idea_eduction_reforms	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_medium_education_reforms
+		prerequisite = { focus = ENG_generic_education_reforms }
+		icon = GFX_goal_generic_medium_education_reforms
+		x = 69
+		y = 2
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		completion_reward = {
+			add_ideas = idea_medium_eduction_reforms	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_high_education_reforms
+		prerequisite = { focus = ENG_generic_medium_education_reforms }
+		icon = GFX_goal_generic_high_education_reforms
+		x = 69
+		y = 3
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		completion_reward = {
+		add_ideas = idea_high_eduction_reforms	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_reform_economics
+		icon = GFX_economic_reforms
+		prerequisite = {
+			focus = ENG_generic_government_reforms	
+		}
+		x = 71
+		y = 1
+		cost = 70
+		
+		ai_will_do = {
+		    factor = 4
+		}
+		
+		completion_reward = {
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+		id = ENG_generic_anticorruption_company_focus
+		icon = GFX_anticorruption_campaign
+		prerequisite = {
+			focus = ENG_generic_high_education_reforms	
+		}
+		prerequisite ={
+			focus = ENG_generic_reform_economics
+		}
+		x = 70
+		y = 4
+		cost = 70
+		
+		ai_will_do = {
+		    factor = 4
+		}
+		
+		completion_reward = {
+			set_country_flag = conducted_anticorruption_company
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+		id = ENG_generic_new_laws_against_corruption
+		icon = GFX_anticorruption_reforms
+		prerequisite = {
+			focus = ENG_generic_anticorruption_company_focus
+		}
+		x = 70
+		y = 5
+		cost = 70
+		
+		completion_reward = {
+			set_country_flag = reform_laws_against_corruption
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	
+	focus = {
+		id = ENG_generic_industrial_effort
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = ENG_generic_government_reforms }
+		x = 73
+		y = 1
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = ENG_generic_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_generic_industrial_effort }
+		x = 74
+		y = 2
+		cost = 30
+		
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = ENG_generic_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_generic_industrial_effort }
+		x = 72
+		y = 2
+		cost = 30
+
+		ai_will_do = {
+			factor = 3			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = ENG_generic_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_generic_construction_effort }
+		x = 74
+		y = 3
+		cost = 40
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = ENG_generic_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_generic_production_effort }
+		x = 72
+		y = 3
+		cost = 40
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_generic_production_effort_2 }
+		x = 72
+		y = 4
+		cost = 70
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ENG_generic_production_effort_3 }
+		x = 72
+		y = 5
+		cost = 50
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_generic_construction_effort_2 }
+		x = 74
+		y = 4
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ENG_generic_construction_effort_3 }
+		x = 74
+		y = 5
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = ENG_generic_construction_coal_energy_station
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = ENG_generic_construction_effort_4 }
+		x = 74
+		y = 6
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = thermal_power_plant
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = thermal_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = ENG_generic_construction_ecolog_energy_station
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = ENG_generic_construction_effort_4 }
+		x = 72
+		y = 6
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = eco_power_plant
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = eco_power_plant
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = eco_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = eco_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = ENG_generic_construction_coal_energy_station_2
+		icon = GFX_goal_generic_construct_coal_energy_station_2
+		prerequisite = { focus = ENG_generic_construction_coal_energy_station }
+		x = 74
+		y = 7
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = thermal_power_plant
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = thermal_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_research_slot_1
+		prerequisite = { focus = ENG_generic_high_education_reforms }
+		prerequisite = { focus = ENG_generic_production_effort_3 }
+		icon = GFX_goal_generic_scientific_exchange
+		x = 69
+		y = 6
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_research_slot = 1	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ENG_generic_construction_effort_2 }
+		x = 76
+		y = 4
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ENG_generic_infrastructure_effort }
+		x = 76
+		y = 5
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_infrastructure_effort_3
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ENG_generic_infrastructure_effort_2 }
+		x = 76
+		y = 6
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_infrastructure_effort_4
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ENG_generic_infrastructure_effort_3 }
+		x = 76
+		y = 7
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = ENG_generic_nuclear_effort
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ENG_generic_infrastructure_effort }
+		x = 78
+		y = 5
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_generic_construction_nuclear_energy_station
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = ENG_generic_nuclear_effort }
+		x = 80
+		y = 6
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = nuclear_reactor
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = nuclear_reactor
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = nuclear_reactor
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = nuclear_reactor
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_nuclear_effort_2
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ENG_generic_nuclear_effort }
+		x = 78
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.75
+				uses = 1
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_nuclear_effort_3
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ENG_generic_nuclear_effort_2 }
+		x = 78
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.75
+				uses = 2
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = ENG_generic_research_slot_2
+		prerequisite = { focus = ENG_generic_nuclear_effort_3 focus = ENG_generic_research_slot_1 }
+		icon = GFX_goal_generic_scientific_exchange
+		x = 73
+		y = 8
+		cost = 70
+		available = {
+		has_war = no
+		}
+		completion_reward = {
+			add_research_slot = 1	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = ENG_army
+		icon = GFX_goal_eng_army
+		cost = 70 
+		x = 95
+		y = 0
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_AVIATION FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = ENG_army_effort
+		icon = GFX_goal_eng_army_effort
+		cost = 70 
+		prerequisite = { focus = ENG_army }
+		x = 91
+		y = 1
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_equipment_effort
+		icon = GFX_goal_assault_rifle_M4A1
+		cost = 70 
+		prerequisite = { focus = ENG_army_effort }
+		x = 89
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_equipment_effort_2
+		icon = GFX_goal_assault_rifle_usa
+		cost = 70 
+		prerequisite = { focus = ENG_equipment_effort	}
+		x = 89
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_equipment_effort_3
+		icon = GFX_goal_heavy_equipment_Mark48
+		cost = 70 
+		prerequisite = { focus = ENG_equipment_effort_2	}
+		x = 89
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_equipment_effort_4
+		icon = GFX_goal_anti-tank_FGM-148
+		cost = 70 
+		prerequisite = { focus = ENG_equipment_effort_3	}
+		x = 89
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = ENG_army_effort }
+		mutually_exclusive = {	focus = ENG_specops_effort }
+		x = 90
+		y = 3
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = ENG_doctrine_effort }
+		x = 90
+		y = 5
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = ENG_doctrine_effort_2	}
+		x = 90
+		y = 7
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_specops_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = ENG_army_effort }
+		mutually_exclusive = {	focus = ENG_doctrine_effort	}
+		x = 92
+		y = 3
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_special_forces
+				category = cat_special_forces_weapons
+				category = cat_special_ammunition
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_specops_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70 
+		prerequisite = { focus = ENG_specops_effort	}
+		x = 92
+		y = 5
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_special_forces_weapons
+				category = cat_special_ammunition
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_special_forces
+		icon = GFX_goal_usa_special_forces_1
+		cost = 70 
+		prerequisite = { focus = ENG_specops_effort_2	}
+		x = 92
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_paratroopers
+				category = cat_marines
+				category = cat_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_paratroopers_divisions
+		icon = GFX_goal_usa_paratroopers
+		cost = 70 
+		prerequisite = { focus = ENG_special_forces	}
+		x = 90
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_paratroopers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_marines_divisions
+		icon = GFX_goal_usa_marines
+		cost = 70 
+		prerequisite = { focus = ENG_special_forces }
+		x = 94
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_marines
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_special_forces_2
+		icon = GFX_goal_usa_special_forces_2
+		cost = 70 
+		prerequisite = { focus = ENG_special_forces }
+		x = 92
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_special_forces
+				category = cat_paratroopers
+				category = cat_marines
+				category = cat_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_armor_effort
+		#icon = GFX_goal_armor_M1A2
+		cost = 70 
+		prerequisite = { focus = ENG_army_effort }
+		x = 91
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_medium_tank
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_armor_effort_2
+		#icon = GFX_goal_armor_M1A2
+		cost = 70 
+		prerequisite = { focus = ENG_armor_effort	}
+		x = 91
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_main_battle_tank
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_motorization_effort
+		icon = GFX_goal_motorization_light_4x4_HMMW
+		cost = 70 
+		prerequisite = { focus = ENG_army_effort }
+		x = 93
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_motorization_effort_2
+		icon = GFX_goal_motorization_APC_8x8_Stryker
+		cost = 70 
+		prerequisite = { focus = ENG_motorization_effort }
+		x = 93
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_motorization_effort_3
+		icon = GFX_goal_motorization_IFV_Bradley
+		cost = 70 
+		prerequisite = { focus = ENG_motorization_effort_2	}
+		x = 93
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_wheeled_vehicle
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_tracked_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = ENG_aviation_effort
+		icon = GFX_goal_eng_aviation_effort
+		cost = 70 
+		prerequisite = { focus = ENG_army }
+		x = 100
+		y = 1
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+						building = air_base
+						size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_supermaneuverability_fighter_focus
+		icon = GFX_goal_multirole_fighter_F-22
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = {	focus = ENG_stealth_aircraft_focus	}
+		x = 99
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = supermaneuverability_fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_bomber_focus
+		icon = GFX_goal_attack_aircraft_F-111
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = { focus = ENG_naval_aircraft_focus }
+		x = 99
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_CAS_focus
+		icon = GFX_goal_CAS_A-10
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = {	focus = ENG_attack_helicopter_focus	}
+		x = 99
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_nuclear_bomber_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_stealth_aircraft_focus
+		icon = GFX_goal_multirole_fighter_F-35
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = {	focus = ENG_supermaneuverability_fighter_focus	}
+		x = 101
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = stealth_aircraf_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_4thgen_aircrafts
+			}
+			add_tech_bonus = {
+				name = stealth_aircraf_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_5thgen_aircrafts
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_aviation_effort_2
+		icon = GFX_goal_usa_aviation_effort
+		cost = 70 
+		prerequisite = {
+			focus = ENG_stealth_aircraft_focus
+			focus = ENG_supermaneuverability_fighter_focus
+		}
+		x = 100
+		y = 4
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_naval_aircraft_focus
+		icon = GFX_goal_multirole_fighter_F-16
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = { focus = ENG_bomber_focus	}
+		x = 101
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = ENG_attack_helicopter_focus
+		icon = GFX_goal_attack_helicopter_AH-64
+		cost = 70 
+		prerequisite = { focus = ENG_aviation_effort }
+		mutually_exclusive = { focus = ENG_CAS_focus }
+		x = 101
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_attack_helicopter_tech
+			}
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_vtol_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+}

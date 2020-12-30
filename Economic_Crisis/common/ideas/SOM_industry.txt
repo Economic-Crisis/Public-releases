@@ -1,0 +1,156 @@
+ideas = {
+
+    materiel_manufacturer = {
+
+		# Сомалийский филиал General Motors
+		som_general_motors = {
+		
+        picture = GFX_idea_generic_unknown
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			available = {
+				has_completed_focus = SOM_invest_america
+			}
+			research_bonus = {
+				cat_light_utility_vehicle = 0.05
+				cat_truck_vehicle = 0.03
+			}
+			
+			cost = 500
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		### Арсенал Могадишо
+		som_ars_bakaara = {
+		
+        picture = GFX_idea_generic_unknown
+			
+			allowed = {
+				original_tag = SOM
+			}
+			
+			available = {
+				has_completed_focus = SOM_arsenal_bakaara
+			}
+			equipment_bonus = {
+				army_salw_equipment = {
+					build_cost_ic = -0.30
+					instant = yes
+				}
+			}
+			cost = 500
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+	
+	    ### HUAWEI (сомалийский филиал)
+		som_detachment_HUAWEI = {
+
+			picture = HUAWEI
+			allowed = {
+				original_tag = SOM
+			}
+			
+			available = {
+				has_completed_focus = SOM_invest_china
+			}
+
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.1
+			}
+			cost = 1200
+			traits = { electronics_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		### Industrial and Commercial Bank of China (сомалийский филиал)
+		som_detachment_ICBC = {
+
+			picture = ICBC
+			allowed = {
+				original_tag = SOM
+			}
+			
+			available = {
+				has_completed_focus = SOM_invest_china
+			}
+
+			research_bonus = {
+				industry = 0.1
+			}
+			cost = 1200
+			traits = { industrial_bank }
+
+			modifier = {
+				#production_speed_bank_factor = 0.1
+			}
+			
+			on_add = {
+				#random_owned_state = {
+				#	limit = {
+				#		is_in_home_area = yes
+				#	}
+				#	add_resource = {
+				#		type = money
+				#		amount = 45
+				#	}
+				#}
+			}
+		}
+		
+		### Horn Petrolium Corp.
+		som_hornpetrolium = {
+
+			picture = GFX_idea_oligarchism
+			allowed = {
+				original_tag = CHI
+			}
+			
+			available = {
+				has_completed_focus = SOM_oil_recognize
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			
+			cost = 1200
+			traits = { refinery_concern_dev }
+
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.15
+			}
+			
+			on_add = {
+				random_owned_state = {
+					limit = {
+						is_in_home_area = yes
+					}
+					add_resource = {
+						type = oil
+						amount = 40
+					}
+				}
+			}
+		}
+	}
+}
+
+            

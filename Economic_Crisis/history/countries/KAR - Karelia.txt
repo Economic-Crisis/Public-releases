@@ -1,0 +1,49 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 216
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 01109 }
+	
+	load_oob = "_tech_insurgents_2013" 
+	oob = "KAR_2013"
+	
+	set_convoys = 20
+	
+	add_political_power = 0
+	
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 10
+		democratic = 10
+		neutrality = 70
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Aleksandr Hudilainen"
+		desc = ""
+		picture = "gfx/leaders/KAR/portrait_aleksandr_hudilainen.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+}
+

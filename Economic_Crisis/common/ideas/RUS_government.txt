@@ -1,0 +1,1560 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		RUS_Vladimir_Zhirinovskiy_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+					has_government = fascism
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { party_leader_nationalist 
+					   pm_centrist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Dmitriy_Medvedev_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		RUS_Mikhail_Khodorkovskiy_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = { has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" }
+						has_country_leader = { id = 100003 ruling_only = yes name = "Mikhail Khodorkovsky" }
+				}
+			
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				date > 2013.12.20 
+			}
+
+			traits = { party_leader_oligarchy 
+						pm_oligarchy			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Sergei_Mironov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { party_leader_reformist 
+						pm_reformist		
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Yevgeny_Primakov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = reformism
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				date < 2015.6.6
+				
+				NOT = {
+					has_available_idea_with_traits = { idea = reformism_demagogue limit = 1 }
+				}
+			}
+
+			traits = { party_leader_reformist
+						pm_reformist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+			RUS_Mikhail_Kasyanov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				NOT = {
+					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+				}
+			}
+
+			traits = { party_leader_conservative 
+						pm_conservative			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Gennadiy_Zyuganov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				NOT = {
+					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+				NOT = {
+					AND = {
+						has_government = communism
+						date > 2018.1.1
+					}
+				}
+			}
+
+			traits = {  party_leader_communist 
+						pm_communist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Pavel_Grudinin_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				NOT = {
+					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+				AND = {
+					NOT = { has_government = communism }
+					date > 2018.1.1
+				}
+			}
+
+			traits = {  party_leader_communist 
+						pm_communist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Alexey_Navalny_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = { 
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" }
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				
+				NOT = {
+					has_available_idea_with_traits = { idea = democratic_puppet_opposition limit = 1 }
+				}
+			}
+
+			traits = { party_leader_liberal
+						pm_liberal			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Igor_Strelkov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+				NOT = { has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" }
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				NOT = {
+					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+				}
+
+			}
+
+			traits = { party_leader_nationalist 
+						pm_nationalist			
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Kamil_Samigullin_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+						has_government = democratic
+						has_country_flag = coalition_with_islamists
+				}
+				NOT = {
+				
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" } 	
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { party_leader_islamist
+						pm_islamist				
+					}
+
+			on_add = {
+				news_event = political_party.13
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Dokka_Umarov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = rad_islamists
+					has_country_flag = coalition_with_rad_islamists
+				}
+				NOT = {
+				
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" } 	
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				date < 2014.3.18
+		}
+			traits = { party_leader_rad_islamist
+						pm_rad_islamist			
+					}
+
+			on_add = {
+				news_event = political_party.34
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = rad_islamists
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		RUS_Magomed_Abdulaev_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = rad_islamists
+					has_country_flag = coalition_with_rad_islamists
+				}
+				NOT = {
+				
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" } 	
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+				date > 2014.3.18
+				date < 2016.8.17
+			}
+			traits = { party_leader_rad_islamist
+						pm_rad_islamist			
+					}
+
+			on_add = {
+				news_event = political_party.34
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = rad_islamists
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
+
+	}
+
+
+	defence_minister = {
+
+		RUS_Sergey_Shoygu = {
+
+			cost = 650
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			available =	{
+			# �������� �������� �� ����������� ����, ���� �� ����� ��� �������
+			#	RUS = {
+			#		has_unit_leader = 100001
+			#	}
+			}
+
+			traits = {
+				defence_minister_army_order
+				army_chief_reform_3
+			}
+
+			on_add = {
+
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		RUS_Sergey_Ivanov = {
+
+			cost = 250
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = {
+				defence_minister_regime_loyalist
+				army_chief_reform_2
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		RUS_Ostapenko_Oleg = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = {
+				defence_minister_bureaucrat
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		RUS_Kuralenko_Sergei = {
+
+			cost = 450
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = {
+				defence_minister_distinguished_military
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		RUS_Makarov_Sergei = {
+
+			cost = 350
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = {
+				defence_minister_serve_and_protect
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		RUS_andrey_kartopolov = {
+
+			cost = 400
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+
+	foreign_minister ={
+
+		RUS_Sergey_Lavrov = {
+
+			cost = 450
+
+			picture = RUS_Sergey_Lavrov_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+
+
+		RUS_igor_ivanov = {
+
+			cost = 350
+
+			picture = RUS_igor_ivanov_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { foreign_minister_policy_conversation }
+		}
+	}
+
+
+	### ������� �������� � 2011���� - ������ �� �������� + 10% - ����������� ������� ������, �������� ������������ + 0.1%, �������� ������������� �������������� + 0.3%.
+
+	economic_minister = {
+		RUS_Anton_Siluanov = {
+
+			cost = 450
+
+			picture = RUS_Anton_Siluanov_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+
+
+
+		RUS_Dmitriy_Rogozin = {
+
+			cost = 350
+
+			picture = RUS_Dmitriy_Rogozin_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = { economic_minister_military_industry }
+		}
+		
+		
+
+
+		RUS_victor_zubkov = {
+
+			cost = 250
+
+			picture = RUS_victor_zubkov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = { economic_minister_international_trade }
+		}
+
+
+		RUS_alexei_kudrin = {
+
+			cost = 150
+
+			picture = RUS_alexei_kudrin_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}
+	}
+
+	###�������� ��� - �������� ����� ��� ������ ����� ��������� +70%, ������ �� ��������� +70%
+
+	secret_service_chief = {
+
+		RUS_Alexandr_Bortnikov = {
+
+			cost = 550
+
+			picture = RUS_Alexandr_Bortnikov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { secret_service_chief_counterespionage }
+		}
+
+
+		RUS_sergei_lebedev = {
+
+			cost = 350
+
+			picture = RUS_sergei_lebedev_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+
+
+		RUS_nikolay_kovalev = {
+
+			cost = 250
+
+			picture = RUS_nikolay_kovalev_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			available =
+			{
+
+			}
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+
+
+		RUS_nikolay_patrushev = {
+
+			cost = 150
+
+			picture = RUS_nikolay_patrushev_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_executioner_1 }
+		}
+	}
+
+
+
+
+
+	political_advisor = {
+
+		###-�������� �������, �� ������ ���� ��������� ������� ������ ����, ������� �� ������� ������ ������� � ��������������� ���� (� 2011���� ����� ��) - ����� �������� �������� +70%
+
+		RUS_Vladislav_Tretiak = {
+
+			cost = 150
+
+			picture = RUS_Vladislav_Tretiak_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+
+			traits = { popular_person }
+		}
+
+		### �������� ����� ��� ����� �������� - ��� ��������� �� +1
+
+		RUS_Vladislav_Volodin = {
+
+			cost = 450
+			picture = RUS_Vladislav_Volodin_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+
+
+			traits = { backstage_assistant }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		### - �� ������ ����� ���� ����������� ��������� ������, � ������� �������� ������� ��������� "���������� ����������" - ������ �� ���� ������� ���� �� � ���� ������.
+		RUS_vladislav_surkov = {
+
+			cost = 250
+			picture = RUS_vladislav_surkov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { ideologue_theorist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		###-�� ������ ����� ���� �������� ����������� ��������, � �������� ������, ��� ������ ��� ������� ������� ��������-40%����� ���������������,���������� �����,�������� ���
+
+		RUS_Igor_Sechin = {
+
+			cost = 350
+			picture = RUS_Igor_Sechin_sm
+			
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			traits = { master_negotiations }
+		}
+
+		###-�� ���� ����� �������� �������������� ��������� �������� �������� �� ���� ������, �����������, ���, �����������, � �.�.
+		RUS_Alexey_Miller = {
+
+			cost = 450
+
+			picture = RUS_Alexey_Miller_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { industry_top_managment }
+		}
+
+		### ������� ��������� ��������� 2015 ���� ��������, ����� �������� ����� ������ ����� ������������� +10\15. ���� ���� ��������� +0,01% � �����.
+
+			RUS_Alexandr_Tkachev = {
+
+			cost = 350
+
+			picture = RUS_Alexandr_Tkachev_sm
+
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+
+
+
+
+			traits = { industry_developer }
+		}
+
+
+
+		###-����� ��������, � �� ����� ������ ��� �� ������ ������� �����
+
+		RUS_Ramzan_Kadyrov = {
+
+			cost = 150
+
+			picture = RUS_Ramzan_Kadyrov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { regime_defender }
+		}
+
+		###-������� ���, ����� ��� �������� ����� ��� ���� ����� ��������� � ������ - � �� ��������� �� 25-30%.
+
+		RUS_Vladimir_Kolokoltsev = {
+
+			cost = 150
+
+			picture = RUS_Vladimir_Kolokoltsev_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { police_reformer }
+		}
+
+		### ������� ����� � �������� ����������� - �������� ����� ������� ��� ��� ��� �� ���� ����������, ������ ��� ��� �������� +10, � ������� �� ������ ������ � ������ ���������� �������� �� �� �� 5%. (������ - ��������� ������ � ������ ������ ����� ����������, �� � ������� �������� � ��� ������ �� political power)
+
+		RUS_Nikolay_Nikiforov = {
+
+			cost = 250
+
+			picture = RUS_Nikolay_Nikiforov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { propaganda_reformer }
+		}
+
+		### - ������� �� ����������� ������� - �������� ����� ��� ������ ������ ��������� ���4 - ���� ������� ����� ��� ���� +0,3% ��������� ����� ��������������.
+		RUS_Vladimir_Puchkov = {
+
+			cost = 250
+
+			picture = RUS_Vladimir_Puchkov_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+			available =	{	}
+
+			traits = { military_education_reformer }
+		}
+		
+		rus_sergei_chemezov = {
+
+			cost = 750
+
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				OR = {
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" }
+					}
+				NOT = { has_idea = RUS_Alexey_Navalny_hog
+						has_idea = RUS_Mikhail_Kasyanov_hog }
+			
+			}
+					
+					
+			traits = { economic_minister_military_industry_3 }
+		}
+
+		### ������� ����� � ����������� - �������� ����� ��� �������� ������������ +2%.
+		RUS_Olga_Vasileva = {
+
+			cost = 400
+
+			picture = RUS_Olga_Vasileva_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+
+
+
+
+			traits = { research_reformer }
+		}
+
+		### ������� ��������������� - ����� �������� ����� ������� ��� ������ �� ��������� -5% � ������ ��� ������ ��������� -5%
+		RUS_Veronica_Skvortsova = {
+
+			cost = 350
+
+			picture = RUS_Veronica_Skvortsova_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+
+
+
+
+			traits = { medicine_reformer }
+		}
+
+
+
+		###������� ������������� - ����� ��� �������� ����� ����� ���� ��������� �������������� +15%, �������� ������������� ������ +5%.
+		RUS_Dmitriy_Kozak = {
+
+			cost = 300
+
+			picture = RUS_Dmitriy_Kozak_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+
+
+
+
+
+			traits = { infrastructure_reformer }
+		}
+
+
+
+		###������� ������������� - ��� �������� ����� ��� ���, ������ �������� ������������� �������� +10% � ��� +10%
+		RUS_Alexandr_Khloponin = {
+
+			cost = 350
+
+			picture = RUS_Alexandr_Khloponin_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+
+
+
+
+
+			traits = { tek_reformer }
+		}
+
+		### ������� �������� - �������� ����� ������������ �������� +30%
+		RUS_Vladimir_Medinskiy = {
+
+			cost = 250
+
+			picture = RUS_Vladimir_Medinskiy_sm
+
+			allowed = {
+				original_tag = RUS
+			}
+
+
+			traits = { cultura_reformer }
+		}
+
+		### - ���� ����������� traits � ������������
+
+		RUS_Vladimir_Zhirinovskiy = {
+
+			cost = 250
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			available = {
+				OR = {
+					neutrality > 0.03
+					fascism > 0.03
+				}
+				NOT = {
+					has_idea = RUS_Vladimir_Zhirinovskiy_hog
+				}
+			}
+
+			traits = { centrist_puppet_opposition fascist_demagogue }
+
+			on_add = {
+				news_event = political_party.7
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = neutrality
+			#	}
+			#}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Gennadiy_Zyuganov = {
+
+			cost = 450
+
+			picture = RUS_Gennadiy_Zyuganov_sm
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			available = {
+				OR = {
+					communism > 0.03
+				}
+				NOT = {
+					has_idea = RUS_Gennadiy_Zyuganov_hog
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+			 country_event = political.1
+			}
+			#
+			#ai_will_do = {
+			#	factor = 0
+			#}
+		}
+
+		RUS_Pavel_Grudinin = {
+
+			cost = 450
+
+			picture = RUS_Gennadiy_Zyuganov_sm
+
+			allowed = {
+				original_tag = "RUS"
+				date > 2017.1.1
+			}
+
+			available = {
+				OR = {
+					communism > 0.03
+				}
+				NOT = {
+					has_idea = RUS_Pavel_Grudinin_hog
+				}
+			}
+
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+			 country_event = political.1
+			}
+			#
+			#ai_will_do = {
+			#	factor = 0
+			#}
+		}
+		
+		RUS_Dmitriy_Medvedev = {
+
+			cost = 250
+
+			available = {
+				OR = {
+					neutrality > 0.01
+				}
+				NOT = {
+					has_idea = RUS_Dmitriy_Medvedev_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { neutrality_reformer }
+
+			on_add = {
+				# country_event = political_party.30
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Sergei_Mironov = {
+
+			cost = 350
+
+			available = {
+				OR = {
+					reformism > 0.01
+				}
+				NOT = {
+					has_idea = RUS_Sergei_Mironov_hog
+				}
+			}
+
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { reformism_demagogue }
+
+			on_add = {
+				# # country_event = political_party.1
+			}
+			do_effect = {
+				NOT = {
+					has_government = reformism
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		RUS_Mikhail_Khodorkovskiy = {
+
+			cost = 450
+
+			picture = RUS_Mikhail_Khodorkovskiy_sm
+			allowed = {
+				original_tag = "RUS"
+				date > 2013.12.20
+			}
+
+			available = {
+				OR = {
+					neutrality < 0.60
+					liberalism > 0.10
+				}
+				NOT = {
+					has_idea = RUS_Dmitriy_Medvedev_hog
+					has_idea = RUS_Gennadiy_Zyuganov_hog
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" }
+					has_country_leader = { id = 100003 ruling_only = yes name = "Mikhail Khodorkovsky" }					
+				
+				}
+			}
+
+			traits = { rus_oligarch }
+
+
+			on_add = {
+				news_event = political_party.22
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+
+		}
+
+		RUS_Gregory_Yavlinsky = {
+
+			cost = 400
+
+			picture = RUS_Gregory_Yavlinsky_sm
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.18
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		### - ������ ������ ���������� � 2013 ���� �� ���� � ������ ����� �� � ��, ������� � ������� �������������, � ��� ����� ����� ��� ������.
+		RUS_Mikhail_Kasyanov = {
+
+			picture = RUS_Mikhail_Kasyanov_sm
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			cost = 500
+
+			available = {
+				OR = {
+					democratic > 0.20
+					neutrality < 0.50
+				}
+				NOT = {
+					has_idea = RUS_Mikhail_Kasyanov_hog
+				}
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political.13
+			}
+
+			#do_effect = {
+			#	NOT = {
+			#		has_government = democratic
+			#	}
+			#}
+			
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+		
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Irina_Prokhorova = {
+
+			cost = 400
+			#removal_cost = -1
+
+			picture = RUS_Irina_Prokhorova_sm
+			allowed = {
+				original_tag = "RUS"
+			}
+
+			traits = { liberalism_demagogue }
+
+			on_add = {
+				news_event = political_party.26
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		RUS_Alexey_Navalny = {
+		
+			cost = 600
+			#removal_cost = -1
+		
+			allowed = {
+				original_tag = "RUS"
+			}
+
+					
+			available = {
+				OR = {
+					democratic > 0.15
+					neutrality < 0.60
+					liberalism > 0.03
+
+				}
+				NOT = {
+					has_idea = RUS_Alexey_Navalny_hog
+				}
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				news_event = political_party.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Dmitry_Demushkin = {
+
+			cost = 450
+
+			picture = RUS_Dmitry_Demushkin_sm
+			allowed = {
+				original_tag = "RUS"
+			}
+
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Anton_Bakov = {
+
+			cost = 450
+
+			#picture =
+			allowed = {
+				original_tag = "RUS"
+			}
+			available =
+			{
+
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Kamil_Samigullin = {
+
+			cost = 550
+
+			#picture =
+			allowed = {
+				original_tag = "RUS"
+			}
+			available = {
+				OR = {
+					democratic > 0.10
+					neutrality < 0.70
+				}
+				NOT = {
+				
+					has_idea = RUS_Kamil_Samigullin_hog	
+				
+				}
+			}
+
+			traits = { islamists_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		RUS_Dokka_Umarov = {
+
+			cost = 750
+			#picture =
+			allowed = {
+				original_tag = "RUS"
+				date < 2014.3.18
+			}
+			available = {
+				OR = {
+				rad_islamists > 0.01
+				}
+				NOT = {
+				
+					has_idea = RUS_Dokka_Umarov_hog
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" } 	
+				
+				}
+			}
+
+			traits = { rad_islamists_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = rad_islamists
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		RUS_Magomed_Abdulaev = {
+
+			cost = 850
+			#picture =
+			allowed = {
+				original_tag = "RUS"
+				date > 2014.3.18
+				date < 2016.8.17
+			}
+			available = {
+				OR = {
+				rad_islamists > 0.01
+				}
+				NOT = {
+					
+					has_idea = RUS_Magomed_Abdulaev_hog
+					has_country_leader = { id = 100002 ruling_only = yes name = "Vladimir Putin" } 	
+				
+				}
+			}
+
+			traits = { rad_islamists_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = rad_islamists
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+	}
+
+}

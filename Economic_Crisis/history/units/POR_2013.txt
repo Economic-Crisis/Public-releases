@@ -1,0 +1,137 @@
+﻿start_equipment_factor = 0.25
+division_template = {
+	name = "Divisão de Infanteria"		# Infantry Division
+	# Note: each regiment could also mobilize a 3rd battalion if called up
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+		#artillery = { x = 0 y = 0 }  # Full howitzer regiment
+		airborne_support_company = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "Força de Caçadores"		# Elite light infantry, always fully mobilized w best equipment
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+units = {
+	###### Exército Portugues (CO: Cabral) #####
+	# Governo Militar Portugues (CO: Cunha) #
+	division = {
+		name = "Governo Militar Portugues"
+		location = 11805
+		division_template = "Divisão de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "5a Força de Caçadores"
+		location = 11805
+		division_template = "Força de Caçadores"
+		start_experience_factor = 0.3
+	}
+
+	# 1a Distrito Militar (CO: Junior) #
+	division = {
+		name = "1a Divisão de Infanteria"
+		location = 9817
+		division_template = "Divisão de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "1a Força de Caçadores"
+		location = 9817
+		division_template = "Força de Caçadores"
+		start_experience_factor = 0.3
+	}
+
+	# 2a Distrito Militar (CO: Franco) #
+	division = {
+		name = "2a Divisão de Infanteria"
+		location = 3798
+		division_template = "Divisão de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "2a Força de Caçadores"
+		location = 3798
+		division_template = "Força de Caçadores"
+		start_experience_factor = 0.3
+	}
+
+	# 3a Distrito Militar )CO: Meneses) #
+	division = {
+		name = "3a Divisão de Infanteria"
+		location = 844
+		division_template = "Divisão de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "3a Força de Caçadores"
+		location = 844
+		division_template = "Força de Caçadores"
+		start_experience_factor = 0.3
+	}				
+
+}
+
+
+### Aeronáutica Militar ###
+air_wings = {
+	112 = {
+		attack_bomber_equipment_1 = { owner = "POR" amount = 20 }				# Esquadrão de Alverca-- Ju 86K, Ju 52/3m bombers
+		light_fighter_equipment_0 = { owner = "POR" amount = 30 }					# Esquadrão de Tancos  -- Gladiator II fighters
+
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "POR"
+		}
+		requested_factories = 1
+		progress = 0.66
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "POR"
+		}
+		requested_factories = 1
+		progress = 0.64
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = apc_tracked_g1_equipment_0
+			creator = "POR" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 100
+	}
+}

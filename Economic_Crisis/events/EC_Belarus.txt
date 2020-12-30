@@ -1,0 +1,1332 @@
+﻿add_namespace = belarus
+country_event = { 
+    id = belarus.2
+    title = belarus.2.t
+    desc = belarus.2.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.2.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 96
+        }
+    }
+    option = { #Отказ
+        name = belarus.2.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LIT modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LIT
+			}
+		}
+    }
+}
+country_event = { 
+    id = belarus.3
+    title = belarus.3.t
+    desc = belarus.3.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.3.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            annex_country = {
+                target = UKR
+                transfer_troops = yes
+            }
+        }
+    }
+    option = { #Отказ
+        name = belarus.3.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = UKR modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = UKR
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.4 #####Белосток(подляшье)
+    title = belarus.4.t
+    desc = belarus.4.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.4.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 97
+        }
+    }
+    option = { #Отказ
+        name = belarus.4.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = POL modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = POL
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.5  #####Брянск
+    title = belarus.5.t
+    desc = belarus.5.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.5.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 224
+        }
+    }
+    option = { #Отказ
+        name = belarus.5.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.6 #####Смоленск
+    title = belarus.6.t
+    desc = belarus.6.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.6.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 242
+			set_state_controller = 243
+        }
+    }
+    option = { #Отказ
+        name = belarus.6.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.7 #Великие Луки
+    title = belarus.7.t
+    desc = belarus.7.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.7.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 210
+        }
+    }
+    option = { #Отказ
+        name = belarus.7.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.8 #####Курск
+    title = belarus.8.t 
+    desc = belarus.8.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.8.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 220
+        }
+    }
+    option = { #Отказ
+        name = belarus.8.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.9 #####Белгород
+    title = belarus.9.t 
+    desc = belarus.9.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.9.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 240
+        }
+    }
+    option = { #Отказ
+        name = belarus.9.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.10 #####Новгород
+    title = belarus.10.t 
+    desc = belarus.10.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.10.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 263
+        }
+    }
+    option = { #Отказ
+        name = belarus.10.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.13 #####Дуагавпилис
+    title = belarus.13.t 
+    desc = belarus.13.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Принятие
+        name = belarus.13.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            set_state_controller = 924
+        }
+    }
+    option = { #Отказ
+        name = belarus.13.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LAT modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LAT
+			}
+		} 
+    }
+}
+country_event = { 
+    id = belarus.11 
+    title = belarus.11.t 
+    desc = belarus.11.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { 
+        name = belarus.11.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.3
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+    }
+    option = { 
+        name = belarus.11.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+        ai_chance = { factor = 30 }
+        add_stability = -0.2
+    }
+}
+country_event = { ###Убийство Лукашенко
+    id = belarus.15
+    title = belarus.15.t 
+    desc = belarus.15.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.15.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.1
+    }
+}
+country_event = { 
+    id = belarus.14
+    title = belarus.14.t 
+    desc = belarus.14.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.14.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.5
+		POL = {
+		    puppet = BLR
+			create_faction = Polish-Lithuanian
+		}
+    }
+	option = { 
+        name = belarus.14.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        create_faction = Polish-Lithuanian
+    }
+}
+country_event = { 
+    id = belarus.30
+    title = belarus.30.t 
+    desc = belarus.30.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.30.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 40
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.05
+		BLR = {
+			create_faction = Intermarium
+			add_opinion_modifier = {
+				target = UKR
+				modifier = actions_positive
+			}
+		}
+    }
+	option = { 
+        name = belarus.30.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 20
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = UKR
+				modifier = actions_negative
+			}
+		}
+    }
+	option = { 
+        name = belarus.30.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 40
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			country_event = { id = belarus.31 days = 3 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.32
+    title = belarus.32.t 
+    desc = belarus.32.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.32.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 40
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.05
+		BLR = {
+			create_faction = Intermarium
+			add_opinion_modifier = {
+				target = LIT
+				modifier = actions_positive
+			}
+		}
+    }
+	option = { 
+        name = belarus.32.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 20
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = LIT
+				modifier = actions_negative
+			}
+		}
+    }
+	option = { 
+        name = belarus.32.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 40
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			country_event = { id = belarus.33 days = 3 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.31
+    title = belarus.31.t 
+    desc = belarus.31.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.31.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.05
+		UKR = {
+			create_faction = Intermarium
+			dismantle_faction = yes
+			UKR = {
+				add_to_faction = BLR
+			}
+		}
+    }
+	option = { 
+        name = belarus.31.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 45
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = UKR
+				modifier = actions_negative
+			}
+		}
+    }
+}
+country_event = { 
+    id = belarus.33
+    title = belarus.33.t 
+    desc = belarus.33.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.33.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.05
+		LIT = {
+			create_faction = Intermarium
+			dismantle_faction = yes
+			LIT = {
+				add_to_faction = BLR
+			}
+		}
+    }
+	option = { 
+        name = belarus.33.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 45
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = LIT
+				modifier = actions_negative
+			}
+		}
+    }
+}
+
+country_event = { ##Закупка танков (РФ)
+    id = belarus.16
+    title = belarus.16.t 
+    desc = belarus.16.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.16.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = medium_tank_g5_equipment_0
+				amount = 33
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -32 }
+    }
+	option = { 
+        name = belarus.16.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = main_battle_tank_g6_equipment_0
+				amount = 33
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -115 }
+    }
+}
+country_event = { ##Закупка танков (Китай)
+    id = belarus.17
+    title = belarus.17.t 
+    desc = belarus.17.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.17.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = medium_tank_g5_equipment_0
+				amount = 33
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -25 }
+    }
+	option = { 
+        name = belarus.17.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = main_battle_tank_g6_equipment_0
+				amount = 33
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -132 }
+    }
+}
+country_event = { ##Закупка танков (США)
+    id = belarus.18
+    title = belarus.18.t 
+    desc = belarus.18.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+	option = { 
+        name = belarus.18.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = main_battle_tank_g6_equipment_0
+				amount = 33
+				producer = USA
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -204 }
+    }
+}
+country_event = { ##Закупка танков (Германия)
+    id = belarus.19
+    title = belarus.19.t 
+    desc = belarus.19.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+	option = { 
+        name = belarus.19.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = main_battle_tank_g6_equipment_0
+				amount = 33
+				producer = GER
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -224 }
+    }
+}
+country_event = { ##Закупка самалётов (РФ)
+    id = belarus.20
+    title = belarus.20.t 
+    desc = belarus.20.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.20.a ##Истибитель
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = superior_fighter_equipment_4
+				amount = 20
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -700 }
+    }
+	option = { 
+        name = belarus.20.b ##Штурмовик
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_aircraft_equipment_5
+				amount = 20
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_stormtrooper_rus
+	    subtract_from_variable = { budget_reserve = -70 }
+    }
+	option = { 
+        name = belarus.20.f ##Вертолёт (десантно-штурмовой)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = assault_helicopter_equipment_4
+				amount = 20
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -164 }
+    }
+	option = { 
+        name = belarus.21.c ##Вертолёт (ударный)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_helicopter_equipment_3
+				amount = 20
+				producer = RUS
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -360 }
+    }
+}
+country_event = { ##Закупка самалётов (США)
+    id = belarus.22
+    title = belarus.22.t 
+    desc = belarus.22.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.22.a ##Истибитель
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = strike_fighter_equipment_6
+				amount = 20
+				producer = USA
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -680 }
+    }
+	option = { 
+        name = belarus.22.b ##Штурмовик
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_aircraft_equipment_5
+				amount = 20
+				producer = USA
+		}
+		custom_effect_tooltip = BLR_buy_stormtrooper_usa
+	    subtract_from_variable = { budget_reserve = -320 }
+    }
+	option = { 
+        name = belarus.22.f ##Вертолёт (десантно-штурмовой)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = assault_helicopter_equipment_4
+				amount = 20
+				producer = USA
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -140 }
+    }
+	option = { 
+        name = belarus.22.c ##Вертолёт (ударный)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_helicopter_equipment_3
+				amount = 20
+				producer = USA
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -280 }
+    }
+}
+country_event = { ##Закупка самалётов (Германия)
+    id = belarus.23
+    title = belarus.23.t 
+    desc = belarus.23.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.23.a ##Истибитель
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = strike_fighter_equipment_6
+				amount = 20
+				producer = GER
+		}
+		custom_effect_tooltip = BLR_buy_air_rus
+	    subtract_from_variable = { budget_reserve = -680 }
+    }
+	option = { 
+        name = belarus.23.b ##Штурмовик
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_aircraft_equipment_5
+				amount = 20
+				producer = GER
+		}
+		custom_effect_tooltip = BLR_buy_stormtrooper_ger
+	    subtract_from_variable = { budget_reserve = -320 }
+    }
+	option = { 
+        name = belarus.23.f ##Вертолёт (десантно-штурмовой)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = assault_helicopter_equipment_4
+				amount = 20
+				producer = GER
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -140 }
+    }
+	option = { 
+        name = belarus.23.c ##Вертолёт (ударный)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_helicopter_equipment_3
+				amount = 20
+				producer = GER
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -280 }
+    }
+}
+country_event = { ##Закупка самалётов (Китай)
+    id = belarus.24
+    title = belarus.24.t 
+    desc = belarus.24.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.24.a ##Истибитель
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = strike_fighter_equipment_6
+				amount = 20
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_air_chi
+	    subtract_from_variable = { budget_reserve = -615 }
+    }
+	option = { 
+        name = belarus.24.b ##Штурмовик
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_aircraft_equipment_5
+				amount = 20
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_stormtrooper_chi
+	    subtract_from_variable = { budget_reserve = -90 }
+    }
+	option = { 
+        name = belarus.24.f ##Вертолёт (десантно-штурмовой)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = assault_helicopter_equipment_4
+				amount = 20
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -200 }
+    }
+	option = { 
+        name = belarus.24.c ##Вертолёт (ударный)
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = attack_helicopter_equipment_3
+				amount = 20
+				producer = CHI
+		}
+		custom_effect_tooltip = BLR_buy_helicopter_rus
+	    subtract_from_variable = { budget_reserve = -250 }
+    }
+}
+country_event = { ##Закупка автоматов (РФ)
+    id = belarus.25
+    title = belarus.25.t 
+    desc = belarus.25.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.25.a ##Оружие пехоты
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = army_salw_equipment_4
+			amount = 3000
+			producer = RUS
+		}
+    }
+	option = { 
+        name = belarus.25.b ##Оружие спецназа
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = special_ammunition_equipment_4	
+			amount = 3000
+			producer = RUS
+		}
+    }
+}
+country_event = { ##Закупка автоматов (США)
+    id = belarus.26
+    title = belarus.26.t 
+    desc = belarus.26.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.26.a ##Оружие пехоты
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = army_salw_equipment_4
+			amount = 3000
+			producer = USA
+		}
+    }
+	option = { 
+        name = belarus.26.b ##Оружие спецназа
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = special_ammunition_equipment_4	
+			amount = 3000
+			producer = USA
+		}
+    }
+}
+country_event = { ##Закупка автоматов (Германия)
+    id = belarus.27
+    title = belarus.27.t 
+    desc = belarus.27.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.27.a ##Оружие пехоты
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = army_salw_equipment_4
+			amount = 3000
+			producer = GER
+		}
+    }
+	option = { 
+        name = belarus.27.b ##Оружие спецназа
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = special_ammunition_equipment_4	
+			amount = 3000
+			producer = GER
+		}
+    }
+}
+country_event = { ##Закупка автоматов (Китай)
+    id = belarus.28
+    title = belarus.28.t 
+    desc = belarus.28.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.28.a ##Оружие пехоты
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = army_salw_equipment_4
+			amount = 3000
+			producer = CHI
+		}
+    }
+	option = { 
+        name = belarus.28.b ##Оружие спецназа
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        custom_effect_tooltip = BLR_buy_ak_rus
+	    subtract_from_variable = { budget_reserve = -2 }
+		add_equipment_to_stockpile = {
+			type = special_ammunition_equipment_4	
+			amount = 3000
+			producer = CHI
+		}
+    }
+}
+country_event = { ##Закупка танков (Украина)
+    id = belarus.29
+    title = belarus.29.t 
+    desc = belarus.29.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.29.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+				type = main_battle_tank_g6_equipment_0
+				amount = 33
+				producer = UKR
+		}
+		custom_effect_tooltip = BLR_buy_tanks_ukr
+	    subtract_from_variable = { budget_reserve = -161 }
+    }
+}
+#country_event = { 
+    #id = belarus.4
+    #title = belarus.4.t
+    #desc = belarus.4.d
+    #picture = GFX_event_RUS_army3
+
+   # is_triggered_only = yes
+
+    #option = { #Принятие
+   #     name = belarus.4.a 
+   #     log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+   #     ai_chance = { 
+   #         factor = 70
+   #         modifier = {
+  #              factor = 0
+  #              is_historical_focus_on = yes
+  #          }
+   #     }
+#
+  #      BLR = {
+  #          annex_country = {
+  #              target = UKR
+   #             transfer_troops = yes
+    #        }
+   #    }
+    #}
+
+    #option = { #Отказ
+   #    name = belarus.4.b 
+   #     log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.b"
+   #     ai_chance = {  factor = 30 }
+    #    create_wargoal = { type = annex_everything target = BLR }
+    #    add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+    #    BLR = { add_opinion_modifier = { target = UKR modifier = actions_very_negative } } 
+   # }
+#}

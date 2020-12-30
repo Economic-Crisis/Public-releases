@@ -1,0 +1,56 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+add_ideas = {
+	mixed_schools
+	small_country
+}
+
+capital = 691
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2644 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_stability = 0.75
+
+	add_political_power = 0
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.5.26"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 60
+		liberalism = 40
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kamla Persad-Bissessar"
+		desc = "POLITICS_KAMLA_PERSAD-BISSESSAR_DESC"
+		picture = "gfx/leaders/TRI/portrait_kamla_persad-bissessar.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Keith Rowley"
+		desc = "POLITICS_KEITH_ROWLEY_DESC"
+		picture = "gfx/leaders/TRI/portrait_keith_rowley.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+}

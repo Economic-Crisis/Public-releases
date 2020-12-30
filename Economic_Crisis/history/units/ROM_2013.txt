@@ -1,0 +1,179 @@
+﻿division_template = {
+	name = "Divizia Infanterie"
+	# Note: also represents Guards, Fortress divisions
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  		# 2x 100mm howitzer bns, on average
+		airborne_support_company = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Munte Brigada"
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+	}
+	support = {
+		airborne_support_company = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Blindata Brigada"
+	# Note: Represents 1st and 2nd Armor regiment; both created and merged with motorized inf to create Armor Division in 1940
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }		# 1st Rgt: R-2 (Pz 35(t)) tanks
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 1 y = 0 }		# 2nd Rgt: Renault R-35 tanks
+		main_battle_tank = { x = 1 y = 1 }
+		light_motorized = { x = 2 y = 0 }         # added motorized not to make it a death trap
+		light_motorized = { x = 2 y = 1 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }   			# recon_battalion bn of ACs
+		airborne_support_company = { x = 0 y = 1 }
+	}
+}
+
+
+units = {
+	######## LAND UNITS ########
+	##### Fortele Terestre Române #####
+	# Corp 1 Armata #
+	division = {
+		name = "Divizia 2 Infanterie"
+		location = 818
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Divizia 3 Infanterie"
+		location = 818
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Divizia 11 Infanterie"
+		location = 818
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# Corp 2 Armata #
+	division = {
+		name = "Divizia Infanterie de Garda"
+		location = 9617
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Divizia 4 Infanterie"
+		location = 9617
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Divizia 9 Infanterie"
+		location = 9617
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Divizia 10 Infanterie"
+		location = 9617
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# Corp 3 Armata #
+	division = {
+		name = "Divizia 15 Infanterie"
+		location = 6706
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division = {
+		name = "Divizia 21 Infanterie"
+		location = 6706
+		division_template = "Divizia Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	# Corp Alpinisti #
+	division = {
+		name = "1 Munte Brigada Mixt"
+		location = 6711
+		division_template = "Munte Brigada"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division = {
+		name = "2 Munte Brigada Mixt"
+		location = 6711
+		division_template = "Munte Brigada"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+  }
+}
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "ROM"
+		}
+		requested_factories = 2
+		progress = 0.44
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "ROM"
+		}
+		requested_factories = 1
+		progress = 0.47
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = apc_tracked_g1_equipment_0
+			creator = "ROM"
+		}
+		requested_factories = 1
+		progress = 0.47
+		efficiency = 100
+	}
+}

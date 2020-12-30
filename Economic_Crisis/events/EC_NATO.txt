@@ -1,0 +1,77 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## NATO events       ###
+########################
+## Written by SuxrobGM #
+########################
+
+add_namespace = NATO_event
+
+country_event = { #Запрос вступление на НАТО
+	id = NATO_event.1
+	title = NATO_event.1.t
+	desc = NATO_event.1.d
+	picture = GFX_event_to_NATO_1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = NATO_event.1.a
+		ai_chance = { factor = 90 }
+		hidden_effect = {
+		USA = { country_event = { days = 4 id = NATO_event.2 } }
+		
+		}
+	}
+	
+	option = {
+		name = NATO_event.1.b
+		ai_chance = { factor = 10 }
+	}
+	
+}
+
+#США принимает или нет новых участников?
+country_event = { #США решает
+	id = NATO_event.2
+	title = NATO_event.2.t
+	desc = NATO_event.2.d
+	picture = GFX_event_pentagon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NATO_event.2.a
+		ai_chance = { 
+		factor = 60 
+			modifier = {
+				factor = 10
+				FROM = { any_owned_state = { is_on_continent = asia } }
+			}
+			modifier = {
+				factor = 2
+				FROM = { any_owned_state = { is_on_continent = australia } }
+			}
+			modifier = {
+			    factor = 0    
+				FROM = { any_owned_state = { OR = { is_on_continent = africa } is_on_continent = south_america } }	
+			}
+			modifier = {
+				factor = 0 
+				FROM = { has_idea = partially_recognized_country }
+			}
+		}
+		USA = { add_to_faction = FROM }
+		news_event = { id = news.41 days = 1 }
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): EC_NATO event 2a"
+		
+	}
+	
+	option = {
+		name = NATO_event.2.b
+		ai_chance = { factor = 40 }
+		FROM = { news_event = { id = news.42 days = 1 } }
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): EC_NATO event 2b"
+	}
+}

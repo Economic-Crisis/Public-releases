@@ -1,0 +1,105 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 640
+
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = WAS
+			autonomy_state = autonomous_area
+			freedom_level = 0.1
+		}
+		else = {
+			puppet = WAS
+		}
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 6013 }
+	load_oob = "_tech_minor_2013"
+	oob = "MYN_2013"
+
+	add_ideas = {
+		asean_member
+		parliamentary_republic
+		federation
+		secular_state
+		cencored_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		total_nationalization_of_industry
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		average_terrorism
+		women_in_service
+	}
+
+	set_convoys = 25
+	set_country_flag = coalition_with_reformists
+	create_intelligence_agency = yes
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2010.11.7"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 64
+		liberalism = 0
+		democratic = 35
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Win Myint"
+		desc = " "
+		picture = "gfx/leaders/MYN/portrait_win_myint.dds"
+		ideology = national_conservatism_dem
+		traits = { trait_national_conservatism_dem }
+	}
+
+	create_country_leader = {
+		name = "Thein Sein"
+		desc = " "
+		picture = "gfx/leaders/MYN/portrait_thein_sein.dds"
+		ideology = national_conservatism_dem
+		expire = "2013.8.23"
+		traits = { trait_national_conservatism_dem }
+	}
+
+	create_country_leader = {
+		name = "Htin Kyaw"
+		desc = " "
+		picture = "gfx/leaders/MYN/portrait_htin_kyaw.dds"
+		ideology = social_democracy
+		expire = "2018.3.30"
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Aung San Suu Kyi"
+		desc = " "
+		picture = "gfx/leaders/MYN/portrait_aung_san_suu_kyi.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+}
+

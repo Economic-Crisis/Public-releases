@@ -1,0 +1,312 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 267
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2005 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "AFG_2013"
+	
+	set_country_flag = AFG_civilwar
+	add_political_power = 0
+	set_convoys = 0
+	
+	add_ideas = {
+		single-party_state 
+		unitary_state
+		theocracy 
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		free_market
+		NPT
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		decaying_state
+		afg_underground
+		obsolete_army
+		
+		islam_idea_lvl_3
+	}
+
+	create_intelligence_agency = yes
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.8.20"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 10
+		reformism = 0
+		liberalism = 0
+		democratic = 75
+		neutrality = 15
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mohammed Rafie"
+		desc = "POLITICS_MOHAMMED_RAFIE_DESC"
+		picture = "gfx/leaders/AFG/portrait_mohammed_rafiedds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	
+	create_country_leader = {
+		name = "Mohammed Rafie"
+		desc = "POLITICS_MOHAMMED_RAFIE_DESC"
+		picture = "gfx/leaders/AFG/portrait_mohammed_rafiedds"
+		ideology = democratic_socialism
+		traits = { trait_democratic_socialism }
+	}
+
+	#create_country_leader = {
+	#	name = "Abdul Latif Pedram"
+	#	desc = "POLITICS_ASHRAF_GANI_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+    #    ideology = social_liberalism
+	#	traits = { trait_social_liberalism }
+	#}
+		
+	#create_country_leader = {
+	#	name = "Abdul Rashid Dostum"
+	#	desc = "POLITICS_ASHRAF_GANI_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
+	
+	#create_country_leader = {
+	#	name = "Abdul Rahim Wardak"
+	#	desc = "POLITICS_ASHRAF_GANI_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+	#	ideology = national_democracy
+	#	traits = { trait_national_democracy }
+	#}
+	
+	#create_country_leader = {
+	#	name = "Abdul Hadi Arghandiwal"
+	#	desc = "POLITICS_ASHRAF_GANI_DESC"
+	#	picture = "gfx/leaders/portrait_no_photo.dds"
+	#	ideology = jihadism
+	#	traits = { trait_jihadism }
+	#}
+	
+	create_country_leader = {
+		name = "Ashraf Gani"
+		desc = "POLITICS_ASHRAF_GANI_DESC"
+		picture = "gfx/leaders/AFG/portrait_ashraf_ghani.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}	
+
+	create_country_leader = {
+		name = "Khamid Karzai"
+		desc = "POLITICS_KHAMID_KARZAI_DESC"
+		picture = "gfx/leaders/AFG/portrait_hamid_karzai.dds"
+		expire = "2014.9.29"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Hibatullah Akhundzada"
+		desc = ""
+		picture = "gfx/leaders/TAL/portrait_hibatullah_akhundzada.dds"
+		ideology = sunni_panislamism
+		traits = { trait_sunni_panislamism }
+	}
+	
+	#Generals
+	create_field_marshal = {
+		name = "Sher Mohammad Karimi"
+		picture = "gfx/leaders/AFG/portrait_afg_general_sher_mohammad_karimi.dds"
+		traits = { commando infantry_officer skilled_staffer }
+		skill = 4
+		attack_skill = 4
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 4
+	}
+
+	create_field_marshal = {
+		name = "Mohammad Sharif Yaftali"
+		picture = "gfx/leaders/AFG/portrait_afg_general_mohammad_sharif_yaftali.dds"
+		traits = { old_guard organisational_leader }
+		skill = 4
+		attack_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		logistics_skill = 3
+	}
+
+	create_field_marshal = {
+		name = "Qadam Shah Shahim"
+		picture = "gfx/leaders/AFG/portrait_afg_general_qadam_shan_shahim.dds"
+		traits = { organizer }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Bismillah Khan Mohammadi"
+		picture = "gfx/leaders/AFG/portrait_afg_general_bismillah_han_mohammadi.dds"
+		traits = { old_guard war_hero }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Bismillah Waziri"
+		picture = "gfx/leaders/AFG/portrait_afg_general_bismillah_waziri.dds"
+		traits = { harsh_leader }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Dawood Shah Wafadar"
+		picture = "gfx/leaders/AFG/portrait_afg_general_dawood_shah_wafadar.dds"
+		traits = { commando hill_fighter }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	# create_corps_commander = {
+	# 	name = "Murad Ali Murad"
+	# 	picture = "gfx/leaders/AFG/portrait_afg_general_murad_ali_murad.dds"
+	# 	traits = { charismatic }
+	# 	skill = 2
+	# 	attack_skill = 3
+	# 	defense_skill = 2
+	# 	planning_skill = 2
+	# 	logistics_skill = 3
+	# }
+
+	# create_corps_commander = {
+	# 	name = "Khatol Mohammadzai"
+	# 	picture = "gfx/leaders/AFG/portrait_afg_general_khatol_mohammadzai.dds"
+	# 	traits = { cautious }
+	# 	skill = 2
+	# 	attack_skill = 1
+	# 	defense_skill = 2
+	# 	planning_skill = 2
+	# 	logistics_skill = 2
+	# }
+
+	create_corps_commander = {
+		name = "Abdul Raziq Achakzai"
+		picture = "gfx/leaders/AFG/portrait_afg_general_abdul_raziq_achakzai.dds"
+		traits = { brilliant_strategist old_guard }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Mohammad Zahir Azimi"
+		picture = "gfx/leaders/AFG/portrait_afg_general_mohammad_zahir_azimi.dds"
+		traits = { politically_connected }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Mohammad Dawran"
+		picture = "gfx/leaders/AFG/portrait_afg_general_mohammad_dawran.dds"
+		traits = { hill_fighter }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_field_marshal = {
+		name = "Abdul Rashid Dostum"
+		picture = "gfx/leaders/AFG/portrait_afg_general_abdul_rashid_dostum.dds"
+		traits = { old_guard war_hero commando }
+		skill = 4
+		attack_skill = 4
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Abdullah Habibi"
+		picture = "gfx/leaders/AFG/portrait_afg_general_abdullah_habibi.dds"
+		traits = { commando }
+		skill = 4
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Isa Khan Laghmani"
+		picture = "gfx/leaders/AFG/portrait_afg_general_isa_khan_laghmani.dds"
+		traits = { media_personality }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Munir Mangal"
+		picture = "gfx/leaders/AFG/portrait_afg_general_munir_mangal.dds"
+		traits = { old_guard }
+		skill = 4
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Abdul Wahab Wardak"
+		picture = "gfx/leaders/AFG/portrait_afg_general_abdul_wahab_wardak.dds"
+		traits = { aviation_enthusiast } #mountaineer
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 3
+	}
+
+}
+

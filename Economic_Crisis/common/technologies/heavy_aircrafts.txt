@@ -1,0 +1,2333 @@
+technologies = {
+
+
+	# x = (горизонталь - поколения  технгики, шаг 10 лет)
+	@T0 = 0
+	@T1 = 1
+	@T2 = 4
+	@T00 = 6
+	@T3 = 7
+	@T4 = 10
+	@T000 = 12
+	@T5 = 13	
+	@T6 = 16
+	@T0000 = 18	
+	@T7 = 19
+	@T8 = 22
+	@T9 = 25
+	@T10 = 28
+	
+	# y = (вертикаль, типы техники, строка для каждого класса)
+	@MMM = -1
+	@AA = 1
+	@AB = 3
+	@SB = 5
+	@NB = 7
+	@ASA = 9	
+	@AT = 11	
+	@AD = 13
+	@NAD= 15
+
+###################################################################	
+########### ранние самолеты - 50е-60е годы ########################
+###################################################################
+	
+### Затычка вормально открывающая эпоху ранних самолетов (клон ванильного транспорта)
+	early_aircrafts = {
+
+### открывает древний транспортный самолет
+	
+		# enable_equipments = {
+			# air_transport_equipment_0
+		# }
+		
+		path = {
+			leads_to_tech = attack_aircraft_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_bomber_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = strike_bomber_T1
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = nuclear_bomber_T1
+			research_cost_coeff = 0.9
+		}
+		#path = {
+		#	leads_to_tech = anti_submarine_air_T1
+		#	research_cost_coeff = 0.9
+		#}
+		path = {
+			leads_to_tech = air_transport_T1
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = attack_drone_T1
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = naval_attack_drone_T1
+#			research_cost_coeff = 0.9
+#		}
+
+		
+		research_cost = 2
+		start_year = 1945
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T0 y = @MMM }
+		}
+		
+		categories = { cat_1stgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### штурмовик 50х годов
+	attack_aircraft_T1 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = attack_aircraft_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T1 y = @AA }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### штурмовик 60х годов
+	attack_aircraft_T2 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_2
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = attack_aircraft_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T2 y = @AA }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### бобер 50х годов
+	attack_bomber_T1 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = attack_bomber_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T1 y = @AB}
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### бобер 60х годов
+	attack_bomber_T2 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_2
+		}
+
+###	прсевдотупик
+#		path = {
+#			leads_to_tech = attack_bomber_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T2 y = @AB}
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### дальний бобер 50х
+	strike_bomber_T1 = {
+
+		enable_equipments = {
+			strike_bomber_equipment_1
+		}
+
+		path = {
+			leads_to_tech = strike_bomber_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T1 y = @SB }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_strategic_tech
+						cat_strike_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### дальний бобер 60х
+	strike_bomber_T2 = {
+
+		enable_equipments = {
+			strike_bomber_equipment_2
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = strike_bomber_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T2 y = @SB }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_strategic_tech
+						cat_strike_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### стратегический бобер 50х
+	nuclear_bomber_T1 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_1
+		}
+
+		path = {
+			leads_to_tech = nuclear_bomber_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T1 y = @NB }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### стратегический бобер 60х
+	nuclear_bomber_T2 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_2
+		}
+
+	#	прсевдотупик
+	#		path = {
+	#			leads_to_tech = nuclear_bomber_T3
+	#			research_cost_coeff = 0.9
+	#		}
+		
+		research_cost = 2
+		start_year = 1060
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T2 y = @NB }
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+#####  противолодочный самолет 50х
+	#anti_submarine_air_T1 = {
+
+	#	enable_equipments = {
+	#		anti_submarine_air_equipment_1
+	#	}
+	
+	#	path = {
+	#		leads_to_tech = anti_submarine_air_T2
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1050
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T1 y = @ASA }
+	#	}
+		
+	#	categories = {	cat_1stgen_aircrafts 
+	#					cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}
+
+#####  противолодочный самолет 60х
+	#anti_submarine_air_T2 = {
+
+	#	enable_equipments = {
+	#		anti_submarine_air_equipment_2
+	#	}
+
+	#прсевдотупик
+	#	path = {
+	#		leads_to_tech = anti_submarine_air_T3
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T2 y = @ASA }
+	#	}
+		
+	#	categories = {	cat_1stgen_aircrafts 
+	#					cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}		
+	
+##### транспортный самолет 50х
+	air_transport_T1 = {
+
+		enable_equipments = {
+			air_transport_equipment_1
+		}
+	
+		path = {
+			leads_to_tech = air_transport_T2
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1950
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T1 y = @AT}
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### транспортный самолет 60х
+	air_transport_T2 = {
+
+		enable_equipments = {
+			air_transport_equipment_2
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = air_transport_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T2 y = @AT}
+		}
+		
+		categories = {	cat_1stgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### затычка- пустышка для ударных дронов
+	#attack_drone_T1 = {
+
+	#	enable_equipments = {
+	#		attack_drone_equipment_1
+	#	}
+
+	#	path = {
+	#		leads_to_tech = attack_drone_T2
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1950
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T1 y = @AD }
+	#	}
+		
+	#	categories = {	
+	#		cat_1stgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {}
+		
+	#	ai_will_do = { factor = 0 }
+	#}		
+#
+##### затычка- пустышка для ударных дронов
+	#attack_drone_T2 = {
+
+	#enable_equipments = {
+	#	attack_drone_equipment_2
+	#}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = strike_bomber_T3
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 1960
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T2 y = @AD }
+	#	}
+		
+	#	categories = {	
+	#		cat_1stgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {}
+		
+	#	ai_will_do = { factor = 0 }
+	#}	
+
+##### затычка- пустышка для палубных дронов
+	#	naval_attack_drone_T1 = {
+
+		#enable_equipments = {
+		#	naval_attack_drone_equipment_1
+		#}
+	
+	#	path = {
+	#		leads_to_tech = naval_attack_drone_T2
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1950
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T1 y = @NAD}
+	#	}
+		
+	#	categories = {	
+	#		cat_1stgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_naval_aircrafts_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка- пустышка для палубных дронов
+	#naval_attack_drone_T2 = {
+
+		#enable_equipments = {
+		#	naval_attack_drone_equipment_2
+		#}
+
+	#прсевдотупик
+	#	path = {
+	#		leads_to_tech = naval_attack_drone_T3
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1960
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T2 y = @NAD}
+	#	}
+		
+	#	categories = {	
+	#		cat_1stgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_naval_aircrafts_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+###################################################################	
+########### полусовременные самолеты    70е-80е годы ##############
+###################################################################
+	
+### Затычка формально открывающая эпоху самолетов холодной войны
+	semi_modern_aircrafts = {
+	
+#		enable_equipments = {
+#			attack_aircraft_equipment_0
+#		}
+		
+		path = {
+			leads_to_tech = attack_aircraft_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_bomber_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = strike_bomber_T3
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = nuclear_bomber_T3
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = anti_submarine_air_T3
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = air_transport_T3
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = attack_drone_T3
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = naval_attack_drone_T3
+#			research_cost_coeff = 0.9
+#		}
+
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T00 y = @MMM }
+		}
+		
+		categories = { cat_2ndgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### штурмовик 70х
+	attack_aircraft_T3 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = attack_aircraft_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T3 y = @AA }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### штурмовик 80х
+	attack_aircraft_T4 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_4
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = attack_aircraft_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T4 y = @AA }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### бобер 70х
+	attack_bomber_T3 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = attack_bomber_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T3 y = @AB}
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### бобер 80х
+	attack_bomber_T4 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_4
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = attack_bomber_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T4 y = @AB}
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### удальний бобер 70х
+	strike_bomber_T3 = {
+
+		enable_equipments = {
+			strike_bomber_equipment_3
+		}
+
+		path = {
+			leads_to_tech = strike_bomber_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T3 y = @SB }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_strategic_tech
+						cat_strike_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### дальний бобер 80х
+	strike_bomber_T4 = {
+
+		enable_equipments = {
+			strike_bomber_equipment_4
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = strike_bomber_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T4 y = @SB }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_strategic_tech
+						cat_strike_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+
+##### стратегический бобер 70х
+	nuclear_bomber_T3 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_3
+		}
+
+		path = {
+			leads_to_tech = nuclear_bomber_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T3 y = @NB }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### стратегический бобер 80х
+	nuclear_bomber_T4 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_4
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = nuclear_bomber_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T4 y = @NB }
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+#####  противолодочный самолет 70х
+	#anti_submarine_air_T3 = {
+
+	#	enable_equipments = {
+	#		anti_submarine_air_equipment_3
+	#	}
+	
+	#	path = {
+	#		leads_to_tech = anti_submarine_air_T4
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1970
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T3 y = @ASA }
+	#	}
+		
+	#	categories = {	
+	#		cat_2ndgen_aircrafts 
+	#		cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {}
+		
+	#	ai_will_do = { factor = 5 }
+	#}
+
+#####  противолодочный самолет 80х
+	#anti_submarine_air_T4 = {
+
+	#	enable_equipments = {
+	#		anti_submarine_air_equipment_4
+	#	}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = anti_submarine_air_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 1980
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T4 y = @ASA }
+	#	}
+		
+	#	categories = {	cat_2ndgen_aircrafts 
+	#					cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}	
+	
+	
+	
+	
+
+##### транспортный самолет 70х
+	air_transport_T3 = {
+
+		enable_equipments = {
+			air_transport_equipment_3
+		}
+	
+		path = {
+			leads_to_tech = air_transport_T4
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1970
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T3 y = @AT}
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### транспортный самолет 80х
+	air_transport_T4 = {
+
+		enable_equipments = {
+			air_transport_equipment_4
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = air_transport_T5
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1980
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T4 y = @AT}
+		}
+		
+		categories = {	cat_2ndgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### затычка
+	#attack_drone_T3 = {
+
+		#enable_equipments = {
+		#	attack_drone_equipment_3
+		#}
+
+	#	path = {
+	#		leads_to_tech = attack_drone_T4
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1970
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T3 y = @AD }
+	#	}
+		
+	#	categories = {	cat_2ndgen_aircrafts 
+	#					cat_air_drone_tech
+	#					cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}		
+
+##### затычка
+	
+	#attack_drone_T4 = {
+
+		#enable_equipments = {
+		#	attack_drone_equipment_4
+		#}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = strike_bomber_T4
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 1980
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T4 y = @AD }
+	#	}
+		
+	#	categories = {	cat_2ndgen_aircrafts 
+	#					cat_air_drone_tech
+	#					cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}	
+	
+##### затычка 
+	#naval_attack_drone_T3 = {
+
+		#enable_equipments = {
+		#	naval_attack_drone_equipment_3
+		#}
+	
+#		path = {
+#			leads_to_tech = naval_attack_drone_T4
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 1970
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T3 y = @NAD}
+	#	}
+		
+	#	categories = {	
+	#		cat_2ndgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_naval_aircrafts_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+#	naval_attack_drone_T4 = {
+#
+#		enable_equipments = {
+#			naval_attack_drone_equipment_4
+#		}
+#
+#	#прсевдотупик
+#	#	path = {
+#	#		leads_to_tech = naval_attack_drone_T5
+#	#		research_cost_coeff = 0.9
+#	#	}
+#		
+#		research_cost = 2
+#		start_year = 1980
+#		folder = {
+#			name = heavy_aircrafts_folder
+#			position = { x = @T4 y = @NAD}
+#		}
+#		
+#		categories = {	cat_2ndgen_aircrafts 
+#						cat_air_drone_tech
+#						cat_naval_aircrafts_tech
+#		}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}		
+
+#################################################################	
+########### современные самолеты  - 90е-2000е годы ##############
+#################################################################
+	
+### современные самолеты
+	modern_aircrafts = {
+	
+#		enable_equipments = {
+#			attack_aircraft_equipment_0
+#		}
+		
+		path = {
+			leads_to_tech = attack_aircraft_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_bomber_T5
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = strike_bomber_T5
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = nuclear_bomber_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = anti_submarine_air_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = air_transport_T5
+			research_cost_coeff = 0.9
+		}
+		path = {
+			leads_to_tech = attack_drone_T5
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = naval_attack_drone_T5
+#			research_cost_coeff = 0.9
+#		}
+
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T000 y = @MMM }
+		}
+		
+		categories = { cat_3rdgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### штурмовик 90х
+	attack_aircraft_T5 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_5
+		}
+
+
+		path = {
+			leads_to_tech = attack_aircraft_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @AA }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### штурмовик 2000х
+	attack_aircraft_T6 = {
+
+		enable_equipments = {
+			attack_aircraft_equipment_6
+		}
+
+### в следующем поколение ###		
+#		path = {
+#			leads_to_tech = attack_aircraft_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T6 y = @AA }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_aircraft_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+
+##### бобер 90х
+	attack_bomber_T5 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_5
+		}
+
+
+		path = {
+			leads_to_tech = attack_bomber_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @AB}
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### бобер 2000х
+	attack_bomber_T6 = {
+
+		enable_equipments = {
+			attack_bomber_equipment_6
+		}
+
+
+#		path = {
+#			leads_to_tech = attack_bomber_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T6 y = @AB}
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_ground_attack_tech 
+						cat_attack_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+
+
+##### затычка
+	#strike_bomber_T5 = {
+
+		#enable_equipments = {
+		#	strike_bomber_equipment_5
+		#}
+
+	#	path = {
+	#		leads_to_tech = strike_bomber_T6
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1990
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T5 y = @SB }
+	#	}
+		
+	#	categories = {	
+	#		cat_3rdgen_aircrafts 
+	#		cat_strategic_tech
+	#		cat_strike_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}		
+
+##### затчка
+	#strike_bomber_T6 = {
+
+		#enable_equipments = {
+		#	strike_bomber_equipment_6
+		#}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = strike_bomber_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2000
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T6 y = @SB }
+	#	}
+		
+	#	categories = {	cat_3rdgen_aircrafts 
+	#					cat_strategic_tech
+	#					cat_strike_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+
+##### стратегический бобер 90х
+	nuclear_bomber_T5 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_5
+		}
+
+		path = {
+			leads_to_tech = nuclear_bomber_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @NB }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### стратегический бобер 2000х
+	nuclear_bomber_T6 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_6
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = nuclear_bomber_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T6 y = @NB }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+#####  противолодочный самолет 90х
+	anti_submarine_air_T5 = {
+
+		enable_equipments = {
+			anti_submarine_air_equipment_5
+		}
+	
+#		path = {
+#			leads_to_tech = anti_submarine_air_T6
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @ASA }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_anti_submarine_air_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### затычка
+#	anti_submarine_air_T6 = {
+#
+#		enable_equipments = {
+#			anti_submarine_air_equipment_6
+#		}
+#
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = anti_submarine_air_T7
+#			research_cost_coeff = 0.9
+#		}
+#		
+#		research_cost = 2
+#		start_year = 2000
+#		folder = {
+#			name = heavy_aircrafts_folder
+#			position = { x = @T6 y = @ASA }
+#		}
+#		
+#		categories = {	cat_3rdgen_aircrafts 
+#						cat_anti_submarine_air_tech
+#		}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}	
+	
+	
+	
+	
+
+##### транспортный самолет 90х
+	air_transport_T5 = {
+
+		enable_equipments = {
+			air_transport_equipment_5
+		}
+	
+		path = {
+			leads_to_tech = air_transport_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @AT}
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### транспортный самолет 2000х
+	air_transport_T6 = {
+
+		enable_equipments = {
+			air_transport_equipment_6
+		}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = air_transport_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T6 y = @AT}
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+	
+
+
+
+##### ударный дрон 90х
+	attack_drone_T5 = {
+
+		enable_equipments = {
+			attack_drone_equipment_5
+		}
+
+		path = {
+			leads_to_tech = attack_drone_T6
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 1990
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T5 y = @AD }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_air_drone_tech
+						cat_attack_drone_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### ударный дрон 2000х 
+	attack_drone_T6 = {
+
+		enable_equipments = {
+			attack_drone_equipment_6
+		}
+
+#		path = {
+#			leads_to_tech = attack_drone_T7
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2000
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T6 y = @AD }
+		}
+		
+		categories = {	cat_3rdgen_aircrafts 
+						cat_air_drone_tech
+						cat_attack_drone_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### затычка
+	#naval_attack_drone_T5 = {
+
+		#enable_equipments = {
+		#	naval_attack_drone_equipment_5
+		#}
+	
+	#	path = {
+	#		leads_to_tech = naval_attack_drone_T6
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 1990
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T5 y = @NAD}
+	#	}
+		
+	#	categories = {	
+	#		cat_3rdgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_naval_aircrafts_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+	#naval_attack_drone_T6 = {
+
+		#enable_equipments = {
+		#	naval_attack_drone_equipment_6
+		#}
+
+	#прсевдотупик
+	#	path = {
+	#		leads_to_tech = naval_attack_drone_T7
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2000
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T6 y = @NAD}
+	#	}
+		
+	#	categories = {	
+	#		cat_3rdgen_aircrafts 
+	#		cat_air_drone_tech
+	#		cat_naval_aircrafts_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}		
+
+###################################################################	
+########### суперсовременные самолеты - 10е-20е годы ##############
+###################################################################
+	
+### Затычка формально открывающая эпоху суперсовременных самолетов
+	ultramodern_aircrafts = {
+	
+#		enable_equipments = {
+#			attack_aircraft_equipment_0
+#		}
+		
+#		path = {
+#			leads_to_tech = attack_aircraft_T7
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = attack_bomber_T7
+#			research_cost_coeff = 0.9
+#		}
+#		path = {
+#			leads_to_tech = strike_bomber_T7
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = nuclear_bomber_T7
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = anti_submarine_air_T7
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = air_transport_T7
+			research_cost_coeff = 0.9
+		}
+#		path = {
+#			leads_to_tech = attack_drone_T7
+#			research_cost_coeff = 0.9
+#		}
+		path = {
+			leads_to_tech = naval_attack_drone_T7
+			research_cost_coeff = 0.9
+		}
+
+		
+		research_cost = 1
+		start_year = 2010
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T0000 y = @MMM }
+		}
+		
+		categories = { cat_4thgen_aircrafts
+	
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+	
+##### затычка на будущее
+	#attack_aircraft_T7 = {
+
+		#enable_equipments = {
+		#	attack_aircraft_equipment_7
+		#}
+	
+	#	path = {
+	#		leads_to_tech = attack_aircraft_T8
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2010
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T7 y = @AA }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_ground_attack_tech 
+	#		cat_attack_aircraft_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+	#attack_aircraft_T8 = {
+
+		#enable_equipments = {
+		#	attack_aircraft_equipment_8
+		#}
+
+#	прсевдотупик
+#		path = {
+#			leads_to_tech = attack_aircraft_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T8 y = @AA }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_ground_attack_tech 
+	#		cat_attack_aircraft_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+	#attack_bomber_T7 = {
+
+		#enable_equipments = {
+		#	attack_bomber_equipment_7
+		#}
+	
+	#	path = {
+	#		leads_to_tech = attack_bomber_T8
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2010
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T7 y = @AB}
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_ground_attack_tech 
+	#		cat_attack_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+	#attack_bomber_T8 = {
+
+		#enable_equipments = {
+		#	attack_bomber_equipment_8
+		#}
+
+	#прсевдотупик
+	#	path = {
+	#		leads_to_tech = attack_bomber_T9
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T8 y = @AB}
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_ground_attack_tech 
+	#		cat_attack_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}	
+
+##### затычка
+	#strike_bomber_T7 = {
+
+		#enable_equipments = {
+		#	strike_bomber_equipment_7
+		#}
+
+	#	path = {
+	#		leads_to_tech = strike_bomber_T8
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2010
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T7 y = @SB }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_strategic_tech
+	#		cat_strike_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}		
+
+##### затычка
+	#strike_bomber_T8 = {
+
+		#enable_equipments = {
+		#	strike_bomber_equipment_8
+		#}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = strike_bomber_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T8 y = @SB }
+	#	}
+		
+	#	categories = {	
+	#		cat_4thgen_aircrafts 
+	#		cat_strategic_tech
+	#		cat_strike_bomber_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+
+##### стратегический бобер 2010х
+	nuclear_bomber_T7 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_7
+		}
+
+		path = {
+			leads_to_tech = nuclear_bomber_T8
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T7 y = @NB }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+##### стратегический бобер 2020х
+	nuclear_bomber_T8 = {
+
+		enable_equipments = {
+			nuclear_bomber_equipment_8
+		}
+
+	#	прсевдотупик, открывается с поколением полусовременных вертолетов
+	#		path = {
+	#			leads_to_tech = nuclear_bomber_T9
+	#			research_cost_coeff = 0.9
+	#		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T8 y = @NB }
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_strategic_tech
+						cat_nuclear_bomber_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}		
+
+
+#####  затычка
+	#anti_submarine_air_T7 = {
+
+		#enable_equipments = {
+		#	anti_submarine_air_equipment_7
+		#}
+	
+	#	path = {
+	#		leads_to_tech = anti_submarine_air_T8
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2010
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T7 y = @ASA }
+	#	}
+		
+	#	categories = {	cat_4thgen_aircrafts 
+	#					cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}
+
+##### затычка
+	#anti_submarine_air_T8 = {
+
+		#enable_equipments = {
+		#	anti_submarine_air_equipment_8
+		#}
+
+	#прсевдотупик, открывается с поколением полусовременных вертолетов
+	#	path = {
+	#		leads_to_tech = anti_submarine_air_T9
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T8 y = @ASA }
+	#	}
+		
+	#	categories = {	cat_4thgen_aircrafts 
+	#					cat_anti_submarine_air_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 0 }
+	#}	
+	
+	
+	
+	
+
+##### транспортный самолет 2010х
+	air_transport_T7 = {
+
+		enable_equipments = {
+			air_transport_equipment_7
+		}
+	
+		path = {
+			leads_to_tech = air_transport_T8
+			research_cost_coeff = 0.9
+		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T7 y = @AT}
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### транспортный самолет 2020х
+	air_transport_T8 = {
+
+		enable_equipments = {
+			air_transport_equipment_8
+		}
+
+	#прсевдотупик, открывается с поколением полусовременных вертолетов
+	#	path = {
+	#		leads_to_tech = air_transport_T9
+	#		research_cost_coeff = 0.9
+	#	}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T8 y = @AT}
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_air_transport_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}	
+
+##### затычка
+	#attack_drone_T7 = {
+
+	#	enable_equipments = {
+	#		attack_drone_equipment_7
+	#	}
+
+	#	path = {
+	#		leads_to_tech = attack_drone_T8
+	#		research_cost_coeff = 0.9
+	#	}
+		
+	#	research_cost = 2
+	#	start_year = 2010
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T7 y = @AD }
+	#	}
+		
+	#	categories = {	cat_4thgen_aircrafts 
+	#					cat_air_drone_tech
+	#					cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}		
+
+##### затычка
+	
+	#attack_drone_T8 = {
+
+	#	enable_equipments = {
+	#		attack_drone_equipment_8
+	#	}
+
+#	прсевдотупик, открывается с поколением полусовременных вертолетов
+#		path = {
+#			leads_to_tech = strike_bomber_T9
+#			research_cost_coeff = 0.9
+#		}
+		
+	#	research_cost = 2
+	#	start_year = 2020
+	#	folder = {
+	#		name = heavy_aircrafts_folder
+	#		position = { x = @T8 y = @AD }
+	#	}
+		
+	#	categories = {	cat_4thgen_aircrafts 
+	#					cat_air_drone_tech
+	#					cat_attack_drone_tech
+	#	}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+	#	ai_will_do = { factor = 5 }
+	#}
+
+##### палубный ударный дрон 2010х
+	naval_attack_drone_T7 = {
+
+		enable_equipments = {
+			naval_attack_drone_equipment_7
+		}
+	
+#		path = {
+#			leads_to_tech = naval_attack_drone_T8
+#			research_cost_coeff = 0.9
+#		}
+		
+		research_cost = 2
+		start_year = 2010
+		folder = {
+			name = heavy_aircrafts_folder
+			position = { x = @T7 y = @NAD}
+		}
+		
+		categories = {	cat_4thgen_aircrafts 
+						cat_air_drone_tech
+						cat_naval_aircrafts_tech
+		}
+		
+	#	sub_technologies = {
+	#		
+	#	}
+		
+		ai_will_do = { factor = 5 }
+	}
+
+##### противолодочный вертолет поколения Т8 типа "я хз на что они будут похожи если пока даже первых серийных нет"
+#	naval_attack_drone_T8 = {
+#
+#		enable_equipments = {
+#			naval_attack_drone_equipment_8
+#		}
+#
+#	#прсевдотупик, открывается с поколением полусовременных вертолетов
+#	#	path = {
+#	#		leads_to_tech = naval_attack_drone_T9
+#	#		research_cost_coeff = 0.9
+#	#	}
+#		
+#		research_cost = 2
+#		start_year = 2020
+#		folder = {
+#			name = heavy_aircrafts_folder
+#			position = { x = @T8 y = @NAD}
+#		}
+#		
+#		categories = {	cat_4thgen_aircrafts 
+#						cat_air_drone_tech
+#						cat_naval_aircrafts_tech
+#		}
+#		
+#	#	sub_technologies = {
+#	#		
+#	#	}
+#		
+#		ai_will_do = {
+#			factor = 5
+#		}
+#	}	
+
+
+
+
+	
+
+}

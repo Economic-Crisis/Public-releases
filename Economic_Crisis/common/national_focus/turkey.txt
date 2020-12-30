@@ -1,0 +1,4122 @@
+#List of filters / Список фильтров
+#FOCUS_FILTER_DOMESTIC_POLICY - domestic policy (внутренняя политика)
+#FOCUS_FILTER_FOREIGN_POLICY - foreign policy (внешняя политика)
+#FOCUS_FILTER_INDUSTRY - industry (промышленность)
+#FOCUS_FILTER_RESEARCH - research (исследования)
+#FOCUS_FILTER_ARMY - army (армия)
+#FOCUS_FILTER_NAVY - navy (флот)
+#FOCUS_FILTER_AVIATION - aviation (авиация)
+#FOCUS_FILTER_ECONOMIC - economy (экономика)
+
+focus_tree = {
+	id = turkey_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 450 y = 2150 }
+
+	focus = {
+		id = TUR_start1
+		icon = GFX_goal_unknown
+		x = 9
+		y = 0
+		cost = 210
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = 120 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_nationalism1
+		}
+		x = 3
+		y = 1
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 60
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.03
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic2
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic1
+		}
+		mutually_exclusive = {
+			focus = TUR_democratic7
+		}
+		x = 1
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic3
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic2
+		}
+		x = 1
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = { id = turkey.3 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic3
+		}
+		available = {
+			NOT = { has_country_flag = TUR_erdogan_won }
+		}
+		x = 1
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			country_event = { id = turkey.10 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic4
+		}
+		available = {
+			NOT = { has_country_flag = TUR_erdogan_won }
+		}
+		x = 1
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#ideas
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic5
+			focus = TUR_democratic10
+		}
+		x = 3
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = 60 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic1
+		}
+		mutually_exclusive = {
+			focus = TUR_democratic2
+		}
+		x = 3
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = -50 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic7
+		}
+		x = 3
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic8
+		}
+		x = 3
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic9
+		}
+		x = 3
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic1
+		}
+		x = 5
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = { id = turkey.17 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic11
+		}
+		x = 5
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = kurd_separatism
+				add_idea = kurd_autonomy
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic13
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic12
+		}
+		x = 5
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			904 = {
+				add_core_of = ARM
+				add_core_of = AZR
+			}
+			905 = {
+				add_core_of = GEO
+			}
+			997 = {
+				add_core_of = SYR
+			}
+			350 = {
+				add_core_of = SYR
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_democratic14
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_democratic13
+		}
+		x = 5
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = { federation }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_democratic1
+		}
+		x = 9
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism2
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism1
+		}
+		mutually_exclusive = {
+			focus = TUR_nationalism12
+		}
+		x = 7
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism3
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism2
+		}
+		x = 7
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+
+	focus = {
+		id = TUR_nationalism4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism3
+		}
+		x = 7
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism4
+		}
+		x = 7
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism5
+		}
+		x = 7
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism6
+		}
+		x = 7
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism7
+		}
+		x = 7
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism8
+		}
+		x = 7
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism9
+		}
+		x = 7
+		y = 10
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism10
+		}
+		x = 7
+		y = 11
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism1
+		}
+		mutually_exclusive = {
+			focus = TUR_nationalism2
+		}
+		x = 11
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism13
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism12
+		}
+		x = 11
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism14
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism13
+		}
+		mutually_exclusive = {
+			focus = TUR_nationalism22
+		}
+		x = 9
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism15
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism14
+		}
+		x = 9
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism16
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism15
+		}
+		x = 9
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism17
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism16
+		}
+		x = 9
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism18
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism17
+		}
+		x = 9
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism19
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism18
+		}
+		x = 9
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism20
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism19
+		}
+		x = 9
+		y = 10
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism21
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism20
+		}
+		x = 9
+		y = 11
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism22
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism13
+		}
+		mutually_exclusive = {
+			focus = TUR_nationalism14
+		}
+		x = 12
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism23
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism22
+		}
+		x = 12
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism24
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism23
+		}
+		x = 12
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism25
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism24
+		}
+		x = 12
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism26
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism25
+		}
+		x = 11
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism27
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism26
+		}
+		x = 11
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism28
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism27
+		}
+		x = 11
+		y = 10
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism29
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism28
+		}
+		x = 11
+		y = 11
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism30
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism25
+		}
+		x = 13
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism31
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism30
+		}
+		x = 13
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism32
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism31
+		}
+		x = 13
+		y = 10
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_nationalism33
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_nationalism32
+		}
+		x = 13
+		y = 11
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = TUR_pol_start1
+		icon = GFX_goal_unknown
+		x = 30
+		y = 0
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = 120 }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_nationalism1
+			focus = TUR_pol_islam1
+			focus = TUR_pol_socialism1
+		}
+		x = 21
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic2
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic1
+		}
+		x = 21
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic3
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic2
+		}
+		x = 20
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			KUR = { 
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			IRQ = { 
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			ISS = { 
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			custom_effect_tooltip = TUR_democratic3_TT
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic2
+		}
+		x = 22
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			KUR = {
+				transfer_state = 352
+				transfer_state = 904
+				transfer_state = 353
+				transfer_state = 350
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_positive
+				}
+				give_military_access = TUR
+				add_autonomy_ratio = {
+					value = 0.7
+					localization = TUR_pol_democratic4
+				}
+			}
+			add_stability = -0.3
+			add_war_support = -0.3
+			give_guarantee = KUR
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic4
+		}
+		x = 23
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_list = {
+				75 = {
+					# start_border_war = {
+					# 	change_state_after_war = no
+					# 	attacker = {
+					# 		state = 880
+					# 		num_provinces = 4
+					# 		on_win = TUR_democratic5.2
+					# 		on_lose = TUR_democratic5.3
+					# 		on_cancel = TUR_democratic5.4
+					# 	}
+									
+					# 	defender = {
+					# 		state = 904
+					# 		num_provinces = 4
+					# 		on_win = TUR_democratic5.3
+					# 		on_lose = TUR_democratic5.2
+					# 		on_cancel = TUR_democratic5.4
+					# 	}
+					# }
+				}
+				25 = {
+					KUR = { 
+						add_opinion_modifier = {
+							target = ARM
+							modifier = actions_very_negative
+						}
+					}
+					ARM = { 
+						add_opinion_modifier = {
+							target = KUR
+							modifier = actions_very_negative
+						}
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic4
+		}
+		prerequisite = {
+			focus = TUR_pol_democratic3
+		}
+		x = 21
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic6
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic17
+		}
+		x = 18
+		y = 5
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic7
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic12
+		}
+		x = 16
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#news_event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic8
+		}
+		x = 16
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic9
+		}
+		x = 15
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic9
+		}
+		x = 17
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic7
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic8
+		}
+		x = 20
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic13
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic12
+		}
+		x = 19
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			ISR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			add_opinion_modifier = {
+				target = ISR
+				modifier = actions_positive
+			}
+			custom_effect_tooltip = TUR_pol_democratic13_TT
+			#hidden_effect = {
+				KUW = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				BHR = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				QAT = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				UAE = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				OMA = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				YEM = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				SAU = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				SYR = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				IRQ = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				FSA = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				ROJ = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				KUR = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				JOR = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				PAL = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				EGY = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				LBA = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				TUN = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				ALG = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				MOR = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				WES = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				SUD = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				DJI = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				SOM = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+				COM = {
+					add_opinion_modifier = {
+						target = TUR
+						modifier = actions_negative
+					}
+				}
+			#}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic14
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic12
+		}
+		x = 21
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			GRE = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			add_opinion_modifier = {
+				target = GRE
+				modifier = actions_positive
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic15
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic13
+		}
+		prerequisite = {
+			focus = TUR_pol_democratic14
+		}
+		x = 20
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic16
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic15
+		}
+		x = 20
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_country_flag = country_ready_to_join_EU
+			custom_effect_tooltip = TUR_pol_democratic16_TT
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic17
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic6
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic7
+		}
+		x = 24
+		y = 5
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic18
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic17
+		}
+		x = 24
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			leave_faction = yes
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic19
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic18
+		}
+		x = 24
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			ARM = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			AZR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic20
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic19
+		}
+		available = {
+			NOT = { has_idea = integration_in_nato }
+		}
+		x = 24
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = integration_in_csto
+			RUS = { add_to_faction = TUR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic21
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic20
+		}
+		available = {
+			RUS = { has_war_with = ISS }
+		}
+		x = 23
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_democratic22
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_democratic20
+		}
+		x = 25
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic1
+			focus = TUR_pol_islam1
+			focus = TUR_pol_socialism1
+		}
+		x = 28
+		y = 1
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = TUR_pol_nationalism4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism1
+		}
+		prerequisite = {
+			focus = TUR_pol_islam3
+		}
+		x = 28
+		y = 4
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_war_support = 0.03
+			#event
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism4
+		}
+		x = 27
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = actions_very_negative
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = GER
+				modifier = actions_very_negative
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = actions_very_negative
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism5
+		}
+		x = 27
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = BUL
+				modifier = actions_very_negative
+			}
+			BUL = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = MAC
+				modifier = actions_very_negative
+			}
+			MAC = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = KOS
+				modifier = actions_very_negative
+			}
+			KOS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SER
+				modifier = actions_very_negative
+			}
+			SER = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = BOS
+				modifier = actions_very_negative
+			}
+			BOS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = CRO
+				modifier = actions_very_negative
+			}
+			CRO = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SLV
+				modifier = actions_very_negative
+			}
+			SLV = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism6
+		}
+		x = 27
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = MOL
+				modifier = actions_very_negative
+			}
+			MOL = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism4
+		}
+		x = 29
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism8
+		}
+		x = 29
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = UKR
+				modifier = actions_very_negative
+			}
+			UKR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism9
+		}
+		x = 29
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = ARM
+				modifier = actions_very_negative
+			}
+			ARM = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism7
+		}
+		prerequisite = {
+			focus = TUR_pol_nationalism10
+		}
+		x = 28
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism11
+		}
+		x = 27
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_nationalism13
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_nationalism11
+		}
+		x = 29
+		y = 9
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			CHI = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = CHI
+				modifier = actions_very_negative
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic1
+			focus = TUR_pol_nationalism1
+			focus = TUR_pol_socialism1
+		}
+		x = 34
+		y = 1
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam2
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam1
+		}
+		prerequisite = {
+			focus = TUR_pol_nationalism1
+		}
+		prerequisite = {
+			focus = TUR_pol_socialism1
+		}
+		x = 34
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			leave_faction = yes
+			remove_ideas = integration_in_nato
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam3
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam2
+		}
+		x = 34
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GRE
+				modifier = actions_very_negative
+			}
+			GRE = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = BUL
+				modifier = actions_very_negative
+			}
+			BUL = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = GEO
+				modifier = actions_very_negative
+			}
+			GEO = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SYR
+				modifier = actions_very_negative
+			}
+			SYR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = FSA
+				modifier = actions_very_negative
+			}
+			FSA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = KUR
+				modifier = actions_very_negative
+			}
+			KUR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = IRQ
+				modifier = actions_very_negative
+			}
+			IRQ = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = ISS
+				modifier = actions_very_negative
+			}
+			ISS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam3
+		}
+		x = 34
+		y = 4
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_war_support = 0.03
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam4
+		}
+		x = 31
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GER
+				modifier = actions_very_negative
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = actions_very_negative
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = actions_very_negative
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam5
+		}
+		x = 31
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = BUL
+				modifier = actions_very_negative
+			}
+			BUL = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = MAC
+				modifier = actions_very_negative
+			}
+			MAC = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = KOS
+				modifier = actions_very_negative
+			}
+			KOS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SER
+				modifier = actions_very_negative
+			}
+			SER = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = BOS
+				modifier = actions_very_negative
+			}
+			BOS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = CRO
+				modifier = actions_very_negative
+			}
+			CRO = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SLV
+				modifier = actions_very_negative
+			}
+			SLV = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam4
+		}
+		x = 34
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam7
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_islam9
+		}
+		x = 33
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam7
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_islam8
+		}
+		x = 35
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam9
+			focus = TUR_pol_islam8
+		}
+		prerequisite = {
+			focus = TUR_pol_islam12
+		}
+		prerequisite = {
+			focus = TUR_pol_islam6
+		}
+		x = 34
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = actions_very_negative
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = GER
+				modifier = actions_very_negative
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = actions_very_negative
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SYR
+				modifier = actions_very_negative
+			}
+			SYR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = ISR
+				modifier = actions_very_negative
+			}
+			ISR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = PAL
+				modifier = actions_very_negative
+			}
+			PAL = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = IRQ
+				modifier = actions_very_negative
+			}
+			IRQ = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SYR
+				modifier = actions_very_negative
+			}
+			SYR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = SAU
+				modifier = actions_very_negative
+			}
+			SAU = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = IRN
+				modifier = actions_very_negative
+			}
+			IRN = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam4
+		}
+		x = 37
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_islam12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_islam11
+		}
+		x = 37
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_very_negative
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			add_opinion_modifier = {
+				target = AZR
+				modifier = actions_very_negative
+			}
+			AZR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_socialism1
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_start1
+		}
+		mutually_exclusive = {
+			focus = TUR_pol_democratic1
+			focus = TUR_pol_nationalism1
+			focus = TUR_pol_islam1
+		}
+		x = 39
+		y = 1
+		cost = 100
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	
+	focus = {
+		id = TUR_pol_socialism4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_socialism1
+		}
+		prerequisite = {
+			focus = TUR_pol_islam3
+		}
+		x = 39
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_socialism5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_socialism4
+		}
+		x = 39
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_socialism6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_socialism5
+		}
+		x = 39
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_pol_socialism7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_pol_socialism6
+		}
+		x = 39
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic1
+		icon = GFX_goal_unknown
+		x = 45
+		y = 0
+		cost = 210
+		ai_will_do = { factor = 1 }
+		completion_reward = {  }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic2
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic1
+		}
+		x = 41
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic3
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic2
+		}
+		x = 41
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic4
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic2
+		}
+		x = 43
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic5
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic4
+		}
+		x = 43
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic6
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic5
+		}
+		x = 43
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic7
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic6
+		}
+		x = 43
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic8
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic7
+		}
+		x = 43
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic9
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic8
+		}
+		x = 43
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic10
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic9
+		}
+		x = 43
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic11
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic4
+		}
+		x = 45
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic12
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic11
+		}
+		x = 45
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic13
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic1
+		}
+		x = 48
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic14
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic13
+		}
+		x = 48
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic15
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic14
+		}
+		x = 48
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic16
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic15
+		}
+		x = 47
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic17
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic15
+		}
+		x = 49
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic18
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic1
+		}
+		x = 51
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic19
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic18
+		}
+		x = 51
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic20
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic19
+		}
+		x = 50
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic21
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic19
+		}
+		x = 52
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic22
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic1
+		}
+		x = 55
+		y = 1
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic23
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic22
+		}
+		x = 53
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic24
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic22
+		}
+		x = 55
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic25
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic22
+		}
+		x = 57
+		y = 2
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic26
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic24
+		}
+		x = 55
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic27
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic25
+		}
+		prerequisite = {
+			focus = TUR_turkic24
+		}
+		prerequisite = {
+			focus = TUR_turkic23
+		}
+		x = 57
+		y = 3
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic28
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic27
+		}
+		x = 57
+		y = 4
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic29
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic21
+		}
+		prerequisite = {
+			focus = TUR_turkic20
+		}
+		prerequisite = {
+			focus = TUR_turkic17
+		}
+		prerequisite = {
+			focus = TUR_turkic16
+		}
+		x = 51
+		y = 5
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic30
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic29
+		}
+		x = 51
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic31
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic30
+		}
+		x = 51
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic32
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic31
+		}
+		x = 49
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic33
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic31
+		}
+		x = 51
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic34
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic31
+		}
+		x = 53
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = TUR_turkic35
+		icon = GFX_goal_unknown
+		prerequisite = {
+			focus = TUR_turkic29
+		}
+		x = 53
+		y = 6
+		cost = 70
+		ai_will_do = { factor = 1 }
+		completion_reward = { }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+
+	focus = {
+		id = TUR_generic_industrial_effort
+		icon = GFX_goal_TUR_generic_production
+		x = 60
+		y = 0
+		cost = 70
+		ai_will_do = {
+		    factor = 4
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = TUR_generic_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_generic_industrial_effort }
+		x = 60
+		y = 1
+		cost = 30
+		
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = TUR_generic_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = TUR_generic_industrial_effort }
+		x = 62
+		y = 1
+		cost = 30
+
+		ai_will_do = {
+			factor = 3			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = TUR_generic_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_generic_construction_effort }
+		x = 60
+		y = 3
+		cost = 40
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = TUR_generic_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = TUR_generic_production_effort }
+		x = 62
+		y = 2
+		cost = 40
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = TUR_generic_production_effort_2 }
+		x = 62
+		y = 3
+		cost = 70
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = TUR_generic_production_effort_3 }
+		x = 62
+		y = 4
+		cost = 50
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_generic_construction_effort_2 }
+		x = 60
+		y = 4
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = TUR_generic_construction_effort_3 }
+		x = 60
+		y = 5
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = TUR_generic_construction_coal_energy_station
+		icon = GFX_goal_generic_construct_coal_energy_station
+		prerequisite = { focus = TUR_generic_construction_effort_4 }
+		x = 62
+		y = 7
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = thermal_power_plant
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = thermal_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = TUR_generic_construction_ecolog_energy_station
+		icon = GFX_goal_generic_construct_ecolog_energy_station
+		prerequisite = { focus = TUR_generic_construction_effort_4 }
+		x = 60
+		y = 6
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = eco_power_plant
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = eco_power_plant
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = eco_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = eco_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = eco_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = TUR_generic_construction_coal_energy_station_2
+		icon = GFX_goal_generic_construct_coal_energy_station_2
+		prerequisite = { focus = TUR_generic_construction_coal_energy_station }
+		x = 62
+		y = 8
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = thermal_power_plant
+				level = 2
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = thermal_power_plant
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = thermal_power_plant
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = thermal_power_plant
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_research_slot_1
+		#prerequisite = { focus = generic_high_education_reforms }
+		prerequisite = { focus = TUR_generic_production_effort_3 }
+		icon = GFX_goal_generic_scientific_exchange
+		x = 58
+		y = 6
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_research_slot = 1	
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = TUR_generic_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = TUR_generic_construction_effort_2 }
+		x = 60
+		y = 2
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = TUR_generic_infrastructure_effort }
+		x = 62
+		y = 5
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_infrastructure_effort_3
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = TUR_generic_infrastructure_effort_2 }
+		x = 62
+		y = 6
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_infrastructure_effort_4
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = TUR_generic_infrastructure_effort_3 }
+		x = 64
+		y = 7
+		cost = 70
+		ai_will_do = {
+			factor = 4
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_nuclear_effort
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = TUR_generic_infrastructure_effort }
+		x = 64
+		y = 3
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = TUR_generic_construction_nuclear_energy_station
+		icon = GFX_goal_generic_construct_nuclear_energy_station
+		prerequisite = { focus = TUR_generic_nuclear_effort }
+		x = 64
+		y = 6
+		cost = 70
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = nuclear_reactor
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = nuclear_reactor
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = nuclear_reactor
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = nuclear_reactor
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+	
+	focus = {
+		id = TUR_generic_nuclear_effort_2
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = TUR_generic_nuclear_effort }
+		x = 64
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.75
+				uses = 1
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = TUR_generic_nuclear_effort_3
+		icon = GFX_goal_ger_nuclear_effort_3
+		prerequisite = { focus = TUR_generic_nuclear_effort_2 }
+		x = 64
+		y = 5
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.75
+				uses = 2
+				category = nuclear_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+	
+	focus = {
+		id = TUR_generic_research_slot_2
+		prerequisite = { focus = TUR_generic_nuclear_effort_3 focus = TUR_generic_research_slot_1 }
+		icon = GFX_goal_generic_scientific_exchange
+		x = 60
+		y = 7
+		cost = 70
+		available = {
+		has_war = no
+		}
+		completion_reward = {
+			add_research_slot = 1	
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+
+}

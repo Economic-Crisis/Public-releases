@@ -1,0 +1,85 @@
+sub_units = {
+	# light motorized infantry on armored cars and utility vehicles
+	light_motorized = {
+
+		sprite = light_motorized
+		map_icon_category = infantry
+	
+		# helicopter_landing = yes
+
+		priority = 599
+		ai_priority = 200
+		active = no
+		
+		type = {
+			motorized
+		}
+		
+		group = army_battalion
+		
+		categories = {
+			category_front_line
+			category_motorized
+			category_all_infantry
+			category_army
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.5
+		manpower = 110 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 135
+		suppression = 1.5
+		weight = 0.75
+		supply_consumption = 0.11
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+			light_utility_vehicle_equipment
+			apc_wheeled_light_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = light_utility_vehicle_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			light_utility_vehicle_equipment = 20
+			apc_wheeled_light_equipment = 10
+			infantry_technical_means_equipment = 30
+		}
+		
+		forest = {
+			attack = 0.1
+			movement = 0.5
+		}
+		mountain = {
+			attack = 0.05
+		}
+		jungle = {
+			attack = 0.2
+			movement = 0.5
+		}
+		marsh = {
+			attack = 0.1
+			movement = 0.3
+		}
+		urban = {
+			attack = 0.1
+		}
+		river = {
+			attack = 0.1
+			movement = 0.1
+		}
+	}
+}

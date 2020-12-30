@@ -1,0 +1,220 @@
+﻿division_template = {
+	name = "Dywizja Piechoty"		
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+        recon_battalion = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Dywizja Górskiej"
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		mountaineers_motorized = { x = 2 y = 0 }	
+		mountaineers_motorized = { x = 2 y = 1 }	
+		mountaineers_motorized = { x = 2 y = 2 }	
+	}
+	support = {
+        recon_battalion = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	######## Sztab Generalny Wojska Polskiego ########
+	### Armia Pomorze ###	
+	division= {	
+		name = "4 Dywizja Piechoty"
+		location = 362
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "15 Dywizja Piechoty"
+		location = 389
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "16 Dywizja Piechoty"
+		location = 9263
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+
+	### Armia Poznan ###	
+	division= {	
+		name = "14 Dywizja Piechoty"
+		location = 6558
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+	    start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "17 Dywizja Piechoty"
+		location = 11232
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "25 Dywizja Piechoty"
+		location = 3381
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+	}
+
+	### Armia Lódz ###	
+	division= {	
+		name = "2 Dywizja Piechoty"
+		location = 9508
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "7 Dywizja Piechoty"
+		location = 9508
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "10 Dywizja Piechoty"
+		location = 9508
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+	### Armia Kraków ###	
+	division= {	
+		name = "6 Dywizja Piechoty"
+		location = 9427
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "21 Dywizja Piechoty Górskiej"
+		location = 506
+		division_template = "Dywizja Górskiej"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "23 Dywizja Piechoty"
+		location = 6464
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	### Armia Modlin ###	
+	division= {	
+		name = "8 Dywizja Piechoty"
+		location = 3544
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+	division= {	
+		name = "26 Dywizja Piechoty"
+		location = 3544
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "28 Dywizja Piechoty"
+		location = 3544
+		division_template = "Dywizja Piechoty"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	
+}
+
+##### Wojska Lotnicze i Obrony Powietrzne #####
+air_wings = {
+	10 = { 
+		light_fighter_equipment_0 =  {
+			owner = "POL" 
+			amount = 108
+		}
+		
+	}
+	86 = { 
+		light_fighter_equipment_0 =  {
+			owner = "POL" 
+			amount = 54
+		}
+		strike_fighter_equipment_1 =  {
+			owner = "POL" 
+			amount = 22
+		}
+	}
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "POL"
+		}
+		requested_factories = 2
+		progress = 0.20
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "POL"
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_fighter_equipment_0
+			creator = "POL"
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+}

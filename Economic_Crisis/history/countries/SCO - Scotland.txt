@@ -1,0 +1,79 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+
+capital = 121
+add_ideas = {
+	mixed_schools
+	parliamentary_republic
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 40 }
+	oob = "SCO_2013"
+	load_oob = "_tech_minor_2013"
+
+	add_political_power = 0
+	set_convoys = 50
+	
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 0
+		democratic = 5
+		neutrality = 30
+		fascism = 60
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Sir Godfrey Collins"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_godfrey.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Nicola Stargen"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_nikola_stargen.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	create_country_leader = {
+		name = "Alex Salmond"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_alex_salmond.dds"
+		ideology = national_democracy
+		expire = "2014.11.14"
+		traits = { trait_national_democracy }
+	}
+
+	create_country_leader = {
+		name = "Walter Elliot"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_elliot.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Harry Pollit"
+		desc = ""
+		picture = "gfx/leaders/SCO/portrait_harry.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+}
+

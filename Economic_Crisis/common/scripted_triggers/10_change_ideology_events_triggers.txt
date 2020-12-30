@@ -1,0 +1,240 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+government_popularity_50 = {
+	OR = {
+		AND = {
+			has_government = communism
+			communism > 0.5
+		}
+		AND = {
+			has_government = reformism
+			reformism > 0.5
+		}
+		AND = {
+			has_government = liberalism
+			liberalism > 0.5
+		}
+		AND = {
+			has_government = democratic
+			democratic > 0.5
+		}
+		AND = {
+			has_government = neutrality
+			neutrality > 0.5
+		}
+		AND = {
+			has_government = fascism
+			fascism > 0.5
+		}
+		AND = {
+			has_government = rad_islamists
+			rad_islamists > 0.5
+		}
+	}
+}
+
+is_democracy = {
+	OR = {
+		has_idea = directorial_republic
+		has_idea = presidential_republic
+		has_idea = semi-presidential_republic
+		has_idea = parliamentary_republic
+		has_idea = parliamentary_monarchy
+		has_idea = semi-parliamentary_monarchy
+	}
+}
+
+is_true_democracy = {
+	OR = {
+		has_idea = directorial_republic
+		has_idea = presidential_republic
+		has_idea = semi-presidential_republic
+		has_idea = parliamentary_republic
+		has_idea = parliamentary_monarchy
+	}
+	OR = {
+		has_idea = fully_guranted_liberties
+		has_idea = respect_of_liberties
+	}
+	OR = {
+		has_idea = free_media
+		has_idea = commercial_media
+	}
+}
+
+can_suppress_ideologies = {
+	OR = {
+		has_idea = dictatorship_state
+		has_idea = single-party_state
+		has_idea = semi-parliamentary_monarchy
+		has_idea = absolute_monarchy
+		AND = {
+			has_government = communism
+			communism > 0.5
+		}
+		AND = {
+			has_government = neutrality
+			neutrality > 0.5
+		}
+		AND = {
+			has_government = fascism
+			fascism > 0.5
+		}
+		AND = {
+			has_government = rad_islamists
+			rad_islamists > 0.5
+		}
+	}
+	NOT = {
+		has_idea = fully_guranted_liberties
+		has_idea = respect_of_liberties
+	}
+	NOT = {
+		has_idea = free_media
+		has_idea = commercial_media
+	}
+}
+
+has_coalition_with_communists = {
+	OR = {
+		AND = {
+			has_government = reformism
+			has_country_flag = communism_reformism_coalition
+		}
+	}
+}
+
+has_coalition_with_reformists = {
+	OR = {
+		AND = {
+			has_government = communism
+			has_country_flag = communism_reformism_coalition
+		}
+		AND = {
+			has_government = liberalism
+			has_country_flag = reformism_liberalism_coalition
+		}
+		AND = {
+			has_government = democratic
+			has_country_flag = reformism_conservatism_coalition
+		}
+		AND = {
+			has_government = neutrality
+			has_country_flag = reformism_centrism_coalition
+		}
+		AND = {
+			has_government = fascism
+			has_country_flag = reformism_nationalism_coalition
+		}
+	}
+}
+
+has_coalition_with_liberals = {
+	OR = {
+		AND = {
+			has_government = reformism
+			has_country_flag = reformism_liberalism_coalition
+		}
+		AND = {
+			has_government = democratic
+			has_country_flag = liberalism_conservatism_coalition
+		}
+		AND = {
+			has_government = neutrality
+			has_country_flag = liberalism_centrism_coalition
+		}
+		AND = {
+			has_government = fascism
+			has_country_flag = liberalism_nationalism_coalition
+		}
+	}
+}
+
+has_coalition_with_conservators = {
+	OR = {
+		AND = {
+			has_government = reformism
+			has_country_flag = reformism_conservatism_coalition
+		}
+		AND = {
+			has_government = liberalism
+			has_country_flag = liberalism_conservatism_coalition
+		}
+		AND = {
+			has_government = neutrality
+			has_country_flag = conservatism_centrism_coalition
+		}
+		AND = {
+			has_government = fascism
+			has_country_flag = conservatism_nationalism_coalition
+		}
+	}
+}
+
+has_coalition_with_centrists ={
+	OR = {
+		AND = {
+			has_government = reformism
+			has_country_flag = reformism_centrism_coalition
+		}
+		AND = {
+			has_government = liberalism
+			has_country_flag = liberalism_centrism_coalition
+		}
+		AND = {
+			has_government = democratic
+			has_country_flag = conservatism_centrism_coalition
+		}
+		AND = {
+			has_government = fascism
+			has_country_flag = centrism_nationalism_coalition
+		}
+	}
+}
+
+has_coalition_with_nationalists = {
+	OR = {
+		AND = {
+			has_government = reformism
+			has_country_flag = reformism_nationalism_coalition
+		}
+		AND = {
+			has_government = liberalism
+			has_country_flag = liberalism_nationalism_coalition
+		}
+		AND = {
+			has_government = democratic
+			has_country_flag = conservatism_nationalism_coalition
+		}
+		AND = {
+			has_government = neutrality
+			has_country_flag = centrism_nationalism_coalition
+		}
+	}
+}
+
+has_coalition_with_islamists = {
+	OR = {
+		AND = {
+			has_government = neutrality
+			has_country_flag = centrism_islamism_coalition
+		}
+		AND = {
+			has_government = fascism
+			has_country_flag = nationalism_islamism_coalition
+		}
+	}
+}

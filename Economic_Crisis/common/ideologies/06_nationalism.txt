@@ -1,0 +1,156 @@
+ideologies = {
+	
+	fascism = { # Национализм
+	
+		types = {
+			# Национал-социализм
+			# National Socialism
+			national_socialism = {
+			}
+			
+			# Национал-консерватизм 
+			# National Conservatism
+			national_conservatism = {
+			}
+			
+			# Национал-либерализм
+			# National Liberalism
+			national_liberalism = {
+			}
+			
+			# Национал-демократия
+			# National Democracy
+			national_democracy = {
+			}
+			
+			# Национал-популизм (Правый популизм)
+			# National Populism (Right-wing Populism)
+			national_populism = {
+			}
+			
+			# Fascism
+			# Фашизм
+			classical_fascism = {
+			}
+			
+			# Ирредентизм - паннациональные движения, нацеленные на объединение (например, панарабизм)
+			# Irredentism
+			irredentism = {
+			}
+			
+			# Расизм - превосходство определенной нации (например, режим апартеида)
+			# Racism
+			racism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Неоосманизм
+			# Neo-Ottomanism
+			neo-ottomanism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Панчасила (индонезийская идеология)
+			# Pancasila (Indonesia)
+			pancasila = {
+				can_be_randomly_selected = no
+			}
+			
+			# Хунта - авторитарный режим, опирающйися на силу, в нём власть сосредоточена у военных
+			# Junta
+			junta = {
+				can_be_randomly_selected = no
+			}
+
+			# Националистические монархисты
+			# National Monarchism
+			national_royalist = {
+			}
+			
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_NATIONALISM_1"
+			"FACTION_NAME_NATIONALISM_2"
+			"FACTION_NAME_NATIONALISM_3"
+			"FACTION_NAME_NATIONALISM_4"
+			"FACTION_NAME_NATIONALISM_5"
+		}
+		
+		color = { 150 75 0 }
+
+		rules = {
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = yes
+			# может инициировать свержение правительства в другой стране
+			can_force_government = yes
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = yes
+			# может иметь страны-марионетки
+			can_puppet = yes
+			# может понижать напряженность (?)
+			can_lower_tension = no
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = no
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = yes
+		}
+		
+		# Влияние участия страны в войне на  международную напряженность (?)
+		# war_impact_on_world_tension = -1.0		# peacemaker
+		# war_impact_on_world_tension = 0			# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		# war_impact_on_world_tension = 0.4			# danger
+		war_impact_on_world_tension = 0.75		# aggresive		
+		# war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		# faction_impact_on_world_tension = -0.1	# гарант
+		# faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		faction_impact_on_world_tension = 0.5		# агрессивный
+		# faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# Необходимо реализовать такие модификаторы:
+		# традиционность — уважение к обычаям, традициям, прошлому как к основам стабильности в обществе
+		# национальное, расовое и т.п. превосходство
+		# идеология основанная на возвращении исконных территорий
+		# милитаристская риторика, культ силы
+		# призывы к национальному единству и сплочению вокруг харизматичного лидера
+		# существование жестклй иерархии общества как основа его выживания
+		# порядок — общество может существовать только в том случае, если государство установит в нем закон и порядок
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.2
+			# влиянеие присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.1
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.5
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.5
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 0.25
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 0.25# !Вырезано в связи с устранением данного модификатора в игре!
+			# стоимость политической власти при аннексии
+			annex_cost_factor = -0.1
+			# стоимость политической власти при создании марионетки
+			puppet_cost_factor = 0
+			# увеличение политической силы
+			political_power_factor = 0.5
+			# мораль в армии националистического государтва
+			army_morale_factor = 1.0
+			# нациоанльное единство
+			stability_factor = 0.25 
+		}
+		
+		faction_modifiers = {
+			# -10% trade opinion
+			faction_trade_opinion_factor = -0.1
+		}
+		
+		# uses the fascist AI behaviour
+		ai_fascist = yes
+		can_collaborate = yes
+	}
+}

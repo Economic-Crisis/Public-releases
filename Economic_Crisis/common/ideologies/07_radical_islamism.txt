@@ -1,0 +1,118 @@
+ideologies = {
+
+    rad_islamists = { # Исламский фундаментализм, радикальный ислам
+		
+		types = {
+			# Ваххабизм, радикальная форма шиитского ислама
+			# Wahhabism
+			wahhabism = {
+			}
+			
+			# Джихадизм, радикальная форма суннитского ислама
+			# Jihadism
+			jihadism = {
+			}
+						
+			# Суннитский панисламизм (Талибан)
+			# Sunni Pan-Islamism (Taliban)
+			sunni_panislamism  = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_RAD_ISLAMISTS_1"
+			"FACTION_NAME_RAD_ISLAMISTS_2"
+			"FACTION_NAME_RAD_ISLAMISTS_3"
+			"FACTION_NAME_RAD_ISLAMISTS_4"
+			"FACTION_NAME_RAD_ISLAMISTS_5"
+		}
+		
+		color = { 27 16 13 }
+		
+		rules = {
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = yes
+			# может инициировать свержение правительства в другой стране
+			can_force_government = yes
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = yes
+			# может иметь страны-марионетки
+			can_puppet = yes
+			# может понижать напряженность (?)
+			can_lower_tension = no
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = no
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = no
+			#Может ли вступить в францию с другой идеологией
+			CAN_JOIN_OPPOSITE_FACTIONS = no
+		}
+
+		# Может создавать правительство в изгнании
+		can_host_government_in_exile = yes		
+
+		
+		# Влияние участия страны в войне на  международную напряженность (?)
+		# war_impact_on_world_tension = -1.0			# peacemaker
+		# war_impact_on_world_tension = 0				# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		# war_impact_on_world_tension = 0.4			# danger
+		# war_impact_on_world_tension = 0.75		# aggresive		
+		war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		# faction_impact_on_world_tension = -0.1		# гарант
+		# faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		# faction_impact_on_world_tension = 0.5		# агрессивный
+		faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# шариатские законы
+		# низкое образование
+		# много населения и высокая рождаемость
+		# паление промышленности
+		# идеологическая обработка
+		# проще склонить к себе исламскую страну несмотря на идеологию
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.1
+			# влияние присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.05
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.1
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.2
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 1.0
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 1.0 
+			# стоимость политической власти при аннексии
+			#annex_cost_factor = 0.1
+			# стоимость политической власти при создании марионетки
+			puppet_cost_factor = 100
+			# уменьшение времени исследований технологий
+			research_speed_factor = -0.1 
+			# уменьшение времени на объявление войны мажору
+			justify_war_goal_when_in_major_war_time = -0.80
+			# ?
+			subversive_activites_upkeep = -0.5
+			
+			ai_call_ally_desire_factor = -30
+			ai_join_ally_desire_factor = -30
+			ai_focus_aggressive_factor = 10
+		}
+		
+		faction_modifiers = {
+			# мораль в армии социалистического альянса
+			army_morale_factor = 0.4
+			# ослабление промышленности во всем альянсе
+			#industrial_capacity_factory = -0.5
+			# Призыв в ненацтерритории
+			non_core_manpower = -0.5
+			# Сколько дополнительных часов юнит может обойтись без снабжения
+			#no_supply_grace = 60
+		}
+		
+		ai_fascist = yes
+    }
+}

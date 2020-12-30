@@ -1,0 +1,407 @@
+#### It`s do not used in mod, but it`s need for fixing crashes ####
+technologies = {
+	#OSNOVA#
+	electronic_lamps = {
+		research_cost = 1.5
+		
+		on_research_complete = {
+			add_tech_bonus = {
+				bonus = 0.02
+				uses = 1
+				category = electronics
+				name = electronics_bonus
+			}
+			
+		}
+		research_speed_factor = 0.005
+		start_year = 1950
+		path = {
+			leads_to_tech = first_generation_computers
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 0}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	first_generation_computers = {
+		research_cost = 1.5
+		civilian_factory_use = 1
+		MONTHLY_POPULATION = 0.005
+		start_year = 1960
+		path = {
+			leads_to_tech = transistors
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 2}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	transistors = {
+		research_cost = 1.5
+		research_speed_factor = 0.005
+		start_year = 1960
+		path = {
+			leads_to_tech = second_generation_computers
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 4}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	second_generation_computers = {
+		research_cost = 1.2
+		civilian_factory_use = 1
+		production_speed_buildings_factor = 0.02
+		production_factory_max_efficiency_factor = +0.03
+		start_year = 1960
+		path = {
+			leads_to_tech = integrated_circuits
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 6}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	integrated_circuits = {
+		research_cost = 1.5
+		research_speed_factor = 0.005
+		start_year = 1960
+		path = {
+			leads_to_tech = third_generation_computers
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 8}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	third_generation_computers = {
+		research_cost = 1.5
+		civilian_factory_use = 1
+		global_building_slots_factor = 0.5
+		industry_repair_factor = 0.2
+		planning_speed = +0.02
+		start_year = 1960
+		path = {
+			leads_to_tech = large_integrated_circuits
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = military_network
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 10}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	large_integrated_circuits = {
+		research_speed_factor = 0.005
+		research_cost = 1.5
+		start_year = 1970
+		path = {
+			leads_to_tech = fourth_generation_computers
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 12}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	fourth_generation_computers = {
+		research_cost = 1.5
+		production_factory_max_efficiency_factor = 0.1
+		special_forces_attack_factor = 0.1
+		political_power_gain = +0.2
+		start_year = 1970
+		path = {
+			leads_to_tech = minimization_of_computational_elements
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = research_network
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 14}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	minimization_of_computational_elements = {
+		research_cost = 1.5
+		research_speed_factor = 0.005
+		start_year = 2000
+		path = {
+			leads_to_tech = graphene_transistor
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = global_computer_network
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 18}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	graphene_transistor = {
+		research_cost = 1.5
+		research_speed_factor = 0.005
+		start_year = 2010
+		path = {
+			leads_to_tech = fifth_generation_computers
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 22}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	fifth_generation_computers = {
+		civilian_factory_use = 3
+		research_cost = 1.5
+		consumer_goods_factor = 0.05
+		production_factory_max_efficiency_factor = 0.1
+		start_year = 2020
+
+		folder = {
+			name = electronics_folder
+			position = {x = 5 y = 24}
+		}
+
+		path = {
+			leads_to_tech = quantum_computer_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = special_system_your_alien
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	quantum_computer_1 = {
+		research_cost = 1.5
+		research_speed_factor = 0.005
+		start_year = 2030
+		folder = {
+			name = electronics_folder
+			position = { x = 5 y = 26}
+		}
+		path = {
+			leads_to_tech = quantum_computer_2
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	quantum_computer_2 = {
+		civilian_factory_use = 2
+		encryption_factor = 0.1
+		decryption_factor = 0.1
+		political_power_gain = +0.2
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = electronics_folder
+			position = { x = 5 y = 28}
+		}
+		path = {
+			leads_to_tech = smart_outfit_soldiers
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	#DOP VETV'
+	military_network = {
+		research_cost = 1.5
+		encryption_factor = 0.01
+		decryption_factor = 0.01
+		defence = 0.01
+		start_year = 1970
+		path = {
+			leads_to_tech = research_network
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 1 y = 10}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+	research_network = {
+		research_cost = 1.5
+		encryption_factor = 0.02
+		decryption_factor = 0.02
+		experience_loss_factor = -0.05
+		start_year = 1970
+		path = {
+			leads_to_tech = computer_networking_improvement
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 1 y = 14}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+	computer_networking_improvement = {
+		encryption_factor = 0.03
+		decryption_factor = 0.03
+		offence = 0.02
+		training_time_army_factor = -0.2
+		research_cost = 1.5
+		start_year = 1990
+		path = {
+			leads_to_tech = beginning_globalization_of_computer_networks
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 1 y = 16}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+	beginning_globalization_of_computer_networks = {
+		encryption_factor = 0.01
+		decryption_factor = 0.01
+		research_speed_factor = 0.1
+		research_cost = 2
+		start_year = 2007
+		path = {
+			leads_to_tech = global_computer_network
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = electronics_folder
+			position = {x = 1 y = 18}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+	global_computer_network = {
+		research_cost = 4
+		MONTHLY_POPULATION = 0.005
+		max_command_power = 10
+		encryption_factor = 0.03
+		research_speed_factor = 0.035
+		decryption_factor = 0.03
+		start_year = 2015
+		folder = {
+			name = electronics_folder
+			position = {x = 1 y = 20}
+		}
+		path = {
+			leads_to_tech = individual_combat_interface
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	individual_combat_interface = {
+		land_reinforce_rate = 0.01
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 22}
+		}
+		path = {
+			leads_to_tech = special_system_your_alien
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	special_system_your_alien = {
+		org_loss_when_moving = -0.25
+		category_all_infantry = {max_organisation = 1}
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 24}
+		}
+		path = {
+			leads_to_tech = individual_software_soldiers
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	individual_software_soldiers = {
+		land_reinforce_rate = 0.01
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 26}
+		}
+		path = {
+			leads_to_tech = smart_outfit_soldiers
+			research_cost_coeff = 1
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+
+	smart_outfit_soldiers = {
+		land_reinforce_rate = 0.01
+		org_loss_when_moving = -0.25
+		category_all_infantry = {max_organisation = 1}
+		research_cost = 1.5
+		start_year = 2030
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 28}
+		}
+		ai_will_do = {factor = 1}
+		categories = {electronics}
+	}
+}

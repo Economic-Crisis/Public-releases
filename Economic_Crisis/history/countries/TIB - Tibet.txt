@@ -1,0 +1,54 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 322
+add_ideas = { mixed_schools }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 355 }
+	
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.65
+
+	add_ideas = {
+		parliamentary_monarchy
+	}
+
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.8.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 64
+		neutrality = 36
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Lobsang Sangay"
+		picture = "gfx/leaders/TIB/portrait_lobsang_sangay.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Khun Htun Oo"
+	#	picture = "gfx/leaders/SHA/portrait_khun_htun_oo.dds"
+	#	ideology = royalism
+	#	traits = { trait_royalism }
+	#}
+
+}

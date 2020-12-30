@@ -1,0 +1,71 @@
+﻿
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+# NON-EXISTENT ON START GAME STATE
+add_ideas = mixed_schools
+
+# capital = 444
+capital = 1031
+
+2004.1.1 = {
+	add_ideas = { afg_underground }
+}
+	
+2013.11.1 = {
+
+	set_stability = 0.5
+	set_research_slots = 1	
+	add_political_power = 0
+	set_convoys = 0
+	set_war_support = 1
+	set_variable = { budget_last_year = 8 }
+	load_oob = "_tech_isis_2013" 
+	oob = "WAZ_2013"
+	add_ideas = {
+		not_recognized_country
+		djixad
+		mandatory_urgent_service
+	}
+	
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		military_industry_focus
+	    war_economy
+		planned_economy
+		no_social_security
+		no_labor_rights_protection	
+	}
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.11.14"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 20
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 80
+	}
+
+	create_country_leader = {
+		name = "Hibatullah Akhundzada"
+		desc = ""
+		picture = "gfx/leaders/WAZ/portrait_hibatullah_akhundzada.dds"
+		ideology = sunni_panislamism
+		traits = { trait_sunni_panislamism }
+	}
+}

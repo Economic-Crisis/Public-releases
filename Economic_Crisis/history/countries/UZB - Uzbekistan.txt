@@ -1,0 +1,122 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 406
+
+1992.1.4 = {
+    add_ideas = cis_member
+}
+
+1992.5.15 = {
+    # CSTO (ОДКБ)
+	add_ideas = integration_in_csto
+}
+
+1996.4.26 = {
+    add_ideas = sco_member
+	add_ideas = Turkic_Council
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5769 }
+	load_oob = "_tech_csto_minor_2013"
+	oob = "UZB_2013"
+
+	set_stability = 0.5
+
+	add_political_power = 0
+	create_intelligence_agency = yes
+	add_ideas = {
+		mixed_schools
+		terrorism_discounted
+		NPT
+	}
+	set_convoys = 0
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2009.3.29" #for 2015 elections
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 5
+		liberalism = 0
+		democratic = 20
+		neutrality = 75
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Islam Karimov"
+		desc = ""
+		picture = "gfx/leaders/UZB/portrait_islam_karimov.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Sarvar Otamuratov"
+	#	desc = ""
+	#	picture = "gfx/leaders/UZB/portrait_sarvar_otamuratov.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+	create_country_leader = {
+		name = "Akmal Saidov"
+		desc = ""
+		picture = "gfx/leaders/UZB/portrait_akmal_saidov.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Nariman Umarov"
+		desc = ""
+		picture = "gfx/leaders/UZB/portrait_nariman_umarov.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	# Opposition
+
+	create_country_leader = {
+		name = "Muhammad Salih"
+		desc = ""
+		picture = "gfx/leaders/UZB/portrait_muhammad_salih.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+	create_country_leader = {
+		name = "Kachramon Machmudov"
+		desc = ""
+		picture = "gfx/leaders/portrait_no_photo.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	create_country_leader = {
+		name = "Bahodyr Choriev"
+		desc = ""
+		picture = "gfx/leaders/UZB/portrait_bahodyr_choriev.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Islamic Movement of Uzbekistan"
+		desc = ""
+		picture = "gfx/leaders/black_islam_flag.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+}
+

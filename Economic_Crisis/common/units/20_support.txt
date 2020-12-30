@@ -1,0 +1,645 @@
+sub_units = {
+	cbrn_defense_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 67
+		training_time = 30
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.02
+		#can_be_parachuted = yes
+		
+		# Important Ability
+		casualty_trickleback = -0.03
+		
+		essential = {
+			support_equipment
+			truck_equipment
+		}
+
+		need = {
+			support_equipment = 20
+			truck_equipment = 10
+		}
+
+	}
+	
+	airborne_support_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 30
+		training_time = 120
+
+		#Misc Abilities
+		#weight = 0.1
+		
+		#entrenchment  = 5
+
+				
+		defense = 0.1
+		breakthrough = 0.5
+		#hardness = 0.1
+		supply_consumption = -0.3
+		# Support nerfs to combat abilities
+		soft_attack = -0.5
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			army_salw_equipment = 30
+			support_equipment = 30
+			infantry_technical_means_equipment = 30
+		}
+
+		forest = {
+			defence = 0.25
+			movement = 0.05
+		}
+
+		hills = {
+			defence = 0.1
+		}
+
+		jungle = {
+			defence = 0.25
+		}
+
+		marsh = {
+			defence = 0.25
+			movement = 0.2
+		}
+
+		fort = {
+			attack = 0.1
+			defence = 0.25
+		}
+
+		river = {
+			defence = 0.25
+			movement = 0.25
+		}
+
+		amphibious = {
+			attack = 0.25
+		}
+	}
+	
+	signal_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 67
+		training_time = 30
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.02
+		#can_be_parachuted = yes
+		
+		# Important Ability
+		recon = 0.20
+		
+		essential = {
+			support_equipment
+			truck_equipment
+		}
+
+		need = {
+			support_equipment = 20
+			truck_equipment = 10
+		}
+
+	}
+	
+	medical_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 30
+		training_time = 120
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.05
+		#can_be_parachuted = yes
+
+		# Important Ability
+		casualty_trickleback = 0.20
+		experience_loss_factor = -0.10
+
+		essential = {
+			support_equipment
+			truck_equipment
+		}
+		
+		need = {
+			support_equipment = 30
+			truck_equipment = 20
+			infantry_technical_means_equipment = 30
+		}
+	}
+	
+	logistics_battalion = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 10	
+		default_morale = 0.3
+		manpower = 300
+		training_time = 120
+
+		#Misc Abilities
+		#weight = 0.1
+		#can_be_parachuted = yes
+
+		# Important Ability
+		supply_consumption_factor = -0.1
+		
+		essential = {
+			support_equipment
+			truck_equipment
+		}
+
+		need = {
+			support_equipment = 20
+			truck_equipment = 10
+		}
+
+	}
+	
+	engineer_battalion = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 30	
+		default_morale = 0.3
+		manpower = 30
+		training_time = 120
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.03
+		#can_be_parachuted = yes
+		
+		# Important Ability
+		reliability_factor = 0.05
+		equipment_capture_factor = 0.05
+		
+		essential = {
+			support_equipment
+		}
+		
+		need = {
+			support_equipment = 25
+			infantry_technical_means_equipment = 25
+		}
+
+	}
+	
+	sniper_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 30	
+		default_morale = 0.3
+		manpower = 40
+		training_time = 180
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.01
+		suppression_factor = 0.03
+		soft_attack  = 0.1
+		ap_attack  = 0.01
+		can_be_parachuted = yes
+		
+		# Important Ability
+		suppression_factor = 0.20
+
+		essential = {
+			army_salw_equipment
+			support_equipment
+		}
+		
+		need = {
+			support_equipment = 40
+			army_salw_equipment = 40
+			infantry_technical_means_equipment = 40
+		}
+
+	}
+	
+	recon_battalion = {
+		sprite = recons_mechanized_on_light_apc_wheeled
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 30
+		default_morale = 0.3
+		training_time = 135
+		manpower = 75 #5x increased the scale of manpower, real number is 80
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.02
+		recon = 1
+
+		# Support nerfs to combat abilities
+		defense = 0.5
+		breakthrough = 0.5
+		soft_attack = 0.9
+		hard_attack = 0.9
+		
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			infantry_technical_means_equipment
+		}
+
+		need = {
+			special_salw_equipment = 80
+			special_ammunition_equipment = 80
+			infantry_technical_means_equipment = 35
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+	}
+	
+	electronic_warfare_company = {
+	
+		sprite = recons_mechanized_on_light_apc_wheeled
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 30
+		default_morale = 0.3
+		training_time = 135
+		manpower = 75 #5x increased the scale of manpower, real number is 80
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.02
+		recon = 1
+
+		# Support nerfs to combat abilities
+		recon = 0.8
+		suppression_factor = 0.06
+		
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			infantry_technical_means_equipment
+		}
+
+		need = {
+			special_salw_equipment = 80
+			special_ammunition_equipment = 80
+			infantry_technical_means_equipment = 35
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+	}
+	uas_company = {
+	
+		sprite = recons_mechanized_on_light_apc_wheeled
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted = yes
+		 
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 30
+		default_morale = 0.3
+		training_time = 135
+		manpower = 30 #5x increased the scale of manpower, real number is 80
+
+		#Misc Abilities
+		#weight = 0.1
+		supply_consumption = 0.02
+		recon = 1
+
+		# Support nerfs to combat abilities
+		recon = 0.8
+		suppression_factor = 0.06
+		
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			infantry_technical_means_equipment
+		}
+
+		need = {
+			special_salw_equipment = 30
+			special_ammunition_equipment = 30
+			infantry_technical_means_equipment = 30
+			scout_dron_equipment = 5
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+	}
+}

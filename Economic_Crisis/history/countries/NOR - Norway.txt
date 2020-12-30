@@ -1,0 +1,57 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 110
+
+add_ideas = {
+	king_harald_v
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 52270 }
+
+	load_oob = "_tech_nato_regional_2013"
+	oob = "NOR_2013"
+
+	add_ideas = {
+		mixed_army
+		parliamentary_monarchy
+		terrorism_discounted
+		mixed_schools
+		NPT
+		integration_in_nato
+	}
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 80	# biggest merchant marine in the world
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2017.9.11"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 30
+		liberalism = 10
+		democratic = 40
+		neutrality = 10
+		fascism = 5
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Erna Solberg"
+		desc = "POLITICS_ERNA_SOLBERG_DESC"
+		picture = "gfx/leaders/NOR/portrait_erna_solberg.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}

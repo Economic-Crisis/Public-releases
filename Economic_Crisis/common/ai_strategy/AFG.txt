@@ -1,0 +1,64 @@
+afghanistan_against_terrorism = {
+	enable = {
+		tag = AFG
+		country_exists = AFG
+		has_country_flag = AFG_civilwar 
+		has_completed_focus = AFG_nato_specops
+		OR = {
+			has_completed_focus = AFG_infiltration_taliban
+			has_completed_focus = AFG_pro_chinese
+		}
+	}
+	abort = {
+		NOT = { 
+		    country_exists = AFG 
+			AND = {
+			    country_exists = TAL
+			    country_exists = ISS
+			}	
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "TAL"
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "ISS"
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "ISA"
+		value = 200
+	}
+}
+
+taliban_war_with_afghanistan = {
+	enable = {
+		tag = TAL
+		country_exists = TAL
+		TAL = { has_country_flag = AFG_civilwar }
+		AFG = { 
+			has_completed_focus = AFG_nato_specops
+			OR = {
+				has_completed_focus = AFG_infiltration_taliban
+				has_completed_focus = AFG_pro_chinese
+			}
+		}
+	}
+	abort = {
+		NOT = { 
+		    country_exists = TAL 
+			country_exists = AFG
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "AFG"
+		value = 200
+	}
+}

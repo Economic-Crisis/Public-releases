@@ -1,0 +1,99 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 748
+
+add_ideas = { au_member }
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1193 }
+
+	load_oob = "_tech_minor_2013" 
+    oob = "_army_minor_2013"
+	set_convoys = 25
+	# laws
+	add_ideas = {
+		dictatorship_state
+		administrative_federation
+		preference_religion
+		free_media
+		respect_of_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		market_economy
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		average_terrorism
+	}
+	
+	set_stability = 0.5
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.11.29"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 60
+		reformism = 20
+		liberalism = 0
+		democratic = 0
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Blaise Compaoré"
+		desc = "POLITICS_BLAISE_COMPAORE_DESC"
+		picture = "gfx/leaders/BRF/portrait_blaise_compaore.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Roch Marc Christian Kabore"
+		desc = "POLITICS_ROCH_MARC_CHRISTIAN_KABORE_DESC"
+		picture = "gfx/leaders/BRF/portrait_roch_marc_christian_kabore.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Zephirin Diabre"
+		desc = "POLITICS_ZEPHIRIN_DIABRE_DESC"
+		picture = "gfx/leaders/BRF/portrait_zephirin_diabre.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	create_country_leader = {
+		name = "Eddie Komboigo"
+		desc = "POLITICS_EDDIE_KOMBOIGO_DESC"
+		picture = "gfx/leaders/BRF/portrait_eddie_komboigo.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	create_country_leader = {
+		name = "Benewende Stanislas Sankara"
+		desc = "POLITICS_BENEWENDE_STANISLAS_SANKARA_DESC"
+		picture = "gfx/leaders/BRF/portrait_benewende_stanislas_sankara.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	create_country_leader = {
+		name = "Gilbert Noel Ouedraogo"
+		desc = "POLITICS_GILBERT_NOEL_OUEDRAOGO_DESC"
+		picture = "gfx/leaders/BRF/portrait_gilbert_noel_ouedraogo.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+}
+

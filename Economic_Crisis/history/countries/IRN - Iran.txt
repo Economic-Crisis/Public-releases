@@ -1,0 +1,257 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 266
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 51160 }
+
+	oob = "IRN_2013"
+	load_oob = "tech_IRN_2013"
+
+	# government
+	add_ideas = {
+		irn_hassan_rouhani_hog
+   		irn_mohammad_javad_zarif_fgm
+		irn_hossein_dehghan_defm
+		irn_ali_tayebnia_ecm
+		irn_mahmoud_alavi_ssch
+		IRN_Hassan_Firouzabadi_chogs
+		IRN_Mohammad_Kazemi_isch
+		IRN_Kioumars_Heydari_chogf
+		IRN_Habibollah_Sayyari_chonf
+		IRN_Hassan_Shahsafi_choaf
+		single-party_state
+		unitary_state
+		state_propaganda_media
+		sharia_law
+		mandatory_urgent_service
+		religious_schools
+		restricted_immigration
+		mixed_economic
+		state-owned_enterprise
+		NPT
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		average_terrorism
+		oil_spike
+		gaz_trader
+		opec_member
+		mixed_army
+		regional_country
+		
+		islam_idea_lvl_3
+		theocracy
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 60
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_totalitarian
+	set_politics = {
+	ruling_party = democratic
+		last_election = "2013.6.14"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 6
+		reformism = 10
+		liberalism = 4
+		democratic = 57
+		neutrality = 10
+		fascism = 6
+		rad_islamists = 7
+	}
+
+	
+
+	create_country_leader = {
+		name = "Zahra Gholamipour"
+		desc = "POLITICS_ZAHRA_GHOLAMIPOUR_DESC"
+		picture = "gfx/leaders/IRN/portrait_zahra_gholamipour.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	#Монархисты
+	#create_country_leader = {
+	#	name = "Reza Pahlavi"
+	#	desc = "POLITICS_REZA_PAHLAVI_DESC"
+	#	picture = "gfx/leaders/IRN/portrait_reza_pahlavi.dds"
+	#	ideology = conservative_royalism
+	#	traits = { trait_conservative_royalism }
+	#}
+
+	create_country_leader = {
+		name = "Navid Shomali"
+		desc = "POLITICS_NAVID_SHOMALI_DESC"
+		picture = "gfx/leaders/IRN/portrait_navid_shomali.dds"
+		ideology = stalinism
+		traits = { trait_stalinism }
+	}
+
+
+	create_country_leader = {
+		name = "Rasoul Montajabnia"
+		desc = "POLITICS_RASOUL_MONTAJABNIA_DESC"
+		picture = "gfx/leaders/IRN/portrait_rasoul_montajabnia.dds"
+		ideology = religious_socialism
+		traits = { trait_religious_socialism }
+	}
+
+	create_country_leader = {
+		name = "Hossein Fadaei"
+		desc = "POLITICS_HOSSEIN_FADAEI_DESC"
+		picture = "gfx/leaders/IRN/portrait_hossein_fadaei.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	create_country_leader = {
+		name = "Foad Pashaie"
+		desc = "POLITICS_FOAD_PASHAIE_DESC"
+		picture = "gfx/leaders/IRN/portrait_foad_pashaie.dds"
+		ideology = libertarianism
+		traits = { trait_libertarianism }
+	}
+	
+	create_country_leader = {
+		name = "Khasan Rukhani"
+		desc = "POLITICS_KHASAN_RUKHANI_DESC"
+		picture = "gfx/leaders/IRN/portrait_khasan_rukhani.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ali Khamenei"
+		id = 110010
+		desc = "POLITICS_ALI_KHAMENEHEI_DESC"
+		picture = "gfx/leaders/IRN/portrait_seyyed_ali_khamenehei.dds"
+		ideology = shia_royalism
+		traits = { trait_shia_royalism  }
+	}
+
+
+	#Generals
+	create_field_marshal = {
+		name = "Yahya Rahim Safavi"
+		portrait_path = "gfx/leaders/IRN/portrait_general_yahya_rahim_safavi.dds"
+		traits = { old_guard artillery_commander_expert organisational_leader }
+		skill = 5
+		logistics_skill = 5
+		defense_skill = 5
+		planning_skill = 5
+		attack_skill = 5
+	}
+	create_field_marshal = {
+		name = "Qasem Soleimani"
+		portrait_path = "gfx/leaders/IRN/portrait_general_qasem_soleimani.dds"
+		traits = { inspirational_leader  }  # харизматичный  лидер
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+	create_field_marshal = {
+		name = "Ataollah Salehi"
+		portrait_path = "gfx/leaders/IRN/portrait_general_ataollah_salehi.dds"
+		traits = { assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = {
+		name = "Mohammad Pakpour"
+		portrait_path = "gfx/leaders/IRN/portrait_general_mohammad_pakpour.dds"
+		traits = { old_guard desert_fox }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Ahmad Reza Pourdastan"
+		portrait_path = "gfx/leaders/IRN/portrait_general_ahmad_reza_pourdastan.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Abdolrahim Mousavi"
+		portrait_path = "gfx/leaders/IRN/portrait_general_abdolrahim_mousavi.dds"
+		traits = { motorized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Farzad Esmaili"
+		portrait_path = "gfx/leaders/IRN/portrait_general_farzad_esmaili.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Gholamhossein Gheybparvar"
+		portrait_path = "gfx/leaders/IRN/portrait_general_gholamhossein_gheybparvar.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Hossein_Ashtari"
+		portrait_path = "gfx/leaders/IRN/portrait_general_hossein_ashtari.dds"
+		traits = {   }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Hossein Salami"
+		portrait_path = "gfx/leaders/IRN/portrait_general_hossein_salami.dds"
+		traits = { old_guard airborne_commander_1 }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+		name = "Mohammad Ali Jafari"
+		portrait_path = "gfx/leaders/IRN/portrait_general_mohammad_ali_jafari.dds"
+		traits = { old_guard trait_mountaineer }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+}
+

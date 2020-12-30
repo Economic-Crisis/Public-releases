@@ -1,0 +1,221 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 559
+
+# 14 февраля 1974 года
+add_ideas = {
+	arab_league_member
+	au_member
+	mixed_schools
+	musulman_collapse
+}
+
+2012.8.1 = {
+    # crating FGS (Федеральное правительство Сомали)
+	create_faction = FGS
+	add_to_faction = SOM
+	add_to_faction = ASW
+
+	add_to_faction = PSS
+	add_to_faction = SWS
+	add_to_faction = GAS
+	add_to_faction = HAH
+	add_ideas = integration_in_fgs
+}
+		
+2013.11.1 = {
+	set_variable = { budget_last_year = 535 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SOM_2013"
+	
+	set_stability = 0.35
+	add_political_power = 0
+	set_research_slots = 1
+
+	set_convoys = 10
+	
+	# laws
+	add_ideas = {
+	    minor_country # country status
+		no_protect # ecology protect
+		oligarchy # corruption level
+		parliamentary_republic # government form
+		confederation # territorial form
+		state_religion # religious doctrine
+		state_media_only # mass media
+		emergency_law # human rights
+		mandatory_urgent_service # service doctrine
+		religious_schools # education doctrine
+		open_immigration # border doctrine
+		traditional_economy # economic form
+		state-owned_enterprise # business doctrine
+		light_industry_focus # industry doctrine
+		civilian_economy # mobilisation economic
+		normal_taxes # taxex doctrine
+        no_social_security # social welfare doctrine
+		no_labor_rights_protection # worker rights
+		decaying_state # terrorism level
+	}
+	
+	add_ideas = {
+		fall_of_somalia
+		obsolete_army
+		NPT
+		som_pirates
+		som_degradate_agro
+		som_degradate_industria
+	}
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.9.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 2
+		liberalism = 27
+		democratic = 24
+		neutrality = 32
+		fascism = 0
+		rad_islamists = 15
+	}
+	
+	create_country_leader = {
+		name = "Mohamed Nur"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_mohamed_nur.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+	create_country_leader = {
+		name = "Yassin Mahi Mallin"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_yassin_mahi_mallin.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	create_country_leader = {
+		name = "Mohamed Abdullahi Mohamed"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_mohamed_abdullahi_mohamed.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	create_country_leader = {
+		name = "Sharif Sheikh Ahmed"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_sharif_sheikh_ahmed.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+	create_country_leader = {
+		name = "Hassan Sheikh Mohamud"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_hassan_sheikh_mohamud.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	create_country_leader = {
+		name = "Maslah Mohammed Siad Barre"
+		desc = ""
+		picture = "gfx/leaders/SOM/portrait_maslah_mohamed_siah.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	#Generals
+	create_corps_commander = {    
+		name = "Mohamed Adam Ahmed"
+		portrait_path = "gfx/leaders/SOM/portrait_som_general_mohamed_adam_ahmed.dds"
+		traits = { panzer_leader ranger }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {    
+		name = "Ahmed Hashi Tajir" 
+		portrait_path = "gfx/leaders/SOM/portrait_som_general_ahmed_hashi_tajir.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = { 
+		name = "Mohamed Nur Galaal" 
+		portrait_path = "gfx/leaders/SOM/portrait_som_general_mahamed_nur_galaal.dds"
+		traits = { panzer_leader commando }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = { 
+		name = "Abdulkadir Sheikh Dini" 
+		portrait_path = "gfx/leaders/SOM/portrait_som_general_abdulkadir_sheikh_dini.dds"
+		traits = { desert_fox }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_navy_leader = { 
+		name = "Mohamed Abukar Hassan" 
+		portrait_path = "gfx/leaders/SOM/portrait_som_admiral_mohamed_abukar_hassan.dds"
+		traits = { old_guard_navy superior_tactician }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+	create_navy_leader = { 
+		name = "Farah Ahmed Omar"  
+		portrait_path = "gfx/leaders/SOM/portrait_som_admiral_farah_ahmed_omar.dds" 
+		traits = { blockade_runner }
+		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+	}
+
+	create_navy_leader = { 
+		name = "Mohamed Isse Ali"  
+		portrait_path = "gfx/leaders/SOM/portrait_som_admiral_mohamed_isse_ali.dds" 
+		traits = { spotter }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+
+}
+
+2016.10.17 = {
+	add_to_faction = HIS
+}

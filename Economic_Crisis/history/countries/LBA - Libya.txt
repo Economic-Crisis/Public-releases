@@ -1,0 +1,188 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 448
+
+# 28 марта 1953 года
+# Ливия дважды заявляла о выходе из состава Лиги, но отзывала своё решение: 
+# с 24 октября 2002 по 16 января 2003 г. и с 3 апреля по 25 мая 2003 года. 
+# Членство было приостановлено с 22 февраля по 25 августа 2011 года.
+add_ideas = {
+	arab_league_member
+	parliamentary_republic
+	au_member
+	decaying_state
+	mixed_schools
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2485 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "LBA_2013"
+
+	add_ideas = {
+		opec_member
+		gaz_trader
+		LBA_Crisis
+		
+		islam_idea_lvl_3
+	}
+
+	set_stability = 0.5
+	set_convoys = 10
+
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.1"
+		#next_election = "2014.5.16"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 0
+		liberalism = 45
+		democratic = 44
+		neutrality = 6
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Aguila Saleh Issa"
+		desc = ""
+		picture = "gfx/leaders/LBA/portrait_aguila_saleh_issa.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ahmed Maiteeq"
+		desc = ""
+		picture = "gfx/leaders/LBA/portrait_ahmed_maiteeq.dds"
+		ideology = oligarchy
+		traits = { trait_oligarchy }
+	}
+
+	create_country_leader = {
+		name = "Nouri Abusahmain"
+		desc = ""
+		picture = "gfx/leaders/LBA/portrait_nouri_abusahmain.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Hassan al-Sarraj"
+		desc = ""
+		picture = "gfx/leaders/LBA/portrait_arabia_generic_communism1.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	#Generals
+	create_field_marshal = {
+		name = "Khalifa Haftar"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_khalifa_haftar.dds"
+		traits = { old_guard thorough_planner }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+
+	create_corps_commander = { 
+		name = "Al-Mahdi Al-Barghathi"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_al_mahdi_al_barghathi.dds"
+		traits = { ranger hill_fighter }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		attack_skill = 3
+	}
+	
+	create_corps_commander = { 
+		name = "Yousef Mangoush"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_yousef_mangoush.dds"
+		traits = { panzer_leader trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = { 
+		name = "Khamis Gaddafi"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_khamis_gaddafi.dds"
+		traits = { desert_fox }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = { 
+		name = "Suleiman Mahmoud"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_suleiman_mahmoud.dds"
+		traits = { ranger }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	
+	create_corps_commander = { 
+		name = "Mohamed El-Mismari"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_mohamed_el_mismari.dds"
+		traits = { desert_fox }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = { 
+		name = "Ahmed Oun"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_ahmed_oun.dds"
+		traits = { trait_engineer }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+	create_corps_commander = { 
+		name = "Al-Saadi Gaddafi"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_ali_saadi_gaddafi.dds"
+		traits = { ranger }
+		skill = 2
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 2
+	}
+
+	create_navy_leader = { 
+		name = "Abdolazim Ahmad"
+		portrait_path = "gfx/leaders/LBA/portrait_lba_general_abdolazim-ahmad.dds"
+		traits = { old_guard_navy superior_tactician }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 1
+		coordination_skill = 1
+		attack_skill = 2
+	}
+	
+}
+

@@ -1,0 +1,883 @@
+﻿		########################
+## Economic Crisis   ###
+##############################
+## Ukraine civilwar events ###
+##################################
+## Written by Santilian&SuxrobGM #
+##################################
+## All events (Russia, Ukraine, Crimea, LNR, DNR, Novorossia)
+
+add_namespace = ukraine_civilwar
+
+### 1-9 оставлены для сценария войны Януковича и Турчинова
+### Сценарий может иметь три выхода - победа Турчинова, победа Януковича, раздел страны на Украину без выхода к морю (Турчинова) и Новороссию (Януковича)
+
+### Crimea independent (10-29)
+
+country_event = {  # Решение России по статусу Крыма, прозойдет после смены власти на Украине
+	id =  ukraine_civilwar.10
+	title =  ukraine_civilwar.10.t # Судьба Крыма
+	desc =  ukraine_civilwar.10.d # В Крыму начались митинги - нужно вырабаототать политику РФ в отношении происходящего 
+	picture = GFX_event_protests_in_Crimea2
+	
+	#is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		country_exists = UKR
+		UKR = { 
+			has_idea = UKR_euromaydan 
+			has_country_flag = otstranenie_Yanukovicha
+			NOT = { has_country_flag = support_Yanukovich }
+		}
+		date > 2014.03.10
+	}
+	
+	immediate = { 
+		hidden_effect = {
+			set_country_flag = UKR_crimea_crisis
+			UKR = { set_country_flag = UKR_crimea_crisis }
+			137 = {	add_core_of = CRM }
+			828 = {	add_core_of = CRM }
+			829 = {	add_core_of = CRM }
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.10.a # Крым должен стать русским
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.10.a"
+		ai_chance = { 
+			factor = 60
+		}
+		137 = { add_core_of = RUS }
+		828 = {	add_core_of = RUS }
+		829 = {	add_core_of = RUS }
+		CRM = { 
+			transfer_state = 137
+			transfer_state = 828
+			transfer_state = 829
+			create_country_leader = {
+				name = "Sergey Aksyonov"
+				desc = ""
+				picture = "gfx/leaders/CRM/portrait_sergey_aksyonov.dds"
+				ideology = sovereign_democracy
+				traits = { trait_sovereign_democracy }
+			}
+		}
+		RUS = {
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
+				}
+				set_autonomy = {
+					target = CRM
+					autonomy_state = satellite_state
+					freedom_level = 0.90
+				}
+			else = {
+					puppet = CRM
+				}	
+			}
+			country_event = { id = ukraine_civilwar.14 days = 17 } # Референдум в Крыму - 16 марта
+		}
+		hidden_effect = {
+			CRM = { 
+				load_oob = "UKR_tech_2013"
+				load_oob = "CRM_independence"
+				kill_country_leader = yes
+			}
+			news_event = { id = news_ukraine_civilwar.10 days = 1 } # Новость о веживых людях
+			UKR = {
+				country_event = { id = ukraine_civilwar.11 days = 2 } # Реакция Украины на волнения в Крыму при российской поддержке
+			}
+		}
+	}
+
+	option = {
+		name = ukraine_civilwar.10.b # Поможем Крыму стать независимым
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.10.b"
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		CRM = { 
+			transfer_state = 137
+			transfer_state = 828
+			transfer_state = 829
+		}
+		hidden_effect = {
+			CRM = { 
+				load_oob = "UKR_tech_2013"
+				load_oob = "CRM_independence"
+			}
+			UKR = {
+				country_event = { id = ukraine_civilwar.11 days = 3 } # Реакция Украины
+			}
+			RUS = {
+				country_event = { id = ukraine_civilwar.18 days = 1 } # Возможность взять Крым под управление
+			}
+			set_country_flag = CRM_independence
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.10.c # Сохранять нейтралитет
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.10.c"
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		137 = { add_core_of = CRM }
+		CRM = { 
+			transfer_state = 137
+			transfer_state = 828
+			transfer_state = 829
+		}
+		RUS = { # штрафы действующей власти и либералам за неподдержание русскоязычного населения
+			add_stability = -0.03
+			add_political_power = -100
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.08
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.03
+			}
+		}
+		hidden_effect = { 
+		UKR = {
+				country_event = { id = ukraine_civilwar.12 days = 1 } # Реакция Украины
+			}
+		}
+	}
+}
+
+country_event = {  # Решение Украины по Крымскму вопросу (в случае поддержки Крыма Россией)
+	id =  ukraine_civilwar.11
+	title =  ukraine_civilwar.11.t # Судьба Крыма
+	desc =  ukraine_civilwar.11.d # В Крыму пророссйискими сепаратистами захвачено здание администрации, армейские части блокированы - нужно определить политику Украины в отношении происходящего 
+	picture = GFX_event_protests_in_Crimea2
+	
+	is_triggered_only = yes
+
+	option = {
+		name = ukraine_civilwar.11.a # Подготовить проведение АТО
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.11.a"
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					strength_ratio = { tag = RUS ratio < 0.7 }
+					is_in_faction_with = RUS
+				}
+			}
+		}
+		UKR = { 
+			# declare_war_on = {
+			create_wargoal = {
+				target = CRM
+				type = take_state_focus
+				generator = { 137 828 829 831 } 
+			}
+			add_opinion_modifier = { target = CRM modifier = embargo }
+			add_opinion_modifier = { target = RUS modifier = holds_our_claims }
+			add_stability = 0.03
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+		hidden_effect = {
+			news_event = { id = news_ukraine_civilwar.11 days = 1 } # Новость о подготовке Украиной АТО
+			UKR = {
+				country_event = { id = ukraine_civilwar.18 hours = 2 } # Возможность взять Крым под управление
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.11.b # Сейчас мы ничего не можем с этим сделать, вводим эмбарго и теряем поддержку
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.11.b"
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 100
+				strength_ratio = { tag = RUS ratio > 0.7 }
+			}
+		}
+		UKR = { 
+			add_opinion_modifier = { target = CRM modifier = embargo }
+			add_political_power = -100
+			add_stability = -0.03
+		}
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.12 days = 1 } # Новость о бездействии Уркаины после взятия администрации Крыма
+			UKR = {
+				country_event = { id = ukraine_civilwar.18 hours = 2 } # Возможность взять Крым под управление
+			}
+		}
+	}
+}
+
+country_event = {  # Решение Украины по Крымскму вопросу (в случае нейтралитета России)
+	id =  ukraine_civilwar.12
+	title =  ukraine_civilwar.12.t # Судьба Крыма
+	desc =  ukraine_civilwar.12.d # В Крыму митингующими захвачено здание администрации, впрочем русские войска судя по разведданным е поддерживают их - нужно определить политику Украины в отношении происходящего 
+	picture = GFX_event_protests_in_Crimea2
+	
+	is_triggered_only = yes
+
+	immediate = { 
+		set_country_flag = UKR_crimea_crisis
+	}	
+	
+	option = {
+		name = ukraine_civilwar.12.a # Ставка на сторонников Евромайдана в Крыму и крымских татар, будем искать компромисс
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.12.a"
+		ai_chance = { base = 10 }
+		UKR = {
+			add_political_power = -100
+			add_stability = -0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.05
+			}
+		}
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.12 days = 1 } # Новость о волнениях в Крыму и вялой реакции на них правительства
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.12.b # Бросить армию и полицию на подавление этого и всех последующих мятежей
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.12.b"
+		ai_chance = { base = 10 }
+		UKR = { 	
+			add_ideas = UKR_rebellion_suppression
+			add_political_power = -100
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+		}
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.13 days = 1 } # Новость о приказе армии и полиции давить мятежи силой
+		}
+	}
+}
+
+country_event = {
+	id = ukraine_civilwar.13 # Диверсии после того, как украинские части введены в Крым после того, как отдан приказ о подавлении мятежа
+	title = ukraine_civilwar.13.t
+	desc = ukraine_civilwar.13.d
+	picture = GFX_event_sabotage
+	
+	fire_only_once = yes
+
+	immediate = { 
+		hidden_effect = {
+			set_country_flag = UKR_diversy_in_crimea
+			137 = {	add_core_of = CRM }
+			828 = {	add_core_of = CRM }
+			829 = {	add_core_of = CRM }
+		}
+	}
+	
+	trigger = {
+		has_country_flag = UKR_crimea_crisis
+		UKR = {
+			NOT = { has_war_with = CRM }
+			OR = {	
+				divisions_in_state = {
+					state = 828
+					size > 0
+				}
+				divisions_in_state = {
+					state = 137
+					size > 0
+				}
+			}	
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = {
+		name = ukraine_civilwar.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.13.a"
+		137 = {
+			damage_building = {
+				type = arms_factory
+				damage = 10
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 10
+			}
+			remove_building = {
+				type = infrastructure
+				level = 3
+			}
+			remove_building = {
+				type = dockyard
+				level = 3
+			}
+		}
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.14 days = 1 } # Новость о диверсиях и сопротивлении действиям армии в Крыму
+		}	
+	}	
+}
+
+country_event = {  # Крымский референдум для России
+	id =  ukraine_civilwar.14
+	title =  ukraine_civilwar.14.t
+	desc =  ukraine_civilwar.14.d
+	picture = GFX_event_referendum_Crimea
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = RUS
+		country_exists = CRM
+		UKR = { 
+			has_country_flag = UKR_crimea_crisis 	
+			NOT = { 
+				OR = {	
+					has_war_with = CRM
+					has_war_with = RUS
+				}	
+			}
+		}	
+	}
+		
+	option = {
+		name =  ukraine_civilwar.14.a # мы рады приветсвовать Крым в составе РФ
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.14.a"
+	    ai_chance = { 
+		    factor = 85
+			modifier = {
+			    factor = 0
+				CRM = { is_ai = no }
+			}
+		}
+		137 = { add_core_of = RUS }
+		828 = {	add_core_of = RUS }
+		829 = {	add_core_of = RUS }
+		RUS = {
+			annex_country = { target = CRM transfer_troops = yes }
+			transfer_state = 137
+			transfer_state = 828
+			add_named_threat = { threat = 9 name = threat_RUS_annexation_CRM }
+			add_timed_idea = { idea = nationalism_influence days = 120 }
+		}
+		hidden_effect = {
+			UKR = {
+				country_event = { id = ukraine_civilwar.15 days = 2 } # Референдум в Крыму - ивент для Украины
+			}
+		}
+	}
+	
+	option = {
+		name =  ukraine_civilwar.14.b # принять Крым в состав прямо сейчас невозможно - мы признаем их независисмость и рассмотрим заявку на вступление в РФ
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.14.b"
+	    ai_chance = { 
+		    factor = 15
+			modifier = {
+			    factor = 100
+				CRM = { is_ai = no }
+			}
+		}
+		CRM = {
+			add_ideas = partially_recognized_country
+			add_named_threat = { threat = 5	name = threat_CRM_independence }
+		}
+		hidden_effect = {
+			set_country_flag = CRM_independence
+		}
+	}
+}
+
+country_event = {  # Итоги крымского референдума для Украины в случае аннексии
+	id =  ukraine_civilwar.15
+	title =  ukraine_civilwar.15.t
+	desc =  ukraine_civilwar.15.d
+	picture = GFX_event_unrecognized_Crimea
+	
+	is_triggered_only = yes
+	
+	option = {
+		name =  ukraine_civilwar.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.15.a"
+	    ai_chance = { base = 100 }
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.15 days = 1 } # Россия объявляет о присоединении Крыма к РФ. Украина обвиняет Россию в аннексии
+		}
+	}
+}
+
+country_event = {  # Декларация независимости Крыма
+	id =  ukraine_civilwar.16
+	title =  ukraine_civilwar.16.t
+	desc =  ukraine_civilwar.16.d
+	picture = GFX_event_Crimea_independence2
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = UKR
+		has_country_flag = CRM_independence
+		country_exists = CRM
+		date > 2014.3.11
+		UKR = {
+			NOT = { 
+				OR = {	
+					has_war_with = CRM
+					has_war_with = RUS
+				}	
+			}
+			
+		}	
+	}	
+		
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {
+		name =  ukraine_civilwar.16.a # Украина не признает независимость Крыма
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.16.a"
+	    ai_chance = { factor = 100 }
+		UKR = {
+			add_opinion_modifier = { target = CRM modifier = embargo }
+			add_stability = -0.03
+			add_political_power = -100
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.08
+			}
+			add_popularity = {			
+				ideology = neutrality
+				popularity = -0.08
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+		
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.16 days = 1 } # Новость о принятии декларации независимости Крыма и том, что Украина не признает независимость Крыма
+		}
+	}
+	
+	option = {
+		name =  ukraine_civilwar.16.b # Украина все-же решает начать войсковую операцию в Крыму
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.16.b"
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_in_faction_with = RUS
+			}
+		}
+		UKR = {
+			declare_war_on = {
+			# create_wargoal 
+			# type = annex_everything
+				target = CRM
+				type = take_state_focus
+				generator = { 137 828 } 
+			}
+			add_stability = 0.03
+			add_political_power = 100
+			# add_opinion_modifier = { target = CRM modifier = embargo }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.08
+			}
+			add_popularity = {			
+				ideology = neutrality
+				popularity = -0.08
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+		}
+		hidden_effect = {
+			news_event = { id = news_ukraine_civilwar.17 days = 1 }  # Новость о принятии декларации независимости Крыма, что Украина не признает независимость Крыма решает проблему силовым путем
+		}
+	}		
+	
+	option = {
+		name =  ukraine_civilwar.16.с # Признать независимость Крыма
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.16.c"
+	    ai_chance = { factor = 5 }
+		CRM = {
+			if = {
+				limit = { has_idea = partially_recognized_country }
+				remove_ideas = partially_recognized_country
+			}
+			add_named_threat = { threat = -5 name = threat_CRM_independence_recognition	}
+		}
+		137 = {	remove_core_of = UKR }
+		828 = {	remove_core_of = UKR }
+		829 = {	remove_core_of = UKR }
+		CRM = { transfer_state = 829 }
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.18 days = 1 } # Украина идет на компромисс и признает независимость Крыма
+		}
+	}
+}
+
+# Border War in Crimea
+country_event = {
+	id = ukraine_civilwar.17
+	title = ukraine_civilwar.17.t
+	desc = ukraine_civilwar.17.d
+	picture = GFX_event_border_conflict
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = UKR
+		has_country_flag = UKR_crimea_crisis
+		OR = {
+			CRM = {
+				divisions_in_state = {	
+					state = 137
+					size > 1	
+				}	
+			}
+			RUS = {
+				divisions_in_state = {	
+					state = 137
+					size > 1	
+				}	
+			}
+			CRM = {
+				divisions_in_state = {	
+					state = 828
+					size > 1	
+				}	
+			}
+			RUS = {
+				divisions_in_state = {	
+					state = 828
+					size > 1	
+				}	
+			}
+
+		}
+		UKR = {
+			NOT = { 
+				OR = {	
+					has_war_with = CRM 
+					has_war_with = RUS 
+				}
+			}
+			divisions_in_state = {	
+				state = 196
+				size > 1	
+			}	
+		}	
+	}
+	
+	mean_time_to_happen = {	
+		days = 14
+	}	
+
+	option = {
+		name =  ukraine_civilwar.17.a 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.17.a"
+		CRM = {
+			if = {
+				limit = {
+					OR = {	
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+						divisions_in_state = {
+							state = 828
+							size > 0
+						}
+					}	
+				}
+				137 = { set_border_war = yes }
+				828 = { set_border_war = yes }
+				829 = { set_border_war = yes }
+			}
+		}	
+		RUS = {
+			if = {
+				limit = {
+					OR = {	
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+						divisions_in_state = {
+							state = 828
+							size > 0
+						}
+					}	
+				}
+				137 = { set_border_war = yes }
+				828 = { set_border_war = yes }
+				829 = { set_border_war = yes }
+			}
+		}
+		UKR = {
+			if = {
+				limit = {
+					divisions_in_state = {
+					state = 196
+					size > 0
+					}
+				}
+				196 = { set_border_war = yes }
+			}
+		}
+		hidden_effect = {
+		    news_event = { id = news_ukraine_civilwar.19 days = 1 } # Новость о пограничной перестрелке на границе Крыма и Украины
+			add_named_threat = { threat = 3	name = threat_UKR_border_conflict_on_CRM }
+		}
+	}
+}
+
+country_event = {  # Взятие Крыма под управление
+	id =  ukraine_civilwar.18
+	title =  ukraine_civilwar.18.t
+	desc =  ukraine_civilwar.18.d
+	picture = GFX_event_free_CRM
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    country_exists = CRM
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name =  ukraine_civilwar.18.a # Нет, спасибо
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.18.a"
+		ai_chance = { 
+		    factor = 100
+		}
+	}
+	
+	option = {
+		name =  ukraine_civilwar.18.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.18.b"
+	    ai_chance = { factor = 0 }
+		CRM = { change_tag_from = RUS }
+	}
+}
+
+#Поражение Украинские армии в погран. конфликте 
+country_event = {
+	id = ukraine_civilwar.19
+	title = ukraine_civilwar.19.t
+	desc = ukraine_civilwar.19.d
+	picture = GFX_event_UKR_war_with_LDNR
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UKR
+	}
+
+	immediate = {
+		hidden_effect = {
+			196 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			137 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			828 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			829 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.19.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		CRM = { country_event = { id = ukraine_civilwar.20 } }
+	}
+}	
+	
+# Крым Победа в пограничный конфликт
+country_event = {
+	id = ukraine_civilwar.20
+	title = ukraine_civilwar.20.t
+	desc = ukraine_civilwar.20.d
+	picture = GFX_event_LDNR_solidiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine_civilwar.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.20.a"
+		add_political_power = 200
+		add_stability = 0.05
+	}
+}
+
+#Поражение Крым в погран. конфликте 
+country_event = {
+	id = ukraine_civilwar.21
+	title = ukraine_civilwar.21.t
+	desc = ukraine_civilwar.21.d
+	picture = GFX_event_UKR_war_with_LDNR
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CRM
+	}
+
+	immediate = {
+		hidden_effect = {
+			196 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			137 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			828 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			829 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.21.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.21.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		UKR = { country_event = { id = ukraine_civilwar.22 } }
+	}
+}	
+	
+# Украина Победа в пограничный конфликт
+country_event = {
+	id = ukraine_civilwar.22
+	title = ukraine_civilwar.22.t
+	desc = ukraine_civilwar.22.d
+	picture = GFX_event_border_conflict
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine_civilwar.22.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.22.a"
+		add_political_power = 200
+		add_stability = 0.05
+	}
+}
+
+country_event = { #Проводение АТО
+	id = ukraine_civilwar.23
+	title = ukraine_civilwar.23.t
+	desc = ukraine_civilwar.23.d
+	picture = GFX_event_break_minsk_peace
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine_civilwar.23.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.23.a"
+		ai_chance = {
+			factor = 90
+		}
+		declare_war_on = { 
+			target = DON 
+			type = return_national_territory 
+		}
+		declare_war_on = { 
+			target = LUG 
+			type = return_national_territory 
+		}
+		add_opinion_modifier = { target = RUS modifier = actions_negative }
+		hidden_effect = {
+			news_event = { id = ukraine_news.3 days = 1 }
+		}
+	}
+	
+	option = {
+		name = ukraine_civilwar.23.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine_civilwar.23.b"
+		ai_chance = {
+			factor = 10
+		}
+	}
+}

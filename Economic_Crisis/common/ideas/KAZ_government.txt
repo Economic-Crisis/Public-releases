@@ -1,0 +1,152 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+		kaz_serik_akhmetov_hog = {
+
+                picture = GFX_idea_kaz_serik_akhmetov
+
+			cost = 1000
+			#removal_cost = -1
+
+                        available = {
+				OR = {
+						has_government = neutrality
+						has_country_flag = coalition_with_neutrality
+				}
+			}
+
+			allowed = {
+				original_tag = "KAZ"
+			}
+
+			traits = { party_leader_centrist
+						pm_centrist
+					}
+
+			on_add = {
+
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	defence_minister = {
+
+		kaz_adilbek_zhaksybekov_defm = {
+
+		picture = GFX_idea_kaz_adilbek_zhaksybekov
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = "KAZ"
+			}
+
+			traits = { defence_minister_regime_loyalist }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+		}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		kaz_erlan_idrissov_fgm = {
+
+		picture = GFX_idea_kaz_erlan_idrissov
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				}
+
+
+      			allowed = { 
+				original_tag  = "KAZ" 
+			}
+
+      			traits = { foreign_minister_non-alignment_1 }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+			}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	economic_minister = {
+	
+		kaz_bakhyt_sultanov_ecm = {
+		
+		picture = GFX_idea_kaz_bakhyt_sultanov
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "KAZ"
+			}
+			
+			traits = { economic_minister_banking_credit_system }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+		}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		kaz_kalmukhanbet_kassymov_ssch = {
+		
+			picture = GFX_idea_kaz_kalmukhanbet_kassymov
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = "KAZ"
+			}
+			
+			traits = { secret_service_chief_eminence_grise }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

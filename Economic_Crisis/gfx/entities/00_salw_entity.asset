@@ -1,0 +1,113 @@
+# ONLY SALW
+# !!!! not set scale! scale set on small_arms.gfx !!!!
+
+	# AK
+	entity = {
+		name = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_ak47_mesh"
+		
+		get_state_from_parent = yes
+		default_state = "idle"
+		state = { name = "idle" }
+		state = { name = "move"	}
+		
+		state = { name = "attack"	animation = "charge_shoot"
+			event = { time = 0.5 node = "muzzle" particle = "mg_muzzle_particle"  keep_particle = yes   light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0.5 node = "muzzle" particle = "mg_muzzle_smoke_particle"  keep_particle = yes  light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0.5 node = "cartridge" particle = "mg_cartridge_particle"  keep_particle = yes } 
+		}
+		
+		state = { name = "defend"
+			event = { time = 0 node = "muzzle" particle = "mg_muzzle_particle"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0 node = "muzzle" particle = "mg_muzzle_smoke_particle"  keep_particle = yes   light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0 node = "cartridge" particle = "mg_cartridge_particle"  keep_particle = yes } 
+		}
+		
+		state = { name = "support_attack"	animation = "support_attack" 
+			event = { time = 0 node = "muzzle" particle = "mg_muzzle_particle"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0 node = "muzzle" particle = "mg_muzzle_smoke_particle"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_mg_attack } } 
+			event = { time = 0 node = "cartridge" particle = "mg_cartridge_particle"  keep_particle = yes }
+		}
+	}
+	
+	# AK-74
+	entity = {
+		name = "infantry_weapon_ak74_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_ak74_mesh"
+	}
+	
+	# QBZ-95
+	entity = {
+		name = "infantry_weapon_qbz95_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_qbz95_mesh"
+	}
+	
+	# M16A2
+	entity = {
+		name = "infantry_weapon_m16a2_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_m16a2_mesh"
+	}
+	
+	# M4A1
+	entity = {
+		name = "infantry_weapon_m4a1_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_m4a1_mesh"
+	}
+	
+	# FN FAL
+	entity = {
+		name = "infantry_weapon_fnfal_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_fnfal_mesh"
+	}
+
+	# G3
+	entity = {
+		name = "infantry_weapon_g3_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_fnfal_mesh"
+	}
+	
+	# G36
+	entity = {
+		name = "infantry_weapon_g36_entity"
+		clone = "infantry_weapon_ak47_entity"
+		pdxmesh = "infantry_weapon_g36_mesh"	
+	}
+	
+	#####################################################################
+	#####															#####
+	#####					Cigarette								#####
+	#####															#####
+	#####################################################################
+
+	entity = {
+		name = "lighter_entity"
+		pdxmesh = "lighter_mesh"
+		
+		default_state = "idle"
+		state = { name = "smoke"				animation = "long_idle03"
+			event = { time = 8 particle = "lighter_fire_particle" light = "cigarette_light" }
+		}
+		state = { name = "idle"	}
+		state = { name = "attack"	}
+		state = { name = "move"	}
+		state = { name = "retreat"	}
+		state = { name = "training"	}
+		state = { name = "defend"	}
+		state = { name = "support_attack"	}
+	}
+
+	entity = {
+		name = "cigarette_entity"
+		pdxmesh = "cigarette_mesh"
+	}
+
+	entity = {
+		name = "cigarette_package_entity"
+		pdxmesh = "cigarette_package_mesh"
+	}

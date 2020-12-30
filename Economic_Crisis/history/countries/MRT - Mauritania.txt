@@ -1,0 +1,105 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 743
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 572 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "MRT_2013"
+
+	set_cosmetic_tag = MRT_islamists
+
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		state_media_only
+		limitation_of_liberties
+		mixed_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		base_social_security
+		normal_working_time
+		au_member #NOT WORKING YET
+	}
+	
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 15
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2009.6.21" #for 2014 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 0
+		reformism = 13
+		liberalism = 6
+		democratic = 27
+		neutrality = 54
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Mohamed Ould Abdel Aziz"
+		desc = "POLITICS_MOHAMED_OULD_ABDEL_AZIZ_DESC"
+		picture = "gfx/leaders/MRT/portrait_mohamed_ould_abdel_aziz.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+
+	create_country_leader = {
+		name = "Maaouiya Ould Sid'Ahmed Taya" 
+		desc = "POLITICS_MAAOUIYA_OULD_SIDAHMED_TAYA_DESC"
+		picture = "gfx/leaders/MRT/portrait_maaouiya_ould_sidahmed_taya.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mohamed Jemil Ould Mansour"
+		desc = "POLITICS_MOHAMED_JEMIL_OULD_MANSOUR_DESC"
+		picture = "gfx/leaders/MRT/portrait_mohamed_jemil_ould_mansour.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+	create_country_leader = {
+		name = "Messaoud Ould Boulkheir"
+		desc = "POLITICS_MESSAOUD_OULD_BOULKHEIR_DESC"
+		picture = "gfx/leaders/MRT/portrait_messaoud_ould_boulkheir.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ely Ould Mohamed Vall"
+		desc = "POLITICS_ELY_OULD_MOHAMED_VALL_DESC"
+		picture = "gfx/leaders/MRT/portrait_ely_ould_mohamed_vall.dds"
+		expire = "2017.5.5"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+}
+
+#Смена флага
+2017.8.15 = {
+	set_cosmetic_tag = MRT_new_flag
+}

@@ -1,0 +1,739 @@
+	#####################################################################
+	#####															#####
+	#####					Generic infantry						#####
+	#####					Basic infantry units						#####
+	#####															#####
+	#####################################################################
+
+	### GROUND FORCES (MOTORIZED OR MECHANIZED) BASE INFANTRY UNIT ###
+
+	entity = {
+		name = "infantry_entity"
+		pdxmesh = "generic_woodland_infantry_hoi4_mesh"
+
+		default_state = "idle"
+		state = { name = "attack"			animation = "charge" 				animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 2 propagate_state = { rifle1 = "idle" } }
+		state = { name = "attack"			animation = "charge_shoot" 			animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+	#	state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack_charge" chance = 1 }
+		state = { name = "defend"			animation = "defend" 				animation_blend_time = 0.0  animation_speed = 1.0 }		
+		state = { name = "support_attack"	animation = "support_attack" 		animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 
+			event = { sound = { soundeffect = "infantry_move_animation" } }
+		}
+		state = { name = "retreat"			animation = "retreat"			 	animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "death"					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "idle"				animation = "idle"					animation_blend_time = 0.0 animation_speed = 1.0 chance = 15 looping = no }
+		state = { name = "idle"				animation = "long_idle02" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { 
+			name = "idle"					animation = "long_idle03" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no propagate_state = { lighter = "smoke" }
+			event = { time = 0 node="head" particle = "cigarette_smoke_particle"  keep_particle = yes }
+		}
+		state = { name = "idle"				animation = "long_idle04" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "idle"				animation = "long_idle05" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "training" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 2 looping = no }
+		state = { name = "training"			animation = "jumping_jacks" 		animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "pushup" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "aim_exercise" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "guard" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+			
+		attach = { 	name = "rifle1"	Right_Hand_node = "infantry_weapon_ak47_entity" }	
+		attach = { 	name = "rifle4"	Root_node_2 = "infantry_weapon_ak47_entity" }
+		attach = { 	name = "rifle2"	Left_Hand_node = "infantry_weapon_ak47_entity" }
+		attach = { 	name = "rifle3"	mid_back_node = "infantry_weapon_ak47_entity" }
+			
+		attach = { 	name = "lighter"			Right_Hand_node_4 = "lighter_entity" }
+		attach = { 	name = "cigarette1"			Right_Hand_node_2 = "cigarette_entity" }
+		attach = { 	name = "cigarette_package1"	Right_Hand_node_3 = "cigarette_package_entity" }
+		attach = { 	name = "cigarette_package2"	Left_Hand_node_2 = "cigarette_package_entity" }
+		attach = { 	name = "cigarette2"			Root_node_1 = "cigarette_entity" }
+	}
+
+	### MILITIA (NOT MOTORIZED OR MECHANIZED) INFANTRY UNIT ###
+	entity = {
+		name = "militia_entity"
+		pdxmesh = "generic_green_3_militia_evsw_mesh"
+
+		default_state = "idle"
+		state = { name = "attack"			animation = "charge_shoot" 			animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+		state = { name = "defend"			animation = "defend" 				animation_blend_time = 0.0  animation_speed = 1.0 }		
+		state = { name = "support_attack"	animation = "support_attack" 		animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 
+			event = { sound = { soundeffect = "infantry_move_animation" } }
+		}
+		state = { name = "retreat"			animation = "retreat"			 	animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "death"					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "idle"				animation = "idle"					animation_blend_time = 0.0 animation_speed = 1.0 chance = 15 looping = no }
+		state = { name = "idle"				animation = "long_idle02" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "idle"				animation = "long_idle04" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "idle"				animation = "long_idle05" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "training" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 2 looping = no }
+		state = { name = "training"			animation = "jumping_jacks" 		animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "pushup" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "aim_exercise" 			animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+		state = { name = "training"			animation = "guard" 				animation_blend_time = 0.0 animation_speed = 1.0 chance = 1 looping = no }
+	}
+	
+	### GENDarmES (INTERNAL TROOPS) INFANTRY UNIT ###
+	entity = {
+		name = "gendarmes_entity"
+		clone = "infantry_entity"
+		pdxmesh = "generic_woodland_militia_hoi4_mesh"
+	}
+
+	### MARINES INFANTRY UNIT ###
+	entity = {
+		name = "marines_entity"
+		clone = "infantry_entity"
+	}	
+
+	### mountaineers INFANTRY UNIT ###
+	entity = {
+		name = "mountaineers_entity"
+		clone = "infantry_entity"
+	}	
+	
+	### PARATROOPERS INFANTRY UNIT ###
+	entity = {
+		name = "paratroopers_entity"
+		clone = "infantry_entity"
+	}
+
+	### SPECIAL FORCES INFANTRY UNIT ###
+	entity = {
+		name = "special_forces_entity"
+		clone = "infantry_entity"
+	}
+
+	### RECON INFANTRY UNIT ###
+	entity = {
+		name = "recons_entity"
+		clone = "infantry_entity"
+	}
+
+	#####################################################################
+	#####															#####
+	#####				Generic motorised infantry					#####
+	#####				Motorised troops on trucks					#####
+	#####															#####
+	#####################################################################
+
+	### MOTORIESED GROUND FORCES ON TRUCKS ###
+	entity = {
+		name = "motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "truck_m35_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+
+	### MOTORIESED GENDarmES (INTERNAL TROOPS) ON TRUCKS ###
+	entity = {
+		name = "gendarmes_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### MOTORIESED MARINES ON TRUCKS ###
+	entity = {
+		name = "marines_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### MOTORIESED MOUNTAINEERS ON TRUCKS ###
+	entity = {
+		name = "mountaineers_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### MOTORIESED PARATROOPERS ON TRUCKS ###
+	entity = {
+		name = "paratroopers_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### MOTORIESED SPECIAL FORCES ON TRUCKS ###
+	entity = {
+		name = "special_forces_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### MOTORIESED RECONS ON TRUCKS ###
+	entity = {
+		name = "recons_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+			
+	#####################################################################
+	#####															#####
+	#####				Generic light motorised infantry			#####
+	#####				Motorised troops on armored cars			#####
+	#####															#####
+	#####################################################################
+	
+	### LIGHT MOTORIESED GROUND FORCES ON LUV OR armORED CARS ###
+	entity = {
+		name = "light_motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "car_hmmwv_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+	
+	### LIGHT MOTORIESED GENDarmES (INTERNAL TROOPS) ON LUV OR armORED CARS ###
+	entity = {
+		name = "gendarmes_light_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### LIGHT MOTORIESED MARINES ON LUV OR armORED CARS ###
+	entity = {
+		name = "marines_light_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### LIGHT MOTORIESED MOUNTAINEERS ON LUV OR armORED CARS ###
+	entity = {
+		name = "mountaineers_light_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### LIGHT MOTORIESED PARATROOPERS ON LUV OR armORED CARS ###
+	entity = {
+		name = "paratroopers_light_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### LIGHT MOTORIESED SPECIAL FORCES ON LUV OR armORED CARS ###
+	entity = {
+		name = "special_forces_light_motorized_entity"
+		clone = "motorized_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### LIGHT MOTORIESED RECONS ON LUV OR armORED CARS ###
+	entity = {
+		name = "recons_light_motorized_entity"
+		clone = "motorized_entity"
+
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+
+	#####################################################################
+	#####															#####
+	#####			Generic recons on special light APC				#####
+	#####															#####
+	#####################################################################
+
+	### MECHANIZED RECONS ON LIGHT WHEELED APC ###
+	entity = {
+		name = "recons_on_light_apc_wheeled_entity"
+		clone = "motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "recons_entity" }			
+	}
+
+	### MECHANIZED RECONS ON LIGHT TRACKED APC ###
+	entity = {
+		name = "recons_on_light_apc_tracked_entity"
+		clone = "motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "recons_entity" }			
+	}
+
+	### MECHANIZED RECONS ON AIR-DROPPABLE TRACKED APC ###
+	entity = {
+		name = "recons_on_light_apc_airdroppable_entity"
+		clone = "motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "scout_brdm2_entity" }
+		attach = { 	name = "infantry"			infantry = "recons_entity" }			
+	}
+	
+	#####################################################################
+	#####															#####
+	#####				Generic mechanized infantry					#####
+	#####				Mechanized troops on wheeled APC			#####
+	#####															#####
+	#####################################################################
+	
+	### MECHANIZED GROUND FORCES ON WHEELED APC ###
+	entity = {
+		name = "mechanized_on_apc_wheeled_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_btr60_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+	
+	### MECHANIZED GENDarmES (INTERNAL TROOPS) ON WHEELED APC ###
+	entity = {
+		name = "gendarmes_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### MECHANIZED MARINES ON WHEELED APC ###
+	entity = {
+		name = "marines_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### MECHANIZED MOUNTAINEERS ON WHEELED APC ###
+	entity = {
+		name = "mountaineers_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### MECHANIZED PARATROOPERS ON WHEELED APC ###
+	entity = {
+		name = "paratroopers_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### MECHANIZED SPECIAL FORCES ON WHEELED APC ###
+	entity = {
+		name = "special_forces_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### MECHANIZED PRECONS ON WHEELED APC (FOR AIRBORNE) ###
+	entity = {
+		name = "recons_mechanized_on_apc_wheeled_entity"
+		clone = "mechanized_on_apc_wheeled_entity"
+
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####				Generic mechanized infantry					#####
+	#####				Mechanized troops on tracked APC			#####
+	#####															#####
+	#####################################################################
+	
+	### MECHANIZED GROUND FORCES ON TRACKED APC ###
+	entity = {
+		name = "mechanized_on_apc_tracked_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_m113_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+	
+	### MECHANIZED GENDarmES (INTERNAL TROOPS) ON TRACKED APC ###
+	entity = {
+		name = "gendarmes_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### MECHANIZED MARINES ON TRACKED APC ###
+	entity = {
+		name = "marines_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### MECHANIZED MOUNTAINEERS ON TRACKED APC ###
+	entity = {
+		name = "mountaineers_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### MECHANIZED PARATROOPERS ON TRACKED APC ###
+	entity = {
+		name = "paratroopers_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### MECHANIZED SPECIAL FORCES ON TRACKED APC ###
+	entity = {
+		name = "special_forces_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### MECHANIZED RECONS ON TRACKED APC ###
+			### NOT IN GAME ###
+	entity = {
+		name = "recons_mechanized_on_apc_tracked_entity"
+		clone = "mechanized_on_apc_tracked_entity"
+
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####		Generic mechanized infantry	(armored cavalry)		#####
+	#####				Mechanized troops on tracked IFV			#####
+	#####															#####
+	#####################################################################
+	
+	### armORED CAVALRY (MECHANIZED) GROUND FORCES ON TRACKED IFV ###
+	entity = {
+		name = "mechanized_on_ifv_tracked_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_m2_bradley_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+	
+	### armORED CAVALRY (MECHANIZED) GENDarmES (INTERNAL TROOPS) ON TRACKED IFV ###
+				### NOT IN GAME ###
+	entity = {
+		name = "gendarmes_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) MARINES ON TRACKED IFV ###
+	entity = {
+		name = "marines_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) MOUNTAINEERS ON TRACKED IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "mountaineers_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) PARATROOPERS ON TRACKED IFV ###
+	entity = {
+		name = "paratroopers_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) SPECIAL FORCES ON TRACKED IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "special_forces_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### armORED CAVALRY (MECHANIZED) RECONS ON TRACKED IFV ###
+			### NOT IN GAME ###
+	entity = {
+		name = "recons_mechanized_on_ifv_tracked_entity"
+		clone = "mechanized_on_ifv_tracked_entity"
+
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+
+	#########################################################################
+	#####																#####
+	#####	Generic airborne (paratroopers) on air-droppable vehicle	#####
+	#####																#####
+	#########################################################################
+
+	### MECHANIZED PARATROOPERS ON AIR-DROPPABLE TRACKED APC ###
+	entity = {
+		name = "paratroopers_mechanized_on_apc_airdroppable_entity"
+		clone = "motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "apc_mtlb_entity" }
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }		
+	}
+
+	### armORED CAVALRY (MECHANIZED) PARATROOPERS ON AIR-DROPPABLE TRACKED IFV ###
+	entity = {
+		name = "paratroopers_mechanized_on_ifv_airdroppable_entity"
+		clone = "motorized_entity"
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_bmp1_entity" }
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }		
+	}
+	
+	#####################################################################
+	#####															#####
+	#####	Generic heavy mechanized infantry	(armored cavalry)	#####
+	#####		Mechanized troops on heavy tracked APC | IFV		#####
+	#####															#####
+	#####################################################################
+	
+	### armORED CAVALRY (HEAVY MECHANIZED) GROUND FORCES ON TRACKED HEAVY APC -> HEAVY IFV ###
+
+	entity = {
+		name = "mechanized_on_ifv_heavy_entity"
+		pdxmesh = "motorized_frame_mesh"
+	#	scale = 0.9
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 				animation_blend_time = 0.0 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.0 animation_speed = 1.0 }
+		
+		attach = { 	name = "vehicle"			vehicle = "ifv_m2_bradley_entity" }
+		attach = { 	name = "infantry"			infantry = "infantry_entity" }
+	}
+	
+	### armORED CAVALRY (MECHANIZED) GENDarmES (INTERNAL TROOPS) ON TRACKED HEAVY APC -> HEAVY IFV ###
+				### NOT IN GAME ###
+	entity = {
+		name = "gendarmes_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "gendarmes_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) MARINES ON TRACKED HEAVY APC -> HEAVY IFV ###
+	entity = {
+		name = "marines_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "marines_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) MOUNTAINEERS ON TRACKED HEAVY APC -> HEAVY IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "mountaineers_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "mountaineers_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) PARATROOPERS ON TRACKED HEAVY APC -> HEAVY IFV ###
+	entity = {
+		name = "paratroopers_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "paratroopers_entity" }
+	}
+
+	### armORED CAVALRY (MECHANIZED) SPECIAL FORCES ON TRACKED HEAVY APC -> HEAVY IFV ###
+					### NOT IN GAME ###
+	entity = {
+		name = "special_forces_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+				
+		attach = { 	name = "infantry"			infantry = "special_forces_entity" }
+	}
+		
+	### armORED CAVALRY (MECHANIZED) RECONS ON TRACKED HEAVY APC -> HEAVY IFV ###
+			### NOT IN GAME ###
+	entity = {
+		name = "recons_mechanized_on_ifv_heavy_entity"
+		clone = "mechanized_on_ifv_heavy_entity"
+
+		attach = { 	name = "infantry"			infantry = "recons_entity" }
+	}
+	
+	#####################################################################
+	#####															#####
+	#####					Generic tanks units						#####
+	#####															#####
+	#####################################################################
+	
+	### LIGHT TANKS ###
+	entity = {
+		name = "light_tank_entity"
+		clone = "tank_t55"
+		pdxmesh = "t55_mesh"
+	}
+	
+	### MEDIUM TANK (1950 - 1st gen) ###
+	entity = {
+		name = "medium_tank_entity"
+		clone = "tank_t55"
+		pdxmesh = "t55_mesh"
+	}
+	
+	### MAIN BATTLE TANK DEBUG (1960 - 2nd gen) ###
+	entity = {
+		name = "main_battle_tank_entity"
+		clone = "tank_t64"
+		pdxmesh = "t64_mesh"
+	}
+	
+	### TRANSITION MAIN BATTLE TANK (1970 - 2,5th gen) ###
+	entity = {
+		name = "transition_main_battle_tank_entity"
+		clone = "tank_t72"
+		pdxmesh = "t72_mesh"
+	}
+
+	### MODERN MAIN BATTLE TANK WITH GAS TURBINE ENGINE (1980 - 3th gen) ###
+	entity = {
+		name = "main_battle_tank_te_entity"
+		clone = "tank_t80"
+		pdxmesh = "t80_mesh"
+	}
+	
+	### MODERN MAIN BATTLE TANK (1990 - 3th gen) ###
+	entity = {
+		name = "modern_main_battle_tank_entity"
+		clone = "tank_t90"
+		pdxmesh = "t90_mesh"
+	}
+	
+	### MODERN MAIN BATTLE TANK (2010 - 3th gen) ###
+	entity = {
+		name = "future_main_battle_tank_entity"
+		clone = "tank_t90"
+		pdxmesh = "t90_mesh"
+	}
+	
+	#####################################################################
+	#####															#####
+	#####					Generic aircrafts units					#####
+	#####															#####
+	#####################################################################
+	
+
+	### FIGHTERS ###
+
+	entity = {
+		name = "fighter_aircraft_entity"
+		clone = "fighter_mig29"
+	}
+
+	entity = {
+		name = "vtol_aircraft_entity"
+		clone = "fighter_mig29"
+	}
+
+	entity = {
+		name = "drone_aircraft_entity"
+		clone = "fighter_mig29"
+	}
+
+	### GROUND ATTACK AIRCRAFT ###
+		
+	entity = {
+		name = "ground_attack_aircraft_entity"
+		clone = "cas_su25"
+	}
+
+	### TACTICAL BOMBER AIRCRAFT ###
+	
+	entity = {
+		name = "tactical_bomber_aircraft_entity"
+		clone = "bomber_su24m"
+	}
+	
+	### HEAVY BOMBER AIRCRAFT ###
+	
+	entity = {
+		name = "heavy_bomber_aircraft_entity"
+		clone = "strategic_tu95"
+	}
+
+	### HELICOPTERS ###
+	
+	entity = {
+		name = "attack_helicopter_entity"
+		clone = "helicopter_mi24"
+	}
+
+	entity = {
+		name = "assault_helicopter_entity"
+		clone = "helicopter_mi8"
+	}
+
+	entity = {
+		name = "transport_helicopter_entity"
+		clone = "helicopter_mi8"
+	}

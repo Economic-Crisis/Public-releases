@@ -1,0 +1,72 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 1047
+
+2013.11.1 = {
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		not_recognized_country
+		dictatorship_state
+		unitary_state
+		limitation_of_liberties
+		mixed_schools
+		high_terrorism
+		high_corruption
+	}
+
+	add_political_power = 0
+	set_country_flag = pai_nondem_totalitarian
+
+	declare_war_on = { target = ANG type = civil_war }
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2013.1.1"
+		election_frequency = 72
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 100
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "António Bento Bembe"
+		picture = "gfx/leaders/CAB/portrait_antonio_bento_bembe.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	create_corps_commander = { 
+		name = "Henrique N'zita Tiago" 
+		portrait_path = "gfx/leaders/CAB/portrait_cab_general_henrique_nzita_tiago.dds"
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = { 
+		name = "Alexandre Builo Tati" 
+		portrait_path = "gfx/leaders/CAB/portrait_cab_general_alexandre_builo_tati.dds"
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+
+}

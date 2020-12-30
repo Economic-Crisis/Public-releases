@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 119
+
+add_ideas = {
+	mixed_schools
+	parliamentary_republic
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 10 }
+
+	load_oob = "_tech_nato_regional_2013"
+	oob = "_army_minor_2013"
+	
+	# government	
+	set_convoys = 10
+	set_stability = 0.5
+	add_political_power = 0
+
+	add_ideas = {
+		parliamentary_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		average_terrorism
+	}
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = liberalism
+		# 25 февраля 2011 года
+		last_election = "2011.5.5"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 15
+		liberalism = 30
+		democratic = 30
+		neutrality = 15
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Nigel Farage"
+		desc = ""
+		picture = "gfx/leaders/NIR/portrait_nigel_farage.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+}
+

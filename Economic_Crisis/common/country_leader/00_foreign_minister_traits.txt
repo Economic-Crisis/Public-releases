@@ -1,0 +1,218 @@
+### Traits for Foreign Minister
+### Скиллы ТОЛЬКО для министров иностранных дел
+### Могут в идеях министров сочетаться со скиллами идеологий, могут сочетаться друг с другом (например Сторонник нейтралитета + Евроскептик)
+
+leader_traits = {
+
+	foreign_minister_policy_defender = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.01
+		drift_defence_factor = 0.04
+		opinion_gain_monthly_factor = 0.03
+		trade_opinion_factor = 0.02
+		
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	### Защитник национальных интересов (примеры - Иванов, Кэрри)
+	foreign_minister_policy_defender_1 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.01
+		drift_defence_factor = 0.06
+		opinion_gain_monthly_factor = 0.03
+		trade_opinion_factor = 0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	foreign_minister_policy_defender_2 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.02
+		drift_defence_factor = 0.1
+		opinion_gain_monthly_factor = 0.04
+		trade_opinion_factor = 0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	foreign_minister_policy_defender_3 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.1
+		drift_defence_factor = 0.08
+		opinion_gain_monthly_factor = 0.1
+		trade_opinion_factor = 0.1
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### сторонник мирных процессов и переговоров (примеры - Игорь Иванов - сторонник сближения с ЕС)
+	foreign_minister_policy_conversation = {
+		random = no
+		sprite = 13
+		political_power_factor = 0.01
+		drift_defence_factor = 0.02
+		opinion_gain_monthly_factor = 0.05
+		trade_opinion_factor = 0.1
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### Сторонник нейтралитета
+	# если он сидит в кресле долго и у страны всё гладко - должен быть ивент на движение неприсоединения и нейтральную внешнюю политику
+	foreign_minister_non-alignment = {
+		random = no
+		sprite = 13
+		
+		join_faction_tension = 0.25
+		send_volunteers_tension = 0.05
+		guarantee_tension = 1.0
+		ai_badass_factor = 0.01
+		ai_get_ally_desire_factor = -100
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	foreign_minister_non-alignment_3 = {
+		random = no
+		sprite = 13
+		
+		join_faction_tension = 0.25
+		send_volunteers_tension = 0.05
+		guarantee_tension = 1.0
+		ai_badass_factor = 0.01
+		ai_get_ally_desire_factor = -100
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	foreign_minister_non-alignment_2 = {
+		random = no
+		sprite = 13
+		
+		join_faction_tension = 0.10
+		send_volunteers_tension = 0.1
+		guarantee_tension = 0.1
+		ai_badass_factor = 0.01
+		ai_get_ally_desire_factor = -50
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	foreign_minister_non-alignment_1 = {
+		random = no
+		sprite = 13
+		
+		join_faction_tension = 0.1
+		send_volunteers_tension = 0.02
+		guarantee_tension = 0.1
+		ai_badass_factor = 0.01
+		ai_get_ally_desire_factor = -40
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### Сторонник национального единства - сторонник иррендентизма, подходит для националистов и коммунистов
+	### дает баффы при объединении стран из марионеток (в ДЛЦ)
+	foreign_minister_addiction_irredentist = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.01
+		drift_defence_factor = 0.1
+		stability_factor = 0.02
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	foreign_minister_addiction_irredentist_1 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.02
+		drift_defence_factor = 0.1
+		stability_factor = 0.1
+		
+		ai_will_do = {	factor = 1	}
+	}
+	
+	foreign_minister_addiction_irredentist_2 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.1
+		drift_defence_factor = 0.1
+		stability_factor = 0.04
+		
+		ai_will_do = {	factor = 1	}
+	}
+	
+	foreign_minister_addiction_irredentist_3 = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.04
+		drift_defence_factor = 0.2
+		stability_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### Сторонник сближения с Россией
+	foreign_minister_addiction_RUS = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### Сторонник сближения с США
+	foreign_minister_addiction_USA = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	### Сторонник сближения с Китаем
+	foreign_minister_addiction_CHI = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {	factor = 1	}
+	}
+	
+	### Сторонник Евроинтеграции
+	foreign_minister_addiction_EU = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {	factor = 1	}
+	}
+	
+	### Евроскептик
+	foreign_minister_euroscepticism = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {	factor = 1	}
+	}
+	
+	### Антиглобалист
+	foreign_minister_anti-globalization = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {	factor = 1	}
+	}
+}

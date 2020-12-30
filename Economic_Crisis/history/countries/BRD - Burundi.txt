@@ -1,0 +1,66 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 757
+
+add_ideas = {
+	au_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 271 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "BRD_2013"
+
+	set_stability = 0.3
+	set_country_flag = pai_nondem_authoritarian
+
+	add_political_power = 0
+
+	add_ideas = {
+		semi-presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2010.6.28"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 3
+		reformism = 10
+		liberalism = 0
+		democratic = 0
+		neutrality = 74
+		fascism = 13
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Pierre Nkurunziza"
+		desc = "POLITICS_PIERRE_NKURUNZIZA_DESC"
+		picture = "gfx/leaders/BRD/portrait_pierre_nkurunziza.dds"
+		ideology = authoritarian_democracy 
+		traits = { trait_authoritarian_democracy }
+	 }
+
+}
+

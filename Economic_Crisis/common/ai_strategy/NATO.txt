@@ -1,0 +1,144 @@
+NATO_membership = {
+	
+	enable = {
+		#AND = {
+			OR = {
+				tag = BEL
+				tag = CAN
+				tag = DEN
+				tag = FRA
+				tag = ICE
+				tag = ITA
+				tag = LUX
+				tag = HOL
+				tag = NOR
+				tag = POR
+				tag = ENG
+				tag = GRE
+				tag = TUR
+				tag = GER
+				tag = SPR
+				tag = CZE
+				tag = HUN
+				tag = POL
+				tag = BUL
+				tag = EST
+				tag = LAT
+				tag = LIT
+				tag = ROM
+				tag = SLO
+				tag = SLV			
+				tag = CRO
+				tag = ALB
+			}
+		
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+				has_government = neutrality
+			}
+		
+			OR = {
+				USA = { has_government = democratic }
+				USA = { has_government = liberalism }
+				USA = { has_government = reformism }
+			}
+		#}
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = USA
+			USA = { exists = no }
+			OR = {
+			    has_government = fascism
+				has_government = rad_islamists
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "USA"
+		value = 50
+	}
+	ai_strategy = {
+		type = alliance
+		id = "USA"
+		value = 125
+	}
+}
+
+USA_NATO = {
+	enable = {
+		tag = USA
+		has_country_leader = {
+			name = "Donald Trump"
+		}
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = "CHI"
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "IRN"
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "RUS"
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "NKO"
+		value = 100
+	}
+}
+protect_USA = {
+	enable = {
+		tag = USA
+		}
+	ai_strategy = {
+		type = protect
+		id = "KOR"
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = "JAP"
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = "AFG"
+		value = 50
+	}
+	ai_strategy = {
+		type = protect
+		id = "AFG"
+		value = 50
+	}
+	ai_strategy = {
+		type = protect
+		id = "PAK"
+		value = 20
+	}
+}
+protect_USA_UKR = {
+	enable = {
+		tag = USA
+		country_exists = NRU
+		is_ai = yes
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "UKR"
+		value = 200
+	}
+	
+}

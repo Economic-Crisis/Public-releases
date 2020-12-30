@@ -1,0 +1,38 @@
+﻿#####################
+## Economic Crisis ##
+#####################
+
+add_namespace = germany_government
+
+country_event = {  #Sigmar Gabriel
+	id = germany_government.1
+
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = GER_Sigmar_Gabriel_fgm
+				}
+			}
+			GER = {
+				remove_ideas = GER_Sigmar_Gabriel_ecm
+				clr_country_flag = GER_Sigmar_Gabriel_fgm
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = GER_Sigmar_Gabriel_ecm
+				}
+
+			}
+			GER = {
+				remove_ideas = GER_Sigmar_Gabriel_fgm
+				clr_country_flag = GER_Sigmar_Gabriel_ecm
+			}
+		}
+	}
+}

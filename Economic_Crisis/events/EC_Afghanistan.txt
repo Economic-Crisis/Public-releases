@@ -1,0 +1,223 @@
+﻿#####################
+## Economic Crisis ##
+#######################
+## Afganistan events ##
+#########################
+## Written by SuxrobGM ##
+#########################
+
+add_namespace = afghanistan
+
+#country_event = {  #Вооружённый конфликт в Афганистане 2015
+#	id = afghanistan.1
+#	title = afghanistan.1.t
+#	desc = afghanistan.1.d
+#	picture = GFX_event_afghanistan_war_2015
+#	
+#	fire_only_once = yes
+#
+#	immediate = { 
+#	    hidden_effect = {
+#		    add_named_threat = { threat = 3 name = threat_AFG_war_2015 }
+#		}
+#	}
+#	
+#	trigger = { 
+#	    tag = AFG
+#		date > 2014.12.26
+#	    country_exists = AFG
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#	
+#	option = {
+#		name = afghanistan.1.a
+#	    TAL = { 
+#		    set_country_flag = AFG_civilwar
+#			transfer_state = 788 
+#			788 = { add_core_of = TAL }
+#			set_stability = 0.95
+#			hidden_effect = { 
+#				load_oob = "TAL_2013"
+#				load_oob = "_tech_insurgents_2013"
+#			}
+#		}
+#		ISA = { 
+#			transfer_state = 810
+#			810 = { add_core_of = ISA }
+#			set_stability = 0.95
+#			hidden_effect = { load_oob = "ISA_2013"
+#			load_oob = "_tech_isis_2013" }
+#		}
+#		hidden_effect = {
+#			set_country_flag = AFG_war_2015
+#		    news_event = { id = afghanistan_news.1 days = 1 }
+#			country_event = { id = afghanistan.2 }
+#		}
+#	}
+#	
+#	option = {
+#		name = afghanistan.1.b
+#	    TAL = { change_tag_from = AFG }
+#		TAL = { 
+#		    transfer_state = 788 
+#			788 = { add_core_of = TAL }
+#			set_stability = 0.95
+#			hidden_effect = { load_oob = "TAL_2013"
+#			load_oob = "_tech_insurgents_2013" }
+#		}
+#		ISA = { 
+#		    transfer_state = 810
+#			810 = { add_core_of = ISA }
+#			set_stability = 0.95
+#			hidden_effect = { load_oob = "ISA_2013"
+#			load_oob = "_tech_isis_2013" }
+#		}
+#		hidden_effect = {
+#			set_country_flag = AFG_war_2015
+#		    news_event = { id = afghanistan_news.1 days = 1 }
+#			country_event = { id = afghanistan.2 }
+#		}
+#	}
+#}
+
+#country_event = {  
+#	id = afghanistan.2
+#	title = afghanistan.2.t
+#	desc = afghanistan.2.d
+#	picture = GFX_event_afghanistan_war_2015
+	
+#	is_triggered_only = yes
+#	hidden = yes
+#	
+#	immediate = {
+#	    hidden_effect = {
+#			#TAL = { 
+#			#    declare_war_on = { 
+#			#	    target = AFG 
+#			#	    type = annex_everything 
+#			#	} 
+#			#	set_province_controller = 12877
+#			#}
+#			ISS = { 
+#			    declare_war_on = { 
+#				    target = AFG 
+#				    type = annex_everything 
+#				}
+#			}
+#			ISA = { 
+#			    declare_war_on = { 
+#				    target = AFG 
+#				    type = annex_everything 
+#				}
+#			}
+#		}
+#	}
+#	
+#	option = {
+#	name = afghanistan.2.b  
+#    }
+#}
+
+country_event = {
+	id = afghanistan.3
+	title = afghanistan.3.t
+	desc = afghanistan.3.d
+	picture = GFX_report_event_communism
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = AFG
+	}
+
+	option = {
+		name = afghanistan.3.o1	
+	}
+}
+country_event = {
+	id = afghanistan.4
+	title = afghanistan.4.t
+	desc = afghanistan.4.d
+	picture = GFX_report_event_communism
+	
+	is_triggered_only = yes
+
+	option = {
+		name = afghanistan.4.o1
+		ai_chance = { factor = 90 }
+		swap_ideas = {  add_idea = afg_political_unstab remove_idea = afg_mobilized_mass }
+		set_country_flag = AFG_taliban_loose
+	}
+}	
+
+country_event = {
+	id = afghanistan.5
+	title = afghanistan.5.t
+	desc = afghanistan.5.d
+	picture = GFX_report_event_communism
+	
+	is_triggered_only = yes
+
+	option = {
+		name = afghanistan.5.o1
+		ai_chance = { factor = 60 }
+		AFG = {
+		    create_country_leader = {
+                name = "Shahnawaz Tanai"
+				desc = "POLITICIAN_PRC_XU_WENLI_DESC"
+				picture = "gfx/leaders/AFG/portrait_shahnawaz_tanai.dds"
+				expire = "2042.1.1"
+				ideology = maoism
+				traits = { trait_maoism } 
+			}
+        }
+		set_autonomy = {
+			target = AFG
+			autonomy_state = sphere_of_influence
+		}
+	}
+	option = {
+		name = afghanistan.5.o2
+		ai_chance = { factor = 10 }
+	}
+}
+
+
+
+country_event = {
+	id = afghanistan.6
+	title = afghanistan.6.t
+	desc = afghanistan.6.d
+	picture = GFX_report_event_communism
+	
+	is_triggered_only = yes
+
+	option = {
+		name = afghanistan.6.o1
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = 100
+		set_country_flag = afg_democratic_rep
+		ai_chance = { factor = 90 }
+		
+	}
+	
+	option = {
+		name = afghanistan.6.o2
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = 100
+		set_country_flag = afg_islamic_umma
+		
+		ai_chance = { factor = 90 }
+	}
+}

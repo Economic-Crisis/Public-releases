@@ -1,0 +1,2530 @@
+technologies = {
+    
+	# y = (вертикаль)
+	@platform = 0
+	@t0 = 2
+	@t1 = 4
+	@t2 = 6
+	@t3 = 8
+	@t4 = 10
+	@t5 = 12
+	@t6 = 14
+	@t7 = 16
+	@t8 = 18
+	@t9 = 20
+	@t10 = 22
+	@t11 = 24
+	
+	# x = (горизонталь)
+	@x_b0 = -2
+	@x_1 = -1
+	@x_b1 = 3
+	@x_2 = 4
+	@x_b2 = 10
+	@x_3 = 11
+	@x_b3 = 16
+	@x_4 = 17
+	@x_b4 = 14
+	@x_5 = 22
+	@x_b5 = 21
+	@x_6 = 25
+	@x_b6 = 21
+	@x_7 = 17
+	@x_8 = 20
+	@x_9 = 23
+	
+	#Гусеничных БТР конца ВМВ
+	apc_tracked_light_t0  = { 
+
+		enable_equipments = {
+			apc_tracked_equipment
+		}
+		
+		path = {
+			leads_to_tech = apc_tracked_t1
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = concept_tracked_armored_vehicles_2
+			research_cost_coeff = 1
+		}
+		
+		#path = {
+		#	leads_to_tech = apc_tracked_light_t1
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = tracked_folder
+			position = { x = @x_b0 y = @platform }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	concept_tracked_armored_vehicles_2 = {
+		
+		path = {
+			leads_to_tech = concept_tracked_armored_vehicles_3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_tracked_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_tracked_t2
+			research_cost_coeff = 1
+		}
+		
+		
+		
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_b1 y = @platform }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	concept_tracked_armored_vehicles_3 = {
+		
+		path = {
+			leads_to_tech = concept_tracked_armored_vehicles_4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_tracked_t3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_tracked_t3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t3
+			research_cost_coeff = 1
+		}
+		
+		
+		research_cost = 1
+		start_year = 1980
+		folder = {
+			name = tracked_folder
+			position = { x = @x_b2 y = @platform }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#Современная концепция колесной бронетехники
+	concept_tracked_armored_vehicles_4 = {
+		
+		path = {
+			leads_to_tech = concept_tracked_armored_vehicles_6
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = apc_tracked_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_tracked_t4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 2000
+		folder = {
+			name = tracked_folder
+			position = { x = @x_b3 y = @platform }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#Концепция перспективной колесной бронетехники
+	# concept_tracked_armored_vehicles_5 = {
+		
+		# path = {
+			# leads_to_tech = concept_tracked_armored_vehicles_6
+			# research_cost_coeff = 1
+		# }
+		
+		# path = {
+			# leads_to_tech = apc_tracked_t5
+			# research_cost_coeff = 1
+		# }
+		
+		# path = {
+			# leads_to_tech = ifv_tracked_t5
+			# research_cost_coeff = 1
+		# }
+		
+		# path = {
+			# leads_to_tech = ifv_airdroppable_t5
+			# research_cost_coeff = 1
+		# }
+		
+		# research_cost = 1
+		# start_year = 1960
+		# folder = {
+			# name = tracked_folder
+			# position = { x = @x_b4 y = @platform }
+		# }
+		
+		# ai_will_do = { factor = 6 }
+		
+		# categories = { cat_tracked_vehicle }
+	# }
+	
+	#Концепция гусеничной бронетехники будущего
+	concept_tracked_armored_vehicles_6 = {
+		
+		path = {
+			leads_to_tech = apc_tracked_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_tracked_t5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 2020
+		folder = {
+			name = tracked_folder
+			position = { x = @x_b5 y = @platform }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	###########################################################################
+	
+	#
+	apc_tracked_t1 = {
+	
+		enable_equipments = {
+			apc_tracked_g1_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_tracked_t1_1
+			apc_tracked_t1_2
+			apc_tracked_t1_3
+			apc_tracked_t1_4
+			apc_tracked_t1_5
+		}
+		
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t1_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g1
+		}
+		
+		dependencies = {
+			apc_tracked_t1 = 1
+		}
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t0 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t1_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g1
+		}
+		
+		dependencies = {
+			apc_tracked_t1_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t1_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g1
+		}
+		
+		dependencies = {
+			apc_tracked_t1_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t1_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g1
+		}
+		
+		dependencies = {
+			apc_tracked_t1_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t1_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g1
+		}
+		
+		dependencies = {
+			apc_tracked_t1_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	############################################################################################
+	
+	#
+	apc_tracked_t2 = {
+	
+		enable_equipments = {
+			apc_tracked_g2_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_tracked_t2_1
+			apc_tracked_t2_2
+			apc_tracked_t2_3
+			apc_tracked_t2_4
+			apc_tracked_t2_5
+		}
+		
+		
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_2 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t2_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g2
+		}
+		
+		dependencies = {
+			apc_tracked_t2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t2_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g2
+		}
+		
+		dependencies = {
+			apc_tracked_t2_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t2_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g2
+		}
+		
+		dependencies = {
+			apc_tracked_t2_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t2_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g2
+		}
+		
+		dependencies = {
+			apc_tracked_t2_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t2_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g2
+		}
+		
+		dependencies = {
+			apc_tracked_t2_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	###################################################################
+	
+	#
+	apc_tracked_t3 = {
+	
+		enable_equipments = {
+			apc_tracked_g3_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_tracked_t3_1
+			apc_tracked_t3_2
+			apc_tracked_t3_3
+			apc_tracked_t3_4
+			apc_tracked_t3_5
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_3 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t3_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g3
+		}
+		
+		dependencies = {
+			apc_tracked_t3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t3_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g3
+		}
+		
+		dependencies = {
+			apc_tracked_t3_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t3_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g3
+		}
+		
+		dependencies = {
+			apc_tracked_t3_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t3_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g3
+		}
+		
+		dependencies = {
+			apc_tracked_t3_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t3_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g3
+		}
+		
+		dependencies = {
+			apc_tracked_t3_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#####################################################################
+	
+	#
+	apc_tracked_t4 = {
+	
+		enable_equipments = {
+			apc_tracked_g4_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_tracked_t4_1
+			apc_tracked_t4_2
+			apc_tracked_t4_3
+			apc_tracked_t4_4
+			apc_tracked_t4_5
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_4 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t4_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g4
+		}
+		
+		dependencies = {
+			apc_tracked_t4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t4_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g4
+		}
+		
+		dependencies = {
+			apc_tracked_t4_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t4_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g4
+		}
+		
+		dependencies = {
+			apc_tracked_t4_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t4_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g4
+		}
+		
+		dependencies = {
+			apc_tracked_t4_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t4_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g4
+		}
+		
+		dependencies = {
+			apc_tracked_t4_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	######################################################################
+	
+	#
+	apc_tracked_t5 = {
+	
+		enable_equipments = {
+			apc_tracked_g5_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = apc_tracked_t6
+			research_cost_coeff = 1
+		}
+		
+		sub_technologies = {
+			apc_tracked_t5_1
+			apc_tracked_t5_2
+			apc_tracked_t5_3
+			apc_tracked_t5_4
+			apc_tracked_t5_5
+		}
+		
+		
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = tracked_folder
+			position = { x = @x_5 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t5_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g5
+		}
+		
+		dependencies = {
+			apc_tracked_t5 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t5_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g5
+		}
+		
+		dependencies = {
+			apc_tracked_t5_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t5_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g5
+		}
+		
+		dependencies = {
+			apc_tracked_t5_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t5_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g5
+		}
+		
+		dependencies = {
+			apc_tracked_t5_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t5_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g5
+		}
+		
+		dependencies = {
+			apc_tracked_t5_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#####################################
+	
+	#
+	apc_tracked_t6 = {
+	
+		enable_equipments = {
+			apc_tracked_g6_equipment_0
+		}
+		
+		sub_technologies = {
+			apc_tracked_t6_1
+			apc_tracked_t6_2
+			apc_tracked_t6_3
+			apc_tracked_t6_4
+			apc_tracked_t6_5
+		}
+		
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = tracked_folder
+			position = { x = @x_6 y = @t0 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t6_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g6
+		}
+		
+		dependencies = {
+			apc_tracked_t6 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t6_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g6
+		}
+		
+		dependencies = {
+			apc_tracked_t6_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t6_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g6
+		}
+		
+		dependencies = {
+			apc_tracked_t6_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t6_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g6
+		}
+		
+		dependencies = {
+			apc_tracked_t6_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	apc_tracked_t6_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_apc_tracked_g6
+		}
+		
+		dependencies = {
+			apc_tracked_t6_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	######################################################
+	
+	#
+	concept_ifv_tracked = {
+		
+		path = {
+			leads_to_tech = ifv_tracked_t2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_tracked_t2 = {
+	
+		enable_equipments = {
+			ifv_tracked_g2_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_tracked_t2_1
+			ifv_tracked_t2_2
+			ifv_tracked_t2_3
+			ifv_tracked_t2_4
+			ifv_tracked_t2_5
+		}
+		
+		dependencies = {
+			concept_ifv_tracked = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_2 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t2_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g2
+		}
+		
+		dependencies = {
+			ifv_tracked_t2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t2_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g2
+		}
+		
+		dependencies = {
+			ifv_tracked_t2_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t2_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g2
+		}
+		
+		dependencies = {
+			ifv_tracked_t2_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t2_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g2
+		}
+		
+		dependencies = {
+			ifv_tracked_t2_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t2_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g2
+		}
+		
+		dependencies = {
+			ifv_tracked_t2_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_tracked_t3 = {
+	
+		enable_equipments = {
+			ifv_tracked_g3_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_tracked_t3_1
+			ifv_tracked_t3_2
+			ifv_tracked_t3_3
+			ifv_tracked_t3_4
+			ifv_tracked_t3_5
+		}
+		
+		dependencies = {
+			concept_ifv_tracked = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_3 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t3_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g3
+		}
+		
+		dependencies = {
+			ifv_tracked_t3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t3_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g3
+		}
+		
+		dependencies = {
+			ifv_tracked_t3_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t3_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g3
+		}
+		
+		dependencies = {
+			ifv_tracked_t3_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t3_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g3
+		}
+		
+		dependencies = {
+			ifv_tracked_t3_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t3_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g3
+		}
+		
+		dependencies = {
+			ifv_tracked_t3_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_tracked_t4 = {
+	
+		enable_equipments = {
+			ifv_tracked_g4_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_tracked_t4_1
+			ifv_tracked_t4_2
+			ifv_tracked_t4_3
+			ifv_tracked_t4_4
+			ifv_tracked_t4_5
+		}
+		
+		dependencies = {
+			concept_ifv_tracked = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_4 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t4_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g4
+		}
+		
+		dependencies = {
+			ifv_tracked_t4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t4_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g4
+		}
+		
+		dependencies = {
+			ifv_tracked_t4_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t4_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g4
+		}
+		
+		dependencies = {
+			ifv_tracked_t4_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t4_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g4
+		}
+		
+		dependencies = {
+			ifv_tracked_t4_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t4_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g4
+		}
+		
+		dependencies = {
+			ifv_tracked_t4_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_tracked_t5 = {
+	
+		enable_equipments = {
+			ifv_tracked_g5_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = ifv_tracked_t6
+			research_cost_coeff = 1
+		}
+		
+		sub_technologies = {
+			ifv_tracked_t5_1
+			ifv_tracked_t5_2
+			ifv_tracked_t5_3
+			ifv_tracked_t5_4
+			ifv_tracked_t5_5
+		}
+		
+		dependencies = {
+			concept_ifv_tracked = 1
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = tracked_folder
+			position = { x = @x_5 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t5_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g5
+		}
+		
+		dependencies = {
+			ifv_tracked_t5 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t5_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g5
+		}
+		
+		dependencies = {
+			ifv_tracked_t5_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t5_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g5
+		}
+		
+		dependencies = {
+			ifv_tracked_t5_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t5_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g5
+		}
+		
+		dependencies = {
+			ifv_tracked_t5_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t5_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g5
+		}
+		
+		dependencies = {
+			ifv_tracked_t5_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_tracked_t6 = {
+	
+		enable_equipments = {
+			ifv_tracked_g6_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_tracked_t6_1
+			ifv_tracked_t6_2
+			ifv_tracked_t6_3
+			ifv_tracked_t6_4
+			ifv_tracked_t6_5
+		}
+		
+		dependencies = {
+			concept_ifv_tracked = 1
+		}
+		
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = tracked_folder
+			position = { x = @x_6 y = @t1 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t6_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g6
+		}
+		
+		dependencies = {
+			ifv_tracked_t6 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t6_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g6
+		}
+		
+		dependencies = {
+			ifv_tracked_t6_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t6_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g6
+		}
+		
+		dependencies = {
+			ifv_tracked_t6_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t6_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g6
+		}
+		
+		dependencies = {
+			ifv_tracked_t6_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_tracked_t6_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_tracked_g6
+		}
+		
+		dependencies = {
+			ifv_tracked_t6_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	######################################################################
+	
+	#
+	concept_ifv_airdroppable = {
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_airdroppable_t2 = {
+	
+		enable_equipments = {
+			ifv_airdroppable_g2_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_airdroppable_t2_1
+			ifv_airdroppable_t2_2
+			ifv_airdroppable_t2_3
+			ifv_airdroppable_t2_4
+			ifv_airdroppable_t2_5
+		}
+		
+		dependencies = {
+			concept_ifv_airdroppable = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_2 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t2_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g2
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t2_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g2
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t2_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t2_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g2
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t2_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t2_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g2
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t2_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t2_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g2
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t2_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_airdroppable_t3 = {
+	
+		enable_equipments = {
+			ifv_airdroppable_g3_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_airdroppable_t3_1
+			ifv_airdroppable_t3_2
+			ifv_airdroppable_t3_3
+			ifv_airdroppable_t3_4
+			ifv_airdroppable_t3_5
+		}
+		
+		dependencies = {
+			concept_ifv_airdroppable = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_3 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t3_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g3
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t3_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g3
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t3_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t3_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g3
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t3_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t3_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g3
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t3_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t3_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g3
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t3_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_airdroppable_t4 = {
+	
+		enable_equipments = {
+			ifv_airdroppable_g4_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_airdroppable_t4_1
+			ifv_airdroppable_t4_2
+			ifv_airdroppable_t4_3
+			ifv_airdroppable_t4_4
+			ifv_airdroppable_t4_5
+		}
+		
+		dependencies = {
+			concept_ifv_airdroppable = 1
+		}
+		
+		research_cost = 2
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_4 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t4_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g4
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t4_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g4
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t4_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t4_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g4
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t4_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t4_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g4
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t4_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t4_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g4
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t4_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_airdroppable_t5 = {
+	
+		enable_equipments = {
+			ifv_airdroppable_g5_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = ifv_airdroppable_t6
+			research_cost_coeff = 1
+		}
+		
+		sub_technologies = {
+			ifv_airdroppable_t5_1
+			ifv_airdroppable_t5_2
+			ifv_airdroppable_t5_3
+			ifv_airdroppable_t5_4
+			ifv_airdroppable_t5_5
+		}
+		
+		dependencies = {
+			concept_ifv_airdroppable = 1
+		}
+		
+		research_cost = 2
+		start_year = 2020
+		folder = {
+			name = tracked_folder
+			position = { x = @x_5 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t5_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g5
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t5 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t5_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g5
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t5_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t5_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g5
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t5_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t5_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g5
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t5_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t5_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g5
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t5_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2020
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	#
+	ifv_airdroppable_t6 = {
+	
+		enable_equipments = {
+			ifv_airdroppable_g6_equipment_0
+		}
+		
+		sub_technologies = {
+			ifv_airdroppable_t6_1
+			ifv_airdroppable_t6_2
+			ifv_airdroppable_t6_3
+			ifv_airdroppable_t6_4
+			ifv_airdroppable_t6_5
+		}
+		
+		dependencies = {
+			concept_ifv_airdroppable = 1
+		}
+		
+		research_cost = 2
+		start_year = 2025
+		folder = {
+			name = tracked_folder
+			position = { x = @x_6 y = @t2 }
+		}
+		
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t6_1 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g6
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t6 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t6_2 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g6
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t6_1 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t6_3 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g6
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t6_2 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t6_4 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g6
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t6_3 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+	ifv_airdroppable_t6_5 = {
+	
+		on_research_complete = {	
+			add_ideas = equip_bonus_ifv_airdroppable_g6
+		}
+		
+		dependencies = {
+			ifv_airdroppable_t6_4 = 1
+		}
+	
+		research_cost = 1
+		start_year = 2025
+		
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = { cat_tracked_vehicle }
+	}
+	
+###############################################################	
+	concept_landing_vehicle_tracked = {
+	
+		#enable_equipments = {
+		#	landing_vehicle_tracked_g1_equipment_0
+		#}
+		
+		path = {
+			leads_to_tech = landing_vehicle_tracked_t1
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	landing_vehicle_tracked_t1 = {
+	
+		enable_equipments = {
+			landing_vehicle_tracked_g1_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = landing_vehicle_tracked_t2
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_2 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	landing_vehicle_tracked_t2 = {
+	
+		enable_equipments = {
+			landing_vehicle_tracked_g2_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = landing_vehicle_tracked_t3
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_3 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	landing_vehicle_tracked_t3 = {
+	
+		enable_equipments = {
+			landing_vehicle_tracked_g3_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = landing_vehicle_tracked_t4
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_4 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	landing_vehicle_tracked_t4 = {
+	
+		enable_equipments = {
+			landing_vehicle_tracked_g4_equipment_0
+		}
+		
+		path = {
+			leads_to_tech = landing_vehicle_tracked_t5
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 2020
+		folder = {
+			name = tracked_folder
+			position = { x = @x_5 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	landing_vehicle_tracked_t5 = {
+	
+		enable_equipments = {
+			landing_vehicle_tracked_g5_equipment_0
+		}
+	
+		research_cost = 1.5
+		start_year = 2025
+		folder = {
+			name = tracked_folder
+			position = { x = @x_6 y = @t3 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	concept_anti_ar_vehicle = {
+	
+		#enable_equipments = {
+		#	landing_vehicle_tracked_g1_equipment_0
+		#}
+		
+		path = {
+			leads_to_tech = anti_ar_vehicle_t1
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_1 y = @t4 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	anti_ar_vehicle_t1 = {
+		enable_subunits = {
+			heavy_self_propelled_aag 
+		}
+		enable_equipments = {
+			anti_ar_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = anti_ar_vehicle_t2
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_2 y = @t4 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	anti_ar_vehicle_t2 = {
+		enable_equipments = {
+			anti_ar_equipment_2
+		}
+		
+		path = {
+			leads_to_tech = anti_ar_vehicle_t3
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_3 y = @t4 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	anti_ar_vehicle_t3 = {
+		enable_equipments = {
+			anti_ar_equipment_3
+		}
+		
+		path = {
+			leads_to_tech = anti_ar_vehicle_t4
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_4 y = @t4 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+	
+	anti_ar_vehicle_t4 = {
+		enable_equipments = {
+			anti_ar_equipment_4
+		}
+		
+		# path = {
+			# leads_to_tech = landing_vehicle_tracked_t5
+			# research_cost_coeff = 1
+		# }
+	
+		research_cost = 1.5
+		start_year = 1960
+		folder = {
+			name = tracked_folder
+			position = { x = @x_5 y = @t4 }
+		}
+	
+		ai_will_do = { factor = 6 }
+		
+		categories = {
+			cat_tracked_vehicle
+		}
+	}
+}

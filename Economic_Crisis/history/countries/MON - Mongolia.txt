@@ -1,0 +1,138 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 330
+
+add_ideas = { 
+	mixed_schools
+	parliamentary_republic
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1258 }
+
+	load_oob = "_tech_csto_minor_2013"  # not CSTO, but tehnologies level is comparable
+	oob = "MON_2013"
+	
+	set_stability = 0.5
+	
+	add_political_power = 0
+	add_ideas = terrorism_discounted
+	set_convoys = 0
+	create_intelligence_agency = yes
+	
+	add_ideas = NPT
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.6.26"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 45
+		liberalism = 0.1
+		democratic = 49.8
+		neutrality = 0
+		fascism = 0.1
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Sainkhüügiin Ganbaatar"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_sainkhuugiin_ganbaatar.dds"
+		ideology = china_socialism #Монгольская народная революционная партия
+		traits = { trait_china_socialism }
+	}
+
+	create_country_leader = {
+		name = "Natsagiin Udval"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_natsagiin_udval.dds"
+		ideology = china_socialism #Монгольская народная революционная партия
+		expire = "2017.6.26"
+		traits = { trait_china_socialism }
+	}
+
+	create_country_leader = {
+		name = "Miyeegombyn Enkhbold"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_miyeegombyn_enkhbold.dds"
+		ideology = social_democracy #Монгольская народная партия
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Badmaanyambuugiin Bat-Erdene"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_badmaanyambuugiin_bat-erdene.dds"
+		ideology = social_democracy #Монгольская народная партия
+		expire = "2017.6.26"
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Khaltmaagiin Battulga"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_khaltmaagiin_battulga.dds"
+		ideology = liberal_conservatism #Демократическая партия
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Tsakhiagiin Elbegdorj"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_tsakhiagiin_elbegdorj.dds"
+		ideology = liberal_conservatism #Демократическая партия
+		expire = "2017.7.10"
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Sanjaasürengiin Oyuun"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_sanjaasurengiin_oyuun.dds"
+		ideology = green_liberalism #Гражданская воля - Зелёные
+		traits = { trait_green_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Batbold Batdelger"
+		desc = ""
+		picture = "gfx/leaders/MON/portrait_batbold_batdelger.dds"
+		ideology = national_conservatism #МТОП
+		traits = { trait_national_conservatism }
+	}
+
+	#create_country_leader = {
+	#	name = "Ariunbold Altankhuum"
+	#	desc = ""
+	#	picture = "gfx/leaders/MON/portrait_ariunbold_altankhuum.dds"
+	#	ideology = national_socialism #Цагаан Хас
+	#	traits = { trait_national_socialism }
+	#}
+
+}
+
+
+	2017.6.26 = { 
+		MON = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.08
+			}
+
+			add_popularity = {
+				ideology = communism
+				popularity = 0.22
+			}		
+
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+	}

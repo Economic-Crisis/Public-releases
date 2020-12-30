@@ -1,0 +1,57 @@
+LAS_membership = {
+	
+	enable = {
+		
+		OR = {	
+			tag = ALG
+            tag = BHR
+            tag = JOR
+            tag = RCG
+            tag = COM
+            tag = KUW
+            tag = LEB
+            tag = MRT
+            tag = MOR
+            tag = UAE
+            tag = OMA
+            tag = PAL
+            tag = SOM
+            tag = SUD
+            tag = TUN
+            tag = SAU
+		}
+		
+		OR = {
+			has_government = neutrality
+			has_government = fascism
+			has_government = democratic
+		}
+		
+		OR = {
+			EGY = { has_government = fascism }
+			EGY = { has_government = neutrality }
+			EGY = { has_government = democratic }
+		}
+		
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = EGY
+			has_war_with = SAU
+			EGY = { is_in_faction = no }
+			EGY = { exists = no }
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "EGY"
+		value = 50
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EGY"
+		value = 100
+	}
+}

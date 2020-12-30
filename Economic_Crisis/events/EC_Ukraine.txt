@@ -1,0 +1,2539 @@
+﻿## Economic Crisis   ###
+## Ukraine events    ###
+## Written by SuxrobGM&Santilian #
+
+add_namespace = ukraine
+
+# National focus events
+
+country_event = { # Add 3 industrial complex
+	id = ukraine.1
+	title = ukraine.1.t
+	desc = ukraine.1.d
+	picture = GFX_event_inventitsiya_UKR
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = ukraine.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.1.a"
+		193 = { add_building_construction = { type = industrial_complex level = 3 instant_build = yes } }
+	
+	}
+}
+	
+country_event = {  #Инвент АнтиКоррупция
+	id = ukraine.2
+	title = ukraine.2.t
+	desc = ukraine.2.d
+	picture = GFX_event_UKR_anticorruption
+	
+	is_triggered_only = yes
+	
+	option = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.2.a"
+		name = ukraine.2.a
+	}
+}
+
+country_event = {  #Инвент вступление в НАТО Украина
+	id = ukraine.3
+	title = ukraine.3.t
+	desc = ukraine.3.d
+	picture = GFX_event_UKR_to_NATO
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.3.a"
+		USA = { add_to_faction = UKR } 
+		ai_chance = { factor = 70 }
+		news_event = { id = ukraine_news.2 hours = 6 }
+	}
+	
+	option = {
+		name = ukraine.3.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.3.b"
+		trigger = { tag = UKR }
+		ai_chance = { factor = 30 }
+	}
+}
+
+country_event = {  #Инвент вступление в ОДКБ
+	id = ukraine.4
+	title = ukraine.4.t
+	desc = ukraine.4.d
+	picture = GFX_event_UKR_to_CSTO
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.4.a #За
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.4.a"
+		ai_chance = { factor = 70 }
+		RUS = { add_to_faction = UKR }
+		news_event = { id = ukraine_news.10 hours = 6 }
+	}
+	
+	option = {
+		name = ukraine.4.b #Против
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.4.b"
+		ai_chance = { factor = 30 }
+	}
+}
+
+country_event = {  #Соглашение Минск
+	id = ukraine.5
+	title = ukraine.5.t
+	desc = ukraine.5.d
+	picture = GFX_event_minsk_peace
+	
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = UKR
+		date > 2015.1.1
+		country_exists = UKR
+		OR = {	
+			country_exists = DON
+			country_exists = LUG
+		}	
+		UKR = { 
+			OR = {	
+				has_war_with = DON 
+				has_war_with = LUG 
+			}	
+			has_country_flag = Ost-Ukraine_conflict
+		}
+	}
+	
+	option = {
+		name = ukraine.5.a #За
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.5.a"
+		ai_chance = { factor = 70 }
+		if = {
+			limit = { country_exists = DON }
+			DON = { country_event = { id = ukraine.6 days = 1 } }
+		}	
+		if = {
+			limit = { country_exists = LUG }
+			LUG = { country_event = { id = ukraine.6 days = 2 } }
+		}
+		effect_tooltip = {
+			add_named_threat = { threat = -3 name = threat_minsk_peace_pact }
+			every_other_country = {
+				limit = { is_neighbor_of = UKR }
+				add_opinion_modifier = {
+					modifier = actions_positive
+					target = UKR
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine.5.b #Против
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.5.b"
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+country_event = {  #Соглашение Минск(сторона ДНР и ЛНР)
+	id = ukraine.6
+	title = ukraine.6.t
+	desc = ukraine.6.d
+	picture = GFX_event_DNR_LNR
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.6.a #Принят
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.6.a"
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 100
+				tag = DON
+				LUG = { has_country_flag = accepted_minsk_peace_pact }
+			}
+			modifier = {
+				factor = 100
+				tag = LUG
+				DON = { has_country_flag = accepted_minsk_peace_pact }
+			}
+		}
+		if = {
+			limit = { tag = DON }
+			DON = {	white_peace = UKR }
+		}
+		if = {
+			limit = { tag = LUG }
+			LUG = {	white_peace = UKR }
+		}
+		if = {
+			limit = { tag = NRU }
+			NRU = {	white_peace = UKR }
+		}
+		add_named_threat = { threat = -3 name = threat_minsk_peace_pact }
+		set_country_flag = accepted_minsk_peace_pact
+		UKR = { set_country_flag = accepted_minsk_peace_pact }
+		every_other_country = {
+			limit = { 
+				is_neighbor_of = UKR
+				NOT = { has_war_with = UKR }
+			}
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = UKR
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine.6.b #Против
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.6.b"
+		ai_chance = { 
+			factor = 40 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				strength_ratio = { tag = UKR ratio > 1 }
+			}
+		}
+		UKR = { country_event = { id = ukraine.7 days = 2 } }
+		UKR = { set_country_flag = rejected_minsk_peace_pact }
+		set_country_flag = rejected_minsk_peace_pact
+	}
+}
+
+#В случе отказ мирного соглашение(tag UKR)
+country_event = {  
+	id = ukraine.7
+	title = ukraine.7.t
+	desc = ukraine.7.d
+	picture = GFX_event_break_minsk_peace
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.7.a #Война продолжатся
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.7.a"
+	}
+}
+
+#Военный провокации со стороны ДНР\ЛНР или Украины(hidden trigger) 
+country_event = {  
+	id =  ukraine.8
+	title =  ukraine.8.t
+	desc =  ukraine.8.d
+	picture = GFX_event_DNR_LNR_conflict
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		OR = {
+			country_exists = DON
+			country_exists = LUG
+			country_exists = NRU
+		}
+		UKR = {
+			NOT = {
+				OR = {
+					has_war_with = DON
+					has_war_with = LUG
+					has_war_with = NRU
+				}
+			}
+		}
+		OR = {
+			DON = { has_country_flag = accepted_minsk_peace_pact }
+			LUG = { has_country_flag = accepted_minsk_peace_pact }
+			NRU = { has_country_flag = accepted_minsk_peace_pact }
+		}
+		has_country_flag = accepted_minsk_peace_pact
+		NOT = { has_country_flag = rejected_minsk_peace_pact }
+		NOT = { has_global_flag = ratification_minsk_peace_pact }
+	}
+	
+	immediate = { 
+	    hidden_effect = {
+			786 = { set_border_war = yes }
+			785 = { set_border_war = yes }
+			200 = { set_border_war = yes }
+			226 = { set_border_war = yes }
+			221 = { set_border_war = yes }
+			UKR = { country_event = { id = ukraine.9 } }
+			if = {
+				limit = { country_exists = DON }
+				DON = { country_event = { id = ukraine.9 } }
+			}
+			if = {
+				limit = { country_exists = LUG }
+				LUG = { country_event = { id = ukraine.9 } }
+			}
+			if = {
+				limit = { country_exists = NRU }
+				NRU = { country_event = { id = ukraine.9 } }
+			}
+		}	
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	option = {
+		name = ukraine.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.8.a"
+	}
+}
+
+#Реакция стороны после пограничном конфликте
+country_event = {  
+	id = ukraine.9
+	title = {
+		trigger = { tag = UKR }
+		text = ukraine.9.title.UKR
+	}
+	title = {
+		trigger = { 
+			OR = {	
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}	
+		}
+		text = ukraine.9.title.NRU
+	}
+	desc = {
+		trigger = { tag = UKR }
+		text = ukraine.9.desc.UKR
+	}
+	desc = {
+		trigger = { 
+			OR = {	
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}	
+		}
+		text = ukraine.9.desc.NRU
+	}
+	picture = GFX_event_rebellion_Ukraine
+	
+	is_triggered_only = yes
+	
+	option = { #Никаких реакция
+		name = ukraine.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.9.a"
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 100
+				tag = UKR
+				has_opinion = { target = RUS value > 35 }
+			}
+			modifier = {
+				factor = 100
+				OR = {	
+					tag = NRU
+					tag = DON
+					tag = LUG
+				}
+				RUS = {	has_opinion = { target = UKR value > 35 } }
+				has_opinion = { target = RUS value > 35 }
+			}
+		}
+	}
+	
+	option = { #Спровоцировать
+		name = ukraine.9.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.9.b"
+		ai_chance = {
+			factor = 65
+		}
+		custom_effect_tooltip = maybe_ratification_minsk_peace_pact_TT
+		if = {
+			limit = { tag = DON }	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = UKR
+			}
+		}
+		if = {
+			limit = { tag = LUG }	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = UKR
+			}
+		}
+		if = {
+			limit = { tag = NRU }	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = UKR
+			}
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = DON
+			}	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = DON
+			}
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = LUG
+			}	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = LUG
+			}
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = NRU
+			}	
+			add_opinion_modifier = {
+				modifier = military_provocation
+				target = NRU
+			}
+		}
+	}
+}	
+
+#Ратификации Минские соглашение(hidden event)
+country_event = {  
+	id =  ukraine.10
+	title =  ukraine.10.t
+	desc =  ukraine.10.d
+	picture = GFX_event_DNR_LNR_conflict
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		UKR = { has_country_flag = accepted_minsk_peace_pact }
+		country_exists = UKR
+		OR = {
+			country_exists = DON
+			country_exists = LUG
+			country_exists = NRU
+		}
+		UKR = {
+			NOT = {
+				has_war_with = DON
+				has_war_with = LUG
+				has_war_with = NRU
+			}
+		}
+		NOT = {
+			has_global_flag = ratification_minsk_peace_pact
+		}
+		OR = {	
+			UKR = {
+				has_opinion = { target = DON value < -70 }
+				has_opinion = { target = LUG value < -70 }
+				has_opinion = { target = NRU value < -70 }
+			}
+		}
+		OR = {
+			DON = {	has_opinion = { target = UKR value < -70 } }
+			LUG = {	has_opinion = { target = UKR value < -70 } }
+			NRU = {	has_opinion = { target = UKR value < -70 } }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		set_global_flag = ratification_minsk_peace_pact
+		if = {
+			limit = {
+				country_exists = UKR
+				UKR = { has_country_flag = accepted_minsk_peace_pact }
+				OR = {	
+					has_opinion = { target = NRU value < -70 }
+					has_opinion = { target = DON value < -70 }
+					has_opinion = { target = LUG value < -70 }
+				}	
+			}
+			country_event = {
+				id = ukraine.11
+			}
+		}
+		if = {
+			limit = {
+				country_exists = DON
+				DON = { has_country_flag = accepted_minsk_peace_pact }
+				DON = {	has_opinion = { target = UKR value < -70 } }
+			}
+			country_event = {
+				id = ukraine.11
+			}
+		}
+		if = {
+			limit = {
+				country_exists = LUG
+				LUG = { has_country_flag = accepted_minsk_peace_pact }
+				LUG = {	has_opinion = { target = UKR value < -70 } }
+			}
+			country_event = {
+				id = ukraine.11
+			}
+		}
+		if = {
+			limit = {
+				country_exists = NRU
+				NRU = { has_country_flag = accepted_minsk_peace_pact }
+				NRU = {	has_opinion = { target = UKR value < -70 } }
+			}
+			country_event = {
+				id = ukraine.11
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine.10.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.10.a"
+	}
+}
+
+#Аннулировать соглашение и возобновление войны
+country_event = {  
+	id =  ukraine.11
+	title = {
+		trigger = { tag = UKR }
+		text = ukraine.11.title.UKR
+	}
+	title = {
+		trigger = {
+			OR = {	
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}	
+		}
+		text = ukraine.11.title.NRU
+	}
+	desc = {
+		trigger = { tag = UKR }
+		text = ukraine.11.desc.UKR
+	}
+	desc = {
+		trigger = { 
+			OR = {	
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}	
+		}
+		text = ukraine.11.desc.NRU
+	}
+	picture = GFX_event_DNR_LNR_conflict
+	
+	is_triggered_only = yes
+	
+	option = { #Аннулировать
+		name = ukraine.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.11.a"
+		ai_chance = {
+			factor = 85
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = NRU
+			}
+			declare_war_on = {
+				target = NRU type = annex_everything
+			}
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = DON
+			}
+			declare_war_on = {
+				target = DON type = annex_everything
+			}
+		}
+		if = {
+			limit = { 
+				tag = UKR
+				country_exists = LUG
+			}
+			declare_war_on = {
+				target = LUG type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				tag = UKR
+				country_exists = DON
+				RUS = {
+					has_opinion = { target = DON value > 50 }
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_negative
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = UKR
+				country_exists = LUG
+				RUS = {
+					has_opinion = { target = LUG value > 50 }
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_negative
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = UKR
+				country_exists = NRU
+				RUS = {
+					has_opinion = { target = NRU value > 50 }
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_negative
+				}
+			}
+		}
+	}
+	
+	option = { #Потерпеть
+		name = ukraine.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.11.b"
+		ai_chance = {
+			factor = 15
+		}
+	}
+}	
+
+#События Евромайдана
+country_event = {  
+	id = ukraine.12
+	title = ukraine.12.t
+	desc = ukraine.12.d
+	picture = GFX_event_Euromaidan_SM7
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = UKR
+		date > 2013.11.16
+	    country_exists = UKR
+	}
+	
+	option = {
+		name = ukraine.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.12.a"
+	    add_timed_idea = { idea = UKR_euromaydan days = 365 }
+	    hidden_effect = {
+		    news_event = { id = ukraine_news.11 days = 1 }
+		}
+	}
+	
+	mean_time_to_happen = {
+	    days = 1
+	}
+}
+
+country_event = {  # Смена власти в феврале 2014 / Начало гражданской войны
+	id = ukraine.13
+	title = ukraine.13.t
+	desc = ukraine.13.d
+	picture = GFX_event_UKR_protests
+	
+	fire_only_once = yes
+
+	trigger = { 
+	    tag = UKR
+		date > 2014.2.14
+		country_exists = UKR
+		OR = {
+			has_government = neutrality
+			has_country_leader = {
+				name = "Viktor Yanukovych"
+				ruling_only = yes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+	    days = 1
+	}
+	
+	option = {  
+		name = ukraine.13.a #Отстранить Януковича
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.13.a"
+		ai_chance = { factor = 35 }
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.5
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.3
+		}
+		add_popularity = {
+			ideology = reformism
+			popularity = -1
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		set_country_flag = otstranenie_Yanukovicha
+		# add_timed_idea = { idea = russian_spring days = 365 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		retire_country_leader = yes
+		hidden_effect = {
+			news_event = { id = ukraine_news.13 days = 1 }
+			add_ideas = ukr_arseniy_yatsenyuk_hog
+			add_ideas = ukr_igor_tenyuh_defm
+			add_ideas = ukr_andrey_deshchitsa_fgm
+			add_ideas = ukr_oleksandr_slapak_ecm
+			add_ideas = ukr_valentin_nalivaychenko_ssch
+			add_ideas = ukr_viktor_muzhenko
+			add_ideas = ukr_anatoly_pusnyakov
+			add_ideas = ukr_viktor_hvozd
+			UKR = { 
+				country_event = { id = ukraine.16 days = 92 } # назначены выборы
+				#Правый Сектор
+				set_party_name = {
+					ideology = fascism
+					long_name = UKR_2015_fascism_party
+					name = UKR_2015_fascism_party
+				}
+			}
+			RUS = { 
+				country_event = { id = ukraine_civilwar.20 days = 48 }  # решение России по волнениям в Востоке (Донецк, Луганск + Харьков, Запорожье, Одесса, Николаев, Днепропетровск, Херсон) - 6-7 апреля
+				country_event = { id = ukraine_civilwar.10 days = 5 } # решение России по волнениям в Крыму - 23-27 февраля
+			}
+			create_country_leader = {
+				name = "Oleksandr Yefremov"
+				desc = ""
+				picture = "gfx/leaders/UKR/portrait_oleksandr_yefremov.dds"
+				ideology = centrist_democracy
+				traits = { trait_centrist_democracy }
+			}
+		}
+		create_country_leader = {
+	        name = "Oleksandr Turchynov"
+	        desc = ""
+	        picture = "gfx/leaders/UKR/portrait_oleksandr_tourtchynov.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+        }
+	}	
+	
+	option = {
+		name = ukraine.13.b #Оставить Януковича/Начало гражданской войны
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.13.b"
+		ai_chance = { 
+			factor = 65
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		#NRU - Восточная Украина во главе с Януковичем
+		#UKR - Западная Украина во главе с Турчиновым
+		
+		effect_tooltip = {
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.5
+				states = { 193 202 198 199 201 91 93 80 73 89 203 259 225 }
+			}
+		}	
+		NRU = {	
+			change_tag_from = UKR
+			hidden_effect = {	
+				country_event = { id = ukraine.45 } #остальные конфиги в ивенте ukraine.45 
+			}
+		}	
+		
+		UKR = {
+			add_named_threat = { threat = 5 name = threat_UKR_civilwar_2014 }
+			
+			set_cosmetic_tag = UKR_west_ukraine
+			set_country_flag = ukraine_civilwar
+			
+			set_capital = 202 #Киев столица Западной Украины
+			
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.08
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.6
+			}
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
+			
+			hidden_effect = { 
+				load_oob = UKR_civilwar
+				#Временное правительство
+				set_party_name = {
+					ideology = democratic
+					long_name = UKR_democratic_party_west_ukraine
+					name = UKR_democratic_party_west_ukraine
+				}
+			}
+			create_country_leader = {
+				name = "Oleksandr Turchynov"
+				desc = ""
+				picture = "gfx/leaders/UKR/portrait_oleksandr_tourtchynov.dds"
+				ideology = conservative_democracy
+				traits = { trait_conservative_democracy }
+			} 
+		}
+		hidden_effect = {
+			NRU = {
+			    transfer_state = 227
+				transfer_state = 228
+				transfer_state = 785
+				transfer_state = 786
+				transfer_state = 829
+				transfer_state = 828
+				transfer_state = 995
+				transfer_state = 226
+				transfer_state = 221
+				transfer_state = 200
+				transfer_state = 197
+				transfer_state = 196
+				transfer_state = 192
+				transfer_state = 137
+				load_oob = "UKR_tech_2013"
+				load_oob = "NRU_2013_army"
+				set_province_controller = 6451
+				set_province_controller = 6478
+				set_province_controller = 6507
+				set_province_controller = 511
+				set_province_controller = 6578
+				set_province_controller = 3557
+				set_province_controller = 11504
+				set_province_controller = 6495
+				set_province_controller = 3452
+				set_province_controller = 3468
+				set_province_controller = 501
+				set_province_controller = 3455
+			}
+			every_state = {
+				limit = { is_core_of = UKR }
+				add_core_of = NRU
+			}
+			news_event = { id = ukraine_news.8 days = 1 }
+			RUS = { country_event = { id = russia.13 days = 1 } }
+			country_event = { id = ukraine.45 days = 1 }
+		}
+		hidden_effect = {
+			UKR = { 
+				transfer_state = 193
+				transfer_state = 202
+				transfer_state = 198
+				transfer_state = 199
+				transfer_state = 201
+				transfer_state = 91
+				transfer_state = 93
+				transfer_state = 80
+				transfer_state = 73
+				transfer_state = 89
+				transfer_state = 203
+				transfer_state = 259
+				transfer_state = 225
+				declare_war_on = { target = NRU type = annex_everything }
+			}
+		}
+	}
+}
+
+### Scenaries for ost-Ukraine confilcts
+country_event = {  # Воружённый конфликт на Востоке 
+	id =  ukraine.15
+	title =  ukraine.15.t
+	desc =  ukraine.15.d
+	picture = GFX_event_DNR_LNR_conflict
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = UKR
+		has_country_flag = otstranenie_Yanukovicha
+		has_country_flag = UKR_crimea_crisis
+		date > 2014.4.16
+	}
+	
+	immediate = { 
+	    hidden_effect = {
+			DON = { 
+				transfer_state = 786
+				transfer_state = 227
+				add_state_core = 227
+				add_state_core = 786
+				load_oob = "UKR_tech_2013"
+				load_oob = "DON_2013"
+			}
+			LUG = { 
+				transfer_state = 785
+				transfer_state = 228
+				add_state_core = 228
+				add_state_core = 785
+				load_oob = "UKR_tech_2013"
+				load_oob = "LUG_2013"
+		    }
+			add_named_threat = { threat = 3 name = threat_UKR_military_conflict_on_east	}
+			set_country_flag = Ost-Ukraine_conflict
+		}
+	}
+	
+	option = {
+		name = ukraine.15.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.15.a"
+		ai_chance = { factor = 100 }
+	    786 = { set_border_war = yes }
+	    785 = { set_border_war = yes }
+		200 = { set_border_war = yes }
+		226 = { set_border_war = yes }
+		221 = { set_border_war = yes }
+		hidden_effect = {
+		    news_event = { id = ukraine_news.12 days = 1 }
+		}
+	}
+	
+	option = {
+		name = ukraine.15.b #this is option for player
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.15.b"
+		ai_chance = { factor = 0 }
+		DON = { change_tag_from = UKR }
+		786 = { set_border_war = yes }
+	    785 = { set_border_war = yes }
+		200 = { set_border_war = yes }
+		226 = { set_border_war = yes }
+		221 = { set_border_war = yes }
+		hidden_effect = {
+		    news_event = { id = ukraine_news.12 days = 1 }
+		}
+	}
+	
+	option = {
+		name = ukraine.15.c #this is option for player
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.15.c"
+		ai_chance = { factor = 0 }
+		LUG = { change_tag_from = UKR }
+		786 = { set_border_war = yes }
+	    785 = { set_border_war = yes }
+		200 = { set_border_war = yes }
+		226 = { set_border_war = yes }
+		221 = { set_border_war = yes }
+		hidden_effect = {
+		    news_event = { id = ukraine_news.12 days = 1 }
+		}
+	}
+}
+
+country_event = {  # Внеочередные президентские выборы 2014
+	id = ukraine.16
+	title = ukraine.16.t
+	desc = ukraine.16.d
+	picture = GFX_event_election_in_ukraine_2014
+	
+	is_triggered_only = yes
+	
+	option = { #Пётр Порошенко
+		name = ukraine.16.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.16.a"
+		ai_chance = { 
+			factor = 60 
+
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			last_election = "2014.3.31" #Для выборов в 2019 году
+			election_frequency = 60
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.1
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Petro Poroshenko"
+	        desc = ""
+	        picture = "gfx/leaders/UKR/portrait_petro_poroshenko.dds"
+	        ideology = liberal_democracy
+	        traits = { trait_liberal_democracy }
+        }
+
+		hidden_effect = {
+
+		create_country_leader = {
+	        name = "Yulia Tymoshenko"
+	        picture = "gfx/leaders/UKR/portrait_yulia_tymoshenko.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+	    }
+
+		#Батькивщина
+		set_party_name = {
+		    ideology = democratic
+		    long_name = UKR_democratic_party_tymoshenko_long
+	        name = UKR_democratic_party_tymoshenko
+        }
+
+		create_country_leader = {
+			name = "Oleh Tyahnybok"
+			desc = ""
+			picture = "gfx/leaders/UKR/portrait_oleh_tyahnybok.dds"
+			ideology = national_democracy
+			traits = { trait_national_democracy }
+		}
+
+		create_country_leader = {
+	        name = "Petro Poroshenko"
+	        desc = ""
+	        picture = "gfx/leaders/UKR/portrait_petro_poroshenko.dds"
+	        ideology = liberal_democracy
+	        traits = { trait_liberal_democracy }
+        }
+
+		#Оппозиционный блок
+		set_party_name = {
+		    ideology = neutrality
+		    long_name = UKR_neutrality_boyko_party
+	        name = UKR_neutrality_boyko_party
+        }
+
+		#ВО "Свобода"
+		set_party_name = {
+		    ideology = fascism
+		    long_name = UKR_fascism_party_long
+	        name = UKR_fascism_party
+        }
+			news_event = { id = ukraine_news.14 days = 1 }
+		}
+		
+	}
+	
+	option = { #Юлия Тимошенко
+		name = ukraine.16.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.16.b"
+		ai_chance = { 
+			factor = 25
+
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			} 
+		}
+		set_politics = {
+			ruling_party = democratic
+			last_election = "2014.3.31" #Для выборов в 2019 году
+			election_frequency = 60
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Yulia Tymoshenko"
+	        desc = ""
+	        picture = "gfx/leaders/UKR/portrait_yulia_tymoshenko.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+        }
+
+		#Батькивщина
+		set_party_name = {
+		    ideology = democratic
+		    long_name = UKR_democratic_party_tymoshenko_long
+	        name = UKR_democratic_party_tymoshenko
+        }
+        
+		hidden_effect = {
+
+		create_country_leader = {
+			name = "Oleh Tyahnybok"
+			desc = ""
+			picture = "gfx/leaders/UKR/portrait_oleh_tyahnybok.dds"
+			ideology = national_democracy
+			traits = { trait_national_democracy }
+		}
+
+		#Оппозиционный блок
+		set_party_name = {
+		    ideology = neutrality
+		    long_name = UKR_neutrality_boyko_party
+	        name = UKR_neutrality_boyko_party
+        }
+
+		#ВО "Свобода"
+		set_party_name = {
+		    ideology = fascism
+		    long_name = UKR_fascism_party_long
+	        name = UKR_fascism_party
+        }
+		    news_event = { id = ukraine_news.14 days = 1 }
+		}
+	}
+	
+	option = { #Дмитрий Ярош
+		name = ukraine.16.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.16.c"
+		ai_chance = { 
+			factor = 15 
+
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			last_election = "2014.3.31" #Для выборов в 2019 году
+			election_frequency = 60
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.35
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+	        name = "Dmytro Yarosh"
+	        desc = ""
+	        picture = "gfx/leaders/UKR/portrait_dmytro_yarosh.dds"
+	        ideology = national_democracy
+	        traits = { trait_national_democracy }
+        }
+		hidden_effect = {
+		create_country_leader = {
+	        name = "Yulia Tymoshenko"
+	        picture = "gfx/leaders/UKR/portrait_yulia_tymoshenko.dds"
+	        ideology = conservative_democracy
+	        traits = { trait_conservative_democracy }
+	    }
+		set_party_name = {
+		    ideology = democratic
+		    long_name = UKR_democratic_party_long
+	        name = UKR_democratic_party
+        }
+		    news_event = { id = ukraine_news.14 days = 1 }
+		}
+	}
+}
+
+# ВСУ поражение в пограничном конфликте
+country_event = {
+	id = ukraine.17
+	title = ukraine.17.t
+	desc = ukraine.17.d
+	picture = GFX_event_UKR_war_with_LDNR
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UKR
+	}
+
+	immediate = {
+		hidden_effect = {
+			785 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			786 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			200 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			226 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			221 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ukraine.17.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.17.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		DON = { country_event = { id = ukraine.18 } }
+		LUG = { country_event = { id = ukraine.18 } }
+	}
+}
+
+# ЛДНР Победа в пограничный конфликт
+country_event = {
+	id = ukraine.18
+	title = ukraine.18.t
+	desc = ukraine.18.d
+	picture = GFX_event_LDNR_solidiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.18.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.18.a"
+		add_political_power = 200
+		add_stability = 0.05
+	}
+}
+
+# ДНР поражение в пограничный конфликт
+country_event = {
+	id = ukraine.19
+	title = ukraine.19.t
+	desc = ukraine.19.d
+	picture = GFX_event_LDNR_solidiers1
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = DON
+	}
+
+	immediate = {
+		hidden_effect = {
+			786 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			200 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			226 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			set_country_flag = DNR_lost_border_war
+		}
+	}
+	
+	option = {
+		name = ukraine.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.19.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		UKR = { country_event = { id = ukraine.21 } }
+	}
+}
+
+# ЛНР поражение в пограничный конфликт
+country_event = {
+	id = ukraine.20
+	title = ukraine.20.t
+	desc = ukraine.20.d
+	picture = GFX_event_LDNR_solidiers2
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = LUG
+	}
+
+	immediate = {
+		hidden_effect = {
+			785 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			221 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			set_country_flag = LNR_lost_border_war
+		}
+	}
+	
+	option = {
+		name = ukraine.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.20.a"
+		add_political_power = -200
+		add_stability = -0.05
+		add_manpower = -5000
+		UKR = { country_event = { id = ukraine.21 } }
+	}
+}
+
+# ВСУ Победа в пограничный конфликте
+country_event = {
+	id = ukraine.21
+	title = ukraine.21.t
+	desc = ukraine.21.d
+	picture = GFX_event_UKR_special_forces
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.21.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.21.a"
+		add_political_power = 100
+		add_stability = 0.05
+		if = {
+		    limit = { DON = { has_country_flag = DNR_lost_border_war } }
+			UKR = { transfer_state = 786 }
+			DON = { clr_country_flag = DNR_lost_border_war }
+		}
+		if = {
+		    limit = { LUG = { has_country_flag = LNR_lost_border_war } }
+			UKR = { transfer_state = 785 }
+			LUG = { clr_country_flag = LNR_lost_border_war }
+		}
+	}
+}
+
+
+
+# Санкции
+country_event = {
+	id = ukraine.25
+	title = ukraine.25.t
+	desc = ukraine.25.d
+	picture = GFX_event_ukraine_sanctions
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.25.a		
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.25.a"
+		ai_chance = {
+			factor = 75
+		}
+		UKR = { add_opinion_modifier = { target = ROOT modifier = UKR_european_support_focus } }
+		add_opinion_modifier = { target = UKR modifier = UKR_european_support_focus }
+		RUS  = { add_opinion_modifier = { target = ROOT modifier = UKR_russian_sanctions } }
+	}
+	
+	option = {
+		name = ukraine.25.b		
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.25.b"
+		ai_chance = { factor = 25 }
+	}
+}
+
+# Предложение Молдове о блокаде проблемного региона
+country_event = {
+	id = ukraine.26
+	title = ukraine.26.t
+	desc = ukraine.26.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.26.a		#Мат 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.26.a"
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 95
+				TMD = {
+					is_in_faction_with = RUS
+					is_puppet_of = RUS
+				}
+				NOT = {
+					UKR = {
+						is_in_faction_with = RUS
+						is_puppet_of = RUS
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				TMD = {
+					OR = {
+						is_in_faction_with = MOL
+						is_puppet_of = MOL
+						has_global_flag = ukr_not_blockade_tmd
+					}
+				}
+			}
+		}
+		MOL = {	
+			set_global_flag = mda_blockade_tmd
+			add_opinion_modifier = { target = UKR modifier = UKR_joint_siege  }	
+		}
+		UKR = {	
+			add_opinion_modifier = { target = MOL modifier = UKR_joint_siege  }	
+		}
+		TMD = {
+			add_ideas = tmd_blockade
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = TMD
+			}
+			add_opinion_modifier = { target = MOL modifier = UKR_blockade  }	
+			MOL = { add_opinion_modifier = { target = UKR modifier = UKR_blockade  } }				
+		}
+		
+		hidden_effect = {
+			#news_event = { id = news.298 days = 1 } # Молдова присоединяется к эмбарго на Приднестровье
+		}
+	}
+	
+	option = {
+		name = ukraine.26.b		#Не стоит так рисковать
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.26.b"
+		ai_chance = { factor = 15 }
+		hidden_effect = {
+			news_event = { id = news.299 days = 1 } # Молдова отказывается от эмбарго на Приднестровье
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = TMD
+			}
+			add_opinion_modifier = { target = MOL modifier = MDA_tmd_waiver_of_sanctions  }	
+			MOL = { add_opinion_modifier = { target = UKR modifier = MDA_tmd_waiver_of_sanctions  } }				
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = UKR
+			}
+			add_opinion_modifier = { target = MOL modifier = MDA_ukr_waiver_of_sanctions  }	
+			MOL = { add_opinion_modifier = { target = UKR modifier = MDA_ukr_waiver_of_sanctions  } }
+		}
+	}
+}
+
+#Блокада
+country_event = {
+	id = ukraine.27
+	title = ukraine.27.t
+	desc = ukraine.27.d
+	picture = GFX_event_ukraine_osada
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.27.a		#Шах
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.27.a"
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				TMD = {
+					is_in_faction_with = RUS
+					is_puppet_of = RUS
+				}
+			}
+			modifier = {
+				factor = 0
+				TMD = {
+					OR = {
+						is_in_faction_with = UKR
+						is_puppet_of = UKR	
+					}
+				}
+			}
+		}
+		UKR = {
+			add_opinion_modifier = { target = TMD modifier = UKR_transnistria_blockade1 }
+			add_opinion_modifier = { target = TMD modifier = UKR_blockade }
+		}
+		TMD = { 
+			add_opinion_modifier = { target = UKR modifier = UKR_transnistria_blockade1 }					
+			add_opinion_modifier = { target = UKR modifier = UKR_blockade }	
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = TMD
+			}
+			add_opinion_modifier = { target = UKR modifier = UKR_blockade  }	
+			UKR = { add_opinion_modifier = { target = UKR modifier = UKR_blockade  } }				
+		}
+		if = {
+			limit = {
+			MOL = {
+				NOT = { 
+					is_puppet_of = RUS 
+					is_in_faction_with = TMD
+					}
+				}
+			}
+			MOL = { country_event = { id = ukraine.26 } }
+		}
+		set_global_flag = ukr_blockade_tmd
+	}
+	
+	option = {
+		name = ukraine.27.b		#Не стоит так рисковать
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.27.b"
+		ai_chance = { factor = 10 }
+		set_global_flag = ukr_not_blockade_tmd
+		every_other_country = {
+			limit = {
+				is_in_faction_with = TMD
+			}
+			add_opinion_modifier = { target = UKR modifier = UKR_not_blockade  }	
+			UKR = { add_opinion_modifier = { target = UKR modifier = UKR_not_blockade  } }				
+		}
+		add_stability = -0.05
+		hidden_effect = {
+			news_event = { id = news.300 days = 1 } # Украина отказалась от санкций на Приднестровье
+		}
+	}
+
+}
+
+#Выход из ситуации для Приднестровья
+country_event = {
+	id = ukraine.28
+	title = ukraine.28.t
+	desc = ukraine.28.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.28.a		#Попросить помощи в России
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.28.a"
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 80
+				OR = {
+					TMD = {
+						is_in_faction_with = RUS
+					}
+					RUS = {
+						TMD = { is_subject = yes }
+					}
+				}
+			}
+		}
+		every_other_country = {
+			limit = {
+				NOT = { tag = UKR }
+				NOT = { tag = MOL }
+				OR = {
+					num_of_factories > 0
+				}
+			}
+			add_opinion_modifier = { target = TMD modifier = UKR_transnistria_blockade1 }					
+		}
+		RUS = { 
+			country_event = ukraine.29
+		}
+	}
+	
+	
+	option = {
+		name = ukraine.28.b	#Капитулировать
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.28.b"
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 20
+				NOT = {
+					OR = {
+						TMD = {
+							is_in_faction_with = RUS
+						}
+						RUS = {
+							TMD = { is_subject = yes }
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					TMD = {
+						is_in_faction_with = RUS
+					}
+					RUS = {
+						TMD = { is_subject = yes }
+					}
+				}
+			}
+		}
+		
+		MOL = { transfer_state = 774 }
+		hidden_effect = {
+			news_event = { id = news.301 days = 1 } #Молдова ввела войска в Приднестровье
+		}
+	}
+}	
+
+# Российское вмешательство
+country_event = {
+	id = ukraine.29
+	title = ukraine.29.t
+	desc = ukraine.29.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.29.a	#Пригрозить силой	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.29.a"
+		ai_chance = {
+			factor = 15
+		}
+		UKR = { 
+			country_event = ukraine.30
+		}
+	}
+	
+	option = {
+		name = ukraine.29.b	#Пригрозить экономической войной
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.29.b"
+		ai_chance = { factor = 65 }
+		UKR = { 
+			country_event = ukraine.31
+		}
+	}
+	
+	option = {
+		name = ukraine.29.c	#Выразить беспокойство 
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.29.c"
+		ai_chance = { factor = 10 }
+		hidden_effect = {
+			news_event = { id = news.302 days = 1 } # Россия выразила беспокойство
+		}
+	}
+	
+	option = {
+		name = ukraine.29.e	#Проигнорировать
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.29.e"
+		ai_chance = { factor = 10 }
+		TMD = {
+			add_opinion_modifier = { target = RUS modifier = TMD_knife_in_the_back }
+		}
+		add_opinion_modifier = { target = TMD modifier = TMD_knife_in_the_back }
+		remove_from_faction = TMD
+		end_puppet = TMD
+		hidden_effect = {
+			news_event = { id = news.303 days = 1 } # Россия проигнорировала требования Приднестровья о помощи
+		}
+	}
+
+}
+
+# Решение Украины (военная угроза)
+country_event = {
+	id = ukraine.30
+	title = ukraine.30.t
+	desc = ukraine.30.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.30.a	#Война
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.30.a"
+		ai_chance = {
+			factor = 15
+		}
+		RUS = { 
+			declare_war_on = { target = UKR type = annex_everything } 
+		}
+		hidden_effect = {
+			news_event = { id = news.304 days = 1 } # Украина вступает в войну
+		}
+	}
+	
+	option = {
+		name = ukraine.30.b	#Отступить
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.30.b"
+		ai_chance = { factor = 75 }
+		every_other_country = {
+			limit = {
+				OR = {
+					num_of_factories > 0
+				}
+			}
+			remove_opinion_modifier = { target = TMD modifier = UKR_transnistria_blockade1 }
+		}
+		add_stability = -0.05
+		TMD = {
+			remove_ideas = tmd_blockade
+		}
+		hidden_effect = {
+			news_event = { id = news.305 days = 1 } # Украина снимает санкции
+		}
+	}
+}
+
+# Решение Украины (экономическая угроза)
+country_event = {
+	id = ukraine.31
+	title = ukraine.31.t
+	desc = ukraine.31.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ukraine.31.a	#Санкции
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.31.a"
+		ai_chance = {
+			factor = 80
+		}
+		effect_tooltip = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = RUS
+					#OR = {
+					#	num_of_factories > 0
+					#}
+				}
+				add_opinion_modifier = { target = ROOT modifier = UKR_russian_sanctions }	
+				add_opinion_modifier = { target = ROOT modifier = UKR_sanctions }					
+			}
+		}
+		hidden_effect = {
+			#news_event = { id = news.306 days = 1 } # Россия наложила санкции
+		}
+	}
+	
+	option = {
+		name = ukraine.31.b	#Отступить
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.31.b"
+		ai_chance = { factor = 20 }
+		every_other_country = {
+			limit = {
+				OR = {
+					num_of_factories > 0
+				}
+			}
+			remove_opinion_modifier = { target = TMD modifier = UKR_transnistria_blockade1 }
+		}
+		add_stability = -0.05
+		TMD = {
+			remove_ideas = tmd_blockade
+		}
+		hidden_effect = {
+			news_event = { id = news.305 days = 1 } # Украина снимает санкции
+		}
+	}
+}
+
+# Снятие блокады
+country_event = {
+	id = ukraine.32
+	title = ukraine.32.t
+	desc = ukraine.32.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	trigger = {
+		MOL = {
+			has_global_flag = mda_blockade_tmd
+		}
+		OR = {
+			79 = {
+				any_other_country = {
+					controls_state = 79
+					NOT = { 
+						is_in_faction_with = UKR 
+						has_war_with = TMD
+						tag = MOL
+						tag = UKR
+					}
+				}
+			}
+			192 = {
+				any_other_country = {
+					controls_state = 192
+					NOT = { 
+						is_in_faction_with = UKR 
+						has_war_with = TMD
+						tag = MOL
+						tag = UKR
+					}
+				}
+			}
+			198 = {
+				any_other_country = {
+					controls_state = 198
+					NOT = { 
+						is_in_faction_with = UKR 
+						has_war_with = TMD
+						tag = MOL
+						tag = UKR
+					}
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = ukraine.32.a	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.32.a"
+		ai_chance = { factor = 100 }
+		every_other_country = {
+			limit = {
+				num_of_factories > 0
+			}
+			remove_opinion_modifier = { target = TMD modifier = UKR_transnistria_blockade1 }
+		}
+		TMD = {
+			remove_ideas = tmd_blockade
+		}
+	}
+}
+
+# Капитуляция Приднестровья
+country_event = {
+	id = ukraine.33
+	title = ukraine.33.t
+	desc = ukraine.33.d
+	picture = GFX_event_unknown
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TMD = { 
+			has_stability < 30 
+		}
+		MOL = {
+			has_global_flag = mda_blockade_tmd
+		}
+	}
+	
+	option = {
+		name = ukraine.33.a	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.33.a"
+		ai_chance = { factor = 100 }
+		MOL = { transfer_state = 774 }
+		hidden_effect = {
+			news_event = { id = news.301 days = 1 } #Молдова ввела войска в Приднестровье
+		}
+	}
+}
+
+country_event = { #Смена название при гражданксй войне
+	id = ukraine.34
+	title = ukraine.34.t
+	desc = ukraine.34.d
+	picture = GFX_event_unknown
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		OR = {	
+			has_country_flag = support_Yanukovich
+			has_country_flag = otstranenie_Yanukovicha
+		}
+		UKR = { has_civil_war = no }
+	}
+	
+	immediate = {
+		set_cosmetic_tag = UKR_after_civilwar
+	}
+	
+	option = {
+		name = ukraine.34.a	
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.34.a"
+	}
+}
+
+country_event = { #Приглашение в альянс 
+	id = ukraine.35
+	title = ukraine.35.t
+	desc = ukraine.35.d
+	picture = GFX_event_flag_UKR
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = ukraine.35.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.35.a"
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 100
+				OR = {
+					tag = MOL
+					tag = GEO
+				}
+			}
+		}
+		UKR = {
+			add_to_faction = ROOT
+		}
+	}
+
+	option = { # Reject
+		name = ukraine.35.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.35.b"
+		ai_chance = { factor = 40 }
+		UKR = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = actions_negative
+			}
+		}	
+	}
+}
+
+country_event = { #Потребование Крыма
+	id = ukraine.36
+	title = ukraine.36.t
+	desc = ukraine.36.d
+	picture = GFX_event_ukraine_crimea
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = ukraine.36.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.36.a"
+		ai_chance = { 
+			factor = 40
+			modifier = {
+				strength_ratio = { tag = UKR ratio < 1 }
+				factor = 100
+			}
+		}
+		UKR = {
+			country_event = { id = ukraine.37 }
+		}
+	}
+
+	option = { # Reject
+		name = ukraine.36.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.36.b"
+		ai_chance = { factor = 60 }
+		UKR = { 
+			country_event = { id = ukraine.38 }
+		}	
+	}
+}
+
+country_event = { #FROM принял требование Украины
+	id = ukraine.37
+	title = ukraine.37.t
+	desc = ukraine.37.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = ukraine.37.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.37.a"
+		transfer_state = 831
+		transfer_state = 828
+		transfer_state = 829
+		transfer_state = 137
+		if = {
+			limit = { NOT = { 137 = { is_core_of = UKR } } }
+			137 = {	add_core_of = UKR }
+		}
+		if = {
+			limit = { NOT = { 137 = { is_core_of = FROM } } }
+			137 = {	remove_core_of = FROM }
+		}
+		if = {
+			limit = { NOT = { 828 = { is_core_of = UKR } } }
+			828 = {	add_core_of = UKR }
+		}
+		if = {
+			limit = { NOT = { 828 = { is_core_of = FROM } } }
+			828 = {	remove_core_of = FROM }
+		}
+		if = {
+			limit = { NOT = { 829 = { is_core_of = UKR } } }
+			829 = {	add_core_of = UKR }
+		}
+		if = {
+			limit = { NOT = { 829 = { is_core_of = FROM } } }
+			829 = {	remove_core_of = FROM }
+		}
+		if = {
+			limit = { NOT = { 831 = { is_core_of = UKR } } }
+			831 = {	add_core_of = UKR }
+		}
+		if = {
+			limit = { NOT = { 831 = { is_core_of = FROM } } }
+			831 = {	remove_core_of = FROM }
+		}
+	}
+}
+
+country_event = { #FROM отказалась требование Украины
+	id = ukraine.38
+	title = ukraine.38.t
+	desc = ukraine.38.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+
+	option = { 
+		name = ukraine.38.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.38.a"
+		ai_chance = { 
+			factor = 80
+		}
+		add_opinion_modifier = {
+			modifier = actions_very_negative
+			target = FROM
+		}
+	}
+
+	option = { # wargoal
+		name = ukraine.38.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.38.b"
+		ai_chance = { factor = 20 }
+		create_wargoal = {
+			type = take_state_focus
+			target = FROM
+			generator = { 137 }
+		}	
+	}
+}
+
+country_event = { #Предложение план о вторжении в ПМР(совместная война)
+	id = ukraine.39
+	title = ukraine.39.t
+	desc = ukraine.39.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+
+	option = { # wargoal
+		name = ukraine.39.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.39.a"
+		ai_chance = { factor = 60 }
+		create_wargoal = {
+			type = annex_everything
+			target = TMD
+		}
+		hidden_effect = {
+			UKR = { country_event = { id = ukraine.40 days = 3 } }
+		}
+	}
+	
+	option = { #Отказ
+		name = ukraine.39.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.39.b"
+		ai_chance = { 
+			factor = 40
+		}
+		add_opinion_modifier = {
+			modifier = actions_negative
+			target = FROM
+		}
+	}
+}
+
+country_event = { #
+	id = ukraine.40
+	title = ukraine.40.t
+	desc = ukraine.40.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		if = {
+			limit = { MOL = { has_war_with = TMD } }
+			UKR = {	
+				add_to_war = {
+					targeted_alliance = MOL
+					enemy = TMD
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = ukraine.40.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.40.a"
+	}
+}
+
+### Варшавское мирное соглашение "Нормандская четвёрка"
+country_event = { #Предложить соглашение о прекращении огня на Западном Украине 
+	id = ukraine.41
+	title = ukraine.41.t
+	desc = ukraine.41.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = { #предложить перемирие
+		name = ukraine.41.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.41.a"
+		ai_chance = {
+			factor = 60
+		}
+		UKR = {
+			country_event = { id = ukraine.42 days = 2 }
+		}
+		effect_tooltip = {
+			UKR = {
+				white_peace = NRU
+			}
+			GER = {
+				add_opinion_modifier = {
+					modifier = actions_positive
+					target = NRU
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					modifier = actions_positive
+					target = NRU
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					modifier = actions_negative
+					target = NRU
+				}
+			}
+		}
+	}
+	
+	option = { #отказ
+		name = ukraine.41.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.41.b"
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = { #Соглашение о прекращении огня на Западном Украине
+	id = ukraine.42
+	title = ukraine.42.t
+	desc = ukraine.42.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = { #принят перемирие
+		name = ukraine.42.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.42.a"
+		ai_chance = {
+			factor = 60
+		}
+		white_peace = NRU
+		NRU = {	set_country_flag = peace_pact_with_west_ukraine }
+		hidden_effect = {
+			news_event = {
+				id = news_ukraine_civilwar.20
+				hours = 6
+			}
+			NRU = {
+				country_event = {
+					id = ukraine.43 days = 15 #Создание коалиция с западом
+				}
+			}
+		}
+		#add_opinion_modifier = {
+		#	modifier = actions_positive
+		#	target = NRU
+		#}
+		#UKR = {
+		#	add_opinion_modifier = {
+		#		modifier = actions_positive
+		#		target = UKR
+		#	}
+		#}
+		GER = {
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = NRU
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				modifier = actions_positive
+				target = NRU
+			}
+		}
+		RUS = {
+			add_opinion_modifier = {
+				modifier = actions_negative
+				target = NRU
+			}
+		}
+	}
+	
+	option = { #отказ
+		name = ukraine.42.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.42.b"
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = { #Предложить коалиция 
+	id = ukraine.43
+	title = ukraine.43.t
+	desc = ukraine.43.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = { #предложить
+		name = ukraine.43.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.43.a"
+		ai_chance = {
+			factor = 60
+		}
+		UKR = {
+			country_event = { id = ukraine.44 days = 2 }
+		}
+		effect_tooltip = {
+			UKR = {
+				add_opinion_modifier = {
+					modifier = UKR_coalition_with_west
+					target = NRU
+				}
+			}
+			custom_effect_tooltip = coalition_with_conservators_TT
+			custom_effect_tooltip = coalition_with_liberals_TT
+		}
+		RUS = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_enemy
+				target = NRU
+			}
+		}
+	}
+	
+	option = { #отказ
+		name = ukraine.43.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.43.b"
+		ai_chance = {
+			factor = 40
+		}
+		every_other_country = {
+			limit = {
+				NOT = { tag = UKR }
+				NOT = { tag = NRU }
+				has_idea = eu_member
+			}
+			add_opinion_modifier = {
+				modifier = UKR_refused_the_coalition_with_west
+				target = NRU
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				modifier = UKR_refused_the_coalition_with_west
+				target = NRU
+			}
+		}
+	}
+}
+
+country_event = { #Западная Украина примает ли коалиция с Януковича ?
+	id = ukraine.44
+	title = ukraine.44.t
+	desc = ukraine.44.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	
+	option = { #Безговорочно соглашаем
+		name = ukraine.44.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.44.a"
+		ai_chance = {
+			factor = 60
+		}
+		add_opinion_modifier = {
+			modifier = UKR_coalition_with_west
+			target = NRU
+		}
+		NRU = {	
+			coalition_with_liberals = yes
+			coalition_with_conservators = yes
+			add_opinion_modifier = {
+				modifier = UKR_coalition_with_west
+				target = UKR
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.3
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.25
+		}
+		FRA = { #Реакция Франции об коалиции с Западом
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_friend #+20
+				target = NRU
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_west_ukraine_as_friend
+				target = UKR
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_friend
+				target = NRU
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_west_ukraine_as_friend
+				target = UKR
+			}
+		}
+		RUS = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_enemy #-20
+				target = NRU
+			}
+		}
+		#hidden_effect = {
+		#	country_event = { id = UN_event.13 days = 65 }
+		#}
+	}
+	
+	option = { #Соглашаем, но условием жесткого запрета национализма в стране
+		name = ukraine.44.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.44.b"
+		ai_chance = {
+			factor = 40
+		}
+		add_opinion_modifier = {
+			modifier = UKR_coalition_with_west
+			target = NRU
+		}
+		NRU = {	
+			coalition_with_liberals = yes
+			coalition_with_conservators = yes
+			add_opinion_modifier = {
+				modifier = UKR_coalition_with_west
+				target = UKR
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.25
+		}
+		FRA = { #Реакция Франции об коалиции с Западом
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_friend #+20
+				target = NRU
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_west_ukraine_as_friend
+				target = UKR
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_east_ukraine_as_friend
+				target = NRU
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_west_ukraine_as_friend
+				target = UKR
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				modifier = UKR_seek_west_ukraine_as_enemy #-20
+				target = UKR
+			}
+		}
+		#hidden_effect = {
+		#	country_event = { id = UN_event.13 days = 65 }
+		#}
+	}
+}
+country_event = { #Start civilwar, after event ukraine.13 West vs East Ukraine
+	id = ukraine.45
+	title = ukraine.45.t
+	desc = ukraine.45.d
+	picture = GFX_event_UKR_army2
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		NRU = {
+			set_cosmetic_tag = UKR_ost_ukraine
+			set_country_flag = ukraine_civilwar
+			set_country_flag = support_Yanukovich
+			
+			set_capital = 227 #Донецк столица восточ. Украины
+			set_stability = 0.9
+			
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.6
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			create_country_leader = {
+				name = "Viktor Yanukovych"
+				desc = ""
+				picture = "gfx/leaders/UKR/portrait_viktor_yanukovych.dds"
+				ideology = centrist_democracy
+				traits = { trait_centrist_democracy }
+			}
+		}
+	}
+	
+	option = { 
+		name = ukraine.45.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ukraine.46.a"
+	}
+}
+#country_event = { 
+#	id = ukraine.46
+#	title = ukraine.46.t
+#	desc = ukraine.46.d
+#	picture = GFX_event_UKR_army2
+#
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = ukraine.46.a
+#		ai_chance = {
+#			factor = 100
+#		}
+#		annex_country = { target = MOL transfer_troops = yes }
+#	}
+#}	
+#country_event = { 
+	#id = ukraine.47
+	#title = ukraine.47.t
+	#desc = ukraine.47.d
+	#picture = GFX_event_UKR_army2
+
+	#is_triggered_only = yes
+	
+	#option = {
+		#name = ukraine.47.a
+		#ai_chance = {
+			#factor = 100
+		#}
+		#puppet = MOL
+	#set_autonomy = { target = MOL autonomy_state = sphere_of_influence }
+	#}
+#}

@@ -1,0 +1,151 @@
+﻿division_template = {
+	name = "Tanks Brigade"		
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		medium_tank = { x = 0 y = 2 }
+		medium_tank = { x = 0 y = 3 }
+		medium_tank = { x = 1 y = 0 }
+		medium_tank = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Towed Artillery Brigade"
+	regiments = {
+	# 1st battery
+		field_artillery = { x = 0 y = 0 }
+		field_artillery = { x = 0 y = 1 }
+		field_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		field_artillery = { x = 1 y = 0 }
+		field_artillery = { x = 1 y = 1 }
+		field_artillery = { x = 1 y = 2 }	
+	# 1st battery
+		towed_howitzers = { x = 2 y = 0 }
+		towed_howitzers = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Infantry Brigada"
+	regiments = {
+	# 1st infantry battalion on APC
+		mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+	# 3d infantry battalion on BTR
+		mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 1st tank company
+		main_battle_tank = { x = 3 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Special Forces Brigade"
+	regiments = {
+	# 1st Special-Forces battalion
+		special_forces_light_motorized = { x = 0 y = 0 }
+		special_forces_light_motorized = { x = 0 y = 1 }
+		special_forces_light_motorized = { x = 0 y = 2 }
+	# 2d Special-Forces battalion
+		special_forces_light_motorized = { x = 1 y = 0 }
+		special_forces_light_motorized = { x = 1 y = 1 }
+		special_forces_light_motorized = { x = 1 y = 2 }
+	# 3d Special-Forces battalion
+		special_forces_light_motorized = { x = 2 y = 0 }
+		special_forces_light_motorized = { x = 2 y = 1 }
+		special_forces_light_motorized = { x = 2 y = 2 }
+	# 4d Special-Forces battalion
+		special_forces_light_motorized = { x = 3 y = 0 }
+		special_forces_light_motorized = { x = 3 y = 1 }
+		special_forces_light_motorized = { x = 3 y = 2 }
+	}
+}
+division_template = {
+	name = "Gendarmes Brigade"
+	regiments = {
+	# 1st gendarmes battalion on jeep
+		gendarmes_light_motorized = { x = 0 y = 0 }
+		gendarmes_light_motorized = { x = 0 y = 1 }
+		gendarmes_light_motorized = { x = 0 y = 2 }
+	# 2d gendarmes battalion on jeep
+		gendarmes_light_motorized = { x = 1 y = 0 }
+		gendarmes_light_motorized = { x = 1 y = 1 }
+		gendarmes_light_motorized = { x = 1 y = 2 }	
+	}
+}
+
+units = {
+	division = {
+		name = "10st Tanks Brigade"
+		location = 1650
+		division_template = "Tanks Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "7st Towed Artillery Brigade"
+		location = 4202
+		division_template = "Towed Artillery Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "Special Forces Brigade"
+		location = 1492
+		division_template = "Special Forces Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "10st Infantry Brigada"
+		location = 10386
+		division_template = "Infantry Brigada"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "100st Infantry Brigada"
+		location = 1934
+		division_template = "Infantry Brigada"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "337st Infantry Brigada"
+		location = 11966
+		division_template = "Infantry Brigada"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "40st Infantry Brigada"
+		location = 12090
+		division_template = "Gendarmes Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+	division = {
+		name = "7st Infantry Brigada"
+		location = 12127
+		division_template = "Gendarmes Brigade"	
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.2
+	}
+}
+
+instant_effect = {
+	add_equipment_to_stockpile = { amount = 10 type = medium_tank_g1_equipment_0 producer = RUS } #t-55
+	add_equipment_to_stockpile = { amount = 100 type = medium_tank_g1_equipment_0 producer = CHI } #Тип 69-2
+	add_equipment_to_stockpile = { amount = 50 type = medium_tank_g3_equipment_0 producer = RUS } #t-72
+
+	add_equipment_to_stockpile = { amount = 331 type = ifv_tracked_g4_equipment_0 producer = CHI }
+
+	add_equipment_to_stockpile = { amount = 49 type = light_fighter_equipment_2 producer = CHI } #Копия 21-о
+	add_equipment_to_stockpile = { amount = 10 type = light_fighter_equipment_4 producer = RUS }
+
+	add_equipment_to_stockpile = { amount = 20 type = assault_helicopter_equipment_3 producer = RUS }
+	add_equipment_to_stockpile = { amount = 10 type = landing_helicopter_equipment_1 producer = RUS }
+}

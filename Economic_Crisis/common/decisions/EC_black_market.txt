@@ -1,0 +1,277 @@
+Black_Market = {
+	buy_abrams = { 
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = buy_abrams_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Abrams #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	} 
+	buy_t72b = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_t72b_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = T_72_b #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_t80 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_t80_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = T_80 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_t90 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_t90_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = T_90 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_mi24 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_mi24_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Mi_24 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_apache = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_apache_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Apache #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_chinook = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_chinook_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Chinook #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_su27 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_su27_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Su_27 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_su25 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_su25_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = Su_25 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_mig29 = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_mig29_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = MIG_29 #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+	buy_f4b = {
+		icon = generic_political_discourse
+		#available = { has_war = no }
+		days_remove = 30
+		custom_cost_trigger = {
+			check_variable = { budget_reserve > 300 }
+		}
+		custom_cost_text = cost_buy_text
+		ai_will_do = { factor = 0 }
+		complete_effect = { 
+			custom_effect_tooltip = buy_f4b_TT
+			hidden_effect = { #Сам скрипт выдачи
+				random_list = {
+					90 = {
+						add_equipment_to_stockpile = {
+							type = F_4_b #Тип экипировки
+							amount = 33 #Количество
+						}
+					}
+					10 = { news_event = investigation.1 }
+				}
+			}
+			subtract_from_variable = { budget_reserve = 300 }
+		}
+	}
+}

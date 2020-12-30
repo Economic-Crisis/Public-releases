@@ -1,0 +1,73 @@
+sub_units = {
+	### ПОКА ЧТО НЕ ИСПОЛЗУЕТСЯ И НЕ БАЛАНСИРОВАНА!
+	# mechanized special_forces on wheeled 8x8 or 6x6 armored personnel carriers (APC)
+	recons_mechanized_on_apc_wheeled = {
+	
+		sprite = recons_mechanized_on_apc_wheeled
+		map_icon_category = infantry
+		
+		active = no
+		
+		priority = 634
+		ai_priority = 100
+
+		type = {
+			mechanized
+		}
+		
+		group = recons_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 70
+		default_morale = 0.7
+		manpower = 75 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 260
+		suppression = 1.5
+		weight = 0.6
+		
+		supply_consumption = 0.07
+	
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			support_equipment = 65
+			apc_wheeled_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		forest = {
+			attack = 0.1
+			movement = 0.6
+		}
+		mountain = {
+			attack = -0.04
+		}
+		jungle = {
+			attack = 0.2
+			movement = 0.6
+		}
+		marsh = {
+			attack = 0.5
+			movement = 0.5
+		}
+		urban = {
+			attack = 0.5
+		}
+		amphibious = {
+			attack = 0.5
+			movement = 0.5
+		}
+	}
+}

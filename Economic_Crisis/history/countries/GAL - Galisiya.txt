@@ -1,0 +1,48 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 171
+
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1231 }
+	oob = "GAL_2013"
+	load_oob = "_tech_insurgents_2013" 
+	
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.3.26"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 2
+		reformism = 0
+		liberalism = 0
+		democratic = 76
+		neutrality = 0
+		fascism = 22
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Alberto Nunez Feijoo"
+		desc = ""
+		picture = "gfx/leaders/GAL/portrait_alberto_nunez_feijoo.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

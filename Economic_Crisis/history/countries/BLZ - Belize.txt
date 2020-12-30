@@ -1,0 +1,61 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 311
+
+set_country_flag = monroe_doctrine
+
+add_ideas = {
+	queen_elizabet
+	parliamentary_monarchy
+	mixed_schools
+	NPT
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 161 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.75
+
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.2.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 1
+		reformism = 1
+		liberalism = 27
+		democratic = 69
+		neutrality = 2
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Dean Barrow"
+		desc = "POLITICS_DEAN_BARROW_DESC"
+		picture = "gfx/leaders/BLZ/portrait_dean_barrow.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy}
+	}
+
+	create_country_leader = {
+		name = "Said Musa"
+		desc = "POLITICS_SAID_MUSA_DESC"
+		picture = "gfx/leaders/BLZ/portrait_said_musa.dds"
+		ideology = christian_democracy
+		traits = { trait_christian_democracy}
+	}
+}

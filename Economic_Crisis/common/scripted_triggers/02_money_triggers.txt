@@ -1,0 +1,46 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+
+has_all_minist = {
+AND = {
+	check_variable = { cat_1_budget > 0 }
+	check_variable = { cat_2_budget > 0 }
+	check_variable = { cat_3_budget > 0 }
+	check_variable = { cat_4_budget > 0 }
+	check_variable = { cat_5_budget > 0 }
+	check_variable = { cat_6_budget > 0 }
+	
+	
+	
+	check_variable = { cat_1_rest_sections_percen = 0 }
+	check_variable = { cat_2_rest_sections_percen = 0 }
+	check_variable = { cat_3_rest_sections_percen = 0 }
+	check_variable = { cat_4_rest_sections_percen = 0 }
+	check_variable = { cat_5_rest_sections_percen = 0 }
+	check_variable = { cat_6_rest_sections_percen = 0 }
+}
+}
+
+ai_millitary_template = {
+OR ={
+	has_war = yes
+	has_war_support > 0.5 
+	}
+}
+
+ai_default_template = {
+	always = yes
+}

@@ -1,0 +1,138 @@
+scripted_gui = {
+	topbar_electricity = {
+		window_name = "electricity_menu"      
+        parent_window_token = top_bar
+ 
+		context_type = player_context
+ 
+		visible = {
+            always = yes
+		}
+ 
+        effects = {                     
+            electricity_bg_click = {
+				if = { limit = { check_variable = { electricity_trade_menu_visible = 0 } } set_variable = { electricity_trade_menu_visible = 1 } }
+				else = { set_variable = { electricity_trade_menu_visible = 0 } }
+			}
+        }
+        
+		triggers = {
+            
+        }
+
+		properties = {
+            electricity_bar = {
+                frame = electricity_ratio_visible
+            }
+        }
+	}
+	
+	electricity_trade_menu = {
+		window_name = "electricity_trade_menu_gui"      
+ 
+		context_type = player_context
+ 
+		visible = {
+            check_variable = { electricity_trade_menu_visible = 1 }
+		}
+		
+		dynamic_lists = {
+			electricity_trade_countries_list = {
+				array = electricity_arr_country_name
+				change_scope = yes
+				entry_container = "electricity_trade_menu_countries"
+			}
+		}
+		
+		effects = {   
+
+			Close_btn_click = {
+				set_variable = { electricity_trade_menu_visible = 0 }
+			}
+			
+			electricity_mail_btn_click = {
+			if = { limit = { check_variable = { electricity_trade_block_deals = 0 } }
+				set_variable = { electricity_trade_block_deals = 2 } }
+			else = { set_variable = { electricity_trade_block_deals = 0 } }
+			}
+			
+            
+        }
+        
+		triggers = {
+            
+
+        }
+
+		properties = {
+			electricity_icon = {
+				image = "[this.GetFlag]"
+			}
+			electricity_mail_btn = {
+				frame = "electricity_trade_block_deals"
+			}
+        }
+		
+	}	
+	
+	
+	sd_electiricty_action_menu = {
+		window_name = "sd_electiricty_action_gui"
+ 
+		context_type = diplomatic_action
+ 
+		visible = {
+			always = yes
+		}
+ 
+        effects = {   
+
+			
+			
+            
+        }
+        
+		triggers = {
+            
+
+        }
+
+		properties = {
+
+        }
+	}
+
+	sd_electiricty_break_menu = {
+		window_name = "sd_electiricty_break_gui"
+ 
+		context_type = player_context
+ 
+		visible = {
+			check_variable = { electricity_break_contract = 1 }
+		}
+ 
+        effects = {   
+
+			ok_btn_click = {
+				set_variable = { electricity_break_contract = 0 }
+				set_variable = { electricity_break_country = 0 }
+			}
+			
+            
+        }
+        
+		triggers = {
+            
+
+        }
+
+		properties = {
+			first_flag = {
+				image = "[ROOT.GetFlag]"
+			}
+			second_flag = {
+				image = "[?electricity_break_country.GetFlag]"
+			}
+        }
+	}
+}

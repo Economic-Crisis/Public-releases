@@ -1,0 +1,57 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 551
+
+#   19 января 1956 года
+    add_ideas = {
+		arab_league_member
+		mixed_schools
+		au_member
+		
+		islam_idea_lvl_3
+	}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 7207 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "SUD_2013"
+	add_ideas = high_terrorism
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes	
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1993.10.16"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 75
+		neutrality = 25
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Omar al-Bashir"
+		desc = ""
+		picture = "gfx/leaders/SUD/portrait_omar_al_bashir.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+    }
+}
+
+#Уход Судана из Африканского союза в связи с резнёй в Хартуме
+2019.6.6 = {
+	remove_ideas = au_member
+}

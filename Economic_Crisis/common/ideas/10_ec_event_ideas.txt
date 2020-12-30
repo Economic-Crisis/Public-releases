@@ -1,0 +1,342 @@
+# NOT ECONOMIC CRISIS OPTIMISED
+# for revolution and change ideology events
+
+ideas = {
+
+	country = {
+	
+	
+		#fascist_assault_divisions = {
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_fascism_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = -0.05
+		#		conscription = 0.002
+		#		fascism_drift = 0.05
+		#	}
+		#
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}
+	
+		#communist_partisans_recruiting = {
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_communism_drift_bonus
+		#	
+		#	modifier = {
+		#		conscription = -0.002
+		#		communism_drift = 0.05
+		#	}
+		#
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}
+	
+		#democratic_opposition_voicing_protests = {
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_democratic_drift_bonus
+		#	
+		#	modifier = {
+		#		political_power_factor = -0.5
+		#		democratic_drift = 0.05
+		#	}
+		#
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}
+		
+		liberalism_opposition_voicing_protests = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				political_power_factor = -0.5
+				liberalism_drift = 0.05
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		reformism_opposition_voicing_protests = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				political_power_factor = -0.5
+				reformism_drift = 0.05
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		neutrality_opposition_voicing_protests = {
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				political_power_factor = -0.5
+				neutrality_drift = 0.05
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		#fascist_revolutionaries = {
+		#	
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_fascism_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = -0.1
+		#	}
+		#}
+		
+		islamists_revolutionaries = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+
+		#communist_revolutionaries = {
+		#	
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_communism_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = -0.1
+		#	}
+		#}
+
+		#democratic_revolutionaries = {
+		#	
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_democratic_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = -0.1
+		#	}
+		#}
+
+
+		#fascism_defeated = {
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_democratic_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = 0.1
+		#	}
+		#}
+			
+		rad_islamists_defeated = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		
+		islamists_defeated = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+
+		#communism_defeated = {
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_democratic_drift_bonus
+		#	
+		#	modifier = {
+		#		stability_factor = 0.1
+		#	}
+		#}
+		
+		reformism_defeated = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		
+		emigration_war = {
+			removal_cost = -1
+			available  = { has_war = yes }
+			#picture = 
+			modifier = {
+				weekly_manpower = -376
+			}
+			cost = 200
+		}
+		
+		volunteers_on_war = {
+			removal_cost = -1
+			available  = {	has_war = yes }
+			#picture = 
+			modifier = {
+				war_support_weekly = -0.01
+				conscription_factor = 0.005
+			}
+			cost = 200
+		}
+		
+		volunteers_on_war2 = {
+			removal_cost = -1
+			available  = {	has_war = yes }
+			#picture = 
+			modifier = {
+				war_support_weekly = -0.002
+				conscription_factor = 0.02
+			}
+			cost = 200
+		}
+		
+		#reign_of_terror = {
+		#	removal_cost = -1
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	picture = generic_intel_bonus
+		#	
+		#	modifier = {
+		#		political_power_factor = 0.1
+		#	}
+		#}
+
+		#anti_soviet_pact = {
+		#	
+		#	removal_cost = -1 # Or make removable, with high cost?
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#}
+
+		#anti_soviet_pact_refused_call = {
+		#
+		#	picture = generic_communism_drift_bonus
+		#	
+		#	removal_cost = -1 # Or make removable, with high cost?
+		#	
+		#	allowed = {
+		#		always = no # Triggered via event
+		#	}
+		#
+		#	ai_will_do = {
+		#		factor = 0
+		#	}
+		#
+		#	modifier = {
+		#		stability_factor = -0.07
+		#		communism_drift = 0.05
+		#	}
+		#}
+
+		#anti_nazi_coup = {			
+		#	
+		#	allowed = {
+		#		always = no
+		#	}
+		#	removal_cost = -1
+		#
+		#	picture = generic_democratic_drift_bonus
+		#	
+		#	modifier = {
+		#		fascism_acceptance = -50
+		#	}
+		#}
+	}
+}

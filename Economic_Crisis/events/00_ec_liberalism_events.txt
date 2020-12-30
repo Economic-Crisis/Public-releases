@@ -1,0 +1,1755 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+add_namespace = liberalism
+
+# Популярность больше 10%
+country_event = {
+	id = liberalism.1
+	title = liberalism.1.t
+	desc = liberalism.1.d
+	picture = GFX_event_liberalism_rise_10
+
+	trigger = {
+		liberalism > 0.1
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_10
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_10
+	}
+
+	option = { # Коалиция с либералами
+		name = liberalism.1.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.1.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 55
+				OR = {
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai__liberal
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_democrat_left
+			}
+		}
+		random_list = {
+			80 = {
+				coalition_with_liberals = yes # Создать коалицию с либералами
+			}
+			20 = {}
+		}
+		add_liberal = yes # Можно добавить либерала в правительство
+	}
+
+	option = { # Не враждовать с либералами
+		name = liberalism.1.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.1.b"
+		ai_chance = {
+			base = 35
+		}
+		add_liberal = yes # Можно добавить либерала в правительство
+	}
+
+	option = { # Выступать против либерализма
+		name = liberalism.1.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.1.c"
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = oppose_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.01
+		}
+		add_stability = -0.005
+		add_political_power = -20
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.1.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.1.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность больше 10%, однопартийный режим
+country_event = {
+	id = liberalism.2
+	title = liberalism.2.t
+	desc = liberalism.2.d
+	picture = GFX_event_liberalism_rise_10
+
+	trigger = {
+		liberalism > 0.1
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_10
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_10
+	}
+
+	option = { # Игнорировать либералов
+		name = liberalism.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.2.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.2.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -20
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = liberalism.3
+	title = liberalism.3.t
+	desc = liberalism.3.d
+	picture = GFX_event_liberalism_decrease_10
+
+	trigger = {
+		has_country_flag = liberalism_10
+		liberalism < 0.08
+		NOT = {
+			has_government = liberalism
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = liberalism.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.3.a"
+		clr_country_flag = liberalism_10
+		clr_country_flag = oppose_liberalism
+		clr_country_flag = suppress_liberalism
+		remove_liberal = yes
+		no_coalition_with_liberals = yes
+	}
+}
+
+# Популярность больше 25%
+country_event = {
+	id = liberalism.4
+	title = liberalism.4.t
+	desc = liberalism.4.d
+	picture = GFX_event_liberalism_rise_25
+
+	trigger = {
+		has_country_flag = liberalism_10
+		liberalism > 0.25
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_25
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_25
+	}
+
+	option = { # Сохранить коалицию с либералами
+		name = liberalism.4.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.y"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.005
+		add_political_power = 20
+		add_liberal = yes
+	}
+
+	option = { # Разорвать коалицию с либералами
+		name = liberalism.4.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.n"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_liberals = yes
+		add_stability = -0.01
+		add_political_power = -30
+	}
+
+	option = { # Коалиция с либералами
+		name = liberalism.4.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__liberal
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			60 = {
+				coalition_with_liberals = yes
+			}
+			40 = {}
+		}
+		add_liberal = yes
+	}
+
+	option = { # Не враждовать с либералами
+		name = liberalism.4.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.b"
+		trigger = {
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_liberal = yes
+		clr_country_flag = oppose_liberalism
+	}
+
+	option = { # Выступать против либерализма
+		name = liberalism.4.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.c"
+		trigger = {
+			has_coalition_with_liberals = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__conservator
+			}
+		}
+		set_country_flag = oppose_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.03
+		}
+		add_stability = -0.015
+		add_political_power = -30
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.4.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.4.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		set_country_flag = suppress_liberalism
+		clr_country_flag = oppose_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+	}
+}
+
+# Популярность больше 25%, однопартийный режим
+country_event = {
+	id = liberalism.5
+	title = liberalism.5.t
+	desc = liberalism.5.d
+	picture = GFX_event_liberalism_rise_25
+
+	trigger = {
+		has_country_flag = liberalism_10
+		liberalism > 0.25
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_25
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_25
+	}
+
+	option = { # Пойти на уступки
+		name = liberalism.5.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.5.b"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = 0.02
+		add_political_power = -200
+		add_liberal = yes
+	}
+
+	option = { # Игнорировать либералов
+		name = liberalism.5.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.5.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.5.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.5.s"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = liberalism.6
+	title = liberalism.6.t
+	desc = liberalism.6.d
+	picture = GFX_event_liberalism_decrease_25
+
+	trigger = {
+		has_country_flag = liberalism_25
+		liberalism < 0.2
+		NOT = {
+			has_government = liberalism
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = liberalism.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.6.a"
+		clr_country_flag = liberalism_25
+		remove_liberal = yes
+	}
+}
+
+# Популярность больше 40%
+country_event = {
+	id = liberalism.7
+	title = liberalism.7.t
+	desc = liberalism.7.d
+	picture = GFX_event_liberalism_rise_40
+
+	trigger = {
+		has_country_flag = liberalism_25
+		liberalism > 0.4
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_40
+			has_idea = single-party_state
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_40
+	}
+
+	option = { # Сохранить коалицию с либералами
+		name = liberalism.7.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.y"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.015
+		add_political_power = 30
+		add_liberal = yes
+	}
+
+	option = { # Разорвать коалицию с либералами
+		name = liberalism.7.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.n"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_liberals = yes
+		add_stability = -0.02
+		add_political_power = -50
+	}
+
+	option = { # Коалиция с либералами
+		name = liberalism.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__liberal
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			40 = {
+				coalition_with_liberals = yes
+			}
+			60 = {}
+		}
+		add_liberal = yes
+	}
+
+	option = { # Не враждовать с либералами
+		name = liberalism.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.b"
+		trigger = {
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_liberal = yes
+		clr_country_flag = oppose_liberalism
+	}
+
+	option = { # Выступать против либералов
+		name = liberalism.7.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.c"
+		trigger = {
+			has_coalition_with_liberals = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 20
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = oppose_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+		add_stability = -0.025
+		add_political_power = -50
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.7.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+		clr_country_flag = oppose_liberalism
+	}
+
+	option = { # Пойти на уступки
+		name = liberalism.7.o
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.o"
+		trigger = {
+			is_democracy = no
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = absolute_monarchy
+			}
+			swap_ideas = {
+				remove_idea = absolute_monarchy
+				add_idea = semi-parliamentary_monarchy
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+	}
+}
+
+# Популярность больше 40%, однопартийный режим
+country_event = {
+	id = liberalism.8
+	title = liberalism.8.t
+	desc = liberalism.8.d
+	picture = GFX_event_liberalism_rise_40
+
+	trigger = {
+		has_country_flag = liberalism_25
+		liberalism > 0.4
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_40
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_40
+	}
+
+	option = { # Пойти на уступки
+		name = liberalism.8.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.8.a"
+		trigger = {
+			government_popularity_50 = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 5
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		swap_ideas = {
+			remove_idea = single-party_state
+			add_idea = dictatorship_state
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.2
+		}
+		add_stability = 0.03
+		add_political_power = -300
+		add_liberal = yes
+	}
+
+	option = { # Игнорировать либералов
+		name = liberalism.8.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.8.b"
+		trigger = {
+			government_popularity_50 = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.8.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.8.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = -0.02
+		add_political_power = -50
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = liberalism.9
+	title = liberalism.9.t
+	desc = liberalism.9.d
+	picture = GFX_event_liberalism_decrease_40
+
+	trigger = {
+		has_country_flag = liberalism_40
+		liberalism < 0.32
+		NOT = {
+			has_government = liberalism
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = liberalism.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.9.a"
+		clr_country_flag = liberalism_40
+		remove_liberal = yes
+	}
+}
+
+# Популярность больше 50%, демократия
+country_event = {
+	id = liberalism.10
+	title = liberalism.10.t
+	desc = liberalism.10.d
+	picture = GFX_event_liberalism_rise_50
+
+	trigger = {
+		has_country_flag = liberalism_40
+		liberalism > 0.5
+		NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_50
+		}
+		is_democracy = yes
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_50
+	}
+
+	option = { # Сохранить коалицию с либералами
+		name = liberalism.10.y
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.10.y"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = 0.02
+		add_political_power = 50
+		add_liberal = yes
+	}
+
+	option = { # Разорвать коалицию с либералами
+		name = liberalism.10.n
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.10.n"
+		trigger = {
+			has_coalition_with_liberals = yes
+		}
+		ai_chance = {
+			factor = 20
+		}
+		no_coalition_with_liberals = yes
+		add_stability = -0.03
+		add_political_power = -100
+	}
+
+	option = { # Коалиция с либералами
+		name = liberalism.7.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.a"
+		trigger = {
+			is_democracy = yes
+			OR = {
+				has_government = reformism
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 45
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 65
+				has_country_flag = pai__liberal
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			20 = {
+				coalition_with_liberals = yes
+			}
+			80 = {}
+		}
+		add_liberal = yes
+	}
+
+	option = { # Не враждовать с либералами
+		name = liberalism.7.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.b"
+		trigger = {
+			has_coalition_with_liberals = no
+			NOT = {
+				has_country_flag = suppress_liberalism
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+		add_liberal = yes
+		clr_country_flag = oppose_liberalism
+	}
+
+	option = { # Выступать против либералов
+		name = liberalism.7.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.c"
+		trigger = {
+			has_coalition_with_liberals = no
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 20
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		set_country_flag = oppose_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.05
+		}
+		add_stability = -0.03
+		add_political_power = -100
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.7.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.7.s"
+		trigger = {
+			OR = {
+				has_country_flag = oppose_liberalism
+				has_country_flag = suppress_liberalism
+			}
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10
+				has_country_flag = pai_democrat_right
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = -0.05
+		add_political_power = -150
+		clr_country_flag = oppose_liberalism
+	}
+}
+
+# Популярность больше 50%, не демократия
+country_event = {
+	id = liberalism.11
+	title = liberalism.11.t
+	desc = liberalism.11.d
+	picture = GFX_event_liberalism_rise_50
+
+	trigger = {
+		has_country_flag = liberalism_40
+		liberalism > 0.5
+	 	NOT = {
+			has_government = liberalism
+			has_country_flag = liberalism_50
+		}
+		is_democracy = no
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = liberalism_50
+	}
+
+	option = { # Уступить власть
+		name = liberalism.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.11.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 850
+				has_country_flag = pai__liberal
+			}
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = liberalism
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = ROOT
+					size = 0.3
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_liberalism
+		clr_country_flag = liberalism_10
+		clr_country_flag = liberalism_25
+		clr_country_flag = liberalism_40
+		clr_country_flag = liberalism_50
+	}
+
+	option = { # Пойти на уступки
+		name = liberalism.11.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.11.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 450
+				has_country_flag = pai_nondem_reformator
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		if = {
+			limit = {
+				has_idea = single-party_state
+			}
+			swap_ideas = {
+				remove_idea = single-party_state
+				add_idea = parliamentary_republic
+			}
+		}
+		if = {
+			limit = {
+				has_idea = dictatorship_state
+			}
+			swap_ideas = {
+				remove_idea = dictatorship_state
+				add_idea = presidential_republic
+			}
+		}
+		move_to_free_media = yes
+		move_to_liberties = yes
+		add_stability = 0.05
+		add_political_power = -500
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.3
+		}
+		clr_country_flag = suppress_liberalism
+	}
+
+	option = { # Ожидать развития событий
+		name = liberalism.11.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.11.c"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_authoritarian
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.11.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.11.s"
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 25
+				has_country_flag = pai_nondem_neutral
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = pai__liberal
+			}
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = -0.04
+		add_political_power = -100
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = liberalism.12
+	title = liberalism.12.t
+	desc = liberalism.12.d
+	picture = GFX_event_liberalism_decrease_50
+
+	trigger = {
+		has_country_flag = liberalism_50
+		liberalism < 0.4
+		NOT = {
+			has_government = liberalism
+		}
+	}
+	mean_time_to_happen = {
+		days = 180
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = liberalism.12.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.12.a"
+		clr_country_flag = liberalism_50
+		remove_liberal = yes
+	}
+}
+
+# Популярность больше 60%, демократия
+country_event = {
+	id = liberalism.13
+	title = liberalism.13.t
+	desc = liberalism.13.d
+	picture = GFX_event_liberalism_rise_60
+
+	trigger = {
+		has_country_flag = liberalism_50
+		liberalism > 0.6
+		NOT = {
+			has_government = liberalism
+			has_idea = no_early_election_idea
+		}
+		is_democracy = yes
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	option = { # Назначить досрочные выборы (либералы побеждают)
+		name = liberalism.13.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.13.a"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 150
+				has_country_flag = pai_democrat_right
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = oppose_liberalism
+		clr_country_flag = suppress_liberalism
+		clr_country_flag = liberalism_10
+		clr_country_flag = liberalism_25
+		clr_country_flag = liberalism_40
+		clr_country_flag = liberalism_50
+								  
+	}
+
+	option = { # Нет досрочных выборов
+		name = liberalism.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.13.b"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		add_stability = -0.03
+		add_political_power = -100
+		set_country_flag = oppose_liberalism
+		clr_country_flag = suppress_liberalism
+		add_ideas = no_early_election_idea
+	}
+
+	option = { # Подавлять либерализм
+		name = liberalism.13.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.13.s"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_neutral
+					has_country_flag = pai_democrat_right
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai_nondem_reformator
+					has_country_flag = pai__liberal
+				}
+			}
+		}
+		trigger = {
+			can_suppress_ideologies = yes
+		}
+		set_country_flag = suppress_liberalism
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_stability = -0.05
+		add_political_power = -150
+		clr_country_flag = oppose_liberalism
+		add_ideas = no_early_election_idea
+	}
+}
+
+# Популярность больше 60%, не демократия
+country_event = {
+	id = liberalism.14
+	title = liberalism.14.t
+	desc = liberalism.14.d
+	picture = GFX_event_liberalism_rise_60
+
+	trigger = {
+		has_country_flag = liberalism_50
+		liberalism > 0.6
+		NOT = {
+			has_government = liberalism
+								   
+		}
+		is_democracy = no
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	option = { # Уступить власть
+		name = liberalism.14.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.14.a"
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_country_flag = pai_nondem_totalitarian
+			}
+		}
+		random_list = {
+			80 = {
+				set_politics = {
+					ruling_party = liberalism
+					elections_allowed = yes
+				}
+			}
+			20 = {
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = ROOT
+					size = 0.25
+				}
+			}
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_liberalism
+		clr_country_flag = liberalism_10
+		clr_country_flag = liberalism_25
+		clr_country_flag = liberalism_40
+		clr_country_flag = liberalism_50
+		#clr_country_flag = liberalism_60 #Чистится но не выдается
+	}
+
+	option = { # Гражданская война
+		name = liberalism.14.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): liberalism.14.b"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_nondem_neutral
+					has_country_flag = pai__conservator
+				}
+			}
+		}
+		start_civil_war = {
+			ideology = liberalism
+			size = 0.5
+		}
+	}
+}

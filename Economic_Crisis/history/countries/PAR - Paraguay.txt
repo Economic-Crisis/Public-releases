@@ -1,0 +1,61 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 301
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2897 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "PAR_2013"
+
+	add_ideas = {
+		unasur_member
+		low_terrorism
+		mixed_schools
+		NPT
+	}
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 35
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.4.21"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 8
+		liberalism = 31
+		democratic = 51
+		neutrality = 3
+		fascism = 2
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Horacio Cartes"
+		desc = "POLITICS_HORACIO_CARTES_DESC"
+		picture = "gfx/leaders/PAR/portrait_horacio_cartes.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Efraín Alegre"
+		desc = "POLITICS_EFRAIN_ALEGRE_DESC"
+		picture = "gfx/leaders/PAR/portrait_efrain_alegre.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+}

@@ -1,0 +1,188 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 822
+
+add_ideas = {
+	not_recognized_country
+	iron_heart #Unshakable Faith
+	djixad
+	military_schools
+	mandatory_urgent_service
+	
+	sanctions
+	sanctions1
+	sanctions2
+	sanctions3
+	sanctions4
+}
+
+2013.10.1 = {
+	set_research_slots = 2
+
+	set_variable = { budget_last_year = 50 }
+	create_wargoal = { target = SYR type = annex_everything }
+	create_wargoal = { target = IRQ type = annex_everything }
+	create_wargoal = { target = NGA type = annex_everything }
+	create_wargoal = { target = KUR type = annex_everything }
+	create_wargoal = { target = AFG type = annex_everything }
+	create_wargoal = { target = ROJ type = annex_everything }
+#	declare_war_on = { target = LBA type = annex_everything }
+
+	set_war_support = 1
+
+	load_oob = "_tech_isis_2013"
+	oob = "ISS_2013"
+
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		oligarchy
+		# djixad
+		closed_economy
+		military_industry_focus
+	    war_economy
+		planned_economy
+		traditional_economy
+		no_protect
+		decaying_state
+		no_social_security
+		no_labor_rights_protection	
+	}
+
+	add_named_threat = {
+		threat = 7
+		name = threat_terrorism
+	}		
+	
+	set_country_flag = war_with_Iraq_and_Syria
+
+	create_faction = great_islamic_caliphate
+
+	set_convoys = 0
+	add_political_power = 0
+
+	set_country_flag = pai_nondem_totalitarian
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 100
+	}
+}
+
+2013.10.30 = {
+	
+	# Diplomacy - марионетки и зоны влияия для аддона и без него
+	if = {
+		limit = {
+			OR = {
+				has_dlc = "Together for Victory"
+				has_dlc = "Man the Guns"
+			}
+		}
+		set_autonomy = {
+			target = ISN
+			autonomy_state = isis_vilayet
+			freedom_level = 0.2
+		}
+		set_autonomy = {
+			target = ISL
+			autonomy_state = isis_vilayet
+			freedom_level = 0.0
+		}
+			set_autonomy = {
+			target = ISA
+			autonomy_state = isis_vilayet
+			freedom_level = 0.0
+		}
+		set_autonomy = {
+			target = ALS
+			autonomy_state = isis_vilayet
+			freedom_level = 0.2
+		}
+		set_autonomy = {
+			target = ISC
+			autonomy_state = isis_vilayet
+			freedom_level = 0.2
+		}
+	}
+	
+	if = {
+		limit = { 
+				NOT = { has_dlc = "Together for Victory" }
+		}
+		puppet = ISL
+		puppet = ISN
+		puppet = ISA
+		puppet = ALS
+		puppet = ISC
+	}
+}
+
+create_country_leader = {
+	name = "Abu Bakr al-Baghdadi"
+	desc = ""
+	picture = "gfx/leaders/ISS/portrait_abu_bakr_al-baghdadi.dds"
+	ideology = wahhabism
+	traits = { trait_wahhabism extremist }
+}
+
+create_field_marshal = {
+  	name = "Abu Omar al-Shishani"
+  	portrait_path = "gfx/leaders/ISS/portrait_general_abu_omar_al-shishani.dds"
+  	traits = {  }
+  	skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+}
+
+create_corps_commander = {
+	name = "Abu Mohannad al-Sweidawi"
+	portrait_path = "gfx/leaders/ISS/portrait_general_abu_mohannad_al-sweidawi.dds"
+	traits = {  }
+	skill = 1
+	logistics_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	attack_skill = 1
+}
+create_corps_commander = {
+	name = "Gulmurod Khalimov"
+	portrait_path = "gfx/leaders/ISS/portrait_general_gulmurod_khalimov.dds"
+	traits = {  }
+	skill = 1
+	logistics_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	attack_skill = 1
+}
+create_corps_commander = {
+	name = "Haji Bakr"
+	portrait_path = "gfx/leaders/ISS/portrait_general_haji_bakr.dds"
+	traits = {  }
+	skill = 1
+	logistics_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	attack_skill = 1
+}
+

@@ -1,0 +1,66 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 775
+
+# де-юре не признано никем
+1991.9.2 = {
+	add_ideas = not_recognized_country
+	add_ideas = not_alliance_nation
+	add_ideas = mixed_schools
+	add_ideas = NGK_surrounded_by_enemies
+}
+
+2000.11.20 = {
+	add_ideas = cis_2_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1 }
+
+	load_oob = "_tech_csto_minor_2013"
+	oob = "NKR_2013" 
+
+	add_political_power = 0
+	set_convoys = 0
+	create_intelligence_agency = yes
+		
+	set_country_flag = pai_nondem_neutral
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.7.19"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 100
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Arayik Harutyunyan"
+		desc = "POLITICS_ARAYIK_HARUTYUNYAN_DESC"
+		picture = "gfx/leaders/NKR/portrait_arayik_harutyunyan.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Bako Sahakyan"
+		desc = "POLITICS_BAKO_SAHAKIAN_DESC"
+		picture = "gfx/leaders/NKR/portrait_bako_sahakian.dds"
+		ideology = centrist_democracy
+		expire = "2020.5.21"
+		traits = { trait_centrist_democracy }
+	}
+
+}	
+

@@ -1,0 +1,115 @@
+﻿division_template = {
+	name = "Trigonikó Pezikoú" 					# Triangular Infantry Division
+	# Prior to 1940 mobilization = 3rd, 4th, 5th, 9th, 10, 13th;
+	# 	6th, 7th, 11th, and 12th had 2 regiments; 14th had 1 regiment
+	# Note: sources have all Greek regular infantry as mountain-trained
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+division_template = {
+	name = "Tetrágono Pezikoú" 					# Square Infantry Division
+	# Prior to 1940 mobilization = 1st, 2nd, 8th
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		mountaineers_motorized = { x = 2 y = 0 }
+		mountaineers_motorized = { x = 2 y = 1 }
+		mountaineers_motorized = { x = 2 y = 2 }
+		mountaineers_motorized = { x = 3 y = 0 }
+		mountaineers_motorized = { x = 3 y = 1 }
+		mountaineers_motorized = { x = 3 y = 2 }
+	}
+}
+
+units = {
+	######## Ellinikó Genikó Epiteleío ########
+	division = {
+		name = "V Merarchía Pezikoú"
+		location = 12058
+		division_template = "Trigonikó Pezikoú" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "VIII Merarchía Pezikoú"
+		location = 3914
+		division_template = "Tetrágono Pezikoú" 
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+	# A Sóma Stratoú
+	division = {
+		name = "II Merarchía Pezikoú"
+		location = 4109
+		division_template = "Tetrágono Pezikoú" 
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "III Merarchía Pezikoú"
+		location = 4193
+		division_template = "Trigonikó Pezikoú" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "IV Merarchía Pezikoú"
+		location = 7096
+		division_template = "Trigonikó Pezikoú" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	# B Sóma Stratoú
+	division = {
+		name = "I Merarchía Pezikoú"
+		location = 863
+		division_template = "Tetrágono Pezikoú" 
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "IX Merarchía Pezikoú"
+		location = 966
+		division_template = "Trigonikó Pezikoú" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+										
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "GRE"
+		}
+		requested_factories = 1
+		progress = 0.10
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GRE" 
+		}
+		requested_factories = 1
+		progress = 0.56
+		efficiency = 100
+	}
+}

@@ -1,0 +1,73 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 809
+
+add_ideas = {
+	not_recognized_country
+	military_schools
+}
+
+2013.10.1 = {
+	set_variable = { budget_last_year = 10 }
+
+	declare_war_on = { target = NGA type = annex_everything }
+	
+	load_oob = "_tech_isis_2013"
+	oob = "ISN_2013"
+	
+	set_convoys = 0
+	set_stability = 0.5
+	set_war_support = 1
+
+	add_political_power = 0
+	
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		oligarchy
+		# djixad
+		closed_economy
+		military_industry_focus
+	    war_economy
+		planned_economy
+		traditional_economy
+		no_protect
+		decaying_state
+		no_social_security
+		no_labor_rights_protection	
+	}
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+		
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 100
+	}
+
+	create_country_leader = {
+		name = "Abubakar Shekau"
+		desc = ""
+		picture = "gfx/leaders/ISS/portrait_abubakar_shekau.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism extremist }
+	}
+}
+

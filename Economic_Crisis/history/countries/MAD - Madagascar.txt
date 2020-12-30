@@ -1,0 +1,76 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 543
+
+	add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1060 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		low_terrorism
+	}
+	
+	set_convoys = 15
+	set_stability = 0.4
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.11.25"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 17
+		reformism = 53
+		liberalism = 11
+		democratic = 10
+		neutrality = 9
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Andry Rajoelina"
+		desc = "POLITICS_ANDRY_RAJOELINA_DESC"
+		picture = "gfx/leaders/MAD/portrait_andry_rajoelina.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#Кандидат на выборах от социал-демократов
+	#create_country_leader = {
+	#	name = "Hery Rajaonarimampianina"
+	#	desc = "POLITICS_HERY_RAJAONARIMAMPIANINA_DESC"
+	#	picture = "gfx/leaders/MAD/portrait_hery_rajaonarimampianina.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+}
+

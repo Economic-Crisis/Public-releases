@@ -1,0 +1,48 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 550
+add_ideas = mixed_schools
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 202 }
+	add_ideas = NPT
+	load_oob = "_tech_minor_2013"
+	oob = "ERI_2013"
+
+	set_stability = 0.5
+	set_country_flag = pai_nondem_totalitarian
+	add_political_power = 0
+
+	set_convoys = 10
+	add_ideas = {
+		women_in_service
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1993.5.24"
+		election_frequency = 60
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 100
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Isaias Afwerki"
+		desc = ""
+		picture = "gfx/leaders/ERI/portrait_isaias_afwerki.dds"
+		ideology = authoritarian_democracy
+		traits = { dictator trait_authoritarian_democracy }
+	}
+}
+

@@ -1,0 +1,3038 @@
+#List of filters / Список фильтров
+#FOCUS_FILTER_DOMESTIC_POLICY - domestic policy (внутренняя политика)
+#FOCUS_FILTER_FOREIGN_POLICY - foreign policy (внешняя политика)
+#FOCUS_FILTER_INDUSTRY - industry (промышленность)
+#FOCUS_FILTER_RESEARCH - research (исследования)
+#FOCUS_FILTER_ARMY - army (армия)
+#FOCUS_FILTER_NAVY - navy (флот)
+#FOCUS_FILTER_AVIATION - aviation (авиация)
+#FOCUS_FILTER_ECONOMIC - economy (экономика)
+
+focus_tree = {
+	id = afghanistan_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AFG
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 100 y = 1200 }
+	reset_on_civilwar = no
+	
+	focus = {
+		id = AFG_civil_war
+		icon = GFX_goal_generic_support_rad_islamism
+		cost = 3
+		x = 4
+		y = 0
+		
+        completion_reward = {
+		    country_event = afghanistan.3
+			add_war_support = 0.05
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_political_reborn
+		icon = GFX_goal_generic_propaganda
+		cost = 120
+		
+		available = {
+			has_country_flag = AFG_taliban_loose
+		}
+		
+		x = 13
+		y = 0
+		
+		completion_reward = {
+		    hidden_effect = {
+			    remove_ideas = afg_national_lib
+			}	
+			if = {
+				limit = { has_idea = decaying_state }
+				swap_ideas = { remove_idea = decaying_state add_idea = high_terrorism }
+			}
+			if = {
+				limit = { has_idea = high_terrorism }
+				swap_ideas = { remove_idea = high_terrorism add_idea = average_terrorism }
+			}
+			if = {
+				limit = { has_idea = average_terrorism }
+				swap_ideas = { remove_idea = average_terrorism add_idea = low_terrorism }
+			}
+			if = {
+				limit = { has_idea = low_terrorism }
+				swap_ideas = { remove_idea = low_terrorism add_idea = regional_terrorism }
+			}
+			if = {
+				limit = { has_idea = regional_terrorism }
+				swap_ideas = { remove_idea = regional_terrorism add_idea = terrorism_discounted }
+			}
+			if = {
+				limit = { has_idea = terrorism_discounted }
+				add_political_power = 100
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+
+	}
+	focus = {
+		id = AFG_consolidation_people
+		icon = GFX_goal_generic_national_unity
+		cost = 80
+		
+		available = {
+			has_country_flag = AFG_taliban_loose
+		}
+		
+		x = 15
+		y = 0
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.1
+			custom_effect_tooltip = sepp_taliban_recored_tt
+			hidden_effect = {
+				TAL = {
+					remove_state_core = 267
+					remove_state_core = 1030
+					remove_state_core = 1027
+					remove_state_core = 415
+					remove_state_core = 1028
+					remove_state_core = 788
+					remove_state_core = 415
+					remove_state_core = 911
+					remove_state_core = 912
+					remove_state_core = 1029
+					remove_state_core = 810
+				}
+				ISA = {
+					remove_state_core = 267
+					remove_state_core = 1030
+					remove_state_core = 1027
+					remove_state_core = 415
+					remove_state_core = 1028
+					remove_state_core = 788
+					remove_state_core = 415
+					remove_state_core = 911
+					remove_state_core = 912
+					remove_state_core = 1029
+					remove_state_core = 810
+				}	
+            }				
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_air_forces
+		icon = GFX_goal_multirole_fighter_MiG-29
+		cost = 75
+		
+		available = {
+			has_completed_focus = AFG_new_afghani_army
+		}
+		
+		x = 25
+		y = 5
+		
+		completion_reward = {
+			air_experience = 15
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+
+	}
+	focus = {
+		id = AFG_militia 
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		mutually_exclusive = {
+			focus = AFG_regular_army
+		}
+		
+		available = {
+			has_completed_focus = AFG_loya_jirga
+		}
+		
+		x = 23
+		y = 0
+		
+		completion_reward = {
+			add_ideas = afg_militia_forces 
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+
+	}
+	focus = {
+		id = AFG_regular_army
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 50
+		mutually_exclusive = {
+			focus = AFG_militia
+		}
+		
+		available = {
+			has_completed_focus = AFG_loya_jirga
+		}
+		
+		x = 27
+		y = 0
+		
+		completion_reward = {
+            army_experience = 25
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_decentralized
+		icon = GFX_goal_afg_complete_economic_question
+		cost = 75
+		
+		available = {
+		    has_country_flag = reform_economy
+			NOT = { has_completed_focus = AFG_islamic_republic }
+		}
+		
+		mutually_exclusive = {
+			focus = AFG_centralized
+			focus = AFG_collectivisation
+		}
+		x = 33
+		y = 0
+		
+		completion_reward = {
+			add_ideas = afg_decentral_economic
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_centralized
+		icon = GFX_goal_afg_center_economy
+		cost = 75
+		
+		available = {
+		    has_country_flag = reform_economy
+		}
+		
+		mutually_exclusive = {
+			focus = AFG_decentralized
+			focus = AFG_collectivisation
+		}
+		x = 38
+		y = 0
+		
+		completion_reward = {
+			add_ideas = afg_centr_economic
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_collectivisation
+		icon = GFX_goal_afg_collectivisation
+		cost = 100
+		
+		available = {
+		    has_country_flag = reform_economy
+			NOT = { has_completed_focus = AFG_islamic_liberal }
+		}
+		
+		mutually_exclusive = {
+			focus = AFG_centralized
+			focus = AFG_decentralized
+		}
+		x = 43
+		y = 0
+		
+		completion_reward = {
+			add_ideas = afg_collectivist_economic
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_mobilisation_mass
+		icon = GFX_goal_iss_army_effort
+		cost = 15
+		prerequisite = {
+			focus = AFG_civil_war
+		}
+		x = 3
+		y = 1
+		
+		completion_reward = {
+			add_ideas = afg_mobilized_mass
+			add_stability = -0.03
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_political_defence
+		icon = GFX_goal_generic_demand_territory
+		cost = 7
+		prerequisite = {
+			focus = AFG_civil_war
+		}
+		x = 5
+		y = 1
+        completion_reward = {
+		    add_ideas = why_we_fight_focus
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+
+	}
+	focus = {
+		id = AFG_nato_aid
+		icon = GFX_goal_usa_nato_expansion
+		cost = 35
+		prerequisite = {
+			focus = AFG_mobilisation_mass
+		}
+		prerequisite = {
+			focus = AFG_political_defence
+		}
+		mutually_exclusive = {
+			focus = AFG_self_aid
+			focus = AFG_china_aid
+			focus = AFG_china_aid
+		}
+		x = 1
+		y = 2
+        
+		completion_reward = {
+            add_opinion_modifier = {
+				target = USA
+				modifier = actions_very_positive
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = actions_very_positive
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_very_positive
+				}
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_very_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+	}
+	focus = {
+		id = AFG_nato_supplies
+		icon = GFX_goal_usa_promise_protection
+		cost = 35
+		prerequisite = {
+			focus = AFG_nato_aid
+		}
+		
+		available = { 
+			NOT = { has_war_with = USA }
+			has_opinion = {
+				target = USA
+				value > 39
+			}
+		}
+		
+		x = 1
+		y = 3
+         
+		completion_reward = {
+		    add_political_power = -200
+			add_equipment_to_stockpile = {
+				type = army_salw_equipment_3
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = strike_fighter_equipment_4
+				amount = 20
+				producer = USA
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_nato_bombers
+		icon = GFX_goal_usa_prevention_of_teracts
+		cost = 50
+		prerequisite = {
+			focus = AFG_nato_supplies
+		}
+		
+		bypass = { 
+		    NOT = {
+                country_exists = TAL
+			    country_exists = ISA
+			}
+		}
+		
+		available = { 
+		    country_exists = TAL
+			NOT = { has_war_with = USA }
+			has_opinion = {
+				target = USA
+				value > 49
+			}
+		}
+		
+		x = 1
+		y = 4
+        
+		completion_reward = {
+		    add_stability = -0.05
+		    TAL = { add_ideas = afg_nato_bombing_taliban }
+			ISA = { add_ideas = afg_nato_bombing_taliban }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_nato_specops
+		icon = GFX_goal_usa_terroristic_threat
+		cost = 50
+		prerequisite = {
+			focus = AFG_nato_bombers
+		}
+		x = 1
+		y = 5 
+		
+		available = { 
+			NOT = { has_war_with = USA }
+			has_opinion = {
+				target = USA
+				value > 59
+			}
+		}
+		
+		completion_reward = {
+		    TAL = { 
+			    add_ideas = afg_nato_specops_taliban 
+			}
+			ISA = { 
+			    add_ideas = afg_nato_specops_taliban 
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_pro_american
+		icon = GFX_goal_usa_export_of_democratic
+		cost = 75
+		prerequisite = {
+			focus = AFG_nato_specops
+		}
+		x = 1
+		y = 6
+		
+		available = { 
+			NOT = { has_war_with = USA }
+		}
+	
+        completion_reward = {
+			USA = { add_to_faction = AFG }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_self_aid
+		icon = GFX_goal_rus_neutral_policy
+		cost = 25
+		prerequisite = {
+			focus = AFG_political_defence
+		}
+		prerequisite = {
+			focus = AFG_mobilisation_mass
+		}
+		prerequisite = {
+			focus = AFG_mobilisation_mass
+		}
+		mutually_exclusive = {
+			focus = AFG_china_aid
+			focus = AFG_nato_aid
+		}
+		x = 4
+		y = 2
+        
+		completion_reward = {
+		    add_ideas = militarism_focus
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_deal_warlords
+		icon = GFX_ENG_imp30.dds
+		cost = 12
+		prerequisite = {
+			focus = AFG_nato_aid
+			focus = AFG_self_aid
+			focus = AFG_china_aid
+		}
+		mutually_exclusive = {
+			focus = AFG_destroy_narco
+		}
+		x = 3
+		y = 3
+        
+		completion_reward = {
+		    add_ideas = afg_puppet_warlords
+			add_ideas = idea_monopoly_kapital
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+
+	}
+	focus = {
+		id = AFG_china_aid
+		icon = GFX_goal_irn_china
+		cost = 35
+		prerequisite = {
+			focus = AFG_political_defence
+		}
+		prerequisite = {
+			focus = AFG_mobilisation_mass
+		}
+		mutually_exclusive = {
+			focus = AFG_self_aid
+			focus = AFG_nato_aid
+			focus = AFG_nato_aid
+		}
+		x = 7
+		y = 2
+		
+        completion_reward = {
+			add_opinion_modifier = {
+				target = CHI
+				modifier = actions_very_positive
+			}
+			CHI = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_very_positive
+				}
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_destroy_narco
+		icon = GFX_goal_generic_fight
+		cost = 75
+		prerequisite = {
+			focus = AFG_china_aid
+			focus = AFG_self_aid
+			focus = AFG_nato_aid
+		}
+		mutually_exclusive = {
+			focus = AFG_deal_warlords
+		}
+		x = 5
+		y = 3
+		
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_smuggle_equipment
+		icon = GFX_goal_iss_handicraft_weapons
+		cost = 50
+		prerequisite = {
+			focus = AFG_self_aid
+			focus = AFG_deal_warlords
+			focus = AFG_destroy_narco
+		}
+		prerequisite = {
+			focus = AFG_self_aid
+		}
+		x = 3
+		y = 4
+        
+		completion_reward = {
+		    add_political_power = -200
+			add_equipment_to_stockpile = {
+				type = army_salw_equipment_1
+				amount = 2000
+				producer = RUS
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_volunteers
+		icon = GFX_goal_generic_military_sphere
+		cost = 35
+		prerequisite = {
+			focus = AFG_self_aid
+			focus = AFG_destroy_narco
+			focus = AFG_deal_warlords
+		}
+		prerequisite = {
+			focus = AFG_self_aid
+		}
+		x = 5
+		y = 4
+        
+		completion_reward = {
+		    if = {
+				limit = { has_idea = fully_guranted_liberties }
+				swap_ideas = { remove_idea = fully_guranted_liberties add_idea = emergency_law }
+			}
+			if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = emergency_law  }
+			}
+			if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = emergency_law }
+			}
+			if = {
+				limit = { has_idea = limitation_of_liberties }
+				swap_ideas = { remove_idea = limitation_of_liberties add_idea = emergency_law  }
+			}
+			if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = emergency_law }
+			}
+			if = {
+				limit = { has_idea = emergency_law  }
+				add_political_power = 150 
+			}
+			if = {
+				limit = { has_idea = martial_law  }
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_national_liberation 
+		icon = GFX_goal_generic_nationalism_propaganda
+		cost = 30
+		prerequisite = {
+			focus = AFG_volunteers
+		}
+		prerequisite = {
+			focus = AFG_smuggle_equipment
+		}
+		x = 5
+		y = 5
+		
+		completion_reward = {
+			add_ideas = afg_national_lib
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_infiltration_taliban 
+		icon = GFX_goal_irn_sunnit_battle
+		cost = 45
+		prerequisite = {
+			focus = AFG_smuggle_equipment
+		}
+		prerequisite = {
+			focus = AFG_volunteers
+		}
+		
+		available = { 
+		    country_exists = TAL
+		}
+		
+		bypass = { NOT = { country_exists = TAL	} }
+		
+		x = 3
+		y = 5
+
+		completion_reward = {
+		    add_timed_idea = {
+				idea = afg_infiltrate
+				days = 360
+			} 
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_kabul_tehran_alliance
+		icon = GFX_goal_irn_sotr_afg
+		cost = 60
+		prerequisite = {
+			focus = AFG_infiltration_taliban
+		}
+		prerequisite = {
+			focus = AFG_national_liberation 
+		}
+		mutually_exclusive = {
+			focus = AFG_alliance_kabul_deli
+		}
+		x = 5
+		y = 6
+		
+        completion_reward = {
+			add_opinion_modifier = {
+				target = IRN
+				modifier = actions_very_positive
+			}
+			IRN = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_very_positive
+				}
+			}
+			ISR = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_maoist_coalition
+		icon = GFX_focus_prc_maoism
+		cost = 50
+		prerequisite = {
+			focus = AFG_china_aid
+		}
+		x = 7
+		y = 3
+         
+		completion_reward = {
+		    custom_effect_tooltip = afg_maoists_tt
+			add_manpower = 8000
+			hidden_effect = {
+				add_ideas = internationalism
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_chinese_supplies
+		icon = GFX_goal_chi_army_effort
+		cost = 75
+		prerequisite = {
+			focus = AFG_maoist_coalition
+		}
+		
+		available = { 
+		    country_exists = TAL
+			NOT = { has_war_with = CHI }
+			has_opinion = {
+				target = CHI
+				value > 49
+			}
+		}
+		
+		bypass = { NOT = { country_exists = TAL	} }
+		
+		x = 7
+		y = 4
+        
+		completion_reward = {
+		    add_political_power = -150
+			add_equipment_to_stockpile = {
+				type = apc_tracked_g2_equipment_0
+				amount = 100
+				producer = CHI
+			}
+			add_equipment_to_stockpile = {
+				type = army_salw_equipment_4
+				amount = 3000
+				producer = CHI
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_pro_chinese
+		icon = GFX_goal_irn_china_help
+		cost = 85
+		prerequisite = {
+			focus = AFG_chinese_supplies
+		}
+		
+		available = { 
+			NOT = { has_war_with = CHI }
+		} 
+		
+		x = 7
+		y = 5
+        
+		completion_reward = {
+			CHI = { country_event = afghanistan.5 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_chinese_advisors
+		icon = GFX_goal_chi_army
+		cost = 75
+		prerequisite = {
+			focus = AFG_pro_chinese
+		}
+		
+		available = { 
+			NOT = { has_war_with = CHI }
+			has_opinion = {
+				target = CHI
+				value > 69
+			}
+		} 
+		
+		x = 7
+		y = 6
+        
+		completion_reward = {
+		    add_ideas = sco_member
+			add_ideas = afg_chinese_advisors
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_loya_jirga
+		icon = GFX_goal_generic_agreement
+		cost = 120
+		
+		prerequisite = {
+			focus = AFG_political_reborn
+		}
+		prerequisite = {
+			focus = AFG_consolidation_people
+		}
+		
+		x = 14
+		y = 1
+		
+		completion_reward = {
+		    country_event = { id = afghanistan.6 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_islamic_republic
+		icon = GFX_goal_irn_religiosni_ref
+		cost = 75
+		prerequisite = {
+			focus = AFG_loya_jirga
+		}
+		mutually_exclusive = {
+			focus = AFG_secular_republic
+		}
+		
+		available = {
+			has_country_flag = afg_islamic_umma
+		}
+		
+		x = 11
+		y = 2
+		
+		completion_reward = {
+		    add_ideas = idea_political_imam_rad_islamic
+			add_stability = 0.02
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_autocracy_republic
+		icon = GFX_goal_irn_radical_meri
+		cost = 70
+		prerequisite = {
+			focus = AFG_islamic_republic
+		}
+		mutually_exclusive = {
+			focus = AFG_teocratic_republic
+		}
+		x = 10
+		y = 3 #custom_effect_tooltip = afg_setup_autocratic_state_tt
+		
+		completion_reward = {
+			add_political_power = 150	
+            if = {
+				limit = { has_idea = single-party_state }
+				swap_ideas = { remove_idea = single-party_state add_idea = dictatorship_state }
+			}
+			if = {
+				limit = { has_idea = dictatorship_state }
+				add_political_power = 150 
+			}			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_teocratic_republic
+		icon = GFX_goal_irn_upor_islam
+		cost = 70
+		
+		available = { 
+			NOT = { has_completed_focus = AFG_nato_aid }
+		}
+		
+		prerequisite = {
+			focus = AFG_islamic_republic
+		}
+		mutually_exclusive = {
+			focus = AFG_autocracy_republic
+		}
+		x = 12
+		y = 3 #custom_effect_tooltip = afg_setup_teocratic_state_tt
+		
+		completion_reward = {
+			add_political_power = 150	
+            if = {
+				limit = { has_idea = fully_guranted_liberties }
+				swap_ideas = { remove_idea = fully_guranted_liberties add_idea = sharia_law }
+			}
+			if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = sharia_law  }
+			}
+			if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = sharia_law }
+			}
+			if = {
+				limit = { has_idea = limitation_of_liberties }
+				swap_ideas = { remove_idea = limitation_of_liberties add_idea = sharia_law  }
+			}
+			if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = sharia_law }
+			}
+			if = {
+				limit = { has_idea = emergency_law }
+				swap_ideas = { remove_idea = emergency_law add_idea = sharia_law  }
+			}
+			if = {
+				limit = { has_idea = martial_law }
+				swap_ideas = { remove_idea = martial_law add_idea = sharia_law }
+			}
+			if = {
+				limit = { has_idea = sharia_law  }
+				add_political_power = 150 
+			}
+		}	
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_strange_mullas
+		icon = GFX_goal_irn_vliat_imani
+		cost = 70
+		prerequisite = {
+			focus = AFG_teocratic_republic
+		}
+		
+		available = { 
+			NOT = { has_war_with = SAU }
+			has_opinion = {
+				target = SAU
+				value > 39
+			}
+		}
+		
+		x = 12
+		y = 4
+		
+		completion_reward = {
+		    add_political_power = 150	
+            if = {
+				limit = { has_idea = mixed_schools }
+				swap_ideas = { remove_idea = mixed_schools add_idea = religious_schools }
+			}
+			if = {
+				limit = { has_idea = professional_schools }
+				swap_ideas = { remove_idea = professional_schools add_idea = religious_schools  }
+			}
+			if = {
+				limit = { has_idea = military_schools }
+				swap_ideas = { remove_idea = military_schools add_idea = religious_schools  }
+			}
+			if = {
+				limit = { has_idea = tech_schools }
+				swap_ideas = { remove_idea = tech_schools add_idea = religious_schools }
+			}
+			if = {
+				limit = { has_idea = religious_schools  }
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_strange_niup
+		icon = GFX_goal_irn_afghan_help
+		cost = 70
+		prerequisite = {
+			focus = AFG_strange_mullas
+		}
+		
+		available = { 
+			NOT = { has_war_with = IRN }
+			has_opinion = {
+				target = IRN
+				value > 39
+			}
+		}
+		
+		x = 12
+		y = 5
+		
+		completion_reward = {
+		    add_ideas = support_islamists
+        }  
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_secular_republic
+		icon = GFX_goal_generic_democracy_propaganda
+		cost = 75
+		prerequisite = {
+			focus = AFG_loya_jirga
+		}
+		mutually_exclusive = {
+			focus = AFG_islamic_republic
+		}
+		
+		available = {
+			has_country_flag = afg_democratic_rep
+		}
+		
+		x = 17
+		y = 2
+		
+		completion_reward = {
+		    add_stability = -0.15
+			add_timed_idea = { 
+			    idea = support_liberalism
+					days = 360
+			}
+			add_timed_idea = { 
+			    idea = support_reformism
+					days = 360
+			}
+			add_timed_idea = { 
+			    idea = democratic_influence
+					days = 360
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_najib_legacy
+		icon = GFX_goal_irn_cent_kom
+		cost = 70
+		prerequisite = {
+			focus = AFG_secular_republic
+		}
+		mutually_exclusive = {
+			focus = AFG_islamic_liberal
+		}
+		x = 15
+		y = 3
+		
+		completion_reward = {
+			add_popularity = { ideology = reformism popularity = 0.05 }
+			add_popularity = { ideology = communism popularity = 0.05 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_drnajib_society
+		icon = GFX_goal_generic_support_reformism
+		cost = 70
+		prerequisite = {
+			focus = AFG_najib_legacy
+		}
+		x = 15
+		y = 4 
+		
+		completion_reward = {
+		    set_country_flag = reform_economy
+			add_ideas = afg_dr_najib
+			custom_effect_tooltip = afg_economic_reform_tt	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_restore_khad
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 60
+		prerequisite = {
+			focus = AFG_drnajib_society
+		}
+		
+		available = { 
+		    OR = {
+		    has_government = communism
+			has_government = reformism
+			}
+		}
+
+		x = 15
+		y = 5
+		
+		completion_reward = {
+		    set_country_flag = conducted_anticorruption_company
+		    add_ideas = afg_khad
+		    hidden_effect = {
+			    if = {
+				    limit = { has_idea = oligarchy }
+				    swap_ideas = { remove_idea = oligarchy add_idea = high_corruption }
+			    }
+			    if = {
+				    limit = { has_idea = high_corruption }
+				    swap_ideas = { remove_idea = high_corruption add_idea = average_corruption }
+			    }
+			    if = {
+				    limit = { has_idea = average_corruption }
+				    swap_ideas = { remove_idea = average_corruption add_idea = low_corruption }
+			    }
+			    if = {
+				    limit = { has_idea = low_corruption }
+				    swap_ideas = { remove_idea = low_corruption add_idea = corruption_discounted }
+			    }
+			    if = {
+				    limit = { has_idea = corruption_discounted }
+				    add_political_power = 200
+			    }
+			}	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_purge_islamists
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 100
+		prerequisite = {
+			focus = AFG_restore_khad
+		}
+		x = 15
+		y = 6 
+		
+		completion_reward = {
+		    set_country_flag = reform_laws_against_corruption
+		    custom_effect_tooltip = afg_khad_purge_tt
+		    hidden_effect = {
+			    swap_ideas = { remove_idea = afg_khad add_idea = afg_khad_up }
+            }	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_islamic_liberal
+		icon = GFX_goal_generic_support_liberalism
+		cost = 70
+		prerequisite = {
+			focus = AFG_secular_republic
+		}
+		
+		available = { 
+			NOT = { has_completed_focus = AFG_kabul_tehran_alliance }
+		}
+		
+		mutually_exclusive = {
+			focus = AFG_najib_legacy
+		}
+		x = 19
+		y = 3 
+		
+		completion_reward = {
+		    add_stability = -0.05
+			add_ideas = afg_westernisation
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_deradicalisation_young
+		icon = GFX_goal_generic_political_pressure
+		cost = 60
+		prerequisite = {
+			focus = AFG_najib_legacy
+			focus = AFG_islamic_liberal
+		}
+		
+		x = 17
+		y = 4
+		
+		completion_reward = {
+			add_ideas = idea_eduction_reforms
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_limited_religion
+		icon = GFX_goal_generic_fight
+		cost = 90
+		prerequisite = {
+			focus = AFG_deradicalisation_young
+		}
+		
+		available = {
+		    NOT = { has_government = democratic }
+			democratic < 0.15
+		}
+		
+		bypass = {  }
+		
+		x = 17
+		y = 5
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = theocracy }
+				swap_ideas = { remove_idea = theocracy add_idea = state_religion }
+			}
+			if = {
+				limit = { has_idea = state_religion }
+				swap_ideas = { remove_idea = state_religion add_idea = preference_religion }
+			}
+			if = {
+				limit = { has_idea = preference_religion }
+				swap_ideas = { remove_idea = preference_religion add_idea = secular_state }
+			}
+			add_political_power = 150 
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_direct_democracy
+		icon = GFX_goal_generic_democracy_propaganda
+		cost = 70
+		prerequisite = {
+			focus = AFG_limited_religion
+		}
+		x = 17
+		y = 6
+		
+		completion_reward = {
+		    add_political_power = 100
+			if = {
+				limit = { has_completed_focus = AFG_najib_legacy }
+				swap_ideas = { remove_idea = single-party_state add_idea = presidential_republic }
+			}
+			if = {
+				limit = { has_completed_focus = AFG_islamic_liberal }
+				swap_ideas = { remove_idea = single-party_state add_idea = parliamentary_republic }
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_restore_order
+		icon = GFX_goal_generic_conservatism
+		cost = 70
+		prerequisite = {
+			focus = AFG_islamic_liberal
+		}
+		x = 19
+		y = 4
+		
+		completion_reward = {
+		    set_country_flag = conducted_anticorruption_company
+		    set_country_flag = reform_economy
+			add_stability = 0.05
+            custom_effect_tooltip = afg_economic_reform_tt		
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_decentralization
+		icon = GFX_goal_irn_norm_ref
+		cost = 70
+		prerequisite = {
+			focus = AFG_restore_order
+		}
+		x = 19
+		y = 5
+		
+		completion_reward = {
+		    set_country_flag = reform_laws_against_corruption
+			if = {
+				limit = { has_idea = unitary_state }
+				swap_ideas = { remove_idea = unitary_state add_idea = unitary_state_with_devolution }
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_international_invest
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70
+		prerequisite = {
+			focus = AFG_decentralization
+		}
+		x = 19
+		y = 6
+		
+		completion_reward = {
+		    add_political_power = -300
+			if = {
+				limit = { has_idea = closed_economy }
+				swap_ideas = { remove_idea = closed_economy add_idea = limited_exports }
+			}
+			if = {
+				limit = { has_idea = limited_exports }
+				swap_ideas = { remove_idea = limited_exports add_idea = export_focus }
+			}
+			if = {
+				limit = { has_idea = export_focus }
+				swap_ideas = { remove_idea = export_focus add_idea = free_trade }
+			}
+			if = {
+				limit = { has_idea = free_trade }
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = AFG_people_constitution
+		icon = GFX_goal_irn_ref_kons
+		cost = 100
+		prerequisite = {
+			focus = AFG_purge_islamists
+			focus = AFG_international_invest
+		}
+		prerequisite = {
+			focus = AFG_direct_democracy
+		}
+
+		x = 17
+		y = 7
+		
+		completion_reward = {
+		    swap_ideas = { remove_idea = afg_political_unstab add_idea = afg_people_const }
+			if = {
+				limit = { has_completed_focus = AFG_najib_legacy }
+				swap_ideas = { remove_idea = unitary_state add_idea = federation }
+			}
+			if = {
+				limit = { has_completed_focus = AFG_islamic_liberal}
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_home_defence
+		icon = GFX_goal_generic_to_arms
+		cost = 75
+		prerequisite = {
+			focus = AFG_militia
+		}
+		x = 22
+		y = 1
+		
+		completion_reward = {
+		    add_ideas = deterrence
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_big_selfdefence
+		icon = GFX_goal_generic_equipment_production
+		cost = 75
+		prerequisite = {
+			focus = AFG_home_defence
+		}
+		x = 22
+		y = 2
+		
+		completion_reward = {
+		    add_ideas = paramilitarism_focus	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_decentralized_command
+		icon = GFX_goal_generic_defence
+		cost = 75
+		prerequisite = {
+			focus = AFG_big_selfdefence
+		}
+		x = 22
+		y = 3
+		
+		completion_reward = {
+		    swap_ideas = { remove_idea = afg_militia_forces add_idea = afg_decentral_militia }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_renove_airports
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 90
+		prerequisite = {
+			focus = AFG_air_forces
+		}
+		
+		available = {
+			OR = {
+				controls_state = 267 #Kabul
+				controls_state = 912 #Kandagar
+			}
+		}
+		
+		x = 22
+		y = 6
+		
+		completion_reward = {
+			#Kabul
+			if = {
+				limit = {
+					owns_state = 267
+					controls_state = 267
+					267 = {
+						free_building_slots = {
+							building = air_base
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				267 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			#Kandagar
+			if = {
+				limit = {
+					owns_state = 912
+					controls_state = 912
+					912 = {
+						free_building_slots = {
+							building = air_base
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				912 = {
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+        }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_pilots_amators
+		icon = GFX_goal_attack_aircraft_Su-24
+		cost = 60
+		prerequisite = {
+			focus = AFG_renove_airports
+		}
+		x = 22
+		y = 7
+		
+		completion_reward = {
+		    air_experience = 20
+        }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = AFG_new_equipment
+		icon = GFX_goal_assault_rifle_QBZ-95
+		cost = 75
+		prerequisite = {
+			focus = AFG_militia
+			focus = AFG_regular_army
+		}
+		x = 25
+		y = 1
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_new_artillery
+		icon = GFX_goal_anti-tank_FGM-148
+		cost = 75
+		prerequisite = {
+			focus = AFG_new_equipment
+		}
+		x = 24
+		y = 2
+		
+		completion_reward = {
+		    add_tech_bonus = {
+				name = "INFANTRY_BONUS"
+				uses = 1
+				bonus = 0.5
+				category = cat_infantry_weapons
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_mechanized_army
+		icon = GFX_goal_motorization_light_4x4_Toyota
+		cost = 75
+		prerequisite = {
+			focus = AFG_new_artillery
+		}
+		x = 24
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_wheeled_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_import_air
+		icon = GFX_goal_miltirole_helicopter_Mi-24
+		cost = 100
+		prerequisite = {
+			focus = AFG_air_forces
+		}
+		x = 24
+		y = 6
+		
+		completion_reward = {
+		    add_political_power = -200
+			add_ideas = AFG_license_production
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_mass_mobilized
+		icon = GFX_focus_chi_army_reform
+		cost = 75
+		prerequisite = {
+			focus = AFG_new_equipment
+		}
+		
+		bypass = { has_completed_focus = AFG_militia }
+		
+		x = 26
+		y = 2
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = contract_army }
+				swap_ideas = { remove_idea = contract_army add_idea = mixed_army  }
+			}
+			if = {
+				limit = { has_idea = mixed_army  }
+				swap_ideas = { remove_idea = mixed_army  add_idea = mandatory_urgent_service }
+			}
+			if = {
+				limit = { has_idea = mandatory_urgent_service }
+				add_war_support = 0.05
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_new_officers
+		icon = GFX_focus_generic_military_academy
+		cost = 75
+		prerequisite = {
+			focus = AFG_mass_mobilized
+		}
+		x = 26
+		y = 3
+		
+		completion_reward = {
+		    army_experience = 35
+			air_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			} 
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_modernize_aircrafts
+		icon = GFX_goal_UAV_effort
+		cost = 80
+		prerequisite = {
+			focus = AFG_air_forces
+		}
+		x = 26
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_aa_defence
+		icon = GFX_goal_generic_defence
+		cost = 60
+		prerequisite = {
+			focus = AFG_air_forces
+		}
+		
+		available = {
+			OR = {
+				controls_state = 267 #Kabul
+			}
+		}
+		
+		x = 28
+		y = 6
+		
+		completion_reward = {
+			#Kabul
+			
+			#if = {
+			#	limit = {
+			#		owns_state = 267
+			#		controls_state = 267
+			#		267 = {
+			#			free_building_slots = {
+			#				building = anti_air_building
+			#				size > 0
+			#				include_locked = yes
+			#			}
+			#		}
+			#	}
+			#	267 = {
+			#		add_building_construction = {
+			#			type = anti_air_building
+			#			level = 2
+			#			instant_build = yes
+			#		}
+			#	}
+			#}
+        }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+
+	}
+	focus = {
+		id = AFG_light_aviation
+		icon = GFX_goal_miltirole_helicopter_Mi-24
+		cost = 80
+		prerequisite = {
+			focus = AFG_aa_defence
+			focus = AFG_modernize_aircrafts
+			focus = AFG_import_air
+		}
+		mutually_exclusive = {
+			focus = AFG_high_aviation
+		}
+		
+		available = { num_of_military_factories > 6 }
+		
+		x = 27
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_ai_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_attack_helicopter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_political_officers
+		icon = GFX_focus_generic_military_mission
+		cost = 75
+		prerequisite = {
+			focus = AFG_regular_army
+		}
+		x = 28
+		y = 1
+		
+		completion_reward = {
+			add_ideas = political_commissars_focus
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_specops_forces
+		icon = GFX_goal_generic_political_pressure
+		cost = 75
+		prerequisite = {
+			focus = AFG_political_officers
+		}
+		
+		x = 28
+		y = 2
+		
+		completion_reward = {
+			add_ideas = afg_specnaz
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_border_guards
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 75
+		prerequisite = {
+			focus = AFG_specops_forces
+		}
+		x = 28
+		y = 3
+		
+		completion_reward = {
+            army_experience = 20
+			add_war_support = 0.05
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_new_afghani_army
+		icon = GFX_focus_generic_little_entente
+		cost = 60
+		prerequisite = {
+			focus = AFG_decentralized_command
+			focus = AFG_border_guards
+		}
+		prerequisite = {
+			focus = AFG_mechanized_army
+		}
+		prerequisite = {
+			focus = AFG_new_officers
+		}
+		x = 25
+		y = 4
+		
+		completion_reward = {
+			remove_ideas = obsolete_army
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_light_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 90
+		prerequisite = {
+			focus = AFG_decentralized
+		}
+		x = 32
+		y = 1
+		
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_local_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 60
+		prerequisite = {
+			focus = AFG_light_industry
+		}
+		x = 32
+		y = 2
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = { 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1 
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_idea = no_protect }
+				swap_ideas = { remove_idea = no_protect add_idea = low_protect }
+			}
+			if = {
+				limit = { has_idea = low_protect }
+				swap_ideas = { remove_idea = low_protect add_idea = normal_protect }
+			}
+			if = {
+				limit = { has_idea = normal_protect }
+				swap_ideas = { remove_idea = normal_protect add_idea = big_protect }
+			}
+			if = {
+				limit = { has_idea = big_protect }
+				swap_ideas = { remove_idea = big_protect add_idea = full_protect }
+			}
+			if = {
+				limit = { has_idea = full_protect }
+				add_political_power = 150 #Has Desired Amount
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_local_production
+		icon = GFX_goal_rus_fighting_against_illegal
+		cost = 60
+		prerequisite = {
+			focus = AFG_decentralized
+		}
+		x = 34
+		y = 1
+		
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_high_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 90
+		prerequisite = {
+			focus = AFG_local_production
+		}
+		x = 34
+		y = 2
+		
+		completion_reward = {
+			random_owned_state = {
+			    add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+            }
+		}	
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_build_brigades
+		icon = GFX_goal_generic_demand_territory
+		cost = 75
+		prerequisite = {
+			focus = AFG_local_infrastructure
+		}
+		prerequisite = {
+			focus = AFG_high_industry
+		}
+		x = 33
+		y = 3
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = afg_decentral_economic
+				add_idea = afg_decentral_economic_upgrade 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_balanced_economy
+		icon = GFX_goal_afg_support_balance
+		cost = 100
+		prerequisite = {
+			focus = AFG_centralized
+		}
+		x = 37
+		y = 1
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): AFG_balanced_economy"
+			1030 = {
+			    add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1030 = {
+				#limit = { 
+				#	free_building_slots = {
+				#		building = infrastructure
+				#		size > 0
+				#		include_locked = yes
+				#	}
+				#}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_military_production
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 100
+		prerequisite = {
+			focus = AFG_balanced_economy
+		}
+		x = 37
+		y = 2
+		
+		completion_reward = {
+			267 = {
+			    add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			1030 = {
+			    add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_corporativism
+		icon = GFX_goal_irn_free_torg
+		cost = 75
+		prerequisite = {
+			focus = AFG_centralized
+		}
+		x = 39
+		y = 1
+		
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = fuel_silo
+					instant_build = yes
+					level = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_resoures
+		icon = GFX_goal_generic_raw_materials
+		cost = 80
+		prerequisite = {
+			focus = AFG_corporativism
+		}
+		x = 39
+		y = 2
+		
+		completion_reward = {
+			if = {
+				limit = { 
+					any_owned_state = { has_resources_amount = { resource = oil amount > 0 } }
+				}
+				random_owned_state = { 
+					limit = { has_resources_amount = { resource = oil amount > 0 } } 
+					add_resource = { type = oil amount = 4 }
+				}
+			}
+			if = {
+				limit = { 
+					any_owned_state = { has_resources_amount = { resource = iron_ore amount > 0 } }
+				}
+				random_owned_state = { 
+					limit = { has_resources_amount = { resource = iron_ore amount > 0 } } 
+					add_resource = { type = iron_ore amount = 6 }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_new_academies
+		icon = GFX_goal_rus_union_republic_integration
+		cost = 75
+		prerequisite = {
+			focus = AFG_military_production
+		}
+		prerequisite = {
+			focus = AFG_resoures
+		}
+		x = 38
+		y = 3
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = AFG_local_infra
+		icon = GFX_goal_generic_construct_infrastructure_red
+		cost = 75
+		prerequisite = {
+			focus = AFG_collectivisation
+		}
+		x = 42
+		y = 1
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = { 
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_idea = no_protect }
+				swap_ideas = { remove_idea = no_protect add_idea = low_protect }
+			}
+			if = {
+				limit = { has_idea = low_protect }
+				swap_ideas = { remove_idea = low_protect add_idea = normal_protect }
+			}
+			if = {
+				limit = { has_idea = normal_protect }
+				swap_ideas = { remove_idea = normal_protect add_idea = big_protect }
+			}
+			if = {
+				limit = { has_idea = big_protect }
+				swap_ideas = { remove_idea = big_protect add_idea = full_protect }
+			}
+			if = {
+				limit = { has_idea = full_protect }
+				add_political_power = 150 #Has Desired Amount
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_tax_reform
+		icon = GFX_goal_afg_money_reform
+		cost = 90
+		prerequisite = {
+			focus = AFG_local_infra
+		}
+		x = 42
+		y = 2
+		
+		completion_reward = {
+		    add_stability = -0.05
+			if = {
+				limit = { has_idea = very_low_taxes }
+				swap_ideas = { remove_idea = very_low_taxes add_idea = low_taxes }
+			}
+			if = {
+				limit = { has_idea = low_taxes }
+				swap_ideas = { remove_idea = low_taxes add_idea = normal_taxes }
+			}
+			if = {
+				limit = { has_idea = normal_taxes }
+				swap_ideas = { remove_idea = normal_taxes add_idea = high_taxes }
+			}
+			if = {
+				limit = { has_idea = high_taxes }
+				swap_ideas = { remove_idea = high_taxes add_idea = very_high_taxes }
+			}
+			if = {
+				limit = { has_idea = very_high_taxes }
+				add_political_power = 150 #Has Desired Amount
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_alliance_kabul_deli
+		icon = GFX_goal_irn_ally
+		cost = 75
+		prerequisite = {
+			focus = AFG_infiltration_taliban
+		}
+		prerequisite = {
+			focus = AFG_national_liberation 
+		}
+		mutually_exclusive = {
+			focus = AFG_kabul_tehran_alliance
+		}
+		x = 3
+		y = 6
+		
+		completion_reward = {
+			add_opinion_modifier = {
+				target = IND
+				modifier = actions_very_positive
+			}
+			IND = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_very_positive
+				}
+			}
+			PAK = {
+				add_opinion_modifier = {
+					target = AFG
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = AFG_political_unstability
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 35
+		
+		available = {
+			NOT = {
+			    country_exists = TAL
+			}	
+		}
+		
+		prerequisite = {
+			focus = AFG_pro_american
+			focus = AFG_alliance_kabul_deli
+			focus = AFG_chinese_advisors
+			focus = AFG_kabul_tehran_alliance
+		}
+		
+		
+		x = 4
+		y = 7
+		
+		completion_reward = {
+		    country_event = { id = afghanistan.4 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_beacon_democracy
+		icon = GFX_goal_generic_support_democracy
+		cost = 75
+	
+		prerequisite = {
+			focus = AFG_people_constitution
+		}
+		mutually_exclusive = {
+			focus = AFG_great_legacy
+		}
+		
+		available = { has_stability > 0.5 }
+		
+		x = 15
+		y = 8 
+		
+		completion_reward = { 
+		    swap_ideas = { remove_idea = afg_people_const add_idea = afg_beacon_democrat }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_purges_radicals
+		icon = GFX_goal_irn_battle_bezrabotica
+		cost = 90
+		prerequisite = {
+			focus = AFG_autocracy_republic
+		}
+		x = 10
+		y = 4
+		
+		completion_reward = {
+            add_political_power = -100		
+			if = {
+				limit = { has_idea = decaying_state }
+				swap_ideas = { remove_idea = decaying_state add_idea = high_terrorism }
+			}
+			if = {
+				limit = { has_idea = high_terrorism }
+				swap_ideas = { remove_idea = high_terrorism add_idea = average_terrorism }
+			}
+			if = {
+				limit = { has_idea = average_terrorism }
+				swap_ideas = { remove_idea = average_terrorism add_idea = low_terrorism }
+			}
+			if = {
+				limit = { has_idea = low_terrorism }
+				swap_ideas = { remove_idea = low_terrorism add_idea = regional_terrorism }
+			}
+			if = {
+				limit = { has_idea = regional_terrorism }
+				swap_ideas = { remove_idea = regional_terrorism add_idea = terrorism_discounted }
+			}
+			if = {
+				limit = { has_idea = terrorism_discounted }
+				add_political_power = 100
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_stranged_power
+		icon = GFX_goal_irn_protest_regions
+		cost = 75
+		prerequisite = {
+			focus = AFG_purges_radicals
+		}
+		x = 10
+		y = 5
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = free_media }
+				swap_ideas = { remove_idea = free_media add_idea = state_media_only }
+			}
+			if = {
+				limit = { has_idea = commercial_media }
+				swap_ideas = { remove_idea = commercial_media add_idea = state_media_only }
+			}
+			if = {
+				limit = { has_idea = mixed_media }
+				swap_ideas = { remove_idea = mixed_media add_idea = state_media_only }
+			}
+			if = {
+				limit = { has_idea = cencored_media }
+				swap_ideas = { remove_idea = cencored_media add_idea = state_media_only }
+			}
+			if = {
+				limit = { has_idea = state_media_only }
+				add_political_power = 150 
+			}
+			if = {
+				limit = { has_idea = state_propaganda_media }
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_police_state
+		icon = GFX_goal_irn_national_rebirth
+		cost = 100
+		prerequisite = {
+			focus = AFG_purge_islamists
+			focus = AFG_strange_centralized
+		}
+		x = 13
+		y = 7
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = fully_guranted_liberties }
+				swap_ideas = { remove_idea = fully_guranted_liberties add_idea = respect_of_liberties }
+			}
+			if = {
+				limit = { has_idea = respect_of_liberties }
+				swap_ideas = { remove_idea = respect_of_liberties add_idea = suspended_liberties }
+			}
+			if = {
+				limit = { has_idea = suspended_liberties }
+				swap_ideas = { remove_idea = suspended_liberties add_idea = limitation_of_liberties  }
+			}
+			if = {
+				limit = { has_idea = limitation_of_liberties  }
+				swap_ideas = { remove_idea = limitation_of_liberties add_idea = lack_of_liberties }
+			}
+			if = {
+				limit = { has_idea = lack_of_liberties }
+				swap_ideas = { remove_idea = lack_of_liberties add_idea = emergency_law }
+			}
+			if = {
+				limit = { has_idea = emergency_law }
+				swap_ideas = { remove_idea = emergency_law add_idea = martial_law }
+			}
+			if = {
+				limit = { has_idea = martial_law }
+				add_political_power = 50
+			}
+            add_stability = -0.05			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_great_legacy
+		icon = GFX_goal_irn_support_jixad
+		cost = 100
+		prerequisite = {
+			focus = AFG_police_state
+			focus = AFG_people_constitution
+		}
+		mutually_exclusive = {
+			focus = AFG_beacon_democracy
+		}
+		
+		available = { 
+		    has_war_support > 0.75 
+			has_stability > 0.6 
+		}
+		
+		bypass = {
+			has_idea = regional_country
+		}
+		
+		x = 11
+		y = 8
+		
+		completion_reward = {
+			add_ideas = revanchism
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_strange_centralized
+		icon = GFX_goal_generic_agreement
+		cost = 90
+		
+		prerequisite = {
+			focus = AFG_strange_niup
+			focus = AFG_stranged_power
+		}
+
+		x = 11
+		y = 6
+		
+		completion_reward = {
+		    set_country_flag = reform_laws_against_corruption
+		    custom_effect_tooltip = afg_economic_reform_tt
+		    remove_ideas = afg_political_unstab
+		    set_country_flag = reform_economy
+			set_country_flag = conducted_anticorruption_company
+			add_ideas = authoritarian_influence
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_daoud_legacy
+		icon = GFX_goal_irn_once_han
+		cost = 75
+		prerequisite = {
+			focus = AFG_stranged_power
+		}
+		
+		available = {
+		    OR = {
+			has_government = fascism 
+            has_government = neutrality
+			}
+		}
+		
+		x = 10
+		y = 7
+		
+		completion_reward = {
+		    add_ideas = afg_daoud_khan
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = AFG_high_aviation
+		icon = GFX_goal_CAS_Su-25
+		cost = 75
+		prerequisite = {
+			focus = AFG_import_air
+			focus = AFG_modernize_aircrafts
+			focus = AFG_aa_defence
+		}
+		mutually_exclusive = {
+			focus = AFG_light_aviation
+		}
+		
+		available = { num_of_military_factories > 8 }
+		
+		x = 25
+		y = 7
+		
+		completion_reward = {
+		    add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_ground_attack_tech 
+			}
+        }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = AFG_new_doctrines
+		icon = GFX_goal_generic_developing_UAV
+		cost = 80
+		prerequisite = {
+			focus = AFG_pilots_amators
+		}
+		x = 22
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = AFG_airborne
+		icon = GFX_goal_transport_helicopter_CH-47
+		cost = 75
+		prerequisite = {
+			focus = AFG_pilots_amators
+			focus = AFG_high_aviation
+		}
+		prerequisite = {
+			focus = AFG_import_air
+		}
+		x = 24
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1
+				uses = 1
+				category = cat_air_transport_tech
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1
+				uses = 1
+				category = cat_landing_helicopter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = AFG_air_doctrines
+		icon = GFX_goal_continuous_air_production
+		cost = 75
+		prerequisite = {
+			focus = AFG_high_aviation
+			focus = AFG_light_aviation
+		}
+		x = 26
+		y = 8
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = AFG_radar
+		icon = GFX_goal_generic_propaganda
+		cost = 80
+		prerequisite = {
+			focus = AFG_aa_defence
+			focus = AFG_light_aviation
+			focus = AFG_high_aviation
+		}
+		
+		available = {
+			OR = {
+				controls_state = 267 #Kabul
+			}
+		}
+		
+		x = 28
+		y = 8
+		
+		completion_reward = {
+			#Kabul
+			if = {
+				limit = {
+					owns_state = 267
+					controls_state = 267
+					267 = {
+						free_building_slots = {
+							building = radar_station
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				267 = {
+					add_building_construction = {
+						type = radar_station
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_new_schools
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 90
+		prerequisite = {
+			focus = AFG_collectivisation
+		}
+		x = 44
+		y = 1
+		
+		completion_reward = {
+			add_research_slot = 1
+			if = {
+				limit = { has_idea = mixed_schools }
+				swap_ideas = { remove_idea = mixed_schools add_idea = professional_schools }
+			}
+			if = {
+				limit = { has_idea = religious_schools }
+				swap_ideas = { remove_idea = religious_schools add_idea = professional_schools  }
+			}
+			if = {
+				limit = { has_idea = military_schools }
+				swap_ideas = { remove_idea = military_schools add_idea = professional_schools  }
+			}
+			if = {
+				limit = { has_idea = tech_schools  }
+				add_political_power = 150 
+			}
+			if = {
+				limit = { has_idea = professional_schools  }
+				add_political_power = 150 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = AFG_afghani_welfare
+		icon = GFX_goal_irn_soon
+		cost = 80
+		prerequisite = {
+			focus = AFG_tax_reform
+		}
+		prerequisite = {
+			focus = AFG_social_welfare
+		}
+		x = 43
+		y = 3
+		
+		completion_reward = {
+			if = {
+				limit = { has_idea = no_social_security }
+				swap_ideas = { remove_idea = no_social_security add_idea = base_social_security }
+			}
+			if = {
+				limit = { has_idea = base_social_security }
+				swap_ideas = { remove_idea = base_social_security add_idea = middle_social_security }
+			}
+			if = {
+				limit = { has_idea = middle_social_security }
+				swap_ideas = { remove_idea = middle_social_security add_idea = total_social_security }
+			}
+			if = {
+				limit = { has_idea = national_social_security }
+				swap_ideas = { remove_idea = national_social_security add_idea = total_social_security }
+			}
+			if = {
+				limit = { has_idea = total_social_security }
+				add_stability = 0.05
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = AFG_social_welfare
+		icon = GFX_goal_generic_agreement
+		cost = 90
+		prerequisite = {
+			focus = AFG_new_schools
+		}
+		x = 44
+		y = 2
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_fate_resourse
+		icon = GFX_goal_generic_raw_materials
+		cost = 140
+		prerequisite = {
+			focus = AFG_build_brigades
+			focus = AFG_new_academies
+			focus = AFG_afghani_welfare
+		}
+		
+		available = { has_completed_focus = AFG_fate_railroads}
+		
+		x = 40
+		y = 4
+		
+		completion_reward = {
+		    1029 = { 
+			    add_resource = { type = rare_metals amount = 7 }
+				add_resource = { type = rare_earth_ore amount = 4 }
+			}
+			267 = { 
+			    add_resource = { type = steel amount = 5 }
+				add_resource = { type = iron_ore amount = 6 }
+			}
+            1030 = { 
+			    add_resource = { type = oil amount = 6 }
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_reform_high_education
+		icon = GFX_goal_afg_education_reform
+		cost = 90
+		prerequisite = {
+			focus = AFG_new_academies
+			focus = AFG_build_brigades
+			focus = AFG_afghani_welfare
+		}
+		x = 38
+		y = 4
+		
+		completion_reward = {
+		    add_research_slot = 1
+		    add_ideas = idea_high_eduction_reforms
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = AFG_fate_railroads
+		icon = GFX_goal_generic_repairments
+		cost = 160
+		prerequisite = {
+			focus = AFG_afghani_welfare
+			focus = AFG_new_academies
+			focus = AFG_build_brigades
+		}
+		
+		
+		x = 36
+		y = 4
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = { 
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = AFG_national_defence
+		icon = GFX_goal_irn_battle_bezrabotica
+		cost = 70
+		
+		available = {
+			has_completed_focus = AFG_new_afghani_army
+		}
+
+		x = 32
+		y = 5
+		
+		completion_reward = {
+			army_experience = 15
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_defence_pak_border
+		icon = GFX_goal_generic_political_pressure
+		cost =70
+		prerequisite = {
+			focus = AFG_durand_line_defence
+		}
+		
+		available = {
+			PAK = {
+			    has_government = rad_islamists
+		    }
+		}	
+		
+		x = 31
+		y = 8
+		
+		completion_reward = {
+		    create_wargoal = {
+				target = PAK
+				type = puppet_wargoal_focus
+            }
+		}	
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_defence_panjsher
+		icon = GFX_goal_generic_military_sphere
+		cost = 70
+		prerequisite = {
+			focus = AFG_national_defence
+		}
+		x = 33
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = afg_badakhshan_wall_tt
+			hidden_effect = {
+				267 = {	#Kabul
+					add_building_construction = {
+						type = bunker
+						province = 7519
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 12314
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 12653
+						level = 3
+						instant_build = yes
+					}
+				}
+				1030 = { #Balkh
+					add_building_construction = {
+						type = bunker
+						province = 12248
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 7584
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = AFG_defence_iran_border
+		icon = GFX_goal_irn_afghan_help
+		cost = 70
+		prerequisite = {
+			focus = AFG_defence_panjsher
+		}
+		x = 33
+		y = 8
+		
+		completion_reward = {
+			custom_effect_tooltip = afg_gerat_wall_tt
+			hidden_effect = {
+				1030 = {	#Balkh
+					add_building_construction = {
+						type = bunker
+						province = 7448
+						level = 2
+						instant_build = yes
+					}
+				}
+				1027 = { #Gor
+					add_building_construction = {
+						type = bunker
+						province = 10476
+						level = 2
+						instant_build = yes
+					}
+				}
+				1028 = { #Farrah
+					add_building_construction = {
+						type = bunker
+						province = 14077
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 12871
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 2062
+						level = 2
+						instant_build = yes
+					}
+				}
+				911 = { #Nimroz
+					add_building_construction = {
+						type = bunker
+						province = 1948
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 2101
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = AFG_anti_air
+		icon = GFX_goal_ger_research_slot
+		cost = 75
+		prerequisite = {
+			focus = AFG_durand_line_defence
+		}
+		prerequisite = {
+			focus = AFG_defence_panjsher
+		}
+		x = 32
+		y = 7
+		
+		completion_reward = {
+			#Gerat
+			#if = {
+			#	limit = {
+			#		owns_state = 415
+			#		controls_state = 415
+			#		415 = {
+			#			free_building_slots = {
+			#				building = anti_air_building
+			#				size > 0
+			#				include_locked = yes
+			#			}
+			#		}
+			#	}
+			#	415 = {
+			#		add_building_construction = {
+			#			type = anti_air_building
+			#			level = 2
+			#			instant_build = yes
+			#		}
+			#	}
+			#}
+        }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = AFG_durand_line_defence
+		icon = GFX_goal_irn_pakis_wall
+		cost = 75
+		prerequisite = {
+			focus = AFG_national_defence
+		}
+		x = 31
+		y = 6
+		
+		completion_reward = {
+			custom_effect_tooltip = afg_durand_wall_tt
+			hidden_effect = {
+				267 = {	#Kabul
+					add_building_construction = {
+						type = bunker
+						province = 10826
+						level = 2
+						instant_build = yes
+					}
+				}
+				1029 = { #Nangarhar
+					add_building_construction = {
+						type = bunker
+						province = 12831
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 14080
+						level = 2
+						instant_build = yes
+					}
+				}
+				810 = {	#Sistan
+					add_building_construction = {
+						type = bunker
+						province = 5082
+						level = 2
+						instant_build = yes
+					}
+				}
+				912 = { #Kandagar
+					add_building_construction = {
+						type = bunker
+						province = 8090
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 5020
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						province = 5064
+						level = 2
+						instant_build = yes
+					}
+				788 = {	#Hilmend
+					add_building_construction = {
+						type = bunker
+						province = 14079
+						level = 2
+						instant_build = yes
+					}
+				}
+                911 = {	#Hilmend
+					add_building_construction = {
+						type = bunker
+						province = 13731
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+}

@@ -1,0 +1,89 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 37
+
+add_ideas = {
+	queen_margrethe_ii
+	eu_member
+	low_terrorism
+	mixed_schools
+	integration_in_nato
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 34360 }
+
+	load_oob = "_tech_nato_regional_2013" 
+	oob = "DEN_2013"
+
+	add_political_power = 0
+	set_stability = 0.5
+	set_convoys = 40
+	create_intelligence_agency = yes
+
+	add_ideas = { 
+		parliamentary_monarchy
+		NPT
+	}
+
+	set_country_flag = pai_democrat_neutral
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2015.6.18"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 20
+		liberalism = 40
+		democratic = 20
+		neutrality = 10
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Helle Thorning-Schmidt"
+		desc = "POLITICS_HELLE_THORNING-SCHMIDT_DESC"
+		picture = "gfx/leaders/DEN/portrait_helle_thorning-schmidt.dds"
+		ideology = nordic_model
+		traits = { trait_nordic_model }
+	}
+
+	create_country_leader = {
+		name = "Lars Løkke_Rasmussen"
+		desc = "POLITICS_LARS_LOKKE_RASMUSSEN_DESC"
+		picture = "gfx/leaders/DEN/portrait_lars_lokke_rasmussen.dds"
+		ideology = conservative_liberalism
+		traits = { trait_conservative_liberalism }
+	}
+
+	# Королева - формальная должность. Вернем на место когда сделаем абсолютизм идеей
+	#create_country_leader = {
+	#	name = "Margrethe II"
+	#	desc = " "
+	#	picture = "gfx/leaders/DEN/portrait_queen_margrethe.dds"
+	#	ideology = conservative_democracy
+	#	traits = { trait_conservative_democracy }
+	#}
+
+}
+
+	2015.6.18 = { 
+		DEN = {
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.03
+			}
+
+			set_politics = {
+				ruling_party = liberalism
+			}
+		}
+	}

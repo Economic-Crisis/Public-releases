@@ -1,0 +1,727 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+# Типы политического ИИ:
+## Существуют при демократии:
+### pai_democrat_neutral Нейтральный демократ (никого не поддерживает, никому не препятствует)
+### pai_democrat_anticommunist Демократ-антикоммунист (действует против коммунистов, в остальном нейтральный)
+### pai_democrat_antinationalist Демократ-антинационалист (действует против националистов, в остальном нейтральный)
+### pai_democrat_moderate Умеренный демократ (действует против коммунистов, националистов и исламистов)
+### pai_democrat_left Левый демократ (поддерживает коммунистов и реформистов)
+### pai_democrat_right Правый демократ (поддерживает либералов, консерваторов и националистов)
+## Существует при не-демократии:
+### pai_nondem_neutral Нейтральный (иногда препятствует распространению других идеологий, за власть не держится сильно)
+### pai_nondem_authoritarian Авторитарист (препятствует распространению других идеологий)
+### pai_nondem_totalitarian Тоталитарист (всегда подавляет другие идеологии, никогда не согласен мирно отдать власть)
+### pai_nondem_reformator Реформатор (никому не препятствует, проводит реформы, когда предлагается)
+## Существуют всегда:
+### pai__centrist Центрист (поддерживает центристов)
+### pai__liberal Либерал (поддерживает либералов)
+### pai__conservator Консерватор (поддерживает консерваторов)
+### pai__nationalist Националист (поддерживает националистов)
+### pai__reformist Реформист (поддерживает реформистов)
+### pai__communist Коммунист (поддерживает коммунистов)
+### pai__islamist Исламист (поддерживает исламистов)
+
+add_namespace = setpflag
+# Случайный выбор политического ИИ для всех стран в начале игры
+news_event = {
+	id = setpflag.1
+	hidden = yes
+	fire_only_once = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_country_flag = pai_setted
+				}
+			}
+			if = {
+				limit = {
+					is_democracy = yes
+					is_true_democracy = yes
+				}
+				random_list = {
+					28 = {
+						set_country_flag = pai_democrat_neutral
+					}
+					9 = {
+						set_country_flag = pai_democrat_anticommunist
+					}
+					9 = {
+						set_country_flag = pai_democrat_antinationalist
+					}
+					14 = {
+						set_country_flag = pai_democrat_moderate
+					}
+					11 = {
+						set_country_flag = pai_democrat_left
+					}
+					11 = {
+						set_country_flag = pai_democrat_right
+					}
+					3 = {
+						set_country_flag = pai__centrist
+					}
+					3 = {
+						set_country_flag = pai__conservator
+					}
+					3 = {
+						set_country_flag = pai__liberal
+					}
+					3 = {
+						set_country_flag = pai__nationalist
+					}
+					3 = {
+						set_country_flag = pai__communist
+					}
+					3 = {
+						set_country_flag = pai__reformist
+					}
+					3 = {
+						set_country_flag = pai__islamist
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_democracy = yes
+					is_true_democracy = no
+				}
+				random_list = {
+					20 = {
+						set_country_flag = pai_democrat_neutral
+					}
+					6 = {
+						set_country_flag = pai_democrat_anticommunist
+					}
+					6 = {
+						set_country_flag = pai_democrat_antinationalist
+					}
+					10 = {
+						set_country_flag = pai_democrat_moderate
+					}
+					8 = {
+						set_country_flag = pai_democrat_left
+					}
+					8 = {
+						set_country_flag = pai_democrat_right
+					}
+					10 = {
+						set_country_flag = pai_nondem_neutral
+					}
+					15 = {
+						set_country_flag = pai_nondem_authoritarian
+					}
+					5 = {
+						set_country_flag = pai_nondem_reformator
+					}
+					2 = {
+						set_country_flag = pai__centrist
+					}
+					2 = {
+						set_country_flag = pai__conservator
+					}
+					2 = {
+						set_country_flag = pai__liberal
+					}
+					2 = {
+						set_country_flag = pai__nationalist
+					}
+					2 = {
+						set_country_flag = pai__communist
+					}
+					2 = {
+						set_country_flag = pai__reformist
+					}
+					2 = {
+						set_country_flag = pai__islamist
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_democracy = no
+				}
+				random_list = {
+					18 = {
+						set_country_flag = pai_nondem_neutral
+					}
+					32 = {
+						set_country_flag = pai_nondem_authoritarian
+					}
+					24 = {
+						set_country_flag = pai_nondem_totalitarian
+					}
+					8 = {
+						set_country_flag = pai_nondem_reformator
+					}
+					3 = {
+						set_country_flag = pai__centrist
+					}
+					3 = {
+						set_country_flag = pai__conservator
+					}
+					3 = {
+						set_country_flag = pai__liberal
+					}
+					3 = {
+						set_country_flag = pai__nationalist
+					}
+					3 = {
+						set_country_flag = pai__communist
+					}
+					3 = {
+						set_country_flag = pai__reformist
+					}
+					3 = {
+						set_country_flag = pai__islamist
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = setpflag.1.a
+		#log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): setpflag.1.a"
+	}
+}
+
+# Случайное регулярное изменение политического ИИ
+country_event = {
+	id = setpflag.2
+	hidden = yes
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_democracy = yes
+				is_true_democracy = yes
+			}
+			random_list = {
+				900 = {}
+				28 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_neutral
+				}
+				9 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_anticommunist
+				}
+				9 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_antinationalist
+				}
+				14 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_moderate
+				}
+				11 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_left
+				}
+				11 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_right
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__centrist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__conservator
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__liberal
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__nationalist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__communist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__reformist
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_democracy = yes
+				is_true_democracy = no
+			}
+			random_list = {
+				900 = {}
+				20 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_neutral
+				}
+				6 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_anticommunist
+				}
+				6 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_antinationalist
+				}
+				10 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_moderate
+				}
+				8 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_left
+				}
+				8 = {
+					clr_pai = yes
+					set_country_flag = pai_democrat_right
+				}
+				10 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_neutral
+				}
+				15 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_authoritarian
+				}
+				5 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_reformator
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__centrist
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__conservator
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__liberal
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__nationalist
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__communist
+				}
+				2 = {
+					clr_pai = yes
+					set_country_flag = pai__reformist
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_democracy = no
+			}
+			random_list = {
+				900 = {}
+				18 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_neutral
+				}
+				32 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_authoritarian
+				}
+				24 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_totalitarian
+				}
+				8 = {
+					clr_pai = yes
+					set_country_flag = pai_nondem_reformator
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__centrist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__conservator
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__liberal
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__nationalist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__communist
+				}
+				3 = {
+					clr_pai = yes
+					set_country_flag = pai__reformist
+				}
+			}
+		}
+	}
+
+	option = {
+		name = setpflag.2.a
+		#log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): setpflag.2.a"
+	}
+}
+
+# Выставление флага, соответствующего уровню поддержки идеологии
+news_event = {
+	id = setpflag.3
+	hidden = yes
+	fire_only_once = yes
+
+	immediate = {
+		every_country = {
+			if = {
+				limit = {
+					communism > 0.1
+					NOT = {
+						has_government = communism
+					}
+				}
+				set_country_flag = communism_10
+			}
+			if = {
+				limit = {
+					communism > 0.25
+					NOT = {
+						has_government = communism
+					}
+				}
+				set_country_flag = communism_25
+			}
+			if = {
+				limit = {
+					communism > 0.4
+					NOT = {
+						has_government = communism
+					}
+				}
+				set_country_flag = communism_40
+			}
+			if = {
+				limit = {
+					communism > 0.5
+					NOT = {
+						has_government = communism
+					}
+				}
+				set_country_flag = communism_50
+			}
+			if = {
+				limit = {
+					reformism > 0.1
+					NOT = {
+						has_government = reformism
+					}
+				}
+				set_country_flag = reformism_10
+			}
+			if = {
+				limit = {
+					reformism > 0.25
+					NOT = {
+						has_government = reformism
+					}
+				}
+				set_country_flag = reformism_25
+			}
+			if = {
+				limit = {
+					reformism > 0.4
+					NOT = {
+						has_government = reformism
+					}
+				}
+				set_country_flag = reformism_40
+			}
+			if = {
+				limit = {
+					reformism > 0.5
+					NOT = {
+						has_government = reformism
+					}
+				}
+				set_country_flag = reformism_50
+			}
+			if = {
+				limit = {
+					democratic > 0.1
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = conservatism_10
+			}
+			if = {
+				limit = {
+					democratic > 0.25
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = conservatism_25
+			}
+			if = {
+				limit = {
+					democratic > 0.4
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = conservatism_40
+			}
+			if = {
+				limit = {
+					democratic > 0.5
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = conservatism_50
+			}
+			if = {
+				limit = {
+					liberalism > 0.1
+					NOT = {
+						has_government = liberalism
+					}
+				}
+				set_country_flag = liberalism_10
+			}
+			if = {
+				limit = {
+					liberalism > 0.25
+					NOT = {
+						has_government = liberalism
+					}
+				}
+				set_country_flag = liberalism_25
+			}
+			if = {
+				limit = {
+					liberalism > 0.4
+					NOT = {
+						has_government = liberalism
+					}
+				}
+				set_country_flag = liberalism_40
+			}
+			if = {
+				limit = {
+					liberalism > 0.5
+					NOT = {
+						has_government = liberalism
+					}
+				}
+				set_country_flag = liberalism_50
+			}
+			if = {
+				limit = {
+					neutrality > 0.1
+					NOT = {
+						has_government = neutrality
+					}
+				}
+				set_country_flag = centrism_10
+			}
+			if = {
+				limit = {
+					neutrality > 0.25
+					NOT = {
+						has_government = neutrality
+					}
+				}
+				set_country_flag = centrism_25
+			}
+			if = {
+				limit = {
+					neutrality > 0.4
+					NOT = {
+						has_government = neutrality
+					}
+				}
+				set_country_flag = centrism_40
+			}
+			if = {
+				limit = {
+					neutrality > 0.5
+					NOT = {
+						has_government = neutrality
+					}
+				}
+				set_country_flag = centrism_50
+			}
+			if = {
+				limit = {
+					fascism > 0.1
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_country_flag = nationalism_10
+			}
+			if = {
+				limit = {
+					fascism > 0.25
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_country_flag = nationalism_25
+			}
+			if = {
+				limit = {
+					fascism > 0.4
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_country_flag = nationalism_40
+			}
+			if = {
+				limit = {
+					fascism > 0.5
+					NOT = {
+						has_government = fascism
+					}
+				}
+				set_country_flag = nationalism_50
+			}
+			if = {
+				limit = {
+					democratic > 0.1
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_10
+			}
+			if = {
+				limit = {
+					democratic > 0.25
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_25
+			}
+			if = {
+				limit = {
+					democratic > 0.4
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_40
+			}
+			if = {
+				limit = {
+					democratic > 0.5
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_50
+			}
+			if = {
+				limit = {
+					democratic > 0.1
+					has_country_flag = pai__islamist
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_10
+			}
+			if = {
+				limit = {
+					democratic > 0.25
+					has_country_flag = pai__islamist
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_25
+			}
+			if = {
+				limit = {
+					democratic > 0.4
+					has_country_flag = pai__islamist
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_40
+			}
+			if = {
+				limit = {
+					democratic > 0.5
+					has_country_flag = pai__islamist
+					NOT = {
+						has_government = democratic
+					}
+				}
+				set_country_flag = islamism_50
+			}
+			if = {
+				limit = {
+					rad_islamists > 0.1
+					NOT = {
+						has_government = rad_islamists
+					}
+				}
+				set_country_flag = rad_islamists_10
+			}
+			if = {
+				limit = {
+					rad_islamists > 0.25
+					NOT = {
+						has_government = rad_islamists
+					}
+				}
+				set_country_flag = rad_islamists_25
+			}
+			if = {
+				limit = {
+					rad_islamists > 0.4
+					NOT = {
+						has_government = rad_islamists
+					}
+				}
+				set_country_flag = rad_islamists_40
+			}
+			if = {
+				limit = {
+					rad_islamists > 0.5
+					NOT = {
+						has_government = rad_islamists
+					}
+				}
+				set_country_flag = rad_islamists_50
+			}
+		}
+	}
+
+	option = {
+		name = setpflag.3.a
+		#log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): setpflag.3.a"
+	}
+}

@@ -1,0 +1,85 @@
+﻿division_template = {
+	name = "District Militia"	# For largest Military District Forces (3 brigade forces)
+	# Note: all forces at reserve levels in 1936
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+}
+
+units = {
+	##### Royal Canadian Army #####
+
+	division= {	
+		name = "2nd District  "
+		location = 3775 # Toronto
+		division_template = "District Militia" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division= {	
+		name = "4th District  "
+		location = 4345 # Montreal
+		division_template = "District Militia" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division= {	
+		name = "10th District  "
+		location = 4872  # Winnepeg
+		division_template = "District Militia" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division= {	
+		name = "12th District  "
+		location = 12603  # Regina SASK
+		division_template = "District Militia" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division= {	
+		name = "13th District  "
+		location = 3706  # Calgary ALB
+		division_template = "District Militia" 
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}				
+}
+
+air_wings = {
+	### Royal Canadian Air Force (RCAF)-- New South Wales
+	276 = {
+		light_fighter_equipment_0 =  { owner = "CAN" amount = 48 }			# 16th Pursuit Group -- P-26As
+		attack_bomber_equipment_1 = { owner = "CAN" amount = 36 }			# 6th/I Composite Group -- B-18s
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "CAN"
+		}
+		requested_factories = 1
+		progress = 0.73
+		efficiency = 100
+	}
+}

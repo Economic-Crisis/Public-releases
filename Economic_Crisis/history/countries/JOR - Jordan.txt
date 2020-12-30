@@ -1,0 +1,83 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 455
+
+#  22 марта 1945
+add_ideas = {
+	arab_league_member
+}
+
+1967.06.10 = {
+    add_ideas = revanchism
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3359 }
+    
+	load_oob = "_tech_regional_2013"
+	oob = "JOR_2013"
+
+	add_ideas = {
+	    semi-parliamentary_monarchy
+		unitary_state
+	    preference_religion
+		mixed_media
+		sharia_law
+		contract_army
+		professional_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_extractive_industries
+		NPT
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		national_social_security
+		pensions
+		low_terrorism
+		
+		islam_idea_lvl_3
+    }
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.23"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 20
+		liberalism = 5
+		democratic = 60
+		neutrality = 10
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	# де-факто лидер король
+	#create_country_leader = {
+	#	name = "Abdullah Ensour"
+	#	desc = ""
+	#	picture = "gfx/leaders/JOR/portrait_abdullah_ensour.dds"
+	#	ideology = sunni_islamism
+	#	traits = { trait_sunni_islamism }
+	#}
+
+	create_country_leader = {
+		name = "Abdullah II"
+		desc = ""
+		picture = "gfx/leaders/JOR/portrait_king_abdullah.dds"
+		ideology = sunni_royalism
+		traits = { trait_sunni_royalism }
+	}
+}
+

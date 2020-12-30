@@ -1,0 +1,81 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 6
+
+add_ideas = {
+	king_filip
+	eu_member
+	mixed_schools
+	integration_in_nato
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 52010 }
+
+	load_oob = "_tech_nato_regional_2013"
+	oob = "BEL_2013"
+
+	add_ideas = {
+		parliamentary_monarchy
+		mixed_army
+		high_terrorism
+		NPT
+	}
+
+	set_stability = 0.7
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+
+	set_country_flag = pai_democrat_moderate
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2015.11.26"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 5
+		reformism = 35
+		liberalism = 40
+		democratic = 10
+		neutrality = 5
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Elio Di Rupo"
+		desc = "POLITICS_ELIO_DI_RUPO_DESC"
+		picture = "gfx/leaders/BEL/portrait_elio_di_rupo.dds"
+		#expire = "2014.10.11"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Charles Michel"
+		desc = "POLITICS_NICK_CLEGG_DESC"
+		picture = "gfx/leaders/BEL/portrait_charles_michel.dds"
+		ideology = classical_liberalism
+		traits = { trait_classical_liberalism }
+	}
+
+	create_country_leader = {
+		name = "King Philippe"
+		desc = " "
+		picture = "gfx/leaders/BEL/portrait_king_philippe.dds"
+		ideology = royalism
+		traits = { trait_royalism }
+	}
+
+}
+
+# приколачиваем гвоздями выборы
+2014.10.11 = { set_politics = { ruling_party = liberalism } }
+

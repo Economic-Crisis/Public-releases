@@ -1,0 +1,151 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+	
+		ire_enda_kenny_hog = {
+
+                picture = GFX_idea_ire_enda_kenny
+
+			cost = 1000
+			#removal_cost = -1
+
+                        available = {
+				OR = {
+						has_government = liberalism
+						has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = IRE
+			}
+
+			traits = { party_leader_liberal
+						pm_liberal
+					}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	defence_minister = {
+
+		ire_alan_shatter_defm = {
+
+		picture = GFX_idea_ire_alan_shatter
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+
+			allowed = {
+				original_tag = IRE
+			}
+
+			traits = { defence_minister_bureaucrat }
+			
+			on_add = {
+			
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	foreign_minister = {
+
+ 		ire_eamon_gilmore_fgm = {
+
+		picture = GFX_idea_ire_eamon_gilmore
+
+      			cost = 350
+      			#removal_cost = -1
+      			available = {
+				}
+
+
+      			allowed = { 
+				original_tag  = IRE 
+			}
+
+      			traits = { foreign_minister_addiction_irredentist }
+
+ 	     		on_add = { 
+
+					news_event = foreign.minister.1
+				}
+      			ai_will_do = { 
+				factor = 1
+			}
+     	}
+	}
+	
+	economic_minister = {
+	
+		ire_michael_noonan_ecm = {
+		
+		picture = GFX_idea_ire_michael_noonan
+		
+			cost = 450
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRE
+			}
+			
+			traits = { economic_minister_international_trade }
+			
+			on_add = {
+			
+				news_event = economic.minister.1
+			
+			}
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	secret_service_chief = {
+	
+		ire_donall_cualain_ssch = {
+		
+			picture = GFX_idea_ire_donall_cualain
+		
+			cost = 350
+			#removal_cost = -1
+			available = {
+			}
+			
+			allowed = {
+				original_tag = IRE
+			}
+			
+			traits = { secret_service_chief_counterespionage }
+			
+			on_add = {
+			
+				news_event = secret.service.chief.1
+			
+			}
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

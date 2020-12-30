@@ -1,0 +1,45 @@
+NORDEFCO_membership = {
+	
+	enable = {
+		#AND = {
+			OR = {
+				tag = FIN
+			}
+		
+			OR = {
+				has_government = democratic
+				has_government = liberalism
+				has_government = reformism
+				has_government = neutrality
+			}
+		
+			OR = {
+				SWE = { has_government = democratic }
+				SWE = { has_government = liberalism }
+				SWE = { has_government = reformism }
+			}
+		#}
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = SWE
+			SWE = { exists = no }
+			OR = {
+			    has_government = fascism
+				has_government = rad_islamists
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SWE"
+		value = 50
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SWE"
+		value = 125
+	}
+}

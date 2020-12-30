@@ -1,0 +1,91 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 524
+
+# Резолюция Генеральной Ассамблеи ООН 2758 от 25 октября 1971 года
+add_ideas = partially_recognized_country
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 960700 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "_army_minor_2013"
+	
+	add_ideas = {
+		professional_schools
+		roc_wu_den-yih_hog
+		roc_yen_ming_defm
+		roc_david_lin_fgm
+		roc_chang_sheng-ford_ecm
+		roc_luo_ying-shay_ssch
+		average_terrorism
+	}
+
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+			
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 4
+		liberalism = 35
+		democratic = 45
+		neutrality = 6
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ma Ying-jeou"
+		desc = "POLITICS_MA_YING-JEOU_DESC"
+		picture = "gfx/leaders/ROC/portrait_ma_ying_jeou.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Liang Yi-Chih"
+		desc = "POLITICS_LIANG_YI-CHIH_DESC"
+		picture = "gfx/leaders/ROC/portrait_liang_yi-chih.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Tsai Ing-wen"
+		desc = "POLITICS_TSAI_ING-WEN_DESC"
+		picture = "gfx/leaders/ROC/portrait_tsai_ing-wen.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+	
+	create_country_leader = {
+		name = "James Soong"
+		desc = "POLITICS_JAMES_SOONG_DESC"
+		picture = "gfx/leaders/ROC/portrait_james_soong.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Lee Teng-hui"
+		desc = "POLITICS_LEE_TENG-HUI_DESC"
+		picture = "gfx/leaders/ROC/portrait_lee_teng-hui.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	#create_country_leader = {
+	#	name = "Xi Jinping"
+	#	desc = "POLITICS_MAO_ZEDONG_DESC"
+	#	picture = "gfx/leaders/CHI/portrait_xi_jinping.dds"
+	#	ideology = china_socialism 
+	#	traits = { trait_china_socialism cornered_fox }
+	#}
+}

@@ -1,0 +1,67 @@
+﻿#Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+
+capital = 998
+
+    add_ideas = {
+		not_recognized_country
+		mixed_schools
+		presidential_republic
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 10 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "HAH_2013"
+	
+	set_stability = 0.35
+	add_ideas = high_terrorism
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.6.18"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 94
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 6
+	}
+
+	create_country_leader = {
+		name = "Mohamed Abdi Waare"
+		picture = "gfx/leaders/SOM/HIS/portrait_mohamed_abdi_waare.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ali Abdullahi Gudlawe"
+		picture = "gfx/leaders/SOM/HIS/portrait_ali_abdullahi_gudlawe.dds"
+		ideology = conservative_democracy
+		expire = "2017.9.16"
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ali Abdullahi Osoble"
+		picture = "gfx/leaders/SOM/HIS/portrait_ali_abdullahi_osoble.dds"
+		ideology = conservative_democracy
+		expire = "2017.8.14"
+		traits = { trait_conservative_democracy }
+	}
+
+
+}

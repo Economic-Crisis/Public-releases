@@ -1,0 +1,84 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+1991.5.18 = {
+	capital = 269
+
+	add_ideas = { 
+		mixed_schools
+		presidential_republic
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 3 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "SML_2013"
+
+	add_political_power = 0
+
+	set_convoys = 15
+
+	add_ideas = partially_recognized_country
+
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2010.11.13" #for 2017 elections
+		election_frequency = 84
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 20
+		liberalism = 45
+		democratic = 0
+		neutrality = 35
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	#Кульмие
+	create_country_leader = {
+		name = "Muse Bihi Abdi"
+		picture = "gfx/leaders/SML/portrait_muse_bihi_abdi.dds"
+		ideology = social_liberalism
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Ahmed Mohamed Mohamoud"
+		picture = "gfx/leaders/SML/portrait_ahmed_mohamed_mohamoud.dds"
+		ideology = social_liberalism
+		expire = "2017.11.13"
+		traits = { trait_social_liberalism }
+	}
+
+	#За справедливость и развитие
+	create_country_leader = {
+		name = "Faysal Ali Warabe"
+		picture = "gfx/leaders/SML/portrait_faysal_ali_warabe.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	#Ваддани
+	create_country_leader = {
+		name = "Abdirahman Mohamed Abdullahi"
+		picture = "gfx/leaders/SML/portrait_abdirahman_mohamed_abdullahi.dds"
+		ideology = populism
+		traits = { trait_populism }
+	}
+
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+}
+

@@ -1,0 +1,111 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS (ON ACTION ONLY)
+
+capital = 993
+
+add_ideas = {
+	not_recognized_country
+	military_schools
+	integration_in_fgs
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 12 }
+	
+	load_oob = "_tech_microstate_2013"
+	oob = "ASW_2013"
+
+	add_ideas = djixad
+	
+	set_convoys = 0
+	set_stability = 0.9
+
+	add_political_power = 0
+	
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		military_industry_focus
+	    war_economy
+		planned_economy
+		no_social_security
+		no_labor_rights_protection	
+		not_recognized_country
+		
+		islam_idea_lvl_3
+	}
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 40
+		neutrality = 0
+		fascism = 30
+		rad_islamists = 30
+	}
+
+	create_country_leader = {
+		name = "Sheikh Ibrahim Sheikh Hassan"
+		desc = ""
+		picture = "gfx/leaders/SOM/ASW/portrait_sheikh_ibrahim_sheikh_hassan.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+	
+	create_country_leader = {
+		name = "Sheikh Ibrahim Sheikh Hassan"
+		desc = ""
+		picture = "gfx/leaders/SOM/ASW/portrait_sheikh_ibrahim_sheikh_hassan.dds"
+		ideology = irredentism
+		traits = { trait_irredentism }
+	}
+
+	create_country_leader = {
+		name = "Sheikh Ibrahim Sheikh Hassan"
+		desc = ""
+		picture = "gfx/leaders/SOM/ASW/portrait_sheikh_ibrahim_sheikh_hassan.dds"
+		ideology = sunni_panislamism
+		traits = { trait_sunni_panislamism }
+	}
+
+	create_country_leader = {
+		name = "Government of Autonomy"
+		picture = "gfx/leaders/SOM/government_of_autonomy.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+	
+	create_corps_commander = {
+		name = "Omar Mo’allim Nur"
+		portrait_path = "gfx/leaders/portrait_no_photo.dds"
+		traits = { }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}	
+
+
+}

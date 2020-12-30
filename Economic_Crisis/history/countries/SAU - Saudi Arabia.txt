@@ -1,0 +1,93 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 292
+
+1985.5.25 = {
+    # crating CCASG ((ССАГПЗ)
+	create_faction = CCASG
+	add_to_faction = SAU
+	add_to_faction = QAT
+	add_to_faction = BHR
+	add_to_faction = KUW
+	add_to_faction = OMA
+	add_to_faction = UAE
+	add_ideas = integration_in_ccasg
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 74660 }
+
+	load_oob = "_tech_nato_minor_2013"
+	oob = "SAU_2013"
+
+	add_ideas = {
+		arab_league_member
+		opec_member
+		gcc_member
+		regional_country
+		NPT
+	# laws
+		absolute_monarchy
+		unitary_state
+		theocracy
+		mixed_media
+		sharia_law
+		contract_army
+		professional_schools
+		restricted_immigration
+		market_economy
+		nationalization_of_extractive_industries
+		
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		national_social_security
+		pensions
+		average_terrorism
+		oil_spike
+		
+		islam_idea_lvl_3
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 100
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		 name = "Salman bin Abdulaziz"
+		 desc = "POLITICS_SALMAN_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_salman_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+		 traits = { trait_sunni_royalism }
+	}
+
+	create_country_leader = {
+		 name = "Abdullah bin Abdulaziz"
+		 desc = "POLITICS_ABDULLAH_BIN_ABDULAZIZ_DESC"
+		 picture = "gfx/leaders/SAU/portrait_abdullah_bin_abdulaziz.dds"
+         ideology = sunni_royalism
+         expire = "2015.1.23"
+		 traits = { trait_sunni_royalism }
+	}
+
+}

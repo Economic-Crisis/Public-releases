@@ -1,0 +1,33 @@
+﻿division_template = {
+	name = "District Force"	# For 2-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "District Brigade"	# For 1-brigade Military Districts
+	# All districts are at reserve levels; have older equipment, low experience
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "MLW"
+		}
+		requested_factories = 1
+		progress = 0.13
+		efficiency = 100
+	}
+}

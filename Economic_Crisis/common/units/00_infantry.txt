@@ -1,0 +1,53 @@
+sub_units = {
+
+	# infantry foot unit
+	infantry = {
+		
+		sprite = militia
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		priority = 700
+		ai_priority = 700
+		active = yes
+
+		type = {
+			infantry
+		}
+		
+	   group = militia_battalion
+		
+		categories = {
+			category_foot_troops
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 110 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 1
+		weight = 0.5
+		supply_consumption = 0.07
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			army_salw_equipment
+			army_ammunition_equipment
+		}
+	
+		# Company (80–150 soldiers)
+		need = {
+			army_salw_equipment = 130
+			army_ammunition_equipment = 130
+			infantry_technical_means_equipment = 130
+		}
+	}	
+}

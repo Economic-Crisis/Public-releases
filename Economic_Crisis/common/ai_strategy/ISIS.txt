@@ -1,0 +1,151 @@
+isis_war_with_syria = {
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = SYR
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = SYR
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SYR"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "SYR"
+	# 	value = 100
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "SYR"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "SYR"
+		value = 500
+	}
+}
+
+isis_war_with_iraq = {
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = IRQ
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = IRQ
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "IRQ"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "IRQ"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "IRQ"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "IRQ"
+		value = 500
+	}
+}
+
+isis_war_with_kurdistan = { 
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = KUR
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = KUR
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "KUR"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "KUR"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "KUR"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "KUR"
+		value = 500
+	}
+}
+
+isis_war_with_oppozition_syria = { 
+	enable = {
+		tag = ISS
+		ISS = { has_country_flag = war_with_Iraq_and_Syria }
+		country_exists = ISS
+		country_exists = FSA
+	}
+	abort = {
+		NOT = { 
+			OR = {
+				country_exists = ISS
+				country_exists = FSA
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "FSA"
+		value = 200
+	}
+	# ai_strategy = {
+	# 	type = garrison
+	# 	id = "FSA"
+	# 	value = 200
+	# }
+	ai_strategy = {
+		type = ignore
+		id = "FSA"
+		value = -500
+	}
+	ai_strategy = {
+		type = conquer
+		id = "FSA"
+		value = 500
+	}
+}

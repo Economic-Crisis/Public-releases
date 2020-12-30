@@ -1,0 +1,69 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 304
+
+add_ideas = mixed_schools
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4486 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+	add_ideas = NPT
+	set_stability = 0.5
+	add_ideas = terrorism_discounted
+	add_political_power = 0
+
+	set_convoys = 10
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2009.5.4" #for 2014 elections
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 35
+		liberalism = 8
+		democratic = 54
+		neutrality = 3
+		fascism = 0
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Juan Carlos Varela"
+		picture = "gfx/leaders/PAN/portrait_juan_carlos_varela.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ricardo Martinelli"
+		picture = "gfx/leaders/PAN/portrait_ricardo_martinelli.dds"
+		expire = "2014.5.4"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Juan Carlos Navarro"
+		picture = "gfx/leaders/PAN/portrait_juan_carlos_navarro.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+2014.5.4 = {
+	set_party_name = {
+		ideology = democratic
+		long_name = PAN_democratic_2014_party
+		name = PAN_democratic_2014_party
+	}
+}

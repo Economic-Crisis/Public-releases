@@ -1,0 +1,649 @@
+equipments = {
+	ship_hull_strike_cruiser = {
+		year = 1922
+
+		is_archetype = yes
+		is_buildable = no
+		type = capital_ship
+		group_by = archetype
+		interface_category = interface_category_screen_ships
+		alias = strike_cruiser
+		priority = 1900
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_light_battery ship_rcc }
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_fire_control_system_slot = {
+				required = no
+				allowed_module_categories = { ship_fire_control_system ship_sonar }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar ship_sonar }
+			}
+			fixed_ship_engine_slot = {
+				required = yes
+				allowed_module_categories = { cruiser_ship_engine }
+			}
+			fixed_ship_secondaries_slot = {
+				required = no
+				allowed_module_categories = { ship_rcc ship_anti_air ship_light_battery }
+			}
+			fixed_ship_armor_slot = {
+				required = no
+				allowed_module_categories = { ship_medium_armor }	
+			}
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		module_count_limit = {
+			category = ship_sonar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 0
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 15
+		naval_speed = 20
+		reliability = 0.80
+		
+		naval_range = 19000
+		
+		max_strength = 100		
+		
+
+		fuel_consumption = 20
+		
+		build_cost_ic = 9000
+		resources = {
+			steel = 1
+		}
+		
+		manpower = 1700
+	}
+	ship_hull_strike_cruiser_nr = {
+		year = 1922
+
+		is_archetype = yes
+		is_buildable = no
+		type = capital_ship
+		group_by = archetype
+		interface_category = interface_category_screen_ships
+		alias = strike_cruiser
+		priority = 1900
+
+		module_slots = {
+			fixed_ship_battery_slot = {
+				required = yes
+				allowed_module_categories = { ship_light_battery ship_rcc }
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_fire_control_system_slot = {
+				required = no
+				allowed_module_categories = { ship_fire_control_system ship_sonar }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar ship_sonar }
+			}
+			fixed_ship_nuclear_reactor_slot = {
+				required = yes
+				allowed_module_categories = { medium_cruiser_ship_nuclear_reactor small_cruiser_ship_nuclear_reactor }
+			}
+			fixed_ship_secondaries_slot = {
+				required = no
+				allowed_module_categories = { ship_rcc ship_anti_air ship_light_battery }
+			}
+			fixed_ship_armor_slot = {
+				required = no
+				allowed_module_categories = { ship_medium_armor }	
+			}
+			rear_7_custom_slot = {
+				required = yes
+				allowed_module_categories = { ship_biological_defense }
+			}
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		module_count_limit = {
+			category = ship_sonar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 0
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 1
+		surface_visibility = 11
+		naval_speed = 20
+		reliability = 0.80
+		
+		naval_range = 999999
+		
+		max_strength = 100
+		
+		build_cost_ic = 12000
+		resources = {
+			steel = 1
+		}
+		
+		manpower = 600
+	}
+
+	ship_hull_strike_cruiser_1 = {
+		year = 1922
+		visual_level = 0
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		module_slots = inherit
+	}
+	ship_hull_strike_cruiser_1_nr = {
+		year = 1922
+		visual_level = 0
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		module_slots = inherit
+	}
+
+	ship_hull_strike_cruiser_2 = {
+		year = 1936
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		parent = ship_hull_strike_cruiser_1
+		manpower = 349
+		naval_speed = 25
+		reliability = 0.85
+		build_cost_ic = 9300
+		naval_range = 3000
+		max_strength = 9200
+		resources = {
+			steel = 2
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+		}
+	}
+	ship_hull_strike_cruiser_2_nr = {
+		year = 1936
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		parent = ship_hull_strike_cruiser_1_nr
+		manpower = 490
+		naval_speed = 25
+		reliability = 0.85
+		build_cost_ic = 12300
+		naval_range = 999999
+		max_strength = 110
+		resources = {
+			steel = 2
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_nuclear_reactor_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+		}
+	}
+
+	ship_hull_strike_cruiser_3 = {
+		year = 1940
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		parent = ship_hull_strike_cruiser_2
+		naval_speed = 27
+		build_cost_ic = 9600
+		reliability = 0.90
+		max_strength = 120
+		naval_range = 14800
+		manpower = 485
+		resources = {
+			steel = 2
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+		}
+	}
+	ship_hull_strike_cruiser_3_nr = {
+		year = 1940
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		parent = ship_hull_strike_cruiser_2_nr
+		naval_speed = 27
+		build_cost_ic = 12500
+		reliability = 0.90
+		max_strength = 120
+		naval_range = 999999
+		manpower = 1200
+		resources = {
+			steel = 2
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_nuclear_reactor_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+		}
+	}
+
+	ship_hull_strike_cruiser_4 = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		parent = ship_hull_strike_cruiser_3
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1400
+		build_cost_ic = 9900
+		naval_range = 4500
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+		}
+	}
+	ship_hull_strike_cruiser_4_nr = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		parent = ship_hull_strike_cruiser_3_nr
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1035
+		build_cost_ic = 13000
+		naval_range = 999999
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_nuclear_reactor_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+			rear_7_custom_slot = {
+				required = yes
+				allowed_module_categories = { ship_biological_defense }
+			}
+		}
+	}
+	ship_hull_strike_cruiser_5 = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		parent = ship_hull_strike_cruiser_4
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1400
+		build_cost_ic = 10200
+		naval_range = 4500
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+		}
+
+		default_modules = {
+			front_1_custom_slot = empty
+			rear_1_custom_slot = empty
+			rear_2_custom_slot = empty
+		}
+	}
+	ship_hull_strike_cruiser_5_nr = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		parent = ship_hull_strike_cruiser_4_nr
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1400
+		build_cost_ic = 13500
+		naval_range = 999999
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_nuclear_reactor_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+		}
+	}
+	ship_hull_strike_cruiser_6 = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser
+		priority = 1900
+		parent = ship_hull_strike_cruiser_5
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1400
+		build_cost_ic = 10500
+		naval_range = 4500
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_engine_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+		}
+	}
+	ship_hull_strike_cruiser_6_nr = {
+		year = 1944
+		visual_level = 1
+		archetype = ship_hull_strike_cruiser_nr
+		priority = 1900
+		parent = ship_hull_strike_cruiser_5_nr
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 1400
+		build_cost_ic = 14000
+		naval_range = 999999
+		max_strength = 130
+		resources = {
+			steel = 3
+		}
+		module_slots = {
+			fixed_ship_battery_slot = inherit
+			fixed_ship_anti_air_slot = inherit
+			fixed_ship_fire_control_system_slot = inherit
+			fixed_ship_radar_slot = inherit
+			fixed_ship_nuclear_reactor_slot = inherit
+			fixed_ship_secondaries_slot = inherit
+			fixed_ship_armor_slot = inherit
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			
+			mid_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_torpedo
+					ship_anti_air
+					ship_light_battery
+					ship_rcc
+					ship_airplane_launcher
+				}
+			}
+			mid_2_custom_slot = mid_1_custom_slot
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_mine_layer
+					ship_anti_air
+					ship_airplane_launcher
+					ship_depth_charge
+					ship_light_battery
+					ship_rcc
+				}
+			}
+			rear_2_custom_slot = rear_1_custom_slot
+			rear_7_custom_slot = {
+				required = yes
+				allowed_module_categories = { ship_biological_defense }
+			}
+		}
+	}
+}

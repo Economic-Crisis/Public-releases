@@ -1,0 +1,313 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 10
+
+
+add_ideas = {
+	regional_country
+	integration_in_nato
+}
+
+1985.1.1 = {
+	set_politics = {
+		ruling_party = communism
+		last_election = "1985.1.1"
+		election_frequency = 60
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 70 
+		reformism = 20
+		liberalism = 5
+		democratic = 5
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Wojciech Jaruzelski" #Войцех Ярузельский
+		desc = ""
+		picture = "gfx/leaders/POL/portrait_wojciech_jaruzelski.dds"
+		ideology = leninism #ПОРП
+		expire = "1990.12.21"
+		traits = { trait_leninism }
+	}
+	set_party_name = {
+		ideology = communism
+		long_name = POL_communism_1985_party_long
+		name = POL_communism_1985_party
+	}
+}
+
+1991.2.15 = {
+	add_ideas = visegrad_group_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 52420 }
+	
+	load_oob = "_tech_nato_minor_2013" 
+	oob = "POL_2013"
+	
+	add_ideas = {
+		eu_member
+		antitotalitarianism
+		NPT
+		pol_donald_tusk_hog
+		pol_tomasz_siemoniak_defm
+		pol_radoslaw_sikorski_fgm
+		pol_mateusz_szczurek_ecm
+		pol_dariusz_luczak_ssch
+		pol_mieczyslaw_gocul_chogs
+		pol_radoslaw_kujawa_isch
+		pol_zbigniew_glowienka_chogf
+		pol_tomasz_mathea_chognf
+		pol_lech_majewski_chogaf
+		parliamentary_republic
+		unitary_state
+		secular_state
+		free_media
+		fully_guranted_liberties
+		contract_army
+		mixed_schools
+		schengen_area_immigration
+		market_economy
+		state-owned_enterprise
+		balanced_industry
+		civilian_economy
+		low_taxes
+		national_social_security
+		pensions
+		low_terrorism
+	}
+	
+	set_party_name = {
+		ideology = communism
+		long_name = POL_communism_party_long
+		name = POL_communism_party
+	}
+	
+	set_country_flag = coalition_with_centrists
+	
+	# add_ideas = {
+		# pol_donald_tusk_hog # либерал
+		# pol_tomasz_siemoniak_defm # либерал
+		# pol_janusz_piechocinski_ecm # центритст
+		# pol_radoslaw_sikorski_fgm # либерал
+		# pol_dariusz_luczak_ssch
+	# }
+	
+	
+	set_stability = 0.7
+	add_political_power = 0
+	set_convoys = 35
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = liberalism
+		last_election = "2010.07.05"
+		election_frequency = 63
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 8
+		liberalism = 49
+		democratic = 30
+		neutrality = 8
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Bronislaw Komorowski" #Бронислав Коморовский 
+		desc = ""
+		picture = "gfx/leaders/POL/portrait_bronislav_komorovskiy.dds"
+		ideology = liberal_democracy #Гражданская платформа
+		traits = { trait_liberal_democracy }
+	}
+
+	#Избирается на выборах 2015 года
+	#create_country_leader = {
+	#	name = "Andrzej Duda" #Анджей Дуда
+	#	desc = ""
+	#	picture = "gfx/leaders/POL/portrait_andrzej_duda.dds"
+	#	ideology = national_conservatism_dem #Право и справедливость
+	#	traits = { trait_national_conservatism_dem }
+	#}
+
+	create_country_leader = {
+		name = "Jarosław Kaczyński" #Ярослав Качиньский 
+		desc = ""
+		picture = "gfx/leaders/POL/portrait_jaroslav_kachinskiy.dds"
+		ideology = national_conservatism_dem #Право и справедливость
+		traits = { trait_national_conservatism_dem }
+	}
+
+	create_country_leader = {
+		name = "Włodzimierz Czarzasty" #Влодзимеж Чажастый
+		desc = ""
+		picture = "gfx/leaders/POL/portrait_wlodzimierz_czarzasty.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	  
+	create_country_leader = {
+  	    name = "Waldemar Pawlak" #Вальдемар Павляк
+  	    desc = ""
+  	    picture = "gfx/leaders/POL/portrait_valdemar_pavlyak.dds"
+  	    ideology = centrist_democracy
+  	    traits = { trait_centrist_democracy }
+    }
+
+    create_country_leader = {
+  	    name = "Krzysztof Szwej" #Кшиштоф Швей
+  	    desc = ""
+  	    picture = "gfx/leaders/POL/portrait_krzysztof_szwej.dds"
+  	    ideology = leninism #КПП
+  	    traits = { trait_leninism }
+  	}
+
+    create_country_leader = {
+  	    name = "Robert Winnicki" #Роберт Винницкий
+  	    desc = ""
+  	    picture = "gfx/leaders/POL/portrait_robert_winnick.dds"
+  	    ideology = national_conservatism #Рух народовый
+  	    traits = { trait_national_conservatism }
+  	}
+  	
+    #create_country_leader = {
+  	#   name = "Paweł Kukiz" #Павел Кукиз
+  	#   desc = ""
+  	#   picture = "gfx/leaders/POL/portrait_pawel_kukiz.dds"
+  	#   ideology = populism
+  	#   traits = { trait_populism }
+  	#}
+
+    create_field_marshal = {
+		name = "Leszek Surawski"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_leszek_surawski.dds"
+		traits = { old_guard organisational_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+  
+    create_field_marshal = {
+		name = "Zbigniew Głowienka"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_zbigniew_glowienka.dds"
+		traits = { fast_planner }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+  
+    create_field_marshal = {
+		name = "Michał Sikora"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_michal_sikora.dds"
+		traits = { old_guard fast_planner panzer_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+  
+    create_corps_commander = {
+		name = "Jarosław Mika"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_jaroslaw_mika.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Stanisław Czosnek"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_stanislaw_czosnek.dds"
+		traits = {  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Rajmund Andrzejczak"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_rajmund_andrzejczak.dds"
+		traits = { ranger fast_planner }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Marek Sokołowski"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_marek_sokolowski.dds"
+		traits = { organisational_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Grzegorz Hałupka"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_grzegorz_halupka.dds"
+		traits = { commando }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Ryszard Pietras"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_ryszard_pietras.dds"
+		traits = { trait_engineer }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Stanisław Kaczyński"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_stanislav_kaszinsky.dds"
+		traits = { old_guard }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+  
+    create_corps_commander = {
+		name = "Sławomir Mąkosa"
+		portrait_path = "gfx/leaders/POL/portrait_pol_general_slawomir_makosa.dds"
+		traits = { trickster }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+}

@@ -1,0 +1,67 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 1048
+
+	add_ideas = {
+		au_member
+	}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 2194 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "EQG_2013"
+	
+	set_convoys = 15
+	set_stability = 0.5
+	add_political_power = 0
+
+	add_ideas = {
+		presidential_republic
+		unitary_state
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		mixed_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		terrorism_discounted
+		gaz_trader
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2009.11.29"
+		election_frequency = 84
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 100
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Teodoro Obiang Nguema Mbasogo"
+		desc = "POLITICS_TEODORO_MBASOGO_DESC"
+		picture = "gfx/leaders/EQG/portrait_teodoro_mbasogo.dds"
+		ideology = junta 
+		traits = { trait_junta }
+	}
+
+}
+

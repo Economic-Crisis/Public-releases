@@ -1,0 +1,80 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 687
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 299 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "GYA_2013"
+
+	add_ideas = {
+		unasur_member
+	}
+
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	
+	add_ideas = {
+		presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.11.28"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 47
+		reformism = 40
+		liberalism = 13
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "David Granger"
+		desc = "POLITICS_DAVID_GRANGER_DESC"
+		picture = "gfx/leaders/GYA/portrait_david_granger.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Donald Ramotar"
+		desc = "POLITICS_DONALD_RAMOTAR_DESC"
+		picture = "gfx/leaders/GYA/portrait_donald_ramotar.dds"
+		ideology = social_democracy
+		expire = "2015.5.11"
+		traits = { trait_social_democracy }
+	}
+
+}
+
+2015.5.11 = { 
+	set_party_name = {
+		ideology = reformism
+		long_name = GYA_reformism_party_congress_long 
+		name = GYA_reformism_party_congress
+	}
+}

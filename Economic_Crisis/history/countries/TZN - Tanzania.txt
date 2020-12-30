@@ -1,0 +1,63 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 546
+
+	add_ideas = au_member
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 4433 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_political_power = 0
+
+	set_convoys = 15
+
+	add_ideas = {
+		presidential_republic
+		secular_state
+		mixed_media
+		limitation_of_liberties
+		contract_army
+		mixed_schools
+		restricted_immigration
+		mixed_economic
+		NPT
+		free_market
+		balanced_industry
+		high_taxes
+		total_social_security
+		pensions
+		low_terrorism
+	}
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2010.10.31"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 73
+		liberalism = 11
+		democratic = 9
+		neutrality = 7
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Jakaya Kikwete"
+		desc = "POLITICS_JAKAYA_MRISHO_KIKWETE_DESC"
+		picture = "gfx/leaders/TZN/portrait_jakaya_kikwete.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+}
+

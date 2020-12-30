@@ -1,0 +1,83 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LAWS
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 777
+
+# 9 сентября 1976 года (как организация), как страна с 1988 года 
+add_ideas = {
+	arab_league_member
+}
+
+add_ideas = {
+	mixed_schools
+	partially_recognized_country
+	revanchism
+}
+2013.11.1 = {
+	set_variable = { budget_last_year = 390 }
+	set_convoys = 0
+	create_intelligence_agency = yes
+	load_oob = "_tech_minor_2013"
+	oob = "PAL_2013"
+	add_ideas = {
+		semi-presidential_republic
+		average_terrorism
+	}
+	add_political_power = 0
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2006.1.25" #parliament
+		election_frequency = 72
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 3
+		reformism = 38
+		liberalism = 0
+		democratic = 30
+		neutrality = 29
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mahmoud Abbas"
+		desc = ""
+		picture = "gfx/leaders/PAL/portrait_maxmud.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ahmad Sa'adat"
+		desc = ""
+		picture = "gfx/leaders/PAL/portrait_ahmad_saadat.dds"
+		ideology = leninism
+		traits = { trait_leninism }
+	}
+
+	#generic
+	create_country_leader = {
+		name = "Ahmed Hilmi Pasha"
+		desc = ""
+		picture = "gfx/leaders/PAL/Portrait_Arabia_Generic_2.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	#generic
+	create_country_leader = {
+		name = "Amin al-Husseini"
+		desc = ""
+		picture = "gfx/leaders/PAL/Portrait_Arabia_Generic_3.dds"
+		ideology = classical_fascism
+		traits = { trait_classical_fascism }
+	}
+
+}	
+

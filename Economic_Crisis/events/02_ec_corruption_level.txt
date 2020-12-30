@@ -1,0 +1,127 @@
+﻿#####################
+## Economic Crisis ##
+#########################
+## Level of corruption ##
+#########################
+## Written by SuxrobGM ##
+#########################
+
+add_namespace = corruption
+
+country_event = {
+	id = corruption.1
+	title = corruption.1.t
+	desc = corruption.1.d
+	picture = GFX_event_unknown
+	
+	hidden = yes
+	
+	trigger = {
+		has_stability < 40
+		has_stability > 21
+		NOT = {
+			has_country_flag = corruption_increased_since_low_national_unity_40
+		}
+	}
+	
+	immediate = {
+		corruption_increased = yes
+		set_country_flag = corruption_increased_since_low_national_unity_40
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}	
+	
+	option = { 
+		name = corruption.1.a
+	}
+}
+
+country_event = {
+	id = corruption.2
+	title = corruption.2.t
+	desc = corruption.2.d
+	picture = GFX_event_unknown
+	
+	hidden = yes
+	
+	trigger = {
+		has_stability < 20
+		has_stability > 1
+		NOT = {
+			has_country_flag = corruption_increased_since_low_national_unity_20
+		}
+	}
+	
+	immediate = {
+		corruption_increased = yes
+		set_country_flag = corruption_increased_since_low_national_unity_20
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { 
+		name = corruption.2.a
+	}
+}
+
+country_event = {
+	id = corruption.3
+	title = corruption.3.t
+	desc = corruption.3.d
+	picture = GFX_event_unknown
+	
+	hidden = yes
+	
+	trigger = {
+		has_civil_war = yes
+		NOT = {
+			has_country_flag = corruption_increased_since_has_civil_war
+		}
+	}
+	
+	immediate = {
+		corruption_increased = yes
+		set_country_flag = corruption_increased_since_has_civil_war
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { 
+		name = corruption.3.a
+	}
+}
+
+country_event = {
+	id = corruption.4
+	title = corruption.4.t
+	desc = corruption.4.d
+	picture = GFX_event_unknown
+	
+	hidden = yes
+	
+	trigger = {
+		has_country_flag = low_political_stability
+		NOT = {
+			has_country_flag = corruption_increased_since_has_low_political_stability
+		}
+	}
+	
+	immediate = {
+		corruption_increased = yes
+		set_country_flag = corruption_increased_since_has_low_political_stability
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { 
+		name = corruption.4.a
+	}
+}	

@@ -1,0 +1,71 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NON-EXISTENT ON START GAME STATE
+
+# NOT EDITED LAWS (ON EVENT?)
+# NOT EDITED POLITICS
+
+capital = 137
+
+add_ideas = { 
+	mixed_schools
+	parliamentary_republic
+}
+
+# частично признанное РФ
+2014.3.17  = {
+	add_ideas = not_recognized_country
+}
+
+2011.11.8 = {
+	create_country_leader = {
+		name = "Anatoliy Mohyliov"
+		desc = ""
+		picture = "gfx/leaders/CRM/portrait_anatolii_mohyliov.dds"
+		ideology = sovereign_democracy
+		expire = "2014.2.27"
+		traits = { trait_sovereign_democracy }
+	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 00585 }
+
+	load_oob = "_tech_microstate_2013"
+	add_political_power = 0
+	set_convoys = 25
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2014.2.14"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 30
+		neutrality = 70
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Sergey Aksyonov"
+		desc = ""
+		picture = "gfx/leaders/CRM/portrait_sergey_aksyonov.dds"
+		ideology = sovereign_democracy
+		traits = { trait_sovereign_democracy }
+	}
+
+	create_country_leader = {
+		name = "Refat Chubarov"
+		desc = ""
+		picture = "gfx/leaders/CRM/portrait_refat_chubarov.dds"
+		ideology = sunni_islamism
+		traits = { trait_sunni_islamism }
+	}
+
+}
+

@@ -1,0 +1,68 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 313
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5385 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 10
+	create_intelligence_agency = yes
+
+	add_ideas = {
+		presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		NPT
+		low_terrorism
+	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2012.2.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 4
+		reformism = 23
+		liberalism = 31
+		democratic = 13
+		neutrality = 19
+		fascism = 10
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Otto Pérez Molina"
+		desc = "POLITICS_OTTO_PEREZ_MOLINA_DESC"
+		picture = "gfx/leaders/GUA/portrait_otto_perez_molina.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Jimmy Morales"
+		picture = "gfx/leaders/GUA/portrait_jimmy_morales.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+}
+

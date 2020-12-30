@@ -1,0 +1,82 @@
+sub_units = {
+
+	# mechanized paratroopers on wheeled 8x8 or 6x6 armored personnel carriers (APC)
+	paratroopers_mechanized_on_apc_wheeled = {
+	
+		sprite = paratroopers_mechanized_on_apc_wheeled
+		map_icon_category = infantry
+		
+		can_be_parachuted = yes
+		special_forces = yes
+		active = no
+		priority = 601
+		ai_priority = 200
+
+		type = {
+			mechanized
+		}
+		
+		group = paratroopers_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_special_corps
+			category_paratroopers
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 27
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 75 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 200
+		suppression = 1
+		weight = 0.85
+		supply_consumption = 0.15
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			apc_wheeled_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_wheeled_equipment
+	
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			apc_wheeled_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		forest = {
+			attack = 0.12
+		}
+		mountain = {
+			attack = 0.08
+			movement = 0.1
+		}
+		jungle = {
+			attack = 0.2
+		}
+		marsh = {
+			attack = 0.15
+		}
+		urban = {
+			attack = 0.1
+			defence = 0.05
+		}
+		river = {
+			attack = 0.1
+		}
+	}
+}

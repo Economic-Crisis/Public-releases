@@ -1,0 +1,41 @@
+ideas = {
+    head_of_government = {
+
+		som_mohamed_nur = {
+		picture = GFX_idea_generic_political_advisor_africa_5
+			cost = 1000
+			#removal_cost = -1
+			available = {
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists
+				}
+			}
+			allowed = {	original_tag = "SOM" }
+			traits = { 
+			    party_leader_communist
+				pm_reformist
+			}
+			ai_will_do = { factor = 0 }
+		}
+		
+		som_communist_politburo = {
+		picture = GFX_idea_generic_political_advisor_africa_5
+			cost = 750
+			#removal_cost = -1
+			available = {
+			    has_completed_focus = SOM_collective_leadership
+				OR = {
+					has_government = communism
+					has_country_flag = coalition_with_socialists	
+				}
+			}
+			allowed = {	original_tag = "SOM" }
+			traits = { 
+			    party_leader_communist
+                pm_communist
+			}
+			ai_will_do = { factor = 0 }
+		}
+    }  	
+}

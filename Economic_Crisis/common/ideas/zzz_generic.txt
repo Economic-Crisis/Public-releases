@@ -1,0 +1,500 @@
+ideas = {
+
+	# Special ones that can be applied on other countries through focus system.
+	country = {
+	
+		nationalism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+
+			
+			modifier = {
+				fascism_drift = 0.1
+			}
+		}
+		internationalism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+			
+			modifier = {
+				#justify_war_goal_time = -0.25
+				communism_drift = 0.1
+			}
+		}
+
+		nationalism_influence = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				fascism_drift = 0.1
+				fascism_acceptance = 85
+			}
+		}
+		
+		communist_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			picture = generic_communism_drift_bonus
+			
+			modifier = {
+				communism_drift = 0.1
+				communism_acceptance = 85
+			}
+		}
+		democratic_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				democratic_drift = 0.1
+				democratic_acceptance = 85
+			}
+		}
+		
+		neutrality_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				neutrality_drift = 0.1
+				neutrality_acceptance = 85
+			}
+		}
+		
+		soviet_german_friendship = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						tag = GER
+						has_government = fascism
+						RUS = {
+							has_government = communism
+						}
+					}
+					AND = {
+						tag = RUS
+						has_government = communism
+						GER = {
+							has_government = fascism
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				communism_acceptance = 100
+				fascism_acceptance = 100
+			}
+		}
+		
+		communist_pressure = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			picture = generic_communism_drift_bonus
+			
+			modifier = {
+				communism_drift = 0.1
+			}
+		}
+		
+		
+		# Generic Focus Ideas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		collectivist_ethos_focus = {
+			
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+		
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+
+			modifier = {
+				democratic_drift = -0.02
+				liberalism_drift = -0.02
+			}
+		}
+	
+		liberty_ethos_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+	
+			modifier = {
+				trade_opinion_factor = 0.2
+			}
+		}
+	
+		militarism_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+	
+			modifier = {
+				conscription = 0.05
+				resistance_damage_to_garrison = -0.1
+			}
+		}
+	
+		military_youth_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+	
+			modifier = {
+				conscription = 0.02
+			}
+		}
+	
+		paramilitarism_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+	
+		indoctrination_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+	
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+	
+		ideological_fanaticism_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+	
+			rule = {
+				can_create_factions = yes
+			}
+	
+			modifier = {
+				stability_factor = 0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+	
+		political_commissars_focus = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+	
+			modifier = {
+				army_morale_factor = 0.1
+			}
+		}
+	
+		neutrality_idea = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			cancel = {
+				has_war = yes
+			}
+			
+			removal_cost = -1
+	
+			modifier = {
+				#generate_wargoal_tension = 1.00
+				join_faction_tension = 1.00
+				#lend_lease_tension = 0.50
+				send_volunteers_tension = 0.20
+				guarantee_tension = 1.0
+				ai_badass_factor = 0.01    # Will receive 1% of the threat from others
+				ai_get_ally_desire_factor = -100
+			}
+		}
+	
+		deterrence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_production_bonus
+	
+			modifier = {
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				#production_speed_anti_air_building_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+			}
+		}
+
+		volunteer_corps_focus = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_volunteer_expedition_bonus
+
+			modifier = {
+				send_volunteer_divisions_required = -0.25
+			}
+		}
+
+		foreign_expeditions_focus = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				send_volunteer_divisions_required = -0.5
+			}
+		}
+
+		why_we_fight_focus = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+				stability_factor = 0.10
+			}
+		}	
+
+		idea_political_correctness = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+			
+			modifier = {
+				foreign_subversive_activites = -0.75
+			}			
+		}
+	}
+	
+}

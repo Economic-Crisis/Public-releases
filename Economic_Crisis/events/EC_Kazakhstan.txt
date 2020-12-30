@@ -1,0 +1,91 @@
+﻿########################
+## Economic Crisis   ###
+########################
+## Kazakhstan events ###
+########################
+## Written by SuxrobGM #
+########################
+
+
+add_namespace = kazakhstan
+
+country_event = {  #Зашита от угрозы Советского Союза
+	id = kazakhstan.1
+	title = kazakhstan.1.t
+	desc = kazakhstan.1.d
+	picture = GFX_event_KAZ_army
+	
+	fire_only_once = yes
+
+	trigger = { 
+		tag = KAZ
+		country_exists = KAZ
+		KAZ = { has_country_flag = KAZ_deterence_agression_RUS_UNION }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = kazakhstan.1.a  
+		create_faction = MASS
+		add_to_faction = KAZ
+		if = {
+			limit = { 
+				AND = {
+					country_exists = UZB 
+					UZB = { is_puppet = no }
+				}
+			}
+			UZB = { country_event = { id = kazakhstan.2 days = 2 } }
+		}
+		if = {
+			limit = { 
+				AND = {
+					country_exists = KYR 
+					KYR = { is_puppet = no }
+				}
+			}
+			KYR = { country_event = { id = kazakhstan.2 days = 3 } }
+		}
+		if = {
+			limit = { 
+				AND = {
+					country_exists = TAJ 
+					TAJ = { is_puppet = no }
+				}
+			}
+			TAJ = { country_event = { id = kazakhstan.2 days = 4 } }
+		}
+		if = {
+			limit = { 
+				AND = {
+					country_exists = TMS 
+					TMS = { is_puppet = no }
+				}
+			}
+			TMS = { country_event = { id = kazakhstan.2 days = 5 } }
+		}
+	}
+}
+
+country_event = {  #Предложения от Казахстан к стране Ср. Азии
+	id = kazakhstan.2
+	title = kazakhstan.2.t
+	desc = kazakhstan.2.d
+	picture = GFX_event_flag_KAZ
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kazakhstan.2.a 
+		ai_chance = { factor = 80 }
+		KAZ = { add_to_faction = ROOT }
+	}
+	
+	option = {
+		name = kazakhstan.2.b 
+		ai_chance = { factor = 20 }
+	}
+}	

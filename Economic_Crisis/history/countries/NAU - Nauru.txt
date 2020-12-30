@@ -1,0 +1,51 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 725
+
+add_ideas = {
+	small_country	
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 10860 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2013.6.8" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 40
+		liberalism = 0
+		democratic = 40
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Baron Waqa"
+		desc = ""
+		picture = "gfx/leaders/NAU/portrait_baron_waqa.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+}
+

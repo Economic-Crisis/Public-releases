@@ -1,0 +1,374 @@
+ideas = {
+    country = {
+
+		# Распад Сомали
+		fall_of_somalia = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.5
+				stability_weekly = -0.002	
+				consumer_goods_factor = 0.25
+				rad_islamists_drift = 0.1
+				democratic_drift = 0.05
+			}
+		}
+		fall_of_somalia_2 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.35
+				stability_weekly = -0.001	
+				consumer_goods_factor = 0.15
+				rad_islamists_drift = -0.06
+				democratic_drift = 0.03
+			}
+		}
+		som_start_stabil = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.2
+				stability_weekly = 0.0005	
+				consumer_goods_factor = 0.3
+				rad_islamists_drift = -0.1
+			}
+		}
+		# Сомалийские пираты
+		som_pirates = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    political_power_gain = -0.2
+				consumer_goods_factor = 0.12
+				industrial_capacity_dockyard = -0.3
+			    opinion_gain_monthly_factor = -0.3
+			}
+
+		}
+		
+		# Сеть тонеллей
+		som_tunnel_network = {
+			allowed = {
+				always = yes
+			}
+
+			allowed = {
+				original_tag = SOM
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				army_salw_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+			
+			modifier = {
+			    planning_speed = 0.07
+				army_org_Factor = 0.15
+				org_loss_when_moving = -0.07
+				resistance_target_on_our_occupied_states = 0.15
+				attrition = -0.1
+				land_reinforce_rate = 0.02
+			}
+		}
+		
+		som_tunnel_network_up = {
+			allowed = {
+				always = no
+			}
+
+			allowed = {
+				original_tag = SOM
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				army_ammunition_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+			
+			modifier = {
+			    planning_speed = 0.1
+				army_org_Factor = 0.2
+				org_loss_when_moving = -0.15
+				resistance_target_on_our_occupied_states = 0.4
+				attrition = -0.2
+				land_reinforce_rate = 0.08
+				no_supply_grace = 96
+		        out_of_supply_factor = -0.30
+				max_dig_in = 15
+			}
+		}
+		
+		# Регулярная армия
+		som_military_school = {
+			allowed = {
+				always = no
+			}
+
+			allowed = {
+				original_tag = SOM
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    planning_speed = 0.03
+				army_org_Factor = 0.05
+				org_loss_when_moving = -0.03
+				max_planning = 0.1
+			}
+		}
+		
+		som_coinops = {
+			allowed = {
+				always = no
+			}
+
+			allowed = {
+				original_tag = SOM
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			    planning_speed = 0.03
+				army_org_Factor = 0.1
+				org_loss_when_moving = -0.06
+				max_planning = 0.15
+				resistance_damage_to_garrison = -0.40
+			}
+		}
+		
+		som_pirates_up = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    political_power_gain = -0.05
+				consumer_goods_factor = 0.07
+				industrial_capacity_dockyard = -0.1
+			    opinion_gain_monthly_factor = -0.15
+			}
+		}
+		
+	    # Агрокомплекс
+		
+		som_degradate_agro = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    political_power_gain = -0.05
+				consumer_goods_factor = 0.07
+				MONTHLY_POPULATION = -0.1
+				min_export = 0.5
+			}
+		}
+		
+		som_agrocomplex_1 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {    
+			    political_power_gain = -0.03
+				consumer_goods_factor = 0.1
+				MONTHLY_POPULATION = -0.1
+				min_export = 0.40
+			}
+		}
+		som_agrocomplex_2 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {    
+				consumer_goods_factor = 0.12
+				MONTHLY_POPULATION = -0.07
+				supply_consumption_factor = -0.10
+				industrial_capacity_factory = 0.05
+				min_export = 0.40
+			}
+		}
+	    som_agrocomplex_3 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {    
+				consumer_goods_factor = 0.15
+				MONTHLY_POPULATION = -0.03
+				supply_consumption_factor = -0.12
+				industrial_capacity_factory = 0.10
+				min_export = 0.25
+			}
+		}
+	    som_agrocomplex_4 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {    
+				consumer_goods_factor = 0.17
+				supply_consumption_factor = -0.15
+				industrial_capacity_factory = 0.15
+				min_export = 0.10
+			}
+		}
+		som_agroholdings = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {    
+				consumer_goods_factor = 0.20
+				MONTHLY_POPULATION = 0.05
+				supply_consumption_factor = -0.2
+				industrial_capacity_factory = 0.20
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+	    som_agrogigant = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {  
+                consumer_goods_factor = -0.1	
+                MONTHLY_POPULATION = 0.15				
+				supply_consumption_factor = -0.25
+				industrial_capacity_factory = 0.30
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		
+		# Индустриализация
+		
+		som_degradate_industria = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    industrial_capacity_factory = -0.20
+				local_resources_factor = -0.2
+				production_speed_buildings_factor = -0.15
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = -0.15
+				
+			}
+		}
+		som_industrialisation_1 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    consumer_goods_factor = 0.07
+			    industrial_capacity_factory = -0.1
+				local_resources_factor = -0.1
+				production_speed_buildings_factor = -0.07
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.10
+				
+			}
+		}
+		som_industrialisation_2 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    consumer_goods_factor = 0.10
+			    industrial_capacity_factory = -0.1
+				local_resources_factor = -0.1
+				production_speed_buildings_factor = 0.25
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.10
+				
+			}
+		}
+		som_industrialisation_3 = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    consumer_goods_factor = 0.10
+			    industrial_capacity_factory = -0.1
+				local_resources_factor = 0.2
+				production_speed_buildings_factor = 0.25
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.10
+				
+			}
+		}
+		som_petromoney = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    consumer_goods_factor = -0.07
+			    industrial_capacity_factory = 0.10
+				local_resources_factor = 0.4
+				production_speed_buildings_factor = 0.25
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.02
+				
+			}
+		}
+		som_new_dubai = {
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    consumer_goods_factor = -0.15
+			    industrial_capacity_factory = 0.3
+				local_resources_factor = 0.6
+				production_speed_buildings_factor = 0.3
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				
+			}
+		}
+	}         
+}

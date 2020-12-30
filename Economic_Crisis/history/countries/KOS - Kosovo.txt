@@ -1,0 +1,77 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 765
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 707 }
+
+	load_oob = "_tech_insurgents_2013" 
+	oob = "KOS_2013"
+	
+	add_ideas = {
+		partially_recognized_country
+	}
+	
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		semi-presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		base_social_security
+		normal_working_time
+		mixed_economic
+		
+		low_terrorism
+	}
+	
+	set_country_flag = pai_democrat_anticommunist
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2011.04.07"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 70
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 30
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Milan Nedic"
+		desc = ""
+		picture = "gfx/leaders/Europe/portrait_europe_generic_3.dds"
+		expire = "1965.1.1"
+		ideology = classical_fascism
+		traits = { trait_classical_fascism }
+	}
+
+	create_country_leader = {
+		name = "Atifete Jahjaga"
+		desc = ""
+		picture = "gfx/leaders/KOS/portrait_atifete_jahjaga.dds"
+		#expire = "1965.1.1"
+		ideology = social_democracy
+		traits = { trait_social_democracy}
+	}
+}
+

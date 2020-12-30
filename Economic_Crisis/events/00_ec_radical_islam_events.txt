@@ -1,0 +1,494 @@
+﻿#####################
+##Economic Crysis ###
+#####################
+
+add_namespace = rad_islamists
+
+# Популярность больше 10%
+country_event = {
+	id = rad_islamists.2
+	title = rad_islamists.2.t
+	desc = rad_islamists.2.d
+	picture = GFX_event_islamism_rise_10
+
+	trigger = {
+		rad_islamists > 0.1
+		NOT = {
+			has_government = rad_islamists
+			has_country_flag = rad_islamists_10
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = rad_islamists_10
+	}
+
+	option = { # Игнорировать рад. исламистов
+		name = rad_islamists.2.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.2.a"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_nondem_authoritarian
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+	}
+
+	option = { # Подавлять рад. исламизм
+		name = rad_islamists.2.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.2.b"
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 50
+				OR = {
+					has_country_flag = pai__islamist
+					has_country_flag = pai_democrat_neutral
+				}
+			}
+		}
+		set_country_flag = suppress_rad_islamists
+		add_popularity = {
+			ideology = rad_islamists
+			popularity = -0.03
+		}
+		add_stability = -0.01
+		add_political_power = -20
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = rad_islamists.3
+	title = rad_islamists.3.t
+	desc = rad_islamists.3.d
+	picture = GFX_event_islamism_decrease_10
+
+	trigger = {
+		has_country_flag = rad_islamists_10
+		rad_islamists < 0.08
+		NOT = {
+			has_government = rad_islamists
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = rad_islamists.3.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.3.a"
+		clr_country_flag = rad_islamists_10
+		clr_country_flag = oppose_rad_islamists
+		clr_country_flag = suppress_rad_islamists
+	}
+}
+
+# Популярность больше 25%
+country_event = {
+	id = rad_islamists.5
+	title = rad_islamists.5.t
+	desc = rad_islamists.5.d
+	picture = GFX_event_islamism_rise_25
+
+	trigger = {
+		has_country_flag = rad_islamists_10
+		rad_islamists > 0.25
+		NOT = {
+			has_government = rad_islamists
+			has_country_flag = rad_islamists_25
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = rad_islamists_25
+	}
+
+	option = { # Игнорировать рад. исламистов
+		name = rad_islamists.5.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.5.c"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_nondem_authoritarian
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		clr_country_flag = suppress_rad_islamists
+	}
+
+	option = { # Подавлять рад. исламизм
+		name = rad_islamists.5.s
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.5.s"
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 50
+				OR = {
+					has_country_flag = pai__islamist
+					has_country_flag = pai_democrat_neutral
+				}
+			}
+		}
+		set_country_flag = suppress_rad_islamists
+		add_popularity = {
+			ideology = rad_islamists
+			popularity = -0.05
+		}
+		add_stability = -0.01
+		add_political_power = -30
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = rad_islamists.6
+	title = rad_islamists.6.t
+	desc = rad_islamists.6.d
+	picture = GFX_event_islamism_decrease_25
+
+	trigger = {
+		has_country_flag = rad_islamists_25
+		rad_islamists < 0.2
+		NOT = {
+			has_government = rad_islamists
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = rad_islamists.6.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.6.a"
+		clr_country_flag = rad_islamists_25
+	}
+}
+
+# Популярность больше 40%
+country_event = {
+	id = rad_islamists.8
+	title = rad_islamists.8.t
+	desc = rad_islamists.8.d
+	picture = GFX_event_islamism_rise_40
+
+	trigger = {
+		has_country_flag = rad_islamists_25
+		rad_islamists > 0.4
+		NOT = {
+			has_government = rad_islamists
+			has_country_flag = rad_islamists_40
+		}
+		has_idea = single-party_state
+	}
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.25
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.5
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.75
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 2
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2.5
+		}
+	}
+
+	immediate = {
+		set_country_flag = rad_islamists_40
+	}
+
+	option = { # Игнорировать рад. исламистов
+		name = rad_islamists.8.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.8.b"
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = pai_democrat_moderate
+					has_country_flag = pai_nondem_authoritarian
+					has_country_flag = pai_nondem_totalitarian
+				}
+			}
+		}
+		clr_country_flag = suppress_rad_islamists
+	}
+
+	option = { # Подавлять рад. исламизм
+		name = rad_islamists.8.c
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.8.c"
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 50
+				OR = {
+					has_country_flag = pai__islamist
+					has_country_flag = pai_democrat_neutral
+				}
+			}
+		}
+		set_country_flag = suppress_rad_islamists
+		add_popularity = {
+			ideology = rad_islamists
+			popularity = -0.1
+		}
+		add_stability = -0.02
+		add_political_power = -50
+	}
+}
+
+# Популярность снизилась
+country_event = {
+	id = rad_islamists.9
+	title = rad_islamists.9.t
+	desc = rad_islamists.9.d
+	picture = GFX_event_islamism_decrease_40
+
+	trigger = {
+		has_country_flag = rad_islamists_40
+		rad_islamists < 0.32
+		NOT = {
+			has_government = rad_islamists
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 0.9
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 0.8
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 0.7
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 0.6
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 0.5
+		}
+	}
+
+	option = {
+		name = rad_islamists.9.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.9.a"
+		clr_country_flag = rad_islamists_40
+	}
+}
+
+# Популярность больше 50%
+country_event = {
+	id = rad_islamists.11
+	title = rad_islamists.11.t
+	desc = rad_islamists.11.d
+	picture = GFX_event_islamism_rise_50
+
+	trigger = {
+		has_country_flag = rad_islamists_40
+		rad_islamists > 0.5
+	 	NOT = {
+			has_government = rad_islamists
+			has_country_flag = rad_islamists_50
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			has_stability > 49.9
+			has_stability < 60
+			factor = 1.2
+		}
+		modifier = {
+			has_stability > 59.9
+			has_stability < 70
+			factor = 1.4
+		}
+		modifier = {
+			has_stability > 69.9
+			has_stability < 80
+			factor = 1.6
+		}
+		modifier = {
+			has_stability > 79.9
+			has_stability < 90
+			factor = 1.8
+		}
+		modifier = {
+			has_stability > 89.9
+			factor = 2
+		}
+	}
+
+	immediate = {
+		set_country_flag = rad_islamists_50
+	}
+
+	option = { # Уступить власть
+		name = rad_islamists.11.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.11.a"
+		ai_chance = {
+			factor = 0
+		}
+		start_civil_war = {
+			ruling_party = rad_islamists
+			ideology = ROOT
+			size = 0.5
+		}
+		add_stability = 0.05
+		add_political_power = -500
+		clr_country_flag = suppress_rad_islamists
+		clr_country_flag = rad_islamists_10
+		clr_country_flag = rad_islamists_25
+		clr_country_flag = rad_islamists_40
+		clr_country_flag = rad_islamists_50
+	}
+
+	option = { # Гражданская война
+		name = rad_islamists.13.b
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): election.13.b"
+		ai_chance = {
+			factor = 100
+		}
+		start_civil_war = {
+			ideology = rad_islamists
+			size = 0.5
+		}
+	}
+}

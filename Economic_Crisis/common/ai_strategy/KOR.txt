@@ -1,0 +1,45 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+KOR_dont_likes_PRK = {
+	enable = {
+		tag = KOR
+		country_exists = NKO
+	}
+	abort = {
+		NOT = { country_exists = NKO }
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "NKO"
+		value = 200
+	}
+}
+
+PRK_dont_likes_KOR = {
+	enable = {
+		tag = NKO
+		country_exists = KOR
+	}
+	abort = {
+		NOT = {
+			country_exists = KOR
+		}
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "KOR"
+		value = 200
+	}
+}

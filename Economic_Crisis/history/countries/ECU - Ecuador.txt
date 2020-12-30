@@ -1,0 +1,78 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 305
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 9513 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "_army_minor_2013"
+
+	add_ideas = {
+		unasur_member
+		alba_member
+		#low_member
+		mixed_schools
+		NPT
+	}
+
+	set_convoys = 20
+	set_stability = 0.5
+	add_political_power = 0
+	create_intelligence_agency = yes
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2013.4.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 2
+		reformism = 65
+		liberalism = 17
+		democratic = 15
+		neutrality = 0
+		fascism = 1
+		rad_islamists = 0
+	}
+
+
+	create_country_leader = {
+		name = "Lenín Moreno"
+		desc = "POLITICS_LENIN_MORENO_DESC"
+		picture = "gfx/leaders/ECU/portrait_lenin_moreno.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Rafael Correa"
+		desc = "POLITICS_RAFAEL_KORREA_DESC"
+		picture = "gfx/leaders/ECU/portrait_rafael_korrea.dds"
+		expire = "2017.2.19"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+	
+	create_country_leader = {
+		name = "Guillermo Lasso"
+		desc = "POLITICS_GUILLERMO_LASSO_DESC"
+		picture = "gfx/leaders/ECU/portrait_guillermo_lasso.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Cynthia Viteri"
+		desc = "POLITICS_CYNTHIA_VITERI_DESC"
+		picture = "gfx/leaders/ECU/portrait_cynthia_viteri.dds"
+		ideology = christian_democracy
+		traits = { trait_christian_democracy }
+	}
+
+}
+

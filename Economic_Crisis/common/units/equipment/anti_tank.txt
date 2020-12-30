@@ -1,0 +1,302 @@
+equipments = {
+
+	anti_tank_equipment = {
+		is_archetype = yes
+		type = { 
+			anti_tank
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+
+		#Misc Abilities
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4.5
+		breakthrough = 3.5
+		hardness = 0
+		armor_value = 0
+
+		#Offensive Abilities
+		soft_attack = 3
+		hard_attack = 15
+		ap_attack = 35
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 3
+				
+		build_cost_ic = 4
+		resources = {
+			alloy_steel = 2
+			steel = 2
+		}
+	}
+
+	anti_tank_equipment_1 = {
+		active = no
+		archetype = anti_tank_equipment
+		priority = 90
+		visual_level = 0
+	}
+	
+	anti_tank_equipment_2 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_1
+		priority = 90
+		visual_level = 1
+		
+		hard_attack = 20
+		ap_attack = 50
+		
+		build_cost_ic = 5
+		resources = {
+			alloy_steel = 2
+			steel = 2
+		}
+	}
+	
+	anti_tank_equipment_3 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_2
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 25
+		ap_attack = 60
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	anti_tank_equipment_4 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_3
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 29
+		ap_attack = 65
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	anti_tank_equipment_5 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_4
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 35
+		ap_attack = 70
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	anti_tank_equipment_6 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_5
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 40
+		ap_attack = 70
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	anti_tank_equipment_7 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_6
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 45
+		ap_attack = 85
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	anti_tank_equipment_8 = {
+		# active = no
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_7
+		priority = 90
+		visual_level = 2
+		
+		hard_attack = 50
+		ap_attack = 100
+		
+		build_cost_ic = 6
+		resources = {
+			alloy_steel = 2
+			steel = 3
+		}
+	}
+	
+	medium_tank_destroyer_equipment = {
+		year = 1960
+
+		is_archetype = yes
+		is_convertable = yes		
+		is_buildable = no
+		type = { 
+			armor
+			anti_tank
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_at_upgrade
+		}
+		
+		#Misc Abilities
+		maximum_speed = 22
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 8
+		breakthrough = 4.5
+		hardness = 0.9
+		armor_value = 55
+
+		#Offensive Abilities
+		soft_attack = 5
+		hard_attack = 20
+		ap_attack = 50
+		air_attack = 0
+		
+		build_cost_ic = 12
+		
+		resources = {
+			polymers = 2
+			alloy_steel = 4
+			steel = 2
+		}
+	}
+
+	medium_tank_destroyer_equipment_1 = {
+		year = 1960
+		active = no
+
+		archetype = medium_tank_destroyer_equipment
+		priority = 80
+		visual_level = 0
+	}
+
+	medium_tank_destroyer_equipment_2 = {
+		year = 1980
+		# active = no
+
+		archetype = medium_tank_destroyer_equipment
+		parent = medium_tank_destroyer_equipment_1
+		priority = 80
+		visual_level = 1
+		#Misc Abilities
+		maximum_speed = 22
+
+		#Defensive Abilities
+		defense = 8
+		breakthrough = 4.5
+		armor_value = 65
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 29
+		ap_attack = 65
+		
+		build_cost_ic = 13
+		
+		resources = {
+			polymers = 2
+			alloy_steel = 4
+			steel = 3
+		}		
+	}
+
+	medium_tank_destroyer_equipment_3 = {
+		year = 2000
+		# active = no
+
+		archetype = medium_tank_destroyer_equipment
+		parent = medium_tank_destroyer_equipment_2
+		priority = 80
+		visual_level = 2
+		#Misc Abilities
+		maximum_speed = 22
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 5
+		armor_value = 80
+
+		#Offensive Abilities
+		soft_attack = 8
+		hard_attack = 40
+		ap_attack = 70
+		
+		build_cost_ic = 14
+		
+		resources = {
+			polymers = 4
+			alloy_steel = 4
+			steel = 4
+		}
+	}
+	medium_tank_destroyer_equipment_4 = {
+		year = 2020
+		# active = no
+
+		archetype = medium_tank_destroyer_equipment
+		parent = medium_tank_destroyer_equipment_3
+		priority = 80
+		visual_level = 2
+		#Misc Abilities
+		maximum_speed = 22
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 5
+		armor_value = 110
+
+		#Offensive Abilities
+		soft_attack = 10
+		hard_attack = 50
+		ap_attack = 100
+		
+		build_cost_ic = 14
+		
+		resources = {
+			polymers = 4
+			alloy_steel = 4
+			steel = 4
+		}
+	}
+}

@@ -1,0 +1,323 @@
+equipments = {
+	ship_hull_cruiser_carrier = {
+		year = 1922
+		group_by = archetype
+		is_archetype = yes
+		is_buildable = no
+		type = carrier
+		sprite = carrier
+		group_by = archetype
+		alias = cruiser_carrier
+		priority = 1000
+		
+		interface_category = interface_category_capital_ships
+
+		module_slots = {
+			fixed_ship_deck_slot_1 = {
+				required = yes
+				allowed_module_categories = { small_ship_deck_space ship_deck_space }
+				gfx = ship_deck_space_slot
+			}
+			fixed_ship_deck_slot_2 = {
+				required = no
+				allowed_module_categories = { small_ship_deck_space ship_deck_space }
+				gfx = ship_deck_space_slot
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar }
+			}
+			fixed_ship_engine_slot = {
+				required = yes
+				allowed_module_categories = { carrier_ship_engine }
+			}
+			fixed_ship_secondaries_slot = {
+				required = no
+				allowed_module_categories = { ship_light_battery ship_rcc ship_anti_air }
+			}
+			fixed_ship_armor_slot = {
+				required = no
+				allowed_module_categories = { ship_medium_armor }	
+			}
+			
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					ship_deck_space
+					ship_medium_armor
+				}
+			}
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 0
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 5
+		surface_visibility = 30
+		naval_speed = 26
+		reliability = 0.70
+		
+		naval_range = 7408
+		
+		max_strength = 250
+		
+
+		fuel_consumption = 87
+
+		# (Describes combat behaviour - hidden stat)
+		offensive_weapons = no
+		
+		build_cost_ic = 10000
+		resources = {
+			steel = 4
+		}
+		
+		manpower = 4500
+	}
+	ship_hull_cruiser_carrier_nr = {
+		year = 1922
+		group_by = archetype
+		is_archetype = yes
+		is_buildable = no
+		type = carrier
+		sprite = carrier
+		group_by = archetype
+		alias = cruiser_carrier
+		priority = 1000
+		
+		interface_category = interface_category_capital_ships
+
+		module_slots = {
+			fixed_ship_deck_slot_1 = {
+				required = yes
+				allowed_module_categories = { small_ship_deck_space ship_deck_space }
+				gfx = ship_deck_space_slot
+			}
+			fixed_ship_deck_slot_2 = {
+				required = no
+				allowed_module_categories = { small_ship_deck_space ship_deck_space }
+				gfx = ship_deck_space_slot
+			}
+			fixed_ship_anti_air_slot = {
+				required = no
+				allowed_module_categories = { ship_anti_air }
+			}
+			fixed_ship_radar_slot = {
+				required = no
+				allowed_module_categories = { ship_radar }
+			}
+			fixed_ship_nuclear_reactor_slot = {
+				required = yes
+				allowed_module_categories = { small_carrier_ship_nuclear_reactor }
+			}
+			fixed_ship_secondaries_slot = {
+				required = no
+				allowed_module_categories = { ship_light_battery ship_rcc ship_anti_air }
+			}
+			fixed_ship_armor_slot = {
+				required = no
+				allowed_module_categories = { ship_medium_armor }	
+			}
+			
+			front_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					small_ship_deck_space
+					ship_deck_space
+					ship_medium_armor
+					ship_rcc
+				}
+			}
+			front_2_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					small_ship_deck_space
+					ship_deck_space
+					ship_medium_armor
+					ship_rcc
+				}
+			}
+
+			rear_1_custom_slot = {
+				required = no
+				allowed_module_categories = {
+					small_ship_deck_space
+					ship_deck_space
+					ship_medium_armor
+					ship_rcc
+				}
+			}
+			rear_7_custom_slot = {
+				required = yes
+				allowed_module_categories = { ship_biological_defense }
+			}
+		}
+
+		default_modules = {
+			rear_7_custom_slot = ship_biological_defense_1
+		}
+		
+		module_count_limit = {
+			category = ship_radar
+			count < 2
+		}
+		
+		lg_armor_piercing = 0
+		lg_attack = 0
+		
+		hg_armor_piercing = 0
+		hg_attack = 0
+		
+		torpedo_attack = 0
+		sub_attack = 0
+		
+		anti_air_attack = 0
+		
+		armor_value = 0
+
+		
+		surface_detection = 20
+		sub_detection = 5
+		surface_visibility = 30
+		naval_speed = 26
+		reliability = 0.70
+		
+		naval_range = 999999
+		
+		max_strength = 250
+	
+
+		# (Describes combat behaviour - hidden stat)
+		offensive_weapons = no
+		
+		build_cost_ic = 13000
+		resources = {
+			steel = 4
+		}
+		
+		manpower = 4500
+	}
+
+	ship_hull_cruiser_carrier_1 = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier
+		priority = 1000
+		module_slots = inherit
+	}
+	ship_hull_cruiser_carrier_1_nr = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier_nr
+		priority = 1000
+		module_slots = inherit
+	}
+	ship_hull_cruiser_carrier_2 = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier
+		parent = ship_hull_cruiser_carrier_1
+		priority = 1000
+		module_slots = inherit
+
+		naval_speed = 28
+		reliability = 0.95
+		manpower = 650
+		build_cost_ic = 11000
+		naval_range = 9000
+		max_strength = 90
+	}
+	ship_hull_cruiser_carrier_2_nr = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier_nr
+		parent = ship_hull_cruiser_carrier_1_nr
+		priority = 1000
+		module_slots = inherit
+
+		build_cost_ic = 15000
+	}
+	ship_hull_cruiser_carrier_3 = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier
+		parent = ship_hull_cruiser_carrier_2
+		priority = 1000
+		module_slots = inherit
+
+		naval_speed = 29
+		reliability = 0.95
+		manpower = 1300
+		build_cost_ic = 12000
+		naval_range = 15900
+		max_strength = 15
+	}
+	ship_hull_cruiser_carrier_3_nr = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier_nr
+		parent = ship_hull_cruiser_carrier_2_nr
+		priority = 1000
+		module_slots = inherit
+		build_cost_ic = 17500
+	}
+	ship_hull_cruiser_carrier_4 = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier
+		parent = ship_hull_cruiser_carrier_3
+		priority = 1000
+		module_slots = inherit
+
+		naval_speed = 29
+		reliability = 0.95
+		manpower = 1300
+		build_cost_ic = 13000
+		naval_range = 15500
+		max_strength = 15
+	}
+	ship_hull_cruiser_carrier_4_nr = {
+		year = 1936
+		visual_level = 1
+		visual_tech_level_addition = 2
+		archetype = ship_hull_cruiser_carrier_nr
+		parent = ship_hull_cruiser_carrier_3_nr
+		priority = 1000
+		module_slots = inherit
+
+		naval_speed = 30
+		reliability = 0.95
+		manpower = 1300
+		build_cost_ic = 20000
+		naval_range = 999999
+		max_strength = 15
+	}
+}

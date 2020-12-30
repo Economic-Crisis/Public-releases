@@ -1,0 +1,99 @@
+guiTypes = {
+
+#EC money	
+	containerWindowType = {
+		name = "topbar_money_menu"
+		position = { x = 0 y = 0 }	
+		
+		buttonType ={
+			name ="budget_bg"
+			spriteType = "GFX_ec_generic_box_120"
+			position = { x = 574 y = 5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = money_menu_inc_exp_info_text
+		}		
+		
+		iconType = {
+			name ="budget_icon"
+			spriteType = "GFX_money_icon"
+			position = { x = 574 y = 9 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="budget_value"
+			position = { x = 594 y = 9 }
+			font = "hoi_18mbs"
+			text = "topbar_current_budget_text"
+			format = center
+			maxWidth = 100
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+	
+
+		containerWindowType = {
+		name = "diplomacy_money"
+		position = { x = 15 y = 350 }
+
+		iconType ={
+			name ="electricity_bg"
+			spriteType = "GFX_ec_generic_box_255"
+			position = { x = 0 y = 25 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = electricity_info_4
+		}
+		
+		iconType = {
+			name ="electricity_icon"
+			spriteType = "GFX_electricity_icon"
+			position = { x = 0 y = 25 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="electricity_value"
+			position = { x = 20 y = 30 }
+			font = "hoi_18mbs"
+			text = "   [electricity_text]"
+			format = center
+			maxWidth = 59
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		iconType ={
+			name ="budget_bg_info"
+			spriteType = "GFX_ec_generic_box_255"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = diplomacy_money_info
+		}	
+		
+		iconType = {
+			name ="budget_icon"
+			spriteType = "GFX_money_icon"
+			position = { x = 0 y = 5 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="budget_value"
+			position = { x = 20 y = 5 }
+			font = "hoi_18mbs"
+			text = "diplomacy_money_budget_text"
+			format = center
+			maxWidth = 200
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+	}	
+}

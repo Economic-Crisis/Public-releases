@@ -1,0 +1,36 @@
+#By Skoolz
+#on_actions = {
+#	on_startup = {
+#		effect = {	}	
+#	}
+#
+#	on_daily = {
+#		
+#		effect = {
+#		#	УБИРАЕМ ПРОИЗВОДСТВО
+#		#IRON_ORE
+#		if = {
+#			limit = { 
+#				has_iron_ore = no 
+#				check_variable = { resource_produced@steel > 0 }
+#			}
+#			set_country_flag = no_iron_ore
+#			set_num_of_steel_factory = yes
+#			set_temp_variable = { steel_produced_remove = num_of_steel_factory }
+#			add_offsite_building = { type = de_steel level = steel_produced_remove } #Убираем все проивзодство стали
+#		}
+#		#	ВОЗВРАЩАЕМ ПРОИЗВОДСТВО
+#		#IRON_ORE
+#		if = {
+#			limit = { 
+#				has_iron_ore = yes
+#				has_country_flag = no_iron_ore
+#			}
+#			clr_country_flag = no_iron_ore
+#			multiply_variable = { steel_produced_remove = -1 }
+#			add_offsite_building = { type = de_steel level = steel_produced_remove } #Убираем все проивзодство стали
+#		}
+#
+#  }
+# }
+#}	

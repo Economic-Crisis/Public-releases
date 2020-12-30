@@ -1,0 +1,88 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 461
+
+# WIP: Почти готово
+# GREAT TRADE FLEET
+
+#  1 октября 1958 года
+   add_ideas = {	   
+		arab_league_member	   
+		au_member	
+		NPT
+	}
+	
+2013.11.1 = {
+	set_variable = { budget_last_year = 22 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "MOR_2013"
+	
+	# laws
+	add_ideas = {
+		semi-parliamentary_monarchy
+		unitary_state
+		state_religion
+		# religion_islam
+		# religion_orthodox_christianity
+		mixed_media
+		suspended_liberties
+		contract_army
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		
+		balanced_industry
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		normal_working_time
+		
+		islam_idea_lvl_3
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes	
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.11.25" #parliament
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 8
+		reformism = 9
+		liberalism = 0
+		democratic = 64
+		neutrality = 19
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Mohammed VI"
+		desc = "POLITICS_KING_MOHAMMED_DESC"
+		picture = "gfx/leaders/MOR/portrait_king_mohammed_vi.dds"
+		ideology = sunni_royalism
+		traits = { trait_sunni_royalism }
+	}
+		
+	#Премьер-министр
+	#create_country_leader = {
+	#	name = "Abbas El Fassi"
+	#	desc = "POLITICS_ABBAS_EL_FASSI_DESC"
+	#	picture = "gfx/leaders/MOR/portrait_abbas_el_fassi.dds"
+	#	ideology = sunni_royalism
+	#	traits = { trait_sunni_royalism }
+	#}
+
+}
+
+

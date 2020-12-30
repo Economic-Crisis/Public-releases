@@ -1,0 +1,37 @@
+# Economic Crisis - only national ideas
+# ministers, military_staff, theorist, industrie - in separate file!
+
+ideas = {
+	country = {
+	
+		tmd_blockade = { #Блокада Приднестровья
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.5
+				stability_weekly = -0.05
+			}
+			on_add = {
+					country_event = ukraine.28
+			}
+			removal_cost = -1
+		}
+	
+	tmd_rus_support = { # Помощь России
+			allowed = {
+				always = no
+			}
+			modifier = {
+			#	stability_factor = -0.1
+			#	political_power_gain = -0.5
+			#	stability_weekly = -0.05
+			}
+			on_add = {
+			#		country_event = ukraine.28
+			}
+			removal_cost = -1
+		}
+	}
+}

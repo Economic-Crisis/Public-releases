@@ -1,0 +1,77 @@
+sub_units = {
+
+	# mechanized marines on tracked armored personnel carriers (APC)
+	marines_mechanized_on_apc_tracked = {
+	
+		sprite = marines_mechanized_on_apc_tracked
+		map_icon_category = infantry
+		
+		special_forces = yes
+		marines = yes
+		active = no
+		priority = 673
+		ai_priority = 200
+
+		type = {
+			mechanized
+		}
+		
+		group = marines_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_special_corps
+			category_marines
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 28
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 92 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 220
+		suppression = 1
+		maximum_speed = 0.2
+		weight = 1
+		supply_consumption = 0.18
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			landing_vehicle_tracked_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = apc_tracked_equipment
+	
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			landing_vehicle_tracked_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		marsh = {
+			attack = 0.35
+			defence = 0.25
+			movement = 0.45
+		}
+		river = {
+			attack = 0.4
+			defence = 0.2
+			movement = 0.2
+		}
+		amphibious = {
+			attack = 0.55
+			movement = 0.35
+		}
+	}
+}

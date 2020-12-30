@@ -1,0 +1,154 @@
+ideologies = {
+
+    neutrality = { 
+	
+		# Центризм (ещё не тоталитарные, но уже не демократические и, как правило, реакционные режимы) 
+		# Centrism (not yet totalitarian, but no longer democratic and, as a rule, reactionary regimes)
+		
+		types = {
+			# Центристская демократия, обычно это участники Центристского демократического интернационала
+			# Centrist Democracy 
+			centrist_democracy = {
+			}
+			
+			# Authoritarian Democracy (usually reactionary regimes) 
+			# Авторитарная демократия (обычно реакционные режимы)
+			authoritarian_democracy = {
+			}
+			
+			# Суверенная демократия (определение русской демократии)
+			# Sovereign Democracy (Russian Democracy, Putinism)
+			sovereign_democracy = {
+				can_be_randomly_selected = no
+			}
+			
+			# Центристская монархия (для монархистов)
+			# Centrist Monarchy
+			royalism = {
+				can_be_randomly_selected = no
+			}
+			
+			# Олигархия
+			# Oligarchy
+			oligarchy = {
+			}
+			
+			# Популизм
+			# Populism
+			populism = {
+			}
+			
+			# Корпоратократия
+			# Corporatocracy
+			corporatocracy  = {
+				can_be_randomly_selected = no
+			}
+			
+			# Христианская теократия
+			# Christian Theocracy
+			christian_theocracy  = {
+				can_be_randomly_selected = no
+			}
+			
+			# Религиозный сионизм
+			# Religious Zionism
+			religious_zionism  = {
+				can_be_randomly_selected = no
+			}
+			
+			# Евроскептицизм		
+			# Euroscepticism
+			euroscepticism  = {
+				can_be_randomly_selected = no
+			}
+			
+			# Эрдоганизм
+			# Erdoganism
+			erdoganism = {
+				can_be_randomly_selected = no
+			}
+		}
+
+		dynamic_faction_names = {
+			"FACTION_NAME_CENTRISM_1"
+			"FACTION_NAME_CENTRISM_2"
+			"FACTION_NAME_CENTRISM_3"
+			"FACTION_NAME_CENTRISM_4"
+			"FACTION_NAME_CENTRISM_5"
+		}
+		
+		color = { 25 165 216 }
+		
+			rules = {
+			# может объявить войну стране со схожей идеологией 
+			can_declare_war_on_same_ideology = yes
+			# может инициировать свержение правительства в другой стране
+			can_force_government = yes
+			# может отправить добровольцев для участия в другом конфликте
+			can_send_volunteers = yes
+			# может иметь страны-марионетки
+			can_puppet = yes
+			# может понижать напряженность (?)
+			can_lower_tension = yes
+			# может оправдывать цель начала войны угрозой со стороны другой страны
+			can_only_justify_war_on_threat_country = no
+			# может гарантировать независимость
+			can_guarantee_other_ideologies = yes
+		}
+
+		# Может создавать правительство в изгнании
+		can_host_government_in_exile = yes		
+
+		
+		# Влияние участия страны в войне на  международную напряженность (?)
+		# war_impact_on_world_tension = -1.0			# peacemaker
+		# war_impact_on_world_tension = 0				# peaceful
+		# war_impact_on_world_tension = 0.25		# no major danger
+		war_impact_on_world_tension = 0.4			# danger
+		# war_impact_on_world_tension = 0.75		# aggresive		
+		# war_impact_on_world_tension = 1.0			# it's evil
+		
+		# Влияние вступления страны в альянс на  международную напряженность (?)
+		# faction_impact_on_world_tension = -0.1		# гарант
+		# faction_impact_on_world_tension = 0.1		# страна не представляет угрозы
+		faction_impact_on_world_tension = 0.5		# агрессивный
+		# faction_impact_on_world_tension = 1.0		# это опасно
+		
+		# реформы не способны привести общество к установлению социальной справедливости
+		# наличие высокоразвитых производительных сил
+		# отмена или ограничение частной собственности
+		
+		modifiers = {
+			# влияние оправдания цели начала войны на мировую напряженность
+			generate_wargoal_tension = 0.3
+			# влиянеие присоединения страны к фракции на мировую напряженность
+			join_faction_tension = 0.2
+			# влиянеие ленд-лиза на мировую напряженность
+			lend_lease_tension = 0.15
+			# влиянеие отправки волонтеров на мировую напряженность
+			send_volunteers_tension = 0.15
+			# влиянеие гарантий независимости на мировую напряженность
+			guarantee_tension = 0.35
+			# стоимость политической власти при взятии обязательств
+			#take_states_cost_factor = 0.25# !Вырезано в связи с устранением данного модификатора в игре!
+			# стоимость политической власти при аннексии
+			annex_cost_factor = -0.3
+			# стоимость политической власти при создании марионетки
+			puppet_cost_factor = -0.3
+			# уменьшение времени исследований технологий
+			research_speed_factor = 0.01
+		}
+		
+		faction_modifiers = {
+			# мораль в армии социалистического альянса
+			army_morale_factor = 0.25
+			# усиление промышленности во всем альянсе
+			industrial_capacity_factory = 0.2
+		}
+		
+	# uses the commie AI behaviour	
+	ai_neutral = yes
+	can_collaborate = yes
+
+	}
+}

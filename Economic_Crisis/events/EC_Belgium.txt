@@ -1,0 +1,32 @@
+﻿####################
+## Economic Crisis #
+####################
+## Britain Events ##
+#########################
+
+add_namespace = belgium
+
+#Стрельба в Еврейском музее в Бельгии
+country_event = {  
+	id = belgium.1
+	title = belgium.1.t
+	desc = belgium.1.d
+	picture = GFX_event_bel_terratack
+	
+	fire_only_once = yes
+	
+	trigger = { 
+	    tag = BEL
+		date > 2014.05.24
+	    country_exists = BEL
+	}
+	option = {
+	name = belgium.1.a
+	    add_ideas = average_terrorism
+		add_stability = -0.08
+		add_political_power = -50
+		add_threat = 3
+	}
+}
+
+

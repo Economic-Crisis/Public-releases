@@ -1,0 +1,296 @@
+﻿add_namespace = diplomacy
+
+country_event = {
+	id = diplomacy.1
+	title = diplomacy.1.t
+	desc = diplomacy.1.d
+	picture = GFX_event_flag_KOS_SER
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.1.a 
+		
+		SER = { add_opinion_modifier = { target = ROOT modifier = support } }
+		KOS = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+	
+	option = {
+		name = diplomacy.1.b
+		
+		KOS = { add_opinion_modifier = { target = ROOT modifier = support } }
+		SER = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.2
+	title = diplomacy.2.t
+	desc = diplomacy.2.d
+	picture = GFX_event_palestine_crisis
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.2.a 
+		
+		ISR = { add_opinion_modifier = { target = ROOT modifier = support } }
+		PAL = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.2.b
+		
+		PAL = { add_opinion_modifier = { target = ROOT modifier = support } }
+		ISR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.3
+	title = diplomacy.3.t
+	desc = diplomacy.3.d
+	picture = GFX_event_flag_CHI_TAI
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.3.a 
+		
+		CHI = { add_opinion_modifier = { target = ROOT modifier = support } }
+		ROC = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.3.b
+		
+		ROC = { add_opinion_modifier = { target = ROOT modifier = support } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		CHI = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.4
+	title = diplomacy.4.t
+	desc = diplomacy.4.d
+	picture = GFX_event_flag_PRK_KOR
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.4.a 
+		
+		KOR = { add_opinion_modifier = { target = ROOT modifier = support } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		NKO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		CHI = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.4.b
+		
+		NKO = { add_opinion_modifier = { target = ROOT modifier = support } }
+		CHI = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		KOR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		USA = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.5
+	title = diplomacy.5.t
+	desc = diplomacy.5.d
+	picture = GFX_event_flag_Sahrawi_Arab_Democratic_Republic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.5.a 
+		
+		MOR = { add_opinion_modifier = { target = ROOT modifier = support } }
+		WES = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+	
+	option = {
+		name = diplomacy.5.b
+		
+		WES = { add_opinion_modifier = { target = ROOT modifier = support } }
+		MOR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.6
+	title = diplomacy.6.t
+	desc = diplomacy.6.d
+	picture = GFX_event_flag_Cyprus_and_Northern_Cyprus
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.6.a 
+		
+		CYP = { add_opinion_modifier = { target = ROOT modifier = support } }
+		GRE = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		NCY = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		TUR = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.6.b
+		
+		NCY = { add_opinion_modifier = { target = ROOT modifier = support } }
+		TUR = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		CYP = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		GRE = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.7
+	title = diplomacy.7.t
+	desc = diplomacy.7.d
+	picture = GFX_event_flag_Somali
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.7.a 
+		
+		SOM = { add_opinion_modifier = { target = ROOT modifier = support } }
+		SML = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+	
+	option = {
+		name = diplomacy.7.b
+		
+		SML = { add_opinion_modifier = { target = ROOT modifier = support } }
+		SOM = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.8
+	title = diplomacy.8.t
+	desc = diplomacy.8.d
+	picture = GFX_event_Moldova_Transnistria
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.8.a 
+		
+		MOL = { add_opinion_modifier = { target = ROOT modifier = support } }
+		TMD = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.8.b
+		
+		TMD = { add_opinion_modifier = { target = ROOT modifier = support } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		MOL = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.9
+	title = diplomacy.9.t
+	desc = diplomacy.9.d
+	picture = GFX_event_falg_NKR
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.9.a 
+		
+		AZR = { add_opinion_modifier = { target = ROOT modifier = support } }
+		NKR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		ARM = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.9.b
+		
+		NKR = { add_opinion_modifier = { target = ROOT modifier = support } }
+		ARM = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		AZR = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.10
+	title = diplomacy.10.t
+	desc = diplomacy.10.d
+	picture = GFX_event_falg_ABZ
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.10.a 
+		
+		GEO = { add_opinion_modifier = { target = ROOT modifier = support } }
+		ABZ = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.10.b
+		
+		ABZ = { add_opinion_modifier = { target = ROOT modifier = support } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		GEO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}
+
+country_event = {
+	id = diplomacy.11
+	title = diplomacy.11.t
+	desc = diplomacy.11.d
+	picture = GFX_event_flag_SOS
+
+	is_triggered_only = yes
+	
+	option = {
+		name = diplomacy.11.a 
+		
+		GEO = { add_opinion_modifier = { target = ROOT modifier = support } }
+		SOS = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
+		
+	}
+	
+	option = {
+		name = diplomacy.11.b
+		
+		SOS = { add_opinion_modifier = { target = ROOT modifier = support } }
+		RUS = { add_opinion_modifier = { target = ROOT modifier = backed_ally } }
+		GEO = { add_opinion_modifier = { target = ROOT modifier = support_enemy } }
+		
+	}
+}

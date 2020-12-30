@@ -1,0 +1,53 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 760
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 30250 }
+
+	load_oob = "_tech_regional_2013"
+	oob = "SIN_2013"
+
+	add_ideas = {
+		asean_member
+		small_country
+		parliamentary_republic
+		terrorism_discounted
+		mixed_schools
+		TPP_member
+		NPT
+   }
+
+	set_stability = 0.5
+
+	add_political_power = 0
+
+	set_convoys = 10
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2011.5.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 60
+		neutrality = 40
+		fascism = 0
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Lee Hsien Loong"
+		desc = "POLITICS_MA_YING-JEOU_DESC"
+		picture = "gfx/leaders/SIN/portrait_lee_hsien_loong.dds"
+		ideology = social_conservatism
+		traits = { trait_social_conservatism }
+	}
+}

@@ -1,0 +1,322 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+capital = 608
+
+add_ideas = {
+	#obsolete_army
+	overpopulation
+    nuclear_country
+    unsc_member
+	mixed_schools
+	major_country
+	NPT
+	CHI_population_control
+}
+
+1996.4.26 = {
+    add_ideas = sco_member
+}
+
+# Передача Гонконга
+1997.7.1 = {
+	 if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = HKG
+			autonomy_state = autonomous_area
+			freedom_level = 0.1
+		}
+		else = {
+			#CHI = { transfer_state = 326 }
+			326 = {	remove_core_of = ENG }
+			puppet = HKG
+		}
+	}
+}
+
+# Передача Макао
+1999.12.20 = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = MCU
+			autonomy_state = autonomous_area
+			freedom_level = 0.1
+		}
+		else = {
+			#CHI = { transfer_state = 729 }
+			729 = {	remove_core_of = POR }
+			puppet = MCU
+		}
+	 }
+}
+
+# первый саммит БРИК
+2009.6.16 = {
+    add_ideas = brics_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 960700 }
+
+	load_oob = "CHI_tech_2013"
+	oob = "CHI_2013"
+
+	# laws
+	add_ideas = {
+		single-party_state
+		unitary_state_with_devolution
+		state_atheism
+		cencored_media
+		limitation_of_liberties
+		mixed_army
+		tech_schools
+		restricted_immigration
+		mixed_economic
+		total_nationalization_of_industry
+		free_trade
+		
+		light_industry_focus
+		civilian_economy
+		low_taxes
+		middle_social_security
+		pensions # in 2009 year
+		chi_li_keqiang_hog
+		chi_chang_wanquan_defm
+		chi_wang_yi_fgm
+		chi_ma_kai_ecm
+		chi_guo_shengkun_ssch
+		chi_xu_qiliang_chogs
+		chi_geng_huichang_isch
+		chi_fang_fenghui_chogf
+		chi_wu_sengli_chonf
+		chi_ma_xiaotian_choaf
+		average_terrorism
+	}
+
+	create_import = {
+		resource = enr_uran
+		factories = 4
+		exporter = RUS
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+	create_intelligence_agency = yes
+	
+	set_country_flag = pai_nondem_totalitarian
+	set_politics = {
+		ruling_party = communism
+		last_election = "2004.1.1"
+		election_frequency = 72
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		communism = 85
+		reformism = 2
+		liberalism = 2
+		democratic = 3
+		neutrality = 4
+		fascism = 4
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Xi Jinping"
+		desc = "POLITICS_MAO_ZEDONG_DESC"
+		picture = "gfx/leaders/CHI/portrait_xi_jinping.dds"
+		ideology = china_socialism
+		traits = { trait_china_socialism }
+	}
+
+	create_country_leader = {
+		name = "Wan Exiang"
+		desc = "POLITICS_WAN_EXIANG_DESC"
+		picture = "gfx/leaders/CHI/portrait_wan_exiang.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ma Ying-jeou"
+		desc = "POLITICS_MA_YING_JEOU_DESC"
+		picture = "gfx/leaders/CHI/portrait_ma_ying_jeou.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Wang Youcai"
+		desc = "POLITICS_WANG_YOUCAI_DESC"
+		picture = "gfx/leaders/CHI/portrait_wang_youcai.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Zhang Baowen"
+		desc = "POLITICS_ZHANG_BAOWEN_DESC"
+		picture = "gfx/leaders/CHI/portrait_zhang_baowen.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Wang Xiaodong"
+		desc = "POLITICS_WANG_XIAODONG_DESC"
+		picture = "gfx/leaders/CHI/portrait_wang_xiaodong.dds"
+		ideology = national_democracy
+		traits = { trait_national_democracy }
+	}
+
+
+	create_field_marshal = {
+		name = "Zhang Shibo"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_zhang_shibo.dds"
+		traits = { defensive_doctrine }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_field_marshal = {
+		name = "Wei Fenghe"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_wei_fenghe.dds"
+		traits = { }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_field_marshal = {
+		name = "Chen Bingde"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_chen_bingde.dds"
+		traits = { old_guard panzer_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Liang Guanglie"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_liang_guanglie.dds"
+		traits = { trickster }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Ma Xiaotian"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_ma_xiaotian.dds"
+		traits = { ranger }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Xu Caihou"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_general_xu_caihou.dds"
+		traits = { ambusher }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Chang Wanquan"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_chang_wanquan.dds"
+		traits = { trait_engineer old_guard }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Fang Fenghui"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_fang_fenghui.dds"
+		traits = { commando old_guard }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Li Xianyu"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_li_xianyu.dds"
+		traits = { fast_planner }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Fan Changlong"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_fan_changlong.dds"
+		traits = { old_guard panzer_leader }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "Wei Fenghe"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_wei_fenghe.dds"
+		traits = { trickster panzer_leader desert_fox }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_navy_leader = {
+		name = "Du Jingchen"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_admiral_du_jingchen.dds"
+		traits = { }
+		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+	}
+
+	create_navy_leader = {
+		name = "Wu Shengli"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_admiral_wu_shengli.dds"
+		traits = { old_guard_navy }
+		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+	}
+}
+

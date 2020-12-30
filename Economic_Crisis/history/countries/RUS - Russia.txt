@@ -1,0 +1,1803 @@
+# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED POLITICS
+
+capital = 219
+
+add_opinion_modifier = { target = NKO modifier = RUS_eternal_enemy_modifier }
+
+add_ideas = {
+    nuclear_country
+    unsc_member
+	major_country
+	gaz_trader
+}
+
+1991.7.10 = {
+	# Ельцин
+	create_country_leader = {
+		name = "Boris Yeltsin" #Борис Ельцин
+		desc = "POLITICS_BORIS_YELTSIN_DESC"
+		picture = "gfx/leaders/RUS/portrait_boris_yeltsin.dds"
+		ideology = authoritarian_democracy #Беспартийный
+		expire = "1999.12.31" #подал в отставку
+		traits = { trait_authoritarian_democracy }
+	}
+}
+
+1991.12.23 = {
+    add_ideas = {
+		oil_spike
+		cis_member	
+		NPT
+	}
+}
+
+1992.5.15 = {
+    # crating CSTO (ОДКБ)
+	create_faction = CSTO
+	add_to_faction = RUS
+	add_to_faction = ARM
+	add_to_faction = TAJ
+	add_to_faction = KAZ
+	add_to_faction = KYR
+	add_to_faction = UZB
+	add_ideas = integration_in_csto
+}
+
+# ввод миротворцев в Осетию
+1992.7.14 = {
+	give_guarantee = SOS
+}
+
+# ввод миротворцев в ПНР
+1992.7.21 = {
+	give_guarantee = TMD
+
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+		set_autonomy = {
+			target = TMD
+			autonomy_state = satellite_state
+			freedom_level = 0.8
+		}
+		else = { puppet = TMD }
+	}
+	remove_from_faction = TMD
+}
+
+
+1993.9.9 = {
+	add_to_faction = GEO
+}
+
+1993.9.24 = {
+	add_to_faction = AZR
+}
+
+1993.12.31 = {
+	add_to_faction = BLR
+}
+
+1994.6.10 = {
+	add_ideas = bsec_member
+}
+
+# ввод миротворцев в Абхазию
+1994.6.23 = {
+	give_guarantee = ABZ
+}
+
+# Шанхайская пятерка
+1996.4.26 = {
+    add_ideas = sco_member
+}
+
+1999.4.2 = {
+	remove_from_faction = AZR
+	remove_from_faction = GEO
+	remove_from_faction = UZB
+}
+
+1999.12.31= {
+	# Путин
+	create_country_leader = {
+		name = "Vladimir Putin" #Владимир Путин
+		desc = "POLITICS_VLADIMIR_PUTIN_DESC"
+		picture = "gfx/leaders/RUS/portrait_vladimir_putin.dds"
+		ideology = authoritarian_democracy #Беспартийный
+		expire = "2008.3.2"
+		traits = { trait_authoritarian_democracy }
+	}
+}
+
+2000.1.1 = {
+    add_ideas = RUS_towers_kreml
+}
+
+2000.11.20 = {
+	add_ideas = support_cis_2_member
+}
+
+2006.8.16 = {
+	add_to_faction = UZB
+}
+
+2008.3.2 = {
+	# Медведев
+	create_country_leader = {
+		name = "Dmitry Medvedev" #Дмитрий Медведев
+		desc = "POLITICS_DMITRY_MEDVEDEV_DESC"
+		picture = "gfx/leaders/RUS/portrait_dmitry_medvedev.dds"
+		ideology = sovereign_democracy #Единая Россия
+		expire = "2012.3.4"
+		traits = { trait_sovereign_democracy }
+	}
+}
+
+# первый саммит БРИК
+2009.6.16 = {
+    add_ideas = brics_member
+}
+
+2012.3.4 = {
+	# Путин 
+	create_country_leader = {
+		name = "Vladimir Putin" #Владимир Путин
+		id = 100002
+		desc = "POLITICS_VLADIMIR_PUTIN_DESC"
+		picture = "gfx/leaders/RUS/portrait_vladimir_putin.dds"
+		ideology = sovereign_democracy #Единая Россия
+		traits = { sovereign }
+	}
+}
+
+2012.6.28 = {
+	remove_from_faction = UZB
+}
+
+# выводим из ОДКБ НКР
+2013.10.1 = {
+	remove_from_faction = NKR
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 223100 }
+
+	load_oob = "RUS_tech_2013" # tehnologies
+	oob = "RUS_2013" # army
+	# laws
+	add_ideas = {
+		semi-presidential_republic 
+		federation
+		preference_religion
+		mixed_media
+		suspended_liberties
+		mandatory_urgent_service
+		mixed_schools
+		open_immigration
+		mixed_economic
+		state-owned_enterprise
+		extractive_industries_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		RUS_Dmitriy_Medvedev_hog
+		RUS_Sergey_Shoygu
+		RUS_Sergey_Lavrov
+		RUS_Anton_Siluanov
+		RUS_Alexandr_Bortnikov
+		RUS_Valery_Gerasimov
+		RUS_mikhail_fradkov 
+		RUS_oleg_salyukov
+		RUS_Vladimir_Korolev
+		RUS_Victor_Bondarev
+		average_terrorism
+	}
+
+	create_intelligence_agency = yes
+	
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 50
+
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2012.3.18"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 20
+		reformism = 8
+		liberalism = 2
+		democratic = 5
+		neutrality = 55
+		fascism = 10
+		rad_islamists = 0
+	}
+	
+	#Остальные партии 
+
+	create_country_leader = {
+		name = "Eduard Limonov" #Эдуард Лимонов
+		desc = "POLITICS_EDUARD_LIMONOV_DESC"
+		picture = "gfx/leaders/RUS/portrait_eduard_limonov.dds"
+		ideology = national_communism #Национал-большевики
+		traits = { trait_national_communism }
+	}
+
+	create_country_leader = {
+		name = "Gennadiy Zyuganov" #Геннадий Зюганов
+		desc = "POLITICS_GENNADIY_ZYUGANOV_DESC"
+		picture = "gfx/leaders/RUS/portrait_gennadiy_zyuganov.dds"
+		ideology = leninism #КПРФ
+		traits = { trait_leninism }
+	}
+	
+	create_country_leader = {
+		name = "Vladimir Zhirinovskiy" #Владимир Жириновский
+		desc = "POLITICS_VLADIMIR_ZHIRINOVSKIY_DESC"
+		picture = "gfx/leaders/RUS/portrait_vladimir_djirinovskiy.dds"
+		ideology = national_populism #ЛДПР
+		traits = { trait_national_populism }
+	}
+
+	create_country_leader = {
+		name = "Sergey Mironov" #Сергей Миронов
+		desc = "POLITICS_SERGEY_MIRONOV_DESC"
+		picture = "gfx/leaders/RUS/Portrait_Sergey_Mironov.dds"
+		ideology = social_democracy #Справедливая Россия
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Grigoriy Yavlinskiy" #Григорий Явлинский
+		desc = "POLITICS_GRIGORIY_YAVLINSKIY_DESC"
+		picture = "gfx/leaders/RUS/portrait_gregory_yavlinskiy.dds"
+		ideology = social_liberalism #Яблоко
+		traits = { trait_social_liberalism }
+	}
+
+	create_country_leader = {
+		name = "Irina Prokhorova" #Ирина Прохорова 
+		desc = "POLITICS_IRINA_PROKHOROVA_DESC"
+		#expire = "2014.10.14"
+		picture = "gfx/leaders/RUS/portrait_irina_prokhorova.dds"
+		ideology = conservative_democracy #Гражданская инициатива 
+		traits = { trait_conservative_democracy }
+	}
+
+	#create_country_leader = {
+	#	name = "Mikhail Kasyanov" #Михаил Касьянов
+	#	desc = "POLITICS_MIKHAIL_KASYANOV_DESC"
+	#	picture = "gfx/leaders/RUS/portrait_mikhail_kasyanov.dds"
+	#	ideology = conservative_liberalism #ПАРНАС
+	#	traits = { trait_conservative_liberalism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Alexey Navalny" #Алексей Навальный
+	#	desc = "POLITICS_ALEXEY_NAVALNY"
+	#	picture = "gfx/leaders/RUS/portrait_alexey_navalny.dds"
+	#	ideology = classical_liberalism #Партия прогресса
+	#	traits = { trait_classical_liberalism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Mikhail Khodorkovsky" #Михаил Ходорковский
+	#	id = 100003
+	#	desc = "POLITICS_MIKHAIL_KHODORKOVSKIY"
+    #   picture = "gfx/leaders/RUS/portrait_mikhail_khodorkovsky.dds"		
+	#   ideology = classical_liberalism #Открытая Россия
+	#   traits = { trait_classical_liberalism }
+	#}
+
+	#create_country_leader = {
+	#	name = "Eduard Limonov" #Эдуард Лимонов
+	#	desc = "POLITICS_EDUARD_LIMONOV_DESC"
+	#	picture = "gfx/leaders/RUS/portrait_eduard_limonov.dds"
+	#	ideology = national_communism #НБП; Другая Россия
+	#	traits = { trait_national_communism }
+	#}
+	
+	# кандидат на пост министра при становлении монархии, идеология - националист
+	#create_country_leader = {
+	#	name = "Dmitry Demushkin" #Дмитрий Дёмушкин
+	#	desc = "POLITICS_DMITRY_DEMUSHKIN_DESC"
+	#	picture = "gfx/leaders/RUS/portrait_dmitry_demushkin.dds"
+	#	ideology = national_socialism 
+	#	traits = { trait_national_socialism }
+	#}
+	# кандидат на пост министра при становлении монархии, национал-монархист
+	#create_country_leader = {
+	#	name = "Anton Bakov" #Антон Баков
+	#	desc = "POLITICS_ANTON_BAKOV_DESC"
+	#	picture = "gfx/leaders/RUS/portrait_anton_bakov.dds"
+	#	ideology = national_royalist #Монархическая партия России
+	#	traits = { trait_national_royalist }
+	#}
+
+	#Агенты, разведчики
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_operative_leader = {
+			name = "Aleksandr Petrov"
+			GFX = GFX_portrait_anatoliy_chepiga
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Ruslan Boshirov"
+			GFX = GFX_portrait_aleksandr_mishkin
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Andrey Bezrukov"
+			GFX = GFX_portrait_andrey_bezrukov
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Anna Chapman"
+			GFX = GFX_portrait_anna_chapman
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			female = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Edward Snowden"
+			GFX = GFX_portrait_edward_snowden
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS USA }
+		}
+		create_operative_leader = {
+			name = "Maria Butina"
+			GFX = GFX_portrait_maria_butina
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			female = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Vicky Peláez"
+			GFX = GFX_portrait_vicky_pelaez
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			female = yes
+			nationalities = { PRU }
+		}
+		create_operative_leader = {
+			name = "Aleksandr Aleksandrov"
+			GFX = GFX_portrait_aleksandr_aleksandrov
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS }
+		}
+		create_operative_leader = {
+			name = "Sergey Lebedev"
+			GFX = GFX_portrait_sergey_lebedev
+			traits = { }
+			bypass_recruitment = no
+			available_to_spy_master = yes
+			nationalities = { RUS }
+		}
+
+	}
+	
+    create_field_marshal = {
+  		name = "Sergey Shoygu"
+		id = 100001
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergey_shoygu.dds"
+  		traits = { organisational_leader offensive_doctrine }
+  		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+  	}
+	create_field_marshal = {
+		name = "Igor Sergun"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_igor_sergun.dds"
+		traits = { organisational_leader specops_commander_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+	create_field_marshal = {
+		name = "Igor Korobov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_igor_korobov.dds"
+		traits = { organisational_leader specops_commander_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+  	create_field_marshal = {
+  		name = "Valery Gerasimov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_valery_gerasimov.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_field_marshal = {
+  		name = "Oleg Martyanov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_oleg_martyanov.dds"
+  		traits = { specops_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Timur Ivanov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_ivanov_timur.dds"
+  		traits = { civilian_staff }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_field_marshal = {
+  		name = "Anatoly Sidorov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_anatoly_sidorov.dds"
+  		traits = { tanks_commander_expert }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_field_marshal = {
+		name = "Vladimir Shamanov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_shamanov.dds"
+		traits = { organisational_leader airborne_commander_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+	create_field_marshal = {
+		name = "Alexandr Lentsov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_lentsov.dds"
+		traits = { airborne_commander_1 }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Andrei Guschin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_guschin.dds"
+		traits = { marine_infantry_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Dmitriy Kraev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_dmitriy_kraev.dds"
+		traits = { marine_infantry_commander_expert }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Andrei Tretjyak"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_tretjyak.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Evgeni Nikiforov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_evgeni_nikiforov.dds"
+		traits = { mountaineer_infantry_commander  }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Alexandr Dvornikov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_dvornikov.dds"
+		traits = { mountaineer_infantry_commander assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+	create_field_marshal = {
+		name = "Nikolay Makarov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_nikolay_makarov.dds"
+		traits = { old_guard tanks_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Igor Seritskiy"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_igor_seritskiy.dds"
+		traits = { old_guard mechanized_infantry_commander assault_army_ops }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Sergei Istrakov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_istrakov.dds"
+		traits = { old_guard tanks_commander  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Andrei Gurulev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_gurulev.dds"
+		traits = { airborne_commander_1  }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Oleg Ostapenko"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_oleg_ostapenko.dds"
+		traits = { civilian_staff }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_field_marshal = {
+		name = "Ivan Buvaltsev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_ivan_buvaltsev.dds"
+		traits = { offensive_doctrine assault_army_ops }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Oleg Bezbabanov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_oleg_bezbabanov.dds"
+		traits = { assault_army_ops }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Alexandr Postnikov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_postnikov.dds"
+		traits = { offensive_doctrine motorized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Sergei Kuzovlev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_kuzovlev.dds"
+		traits = { defensive_doctrine motorized_infantry_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Andrei Serdyukov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_serdyukov.dds"
+		traits = { offensive_doctrine airborne_commander_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Viktor Astapov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_viktor_astapov.dds"
+		traits = { offensive_doctrine airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Nikolai Ignatov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_nikolai_ignatov.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Sergei Volyk"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_volyk.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Roman Breus"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_roman_breus.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Alexandr Zelin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_zelin.dds"
+		traits = { assault_army_ops_expert }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Sergei Surovkin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_surovkin.dds"
+		traits = { assault_army_ops mechanized_infantry_commander }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	 create_field_marshal = {
+		name = "Alexandr Galkin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_galkin.dds"
+		traits = { offensive_doctrine mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+   	 create_field_marshal = {
+		name = "Alexandr Peryazev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_peryazev.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+  	create_field_marshal = {
+  		name = "Arkady Bakhin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_arkady_bakhin.dds"
+  		traits = { old_guard motorized_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Andrei Shvaichenko"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_shvaichenko.dds"
+  		traits = { old_guard tanks_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Sergei Siver"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_siver.dds"
+  		traits = { old_guard defensive_doctrine artillery_commander_expert }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Valery Evtukhovich"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_valery_evtukhovich.dds"
+  		traits = { airborne_commander_expert }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Nikolay Pankov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_nikolay_pankov.dds"
+  		traits = { old_guard artillery_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Alexandr Fomin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_fomin.dds"
+  		traits = { mechanized_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_field_marshal = {
+  		name = "Yuri Borisov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_yuri_borisov.dds"
+  		traits = { civilian_staff }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_field_marshal = {
+  		name = "Ruslan Tsalikov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_ruslan_tsalikov.dds"
+  		traits = { civilian_staff }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_field_marshal = {
+		name = "Vladimir Zarudnitskiy"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_zarudnitskiy.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Vladimir Chirkin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_chirkin.dds"
+		traits = { tanks_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Nikolay Bogdanovskiy"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_nikolay_bogdanovskiy.dds"
+		traits = { mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Alexandr Zhuravlev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_zhuravlev.dds"
+		traits = { tanks_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}	
+	create_field_marshal = {
+		name = "Sergei Karakaev"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_karakaev.dds"
+		traits = { offensive_doctrine mechanized_infantry_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Yuri Sadovenko"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_yuri_sadovenko.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+   	#create_field_marshal = {
+	#	name = "Alexandr Kolpachenko"
+	#	portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_kolpachenko.dds"
+	#	traits = { marine_infantry_commander_expert arctic }
+	#	skill = 3
+	#}
+   	create_field_marshal = {
+		name = "Pavel Popov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_pavel_popov.dds"
+		traits = { tanks_commander_expert assault_army_ops_expert }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_field_marshal = {
+		name = "Oleg_Salyukov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_oleg_salyukov.dds"
+		traits = { tanks_commander_expert mechanized_infantry_commander assault_army_ops_expert }
+		skill = 4
+		logistics_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		attack_skill = 4
+	}
+	create_field_marshal = {
+		name = "Dmitriy Bulgakov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_dmitriy_bulgakov.dds"
+		traits = { tanks_commander }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Igor Sidorkevich"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_igor_sidorkevich.dds"
+		traits = { mp }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+   	create_field_marshal = {
+		name = "Sergei Batyushkin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_batyushkin.dds"
+		traits = { mp }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_field_marshal = {
+		name = "Sergei Kanchukov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_kanchukov.dds"
+		traits = { mp }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_field_marshal = {
+		name = "Vladimir Ivanovskiy"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_ivanovskiy.dds"
+		traits = { mp }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+   	create_field_marshal = {
+  		name = "Tatyana Shevtsova"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_tatyana_shevtsova.dds"
+  		traits = { civilian_staff }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Igor Konashenkov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_igor_konashenkov.dds"
+		traits = { mountaineer_infantry_commander }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}	
+	create_corps_commander = {
+		name = "Gennadiy Anashkin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_gennadiy_anashkin.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Alexei Naumets"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexei_naumets.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Vladimir Kochetkov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_kochetkov.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Alexei Ragozin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexei_ragozin.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Alexandr Vyaznikov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_vyaznikov.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Dmitriy Glushenkov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_dmitriy_glushenkov.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Andrei Kholzakov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_kholzakov.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Nariman Timergazin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_nariman_timergazin.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Viktor Kupchishin"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_viktor_kupchishin.dds"
+		traits = { airborne_commander_1 }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+	create_corps_commander = {
+		name = "Alexandr Valitov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_valitov.dds"
+		traits = { airborne_commander_1 }
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+	}
+	create_corps_commander = {
+		name = "Vadim Pankov"
+		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vadim_pankov.dds"
+		traits = { airborne_commander_1 }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+	create_corps_commander = {
+  		name = "Alexandr_Gorin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_gorin.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_corps_commander = {
+  		name = "Alexandr Kartavkin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_kartavkin.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_corps_commander = {
+  		name = "Alexandr Zyuba"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_zyuba.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+	create_corps_commander = {
+  		name = "Alexei Maslov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexei_maslov.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Andrei Lazutkin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_lazutkin.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Dmitriy Uskov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_dmitriy_uskov.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Oleg Darzhapov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_oleg_darzhapov.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Sergei Sheiko"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_sheiko.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Sukhrab Akhmedov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sukhrab_akhmedov.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Valeriy Fedyanin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_valeriy_fedyanin.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Vasiliy Khomyak"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vasiliy_khomyak.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Vasiliy Kravtsov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vasiliy_kravtsov.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Viktor Vdovkin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_viktor_vdovkin.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Vladimir Belyavskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_belyavskiy.dds"
+  		traits = { marine_infantry_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Vladimir Kovalev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_kovalev.dds"
+  		traits = { mp }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Vladimir Zakharov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_vladimir_zakharov.dds"
+  		traits = { specops_commander }
+  		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+  	}
+	create_corps_commander = {
+  		name = "Yuri Shtodenko"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_yuri_shtodenko.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Mikhail Ugolev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_mikhail_ugolev.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Sergei Degtyarev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sergei_degtyarev.dds"
+  		traits = { old_guard specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Alexandr Shulishov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_alexandr_shulishov.dds"
+  		traits = { old_guard specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Andrei Khoptyar"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_khoptyar.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Arsalan Irinchinov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_arsalan_irinchinov.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_corps_commander = {
+  		name = "Andrei Gorlov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_andrei_gorlov.dds"
+  		traits = { specops_commander }
+  		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+  	}
+	create_field_marshal = {
+  		name = "Callsign BadBoy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_general_sso.dds"
+  		traits = { sso }
+  		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+  	}
+###NAVY_LEADER
+    create_navy_leader = {
+  		name = "Vladimir Korolev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_korolev.dds"
+  		traits = { submarine_fleet_commander_expert old_guard_navy }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	} 
+  	create_navy_leader = {
+  		name = "Victor Chirkov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_victor_chirkov.dds"
+  		traits = { fleet_commander_expert superior_tactician }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	  create_navy_leader = {
+  		name = "Igor Mukhametshin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_igor_mukhametshin.dds"
+  		traits = { fleet_commander old_guard_navy superior_tactician }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+	create_navy_leader = {
+  		name = "Oleg Shastov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_oleg_shastov.dds"
+  		traits = { fleet_commander fly_swatter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Viktor_Kravchuk"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_viktor_kravchuk.dds"
+  		traits = { old_guard_navy fly_swatter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Nikolay Maximov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_nikolay_maximov.dds"
+  		traits = { old_guard_navy superior_tactician spotter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Viktor Liina"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_viktor_liina.dds"
+  		traits = { carrier_anti_air_support }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+	create_navy_leader = {
+  		name = "Sergei Pinchuk"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_pinchuk.dds"
+  		traits = { superior_tactician spotter ironside }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Igor Osipov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_igor_osipov.dds"
+  		traits = { superior_tactician spotter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+   	create_navy_leader = {
+  		name = "Alexandr Scherbitskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_scherbitskiy.dds"
+  		traits = { superior_tactician spotter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+   	create_navy_leader = {
+  		name = "Igor Smolyak"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_igor_smolyak.dds"
+  		traits = { carrier_anti_fleet_support }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+    create_navy_leader = {
+  		name = "Alexandr Vitko"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_vitko.dds"
+  		traits = { fleet_commander_expert superior_tactician spotter }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+   create_navy_leader = {
+  		name = "Alexandr Fedotenkov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_fedotenkov.dds"
+  		traits = { submarine_fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Alexandr Grinkevich"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_grinkevich.dds"
+  		traits = { fleet_commander spotter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Yuri Zemskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_yuri_zemskiy.dds"
+  		traits = { fleet_commander superior_tactician spotter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Vyacheslav Rodionov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vyacheslav_rodionov.dds"
+  		traits = { fleet_commander spotter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+ 	create_navy_leader = {
+  		name = "Viktor Mardusin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_viktor_mardusin.dds"
+  		traits = { fleet_commander old_guard_navy }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+    create_navy_leader = {
+  		name = "Sergei Kozlov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_kozlov.dds"
+  		traits = { fleet_commander fly_swatter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Sergei Popov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_popov.dds"
+  		traits = { fleet_commander superior_tactician }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Andrei Volozhinskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_andrei_volozhinskiy.dds"
+  		traits = { submarine_fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Alexandr Nosatov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_nosatov.dds"
+  		traits = { submarine_fleet_commander_expert }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+	create_navy_leader = {
+  		name = "Alexandr Tatarinov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_tatarinov.dds"
+  		traits = { submarine_fleet_commander_expert }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+	create_navy_leader = {
+  		name = "Nikolai Evmenov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_nikolai_evmenov.dds"
+  		traits = { fleet_commander }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Vladimir Yakushev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_yakushev.dds"
+  		traits = { superior_tactician spotter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Sergei Avakyantz"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_avakyantz.dds"
+  		traits = { fleet_commander_expert }
+  		skill = 3
+		coordination_skill = 3
+		defense_skill = 3
+		maneuvering_skill = 3
+		attack_skill = 3
+  	}
+	create_navy_leader = {
+  		name = "Pavel Yasnitskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_pavel_yasnitskiy.dds"
+  		traits = { fly_swatter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Vladimir Belkov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_belkov.dds"
+  		traits = { fly_swatter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Sergei Artamonov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_artamonov.dds"
+  		traits = { carrier_close_air_support }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Valeriy Khorun"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_valeriy_khorun.dds"
+  		traits = { submarine_fleet_commander spotter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Sergei Tornev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_sergei_tornev.dds"
+  		traits = { submarine_fleet_commander spotter }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Felix Menkov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_felix_menkov.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Vladislav Malakhovskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladislav_malakhovskiy.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Oleg Krivorog"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_oleg_krivorog.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Dmitriy Vasilchuk"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_dmitriy_vasilchuk.dds"
+  		traits = {  }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Alexandr Shvartz"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_shvartz.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Vladimir Shigin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_shigin.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Oleg Zhuravlev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_oleg_zhuravlev.dds"
+  		traits = {  }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Vladimir Tryapichnikov"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_tryapichnikov.dds"
+  		traits = { fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Denis Semjyanskih"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_denis_semjyanskih.dds"
+  		traits = { submarine_fleet_commander }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Eduard Slepchenko"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_eduard_slepchenko.dds"
+  		traits = { fleet_commander superior_tactician }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Anatoliy Zelenskiy"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_anatoliy_zelenskiy.dds"
+  		traits = {  }
+  		skill = 1
+		coordination_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		attack_skill = 1
+  	}
+	create_navy_leader = {
+  		name = "Vladimir Grishechkin"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vladimir_grishechkin.dds"
+  		traits = { submarine_fleet_commander }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Oleg Golubev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_oleg_golubev.dds"
+  		traits = { fleet_commander superior_tactician }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Vadim Kulit"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_vadim_kulit.dds"
+  		traits = { fleet_commander spotter }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+	create_navy_leader = {
+  		name = "Alexandr Moiseev"
+  		portrait_path = "gfx/leaders/RUS/portrait_rus_admiral_alexandr_moiseev.dds"
+  		traits = { fleet_commander superior_tactician }
+  		skill = 2
+		coordination_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		attack_skill = 2
+  	}
+}
+2013.11.1 = {
+	# Diplomacy - марионетки и зоны влияия для аддона и без него
+	if = {
+		limit = {
+			OR = {
+				has_dlc = "Together for Victory"
+				has_dlc = "Man the Guns"
+			}
+		}
+			set_autonomy = {
+				target = ABZ
+				autonomy_state = satellite_state
+				freedom_level = 0.8
+			}
+
+			set_autonomy = {
+				target = SOS
+				autonomy_state = satellite_state
+				freedom_level = 0.8
+			}
+		}
+		remove_from_faction = ABZ
+		remove_from_faction = SOS
+	if = {
+		limit = {
+			AND = {
+				NOT = { has_dlc = "Together for Victory" }
+				NOT = { has_dlc = "Man the Guns" }
+			}
+		}
+		puppet = ABZ
+		puppet = SOS
+	}
+}
+
+2014.3.18 = {
+	add_named_threat = {
+		threat = 9.1
+		name = threat_RUS_annexiation_of_crimea
+	}
+}

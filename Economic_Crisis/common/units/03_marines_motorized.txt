@@ -1,0 +1,75 @@
+sub_units = {
+
+	# base motorized infantry on trucks
+	marines_motorized = {
+	
+		sprite = marines_motorized
+		map_icon_category = infantry
+		
+		# helicopter_landing = yes
+		special_forces = yes
+		marines = yes
+		active = no
+		priority = 670
+		ai_priority = 200
+		
+		type = {
+			motorized
+		}
+		
+		group = marines_battalion
+		
+		categories = {
+			category_front_line
+			category_motorized
+			category_all_infantry
+			category_marines
+			category_wheeled
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 23
+		max_organisation = 70
+		default_morale = 0.4
+		manpower = 92 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 165
+		suppression = 1
+		weight = 0.65
+		supply_consumption = 0.07
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			truck_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = truck_equipment
+	
+		# Company (130 soldiers)
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			truck_equipment = 17
+			infantry_technical_means_equipment = 147
+		}
+		
+		marsh = {
+			attack = 0.25
+			movement = 0.5
+		}
+		river = {
+			attack = 0.3
+			movement = 0.3
+		}
+		amphibious = {
+			attack = 0.45
+			movement = 0.3
+		}
+	}
+}

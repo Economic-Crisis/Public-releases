@@ -1,0 +1,461 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Division Infanterie"		
+	# Represents: Division Infanterie (Series A and B), Div. d'Inf. Coloniale, 
+	#	Div. d'Inf. Nord-Africaine, Div. d'Inf. de Forteresse
+	# Difference is their equipment
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		#artillery = { x = 0 y = 0 } 	# Heavy Arty Regiment had 2x 155mm battalions
+	}
+}
+division_template = {
+	name = "Division Infanterie Motorisée"	# Division Infanterie Motorisée
+
+	regiments = {
+		light_motorized = { x = 0 y = 0 }
+		light_motorized = { x = 0 y = 1 }
+		light_motorized = { x = 0 y = 2 }
+		light_motorized = { x = 1 y = 0 }
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 2 y = 0 }
+		light_motorized = { x = 2 y = 1 }
+		light_motorized = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }      # recon_battalion Group consisted of 26 ACs + motorcycles
+		#artillery = { x = 0 y = 1 }  # Heavy Arty Regiment had 1x 155mm, 1x 105mm battalions
+	}
+}
+division_template = {
+	name = "Division d'Infanterie Alpine"	# Division d'Infanterie Alpine
+	# Note: trimmed to 3x Rgts w/ arty bn added, 1939
+
+	regiments = {
+		mountaineers_motorized = { x = 0 y = 0 }	# Regular mountain infantry (Infanterie Alpine)
+		mountaineers_motorized = { x = 0 y = 1 }
+		mountaineers_motorized = { x = 0 y = 2 }	
+		mountaineers_motorized = { x = 1 y = 0 }
+		mountaineers_motorized = { x = 1 y = 1 }
+		mountaineers_motorized = { x = 1 y = 2 }
+		mountaineers_motorized = { x = 2 y = 0 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers_motorized = { x = 2 y = 1 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers_motorized = { x = 2 y = 2 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers_motorized = { x = 3 y = 0 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers_motorized = { x = 3 y = 1 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers_motorized = { x = 3 y = 2 }	# Chasseurs Alpins (HOI3 elites)
+	}
+}
+division_template = {
+	name = "Division Legere Mecanique" 		# Division Légère Mécanique
+
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }		# Bn. of Hotchkiss, then Souma (Med.) tanks
+		main_battle_tank = { x = 0 y = 1 }		# Bn. of Hotchkiss tanks
+		light_motorized = { x = 1 y = 0 }			# Brigade of 2x Rgts., 2 Bns. each (later 1 Rgt. of 3x Bns.)
+		light_motorized = { x = 1 y = 1 }
+		light_motorized = { x = 1 y = 2 }
+		light_motorized = { x = 1 y = 3 }
+	}
+	support = {
+		recon_battalion = { x = 0 y = 0 }      # recon_battalion Group consisted of 42 ACs + motorcycles
+	}
+}
+division_template = {
+	name = "Brigade de Chars de Combat" 	# Brigade de Chars de Combat, independent armor brigades of 2x Rgts., 2 Bns. each
+
+	regiments = {
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Brigade Coloniale"			# Represents: 2xRgt colonial forces and , usually with old equipment
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Brigade parachutiste"	
+	regiments = {
+	# 1st airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 2 }
+	# 2d airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 2 }
+	# 3d airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 2 }
+	# 1st Independend Recon Battalion
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 0 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 1 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 2 }
+	
+	}
+}
+
+division_template = {
+	name = "Anti Air Brigade"
+	regiments = {
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 0 y = 0 }
+		medium_self_propelled_aa_ml = { x = 0 y = 1 }
+		medium_self_propelled_aa_ml = { x = 0 y = 2 }
+	# 2nd battery
+		medium_self_propelled_aa_ml = { x = 1 y = 0 }
+		medium_self_propelled_aa_ml = { x = 1 y = 1 }
+		medium_self_propelled_aa_ml = { x = 1 y = 2 }	
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 2 y = 0 }
+		medium_self_propelled_aa_ml = { x = 2 y = 1 }
+		medium_self_propelled_aa_ml = { x = 2 y = 2 }
+	# 1st Anti Air Recon and Guard company
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+
+	}
+	support = {
+		 engineer_battalion = { x = 0 y = 0 }
+		 airborne_support_company = { x = 0 y = 1 }
+		 signal_company = { x = 0 y = 2 }
+		 recon_battalion = { x = 0 y = 3 }
+		 cbrn_defense_company = { x = 0 y = 4 }
+		 medical_company = { x = 0 y = 5 }
+		 electronic_warfare_company = { x = 0 y = 6 }
+		# uas_company = { x = 0 y = 7 }
+		 sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Light motorized special forces"
+
+	regiments = {
+		special_forces_light_motorized = { x = 0 y = 0 }
+		special_forces_light_motorized = { x = 0 y = 1 }
+		special_forces_light_motorized = { x = 0 y = 2 }
+		special_forces_light_motorized = { x = 0 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Troupes de marine"
+	
+	regiments = {
+	# 1st Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	}
+
+}
+
+##### OOB #####
+units = {
+	##### Northern France Region #####
+	# VIe Corps d'Armée (Région Militaire in 1936) -- Metz
+	division= {	
+		name = "42ème Division d'Infanterie"
+		location = 11502
+		division_template = "Division Infanterie" 	# Frontline, best equipment
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "2ème Div. d'Inf. Nord-Africaine"
+		location = 5291
+		division_template = "Division Infanterie" 	# Second line, reserve equipment
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+
+	# Xe Corps d'Armée (Région Militaire in 1936) -- Strassbourg
+	division= {	
+		name = "20ème Division d'Infanterie"
+		location = 9503
+		division_template = "Division Infanterie" 	# Second line, reserve equipment
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "43ème Division d'Infanterie"
+		location = 6529
+		division_template = "Division Infanterie" 	# Frontline, best equipment
+		start_experience_factor = 0.3
+	}
+
+	# XIIe Corps d'Armée (Région Militaire in 1936) -- Reims
+	division= {	
+		name = "12ème Div. d'Infanterie Motorisée"
+		location = 9472
+		division_template = "Division Infanterie Motorisée" 	# All motorized are frontline, best equipment
+		start_experience_factor = 0.3
+	}
+
+	# IVe Corps d'Armée (Région Militaire in 1936) -- Le Mans
+	division= {	
+		name = "19ème Division d'Infanterie"
+		location = 3509
+		division_template = "Division Infanterie" 	# Frontline, best equipment
+		start_experience_factor = 0.3
+	}
+
+	# Ve Corps d'Armée (Région Militaire in 1936) -- Orleans
+	division= {	
+		name = "9ème Div. d'Infanterie Motorisée"
+		location = 3509
+		division_template = "Division Infanterie Motorisée" 	# All motorized are frontline, best equipment
+		start_experience_factor = 0.3
+	}
+
+	# Région Militaire de Paris -- Paris
+	division= {	
+		name = "16ème Division d'Infanterie"
+		location = 11506
+		division_template = "Division Infanterie" 	# Second line, reserve equipment
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	
+
+	# Maginot Line -- Divisions d'Forteresse
+	division= {	
+		name = "Longuyon Div. d'Inf. de Forteresse"
+		location = 5291
+		division_template = "Brigade Coloniale" 	# Garrison unit, reserve equipment
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "Metz Div. d'Inf. de Forteresse"
+		location = 11502
+		division_template = "Brigade Coloniale" 	# Garrison unit, reserve equipment
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "Sarreguimines Div. d'Inf. de Forteresse"
+		location = 3629
+		division_template = "Brigade Coloniale" 	# Garrison unit, reserve equipment
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "Strassbourg Div. d'Inf. de Forteresse"
+		location = 9503
+		division_template = "Brigade Coloniale" 	# Garrison unit, reserve equipment
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		name = "Mulhouse Div. d'Inf. de Forteresse"
+		location = 678
+		division_template = "Brigade Coloniale" 	# Garrison unit, reserve equipment
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+
+	}
+
+	### Southern France Region
+	# XIIIe Corps d'Armée (Région Militaire in 1936) -- Clermont-Ferrand
+	division= {	
+		name = "4ème Division d'Infanterie"
+		location = 11576
+		division_template = "Division Infanterie" 	# Second line, reserve equipment
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "25ème Div. d'Infanterie Motorisée"
+		location = 11576
+		division_template = "Division Infanterie Motorisée" 	# All motorized are frontline, best equipment
+		start_experience_factor = 0.3
+	}
+	
+	division= {	
+		name = "11e brigade parachutiste"
+		location = 752
+		division_template = "Brigade parachutiste" 	
+		start_experience_factor = 0.8
+	}
+	
+	division= {	
+		name = "1er régiment étranger de génie"
+		location = 3762
+		division_template = "Anti Air Brigade" 	
+		start_experience_factor = 0.5
+	}
+	
+	division= {	
+		name = "1re division blindée"
+		location = 9631
+		division_template = "Brigade de Chars de Combat" 	
+		start_experience_factor = 0.5
+	}
+	
+	division= {	
+		name = "Groupe d'Intervention de la Gendarmerie Nationale"
+		location = 764
+		division_template = "Light motorized special forces" 	
+		start_experience_factor = 1.0
+	}
+	
+	division= {	
+		name = "9e brigade d'infanterie de marine"
+		location = 3915
+		division_template = "Troupes de marine" 	
+		start_experience_factor = 0.8
+	}
+
+}
+
+### Air Wings
+air_wings = {
+	# Z.d'Op. Aériennes Nord -- Lille
+	29 = { 
+		# Groupement de Chasse 21 
+		# Groupement de Chasse 23
+		light_fighter_equipment_1 = {
+			owner = "FRA" 
+			amount = 192
+		}
+		# Groupement de Bombardment 6
+		# Groupement de Bombardment 9
+		attack_bomber_equipment_1 =  {
+			owner = "FRA" 
+			amount = 60
+		}
+	}
+
+	# Z.d'Op. Aériennes Est -- Reims
+	18 = {
+		# Groupement de Chasse 22
+		light_fighter_equipment_1 = {
+			owner = "FRA" 
+			amount = 96
+		}
+		naval_fighter_equipment_1 = {
+			owner = "FRA" 
+			amount = 20
+		}
+	}
+
+	# Z.d'Op. Aériennes du Alps -- Marseille
+	21 = {
+		# Groupement de Chasse d'Alps
+		light_fighter_equipment_1 = {
+			owner = "FRA" 
+			amount = 96
+		}
+		# Groupement de Bombardment 1
+		# Groupement de Bombardment 6
+		# Groupement de Bombardment 9
+		attack_bomber_equipment_1 =  {
+			owner = "FRA" 
+			amount = 90
+		}
+		# Groupement de Bombardment d'Assault 19
+		attack_bomber_equipment_1 =  {
+			owner = "FRA" 
+			amount = 24
+		}
+	}
+
+	# Z.d'Op. Aériennes Africain -- Tunis
+	458 = {
+		# Groupement de Chasse du Nord-Africain
+		
+		light_fighter_equipment_1 = {
+			owner = "FRA" 
+			amount = 30
+		}
+		# Groupement de Bombardment du Nord-Africain
+		attack_bomber_equipment_1 =  {
+			owner = "FRA" 
+			amount = 20
+		}
+	}
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = army_salw_equipment_1
+			creator = "FRA"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "FRA" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = apc_tracked_g1_equipment_0
+			creator = "FRA" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+}

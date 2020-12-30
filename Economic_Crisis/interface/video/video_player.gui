@@ -1,0 +1,154 @@
+### Browser position and size manipulation ###
+# Compact browser size -> Video_player.html video element width (width sets height according to aspect ratio).
+# Expanded browser size -> Browser gui element size.
+# Positions -> Browser PositionTypes setting the position of the browser container window.
+
+guiTypes = {
+	containerWindowType = {
+		name = "video_player_view"
+		orientation = UPPER_RIGHT
+		position = { x = -650 y = 200 }
+		fade_time = 500
+		fade_type = linear
+		moveable = yes
+
+		background = {
+			name = "Background"	
+			spriteType = "GFX_video_player_view_small_bg"
+		}
+
+		positionType = {
+			name = "force_large_threshold"
+			position = { x = 1920 y = 1080 }
+		}
+
+		positionType = {
+			name = "window_size_min"
+			position = { x = 504 y = 372 }
+		}
+		
+		positionType = {
+			name = "window_size_max"
+			position = { x = 821 y = 550 }
+		}
+		
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			position = { x = 22 y = 15 }
+			text = "TITLE"
+			maxWidth = 300
+			maxHeight = 30
+			alwaysTransparent = yes
+			format = left
+		}
+		
+		positionType = {
+			name = "title_pos_min"
+			position = { x = 22 y = 15 }
+		}
+		
+		positionType = {
+			name = "title_pos_max"
+			position = { x = 22 y = 15 }
+		}
+		
+		containerWindowType = { # MoveTo is not available for browser objects so this window is used to control the position in runtime instead.
+		name = "browser_container"
+		position = { x = 15 y = 54 } # Overridden by browser_pos_min/max
+		size = { width = 795 height = 447 }
+			browserType = {
+				name = "browser"
+				spriteType = "GFX_dummy_browser2"
+				size = { x = 809 y = 455 } # This value controls how big the "fullscreen" video player becomes
+			}
+		}
+		
+		positionType = {
+			name = "browser_pos_min"
+			position = { x = 15 y = 54 }
+		}
+		
+		positionType = {
+			name = "browser_pos_max"
+			position = { x = 15 y = 54 }
+		}
+		
+		positionType = {
+			name = "browser_size_min"
+			position = { x = 475 y = 267 }
+		}
+		
+		positionType = {
+			name = "browser_size_max"
+			position = { x = 795 y = 447 }
+		}
+		
+		instantTextBoxType = {
+			name = "error_text"
+			font = "cg_16b"
+			position = { x = 77 y = 162 }
+			text = "VIDEO_PLAYER_ERROR"
+			maxWidth = 350
+			maxHeight = 60
+			alwaysTransparent = yes
+			orientation = "CENTER"
+			format = center
+		}
+		
+		buttonType = {
+			name = "close_button"
+			quadTextureSprite = "GFX_closebutton"
+			position = { x = 465 y = 7 } # Overridden by close_button_pos_min/max
+			shortcut = "ESCAPE"
+			clicksound = click_close
+		}
+		
+		positionType = {
+			name = "close_button_pos_min"
+			position = { x = 465 y = 7 }
+		}
+		
+		positionType = {
+			name = "close_button_pos_max"
+			position = { x = 785 y = 7 }
+		}
+
+		instantTextBoxType = {
+			name = "do_not_show_again_label"
+			position = { x = 59 y = 333 } # Overridden by do_not_show_again_label_pos_min/max
+			font = "hoi_18mbs"
+			text = "VIDEO_DO_NOT_SHOW_AGAIN"
+			maxWidth = 300
+			maxHeight = 20
+			format = left
+		}
+		
+		positionType = {
+			name = "do_not_show_again_label_pos_min"
+			position = { x = 59 y = 333 }
+		}
+		
+		positionType = {
+			name = "do_not_show_again_label_pos_max"
+			position = { x = 59 y = 514 }
+		}
+
+		checkboxType = {
+			name = "do_not_show_again_checkbox"
+			position = { x = 22 y = 327 } # Overridden by do_not_show_again_checkbox_pos_min/max
+			quadTextureSprite ="GFX_generic_checkbox"
+			clicksound = click_checkbox
+		}
+		
+		positionType = {
+			name = "do_not_show_again_checkbox_pos_min"
+			position = { x = 22 y = 327 }
+		}
+		
+		positionType = {
+			name = "do_not_show_again_checkbox_pos_max"
+			position = { x = 22 y = 508 }
+		}
+	}
+}

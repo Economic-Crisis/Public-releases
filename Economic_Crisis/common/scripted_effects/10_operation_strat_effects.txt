@@ -1,0 +1,832 @@
+
+
+update_operation_ai = {
+	# old target is no longer relevant
+	if = {
+		limit = {
+			NOT = { check_variable = { generic_operation_target = 0 } }
+			var:generic_operation_target = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					is_ally_with = PREV
+				}
+			}
+		}
+		set_variable = { generic_operation_target = 0 }
+	}
+
+
+	# pick an operation target
+	get_highest_scored_country = {
+		scorer = ai_generic_operation_target_scorer
+		var = generic_operation_target
+	}
+	
+	# this variable will be our limiting factor for actually doing operations
+	
+	# check if we have any operatives that are captured
+	# find the captor so they can be rescued
+	set_temp_variable = { captor = 0 }
+	
+	every_operative = {
+		limit = { is_operative_captured = yes }
+		add_to_temp_variable = { min_needed_operative_for_operations = 1 }
+		if = {
+			limit = { check_variable = { captor = 0 } }
+			set_temp_variable = { captor = operative_captor }
+		}
+	}
+	set_variable = { rescue_operative_from = 0 }
+	if = {
+		limit = { NOT = { check_variable = { captor = 0 } } }
+		set_variable = { rescue_operative_from = captor } # used in ai strat generic_operation_ai_rescue
+		add_to_temp_variable = { min_needed_operative_for_operations = 2 }
+	}
+	
+	
+	# if we have too few of operatives clear operative target
+	set_temp_variable = { t = min_needed_operative_for_operations }
+	subtract_from_temp_variable = { t = 2 }
+	if = {
+		limit = { num_of_operatives < t }
+		set_variable = { generic_operation_target = 0 }
+	}
+	
+	if = {
+		# if found a target pick an operation
+		limit = { 
+			NOT = { check_variable = { generic_operation_target = 0 } }
+			# if we are already preparing for current one no need to recalc
+			OR = {
+				check_variable = { generic_operation_type_to_run = 0 }
+				NOT = { 
+					is_preparing_operation = {
+						target = var:generic_operation_target
+						operation = var:generic_operation_type_to_run
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = { 
+				num_of_operatives > min_needed_operative_for_operations
+			}
+			
+			# these two arrays are filled with operation tokens and corresponding score
+			clear_temp_array = operation_types
+			clear_temp_array = operation_types_scores
+			
+			# civilian infiltration
+			set_temp_variable = { score = 100 }
+			add_to_temp_array = { operation_types = token:operation_infiltrate_civilian }
+			add_to_temp_array = { operation_types_scores = score }
+			
+			# army infiltration
+			set_temp_variable = { score = 50 }
+			add_to_temp_variable = { score = num_armies }
+			clamp_temp_variable = { var = score max = 180 }
+			add_to_temp_array = { operation_types = token:operation_infiltrate_armed_forces_army }
+			add_to_temp_array = { operation_types_scores = score }
+			
+			# air infiltration
+			set_temp_variable = { score = 50 }
+			add_to_temp_variable = { t = num_deployed_planes }
+			divide_temp_variable = { t = 10 }
+			add_to_temp_variable = { score = t }
+			clamp_temp_variable = { var = score max = 180 }
+			add_to_temp_array = { operation_types = token:operation_infiltrate_armed_forces_airforce }
+			add_to_temp_array = { operation_types_scores = score }
+			
+			# navy infiltration
+			var:generic_operation_target = {
+				if = {
+					limit = { 
+						has_navy_size = { size > 0 } 
+						PREV = {
+							has_navy_size = { size > 0 } 
+						}
+					}
+					set_temp_variable = { score = num_ships }
+					
+					set_temp_variable = { t = num_ships_with_type@cruiser_carrier }
+					set_temp_variable = { t = num_ships_with_type@cruiser_carrier_nr }
+					set_temp_variable = { t = num_ships_with_type@light_carrier }
+					set_temp_variable = { t = num_ships_with_type@light_carrier_nr }
+					set_temp_variable = { t = num_ships_with_type@heavy_carrier }
+					set_temp_variable = { t = num_ships_with_type@heavy_carrier_nr }
+					multiply_temp_variable = { t = 20 }
+					add_to_temp_variable = { score = t }
+					
+					set_temp_variable = { t = num_ships_with_type@capital }
+					multiply_temp_variable = { t = 10 }
+					add_to_temp_variable = { score = t }
+					
+					clamp_temp_variable = { var = score max = 180 }
+					
+					add_to_temp_array = { operation_types = token:operation_infiltrate_armed_forces_navy }
+					add_to_temp_array = { operation_types_scores = score }
+				}
+			}
+			
+			# get token for boost resistance
+			var:generic_operation_target = {
+				# only do on fascist
+				if = {
+					limit = { 
+						PREV = {
+							NOT = {
+								has_operation_token = {
+									tag = var:generic_operation_target
+									token = token_resistance_contacts
+								}
+							}
+						}
+						has_government = fascism
+						check_variable = { occupied_countries^num > 0 }
+						has_added_tension_amount > 20
+					}
+					
+					# ~number of occupied_states
+					set_temp_variable = { t = 1 }
+					add_to_temp_variable = { t = num_controlled_states }
+					subtract_from_temp_variable = { t = num_owned_states }
+					clamp_temp_variable = { var = t min = 1 }
+					
+					set_temp_variable = { score = t }
+					multiply_temp_variable = { score = 15 }
+					add_to_temp_variable = { score = 50 }
+					clamp_temp_variable = { var = score max = 200 }
+					
+					add_to_temp_array = { operation_types = token:operation_make_resistance_contacts }
+					add_to_temp_array = { operation_types_scores = score }
+				}
+			}
+			# boost resistance
+			if = {
+				limit = { 
+					has_operation_token = {
+						tag = var:generic_operation_target
+						token = token_resistance_contacts
+					}
+				}
+			
+				add_to_temp_array = { operation_types = token:operation_boost_resistance }
+				add_to_temp_array = { operation_types_scores = 1000 }
+			}
+			
+			for_each_loop = {
+				array = operation_types
+				
+				# randomization by half
+				set_temp_variable = { t = random }
+				multiply_temp_variable = { t = 0.5 }
+				add_to_temp_variable = { t = 0.5 }
+				multiply_temp_variable = { operation_types_scores^i = t }
+				
+				if = {
+					limit = {
+						num_finished_operations = {
+							target = var:generic_operation_target
+							operation = var:v
+							value > 0
+						}
+						
+						# lower score if we have a finished operation
+						multiply_temp_variable = { operation_types_scores^i = 0.5 }
+								
+						# cancel if more than 1 is executed
+						if = {
+							limit = {
+								num_finished_operations = {
+									target = var:generic_operation_target
+									operation = var:v
+									value > 1
+								}
+								
+								set_temp_variable = { operation_types_scores^i = -1 }
+							}
+						}
+					}
+				}
+			}
+			
+			# highest score will be selected
+			find_highest_in_array = {
+				array = operation_types_scores
+			}
+			if = {
+				limit = { check_variable = { v > 0 } }
+				set_variable = { generic_operation_type_to_run = operation_types^i } # used in ai strat generic_operation_ai
+			}
+		}
+		else =
+		{
+			set_variable = { generic_operation_type_to_run = 0 }
+		}
+	}
+}
+
+replace_civ_with_arms_factories = {	
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+	
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+
+	random_owned_controlled_state = {
+		limit = {
+			is_fully_controlled_by = ROOT
+			industrial_complex > 0
+		}
+		remove_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+
+#Country scope
+ROOT_inherit_current_scope_wars_effect = {
+	custom_effect_tooltip = ROOT_inherit_current_scope_wars_effect
+	hidden_effect = {	
+		every_country = {
+			limit = {
+				has_defensive_war_with = PREV
+			}
+			ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+		}
+		every_country = {
+			limit = {
+				has_offensive_war_with = PREV
+			}
+			declare_war_on = { target = ROOT type = annex_everything }
+		}
+	}
+}
+
+# Add AI strategies in case of Central European Alliance
+GER_democratic_nations_ai_strategies = {
+}
+
+print_variable_log_effect = {
+	print_variables = {
+		file = variables_yug
+		append = yes
+	}
+}
+
+get_best_alliance_match_democratic_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
+	if = {
+		limit = {
+			any_other_country = {
+				is_faction_leader = yes
+				is_major = yes
+				has_government = democratic
+				not = { has_war_with = ROOT }
+				set_temp_variable = { ROOT.best_leader = this }
+				set_temp_variable = { ROOT.best_leader_score = 0 }
+			}
+		}
+	}
+	if = {
+		limit = {
+			all_other_country = {
+				is_faction_leader = yes
+				is_major = yes
+				has_government = democratic
+				not = { has_war_with = ROOT }
+				set_temp_variable = { this.leader_score = num_of_factories }
+				add_to_temp_variable = { this.leader_score = num_battalions }
+				all_of_scopes = {
+					array = allies
+					add_to_temp_variable = { PREV.leader_score = num_of_factories }
+					add_to_temp_variable = { PREV.leader_score = num_battalions }
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							is_on_continent = ROOT
+						}
+					}
+					multiply_temp_variable = { leader_score = 2 }
+				}
+				if = {
+					limit = {
+						any_neighbor_country = { tag = ROOT }
+					}
+					multiply_temp_variable = { leader_score = 1.25 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.best_leader_score < leader_score }
+						set_temp_variable = { ROOT.best_leader = this }
+						set_temp_variable = { ROOT.best_leader_score = leader_score }
+					}
+				}
+			}
+		}
+	}		
+}
+
+get_best_alliance_match_fascism_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
+	if = {
+		limit = {
+			any_other_country = {
+				is_faction_leader = yes
+				is_major = yes
+				has_government = fascism
+				not = { has_war_with = ROOT }
+				set_temp_variable = { ROOT.best_leader = this }
+				set_temp_variable = { ROOT.best_leader_score = 0 }
+			}
+		}
+	}
+	if = {
+		limit = {
+			all_other_country = {
+				
+				is_faction_leader = yes
+				is_major = yes
+				has_government = fascism
+				not = { has_war_with = ROOT }
+				
+				set_temp_variable = { this.leader_score = num_of_factories }
+				add_to_temp_variable = { this.leader_score = num_battalions }
+				all_of_scopes = {
+					array = allies
+					add_to_temp_variable = { PREV.leader_score = num_of_factories }
+					add_to_temp_variable = { PREV.leader_score = num_battalions }
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							is_on_continent = ROOT
+						}
+					}
+					multiply_temp_variable = { this.leader_score = 2 }
+				}
+				if = {
+					limit = {
+						any_neighbor_country = { tag = ROOT }
+					}
+					multiply_temp_variable = { this.leader_score = 1.25 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.best_leader_score < this.leader_score }
+					}
+					set_temp_variable = { ROOT.best_leader = this }
+					set_temp_variable = { ROOT.best_leader_score = this.leader_score }
+				}
+			}
+		}
+	}		
+}
+
+get_best_alliance_match_communism_effect = { #arguably a trigger, but it does stuff so we keep it in here. If this is your first time seeing this, welcome to my personal hell.
+	if = {
+		limit = {
+			any_other_country = {
+				is_faction_leader = yes
+				is_major = yes
+				has_government = communism
+				not = { has_war_with = ROOT }
+				set_temp_variable = { ROOT.best_leader = this }
+				set_temp_variable = { ROOT.best_leader_score = 0 }
+			}
+		}
+	}
+	if = {
+		limit = {
+			all_other_country = {
+				is_faction_leader = yes
+				is_major = yes
+				has_government = communism
+				not = { has_war_with = ROOT }
+				set_temp_variable = { this.leader_score = num_of_factories }
+				add_to_temp_variable = { this.leader_score = num_battalions }
+				all_of_scopes = {
+					array = allies
+					add_to_temp_variable = { PREV.leader_score = num_of_factories }
+					add_to_temp_variable = { PREV.leader_score = num_battalions }
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							is_on_continent = ROOT
+						}
+					}
+					multiply_temp_variable = { leader_score = 2 }
+				}
+				if = {
+					limit = {
+						any_neighbor_country = { tag = ROOT }
+					}
+					multiply_temp_variable = { leader_score = 1.25 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.best_leader_score < leader_score }
+						set_temp_variable = { ROOT.best_leader = this }
+						set_temp_variable = { ROOT.best_leader_score = leader_score }
+					}
+				}
+			}
+		}
+	}		
+}
+
+remove_naval_treaty_effect = {
+	if = {
+		limit = {
+			has_idea = MTG_naval_treaty_adherent
+		}
+		remove_ideas = MTG_naval_treaty_adherent
+	}
+	else_if = {
+		limit = {
+			has_idea = MTG_naval_treaty_cheating
+		}
+		remove_ideas = MTG_naval_treaty_cheating
+	}
+	else_if = {
+		limit = {
+			has_idea = MTG_naval_treaty_adherent_reduced
+		}
+		remove_ideas = MTG_naval_treaty_adherent_reduced
+	}
+	else_if = {
+		limit = {
+			has_idea = MTG_naval_treaty_cheating_reduced
+		}
+		remove_ideas = MTG_naval_treaty_cheating_reduced
+	}
+	set_country_flag = MTG_naval_treaty_abandoned
+}
+
+civil_war_anti_exploiter_punitive_action = {
+	# Anti-exploiter punitive brigades! BET YA DIDN'T SEE THAT COMING DID YA?!
+	if = {
+		limit = {
+			has_army_size = {
+			    size < 1
+			}
+		}
+		division_template = {
+			name = "Anti-Exploit Punitive Brigade"
+			priority = 1
+			division_names_group = ENG_MAR_01
+			is_locked = yes
+			regiments = {
+			#1st infantry battalion on tacked APC
+				mechanized_on_apc_tracked = { x = 0 y = 0 }
+				mechanized_on_apc_tracked = { x = 0 y = 1 }
+				mechanized_on_apc_tracked = { x = 0 y = 2 }
+				# mortar_with_truck = { x = 0 y = 3 }
+			# 2d infantry battalion on tacked APC
+				mechanized_on_apc_tracked = { x = 1 y = 0 }
+				mechanized_on_apc_tracked = { x = 1 y = 1 }
+				mechanized_on_apc_tracked = { x = 1 y = 2 }
+				# mortar_with_truck = { x = 1 y = 3 }
+			# 3d infantry battalion on tacked APC
+				mechanized_on_apc_tracked = { x = 2 y = 0 }
+				mechanized_on_apc_tracked = { x = 2 y = 1 }
+				mechanized_on_apc_tracked = { x = 2 y = 2 }
+				# mortar_with_truck = { x = 2 y = 3 }	
+			# 1st tank battalion
+				main_battle_tank = { x = 3 y = 0 }
+				main_battle_tank = { x = 3 y = 1 }
+				main_battle_tank = { x = 3 y = 2 }
+				main_battle_tank = { x = 3 y = 3 }
+			# 1st self-propelled howitzer division (artillery battalion)
+				self_propelled_howitzers = { x = 4 y = 0 }
+				self_propelled_howitzers = { x = 4 y = 1 }
+				self_propelled_howitzers = { x = 4 y = 2 }
+				mortars = { x = 4 y = 3 }
+			# 2d self-propelled howitzer division (artillery battalion)	
+				self_propelled_howitzers = { x = 5 y = 0 }
+				self_propelled_howitzers = { x = 5 y = 1 }
+				self_propelled_howitzers = { x = 5 y = 2 }
+				mortars = { x = 5 y = 3 }
+			# 1st anti-tank division (artillery battalion)	
+				mechanized_self_propelled_at_ml = { x = 6 y = 0 }
+				mechanized_self_propelled_at_ml = { x = 6 y = 1 }
+				mechanized_self_propelled_at_ml = { x = 6 y = 2 }
+				portable_at_ml = { x = 6 y = 3}
+			# 1st anti-air artillery division (artillery battalion)	
+				heavy_self_propelled_aag = { x = 7 y = 0 }
+				heavy_self_propelled_aag = { x = 7 y = 1 }
+				heavy_self_propelled_aag = { x = 7 y = 2 }
+				portable_aa_ml = { x = 7 y = 3 }
+				portable_aa_ml = { x = 7 y = 4 }
+				portable_aa_ml = { x = 7 y = 5 }
+			# 1st short-range surface-to-air missile division (artillery battalion)	
+				medium_self_propelled_aa_ml = { x = 8 y = 0 }
+				medium_self_propelled_aa_ml = { x = 8 y = 1 }
+				medium_self_propelled_aa_ml = { x = 8 y = 2 }
+			# 1st multiple rocket launcher division (artillery battalion)
+				rocket_artillery_sr = { x = 9 y = 0 }
+				rocket_artillery_sr = { x = 9 y = 1 }
+				rocket_artillery_sr = { x = 9 y = 2 }
+			}
+			support = {
+				engineer_battalion = { x = 0 y = 0 }
+				logistics_battalion = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				recon_battalion = { x = 0 y = 3 }
+				cbrn_defense_company = { x = 0 y = 5 }
+				medical_company = { x = 0 y = 6 }
+				electronic_warfare_company = { x = 0 y = 7 }
+				# uas_company = { x = 0 y = 8 }
+			}
+		}
+		random_state = {
+			limit = {
+				is_capital = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		random_state = {
+			limit = {
+				is_in_home_area = yes
+				is_fully_controlled_by = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "division_template = \"Anti-Exploit Punitive Brigade\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+	}
+}
+
+clear_sabotaged_resources_if_necesary = {
+	if = {
+		limit = {
+			not = {
+				has_dynamic_modifier = {
+					modifier = sabotaged_resources
+				}
+			}
+		}
+		
+		clear_variable = sabotaged_oil
+		clear_variable = sabotaged_uran
+		clear_variable = sabotaged_rare_earth_ore
+		clear_variable = sabotaged_alloy_ore
+		clear_variable = sabotaged_bauxite
+		clear_variable = sabotaged_iron_ore
+		clear_variable = sabotaged_energy_resource
+	}
+}
+
+remove_from_allowed_party = {
+	if = {
+		limit = { has_government = democratic }
+		set_temp_variable = { allowed_party_democratic = 0 }
+	}
+	else_if = {
+		limit = { has_government = fascism }
+		set_temp_variable = { allowed_party_fascism = 0 }
+	}
+	else_if = {
+		limit = { has_government = communism }
+		set_temp_variable = { allowed_party_communism = 0 }
+	}
+	else_if = {
+		limit = { has_government = neutrality }
+		set_temp_variable = { allowed_party_neutrality = 0 }
+	}
+	else_if = {
+		limit = { has_government = reformism }
+		set_temp_variable = { allowed_party_reformism = 0 }
+	}
+	else_if = {
+		limit = { has_government = liberalism }
+		set_temp_variable = { allowed_party_liberalism = 0 }
+	}
+	else_if = {
+		limit = { has_government = rad_islamists }
+		set_temp_variable = { allowed_party_rad_islamists = 0 }
+	}
+}
+
+#expectes a temp variable country_to_initiate which should contain original_tag to instantiate as a collabration government
+instantiate_collaboration_government = {
+	custom_effect_tooltip = compliance_80_effect_tooltip
+	hidden_effect = {
+		set_variable = { collaboration_formed@var:country_to_initiate = 1 }
+		
+		if = {
+			# if country_to_initiate does not exist, simply release it as a puppet
+			limit = { 
+				var:country_to_initiate = {
+					exists = no
+				}
+			}
+			var:country_to_initiate = { set_variable = { collaboration_formed_by = PREV } }
+			release_autonomy = {
+				target = country_to_initiate
+				autonomy_state = autonomy_collaboration_government
+				freedom_level = 0.5
+				release_non_owned_controlled = yes
+			}
+		}
+		else = {
+			# if country_to_initiate exists, create a dynamic country as our new puppet
+			
+			create_dynamic_country = {
+				original_tag = country_to_initiate
+			
+				set_variable = { collaboration_formed_by = PREV }
+				set_temp_variable = { new_country = this }
+				
+				PREV = {
+					every_controlled_state = {
+						limit = { occupied_country_tag = country_to_initiate }
+						
+						var:new_country = {
+							transfer_state = PREV
+						}
+					}
+					
+					puppet = new_country
+					
+					set_autonomy = {
+						target = new_country
+						autonomy_state = autonomy_collaboration_government
+						freedom_level = 0.5
+					}
+				}
+			}
+		}
+	}
+}
+
+abandon_colony_tag = {
+
+}
+
+
+on_daily = {
+
+}

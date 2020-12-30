@@ -1,0 +1,432 @@
+﻿#####################
+## Economic Crisis ##
+########################
+## Germany news events #
+########################
+## Written by Maxsim  ##
+########################
+
+add_namespace = gernews
+
+# Germany Strengthens EU
+news_event = {
+	id = gernews.1
+	title = gernews.1.t
+	desc = gernews.1.d
+	picture = GFX_event_flag_german_and_EU_news
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			tag = GER
+		}
+	}
+
+	option = {
+		name = gernews.1.a
+		trigger = {
+			has_idea = eu_member
+		}
+		effect_tooltip = {
+			add_political_power = 25
+			add_stability = 0.025
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			add_popularity = { ideology = reformism popularity = 0.05 }
+			add_popularity = { ideology = liberalism popularity = 0.05 }
+		}
+	}
+
+	option = {
+		name = gernews.1.b
+		trigger = {
+			NOT = {
+				has_idea = eu_member
+			}
+		}
+	}
+}
+
+# Germany Impacts on EU
+news_event = {
+	id = gernews.2
+	title = gernews.2.t
+	desc = gernews.2.d
+	picture = GFX_event_flag_german_and_EU_news
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.2.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.2.b
+		trigger = {
+			NOT = {
+				has_idea = eu_member
+			}
+		}
+	}
+
+	option = {
+		name = gernews.2.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany Leads EU
+news_event = {
+	id = gernews.3
+	title = gernews.3.t
+	desc = gernews.3.d
+	picture = GFX_event_germany_lead_EU
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.3.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.3.b
+		trigger = {
+			NOT = {
+				has_idea = eu_member
+			}
+		}
+	}
+
+	option = {
+		name = gernews.3.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany Strengthens Eurointegration
+news_event = {
+	id = gernews.4
+	title = gernews.4.t
+	desc = gernews.4.d
+	picture = GFX_event_germany_lead_EU
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.4.a
+		trigger = {
+			has_idea = eu_member
+		}
+	}
+
+	option = {
+		name = gernews.4.b
+		trigger = {
+			NOT = {
+				has_idea = eu_member
+			}
+		}
+	}
+}
+
+# United Europe
+news_event = {
+	id = gernews.5
+	title = gernews.5.t
+	desc = gernews.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.5.a
+		trigger = {
+			tag = GER
+		}
+	}
+
+	option = {
+		name = gernews.5.b
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+# Euroscepticism
+news_event = {
+	id = gernews.6
+	title = gernews.6.t
+	desc = gernews.6.d
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_idea = eu_member
+	}
+
+	option = {
+		name = gernews.6.a
+	}
+}
+
+# Germany Exists EU (Referendum)
+news_event = {
+	id = gernews.7
+	title = gernews.7.t
+	desc = gernews.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.7.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.7.b
+		trigger = {
+			NOT = { has_idea = eu_member }
+		}
+	}
+
+	option = {
+		name = gernews.7.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany Stays in EU
+news_event = {
+	id = gernews.8
+	title = gernews.8.t
+	desc = gernews.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.8.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.8.b
+		trigger = {
+			NOT = { has_idea = eu_member }
+		}
+	}
+
+	option = {
+		name = gernews.8.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany Stays in EU (New Referendum Declared)
+news_event = {
+	id = gernews.9
+	title = gernews.9.t
+	desc = gernews.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.9.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.9.b
+		trigger = {
+			NOT = { has_idea = eu_member }
+		}
+	}
+
+	option = {
+		name = gernews.9.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany Exits EU (no Referendum)
+news_event = {
+	id = gernews.10
+	title = gernews.10.t
+	desc = gernews.10.d
+	picture = GFX_event_germany_lead_EU
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.10.a
+		trigger = {
+			has_idea = eu_member
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.10.b
+		trigger = {
+			NOT = { has_idea = eu_member }
+		}
+	}
+
+	option = {
+		name = gernews.10.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany annexed Liechtenstein
+news_event = {
+	id = gernews.11
+	title = gernews.11.t
+	desc = gernews.11.d
+	picture = GFX_event_german_army1_news
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.11.a
+		trigger = {
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.11.b
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Germany annexed Luxembourg
+news_event = {
+	id = gernews.12
+	title = gernews.12.t
+	desc = gernews.12.d
+	picture = GFX_event_german_army2_news
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.12.a
+		trigger = {
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.12.b
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Civil war
+news_event = {
+	id = gernews.13
+	title = gernews.13.t
+	desc = gernews.13.d
+	picture = GFX_event_civilwar4_news
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.13.a
+		trigger = {
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.13.b
+		trigger = {
+			tag = GER
+		}
+	}
+}
+news_event = {
+	id = gernews.14
+	title = gernews.13.t
+	desc = gernews.13.d
+    picture = GFX_event_civilwar4_news
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.13.a
+		trigger = {
+			NOT = { tag = GER }
+		}
+	}
+
+	option = {
+		name = gernews.13.b
+		trigger = {
+			tag = GER
+		}
+	}
+}
+
+# Anchluss
+news_event = {
+	id = gernews.15
+	title = gernews.15.t
+	desc = gernews.15.d
+	picture = GFX_event_flag_AUS_news
+
+	is_triggered_only = yes
+
+	option = {
+		name = gernews.15.a
+		trigger = {
+			NOT = {
+				tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+
+	option = {
+		name = gernews.15.b
+		trigger = {
+			OR = {
+				tag = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+}

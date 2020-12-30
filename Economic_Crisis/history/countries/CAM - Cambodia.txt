@@ -1,0 +1,108 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED
+# NOT EDITED LEADERS 
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 845
+
+add_ideas = {
+	king_norodom_sihamoni
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 1545 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "CAM_2013"
+
+	add_ideas = {
+		asean_member
+		NPT
+		parliamentary_monarchy
+		unitary_state
+		state_religion
+		mixed_media
+		suspended_liberties
+		mixed_army
+		mixed_schools
+		attract_immigrants
+		mixed_economic
+		free_market
+		light_industry_focus
+		civilian_economy
+		normal_taxes
+		middle_social_security
+		pensions
+		terrorism_discounted
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.7.28" #parliament
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 10
+		reformism = 20
+		liberalism = 0
+		democratic = 10
+		neutrality = 60
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+		name = "Hun Sen" #премьер-министр
+		desc = "POLITICS_HUN_SEN_DESC"
+		picture = "gfx/leaders/CAM/portrait_hun_sen.dds"
+		ideology = authoritarian_democracy 
+		traits = { trait_authoritarian_democracy }
+	}
+
+	create_country_leader = {
+		name = "Norodom Ranariddh"
+		desc = ""
+		picture = "gfx/leaders/CAM/portrait_norodom_ranariddh.dds"
+		ideology = conservative_royalism
+		traits = { trait_conservative_royalism }
+	}
+
+	create_country_leader = {
+		name = "Sam Rainsy"
+		desc = ""
+		picture = "gfx/leaders/CAM/portrait_sam_rainsy.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Mam Sonando"
+		desc = ""
+		picture = "gfx/leaders/CAM/portrait_mam_sonando.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_corps_commander = {
+		name = "Tea Banh"
+		picture = "gfx/leaders/CAM/portrait_general_cam_tea_banh.dds"
+		skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Ke Kim Yanh"
+		picture = "gfx/leaders/CAM/portrait_general_cam_ke_kim_yanh.dds"
+		skill = 1
+	}
+	
+	create_navy_leader = {
+		name = "Tea Vinh"
+		picture = "gfx/leaders/CAM/portrait_admiral_cam_tea_vinh.dds"
+		skill = 1
+	}
+
+}
+

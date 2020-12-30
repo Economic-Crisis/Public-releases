@@ -1,0 +1,109 @@
+
+sabotaged_resources = { #Саботаж
+	remove_trigger = { 
+		has_resistance = no
+	}
+	
+	icon = GFX_modifiers_sabotaged_resource
+	
+	temporary_state_resource_oil = sabotaged_oil
+	temporary_state_resource_energy_resource = sabotaged_energy_resource
+	temporary_state_resource_iron_ore = sabotaged_iron_ore
+	temporary_state_resource_bauxite = sabotaged_bauxite
+	temporary_state_resource_alloy_ore = sabotaged_alloy_ore
+	temporary_state_resource_rare_earth_ore = sabotaged_rare_earth_ore
+	temporary_state_resource_uran = sabotaged_uran
+}
+
+autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_sabotaged_resource
+	
+	recruitable_population_factor = -0.5
+	local_building_slots_factor = -0.25
+	state_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+}
+
+semi_autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_sabotaged_resource
+	
+	local_building_slots_factor = -0.25
+	state_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+}
+
+radiation_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_radiation
+	
+	recruitable_population_factor = -1.0
+	local_building_slots_factor = -0.90
+	state_resources_factor = -0.80
+	state_production_speed_buildings_factor = -0.90
+	army_morale_factor = -0.8
+	army_speed_factor = -0.8
+	army_attack_factor = -0.8
+	army_defence_factor = -0.8
+	dig_in_speed_factor = -0.8
+	supply_consumption_factor = 0.3
+	experience_gain_army_factor = -0.5
+	experience_loss_factor = 0.3
+}
+
+religious_war = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_religious_war
+	
+	recruitable_population_factor = -0.3
+	local_building_slots_factor = -0.60
+	state_resources_factor = -0.30
+	state_production_speed_buildings_factor = -0.30
+	weekly_manpower = -1387
+}
+
+
+regional_emigration = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_regional_emigration
+	
+	weekly_manpower = -240
+}
+
+
+annex_territory = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_annex_territory
+	
+	
+}
+
+lifeless_territory = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_lifeless_territory
+	
+	weekly_manpower = -10000
+}
+antarctic_treaty = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_state_lifeless_territory
+	
+	local_building_slots_factor = -1.00
+	supply_consumption_factor = 0.3
+	army_morale_factor = -0.8
+	army_speed_factor = -0.8
+	army_attack_factor = -0.8
+	army_defence_factor = -0.8
+	dig_in_speed_factor = -0.8
+	experience_gain_army_factor = -0.5
+	experience_loss_factor = 0.3
+}

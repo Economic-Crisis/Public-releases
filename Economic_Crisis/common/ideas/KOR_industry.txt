@@ -1,0 +1,263 @@
+# Economic Crisis - only industry
+
+ideas = {
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		#DOOSAN тяжелая техника
+		DOOSAN = {
+
+			picture = DOOSAN
+			allowed = {
+				original_tag = KOR
+			}
+			
+			available = {
+				
+			}
+			
+			
+			research_bonus = {
+				armor = 0.1
+			}
+
+			cost = 750
+
+			traits = { modern_tank_manufacturer }
+
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		#Samsung Heavy Industries судостроение
+		Samsung_Heavy_Industries = {
+			
+			picture = Samsung_Heavy_Industries
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			available = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.12
+			}
+			
+			cost = 750
+			
+			traits = { naval_corporation }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		#KAI авиастроение
+		KAI = {
+			
+			picture = KAI
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			research_bonus = {
+				cat_fighter_tech = 0.10
+			}
+			
+			available = {
+				
+			}
+			
+			cost = 750
+			
+			traits = { 
+				light_aircraft_development
+			}
+			
+			modifier = {
+			}
+		}
+	}
+
+	###-Снаряжение пехоты и поддержки
+	materiel_manufacturer = {	
+		
+		designer = yes
+		
+		#S&T стрелковое вооружение
+		S_T = {
+			
+			#picture = S&T
+			allowed = {
+				original_tag = KOR
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 750
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#HANWHA артиллерийские системы и другое вооружение
+		HANWHA = {
+			
+			picture = HANWHA
+			allowed = {
+				original_tag = KOR
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+				infantry_weapons = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { infantry_equipment_development }
+			
+			modifier = {
+			}
+		}
+		
+		#Hyundai автомобилестроение
+		Hyundai = {
+			
+			picture = Hyundai
+			allowed = {
+				original_tag = KOR
+			}
+			
+			research_bonus = {
+				cat_light_utility_vehicle = 0.1
+				cat_truck_vehicle = 0.1
+			}
+			
+			cost = 750
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		#KIA автомобилестроение
+		KIA = {
+			
+			picture = KIA
+			allowed = {
+				original_tag = KOR
+			}
+			
+			research_bonus = {
+				cat_tracked_vehicle = 0.1
+			}
+			
+			cost = 900
+			
+			traits = { light_vehicle_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	industrial_concern = {
+		
+		#POSCO металлургия
+		POSCO = {
+
+			picture = POSCO
+			allowed = {
+				original_tag = KOR
+			}
+
+			research_bonus = {
+				industry = 0.14
+			}
+			cost = 900
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		#LG электроника
+		LG = {
+
+			picture = LG
+			allowed = {
+				original_tag = KOR
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#SAMSUNG электроника
+		SAMSUNG = {
+
+			picture = SAMSUNG
+			allowed = {
+				original_tag = KOR
+			}
+
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.1
+			}
+			cost = 900
+			traits = { electronics_concern_dev }
+
+			modifier = {
+			}
+		}
+		
+		#LOTTE продукты питания
+		LOTTE = {
+
+			picture = LOTTE
+			allowed = {
+				original_tag = KOR
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			cost = 750
+			traits = { industrial_concern_dev }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	}
+}	

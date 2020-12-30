@@ -1,0 +1,70 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+
+capital = 729
+
+# c 20 декабря 1999
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 5155 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	
+	add_political_power = 0
+	set_convoys = 30
+	create_intelligence_agency = yes
+		
+	add_ideas = {
+		presidential_republic
+		secular_state
+		free_media
+		respect_of_liberties
+		open_immigration
+		mixed_army
+		mixed_schools
+		civilian_economy
+		balanced_industry
+		middle_social_security
+		pensions
+		mixed_economic
+		
+	}
+	
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.9.15"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 10
+		liberalism = 15
+		democratic = 11
+		neutrality = 54
+		fascism = 5
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ho Iat Seng"
+		desc = "POLITICS_HO_IAT_SENG_DESC"
+		picture = "gfx/leaders/MCU/portrait_ho_iat_seng.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Fernando Chui"
+		desc = "POLITICS_FERNANDO_CHUI_DESC"
+		picture = "gfx/leaders/MCU/portrait_fernando_chui.dds"
+		ideology = centrist_democracy
+		expire = "2019.12.20"
+		traits = { trait_centrist_democracy }
+	}
+}
+

@@ -1,0 +1,76 @@
+# Economic Crisis edit for 0.7.4 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED POLITICS
+# NOT EDITED LAWS
+
+capital = 660
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 151 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "ABL_2013"
+
+	add_ideas = {
+		mixed_schools
+		dictatorship_state
+		not_recognized_country
+	}
+
+	set_convoys = 15
+	set_stability = 0.4
+	add_political_power = 0
+
+	set_country_flag = pai_nondem_totalitarian
+
+	declare_war_on = { target = CAR type = civil_war }
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2011.1.23"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 100
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Levy Yakete"
+		desc = "POLITICS_LEVY_YAKETE_DESC"
+		picture = "gfx/leaders/CAR/portrait_levy_yakete.dds"
+		ideology = junta
+		traits = { trait_junta }
+	}
+
+	create_corps_commander = {
+		name = "Joseph Zoundeiko"
+		portrait_path = "gfx/leaders/CAR/portrait_abl_general_joseph_zoundeiko.dds"
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+		traits = {}
+	}
+
+	create_corps_commander = {
+		name = "Noureddine Adam"
+		portrait_path = "gfx/leaders/CAR/portrait_abl_general_noureddine_adam.dds"
+		skill = 1
+		logistics_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		attack_skill = 1
+		traits = {}
+	}
+
+}

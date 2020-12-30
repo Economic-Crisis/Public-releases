@@ -1,0 +1,78 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+add_ideas = mixed_schools
+
+capital = 279
+
+set_country_flag = monroe_doctrine
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 27840 }
+
+	load_oob = "_tech_minor_2013"
+	oob = "CHL_2013"
+
+	add_ideas = {
+		unasur_member
+		average_terrorism
+		TPP_member
+		NPT
+	}
+
+	set_stability = 0.5
+	add_political_power = 0
+	set_convoys = 40
+	create_intelligence_agency = yes
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2009.11.17"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 45
+		liberalism = 0
+		democratic = 35
+		neutrality = 20
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Sebastián Piñera"
+		desc = "POLITICS_SEBASTIAN_PINERA_DESC"
+		picture = "gfx/leaders/CHL/portrait_sebastian_pinera.dds"
+		ideology = liberal_conservatism
+		traits = { trait_liberal_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Michelle Bachelet"
+		desc = "POLITICS_MICHELLE_BACHELET_DESC"
+		picture = "gfx/leaders/CHL/portrait_michelle_bachelet.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+	2013.11.17 = { 
+		CHL = {
+			set_politics = {
+				ruling_party = reformism
+			}
+		}
+	}
+
+
+	2017.11.19 = { 
+		CHL = {
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+	}

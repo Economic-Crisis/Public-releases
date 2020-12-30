@@ -1,0 +1,73 @@
+﻿# Economic Crisis edit for 0.7.6 alpha
+
+# NOT EDITED EC OPTIMISED 
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS
+
+capital = 768
+
+add_ideas = {
+	small_country
+	semi-parliamentary_monarchy
+	mixed_schools
+	eu_member
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 87 }
+
+	load_oob = "_tech_microstate_2013"
+	oob = "_army_microstate_2013"
+	add_ideas = NPT
+	set_stability = 0.5
+	set_war_support = 0
+	add_political_power = 0
+
+	set_convoys = 0
+	
+	set_country_flag = pai_democrat_moderate
+	set_country_flag = coalition_with_conservators
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2013.2.10" #parliament
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 10
+		liberalism = 10
+		democratic = 50
+		neutrality = 30
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Albert II"
+		desc = ""
+		picture = "gfx/leaders/MNC/portrait_albert_ii.dds"
+		ideology = royalism
+		traits = { trait_royalism }
+	}
+
+	#Премьер-министры
+	create_country_leader = {
+		name = "Serge Telle"
+		desc = ""
+		picture = "gfx/leaders/MNC/portrait_serge_telle.dds"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+
+	create_country_leader = {
+		name = "Michel Roger"
+		desc = ""
+		picture = "gfx/leaders/MNC/portrait_michel_roger.dds"
+		ideology = conservative_democracy
+		expire = "2015.12.16"
+		traits = { trait_conservative_democracy }
+	}
+}
+

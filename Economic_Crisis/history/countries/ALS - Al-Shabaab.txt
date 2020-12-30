@@ -1,0 +1,80 @@
+﻿# Economic Crisis edit for 0.6.1 alpha
+
+# NOT EDITED LEADERS (ONLY START LEADER)
+# NOT EDITED LAWS
+# NOT EDITED POLITICS (ON ACTION ONLY)
+
+capital = 992
+set_convoys = 25
+add_ideas = {
+	not_recognized_country
+	military_schools
+}
+
+2013.10.1 = {
+	set_variable = { budget_last_year = 12 }
+	
+	load_oob = "_tech_isis_2013"
+	oob = "ALS_2013"
+
+	add_ideas = djixad
+	
+	set_convoys = 0
+	set_stability = 0.9
+
+	add_political_power = 0
+	
+	add_ideas = {
+		dictatorship_state
+		state_religion
+		state_propaganda_media
+		sharia_law
+		religious_schools
+		close_borders
+		oligarchy
+		# djixad
+		closed_economy
+		military_industry_focus
+	    war_economy
+		planned_economy
+		traditional_economy
+		no_protect
+		decaying_state
+		no_social_security
+		no_labor_rights_protection	
+	}
+	
+	set_politics = {
+		ruling_party = rad_islamists
+		last_election = "2014.1.1"
+		election_frequency = 48
+		elections_allowed = no
+		
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 100
+	}
+
+	create_country_leader = {
+		name = "Ahmad Umar"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmad_umar.dds"
+		ideology = wahhabism
+		traits = { trait_wahhabism }
+	}
+
+	create_country_leader = {
+		name = "Ahmed Abdi Godane"
+		picture = "gfx/leaders/SOM/ALS/portrait_ahmed_abdi_godane.dds"
+		ideology = wahhabism
+		expire = "2014.9.1"
+		traits = { trait_wahhabism }
+	}
+
+}
+

@@ -1,0 +1,5303 @@
+focus_tree = {
+	id = russia
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RUS
+			
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 200 y = 1750 }
+#   Шаблон
+#	focus = {
+#		id = UKR_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		relative_position_id = 
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		cost = 10
+#		#cancel_if_invalid = yes
+#		#continue_if_invalid = no
+#		#available_if_capitulated = no
+#		ai_will_do = { factor = 1 }
+#		available = { }
+#		bypass = {	}
+#		complete_tooltip = { }
+#		completion_reward = { }
+#	}
+	focus = {
+		id = RUS_political_effort
+		icon = GFX_goal_rus_consolidation_power
+		cost = 100
+		x = 10
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_political_effort"
+			add_political_power = 120
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_army
+		icon = GFX_goal_rus_army
+		cost = 70
+		x = 38
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_army"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_AVIATION FOCUS_FILTER_NAVY}
+	}
+	focus = {
+		id = RUS_industrial_effort
+		icon = GFX_goal_generic_production
+		cost = 70
+		x = 46
+		y = 0
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_industrial_effort"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_russian_spring
+		icon = GFX_goal_rus_russia_spring
+		cost = 70
+		prerequisite = { focus = RUS_political_effort }
+		mutually_exclusive = {
+			focus = RUS_neutral_policy
+			focus = RUS_compromise_with_west
+		}
+		x = 3
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			set_country_flag = russian_spring
+			add_political_power = 120
+			set_rule = { can_send_volunteers = yes }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_russian_spring"
+			add_ideas = RUS_support_centrism_nationalism
+			if = {
+				limit = {  country_exists = DON }
+				add_opinion_modifier = {
+					target = DON
+					modifier = actions_positive
+				}
+			}
+			if = {
+				limit = {  country_exists = LUG }
+					add_opinion_modifier = {
+					target = LUG
+					modifier = actions_positive
+				}
+			}
+			if = {
+				limit = {  country_exists = NRU }
+				add_opinion_modifier = {
+					target = NRU
+					modifier = actions_positive
+				}
+			}
+			if = {
+				limit = {  
+					UKR = { 
+						OR = {
+							NOT = { has_country_flag = otstranenie_Yanukovicha } 
+									has_country_flag = support_Yanukovich
+							} 
+						}
+					}	
+				add_opinion_modifier = { target = UKR modifier = actions_positive }
+			}
+			add_opinion_modifier = { target = USA modifier = actions_negative }
+			add_opinion_modifier = { target = GER modifier = actions_negative }
+			add_opinion_modifier = { target = ENG modifier = actions_negative }
+			add_opinion_modifier = { target = FRA modifier = actions_negative }
+			USA = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			GER = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			ENG = {	add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			FRA = {	add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_natsionalism
+		icon = GFX_goal_rus_natsionalism
+		cost = 70
+		prerequisite = { focus = RUS_russian_spring	}
+		mutually_exclusive = {
+			focus = RUS_red_way
+			focus = RUS_save_politic
+		}
+		x = 1
+		y = 2	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_natsionalism"
+			add_timed_idea = { idea = nationalism_influence	days = 120 }
+			set_party_name = { 
+				ideology = fascism 
+				long_name = RUS_fascism_party_movement_russians
+				name = RUS_fascism_party_movement_russians 
+			}
+			create_country_leader = {
+				name = "Dmitry Demushkin"
+				desc = ""
+				picture = "gfx/leaders/RUS/portrait_dmitry_demushkin.dds"
+				ideology = national_democracy 
+				traits = { trait_national_democracy }
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_russian_nationl_state
+		icon = GFX_goal_rus_russian_republic
+		cost = 70
+		prerequisite = { focus = RUS_natsionalism }
+		mutually_exclusive = { focus = RUS_monarchy_restoration	}
+		x = 0
+		y = 3	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {	fascism > 0.45	}
+		completion_reward = {
+			add_ideas = parliamentary_republic
+			add_ideas = nationalism_influence
+			set_cosmetic_tag = RUS_REPUBLIC
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_russian_nationl_state"
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_political_power = 200
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_monarchy_restoration
+		icon = GFX_goal_rus_monarchy_restoration
+		cost = 70
+		prerequisite = { focus = RUS_natsionalism }
+		mutually_exclusive = {	focus = RUS_russian_nationl_state }
+		x = 2
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		available = { fascism > 0.50 }
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = parliamentary_monarchy
+			set_cosmetic_tag = RUS_MONARCHY
+			add_political_power = 200
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_monarchy_restoration"
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			hidden_effect = {
+				retire_ideology_leader = neutrality
+				retire_ideology_leader = democratic
+			}
+			create_country_leader = {
+				name = "Anton Bakov"
+				desc = "POLITICS_ANTON_BAKOV_DESC"
+				picture = "gfx/leaders/RUS/portrait_anton_bakov.dds"
+				ideology = conservative_royalism
+				traits = { trait_conservative_royalism }
+			}
+			create_country_leader = {
+				name = "Igor Strelkov"
+				desc = "POLITICS_IGOR_STRELKOV_DESC"
+				picture = "gfx/leaders/RUS/portrait_igor_strelkov.dds"
+				ideology = royalism
+				traits = { trait_royalism }
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = RUS_democratic_monarchist_party
+				name = RUS_democratic_monarchist_party
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = RUS_neutrality_comitet_party
+				name = RUS_neutrality_comitet_party
+			}
+
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_red_way
+		icon = GFX_goal_rus_red_way
+		cost = 70
+		prerequisite = { focus = RUS_russian_spring	}
+		mutually_exclusive = {
+			focus = RUS_natsionalism
+			focus = RUS_save_politic
+		}
+		x = 5
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_red_way"
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.15
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_recovery_RSFSR
+		icon = GFX_goal_rus_socialism_XXI_century
+		cost = 70
+		prerequisite = { focus = RUS_red_way }
+		x = 5
+		y = 3	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_recovery_RSFSR"
+			add_ideas = support_reformism
+			add_ideas = support_socialism
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_5th_international
+		icon = GFX_goal_rus_5th_international
+		cost = 70
+		prerequisite = { focus = RUS_recovery_RSFSR }
+		x = 4
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_5th_international"
+			add_ideas = idea_fifth_internationale
+			news_event = { id = russia_news.13 days = 1 }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_neutral_policy
+		icon = GFX_goal_rus_neutral_policy
+		cost = 70
+		prerequisite = { focus = RUS_political_effort	}
+		mutually_exclusive = {
+			focus = RUS_russian_spring
+			focus = RUS_compromise_with_west
+		}
+		x = 10
+		y = 1
+		ai_will_do = {	factor = 10 }	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		available = { has_war = no	}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_neutral_policy"
+			set_country_flag = neutral_policy
+			add_political_power = 120
+			add_stability = -0.05
+			add_ideas = volunteers_corps
+			add_ideas =	RUS_support_opposities	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_save_politic
+		icon = GFX_goal_rus_united_russia
+		cost = 70
+		prerequisite = {
+			focus = RUS_neutral_policy
+			focus = RUS_russian_spring
+		}
+		mutually_exclusive = {
+			focus = RUS_disapproval_policy
+			focus = RUS_red_way
+			focus = RUS_natsionalism
+		}
+		x = 9
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 5	}
+		completion_reward = {
+			add_ideas = authoritarian_influence
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_save_politic"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_support_Putin
+		icon = GFX_goal_rus_support_Putin
+		cost = 70
+		prerequisite = { focus = RUS_save_politic }
+		x = 11
+		y = 3	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no			
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = RUS_support_Putin
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_support_Putin"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_support_of_syria
+		icon = GFX_goal_rus_support_Asad
+		cost = 30
+		prerequisite = { focus = RUS_support_Putin	}
+		x = 9
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 30
+			}
+		}
+		available = {
+			SYR = { 
+				OR = { 
+					has_war_with = ISS
+					has_war_with = FSA
+				}
+			}
+		}
+		bypass = {	NOT = { country_exists = SYR } }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = actions_positive
+			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_support_of_syria"
+			SYR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_very_positive
+				}
+			}
+			FSA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_negative
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_enemy_IGIL
+		icon = GFX_goal_rus_war_with_terrorism
+		cost = 70
+		prerequisite = { focus = RUS_support_of_syria }
+		x = 8
+		y = 5	 
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 30
+			}
+		}
+		bypass = {  NOT = { country_exists = ISS } } 
+		completion_reward = {
+			set_country_flag = RUS_enemy_IGIL
+			if = {
+				limit = { country_exists = SYR }
+				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_enemy_IGIL"
+				RUS = {
+					add_to_war = {
+						targeted_alliance = SYR
+						enemy = ISS
+					}
+					add_opinion_modifier = {
+						target = SYR
+						modifier = RUS_war_with_IGIL_focus
+					}
+				}
+				SYR = {
+					add_opinion_modifier = {
+						target = RUS
+						modifier = RUS_war_with_IGIL_focus
+					}
+				}
+				else = { RUS = { 
+						create_wargoal = {
+							target = ISS
+							type = liberate_wargoal
+						}
+					}
+				}	
+			}	
+			IRN = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = RUS_war_with_IGIL_focus
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = russia_news.9
+					days = 1
+				}
+				#load_oob = RUS_bombing_ISIS
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_coordination_with_iran
+		icon = GFX_goal_rus_relations_with_iran
+		cost = 70
+		prerequisite = { focus = RUS_enemy_IGIL	}
+		x = 7
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 3 }
+		available = { country_exists = IRN }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = IRN
+				modifier = actions_positive
+			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_coordination_with_iran"
+			IRN = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_air_strikes_on_isis
+		icon = GFX_goal_rus_air_strikes_on_isis
+		cost = 7
+		prerequisite = { focus = RUS_enemy_IGIL	}
+		x = 9
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 3 }
+		available = {
+			country_exists = ISS
+			country_exists = SYR
+			OR = {
+				SYR = { controls_state = 835 }
+				RUS = { controls_state = 835 }
+			}
+			#ISS = { has_war_with = SYR }
+		}
+		bypass = {
+			NOT = {
+				OR = {
+					SYR = { controls_state = 835 }
+					RUS = { controls_state = 835 }
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					SYR = { controls_state = 835 }					
+				}
+				RUS = { transfer_state = 835 }
+				hidden_effect = { 835 = { remove_core_of = RUS } }
+			}
+			hidden_effect = { load_oob = RUS_bombing_ISIS }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_air_strikes_on_isis"
+			SYR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_very_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_army_in_syria
+		icon = GFX_goal_rus_land_operation_in_syria
+		cost = 80
+		prerequisite = { focus = RUS_air_strikes_on_isis }
+		x = 9
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		available = {
+			country_exists = ISS
+			#SYR = { has_war_with = ISS }
+		}
+		completion_reward = {
+			diplomatic_relation = {
+				country = SYR
+				relation = military_access
+				active = yes
+			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_army_in_syria"
+			diplomatic_relation = {
+				country = SYR
+				relation = non_aggression_pact
+				active = yes
+			}
+			add_named_threat = { threat = 6	name = threat_RUS_land_operation_in_SYR	}
+			#hidden_effect = {
+				#news event
+				set_country_flag = RUS_land_operation_in_Syria
+			#}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_invite_syria_csto
+		icon = GFX_goal_rus_invite_syria
+		cost = 70
+		prerequisite = { focus = RUS_army_in_syria	}
+		x = 9
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		available = {
+			SYR = { has_war_with = ISS }
+			country_exists = SYR
+			SYR = { has_government = neutrality }
+		}
+		bypass = {	NOT = { country_exists = SYR } }
+		completion_reward = {
+			RUS = { add_to_faction = SYR }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_invite_syria_csto"
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_navy_base_in_syria
+		icon = GFX_goal_rus_naval_base_in_Tartus
+		cost = 70
+		prerequisite = { focus = RUS_invite_syria_csto }
+		x = 9
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		available = {
+			SYR = { has_war_with = ISS } 
+			country_exists = SYR
+			SYR = { has_government = neutrality }
+			RUS = { controls_state = 835 }
+		}
+		completion_reward = {
+			835 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_navy_base_in_syria"
+				add_building_construction = {
+					type = naval_base
+					level = 6
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY}
+	}
+
+	focus = {
+		id = RUS_support_DNR_LNR
+		icon = GFX_goal_rus_support_DNR
+		cost = 70
+		prerequisite = { focus = RUS_support_Putin	}
+		x = 10
+		y = 5	
+		available = { 
+			OR = {
+				NRU = {	has_war_with = UKR	}
+				DON = {	has_war_with = UKR	}
+				LUG = {	has_war_with = UKR	}
+			}
+			has_equipment = { main_battle_tank_g4_equipment_0 > 250 }
+		}
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 30 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_support_DNR_LNR"
+			if = {
+				limit = {
+					country_exists = DON
+					country_exists = LUG
+				}
+				send_equipment = {
+					target = DON
+					type = main_battle_tank_g4_equipment_0
+					amount = 120
+				}
+				send_equipment = {
+					target = LUG
+					type = main_battle_tank_g4_equipment_0
+					amount = 120
+				}
+				add_opinion_modifier = {
+					target = DON
+					modifier = RUS_support_DNR_LNR_focus
+				}
+				add_opinion_modifier = {
+					target = LUG
+					modifier = RUS_support_DNR_LNR_focus
+				}
+				DON = {
+					add_opinion_modifier = {
+						target = RUS
+						modifier = RUS_support_DNR_LNR_focus
+					}
+				}
+				LUG = {
+					add_opinion_modifier = {
+						target = RUS
+						modifier = RUS_support_DNR_LNR_focus
+					}
+				}
+			}
+			if = {
+				limit = { country_exists = NRU }
+				send_equipment = {
+					target = NRU
+					type = main_battle_tank_g4_equipment_0
+					amount = 255
+				}
+				add_opinion_modifier = {
+					target = NRU
+					modifier = RUS_support_DNR_LNR_focus
+				}
+				NRU = {
+					add_opinion_modifier = {
+						target = RUS
+						modifier = RUS_support_DNR_LNR_focus
+					}
+				}
+			}
+			RUS = {	
+				add_ideas = volunteer_corps_focus
+				country_event = russia.12
+			}
+			add_named_threat = { threat = 5	name = threat_RUS_support_DNR_LNR }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_disapproval_policy
+		icon = GFX_goal_rus_disapproval_policy
+		cost = 70
+		prerequisite = { focus = RUS_neutral_policy	}
+		mutually_exclusive = {	focus = RUS_save_politic }
+		x = 13
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			#event
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_disapproval_policy"
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = reformism
+				popularity = 0.13
+			}
+			add_ideas = RUS_disapproval_policy_idea
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_opposition_in_parliament
+		icon = GFX_goal_rus_dum_oppositions
+		cost = 70
+		prerequisite = { focus = RUS_disapproval_policy }
+		x = 13
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		completion_reward = {
+			country_event = { id = russia.14 days = 1 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_opposition_in_parliament"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_state_propaganda
+		icon = GFX_goal_rus_state_propaganda
+		cost = 70
+		prerequisite = {
+			focus = RUS_support_Putin
+			focus = RUS_opposition_in_parliament
+		}
+		x = 13
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_state_propaganda"
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_fight_against_crisis
+		icon = GFX_goal_rus_fight_against_crisis
+		cost = 70
+		prerequisite = { focus = RUS_state_propaganda }
+		x = 12
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		completion_reward = {
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
+			set_country_flag = conducted_anticorruption_company
+			custom_effect_tooltip = reducing_corruption_focus_TT			
+			add_ideas =	partial_economic_mobilisation
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_fight_against_crisis"
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = RUS_fight_against_illegal
+		icon = GFX_goal_rus_fighting_against_illegal
+		cost = 7
+		prerequisite = { focus = RUS_fight_against_crisis	}
+		x = 11
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3	}
+		completion_reward = {
+			add_ideas = { restricted_immigration }
+			TAJ = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_fight_against_illegal"
+			UZB = {	add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			MOL = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			MON = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+			KYR = { add_opinion_modifier = { target = RUS modifier = actions_negative }	}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_counter_sanctions
+		icon = GFX_goal_rus_counter_sanctions
+		cost = 70
+		prerequisite = { focus = RUS_state_propaganda }
+		mutually_exclusive = {	focus = RUS_cancel_sanctions }
+		x = 14
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			add_ideas = RUS_counter_sanctions_ideas
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_counter_sanctions"
+			every_country = {
+				limit = {
+					OR = {
+						has_idea = brics_member
+						has_idea = sco_member
+						has_idea = eaeu_member
+					}
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = unholy_alliance_trade
+				}
+			}
+			every_country = {
+				limit = { has_idea = eu_member }
+				add_opinion_modifier = { target = PREV modifier = sanctions }
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = sanctions
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = RUS_import_substitution
+		icon = GFX_goal_rus_import_substitution
+		cost = 70
+		prerequisite = { focus = RUS_counter_sanctions }
+		x = 13
+		y = 6
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			random_owned_state = {
+				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_import_substitution"
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC} 
+	}
+	focus = {
+		id = RUS_demonstration_army
+		icon = GFX_goal_rus_demonstration_army
+		cost = 70
+		prerequisite = {
+			focus = RUS_import_substitution
+		}
+		x = 13
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			#event
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_demonstration_army"
+			add_stability = 0.03
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_peacemaker_on_ukraine
+		icon = GFX_goal_rus_peacemaker_on_ukraine
+		cost = 70
+		prerequisite = { focus = RUS_neutral_policy }
+		x = 15
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		available = {
+			OR = {	
+				UKR = { has_civil_war = yes }
+				UKR = { has_war_with = DON }
+				UKR = { has_war_with = LUG }
+				UKR = { has_war_with = NRU }
+				UKR = { has_war_with = CRM }
+			}	
+		}
+		completion_reward = {
+			custom_effect_tooltip = RUS_peacemaker_on_ukraine_TT
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_peacemaker_on_ukraine"
+			if = {
+				limit = { 
+					OR = {	
+						AND = {	
+							country_exists = DON
+							country_exists = LUG
+							DON = { is_subject_of = RUS }
+							LUG = { is_subject_of = RUS }
+						}
+						AND = {	
+							country_exists = DON
+							country_exists = LUG
+							DON = { is_puppet_of = RUS }
+							LUG = { is_puppet_of = RUS }
+						}
+					}	
+				}
+				UKR = {	
+					if = {
+						limit = { has_dlc = "Together for Victory"	}
+						set_autonomy = {
+							target = DON
+							autonomy_state = autonomous_area
+							freedom_level = 0.05
+						}
+						else = { puppet = DON }
+						227 = { set_demilitarized_zone = yes }
+					}
+					if = {
+						limit = { has_dlc = "Together for Victory"	}
+						set_autonomy = {
+							target = LUG
+							autonomy_state = autonomous_area
+							freedom_level = 0.05
+						}
+						else = { puppet = LUG }
+						228 = { set_demilitarized_zone = yes }
+					}
+				}
+				RUS = {
+					add_opinion_modifier = {
+						target = LUG
+						modifier = actions_very_negative
+					}
+				}
+				RUS = {
+					add_opinion_modifier = {
+						target = DON
+						modifier = actions_very_negative
+					}
+				}
+			}
+			if = {
+				limit = { 
+					OR = {	
+						AND = {	
+							country_exists = CRM
+							CRM = { is_subject_of = RUS }
+						}	
+						AND = {	
+							country_exists = CRM
+							CRM = { is_puppet_of = RUS }
+						}	
+					}	
+				}
+				UKR = {	
+					if = {
+						limit = { has_dlc = "Together for Victory"	}
+						set_autonomy = {
+							target = CRM
+							autonomy_state = autonomous_area
+							freedom_level = 0.05
+						}
+						else = { puppet = CRM }
+					}
+					137 = { set_demilitarized_zone = yes }
+					828 = { set_demilitarized_zone = yes }
+					829 = { set_demilitarized_zone = yes }
+					831 = { set_demilitarized_zone = yes }
+				}
+				RUS = {
+					add_opinion_modifier = {
+						target = CRM
+						modifier = actions_very_negative
+					}
+				}
+			}
+			if = {
+				limit = { 
+					OR = {	
+						AND = {	
+							country_exists = NRU
+							NRU = { is_subject_of = RUS }
+						}	
+						AND = {	
+							country_exists = NRU
+							NRU = { is_puppet_of = RUS }
+						}
+					}	
+				}
+				UKR = {	
+					if = {
+						limit = { has_dlc = "Together for Victory"	}
+						set_autonomy = {
+							target = NRU
+							autonomy_state = autonomous_area
+							freedom_level = 0.05
+						}
+						else = { puppet = NRU }
+					}
+					227 = { set_demilitarized_zone = yes }
+					228 = { set_demilitarized_zone = yes }
+				}
+				RUS = {
+					add_opinion_modifier = {
+						target = NRU
+						modifier = actions_very_negative
+					}
+				}
+			}
+			if = {
+				limit = { 227 = { is_owned_and_controlled_by = RUS } }
+				UKR = {	
+					if = {
+						limit = {
+						has_dlc = "Together for Victory"
+						}
+						set_autonomy = {
+							target = DON
+							autonomy_state = sphere_of_influence
+							freedom_level = 0.75
+						}
+						else = { puppet = DON	}
+						RUS = { give_guarantee = DON }
+					}	
+				}
+			}
+			if = {
+				limit = { 228 = { is_owned_and_controlled_by = RUS } }
+				UKR = {	
+					if = {
+						limit = { has_dlc = "Together for Victory"	}
+						set_autonomy = {
+							target = LUG
+							autonomy_state = sphere_of_influence
+							freedom_level = 0.75
+						}
+						else = { puppet = LUG  }
+						RUS = { give_guarantee = LUG }
+					}	
+				}
+			}
+			if = {
+				limit = { 
+					137 = { is_owned_and_controlled_by = RUS }
+					828 = { is_owned_and_controlled_by = RUS }
+					829 = { is_owned_and_controlled_by = RUS }
+				}
+				UKR = {	
+					if = {
+						limit = { has_dlc = "Together for Victory" }
+						set_autonomy = {
+							target = CRM
+							autonomy_state = sphere_of_influence
+							freedom_level = 0.75
+						}
+						else = { puppet = CRM }
+						RUS = { give_guarantee = CRM }
+					}	
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_compromise_with_west
+		icon = GFX_goal_rus_compromise_with_west
+		cost = 70
+		prerequisite = { focus = RUS_political_effort }
+		mutually_exclusive = {
+			focus = RUS_neutral_policy
+			focus = RUS_russian_spring
+		}
+		x = 17
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 120
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_compromise_with_west"
+			add_opinion_modifier = {
+				target = GER
+				modifier = actions_positive
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = actions_positive
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = actions_positive
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_conservant
+		icon = GFX_goal_rus_democraty
+		cost = 70
+		prerequisite = { focus = RUS_compromise_with_west }
+		x = 17
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_conservant"
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.15
+			}
+			add_ideas = democratic_influence
+			add_ideas =	support_liberalism	
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_friend_ukraine
+		icon = GFX_goal_rus_friend_with_ukraine
+		cost = 70
+		prerequisite = { focus = RUS_conservant	}
+		x = 17
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {	
+				has_government = democratic
+				has_government = liberalism
+			}	
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = UKR
+				modifier = actions_very_positive
+			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_friend_ukraine"
+			UKR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_very_positive
+				}
+			}	
+			if = {	
+				limit = { RUS = { controls_state = 137 } }	
+				137 = { remove_core_of = RUS }
+				UKR = { transfer_state = 137 }
+			}
+			if = {	
+				limit = { RUS = { controls_state = 828 } }	
+				828 = { remove_core_of = RUS }
+				UKR = { transfer_state = 828 }
+			}
+			if = {	
+				limit = { RUS = { controls_state = 829 } }	
+				829 = { remove_core_of = RUS }
+				UKR = { transfer_state = 829 }
+			}
+			if = {	
+				limit = { RUS = { controls_state = 831 } }	
+				831 = { remove_core_of = RUS }
+				UKR = { transfer_state = 831 }
+			}	
+			if	= {  
+				limit = { 
+					UKR = { 
+						OR = {
+							has_war_with = DON
+							has_war_with = LUG
+							has_war_with = NRU
+						}	
+					}
+				}	
+				UKR = {
+					country_event = {
+						id = ukraine.5
+						days = 3
+					}
+				}	
+			}	
+			#hidden_effect = {
+			#	news_event = {
+			#		id = news.30
+			#		days = 1
+			#	}
+			#}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_cancel_sanctions
+		icon = GFX_goal_rus_canceling_sanctions
+		cost = 70
+		prerequisite = {
+			focus = RUS_friend_ukraine
+			focus = RUS_peacemaker_on_ukraine
+		}
+		mutually_exclusive = { focus = RUS_counter_sanctions }
+		x = 16
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {	
+				has_government = democratic
+				has_government = liberalism
+			}
+			NOT = { has_completed_focus = RUS_save_politic }
+		}
+		completion_reward = {
+			remove_ideas = sanctions
+			remove_ideas = low_politic
+			add_stability = 0.05
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_cancel_sanctions"
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.1
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = RUS_to_EU
+		icon = GFX_goal_rus_accession_EU
+		cost = 70
+		prerequisite = { focus = RUS_cancel_sanctions }
+		x = 17
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {	
+				has_government = democratic
+				has_government = liberalism
+			}	
+		}		
+		completion_reward = {
+			set_country_flag = country_ready_to_join_EU
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_to_EU"
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_to_NATO
+		icon = GFX_goal_rus_accession_NATO
+		cost = 70
+		prerequisite = { focus = RUS_to_EU }
+		x = 17
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {	
+				has_government = democratic
+				has_government = liberalism
+			}	
+		}
+		completion_reward = {
+			dismantle_faction = yes
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_to_NATO"
+			USA = {	add_to_faction = RUS }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.7
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_war_communism
+		icon = GFX_goal_rus_conflict_with_communism
+		cost = 70
+		prerequisite = { focus = RUS_to_NATO }
+		x = 17
+		y = 8	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }	
+		completion_reward = {
+			add_named_threat = { threat = 5	name = threat_RUS_war_communism }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_war_communism"
+			if = {
+				limit = { CHI = { has_government = communism } }
+				create_wargoal = {
+					target = CHI
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = { NKO = { has_government = communism }	}
+				create_wargoal = {
+					target = NKO
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = { VIN = {	has_government = communism	} }
+				create_wargoal = {
+					target = VIN
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = { LAO = { has_government = communism	} }
+				create_wargoal = {
+					target = LAO
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_backstab
+		icon = GFX_goal_rus_backstab
+		cost = 70
+		prerequisite = { focus = RUS_war_communism }
+		mutually_exclusive = { focus = RUS_victory_democratic }
+		x = 18
+		y = 9	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			has_war = no
+			is_puppet = no
+			USA = { has_war = no }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_backstab"
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			add_named_threat = { threat = 8	name = threat_RUS_backstab_USA }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.8
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_army_effort
+		icon = GFX_goal_rus_land_army
+		cost = 70
+		prerequisite = { focus = RUS_army }
+		x = 34
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 10
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_army_effort"
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_equipment_effort
+		icon = GFX_goal_rus_modern_weapon_1
+		cost = 70
+		prerequisite = { focus = RUS_army_effort }
+		x = 33
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_equipment_effort"
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_equipment_effort_2
+		icon = GFX_goal_rus_modern_weapon_2
+		cost = 70
+		prerequisite = { focus = RUS_equipment_effort }
+		x = 33
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_equipment_effort_2"
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_equipment_effort_3
+		icon = GFX_goal_rus_modern_weapon_3
+		cost = 70
+		prerequisite = { focus = RUS_equipment_effort_2	}
+		x = 33
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_equipment_effort_3"
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_equipment_effort_4
+		icon = GFX_goal_rus_modern_weapon_3
+		cost = 70
+		prerequisite = { focus = RUS_equipment_effort_3 }
+		x = 33
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_equipment_effort_4"
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = RUS_army_effort }
+		x = 34
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_doctrine_effort"
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = RUS_doctrine_effort }
+		x = 34
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_doctrine_effort_2"
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		cost = 70
+		prerequisite = { focus = RUS_doctrine_effort_2 }
+		x = 34
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_doctrine_effort_3"
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		cost = 70
+		prerequisite = { focus = RUS_army_effort }
+		x = 35
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {	has_tech = tech_motorized_infantry	}
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_mechanization_effort
+		icon = GFX_goal_rus_mechanization_corps
+		cost = 70
+		prerequisite = { focus = RUS_motorization_effort }
+		x = 35
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_motorized_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_armor_effort
+		icon = GFX_goal_rus_developing_armored_corps_1
+		cost = 70
+		prerequisite = { focus = RUS_mechanization_effort }
+		x = 35
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_armor_effort_2
+		icon = GFX_goal_rus_developing_armored_corps_2
+		cost = 70
+		prerequisite = { focus = RUS_armor_effort }
+		x = 35
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_special_forces
+		icon = GFX_goal_rus_special_forces_1
+		cost = 70
+		prerequisite = {
+			focus = RUS_equipment_effort_4
+			focus = RUS_doctrine_effort_3
+			focus = RUS_armor_effort_2
+		}
+		x = 34
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+			#	technology = tech_paratroopers
+			#	technology = tech_marines
+				#technology = EC_tech_mountaineers
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_paratroopers_divisions
+		icon = GFX_goal_rus_paratroopers
+		cost = 70
+		prerequisite = { focus = RUS_special_forces }
+		x = 33
+		y = 10
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_marines_divisions
+		icon = GFX_goal_rus_marines
+		cost = 70
+		prerequisite = { focus = RUS_special_forces	}
+		x = 35
+		y = 10
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			#add_tech_bonus = {
+			#	name = special_forces_bonus
+			#	bonus = 0.5
+			#	uses = 1
+			#}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_aviation_effort
+		icon = GFX_goal_rus_developing_air_forces
+		cost = 70
+		prerequisite = { focus = RUS_army }
+		x = 38
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+								}
+							}
+						}
+					}
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB	}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB	}
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_fighter_focus
+		icon = GFX_goal_rus_bet_on_helicopter_Mi-8
+		cost = 70
+		prerequisite = { focus = RUS_aviation_effort }
+		mutually_exclusive = { focus = RUS_bomber_focus }
+		x = 37
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = RUS_bomber_focus
+		icon = GFX_goal_rus_bet_on_Su-27SMZ
+		cost = 70
+		prerequisite = { focus = RUS_aviation_effort }
+		mutually_exclusive = {	focus = RUS_fighter_focus }
+		x = 39
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = RUS_aviation_effort_2
+		icon = GFX_goal_rus_modernization_Su-34
+		cost = 70
+		prerequisite = {
+			focus = RUS_bomber_focus
+			focus = RUS_fighter_focus
+		}
+		x = 38
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_CAS_effort
+		icon = GFX_goal_rus_developing_Mig-31
+		cost = 70
+		prerequisite = {
+			focus = RUS_aviation_effort_2
+			focus = RUS_motorization_effort
+		}
+		x = 37
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = aircraft_rocket_technologies
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = RUS_modern_industry
+		icon = GFX_goal_generic_consumer_goods
+		cost = 70
+		prerequisite = { focus = RUS_industrial_effort	}
+		x = 46
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+							is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70
+		prerequisite = { focus = RUS_modern_industry }
+		x = 45
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+							is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70
+		prerequisite = { focus = RUS_construction_effort }
+		x = 45
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70
+		prerequisite = { focus = RUS_construction_effort_2 }
+		x = 45
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 70
+		prerequisite = { focus = RUS_construction_effort_3	}
+		x = 45
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_naval_effort
+		icon = GFX_goal_rus_naval
+		cost = 10
+		prerequisite = { focus = RUS_army }
+		x = 42
+		y = 1
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+								free_building_slots = {
+									building = dockyard
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+						any_owned_state = {	is_coastal = yes }
+					}
+					random_owned_state = {
+						limit = {
+							is_coastal = yes
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+					}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = {	has_country_flag = naval_effort_built }
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					random_owned_state = {
+						limit = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+					}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = {	has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = {	tag = ROOT	}
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = RUS_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		cost = 10
+		prerequisite = { focus = RUS_naval_effort }
+		mutually_exclusive = { focus = RUS_large_navy }
+		x = 41
+		y = 2	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+					all_owned_state = {
+						OR = {
+							is_coastal = no
+							dockyard < 1
+						}
+					}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = RUS_NAV_effort
+		icon = GFX_goal_generic_developing_UAV
+		cost = 10
+		prerequisite = {
+			focus = RUS_aviation_effort_2
+			focus = RUS_flexible_navy
+		}
+		x = 39
+		y = 5	
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+	}
+	focus = {
+		id = RUS_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10
+		prerequisite = { focus = RUS_naval_effort }
+		mutually_exclusive = { focus = RUS_flexible_navy }
+		x = 43
+		y = 2	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	focus = {
+		id = RUS_submarine_effort
+		icon = GFX_goal_rus_developing_submarine
+		cost = 10
+		prerequisite = {
+			focus = RUS_flexible_navy
+			focus = RUS_large_navy
+		}
+		x = 41
+		y = 3	
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+	focus = {
+		id = RUS_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		cost = 10
+		prerequisite = { focus = RUS_submarine_effort }
+		x = 41
+		y = 4	
+		available_if_capitulated = yes	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+	focus = {
+		id = RUS_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10
+		prerequisite = {
+			focus = RUS_large_navy
+			focus = RUS_flexible_navy
+		}
+		x = 43
+		y = 3
+		available_if_capitulated = yes	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+	focus = {
+		id = RUS_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10
+		prerequisite = { focus = RUS_cruiser_effort }
+		x = 43
+		y = 4
+		available_if_capitulated = yes	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+			}
+		}
+	}
+	focus = {
+		id = RUS_rocket_effort
+		icon = GFX_focus_rocketry
+		cost = 70
+		prerequisite = {
+			focus = RUS_aviation_effort_2
+			focus = RUS_infrastructure_effort
+		}
+		x = 38
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 70
+		prerequisite = { focus = RUS_infrastructure_effort }
+		x = 45
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+			tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_nuclear_effort
+		icon = GFX_focus_wonderweapons
+		cost = 70
+		prerequisite = { focus = RUS_infrastructure_effort_2 }
+		x = 44
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				category = nuclear_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_extra_tech_slot
+		icon = GFX_focus_research
+		cost = 70
+		prerequisite = { focus = RUS_infrastructure_effort_2 }
+		x = 46
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = { add_research_slot = 1 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_extra_tech_slot_2
+		icon = GFX_focus_research
+		cost = 70
+		prerequisite = { focus = RUS_extra_tech_slot }
+		x = 46
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		available = { num_of_factories > 50	}
+		completion_reward = { add_research_slot = 1 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70
+		prerequisite = { focus = RUS_modern_industry }
+		x = 47
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70
+		prerequisite = { focus = RUS_production_effort }
+		x = 47
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70
+		prerequisite = { focus = RUS_production_effort_2 }
+		x = 47
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_production_effort_4
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 70
+		prerequisite = { focus = RUS_production_effort_3 }
+		x = 47
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_construction_effort_4
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 70
+		prerequisite = { focus = RUS_infrastructure_effort	}
+		x = 47
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		bypass = {
+			custom_trigger_tooltip = {
+			tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
+	}
+	focus = {
+		id = RUS_generic_reform_economics
+		icon = GFX_economic_reforms
+		x = 49
+		y = 0
+		cost = 70
+		ai_will_do = {	factor = 4 }
+		completion_reward = {
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = RUS_generic_anticorruption_company_focus
+		icon = GFX_anticorruption_campaign
+		prerequisite ={ focus = RUS_generic_reform_economics }
+		x = 49
+		y = 1
+		cost = 70
+		ai_will_do = {	factor = 4 }
+		completion_reward = {
+			set_country_flag = conducted_anticorruption_company
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = RUS_generic_new_laws_against_corruption
+		icon = GFX_anticorruption_reforms
+		prerequisite = { focus = RUS_generic_anticorruption_company_focus }
+		x = 49
+		y = 2
+		cost = 70
+		completion_reward = {
+			set_country_flag = reform_laws_against_corruption
+			custom_effect_tooltip = reducing_corruption_focus_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH FOCUS_FILTER_ECONOMIC}
+	}
+	focus = {
+		id = RUS_restarvation_USSR
+		icon = GFX_goal_rus_restarvation_ussr
+		cost = 70
+		prerequisite = { focus = RUS_5th_international	}
+		x = 5
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = { has_government = communism }
+		completion_reward = {
+			add_ideas = support_socialism
+			country_event = { id = RUS_UNION.1 days = 1 }
+			RUS = {	dismantle_faction = yes }
+			set_country_flag = RUS_UNION_again
+			set_cosmetic_tag = RUS_USSR
+			set_party_name = { 
+				ideology = communism 
+				long_name = RUS_USSR_communism_party_long
+				name = RUS_USSR_communism_party 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_union_republics
+		icon = GFX_goal_rus_union_republics
+		cost = 70
+		prerequisite = {
+			focus = RUS_restarvation_USSR
+			focus = RUS_5th_international
+		}
+		x = 4
+		y = 6	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no		
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			custom_effect_tooltip = RUS_union_republics_TT	
+				BLR = {
+					if = {
+						limit = {	RUS = { has_government = communism	}	}
+							add_timed_idea = {
+								idea = communist_influence
+								days = 912
+							}
+						}
+						if = {
+							limit = {	RUS = {	has_government = reformism	}	}
+							add_timed_idea = {
+								idea = support_reformism
+								days = 912
+							}
+						}
+					}
+				KAZ = {
+					if = {
+						limit = { RUS = {	has_government = communism	}	}
+							add_timed_idea = {
+								idea = communist_influence
+								days = 912
+							}
+						}
+						if = {
+							limit = {	RUS = {	has_government = reformism	} }
+							add_timed_idea = {
+								idea = support_reformism
+								days = 912
+							}
+						}
+					}
+				UZB = {
+					if = {
+						limit = {	RUS = {	has_government = communism	}	}
+						add_timed_idea = {
+							idea = communist_influence
+							days = 912
+						}
+					}
+				if = {
+					limit = {	RUS = {	has_government = reformism	} }
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+			TAJ = {
+				if = {
+						limit = {	RUS = {	has_government = communism	}	}
+						add_timed_idea = {
+							idea = communist_influence
+							days = 912
+						}
+					}
+				if = {
+					limit = {	RUS = {	has_government = reformism	}	}
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+			KYR = {
+				if = {
+					limit = {	RUS = {	has_government = communism	}	}
+					add_timed_idea = {
+						idea = communist_influence
+						days = 912
+					}
+				}
+				if = {
+					limit = {	RUS = {	has_government = reformism	}	}
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+			AZR = {
+				if = {
+					limit = { RUS = { has_government = communism }	}
+					add_timed_idea = {
+						idea = communist_influence
+						days = 912
+					}
+				}
+				if = {
+					limit = {	RUS = {	has_government = reformism	}	}
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+			ARM = {
+				if = {
+					limit = {	RUS = {	has_government = communism	}	}
+					add_timed_idea = {
+						idea = communist_influence
+						days = 912
+					}
+				}
+				if = {
+					limit = {	RUS = {	has_government = reformism	}	}
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+			GEO = {
+				if = {
+					limit = {	RUS = {	has_government = communism	}	}
+					add_timed_idea = {
+						idea = communist_influence
+						days = 912
+					}
+				}
+				if = {
+					limit = {	RUS = {	has_government = reformism	}	}
+					add_timed_idea = {
+						idea = support_reformism
+						days = 912
+					}
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_friend_china
+		icon = GFX_goal_rus_friend_china
+		cost = 70
+		prerequisite = { focus = RUS_union_republics }
+		mutually_exclusive = { focus = RUS_new_comintern }
+		x = 3
+		y = 7	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { is_in_faction = yes }
+				dismantle_faction = yes
+				}
+			CHI = {	add_to_faction = RUS }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.3
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_new_comintern
+		icon = GFX_goal_rus_new_commintern
+		cost = 70
+		prerequisite = { focus = RUS_union_republics }
+		mutually_exclusive = { focus = RUS_friend_china	}
+		x = 5
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { is_in_faction = yes }
+				dismantle_faction = yes
+			}
+			create_faction = New_Comintern
+			hidden_effect = {
+				news_event = {
+					id = russia_news.4
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_world_reborn
+		icon = GFX_goal_rus_union_republic_integration
+		cost = 70
+		prerequisite = {
+			focus = RUS_friend_china
+			focus = RUS_new_comintern
+		}
+		x = 4
+		y = 8	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no		
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+		}
+		completion_reward = {		
+			remove_ideas = low_politic
+			corruption_decreased = yes		
+			add_named_threat = { threat = 1	name = threat_RUS_claims }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.5
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_support_PRK
+		icon = GFX_goal_rus_support_north_korea
+		cost = 70
+		prerequisite = { focus = RUS_world_reborn }
+		x = 5
+		y = 9	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+				}
+			country_exists = NKO
+			has_equipment = { main_battle_tank_g4_equipment_0 > 400	}
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = NKO
+				modifier = actions_very_positive
+			}
+			NKO = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_very_positive
+				}
+			}
+			send_equipment = {
+				target = NKO
+				type = main_battle_tank_g4_equipment_0
+				amount = 400
+			}
+			add_named_threat = { threat = 3	name = threat_RUS_support_PRK }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_enemy_CHI
+		icon = GFX_goal_rus_conflict_with_china
+		cost = 70
+		prerequisite = { focus = RUS_quit_crisis }
+		mutually_exclusive = {	focus = RUS_friend_CHI }
+		x = 9
+		y = 11	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CHI
+			}
+			add_named_threat = { threat = 6	name = threat_RUS_wargoal_CHI }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.12
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_friend_CHI
+		icon = GFX_goal_rus_aliance_with_china
+		cost = 70
+		prerequisite = { focus = RUS_quit_crisis }
+		mutually_exclusive = {	focus = RUS_enemy_CHI }
+		x = 11
+		y = 11
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			country_exists = CHI 
+			CHI = {
+				NOT = {
+					OR = {	
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}	
+				}
+			}
+		}
+		completion_reward = {
+			CHI = {
+				if = {
+					limit = { is_in_faction = yes }
+					dismantle_faction = yes
+				}
+			}	
+			RUS = {	add_to_faction = CHI }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.10
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_victory_democratic
+		icon = GFX_goal_rus_prosperity_democracy
+		cost = 70
+		prerequisite = { focus = RUS_war_communism	}
+		mutually_exclusive = {	focus = RUS_backstab }
+		x = 16
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {	
+				has_government = democratic
+				has_government = liberalism
+			}	
+		}
+		completion_reward = {	add_stability = 0.15 }
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_development_of_it
+		icon = GFX_goal_rus_development_of_it
+		cost = 70
+		prerequisite = { focus = RUS_fight_against_illegal }
+		x = 11
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_cyber_arms
+		icon = GFX_goal_rus_information_units
+		cost = 70
+		prerequisite = { focus = RUS_development_of_it	}
+		x = 11
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			#event
+			add_ideas = { RUS_cyber_arms_idea }
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_quit_crisis
+		icon = GFX_goal_rus_quit_in_crisis
+		cost = 70
+		prerequisite = { focus = RUS_cyber_arms
+				focus = RUS_demonstration_army
+		}
+		x = 13
+		y = 9
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			remove_ideas = low_politic
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_reform_eaeu
+		icon = GFX_goal_rus_reform_eaeu
+		cost = 70
+		prerequisite = { focus = RUS_quit_crisis }
+		x = 15
+		y = 11	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no		
+		ai_will_do = { factor = 5 }
+		available = { has_country_flag = RUS_creation_eaeu }
+		completion_reward = {
+			swap_ideas = { remove_idea = eaeu_member add_idea = eau_member }
+			if = {
+				limit = {
+					BLR = {
+						IS_IN_FACTION_WITH = RUS
+						has_idea = eaeu_member
+					}
+				}
+				BLR = {	swap_ideas = { remove_idea = eaeu_member add_idea = eau_member }	}
+			}
+			if = {
+				limit = {
+					KAZ = {
+						IS_IN_FACTION_WITH = RUS
+						has_idea = eaeu_member
+					}
+				}
+				KAZ = {	swap_ideas = { remove_idea = eaeu_member add_idea = eau_member } }
+			}
+			if = {
+				limit = {
+					ARM = {
+						IS_IN_FACTION_WITH = RUS
+						has_idea = eaeu_member
+					}
+				}
+				ARM = {	swap_ideas = { remove_idea = eaeu_member add_idea = eau_member }	}
+			}
+				if = {
+					limit = {
+						TAJ = {
+							IS_IN_FACTION_WITH = RUS
+							has_idea = eaeu_member
+						}
+					}
+				TAJ = {	swap_ideas = { remove_idea = eaeu_member add_idea = eau_member } }
+			}
+			if = {
+				limit = {
+					KYR = {
+						IS_IN_FACTION_WITH = RUS
+						has_idea = eaeu_member
+					}
+				}
+			KYR = {	swap_ideas = { remove_idea = eaeu_member add_idea = eau_member }
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_integration_army_in_eaeu
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 50
+		prerequisite = { focus = RUS_reform_eaeu }
+		x = 13
+		y = 12
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {	
+						has_idea = eau_member
+						is_in_faction_with = RUS
+					}
+				}
+				army_experience = 25
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_parliament_eaes
+		icon = GFX_goal_rus_parliament_eas
+		cost = 50
+		prerequisite = { focus = RUS_reform_eaeu }
+		x = 15
+		y = 12
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {	
+						has_idea = eau_member
+						is_in_faction_with = RUS
+					}
+				}
+				add_opinion_modifier = { target = PREV modifier = actions_positive }
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_science_aliance_eaeu
+		icon = GFX_goal_rus_science_aliance
+		cost = 50
+		prerequisite = { focus = RUS_reform_eaeu }
+		x = 17
+		y = 12
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			add_to_tech_sharing_group = eau_research
+			every_country = {
+				limit = {
+					OR = {	
+						has_idea = eau_member
+						is_in_faction_with = RUS
+					}
+				}
+				set_country_flag = science_aliance_eau_member
+				add_to_tech_sharing_group = eau_research
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_enemy_USA
+		icon = GFX_goal_rus_compromiss_and_escalation
+		cost = 70
+		prerequisite = {
+			focus = RUS_enemy_CHI
+			focus = RUS_friend_CHI
+		}
+		x = 10
+		y = 12	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			has_war = no
+			is_puppet = no
+			country_exists = USA
+				USA = {
+					has_war = no
+					is_puppet = no
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			add_named_threat = { threat = 8	name = threat_RUS_wargoal_USA }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.11
+					days = 1
+					}
+				}
+			}
+			search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	
+	focus = {
+		id = RUS_russia_rising
+		icon = GFX_goal_rus_russia_rising
+		cost = 70
+		prerequisite = {
+			focus = RUS_monarchy_restoration
+			focus = RUS_russian_nationl_state
+		}
+		x = 0
+		y = 6	
+		
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
+			remove_ideas = low_politic
+			corruption_decreased = yes
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_RESEARCH}
+	}
+	focus = {
+		id = RUS_european_nationalists_union
+		icon = GFX_goal_rus_european_nationalists_union
+		cost = 70
+		prerequisite = { focus = RUS_russia_rising }
+		x = 0
+		y = 9	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			if = {	
+				limit = {	is_in_faction = yes	}
+				dismantle_faction = yes
+			}
+			create_faction = Nationalists_Union
+			hidden_effect = {
+				news_event = {
+					id = russia_news.1
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_war_with_capitalists
+		icon = GFX_goal_rus_war_with_capitalists
+		cost = 70
+		prerequisite = { focus = RUS_european_nationalists_union }
+		x = 0
+		y = 10	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ENG
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FRA
+			}
+			add_named_threat = { threat = 8 name = threat_RUS_war_capitalism }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.2
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_enemy_TUR
+		icon = GFX_goal_rus_invasion_in_turkey
+		cost = 70
+		prerequisite = { focus = RUS_support_PRK }
+		x = 4
+		y = 10	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+			country_exists = TUR
+		}
+		completion_reward = {
+			TUR = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.5
+					}
+				}
+			TUR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_negative
+					}
+				}
+			add_named_threat = { threat = 5	name = threat_RUS_civilwar_TUR }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.6
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_revansh
+		icon = GFX_goal_rus_revenge
+		cost = 70
+		prerequisite = { focus = RUS_enemy_TUR }
+		x = 4
+		y = 11	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no	
+		ai_will_do = { factor = 5 }
+		available = {
+			OR = {
+				has_government = communism
+				has_government = reformism
+			}
+			has_army_manpower = { size > 250000 }
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = USA
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ENG
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FRA
+			}
+			add_named_threat = { threat = 8	name = threat_RUS_wargoal_west }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_special_forces_2
+		icon = GFX_goal_rus_special_forces_2
+		cost = 70
+		prerequisite = { focus = RUS_special_forces }
+		x = 34
+		y = 11	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {	factor = 2 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		cost = 70
+		prerequisite = { focus = RUS_infrastructure_effort_2 }
+		x = 48
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 4
+				category = electronics
+				category = nuclear_tech
+				category = rocketry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_friend_with_turkey
+		icon = GFX_goal_rus_restart_dip_relations_with_turkey
+		cost = 70
+		prerequisite = { focus = RUS_air_strikes_on_isis }
+		x = 7
+		y = 7
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		available = {
+			date > 2015.11.22
+			TUR = {
+				has_country_flag = TUR_defeated_coup
+				has_government = neutrality
+			}
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = TUR
+				modifier = actions_positive
+			}
+			TUR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_turkey_friend_syria
+		icon = GFX_goal_rus_turkey_friend_with_syria
+		cost = 70
+		prerequisite = { focus = RUS_friend_with_turkey	}
+		x = 7
+		y = 8
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		available = {
+			OR = {	
+				AND = {	
+					TUR = { has_war_with = ISS }
+					SYR = { has_war_with = ISS }
+					TUR = { NOT = { has_country_flag = turkey_friend_with_fsa } }
+					TUR = { has_government = neutrality }
+					SYR = { has_government = neutrality }
+				}
+				AND = {
+					NOT = { country_exists = ISS }
+					TUR = { NOT = { has_war = yes } }
+				}
+			}	
+		}
+		completion_reward = {
+			#event
+			TUR = {
+				diplomatic_relation = {
+					country = SYR
+					relation = non_aggression_pact
+					active = yes
+				}
+				set_country_flag = TUR_starting_quite_in_NATO
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_very_negative
+				}
+			}
+			SYR = {
+				add_opinion_modifier = {
+					target = TUR
+					modifier = actions_positive
+				}
+			}
+			add_opinion_modifier = {
+				target = SYR
+				modifier = actions_positive
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_association_of_the_pres_federation
+		icon = GFX_goal_rus_eaes_federation
+		cost = 70
+		prerequisite = { focus = RUS_parliament_eaes }
+		mutually_exclusive = {	focus = RUS_association_parl_konfederation	}
+		x = 14
+		y = 13
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			#Смена флага у Путина на заднем фоне
+			if = { 
+				limit = {
+					AND = {
+						has_government = neutrality
+						has_country_leader = {
+							name = "Vladimir Putin"
+							ruling_only = yes
+							id = 100002
+						}
+					}
+				}
+				hidden_effect = {
+					retire_ideology_leader = neutrality
+					# Путин
+					create_country_leader = {
+						name = "Vladimir Putin" #Владимир Путин
+						#id = 100002
+						desc = ""
+						picture = "gfx/leaders/RUS/additional/portrait_vladimir_putin_eau.dds"
+						ideology = sovereign_democracy #Единая Россия
+						traits = { sovereign }
+					}
+				}
+			}
+
+			#event
+			set_cosmetic_tag = RUS_UNION
+			add_ideas = federation		
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_association_parl_konfederation
+		icon = GFX_goal_rus_eaes_parlamentary_konfederations
+		cost = 70
+		prerequisite = { focus = RUS_parliament_eaes }
+		mutually_exclusive = { focus = RUS_association_of_the_pres_federation  }
+		x = 16
+		y = 13
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = {	factor = 3 }
+		completion_reward = {
+			#Смена флага у Путина на заднем фоне
+			if = { 
+				limit = {
+					AND = {
+						has_government = neutrality
+						has_country_leader = {
+							name = "Vladimir Putin"
+							ruling_only = yes
+							id = 100002
+						}
+					}
+				}
+				hidden_effect = {
+					retire_ideology_leader = neutrality
+					# Путин
+					create_country_leader = {
+						name = "Vladimir Putin" #Владимир Путин
+						#id = 100002
+						desc = ""
+						picture = "gfx/leaders/RUS/additional/portrait_vladimir_putin_eau.dds"
+						ideology = sovereign_democracy #Единая Россия
+						traits = { sovereign }
+					}
+				}
+			}
+			
+			#event
+			set_cosmetic_tag = RUS_UNION
+			add_ideas = parliamentary_republic
+			add_ideas = confederation
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = RUS_territories
+		icon = GFX_goal_rus_territories
+		cost = 70
+		x = 25
+		y = 1
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}	
+		}
+		completion_reward = {
+			custom_effect_tooltip = RUS_territories_TT_desc
+			add_political_power = 120
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_europe
+		icon = GFX_goal_rus_ter_europa
+		cost = 35
+		prerequisite = { focus = RUS_territories }
+		x = 22
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+		}
+		completion_reward = { add_political_power = 120 }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_ukraina
+		icon = GFX_goal_rus_ter_ukraine
+		cost = 70
+		prerequisite = { focus = RUS_ter_europe	}
+		x = 21
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			OR = {
+				country_exists = UKR
+				AND = {
+					country_exists = NRU
+					has_cosmetic_tag = UKR_ost_ukraine
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_ukraina_flag
+			every_state = {
+				limit = {
+					is_controlled_by = UKR
+					is_core_of = UKR
+				}
+				add_claim_by = RUS
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = NRU
+					is_core_of = NRU
+				}
+				add_claim_by = RUS
+			}
+			if = {
+				limit = { 
+					has_government = fascism 
+					OR = {
+						country_exists = DON
+						country_exists = LUG
+						country_exists = NRU
+					}
+				}
+				country_event = {
+					id = russia.3
+					days = 3
+				}
+			}
+			if = {
+				limit = { 
+					has_government = fascism 
+					NOT = {	
+						OR = {
+							country_exists = DON
+							country_exists = LUG
+							country_exists = NRU
+						}
+					}	
+				}
+				country_event = { id = RUS_UNION.2 days = 3 }
+			}
+			if = {
+				limit = { 
+					OR = {
+						has_government = communism
+						has_government = reformism
+					}	
+				}
+				country_event = { id = RUS_UNION.2 days = 3 }
+			}
+			if = {
+				limit = { has_government = neutrality }
+				country_event = { id = RUS_UNION.2 days = 3 }
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_moldova
+		icon = GFX_goal_rus_ter_moldova
+		cost = 70
+		prerequisite = { focus = RUS_ter_ukraina }
+		x = 21
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = MOL
+		}
+		bypass = {
+			NOT = {
+				country_exists = MOL		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_moldova_flag
+			every_state = {
+				limit = {
+					is_controlled_by = MOL
+					is_core_of = MOL
+				}
+				add_claim_by = RUS
+			}
+			if = {
+				limit = { country_exists = TMD }
+				774 = { add_claim_by = RUS }
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_belarus
+		icon = GFX_goal_rus_ter_belarus
+		cost = 70
+		prerequisite = { focus = RUS_ter_europe }
+		x = 23
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = BLR
+		}
+		bypass = {
+			NOT = {
+				country_exists = BLR		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_belarus_flag
+			every_state = {
+				limit = {
+					is_controlled_by = BLR
+					is_core_of = BLR
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_destablisation_pribaltic
+		icon = GFX_goal_rus_ter_pribaltic
+		cost = 150
+		prerequisite = { focus = RUS_ter_europe }
+		x = 19
+		y = 3	
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no		
+		ai_will_do = { factor = 1 }
+		available = {
+			AND = {
+				has_government = fascism
+				has_war = no
+			}
+			country_exists = EST
+			country_exists = LAT
+			country_exists = LIT
+		}
+		bypass = {
+			NOT = {
+				country_exists = EST
+				country_exists = LAT
+				country_exists = LIT		
+			}
+		}
+		completion_reward = {
+			EST = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.5
+				}
+			}
+			LAT = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.5
+				}
+			}
+			LIT = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.5
+				}
+			}
+			add_named_threat = { threat = 3	name = threat_RUS_civilwar_pribaltic }
+			hidden_effect = {
+				news_event = {
+					id = russia_news.1
+					days = 1
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_interests_in_scandinavia
+		icon = GFX_goal_rus_ter_scandivania
+		cost = 70
+		prerequisite = { focus = RUS_destablisation_pribaltic }
+		x = 19
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no		
+		ai_will_do = { factor = 1 }
+		available = {
+			NOT = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = neutrality
+				}
+			}
+			country_exists = FIN
+		}
+		bypass = {
+			NOT = {
+				country_exists = FIN	
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FIN
+			}
+			add_named_threat = { threat = 3	name = threat_RUS_claim_FIN }
+			#hidden_effect = {
+			#	country_event = {
+			#		id = 106
+			#		days = 1
+			#	}
+			#}
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = RUS_ter_asia
+		icon = GFX_goal_rus_ter_middle_asia
+		cost = 35
+		prerequisite = { focus = RUS_territories }
+		x = 25
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+		}
+		completion_reward = {	add_political_power = 120 }
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_kazakhstan
+		icon = GFX_goal_rus_ter_kazakhstan
+		cost = 70
+		prerequisite = { focus = RUS_ter_asia	}
+		x = 25
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = KAZ
+		}
+		bypass = {
+			NOT = {
+				country_exists = KAZ	
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_kazakhstan_flag 
+			every_state = {
+				limit = {
+					is_controlled_by = KAZ
+					is_core_of = KAZ
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_kyrgyzstan
+		icon = GFX_goal_rus_ter_kyrgzia
+		cost = 70
+		prerequisite = { focus = RUS_ter_kazakhstan	}
+		x = 25
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = KYR
+		}
+		bypass = {
+			NOT = {
+				country_exists = KYR		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_kyrgyzstan_flag
+			every_state = {
+				limit = {
+					is_controlled_by = KYR
+					is_core_of = KYR
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_uzbekistan
+		icon = GFX_goal_rus_ter_uzbekistan
+		cost = 70
+		prerequisite = { focus = RUS_ter_kazakhstan	}
+		x = 23
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = UZB
+		}
+		bypass = {
+			NOT = {
+				country_exists = UZB		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_uzbekistan_flag
+			every_state = {
+				limit = {
+					is_controlled_by = UZB
+					is_core_of = UZB
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_tadjikistan
+		icon = GFX_goal_rus_ter_tadjikistan
+		cost = 70
+		prerequisite = { focus = RUS_ter_kazakhstan	}
+		x = 27
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = TAJ
+		}
+		bypass = {
+			NOT = {
+				country_exists = TAJ		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_tadjikistan_flag
+			every_state = {
+				limit = {
+					is_controlled_by = TAJ
+					is_core_of = TAJ
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_turkmenistan
+		icon = GFX_goal_rus_ter_turkmenistan
+		cost = 70
+		prerequisite = {
+			focus = RUS_ter_kyrgyzstan
+			focus = RUS_ter_uzbekistan
+			focus = RUS_ter_tadjikistan
+		}
+		x = 25
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = TMS
+		}
+		bypass = {
+			NOT = {
+				country_exists = TMS		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_turkmenistan_flag
+			every_state = {
+				limit = {
+					is_controlled_by = TMS
+					is_core_of = TMS
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_caucas
+		icon = GFX_goal_rus_ter_caucas_2
+		cost = 35
+		prerequisite = { focus = RUS_territories }
+		x = 28
+		y = 2
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+		}
+		completion_reward = { add_political_power = 120	}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_georgia
+		icon = GFX_goal_rus_ter_georgia
+		cost = 70
+		prerequisite = { focus = RUS_ter_caucas	}
+		x = 28
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = GEO
+		}
+		bypass = {
+			NOT = {
+				country_exists = GEO		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_georgia_flag
+			every_state = {
+				limit = {
+					is_controlled_by = GEO
+					is_core_of = GEO
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_azerbaijan
+		icon = GFX_goal_rus_ter_azerbaidjan
+		cost = 70
+		prerequisite = { focus = RUS_ter_caucas }
+		x = 30
+		y = 3
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = AZR
+		}
+		bypass = {
+			NOT = {
+				country_exists = AZR	
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_azerbaijan_flag 
+			every_state = {
+				limit = {
+					is_controlled_by = AZR
+					is_core_of = AZR
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_armenia
+		icon = GFX_goal_rus_ter_armenia
+		cost = 70
+		prerequisite = {
+			focus = RUS_ter_azerbaijan
+			focus = RUS_ter_georgia
+		}
+		x = 30
+		y = 4
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = ARM
+		}
+		bypass = {
+			NOT = {
+				country_exists = ARM	
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_armenia_flag
+			every_state = {
+				limit = {
+					is_controlled_by = ARM
+					is_core_of = ARM
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_south_osetia
+		icon = GFX_goal_rus_ter_osetia
+		cost = 35
+		prerequisite = { focus = RUS_ter_georgia }
+		x = 28
+		y = 6
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = SOS
+		}
+		bypass = {
+			NOT = {
+				country_exists = SOS	
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_south_osetia_flag
+			every_state = {
+				limit = {
+					is_controlled_by = SOS
+					is_core_of = SOS
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_abkhazia
+		icon = GFX_goal_rus_ter_abkhazia
+		cost = 35
+		prerequisite = { focus = RUS_ter_georgia }
+		x = 29
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = ABZ
+		}
+		bypass = {
+			NOT = {
+				country_exists = ABZ		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_abkhazia_flag
+			every_state = {
+				limit = {
+					is_controlled_by = ABZ
+					is_core_of = ABZ
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = RUS_ter_karabakh
+		icon = GFX_goal_rus_ter_karabakh
+		cost = 70
+		prerequisite = { focus = RUS_ter_azerbaijan	}
+		prerequisite = { focus = RUS_ter_armenia }
+		x = 32
+		y = 5
+		#cancel_if_invalid = yes
+		#continue_if_invalid = no
+		#available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		available = {
+			OR = {	
+				AND = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = reformism
+					}
+				}
+				AND = {
+					has_government = neutrality
+					has_completed_focus = RUS_reform_eaeu
+				}
+			}
+			country_exists = NKR
+		}
+		bypass = {
+			NOT = {
+				country_exists = NKR		
+			}
+		}
+		completion_reward = {
+			set_country_flag = RUS_ter_karabakh_flag
+			every_state = {
+				limit = {
+					is_controlled_by = NKR
+					is_core_of = NKR
+				}
+				add_claim_by = RUS
+			}
+			country_event = { id = RUS_UNION.2 days = 3 }
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+}
