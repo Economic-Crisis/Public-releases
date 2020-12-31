@@ -10,7 +10,7 @@
  ![Version-Game](https://img.shields.io/badge/Version--Game--HOI4-1.10.3-green?style=flat-square)
  ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.6-red?style=flat-square)
 
-### [Download Mod/Скачать мод](https://github.com/Economic-Crisis-2013/Public-releases/release/latest) (Source Code.zip)
+### [Download Mod/Скачать мод](https://github.com/Economic-Crisis-2013/Public-releases/releases/latest) (Source Code.zip)
 
 
 
