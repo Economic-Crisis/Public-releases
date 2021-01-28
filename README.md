@@ -69,7 +69,7 @@ Responsibilities include: creating and editing new 3D models, animating models a
 Responsibilities include: editing existing scripts, the ability to work with ideas, events, tricks, etc. etc.<br>
 5. **Senior Scriptor**. You must be able to work with on_actions, arrays, variables, and the interface.<br>
 Responsibilities include: creating and editing existing mechanics.<br>
-6. **Artificial Intelligence Scriptor**. You need to understand the work of AI and the ability to set actions for them.<br>
+6. **AI Scriptor**. You need to understand the work of AI and the ability to set actions for them.<br>
 Responsibilities include: adapting AI for operating mechanics, technologies, templates, etc.<br>
 7. **Script-techtre**. It is necessary to be able to work with technology, be able to work with a modular system and scripting Units.<br>
 Responsibilities include: analytics and technology creation, editing of existing ones, editing of Units and balancing.<br>
