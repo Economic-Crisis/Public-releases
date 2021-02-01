@@ -1,0 +1,107 @@
+﻿add_namespace = cau_border_conflicts
+#Погран. конфликты на кавказе. Идёт до эндгейма.
+
+news_event = {
+	id = cau_border_conflicts.1   
+	title = cau_border_conflicts.1.t
+	desc = cau_border_conflicts.1.d
+	picture = GFX_karabah_win
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 20
+		add_manpower = -15
+	}
+
+	option = {
+		name = cau_border_conflicts.1.a
+	}
+}
+news_event = {
+	id = cau_border_conflicts.2   
+	title = cau_border_conflicts.2.t
+	desc = cau_border_conflicts.2.d
+	picture = GFX_karabah_fail
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = cau_border_conflicts.2.a
+	}
+}
+
+add_namespace = ind_border_conflicts
+
+news_event = {
+	id = ind_border_conflicts.1   
+	title = ind_border_conflicts.1.t
+	desc = ind_border_conflicts.1.d
+	hidden = yes
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		date > 2019.12.26
+		
+		country_exists = IND
+		country_exists = PAK
+	}
+	
+	immediate = {
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 441
+				num_provinces = 2
+				on_win = ind_border_conflicts.2
+				on_lose = ind_border_conflicts.3
+			}
+			
+			defender = {
+				state = 440
+				num_provinces = 2
+				on_win = ind_border_conflicts.2
+				on_lose = ind_border_conflicts.3
+			}
+		}
+	}
+
+	option = {
+		name = ind_border_conflicts.1.a
+	}
+}
+news_event = {
+	id = ind_border_conflicts.2   
+	title = ind_border_conflicts.2.t
+	desc = ind_border_conflicts.2.d
+	picture = GFX_kashmir_win
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = ind_border_conflicts.2.a
+	}
+}
+news_event = {
+	id = ind_border_conflicts.3   
+	title = ind_border_conflicts.3.t
+	desc = ind_border_conflicts.3.d
+	picture = GFX_kashmir_fail
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = ind_border_conflicts.3.a
+	}
+}

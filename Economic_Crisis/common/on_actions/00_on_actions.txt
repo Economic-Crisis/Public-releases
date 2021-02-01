@@ -3,6 +3,7 @@ on_actions = {
 	 on_new_term_election = {
 		 random_events = {
 			 100 = usa.18
+			 100 = usa.26
 		 }
 		 random_events = {
 			 100 = election.2
@@ -87,15 +88,6 @@ on_actions = {
 		}
 		
 		effect = {
-			if = {	
-				limit = { 
-					OR = {	
-						FROM = { has_war = no }
-						#ROOT = { has_war = no }
-					}	
-				}
-				news_event = { id = news.74 days = 25 }
-			}	
 		}
 	}
 	
@@ -302,10 +294,6 @@ on_actions = {
 						}
 					}
 				}
-				FROM.FROM = {
-					set_state_flag = Major.annex_territory
-					add_dynamic_modifier = { modifier = annex_territory }
-				}
 			}
 		}
 	}
@@ -409,14 +397,14 @@ on_actions = {
 				limit = {
 					FROM.FROM = {
 						NOT = {
-							#OR = {
+							OR = {
 								is_controlled_by = ISS
 								is_controlled_by = ISL
 								is_controlled_by = ISN
 								is_controlled_by = ISA
 								is_controlled_by = ALQ
 								is_controlled_by = TAL
-							#}
+							}
 						}
 						has_state_flag = religious_war
 					}
@@ -459,6 +447,43 @@ on_actions = {
 			#}		
 	#	}
 	#}
+	
+	on_monthly = {
+		effect = {
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 816
+					num_provinces = 2
+					on_win = cau_border_conflicts.1
+					on_lose = cau_border_conflicts.2
+				}
+				
+				defender = {
+					state = 775
+					num_provinces = 2
+					on_win = cau_border_conflicts.1
+					on_lose = cau_border_conflicts.2
+				}
+			}
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 775
+					num_provinces = 2
+					on_win = cau_border_conflicts.1
+					on_lose = cau_border_conflicts.2
+				}
+				
+				defender = {
+					state = 818
+					num_provinces = 2
+					on_win = cau_border_conflicts.1
+					on_lose = cau_border_conflicts.2
+				}
+			}
+		}
+	}
 
 	#Not run on a specific country.
 	on_startup = {
@@ -508,6 +533,12 @@ on_actions = {
 					is_ai = yes
 					NOT = { 
 						has_government = rad_islamists 
+						ISS = { exists = yes }
+						ISL = { exists = yes }
+						ISN = { exists = yes }
+						ISA = { exists = yes }
+						TAL = { exists = yes }
+						ALQ = { exists = yes }
 					}
 					NOT = {
 						tag = RUS #чтобы в начале игра РФ не послала добровольцов в Сирию
@@ -544,13 +575,18 @@ on_actions = {
 					value = 200
 				}
 			}
-			ISS = {
-				declare_war_on = { target = SYR type = annex_everything }
-				declare_war_on = { target = IRQ type = annex_everything }
-				declare_war_on = { target = NGA type = annex_everything }
-				declare_war_on = { target = KUR type = annex_everything }
-				declare_war_on = { target = AFG type = annex_everything }
-				declare_war_on = { target = ROJ type = annex_everything }
+			if = {
+				limit = {
+					ISS = { exists = yes }
+				}
+				ISS = {
+					declare_war_on = { target = SYR type = annex_everything }
+					declare_war_on = { target = IRQ type = annex_everything }
+					declare_war_on = { target = NGA type = annex_everything }
+					declare_war_on = { target = KUR type = annex_everything }
+					declare_war_on = { target = AFG type = annex_everything }
+					declare_war_on = { target = ROJ type = annex_everything }
+				}
 			}
 			#ISS = {	
 			#	if = {
@@ -758,12 +794,22 @@ on_actions = {
 			# ROOT   the country the operative was performing its mission in
 			# FROM   the country the operative is operating for
 			operative_leader_event = {
-					id = lar_operative_event.6
-					recipient = ROOT
-					originator = ROOT
-					set_from_from = ROOT
-					set_from = FROM
-					days = 1
+				id = lar_operative_event.6
+				recipient = ROOT
+				originator = ROOT
+				set_from_from = ROOT
+				set_from = FROM
+				days = 1
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = agent_detected
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = agent_caught
+				}
 			}
 			if = {
 				limit = {

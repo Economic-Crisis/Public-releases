@@ -594,8 +594,8 @@ NMilitary = {
 	
 	CORPS_COMMANDER_DIVISIONS_CAP = 10,			-- EC Edit; how many divisions a corps commander is limited to. 0 = inf, < 0 = blocked
 	DIVISION_SIZE_FOR_XP = 8,                   -- how many battalions should a division have to count as a full divisions when calculating XP stuff
-	CORPS_COMMANDER_ARMIES_CAP = -1,			-- how many armies a corps commander is limited to. 0 = inf, < 0 = blocked
-	FIELD_MARSHAL_DIVISIONS_CAP = -1,			-- EC Edit; how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
+	CORPS_COMMANDER_ARMIES_CAP = 10,			-- how many armies a corps commander is limited to. 0 = inf, < 0 = blocked
+	FIELD_MARSHAL_DIVISIONS_CAP = 10,			-- EC Edit; how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 	FIELD_MARSHAL_ARMIES_CAP = 10,				-- EC Edit; how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
 
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, --Integer factor to multiply manpower.
@@ -643,7 +643,7 @@ NMilitary = {
 	COMBAT_MOVEMENT_SPEED = 0.33,	               -- speed reduction base modifier in combat
 	TACTIC_SWAP_FREQUENCEY = 12,                   -- hours between tactic swaps
 	INITIATIVE_PICK_COUNTER_ADVANTAGE_FACTOR  = 0.35, -- advantage per leader level for picking a counter
-	BASE_COMBAT_WIDTH = 80,                        -- base combat width
+	BASE_COMBAT_WIDTH = 1000000,                        -- EC edit; base combat width
 	ADDITIONAL_COMBAT_WIDTH = 40,                  -- more opened up by support attack
 	AMPHIBIOUS_INVADE_MOVEMENT_COST = 24.0,        -- total progress cost of movement while amphibious invading
 	LAND_SPEED_MODIFIER = 0.05,                    -- basic speed control

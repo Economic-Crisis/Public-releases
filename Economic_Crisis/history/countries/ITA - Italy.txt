@@ -12,6 +12,31 @@ add_ideas = {
 	integration_in_nato
 }
 
+1985.1.1 = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "1983.9.26"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 29
+		reformism = 15
+		liberalism = 5
+		democratic = 33
+		neutrality = 9
+		fascism = 9
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Bettino Craxi"
+		picture = "gfx/leaders/ITA/portrait_bettino_craxi.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+}
+
 2013.11.1 = {
 	set_variable = { budget_last_year = 213000 }
 
@@ -84,13 +109,22 @@ add_ideas = {
 	}
 
 	create_country_leader = {
-		name = "Giorgio Napolitano"
-		desc = "POLITICS_GIORGIO_NAPOLITANO_DESC"
-		picture = "gfx/leaders/ITA/portrait_giorgio_napolitano.dds"
+		name = "Enrico Letta"
+		desc = "POLITICS_ENRICO_LETTA_DESC"
+		picture = "gfx/leaders/ITA/portrait_enrico_letta.dds"
 		expire = "2014.2.22"
 		ideology = social_democracy
 		traits = { trait_social_democracy }
 	}
+
+	#create_country_leader = {
+	#	name = "Giorgio Napolitano"
+	#	desc = "POLITICS_GIORGIO_NAPOLITANO_DESC"
+	#	picture = "gfx/leaders/ITA/portrait_giorgio_napolitano.dds"
+	#	expire = "2014.2.22"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
 
 	create_country_leader = {
 		name = "Beppe Grillo"
@@ -150,6 +184,61 @@ add_ideas = {
 			available_to_spy_master = yes
 			nationalities = { ITA }
 		}
+	}
+
+	create_corps_commander = {
+		name = "Carmine Masiello"
+		portrait_path = "gfx/leaders/ITA/portrait_ita_general_carmine_masiello.dds"
+		traits = { war_hero }
+		skill = 3
+		logistics_skill = 3
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Luciano Portolano"
+		portrait_path = "gfx/leaders/ITA/portrait_ita_general_luciano_portolano.dds"
+		traits = { media_personality }
+		skill = 3
+		logistics_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		attack_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "Claudio Graziano"
+		portrait_path = "gfx/leaders/ITA/portrait_ita_general_claudio_graziano.dds"
+		traits = { media_personality }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Danilo Errico"
+		portrait_path = "gfx/leaders/ITA/portrait_ita_general_danilo_errico.dds"
+		traits = { harsh_leader }
+		skill = 2
+		logistics_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		attack_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Vito Bardi"
+		portrait_path = "gfx/leaders/ITA/portrait_ita_general_vito_bardi.dds"
+		traits = { harsh_leader }
+		skill = 2
+		logistics_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		attack_skill = 2
 	}
 
 }

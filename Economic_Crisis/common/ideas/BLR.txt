@@ -254,6 +254,8 @@ ideas = {
                 stability_factor = -0.05
 				POLITICAL_POWER_GAIN = -0.05
 				DRIFT_DEFENCE_FACTOR = 0.15
+				enemy_operative_detection_chance = 0.05
+				root_out_resistance_effectiveness_factor = 0.5
 			}
 		}
 		BLR_strong_end_freedom_belarus = {
@@ -265,6 +267,14 @@ ideas = {
                 stability_factor = 0.05
             }
         }
+		BLR_socialism_21_century = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.01
+				stability_weekly = 0.02
+			}
+		}
 		BLR_support_centrism_nationalism = { 
 			allowed_civil_war = { always = no }
 			removal_cost = -1
@@ -370,10 +380,59 @@ ideas = {
 			}
 			removal_cost = -1
 		}
+		BLR_EC_35 = { 
+			allowed = {	always = yes }
+			removal_cost = -1
+			modifier = {
+            	root_out_resistance_effectiveness_factor = 0.01
+				POLITICAL_POWER_GAIN = 0.02
+			}
+		}
+		BLR_EC_33 = { 
+			allowed = {	always = yes }
+			removal_cost = -1
+			modifier = {
+            	stability_weekly = 0.01
+			}
+		}
+		BLR_EC_26 = {
+			allowed_civil_war = { always = no }
+			#picture = 
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.15
+				root_out_resistance_effectiveness_factor = 0.05
+			}
+			removal_cost = -1
+		}
+		BLR_EC_31 = {
+			allowed_civil_war = { always = no }
+			#picture = 
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.02
+			}
+			removal_cost = -1
+		}
 		BLR_rotacii_KGB = {
 			allowed_civil_war = { always = no } 
 			modifier = {
 				DRIFT_DEFENCE_FACTOR = -0.15
+				commando_trait_chance_factor = 0.15
+				Intelligence_agency_defense = 0.05
+			}
+			removal_cost = -1
+		}
+		BLR_EC_32 = {
+			allowed_civil_war = { always = no } 
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.02
+				Intelligence_agency_defense = 0.03
+			}
+			removal_cost = -1
+		}
+		BLR_EC_38 = {
+			allowed_civil_war = { always = no } 
+			modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.03
 			}
 			removal_cost = -1
 		}
@@ -414,6 +473,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				MONTHLY_POPULATION = 0.04
+				POLITICAL_POWER_GAIN = -0.02
 			}
 		}
 		BLR_five_year_plans_idea = {
@@ -436,6 +496,8 @@ ideas = {
 				army_attack_factor = 0.02
                 army_org_factor = 0.02
 				army_defence_factor = 0.02
+				enemy_operative_detection_chance = 0.05
+				root_out_resistance_effectiveness_factor = 0.05
             }
         }
 		BLR_pioneria = {
@@ -445,6 +507,14 @@ ideas = {
 				stability_factor = 0.05
 				POLITICAL_POWER_GAIN = 0.02
 				DRIFT_DEFENCE_FACTOR = 0.03
+				MONTHLY_POPULATION = 0.01
+			}
+		}
+		BLR_EC_20 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.01
 				MONTHLY_POPULATION = 0.01
 			}
 		}
@@ -485,48 +555,6 @@ ideas = {
 				DRIFT_DEFENCE_FACTOR = 0.02
 			}
 		}
-		BLR_EC_26 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.01
-			}
-		}
-		BLR_EC_31 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.01
-			}
-		}
-		BLR_EC_32 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.02
-			}
-		}
-		BLR_EC_33 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.01
-			}
-		}
-		BLR_EC_35 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.01
-			}
-		}
-		BLR_EC_38 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				DRIFT_DEFENCE_FACTOR = 0.01
-			}
-		}
 		BLR_EC_13 = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
@@ -546,6 +574,27 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				research_speed_factor = 0.05
+			}
+		}
+		BLR_EC_47 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		BLR_EC_55 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.08
+			}
+		}
+		BLR_EC_56 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
 			}
 		}
 		BLR_torgovla_1 = { 
@@ -771,6 +820,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
             	DRIFT_DEFENCE_FACTOR = 0.1
+				enemy_operative_detection_chance = 0.05
 			}
 		}
 		BLR_lgot_for_workes = { 
@@ -820,6 +870,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.01
 				DRIFT_DEFENCE_FACTOR = 0.1
+				Intelligence_agency_defense = 0.05
 			}
 		}
 		BLR_uravnenie_smart_cameras = {
@@ -828,6 +879,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.05
 				DRIFT_DEFENCE_FACTOR = 0.1
+				Intelligence_agency_defense = 0.05
 			}
 		}
 		BLR_E-40 = { 
@@ -865,7 +917,7 @@ ideas = {
 				research_speed_factor = 0.05
             }
         }
-		BLR_lgot_for_kor_belarusian = { 
+		BLR_lgot_for_kor_belarusian_1 = { 
 			allowed = {	always = yes }
 			removal_cost = -1
 			modifier = {
@@ -1023,12 +1075,20 @@ ideas = {
 				communism_drift = 0.01
 			}
 		}
+		BLR_sov_culture = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.01
+			}
+		}
 		BLR_free_education_1 = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
 			modifier = {
 				stability_weekly = 0.02
 				research_speed_factor = 0.05
+				MONTHLY_POPULATION = 0.01
 			}
 		}
 		BLR_red_army_strong = {

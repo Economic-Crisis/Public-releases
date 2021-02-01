@@ -576,9 +576,9 @@ country_event = {
 	trigger = {
 		tag = USA
 		has_elections = yes
-		date > 2016.11.1
-		date < 2017.1.9
+		date > 2016.11.6
 	}
+	mean_time_to_happen = { days = 1 }
 	
 	immediate = {
 		set_country_flag = usa_election_2016
@@ -1001,7 +1001,12 @@ country_event = {
 	picture = GFX_event_biden_vs_trump
 	
 	is_triggered_only = yes
-	
+	trigger = {
+		tag = USA
+		date > 2020.11.1
+	}
+	mean_time_to_happen = { days = 1 }
+
 	desc = {
 		text = usa.26.d1
 		trigger = {

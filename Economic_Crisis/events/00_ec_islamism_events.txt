@@ -1,1723 +1,1723 @@
-﻿#####################
-##Economic Crysis ###
-#####################
-
-add_namespace = islamism
-
-# Популярность больше 10%
-country_event = {
-	id = islamism.1
-	title = islamism.1.t
-	desc = islamism.1.d
-	picture = GFX_event_islamism_rise_10
-
-	trigger = {
-		democratic > 0.1
-		has_country_flag = pai__islamist
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_10
-			has_idea = single-party_state
-		}
-	}
-	mean_time_to_happen = {
-		days = 30
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_10
-	}
-
-	option = { # Коалиция с исламистами
-		name = islamism.1.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.a"
-		trigger = {
-			is_democracy = yes
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 65
-				has_country_flag = pai__islamist
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_nondem_totalitarian
-					has_country_flag = pai_democrat_moderate
-				}
-			}
-		}
-		random_list = {
-			80 = {
-				coalition_with_islamists = yes # Создать коалицию с исламистами
-			}
-			20 = {}
-		}
-		add_islamist = yes # Можно добавить исламиста в правительство
-	}
-
-	option = { # Не враждовать с исламистами
-		name = islamism.1.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.b"
-		ai_chance = {
-			base = 35
-			modifier = {
-				factor = 0
-				has_country_flag = pai_democrat_moderate
-			}
-		}
-		add_islamist = yes # Можно добавить исламиста в правительство
-	}
-
-	option = { # Выступать против исламизма
-		name = islamism.1.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.c"
-		ai_chance = {
-			base = 60
-			modifier = {
-				factor = 20
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = pai_democrat_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = oppose_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.01
-		}
-		add_stability = -0.005
-		add_political_power = -20
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.1.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.s"
-		trigger = {
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.03
-		}
-		add_stability = -0.01
-		add_political_power = -30
-	}
-}
-
-# Популярность больше 10%, однопартийный режим
-country_event = {
-	id = islamism.2
-	title = islamism.2.t
-	desc = islamism.2.d
-	picture = GFX_event_islamism_rise_10
-
-	trigger = {
-		democratic > 0.1
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_10
-		}
-		has_idea = single-party_state
-	}
-	mean_time_to_happen = {
-		days = 30
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.25
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.5
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.75
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 2
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2.5
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_10
-	}
-
-	option = { # Игнорировать исламистов
-		name = islamism.2.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.2.a"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.2.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.2.b"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 25
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.03
-		}
-		add_stability = -0.01
-		add_political_power = -20
-	}
-}
-
-# Популярность снизилась
-country_event = {
-	id = islamism.3
-	title = islamism.3.t
-	desc = islamism.3.d
-	picture = GFX_event_islamism_decrease_10
-
-	trigger = {
-		has_country_flag = islamism_10
-		democratic < 0.08
-		NOT = {
-			has_government = democratic
-		}
-	}
-	mean_time_to_happen = {
-		days = 60
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 0.9
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 0.8
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 0.7
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 0.6
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 0.5
-		}
-	}
-
-	option = {
-		name = islamism.3.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.3.a"
-		clr_country_flag = islamism_10
-		clr_country_flag = oppose_islamism
-		clr_country_flag = suppress_islamism
-		remove_islamist = yes
-		no_coalition_with_islamists = yes
-	}
-}
-
-# Популярность больше 25%
-country_event = {
-	id = islamism.4
-	title = islamism.4.t
-	desc = islamism.4.d
-	picture = GFX_event_islamism_rise_25
-
-	trigger = {
-		has_country_flag = islamism_10
-		democratic > 0.25
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_25
-			has_idea = single-party_state
-		}
-	}
-	mean_time_to_happen = {
-		days = 60
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_25
-	}
-
-	option = { # Сохранить коалицию с исламистами
-		name = islamism.4.y
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.y"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 80
-		}
-		add_stability = 0.005
-		add_political_power = 20
-		add_islamist = yes
-	}
-
-	option = { # Разорвать коалицию с исламистами
-		name = islamism.4.n
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.n"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 20
-		}
-		no_coalition_with_islamists = yes
-		add_stability = -0.01
-		add_political_power = -30
-	}
-
-	option = { # Коалиция с исламистами
-		name = islamism.4.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.a"
-		trigger = {
-			is_democracy = yes
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 65
-				has_country_flag = pai__islamist
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_nondem_totalitarian
-					has_country_flag = pai_democrat_moderate
-				}
-			}
-		}
-		random_list = {
-			60 = {
-				coalition_with_islamists = yes
-			}
-			40 = {}
-		}
-		add_islamist = yes
-	}
-
-	option = { # Не враждовать с исламистами
-		name = islamism.4.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.b"
-		trigger = {
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 35
-			modifier = {
-				factor = 0
-				has_country_flag = pai_democrat_moderate
-			}
-		}
-		add_islamist = yes
-		clr_country_flag = oppose_islamism
-	}
-
-	option = { # Выступать против исламизма
-		name = islamism.4.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.c"
-		trigger = {
-			has_coalition_with_islamists = no
-		}
-		ai_chance = {
-			base = 60
-			modifier = {
-				factor = 20
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = pai_democrat_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = oppose_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.03
-		}
-		add_stability = -0.015
-		add_political_power = -30
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.4.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.s"
-		trigger = {
-			OR = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = suppress_islamism
-		clr_country_flag = oppose_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
-		}
-		add_stability = -0.025
-		add_political_power = -50
-	}
-}
-
-# Популярность больше 25%, однопартийный режим
-country_event = {
-	id = islamism.5
-	title = islamism.5.t
-	desc = islamism.5.d
-	picture = GFX_event_islamism_rise_25
-
-	trigger = {
-		has_country_flag = islamism_10
-		democratic > 0.25
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_25
-		}
-		has_idea = single-party_state
-	}
-	mean_time_to_happen = {
-		days = 60
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.25
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.5
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.75
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 2
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2.5
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_25
-	}
-
-	option = { # Пойти на уступки
-		name = islamism.5.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.b"
-		trigger = {
-			government_popularity_50 = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 450
-				has_country_flag = pai_nondem_reformator
-			}
-			modifier = {
-				factor = 5
-				has_country_flag = pai_nondem_authoritarian
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		swap_ideas = {
-			remove_idea = single-party_state
-			add_idea = dictatorship_state
-		}
-		move_to_free_media = yes
-		move_to_liberties = yes
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = 0.02
-		add_political_power = -200
-		add_islamist = yes
-	}
-
-	option = { # Игнорировать исламистов
-		name = islamism.5.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.c"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.5.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.s"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 25
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
-		}
-		add_stability = -0.01
-		add_political_power = -30
-	}
-}
-
-# Популярность снизилась
-country_event = {
-	id = islamism.6
-	title = islamism.6.t
-	desc = islamism.6.d
-	picture = GFX_event_islamism_decrease_25
-
-	trigger = {
-		has_country_flag = islamism_25
-		democratic < 0.2
-		NOT = {
-			has_government = democratic
-		}
-	}
-	mean_time_to_happen = {
-		days = 90
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 0.9
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 0.8
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 0.7
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 0.6
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 0.5
-		}
-	}
-
-	option = {
-		name = islamism.6.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.6.a"
-		clr_country_flag = islamism_25
-		remove_islamist = yes
-	}
-}
-
-# Популярность больше 40%
-country_event = {
-	id = islamism.7
-	title = islamism.7.t
-	desc = islamism.7.d
-	picture = GFX_event_islamism_rise_40
-
-	trigger = {
-		has_country_flag = islamism_25
-		democratic > 0.4
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_40
-			has_idea = single-party_state
-		}
-	}
-	mean_time_to_happen = {
-		days = 90
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_40
-	}
-
-	option = { # Сохранить коалицию с исламистами
-		name = islamism.7.y
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.y"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 80
-		}
-		add_stability = 0.015
-		add_political_power = 30
-		add_islamist = yes
-	}
-
-	option = { # Разорвать коалицию с исламистами
-		name = islamism.7.n
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.n"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 20
-		}
-		no_coalition_with_islamists = yes
-		add_stability = -0.02
-		add_political_power = -50
-	}
-
-	option = { # Коалиция с исламистами
-		name = islamism.7.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.a"
-		trigger = {
-			is_democracy = yes
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 65
-				has_country_flag = pai__islamist
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_nondem_totalitarian
-					has_country_flag = pai_democrat_moderate
-				}
-			}
-		}
-		random_list = {
-			40 = {
-				coalition_with_islamists = yes
-			}
-			60 = {}
-		}
-		add_islamist = yes
-	}
-
-	option = { # Не враждовать с исламистами
-		name = islamism.7.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.b"
-		trigger = {
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 35
-			modifier = {
-				factor = 0
-				has_country_flag = pai_democrat_moderate
-			}
-		}
-		add_islamist = yes
-		clr_country_flag = oppose_islamism
-	}
-
-	option = { # Выступать против исламистов
-		name = islamism.7.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.c"
-		trigger = {
-			has_coalition_with_islamists = no
-		}
-		ai_chance = {
-			base = 60
-			modifier = {
-				factor = 20
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = pai_democrat_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = oppose_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
-		}
-		add_stability = -0.025
-		add_political_power = -50
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.7.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.s"
-		trigger = {
-			OR = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = -0.04
-		add_political_power = -100
-		clr_country_flag = oppose_islamism
-	}
-
-	option = { # Пойти на уступки
-		name = islamism.7.o
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.o"
-		trigger = {
-			is_democracy = no
-			government_popularity_50 = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 40
-			modifier = {
-				factor = 450
-				has_country_flag = pai_nondem_reformator
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = pai_nondem_authoritarian
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		if = {
-			limit = {
-				has_idea = dictatorship_state
-			}
-			swap_ideas = {
-				remove_idea = dictatorship_state
-				add_idea = presidential_republic
-			}
-		}
-		if = {
-			limit = {
-				has_idea = absolute_monarchy
-			}
-			swap_ideas = {
-				remove_idea = absolute_monarchy
-				add_idea = semi-parliamentary_monarchy
-			}
-		}
-		move_to_free_media = yes
-		move_to_liberties = yes
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.2
-		}
-		add_stability = 0.03
-		add_political_power = -300
-	}
-}
-
-# Популярность больше 40%, однопартийный режим
-country_event = {
-	id = islamism.8
-	title = islamism.8.t
-	desc = islamism.8.d
-	picture = GFX_event_islamism_rise_40
-
-	trigger = {
-		has_country_flag = islamism_25
-		democratic > 0.4
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_40
-		}
-		has_idea = single-party_state
-	}
-	mean_time_to_happen = {
-		days = 90
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.25
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.5
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.75
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 2
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2.5
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_40
-	}
-
-	option = { # Пойти на уступки
-		name = islamism.8.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.a"
-		trigger = {
-			government_popularity_50 = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 450
-				has_country_flag = pai_nondem_reformator
-			}
-			modifier = {
-				factor = 5
-				has_country_flag = pai_nondem_authoritarian
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		swap_ideas = {
-			remove_idea = single-party_state
-			add_idea = dictatorship_state
-		}
-		move_to_free_media = yes
-		move_to_liberties = yes
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.2
-		}
-		add_stability = 0.03
-		add_political_power = -300
-		add_islamist = yes
-	}
-
-	option = { # Игнорировать исламистов
-		name = islamism.8.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.b"
-		trigger = {
-			government_popularity_50 = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.8.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.c"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 25
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = -0.02
-		add_political_power = -50
-	}
-}
-
-# Популярность снизилась
-country_event = {
-	id = islamism.9
-	title = islamism.9.t
-	desc = islamism.9.d
-	picture = GFX_event_islamism_decrease_40
-
-	trigger = {
-		has_country_flag = islamism_40
-		democratic < 0.32
-		NOT = {
-			has_government = democratic
-		}
-	}
-	mean_time_to_happen = {
-		days = 120
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 0.9
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 0.8
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 0.7
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 0.6
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 0.5
-		}
-	}
-
-	option = {
-		name = islamism.9.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.9.a"
-		clr_country_flag = islamism_40
-		remove_islamist = yes
-	}
-}
-
-# Популярность больше 50%, демократия
-country_event = {
-	id = islamism.10
-	title = islamism.10.t
-	desc = islamism.10.d
-	picture = GFX_event_islamism_rise_50
-
-	trigger = {
-		has_country_flag = islamism_40
-		democratic > 0.5
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_50
-		}
-		is_democracy = yes
-	}
-	mean_time_to_happen = {
-		days = 120
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_50
-	}
-
-	option = { # Сохранить коалицию с исламистами
-		name = islamism.10.y
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.10.y"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 80
-		}
-		add_stability = 0.02
-		add_political_power = 50
-		add_islamist = yes
-	}
-
-	option = { # Разорвать коалицию с исламистами
-		name = islamism.10.n
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.10.n"
-		trigger = {
-			has_coalition_with_islamists = yes
-		}
-		ai_chance = {
-			factor = 20
-		}
-		no_coalition_with_islamists = yes
-		add_stability = -0.03
-		add_political_power = -100
-	}
-
-	option = { # Коалиция с исламистами
-		name = islamism.7.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.a"
-		trigger = {
-			is_democracy = yes
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 65
-				has_country_flag = pai__islamist
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_nondem_totalitarian
-					has_country_flag = pai_democrat_moderate
-				}
-			}
-		}
-		random_list = {
-			20 = {
-				coalition_with_islamists = yes
-			}
-			80 = {}
-		}
-		add_islamist = yes
-	}
-
-	option = { # Не враждовать с исламистами
-		name = islamism.7.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.b"
-		trigger = {
-			has_coalition_with_islamists = no
-			NOT = {
-				has_country_flag = suppress_islamism
-			}
-		}
-		ai_chance = {
-			base = 35
-			modifier = {
-				factor = 0
-				has_country_flag = pai_democrat_moderate
-			}
-		}
-		add_islamist = yes
-		clr_country_flag = oppose_islamism
-	}
-
-	option = { # Выступать против исламистов
-		name = islamism.7.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.c"
-		trigger = {
-			has_coalition_with_islamists = no
-		}
-		ai_chance = {
-			base = 60
-			modifier = {
-				factor = 10
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = oppose_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
-		}
-		add_stability = -0.03
-		add_political_power = -100
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.7.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.s"
-		trigger = {
-			OR = {
-				has_country_flag = oppose_islamism
-				has_country_flag = suppress_islamism
-			}
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = -0.05
-		add_political_power = -150
-		clr_country_flag = oppose_islamism
-	}
-}
-
-# Популярность больше 50%, не демократия
-country_event = {
-	id = islamism.11
-	title = islamism.11.t
-	desc = islamism.11.d
-	picture = GFX_event_islamism_rise_50
-
-	trigger = {
-		has_country_flag = islamism_40
-		democratic > 0.5
-	 	NOT = {
-			has_government = democratic
-			has_country_flag = islamism_50
-		}
-		is_democracy = no
-	}
-	mean_time_to_happen = {
-		days = 120
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	immediate = {
-		set_country_flag = islamism_50
-	}
-
-	option = { # Уступить власть
-		name = islamism.11.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.a"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 850
-				has_country_flag = pai__islamist
-			}
-			modifier = {
-				factor = 450
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		random_list = {
-			80 = {
-				set_politics = {
-					ruling_party = democratic
-					elections_allowed = yes
-				}
-			}
-			20 = {
-				start_civil_war = {
-					ruling_party = democratic
-					ideology = ROOT
-					size = 0.3
-				}
-			}
-		}
-		add_stability = 0.05
-		add_political_power = -500
-		clr_country_flag = suppress_islamism
-		clr_country_flag = islamism_10
-		clr_country_flag = islamism_25
-		clr_country_flag = islamism_40
-		clr_country_flag = islamism_50
-	}
-
-	option = { # Пойти на уступки
-		name = islamism.11.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.b"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 450
-				has_country_flag = pai_nondem_reformator
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		if = {
-			limit = {
-				has_idea = single-party_state
-			}
-			swap_ideas = {
-				remove_idea = single-party_state
-				add_idea = parliamentary_republic
-			}
-		}
-		if = {
-			limit = {
-				has_idea = dictatorship_state
-			}
-			swap_ideas = {
-				remove_idea = dictatorship_state
-				add_idea = presidential_republic
-			}
-		}
-		move_to_free_media = yes
-		move_to_liberties = yes
-		add_stability = 0.05
-		add_political_power = -500
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.3
-		}
-		clr_country_flag = suppress_islamism
-	}
-
-	option = { # Ожидать развития событий
-		name = islamism.11.c
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.c"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 25
-				has_country_flag = pai_nondem_authoritarian
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.11.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.s"
-		trigger = {
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 25
-				has_country_flag = pai_nondem_neutral
-			}
-			modifier = {
-				factor = 0
-				has_country_flag = pai__islamist
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = -0.04
-		add_political_power = -100
-	}
-}
-
-# Популярность снизилась
-country_event = {
-	id = islamism.12
-	title = islamism.12.t
-	desc = islamism.12.d
-	picture = GFX_event_islamism_decrease_50
-
-	trigger = {
-		has_country_flag = islamism_50
-		democratic < 0.4
-		NOT = {
-			has_government = democratic
-		}
-	}
-	mean_time_to_happen = {
-		days = 180
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 0.9
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 0.8
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 0.7
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 0.6
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 0.5
-		}
-	}
-
-	option = {
-		name = islamism.12.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.12.a"
-		clr_country_flag = islamism_50
-		remove_islamist = yes
-	}
-}
-
-# Популярность больше 60%, демократия
-country_event = {
-	id = islamism.13
-	title = islamism.13.t
-	desc = islamism.13.d
-	picture = GFX_event_islamism_rise_60
-
-	trigger = {
-		has_country_flag = islamism_50
-		democratic > 0.6
-		NOT = {
-			has_government = democratic
-			has_idea = no_early_election_idea
-		}
-		is_democracy = yes
-	}
-	mean_time_to_happen = {
-		days = 120
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	option = { # Назначить досрочные выборы (исламисты побеждают)
-		name = islamism.13.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.a"
-		ai_chance = {
-			base = 25
-		}
-		set_politics = {
-			ruling_party = democratic
-			elections_allowed = yes
-		}
-		add_stability = 0.05
-		add_political_power = -500
-		clr_country_flag = oppose_islamism
-		clr_country_flag = suppress_islamism
-		clr_country_flag = islamism_10
-		clr_country_flag = islamism_25
-		clr_country_flag = islamism_40
-		clr_country_flag = islamism_50
-	}
-
-	option = { # Нет досрочных выборов
-		name = islamism.13.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.b"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		add_stability = -0.03
-		add_political_power = -100
-		set_country_flag = oppose_islamism
-		clr_country_flag = suppress_islamism
-		add_ideas = no_early_election_idea
-	}
-
-	option = { # Подавлять исламизм
-		name = islamism.13.s
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.s"
-		trigger = {
-			can_suppress_ideologies = yes
-		}
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_democrat_neutral
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai_nondem_reformator
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		set_country_flag = suppress_islamism
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.1
-		}
-		add_stability = -0.05
-		add_political_power = -150
-		clr_country_flag = oppose_islamism
-		add_ideas = no_early_election_idea
-	}
-}
-
-# Популярность больше 60%, не демократия
-country_event = {
-	id = islamism.14
-	title = islamism.14.t
-	desc = islamism.14.d
-	picture = GFX_event_islamism_rise_60
-
-	trigger = {
-		has_country_flag = islamism_50
-		democratic > 0.6
-		NOT = {
-			has_government = democratic
-			has_country_flag = islamism_60
-		}
-		is_democracy = no
-	}
-	mean_time_to_happen = {
-		days = 90
-		modifier = {
-			has_stability > 49.9
-			has_stability < 60
-			factor = 1.2
-		}
-		modifier = {
-			has_stability > 59.9
-			has_stability < 70
-			factor = 1.4
-		}
-		modifier = {
-			has_stability > 69.9
-			has_stability < 80
-			factor = 1.6
-		}
-		modifier = {
-			has_stability > 79.9
-			has_stability < 90
-			factor = 1.8
-		}
-		modifier = {
-			has_stability > 89.9
-			factor = 2
-		}
-	}
-
-	option = { # Уступить власть
-		name = islamism.14.a
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.14.a"
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				has_country_flag = pai_nondem_totalitarian
-			}
-		}
-		random_list = {
-			80 = {
-				set_politics = {
-					ruling_party = democratic
-					elections_allowed = yes
-				}
-			}
-			20 = {
-				start_civil_war = {
-					ruling_party = democratic
-					ideology = ROOT
-					size = 0.25
-				}
-			}
-		}
-		add_stability = 0.05
-		add_political_power = -500
-		clr_country_flag = suppress_islamism
-		clr_country_flag = islamism_10
-		clr_country_flag = islamism_25
-		clr_country_flag = islamism_40
-		clr_country_flag = islamism_50
-		clr_country_flag = islamism_60
-	}
-
-	option = { # Гражданская война
-		name = islamism.14.b
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.14.b"
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = pai_nondem_neutral
-					has_country_flag = pai__islamist
-				}
-			}
-		}
-		start_civil_war = {
-			ideology = democratic
-			size = 0.5
-		}
-	}
-}
+﻿# #####################
+# ##Economic Crysis ###
+# #####################
+
+# add_namespace = islamism
+
+# # Популярность больше 10%
+# country_event = {
+# 	id = islamism.1
+# 	title = islamism.1.t
+# 	desc = islamism.1.d
+# 	picture = GFX_event_islamism_rise_10
+
+# 	trigger = {
+# 		democratic > 0.1
+# 		has_country_flag = pai__islamist
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_10
+# 			has_idea = single-party_state
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 30
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_10
+# 	}
+
+# 	option = { # Коалиция с исламистами
+# 		name = islamism.1.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.a"
+# 		trigger = {
+# 			is_democracy = yes
+# 			OR = {
+# 				has_government = neutrality
+# 				has_government = fascism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 5
+# 			modifier = {
+# 				factor = 65
+# 				has_country_flag = pai__islamist
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_nondem_totalitarian
+# 					has_country_flag = pai_democrat_moderate
+# 				}
+# 			}
+# 		}
+# 		random_list = {
+# 			80 = {
+# 				coalition_with_islamists = yes # Создать коалицию с исламистами
+# 			}
+# 			20 = {}
+# 		}
+# 		add_islamist = yes # Можно добавить исламиста в правительство
+# 	}
+
+# 	option = { # Не враждовать с исламистами
+# 		name = islamism.1.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.b"
+# 		ai_chance = {
+# 			base = 35
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_democrat_moderate
+# 			}
+# 		}
+# 		add_islamist = yes # Можно добавить исламиста в правительство
+# 	}
+
+# 	option = { # Выступать против исламизма
+# 		name = islamism.1.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.c"
+# 		ai_chance = {
+# 			base = 60
+# 			modifier = {
+# 				factor = 20
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 10
+# 				has_country_flag = pai_democrat_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = oppose_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.01
+# 		}
+# 		add_stability = -0.005
+# 		add_political_power = -20
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.1.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.1.s"
+# 		trigger = {
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.03
+# 		}
+# 		add_stability = -0.01
+# 		add_political_power = -30
+# 	}
+# }
+
+# # Популярность больше 10%, однопартийный режим
+# country_event = {
+# 	id = islamism.2
+# 	title = islamism.2.t
+# 	desc = islamism.2.d
+# 	picture = GFX_event_islamism_rise_10
+
+# 	trigger = {
+# 		democratic > 0.1
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_10
+# 		}
+# 		has_idea = single-party_state
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 30
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.25
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.5
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.75
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 2
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2.5
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_10
+# 	}
+
+# 	option = { # Игнорировать исламистов
+# 		name = islamism.2.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.2.a"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.2.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.2.b"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 25
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.03
+# 		}
+# 		add_stability = -0.01
+# 		add_political_power = -20
+# 	}
+# }
+
+# # Популярность снизилась
+# country_event = {
+# 	id = islamism.3
+# 	title = islamism.3.t
+# 	desc = islamism.3.d
+# 	picture = GFX_event_islamism_decrease_10
+
+# 	trigger = {
+# 		has_country_flag = islamism_10
+# 		democratic < 0.08
+# 		NOT = {
+# 			has_government = democratic
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 60
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 0.9
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 0.8
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 0.7
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 0.6
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 0.5
+# 		}
+# 	}
+
+# 	option = {
+# 		name = islamism.3.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.3.a"
+# 		clr_country_flag = islamism_10
+# 		clr_country_flag = oppose_islamism
+# 		clr_country_flag = suppress_islamism
+# 		remove_islamist = yes
+# 		no_coalition_with_islamists = yes
+# 	}
+# }
+
+# # Популярность больше 25%
+# country_event = {
+# 	id = islamism.4
+# 	title = islamism.4.t
+# 	desc = islamism.4.d
+# 	picture = GFX_event_islamism_rise_25
+
+# 	trigger = {
+# 		has_country_flag = islamism_10
+# 		democratic > 0.25
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_25
+# 			has_idea = single-party_state
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 60
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_25
+# 	}
+
+# 	option = { # Сохранить коалицию с исламистами
+# 		name = islamism.4.y
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.y"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 80
+# 		}
+# 		add_stability = 0.005
+# 		add_political_power = 20
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Разорвать коалицию с исламистами
+# 		name = islamism.4.n
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.n"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 20
+# 		}
+# 		no_coalition_with_islamists = yes
+# 		add_stability = -0.01
+# 		add_political_power = -30
+# 	}
+
+# 	option = { # Коалиция с исламистами
+# 		name = islamism.4.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.a"
+# 		trigger = {
+# 			is_democracy = yes
+# 			OR = {
+# 				has_government = neutrality
+# 				has_government = fascism
+# 			}
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 5
+# 			modifier = {
+# 				factor = 65
+# 				has_country_flag = pai__islamist
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_nondem_totalitarian
+# 					has_country_flag = pai_democrat_moderate
+# 				}
+# 			}
+# 		}
+# 		random_list = {
+# 			60 = {
+# 				coalition_with_islamists = yes
+# 			}
+# 			40 = {}
+# 		}
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Не враждовать с исламистами
+# 		name = islamism.4.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.b"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 35
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_democrat_moderate
+# 			}
+# 		}
+# 		add_islamist = yes
+# 		clr_country_flag = oppose_islamism
+# 	}
+
+# 	option = { # Выступать против исламизма
+# 		name = islamism.4.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.c"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 		}
+# 		ai_chance = {
+# 			base = 60
+# 			modifier = {
+# 				factor = 20
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 10
+# 				has_country_flag = pai_democrat_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = oppose_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.03
+# 		}
+# 		add_stability = -0.015
+# 		add_political_power = -30
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.4.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.4.s"
+# 		trigger = {
+# 			OR = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		clr_country_flag = oppose_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.05
+# 		}
+# 		add_stability = -0.025
+# 		add_political_power = -50
+# 	}
+# }
+
+# # Популярность больше 25%, однопартийный режим
+# country_event = {
+# 	id = islamism.5
+# 	title = islamism.5.t
+# 	desc = islamism.5.d
+# 	picture = GFX_event_islamism_rise_25
+
+# 	trigger = {
+# 		has_country_flag = islamism_10
+# 		democratic > 0.25
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_25
+# 		}
+# 		has_idea = single-party_state
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 60
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.25
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.5
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.75
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 2
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2.5
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_25
+# 	}
+
+# 	option = { # Пойти на уступки
+# 		name = islamism.5.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.b"
+# 		trigger = {
+# 			government_popularity_50 = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 20
+# 			modifier = {
+# 				factor = 450
+# 				has_country_flag = pai_nondem_reformator
+# 			}
+# 			modifier = {
+# 				factor = 5
+# 				has_country_flag = pai_nondem_authoritarian
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		swap_ideas = {
+# 			remove_idea = single-party_state
+# 			add_idea = dictatorship_state
+# 		}
+# 		move_to_free_media = yes
+# 		move_to_liberties = yes
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = 0.02
+# 		add_political_power = -200
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Игнорировать исламистов
+# 		name = islamism.5.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.c"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.5.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.5.s"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 25
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.05
+# 		}
+# 		add_stability = -0.01
+# 		add_political_power = -30
+# 	}
+# }
+
+# # Популярность снизилась
+# country_event = {
+# 	id = islamism.6
+# 	title = islamism.6.t
+# 	desc = islamism.6.d
+# 	picture = GFX_event_islamism_decrease_25
+
+# 	trigger = {
+# 		has_country_flag = islamism_25
+# 		democratic < 0.2
+# 		NOT = {
+# 			has_government = democratic
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 90
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 0.9
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 0.8
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 0.7
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 0.6
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 0.5
+# 		}
+# 	}
+
+# 	option = {
+# 		name = islamism.6.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.6.a"
+# 		clr_country_flag = islamism_25
+# 		remove_islamist = yes
+# 	}
+# }
+
+# # Популярность больше 40%
+# country_event = {
+# 	id = islamism.7
+# 	title = islamism.7.t
+# 	desc = islamism.7.d
+# 	picture = GFX_event_islamism_rise_40
+
+# 	trigger = {
+# 		has_country_flag = islamism_25
+# 		democratic > 0.4
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_40
+# 			has_idea = single-party_state
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 90
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_40
+# 	}
+
+# 	option = { # Сохранить коалицию с исламистами
+# 		name = islamism.7.y
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.y"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 80
+# 		}
+# 		add_stability = 0.015
+# 		add_political_power = 30
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Разорвать коалицию с исламистами
+# 		name = islamism.7.n
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.n"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 20
+# 		}
+# 		no_coalition_with_islamists = yes
+# 		add_stability = -0.02
+# 		add_political_power = -50
+# 	}
+
+# 	option = { # Коалиция с исламистами
+# 		name = islamism.7.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.a"
+# 		trigger = {
+# 			is_democracy = yes
+# 			OR = {
+# 				has_government = neutrality
+# 				has_government = fascism
+# 			}
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 5
+# 			modifier = {
+# 				factor = 65
+# 				has_country_flag = pai__islamist
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_nondem_totalitarian
+# 					has_country_flag = pai_democrat_moderate
+# 				}
+# 			}
+# 		}
+# 		random_list = {
+# 			40 = {
+# 				coalition_with_islamists = yes
+# 			}
+# 			60 = {}
+# 		}
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Не враждовать с исламистами
+# 		name = islamism.7.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.b"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 35
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_democrat_moderate
+# 			}
+# 		}
+# 		add_islamist = yes
+# 		clr_country_flag = oppose_islamism
+# 	}
+
+# 	option = { # Выступать против исламистов
+# 		name = islamism.7.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.c"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 		}
+# 		ai_chance = {
+# 			base = 60
+# 			modifier = {
+# 				factor = 20
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 10
+# 				has_country_flag = pai_democrat_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = oppose_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.05
+# 		}
+# 		add_stability = -0.025
+# 		add_political_power = -50
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.7.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.s"
+# 		trigger = {
+# 			OR = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = -0.04
+# 		add_political_power = -100
+# 		clr_country_flag = oppose_islamism
+# 	}
+
+# 	option = { # Пойти на уступки
+# 		name = islamism.7.o
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.o"
+# 		trigger = {
+# 			is_democracy = no
+# 			government_popularity_50 = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 40
+# 			modifier = {
+# 				factor = 450
+# 				has_country_flag = pai_nondem_reformator
+# 			}
+# 			modifier = {
+# 				factor = 10
+# 				has_country_flag = pai_nondem_authoritarian
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = dictatorship_state
+# 			}
+# 			swap_ideas = {
+# 				remove_idea = dictatorship_state
+# 				add_idea = presidential_republic
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = absolute_monarchy
+# 			}
+# 			swap_ideas = {
+# 				remove_idea = absolute_monarchy
+# 				add_idea = semi-parliamentary_monarchy
+# 			}
+# 		}
+# 		move_to_free_media = yes
+# 		move_to_liberties = yes
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.2
+# 		}
+# 		add_stability = 0.03
+# 		add_political_power = -300
+# 	}
+# }
+
+# # Популярность больше 40%, однопартийный режим
+# country_event = {
+# 	id = islamism.8
+# 	title = islamism.8.t
+# 	desc = islamism.8.d
+# 	picture = GFX_event_islamism_rise_40
+
+# 	trigger = {
+# 		has_country_flag = islamism_25
+# 		democratic > 0.4
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_40
+# 		}
+# 		has_idea = single-party_state
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 90
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.25
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.5
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.75
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 2
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2.5
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_40
+# 	}
+
+# 	option = { # Пойти на уступки
+# 		name = islamism.8.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.a"
+# 		trigger = {
+# 			government_popularity_50 = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 25
+# 			modifier = {
+# 				factor = 450
+# 				has_country_flag = pai_nondem_reformator
+# 			}
+# 			modifier = {
+# 				factor = 5
+# 				has_country_flag = pai_nondem_authoritarian
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		swap_ideas = {
+# 			remove_idea = single-party_state
+# 			add_idea = dictatorship_state
+# 		}
+# 		move_to_free_media = yes
+# 		move_to_liberties = yes
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.2
+# 		}
+# 		add_stability = 0.03
+# 		add_political_power = -300
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Игнорировать исламистов
+# 		name = islamism.8.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.b"
+# 		trigger = {
+# 			government_popularity_50 = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.8.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.8.c"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 25
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = -0.02
+# 		add_political_power = -50
+# 	}
+# }
+
+# # Популярность снизилась
+# country_event = {
+# 	id = islamism.9
+# 	title = islamism.9.t
+# 	desc = islamism.9.d
+# 	picture = GFX_event_islamism_decrease_40
+
+# 	trigger = {
+# 		has_country_flag = islamism_40
+# 		democratic < 0.32
+# 		NOT = {
+# 			has_government = democratic
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 120
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 0.9
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 0.8
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 0.7
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 0.6
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 0.5
+# 		}
+# 	}
+
+# 	option = {
+# 		name = islamism.9.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.9.a"
+# 		clr_country_flag = islamism_40
+# 		remove_islamist = yes
+# 	}
+# }
+
+# # Популярность больше 50%, демократия
+# country_event = {
+# 	id = islamism.10
+# 	title = islamism.10.t
+# 	desc = islamism.10.d
+# 	picture = GFX_event_islamism_rise_50
+
+# 	trigger = {
+# 		has_country_flag = islamism_40
+# 		democratic > 0.5
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_50
+# 		}
+# 		is_democracy = yes
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 120
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_50
+# 	}
+
+# 	option = { # Сохранить коалицию с исламистами
+# 		name = islamism.10.y
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.10.y"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 80
+# 		}
+# 		add_stability = 0.02
+# 		add_political_power = 50
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Разорвать коалицию с исламистами
+# 		name = islamism.10.n
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.10.n"
+# 		trigger = {
+# 			has_coalition_with_islamists = yes
+# 		}
+# 		ai_chance = {
+# 			factor = 20
+# 		}
+# 		no_coalition_with_islamists = yes
+# 		add_stability = -0.03
+# 		add_political_power = -100
+# 	}
+
+# 	option = { # Коалиция с исламистами
+# 		name = islamism.7.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.a"
+# 		trigger = {
+# 			is_democracy = yes
+# 			OR = {
+# 				has_government = neutrality
+# 				has_government = fascism
+# 			}
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 5
+# 			modifier = {
+# 				factor = 65
+# 				has_country_flag = pai__islamist
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_nondem_totalitarian
+# 					has_country_flag = pai_democrat_moderate
+# 				}
+# 			}
+# 		}
+# 		random_list = {
+# 			20 = {
+# 				coalition_with_islamists = yes
+# 			}
+# 			80 = {}
+# 		}
+# 		add_islamist = yes
+# 	}
+
+# 	option = { # Не враждовать с исламистами
+# 		name = islamism.7.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.b"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 			NOT = {
+# 				has_country_flag = suppress_islamism
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 35
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_democrat_moderate
+# 			}
+# 		}
+# 		add_islamist = yes
+# 		clr_country_flag = oppose_islamism
+# 	}
+
+# 	option = { # Выступать против исламистов
+# 		name = islamism.7.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.c"
+# 		trigger = {
+# 			has_coalition_with_islamists = no
+# 		}
+# 		ai_chance = {
+# 			base = 60
+# 			modifier = {
+# 				factor = 10
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = oppose_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.05
+# 		}
+# 		add_stability = -0.03
+# 		add_political_power = -100
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.7.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.7.s"
+# 		trigger = {
+# 			OR = {
+# 				has_country_flag = oppose_islamism
+# 				has_country_flag = suppress_islamism
+# 			}
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = -0.05
+# 		add_political_power = -150
+# 		clr_country_flag = oppose_islamism
+# 	}
+# }
+
+# # Популярность больше 50%, не демократия
+# country_event = {
+# 	id = islamism.11
+# 	title = islamism.11.t
+# 	desc = islamism.11.d
+# 	picture = GFX_event_islamism_rise_50
+
+# 	trigger = {
+# 		has_country_flag = islamism_40
+# 		democratic > 0.5
+# 	 	NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_50
+# 		}
+# 		is_democracy = no
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 120
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	immediate = {
+# 		set_country_flag = islamism_50
+# 	}
+
+# 	option = { # Уступить власть
+# 		name = islamism.11.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.a"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 850
+# 				has_country_flag = pai__islamist
+# 			}
+# 			modifier = {
+# 				factor = 450
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		random_list = {
+# 			80 = {
+# 				set_politics = {
+# 					ruling_party = democratic
+# 					elections_allowed = yes
+# 				}
+# 			}
+# 			20 = {
+# 				start_civil_war = {
+# 					ruling_party = democratic
+# 					ideology = ROOT
+# 					size = 0.3
+# 				}
+# 			}
+# 		}
+# 		add_stability = 0.05
+# 		add_political_power = -500
+# 		clr_country_flag = suppress_islamism
+# 		clr_country_flag = islamism_10
+# 		clr_country_flag = islamism_25
+# 		clr_country_flag = islamism_40
+# 		clr_country_flag = islamism_50
+# 	}
+
+# 	option = { # Пойти на уступки
+# 		name = islamism.11.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.b"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 450
+# 				has_country_flag = pai_nondem_reformator
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = single-party_state
+# 			}
+# 			swap_ideas = {
+# 				remove_idea = single-party_state
+# 				add_idea = parliamentary_republic
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = dictatorship_state
+# 			}
+# 			swap_ideas = {
+# 				remove_idea = dictatorship_state
+# 				add_idea = presidential_republic
+# 			}
+# 		}
+# 		move_to_free_media = yes
+# 		move_to_liberties = yes
+# 		add_stability = 0.05
+# 		add_political_power = -500
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.3
+# 		}
+# 		clr_country_flag = suppress_islamism
+# 	}
+
+# 	option = { # Ожидать развития событий
+# 		name = islamism.11.c
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.c"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 25
+# 				has_country_flag = pai_nondem_authoritarian
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.11.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.11.s"
+# 		trigger = {
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 25
+# 				has_country_flag = pai_nondem_neutral
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai__islamist
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = -0.04
+# 		add_political_power = -100
+# 	}
+# }
+
+# # Популярность снизилась
+# country_event = {
+# 	id = islamism.12
+# 	title = islamism.12.t
+# 	desc = islamism.12.d
+# 	picture = GFX_event_islamism_decrease_50
+
+# 	trigger = {
+# 		has_country_flag = islamism_50
+# 		democratic < 0.4
+# 		NOT = {
+# 			has_government = democratic
+# 		}
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 180
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 0.9
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 0.8
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 0.7
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 0.6
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 0.5
+# 		}
+# 	}
+
+# 	option = {
+# 		name = islamism.12.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.12.a"
+# 		clr_country_flag = islamism_50
+# 		remove_islamist = yes
+# 	}
+# }
+
+# # Популярность больше 60%, демократия
+# country_event = {
+# 	id = islamism.13
+# 	title = islamism.13.t
+# 	desc = islamism.13.d
+# 	picture = GFX_event_islamism_rise_60
+
+# 	trigger = {
+# 		has_country_flag = islamism_50
+# 		democratic > 0.6
+# 		NOT = {
+# 			has_government = democratic
+# 			has_idea = no_early_election_idea
+# 		}
+# 		is_democracy = yes
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 120
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	option = { # Назначить досрочные выборы (исламисты побеждают)
+# 		name = islamism.13.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.a"
+# 		ai_chance = {
+# 			base = 25
+# 		}
+# 		set_politics = {
+# 			ruling_party = democratic
+# 			elections_allowed = yes
+# 		}
+# 		add_stability = 0.05
+# 		add_political_power = -500
+# 		clr_country_flag = oppose_islamism
+# 		clr_country_flag = suppress_islamism
+# 		clr_country_flag = islamism_10
+# 		clr_country_flag = islamism_25
+# 		clr_country_flag = islamism_40
+# 		clr_country_flag = islamism_50
+# 	}
+
+# 	option = { # Нет досрочных выборов
+# 		name = islamism.13.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.b"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		add_stability = -0.03
+# 		add_political_power = -100
+# 		set_country_flag = oppose_islamism
+# 		clr_country_flag = suppress_islamism
+# 		add_ideas = no_early_election_idea
+# 	}
+
+# 	option = { # Подавлять исламизм
+# 		name = islamism.13.s
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.13.s"
+# 		trigger = {
+# 			can_suppress_ideologies = yes
+# 		}
+# 		ai_chance = {
+# 			base = 25
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_democrat_neutral
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai_nondem_reformator
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		set_country_flag = suppress_islamism
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = -0.1
+# 		}
+# 		add_stability = -0.05
+# 		add_political_power = -150
+# 		clr_country_flag = oppose_islamism
+# 		add_ideas = no_early_election_idea
+# 	}
+# }
+
+# # Популярность больше 60%, не демократия
+# country_event = {
+# 	id = islamism.14
+# 	title = islamism.14.t
+# 	desc = islamism.14.d
+# 	picture = GFX_event_islamism_rise_60
+
+# 	trigger = {
+# 		has_country_flag = islamism_50
+# 		democratic > 0.6
+# 		NOT = {
+# 			has_government = democratic
+# 			has_country_flag = islamism_60
+# 		}
+# 		is_democracy = no
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 90
+# 		modifier = {
+# 			has_stability > 49.9
+# 			has_stability < 60
+# 			factor = 1.2
+# 		}
+# 		modifier = {
+# 			has_stability > 59.9
+# 			has_stability < 70
+# 			factor = 1.4
+# 		}
+# 		modifier = {
+# 			has_stability > 69.9
+# 			has_stability < 80
+# 			factor = 1.6
+# 		}
+# 		modifier = {
+# 			has_stability > 79.9
+# 			has_stability < 90
+# 			factor = 1.8
+# 		}
+# 		modifier = {
+# 			has_stability > 89.9
+# 			factor = 2
+# 		}
+# 	}
+
+# 	option = { # Уступить власть
+# 		name = islamism.14.a
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.14.a"
+# 		ai_chance = {
+# 			base = 50
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = pai_nondem_totalitarian
+# 			}
+# 		}
+# 		random_list = {
+# 			80 = {
+# 				set_politics = {
+# 					ruling_party = democratic
+# 					elections_allowed = yes
+# 				}
+# 			}
+# 			20 = {
+# 				start_civil_war = {
+# 					ruling_party = democratic
+# 					ideology = ROOT
+# 					size = 0.25
+# 				}
+# 			}
+# 		}
+# 		add_stability = 0.05
+# 		add_political_power = -500
+# 		clr_country_flag = suppress_islamism
+# 		clr_country_flag = islamism_10
+# 		clr_country_flag = islamism_25
+# 		clr_country_flag = islamism_40
+# 		clr_country_flag = islamism_50
+# 		clr_country_flag = islamism_60
+# 	}
+
+# 	option = { # Гражданская война
+# 		name = islamism.14.b
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): islamism.14.b"
+# 		ai_chance = {
+# 			base = 25
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_country_flag = pai_nondem_neutral
+# 					has_country_flag = pai__islamist
+# 				}
+# 			}
+# 		}
+# 		start_civil_war = {
+# 			ideology = democratic
+# 			size = 0.5
+# 		}
+# 	}
+# }

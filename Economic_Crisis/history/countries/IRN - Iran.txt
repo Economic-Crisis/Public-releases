@@ -1,28 +1,19 @@
 ﻿# Economic Crisis edit for 0.7.6 alpha
 
-# NOT EDITED LAWS
 # NOT EDITED POLITICS
 
 capital = 266
 
-2013.11.1 = {
-	set_variable = { budget_last_year = 51160 }
-
-	oob = "IRN_2013"
-	load_oob = "tech_IRN_2013"
-
-	# government
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2001.6.8"
+		election_frequency = 48
+		elections_allowed = yes
+	}
 	add_ideas = {
-		irn_hassan_rouhani_hog
-   		irn_mohammad_javad_zarif_fgm
-		irn_hossein_dehghan_defm
-		irn_ali_tayebnia_ecm
-		irn_mahmoud_alavi_ssch
-		IRN_Hassan_Firouzabadi_chogs
-		IRN_Mohammad_Kazemi_isch
-		IRN_Kioumars_Heydari_chogf
-		IRN_Habibollah_Sayyari_chonf
-		IRN_Hassan_Shahsafi_choaf
 		single-party_state
 		unitary_state
 		state_propaganda_media
@@ -48,6 +39,27 @@ capital = 266
 		islam_idea_lvl_3
 		theocracy
 	}
+}
+
+2013.11.1 = {
+	set_variable = { budget_last_year = 51160 }
+
+	oob = "IRN_2013"
+	load_oob = "tech_IRN_2013"
+
+	# government
+	add_ideas = {
+		irn_hassan_rouhani_hog
+   		irn_mohammad_javad_zarif_fgm
+		irn_hossein_dehghan_defm
+		irn_ali_tayebnia_ecm
+		irn_mahmoud_alavi_ssch
+		IRN_Hassan_Firouzabadi_chogs
+		IRN_Mohammad_Kazemi_isch
+		IRN_Kioumars_Heydari_chogf
+		IRN_Habibollah_Sayyari_chonf
+		IRN_Hassan_Shahsafi_choaf
+	}
 
 	set_stability = 0.5
 	add_political_power = 0
@@ -56,7 +68,7 @@ capital = 266
 	
 	set_country_flag = pai_nondem_totalitarian
 	set_politics = {
-	ruling_party = democratic
+		ruling_party = democratic
 		last_election = "2013.6.14"
 		election_frequency = 48
 		elections_allowed = yes

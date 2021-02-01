@@ -58,24 +58,46 @@ add_opinion_modifier = { target = NKO modifier = embargo }
 			puppet = PUE
 		}
 	}
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1984.11.6"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		communism = 0
+		reformism = 1
+		liberalism = 49
+		democratic = 50
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Ronald Reagan"
+		desc = "POLITICS_RONALD_REAGAN_DESC"
+		picture = "gfx/leaders/USA/portrait_ronald_reagan.dds"
+		expire = "1988.12.1"
+		ideology = conservative_democracy
+		traits = { trait_conservative_democracy }
+	}
+	
 }
 
 1999.3.12 = {
-
 	set_global_flag = NATO_expansions1
-
     USA = {
         add_to_faction = HUN
 	    add_to_faction = POL
 	    add_to_faction = CZE
     }
-
 }
 
 2004.3.29 = {
-
 	set_global_flag = NATO_expansions2
-
     USA = {
         add_to_faction = BUL
 	    add_to_faction = LAT
@@ -93,6 +115,7 @@ add_opinion_modifier = { target = NKO modifier = embargo }
 	    add_to_faction = CRO
     }
 }
+
 
 2013.11.1 = {
 

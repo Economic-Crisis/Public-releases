@@ -7,6 +7,34 @@ capital = 748
 
 add_ideas = { au_member }
 
+2001.9.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1998.11.13"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 10
+		democratic = 0
+		neutrality = 90
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Blaise Compaoré"
+		desc = "POLITICS_BLAISE_COMPAORE_DESC"
+		picture = "gfx/leaders/BRF/portrait_blaise_compaore.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
+
+}
+
 2013.11.1 = {
 	set_variable = { budget_last_year = 1193 }
 
@@ -43,23 +71,15 @@ add_ideas = { au_member }
 	}
 	
 	set_popularities = {
-		communism = 60
-		reformism = 20
+		communism = 0
+		reformism = 15
 		liberalism = 0
 		democratic = 0
-		neutrality = 20
+		neutrality = 85
 		fascism = 0
 		rad_islamists = 0
 	}
 
-	create_country_leader = {
-		name = "Blaise Compaoré"
-		desc = "POLITICS_BLAISE_COMPAORE_DESC"
-		picture = "gfx/leaders/BRF/portrait_blaise_compaore.dds"
-		ideology = authoritarian_democracy
-		traits = { trait_authoritarian_democracy }
-	}
-	
 	create_country_leader = {
 		name = "Roch Marc Christian Kabore"
 		desc = "POLITICS_ROCH_MARC_CHRISTIAN_KABORE_DESC"
@@ -67,13 +87,13 @@ add_ideas = { au_member }
 		ideology = social_democracy
 		traits = { trait_social_democracy }
 	}
-	create_country_leader = {
-		name = "Zephirin Diabre"
-		desc = "POLITICS_ZEPHIRIN_DIABRE_DESC"
-		picture = "gfx/leaders/BRF/portrait_zephirin_diabre.dds"
-		ideology = centrist_democracy
-		traits = { trait_centrist_democracy }
-	}
+	#create_country_leader = {
+	#	name = "Zephirin Diabre"
+	#	desc = "POLITICS_ZEPHIRIN_DIABRE_DESC"
+	#	picture = "gfx/leaders/BRF/portrait_zephirin_diabre.dds"
+	#	ideology = centrist_democracy
+	#	traits = { trait_centrist_democracy }
+	#}
 	create_country_leader = {
 		name = "Eddie Komboigo"
 		desc = "POLITICS_EDDIE_KOMBOIGO_DESC"

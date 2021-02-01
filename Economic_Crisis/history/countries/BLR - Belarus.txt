@@ -13,6 +13,27 @@ capital = 206
 	add_ideas = integration_in_csto
 }
 
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1994.3.15"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 10
+		reformism = 4
+		liberalism = 2
+		democratic = 2
+		neutrality = 82
+		fascism = 0
+		rad_islamists = 0
+	}
+}
+
+
 2013.11.1 = {
 	set_variable = { budget_last_year = 7553 }
 
@@ -71,6 +92,14 @@ capital = 206
 		fascism = 0
 		rad_islamists = 0
 	}
+	
+	create_country_leader = {
+		name = "Aleksandr Lukashenko"
+		desc = ""
+		picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko.dds"
+		ideology = authoritarian_democracy
+		traits = { trait_authoritarian_democracy }
+	}
 
 	create_country_leader = {
 		name = "Aleksey Sokol"
@@ -114,14 +143,6 @@ capital = 206
 		traits = { trait_conservative_democracy }
 	}	
 	
-	create_country_leader = {
-		name = "Aleksandr Lukashenko"
-		desc = ""
-		picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko.dds"
-		ideology = authoritarian_democracy
-		traits = { trait_authoritarian_democracy }
-	}
-
   create_field_marshal = {
 		name = "Yury Zhadobin"
 		portrait_path = "gfx/leaders/BLR/portrait_blr_general_yury_zhadobin.dds"

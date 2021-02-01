@@ -23,7 +23,7 @@ focus_tree = {
 	focus = {
 		id = TUR_start1
 		icon = GFX_goal_unknown
-		x = 9
+		x = 6
 		y = 0
 		cost = 210
 		ai_will_do = { factor = 1 }
@@ -115,7 +115,7 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			#ideas
+			remove_ideas = controversial_parliamentarianism
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
@@ -155,6 +155,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_democratic7
 		}
+		available = {
+			has_country_flag = TUR.parliament_criticized
+		}
 		x = 3
 		y = 3
 		cost = 70
@@ -167,6 +170,9 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_democratic8
+		}
+		available = {
+			has_country_flag = TUR.parliament_opposition
 		}
 		x = 3
 		y = 4
@@ -181,11 +187,17 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_democratic9
 		}
+		available = {
+			has_country_flag = TUR.parliament_opposition.win
+		}
 		x = 3
 		y = 5
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			remove_ideas = controversial_parliamentarianism
+			add_ideas = presidential_republic
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -209,6 +221,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_democratic11
 		}
+		available =  {
+			has_country_flag = kurd_dialogue
+		}
 		x = 5
 		y = 3
 		cost = 70
@@ -217,6 +232,9 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = kurd_separatism
 				add_idea = kurd_autonomy
+			}
+			904 = {
+				add_core_of = KUR
 			}
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
@@ -259,7 +277,10 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = { federation }
+			swap_ideas = {
+				remove_idea = unitary_state
+				add_idea = federation
+			}
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
@@ -274,7 +295,7 @@ focus_tree = {
 		}
 		x = 9
 		y = 1
-		cost = 70
+		cost = 100
 		ai_will_do = { factor = 1 }
 		completion_reward = { }
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
@@ -292,7 +313,9 @@ focus_tree = {
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.61
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -345,7 +368,9 @@ focus_tree = {
 		y = 6
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.62
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -371,7 +396,9 @@ focus_tree = {
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.63
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -397,7 +424,9 @@ focus_tree = {
 		y = 10
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			#Переименование
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -410,7 +439,10 @@ focus_tree = {
 		y = 11
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.64
+			#Переименование
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -424,7 +456,7 @@ focus_tree = {
 		}
 		x = 11
 		y = 2
-		cost = 70
+		cost = 100
 		ai_will_do = { factor = 1 }
 		completion_reward = { }
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
@@ -437,9 +469,11 @@ focus_tree = {
 		}
 		x = 11
 		y = 3
-		cost = 70
+		cost = 100
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = militarism_focus
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -507,7 +541,9 @@ focus_tree = {
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.63
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -520,7 +556,9 @@ focus_tree = {
 		y = 9
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.65
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -533,7 +571,9 @@ focus_tree = {
 		y = 10
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			#Переименование
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -546,7 +586,9 @@ focus_tree = {
 		y = 11
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.71
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -562,7 +604,9 @@ focus_tree = {
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.66
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -570,6 +614,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_nationalism22
+		}
+		available = {
+			has_country_flag = turkey.66_b
+		}
+		bypass = {
+			#Прописать пропуск
 		}
 		x = 12
 		y = 5
@@ -583,6 +633,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_nationalism23
+		}
+		available = {
+			has_country_flag = turkey.66_b
+		}
+		bypass = {
+			#Прописать пропуск
 		}
 		x = 12
 		y = 6
@@ -601,7 +657,11 @@ focus_tree = {
 		y = 7
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -614,7 +674,9 @@ focus_tree = {
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.67
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -627,7 +689,9 @@ focus_tree = {
 		y = 9
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.68
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -640,7 +704,9 @@ focus_tree = {
 		y = 10
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.63
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -649,11 +715,17 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_nationalism28
 		}
+		available = {
+			has_completed_focus = TUR_pol_islam3
+			has_completed_focus = TUR_pol_islam10
+		}
 		x = 11
 		y = 11
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			#переименование
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -679,7 +751,9 @@ focus_tree = {
 		y = 9
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.70
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -688,11 +762,26 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_nationalism31
 		}
+		available = {
+			has_country_flag = turkey.70_a
+		}
 		x = 13
 		y = 10
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			random_list = {
+				50 = {
+					start_civil_war = {
+						ideology = democratic
+						size = 0.5
+					}
+				}
+				50 = {
+					army_experience = 100
+				}
+			}
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -701,11 +790,17 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_nationalism32
 		}
+		available = {
+			#Гюлен у власти
+			#has_country_leader
+		}
 		x = 13
 		y = 11
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 60
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
 	}
 	focus = {
@@ -1273,6 +1368,10 @@ focus_tree = {
 					modifier = actions_negative
 				}
 			}
+			swap_ideas = {
+				remove_idea = integration_in_NATO
+				add_idea = own_way
+			}
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
@@ -1379,8 +1478,6 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_pol_nationalism1
-		}
-		prerequisite = {
 			focus = TUR_pol_islam3
 		}
 		x = 28
@@ -1756,11 +1853,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_pol_islam1
-		}
-		prerequisite = {
 			focus = TUR_pol_nationalism1
-		}
-		prerequisite = {
 			focus = TUR_pol_socialism1
 		}
 		x = 34
@@ -1769,7 +1862,10 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			leave_faction = yes
-			remove_ideas = integration_in_nato
+			swap_ideas = {
+				remove_idea = integration_in_NATO
+				add_idea = own_way
+			}
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
@@ -2269,8 +2365,6 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_pol_socialism1
-		}
-		prerequisite = {
 			focus = TUR_pol_islam3
 		}
 		x = 39
@@ -2322,11 +2416,30 @@ focus_tree = {
 	focus = {
 		id = TUR_turkic1
 		icon = GFX_goal_unknown
-		x = 45
+		x = 47
 		y = 0
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+				AND = {
+					has_government = democratic
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+					OR = {
+						has_idea = islam_idea_lvl_2
+						has_idea = islam_idea_lvl_3
+					}
+				}
+			}
+		}
 		cost = 210
 		ai_will_do = { factor = 1 }
-		completion_reward = {  }
+		completion_reward = {
+			country_event = turkey.20
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2335,11 +2448,43 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic1
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				AND = {
+					has_government = democratic
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+					OR = {
+						has_idea = islam_idea_lvl_2
+						has_idea = islam_idea_lvl_3
+					}
+				}
+			}
+		}
 		x = 41
 		y = 1
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.23
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.24
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2348,11 +2493,20 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic2
 		}
+		available = {
+			has_government = fascism
+			has_completed_focus = TUR_pol_nationalism9
+		}
 		x = 41
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 137
+			add_state_claim = 829
+			add_state_claim = 831
+			add_state_claim = 828
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2361,11 +2515,35 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic2
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				AND = {
+					has_government = democratic
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+					OR = {
+						has_idea = islam_idea_lvl_2
+						has_idea = islam_idea_lvl_3
+					}
+				}
+			}
+			has_completed_focus = TUR_pol_islam3
+		}
 		x = 43
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 781
+			add_state_claim = 183
+			add_state_claim = 947
+			add_state_claim = 184
+			add_state_claim = 212
+			add_state_claim = 187
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2374,11 +2552,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic4
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.25
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2387,11 +2578,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic5
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.26
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2400,11 +2604,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic6
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 5
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.27
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2413,11 +2630,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic7
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 6
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.28
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2426,11 +2656,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic8
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 7
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.29
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2439,11 +2682,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic9
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 43
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.30
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2452,11 +2708,34 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic4
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 45
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			create_wargoal = { type = take_state_focus target = BUL }
+			create_wargoal = { type = take_state_focus target = MAC }
+			create_wargoal = { type = take_state_focus target = KOS }
+			create_wargoal = { type = take_state_focus target = SER }
+			create_wargoal = { type = take_state_focus target = ALB }
+			create_wargoal = { type = take_state_focus target = MNT }
+			create_wargoal = { type = take_state_focus target = BOS }
+			create_wargoal = { type = take_state_focus target = CRO }
+			create_wargoal = { type = take_state_focus target = ROM }
+			create_wargoal = { type = take_state_focus target = MOL }
+			create_wargoal = { type = take_state_focus target = TMD }
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2465,11 +2744,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic11
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 45
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 78
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2478,11 +2770,30 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic1
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 48
 		y = 1
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.21
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.31
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2491,11 +2802,30 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic13
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 48
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.32
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.33
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2504,11 +2834,30 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic14
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 48
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.34
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.35
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2517,11 +2866,19 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic15
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 47
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.36
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2530,11 +2887,19 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic15
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 49
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.37
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2543,11 +2908,39 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic1
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 51
 		y = 1
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.38
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.39
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.40
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2556,11 +2949,39 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic18
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 51
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.41
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.42
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.43
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2569,11 +2990,30 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic19
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
 		x = 50
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.44
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.45
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2581,6 +3021,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {
 			focus = TUR_turkic19
+		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
 		}
 		x = 52
 		y = 3
@@ -2595,11 +3041,50 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic1
 		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+			OR = {
+				has_government = democratic
+				OR = {
+					has_idea = state_religion
+					has_idea = theocracy
+				}
+				OR = {
+					has_idea = islam_idea_lvl_2
+					has_idea = islam_idea_lvl_3
+				}
+			}
+		}
 		x = 55
 		y = 1
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.46
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.47
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.48
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2608,11 +3093,50 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic22
 		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+			OR = {
+				has_government = democratic
+				OR = {
+					has_idea = state_religion
+					has_idea = theocracy
+				}
+				OR = {
+					has_idea = islam_idea_lvl_2
+					has_idea = islam_idea_lvl_3
+				}
+			}
+		}
 		x = 53
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.49
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.50
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.51
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2621,11 +3145,50 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic22
 		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+			OR = {
+				has_government = democratic
+				OR = {
+					has_idea = state_religion
+					has_idea = theocracy
+				}
+				OR = {
+					has_idea = islam_idea_lvl_2
+					has_idea = islam_idea_lvl_3
+				}
+			}
+		}
 		x = 55
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.52
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.53
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.54
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2634,11 +3197,50 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic22
 		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+			OR = {
+				has_government = democratic
+				OR = {
+					has_idea = state_religion
+					has_idea = theocracy
+				}
+				OR = {
+					has_idea = islam_idea_lvl_2
+					has_idea = islam_idea_lvl_3
+				}
+			}
+		}
 		x = 57
 		y = 2
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.55
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.56
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = state_religion
+						has_idea = theocracy
+					}
+				}
+				country_event = turkey.57
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2647,11 +3249,16 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic24
 		}
+		available = {
+			has_government = communism
+		}
 		x = 55
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			country_event = turkey.58
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2666,11 +3273,27 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic23
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 57
 		y = 3
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 958
+			add_state_claim = 454
+			add_state_claim = 957
+			add_state_claim = 830
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2679,11 +3302,25 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic27
 		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+			OR = {
+				has_idea = islam_idea_lvl_2
+				has_idea = islam_idea_lvl_3
+			}
+		}
 		x = 57
 		y = 4
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 679
+			add_state_claim = 1067
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2701,11 +3338,90 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic16
 		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+			#Азербайджан
+			custom_trigger_tooltip = {
+				tooltip = TUR_turkic29_1_tt		
+				controls_state = 229
+				controls_state = 815
+				controls_state = 816
+				controls_state = 877
+				controls_state = 817
+				controls_state = 818
+				controls_state = 1023
+				controls_state = 775
+				controls_state = 1021
+				controls_state = 1022
+			}
+			#Казахстан
+			custom_trigger_tooltip = {
+				tooltip = TUR_turkic29_2_tt		
+				controls_state = 587
+				controls_state = 405
+				controls_state = 407
+				controls_state = 402
+				controls_state = 404
+				controls_state = 435
+				controls_state = 434
+				controls_state = 583
+				controls_state = 856
+				controls_state = 590
+				controls_state = 872
+				controls_state = 871
+				controls_state = 589
+				controls_state = 588
+			}
+			#Туркменистан
+			custom_trigger_tooltip = {
+				tooltip = TUR_turkic29_3_tt		
+				controls_state = 795
+				controls_state = 794
+				controls_state = 793
+				controls_state = 784
+				controls_state = 791
+			}
+			#Узбекистан
+			custom_trigger_tooltip = {
+				tooltip = TUR_turkic29_4_tt		
+				controls_state = 805
+				controls_state = 585
+				controls_state = 800
+				controls_state = 798
+				controls_state = 799
+				controls_state = 406
+				controls_state = 732
+			}
+			#Киргиз
+			custom_trigger_tooltip = {
+				tooltip = TUR_turkic29_5_tt		
+				controls_state = 804
+				controls_state = 586
+				controls_state = 802
+				controls_state = 803
+			}
+		}
 		x = 51
 		y = 5
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				country_event = turkey.59
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				country_event = turkey.60
+			}
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2714,11 +3430,17 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic29
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 51
 		y = 6
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 886
+			add_state_claim = 885
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2727,11 +3449,19 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic30
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 51
 		y = 7
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 654
+			add_state_claim = 582
+			add_state_claim = 574
+			add_state_claim = 329
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2740,11 +3470,16 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic31
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 49
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 249
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2753,11 +3488,16 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic31
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 51
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 256
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2766,11 +3506,16 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic31
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 53
 		y = 8
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 651
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 	focus = {
@@ -2779,11 +3524,22 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_turkic29
 		}
+		available = {
+			has_government = fascism
+		}
 		x = 53
 		y = 6
 		cost = 70
 		ai_will_do = { factor = 1 }
-		completion_reward = { }
+		completion_reward = {
+			add_state_claim = 929
+			add_state_claim = 619
+			add_state_claim = 287
+			add_state_claim = 594
+			add_state_claim = 728
+			add_state_claim = 617
+			add_state_claim = 618
+		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
 	}
 
@@ -4117,6 +4873,885 @@ focus_tree = {
 			add_research_slot = 1	
 		}
 		search_filters = {FOCUS_FILTER_RESEARCH}
+	}
+
+	focus = {
+		id = TUR_army #ВС 
+		icon =  GFX_goal_generic_military_sphere
+		x = 70
+		y = 0
+		cost = 70
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 20
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY FOCUS_FILTER_AVIATION FOCUS_FILTER_NAVY}
+	}
+    focus = {
+		id = TUR_army_effort
+		icon =  GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = TUR_army }
+		x = 67
+		y = 1
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_equipment_effort
+		icon =  GFX_goal_ger_equipment_effort
+		prerequisite = { focus = TUR_army_effort }
+		x = 66
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_motorization_effort
+		icon =  GFX_goal_ger_motorization_effort
+		prerequisite = { focus = TUR_army_effort }
+		bypass = { has_tech = tech_motorized_infantry }
+		x = 68
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = tech_motorized_infantry
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_army_effort }
+		x = 67
+		y = 3
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_equipment_effort_2
+		icon =  GFX_goal_ger_equipment_effort_2
+		prerequisite = { focus = TUR_equipment_effort }
+		x = 66
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_mechanization_effort
+		icon =  GFX_goal_ger_mechanization_effort
+		prerequisite = { focus = TUR_motorization_effort }
+		x = 68
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_motorized_vehicle
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_doctrine_effort }
+		x = 67
+		y = 5
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_doctrine_effort_3
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = TUR_doctrine_effort_2 }
+		x = 67
+		y = 7
+		cost = 70
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_equipment_effort_3
+		icon =  GFX_goal_ger_equipment_effort_3
+		prerequisite = { focus = TUR_equipment_effort_2 }
+		x = 66
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_equipment_effort_4
+		icon =  GFX_goal_ger_equipment_effort_4
+		prerequisite = { focus = TUR_equipment_effort_3 }
+		x = 66
+		y = 8
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_armor_effort
+		icon =  GFX_goal_ger_armor_effort
+		prerequisite = { focus = TUR_mechanization_effort }
+		x = 68
+		y = 6
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_armor_effort_2
+		icon =  GFX_goal_ger_armor_effort
+		prerequisite = { focus = TUR_armor_effort }
+		x = 68
+		y = 8
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_special_forces
+		icon = GFX_goal_ger_special_forces
+		prerequisite = { focus = TUR_equipment_effort_4 }
+		prerequisite = { focus = TUR_doctrine_effort_3 }
+		prerequisite = { focus = TUR_armor_effort_2 }
+		x = 67
+		y = 9
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_paratroopers
+				technology = tech_marines
+				technology = tech_mountaineers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_paratroopers_divisions
+		icon = GFX_goal_ger_paratroopers_divisions
+		prerequisite = { focus = TUR_special_forces }
+		x = 66
+		y = 10
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_paratroopers
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_special_forces_2
+		icon = GFX_goal_ger_special_forces
+		prerequisite = { focus = TUR_special_forces }
+		x = 67
+		y = 11
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_special_forces
+				 
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_marines_divisions
+		icon = GFX_goal_ger_marines_divisions
+		prerequisite = { focus = TUR_special_forces }
+		x = 68
+		y = 10
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_marines
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY}
+	}
+	focus = {
+		id = TUR_aviation_effort
+		prerequisite = { focus = TUR_army }
+		icon = GFX_goal_generic_build_airforce
+		x = 71
+		y = 1
+		cost = 70
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_fighter_focus
+		icon =  GFX_goal_ger_fighter_focus
+		prerequisite = { focus = TUR_aviation_effort }
+		mutually_exclusive = { focus = TUR_bomber_focus }
+		x = 70
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fighter_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_bomber_focus
+		icon =  GFX_goal_ger_bomber_focus
+		prerequisite = { focus = TUR_aviation_effort }
+		mutually_exclusive = { focus = TUR_fighter_focus }
+		x = 72
+		y = 2
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category =  cat_ground_attack_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_aviation_effort_2
+		icon =  GFX_goal_ger_aviation_effort_2
+		prerequisite = { focus = TUR_bomber_focus focus = TUR_fighter_focus }
+		x = 71
+		y = 3
+		cost = 70
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+
+	focus = {
+		id = TUR_CAS_effort
+		icon =  GFX_goal_ger_cas_effort
+		prerequisite = { focus = TUR_aviation_effort_2 }
+		prerequisite = { focus = TUR_motorization_effort }
+		x = 70
+		y = 4
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = aircraft_rocket_technologies
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = TUR_aviation_effort_2 }
+		prerequisite = { focus = TUR_generic_infrastructure_effort }
+		x = 71
+		y = 7
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 0.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_NAV_effort
+		icon = GFX_goal_generic_developing_UAV
+		prerequisite = { focus = TUR_aviation_effort_2 }
+		prerequisite = { focus = TUR_flexible_navy }
+		x = 72
+		y = 5
+		cost = 70
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_naval_aircrafts_tech
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_naval_effort
+		prerequisite = { focus = TUR_army }
+		icon =  GFX_goal_generic_construct_naval_dockyard
+		x = 75
+		y = 1
+		cost = 70
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}			
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = TUR_naval_effort }
+		mutually_exclusive = { focus = TUR_large_navy }
+		x = 74
+		y = 2
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = TUR_naval_effort }
+		mutually_exclusive = { focus = TUR_flexible_navy }
+		x = 76
+		y = 2
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_AVIATION}
+	}
+	focus = {
+		id = TUR_submarine_effort
+		icon = GFX_goal_generic_submarine_effort
+		prerequisite = { focus = TUR_flexible_navy focus = TUR_large_navy }
+		x = 74
+		y = 3
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_speed_submarines
+				technology = body_speed_submarines1
+				technology = body_speed_submarines2
+				technology = body_speed_submarines3
+			}
+		}
+	}
+	focus = {
+		id = TUR_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = TUR_large_navy focus = TUR_flexible_navy }
+		x = 76
+		y = 3
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_escort_cruiser
+				technology = body_escort_cruiser_nr
+				technology = body_escort_cruiser1
+				technology = body_escort_cruiser1_nr
+				technology = body_escort_cruiser2
+				technology = body_escort_cruiser2_nr
+				technology = body_escort_cruiser3
+				technology = body_escort_cruiser3_nr
+			}
+		}
+	}
+	focus = {
+		id = TUR_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = TUR_submarine_effort }
+		x = 74
+		y = 4
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_destroyer
+				technology = body_destroyer1
+				technology = body_destroyer1_nr
+				technology = body_destroyer2
+				technology = body_destroyer_2_nr
+			}
+		}
+	}
+	focus = {
+		id = TUR_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = TUR_cruiser_effort }
+		x = 76
+		y = 4
+		cost = 70
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = body_strike_cruiser
+				technology = body_strike_cruiser_nr
+				technology = body_strike_cruiser1
+				technology = body_strike_cruiser1_nr
+				technology = body_strike_cruiser2
+				technology = body_strike_cruiser2_nr
+				technology = body_strike_cruiser3
+				technology = body_strike_cruiser3_nr
+			}
+		}
 	}
 
 }

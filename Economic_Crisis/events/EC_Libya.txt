@@ -25,8 +25,9 @@ country_event = {  #Civil war 2014
 	
 	trigger = { 
 	    tag = LBA
-		has_stability < 0.1
+		#has_stability < 0.3
 	    country_exists = LBA
+		date > 2014.5.13
 	}
 	
 	mean_time_to_happen = {
@@ -73,7 +74,7 @@ country_event = {  #Civil war 2014
 	}
 	
 	option = {
-		name = libya.1.b     #Поддержать действующий правительства
+		name = libya.1.b     #Поддержать действующее правительство
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): libya.1.b"
 		set_capital = 451
 		start_civil_war = {

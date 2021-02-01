@@ -620,3 +620,66 @@ country_event = {
 
 }
 
+#Кубань
+country_event = {
+	id = change_leader.19
+	title = change_leader.19.t
+	desc = change_leader.19.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = KUB
+		country_exists = KUB
+		date > 2014.4.19
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.19.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.19.a"
+		create_country_leader = {
+			name = "Veniamin Kondratyev"
+			desc = ""
+			picture = "gfx/leaders/KUB/portrait_veniamin_kondratyev.dds"
+			ideology = sovereign_democracy 
+			traits = { trait_sovereign_democracy }
+		}
+	}
+
+}
+
+country_event = {
+	id = change_leader.20
+	title = change_leader.20.t
+	desc = change_leader.20.d
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		tag = LUX
+		country_exists = LUX
+		date > 2013.12.1
+		has_government = democratic
+		is_subject = no
+	}
+	
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = change_leader.20.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): change_leader.20.a"
+		set_politics = {
+			ruling_party = liberalism
+		}
+		create_country_leader = {
+			name = "Xavier Bettel"
+			desc = ""
+			picture = "gfx/leaders/LUX/portrait_xavier_bettel.dds"
+			ideology = liberal_democracy 
+			traits = { trait_liberal_democracy }
+		}
+	}
+
+}

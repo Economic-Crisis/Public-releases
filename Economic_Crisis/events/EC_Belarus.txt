@@ -645,6 +645,92 @@ country_event = {
     }
 }
 
+country_event = { 
+    id = belarus.80
+    title = belarus.80.t 
+    desc = belarus.80.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.80.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			create_faction = Slavian_brathers
+			dismantle_faction = yes
+			POL = {
+				add_to_faction = BLR
+			}
+		}
+    }
+	option = { 
+        name = belarus.80.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 45
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = POL
+				modifier = actions_negative
+			}
+		}
+    }
+}
+
+country_event = { 
+    id = belarus.81
+    title = belarus.81.t 
+    desc = belarus.81.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.81.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			create_faction = Slavian_brathers
+			dismantle_faction = yes
+			RUS = {
+				add_to_faction = BLR
+			}
+		}
+    }
+	option = { 
+        name = belarus.81.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_UNION.7.a"
+        ai_chance = { 
+            factor = 45
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_negative
+			}
+		}
+    }
+}
+
 country_event = { ##Закупка танков (РФ)
     id = belarus.16
     title = belarus.16.t 

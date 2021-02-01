@@ -101,6 +101,15 @@ focus_tree = {
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			set_country_flag = russian_spring
+			if = {
+				limit = {
+					OR = {
+						has_cosmetic_tag = RUS_USSR 
+						has_cosmetic_tag = RUS_UNION
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
 			add_political_power = 120
 			set_rule = { can_send_volunteers = yes }
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_russian_spring"
@@ -1296,6 +1305,15 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): RUS_compromise_with_west"
+			if = {
+				limit = {
+					OR = {
+						has_cosmetic_tag = RUS_USSR 
+						has_cosmetic_tag = RUS_UNION
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
 			add_opinion_modifier = {
 				target = GER
 				modifier = actions_positive

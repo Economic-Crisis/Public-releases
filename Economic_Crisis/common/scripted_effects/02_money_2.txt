@@ -367,73 +367,89 @@ set_resources_inc_begin = {
 	
 }
 
+reset_resources_price_inc = {
+	set_variable = { oil_inc = 0.3 }
+	set_variable = { energy_resource_inc = 0.1 }
+	set_variable = { iron_ore_inc = 0.05 }
+	set_variable = { steel_inc = 0.12 }
+	set_variable = { bauxite_inc = 0.07 }
+	set_variable = { aluminium_inc = 0.14 }
+	set_variable = { alloy_ore_inc = 0.08 }
+	set_variable = { alloy_steel_inc = 0.15 }
+	set_variable = { rare_earth_ore_inc = 0.2 }
+	set_variable = { rare_metals_inc = 0.35 }
+	set_variable = { uran_inc = 0.2 }
+	set_variable = { enr_uran_inc = 0.4 }
+	set_variable = { polymers_inc = 0.1 }
+}
+
 set_resources_inc = {
 
 
 	#oil
 	
 	set_temp_variable = { oil_inc = resource_exported@oil }
-	set_variable = { oil_inc = 0.3 }
+	#set_variable = { oil_inc = 0.3 }
 	
 	#energy_resource
 	
 	set_temp_variable = { energy_resource_inc = resource_exported@energy_resource }
-	set_variable = { energy_resource_inc = 0.1 }
+	#set_variable = { energy_resource_inc = 0.1 }
 	
 	#iron_ore
 	
 	set_temp_variable = { iron_ore_inc = resource_exported@iron_ore }
-	set_variable = { iron_ore_inc = 0.05 }
+	#set_variable = { iron_ore_inc = 0.05 }
 	
 	#steel
 	
 	set_temp_variable = { steel_inc = resource_exported@steel }
-	set_variable = { steel_inc = 0.12 }
+	#set_variable = { steel_inc = 0.12 }
 	
 	#bauxite
 	
 	set_temp_variable = { bauxite_inc = resource_exported@bauxite }
-	set_variable = { bauxite_inc = 0.07 }
+	#set_variable = { bauxite_inc = 0.07 }
 	
 	#aluminium
 	
 	set_temp_variable = { aluminium_inc = resource_exported@aluminium }
-	set_variable = { aluminium_inc = 0.14 }
+	#set_variable = { aluminium_inc = 0.14 }
 	
 	#alloy_ore
 	
 	set_temp_variable = { alloy_ore_inc = resource_exported@alloy_ore }
-	set_variable = { alloy_ore_inc = 0.08 }
+	#set_variable = { alloy_ore_inc = 0.08 }
 	
 	#alloy_steel
 	
 	set_temp_variable = { alloy_steel_inc = resource_exported@alloy_steel }
-	set_variable = { alloy_steel_inc = 0.15 }
+	#set_variable = { alloy_steel_inc = 0.15 }
 	
 	#rare_earth_ore
 	
 	set_temp_variable = { rare_earth_ore_inc = resource_exported@rare_earth_ore }
-	set_variable = { rare_earth_ore_inc = 0.2 }
+	#set_variable = { rare_earth_ore_inc = 0.2 }
 	
 	#rare_metals
 	
 	set_temp_variable = { rare_metals_inc = resource_exported@rare_metals }
-	set_variable = { rare_metals_inc = 0.35 }
+	#set_variable = { rare_metals_inc = 0.35 }
 	
 	#uran
 	
 	set_temp_variable = { uran_inc = resource_exported@uran }
-	set_variable = { uran_inc = 0.2 }
+	#set_variable = { uran_inc = 0.2 }
 	
 	#enr_uran
 	
 	set_temp_variable = { enr_uran_inc = resource_exported@enr_uran }
-	set_variable = { enr_uran_inc = 0.4 }
+	#set_variable = { enr_uran_inc = 0.4 }
 	
 	#polymers
 	
 	set_temp_variable = { polymers_inc = resource_exported@polymers }
-	set_variable = { polymers_inc = 0.1 }
+	#set_variable = { polymers_inc = 0.1 }
 	
 	
 	add_to_variable = { resources_inc = oil_inc }
@@ -492,73 +508,90 @@ set_money_electricity_dec = {
 	if = { limit = { has_country_flag = money_trillions }
 	divide_variable = { money_electricity_dec_week = 1000 } }
 }
+
+reset_resources_price_exp = {
+	set_variable = { oil_exp = 0.3 }
+	set_variable = { energy_resource_exp = 0.1 }
+	set_variable = { iron_ore_exp = 0.05 }
+	set_variable = { steel_exp = 0.12 }
+	set_variable = { bauxite_exp = 0.07 }
+	set_variable = { aluminium_exp = 0.14 }
+	set_variable = { alloy_ore_exp = 0.08 }
+	set_variable = { alloy_steel_exp = 0.15 }
+	set_variable = { rare_earth_ore_exp = 0.2 }
+	set_variable = { rare_metals_exp = 0.35 }
+	set_variable = { uran_exp = 0.2 }
+	set_variable = { enr_uran_exp = 0.4 }
+	set_variable = { polymers_exp = 0.1 }
+	
+}
 set_resources_exp = {
 
 
 	#oil
 	
 	set_temp_variable = { oil_exp = resource_imported@oil }
-	set_variable = { oil_exp = 0.3 }
+	#set_variable = { oil_exp = 0.3 }
 	
 	#energy_resource
 	
 	set_temp_variable = { energy_resource_exp = resource_imported@energy_resource }
-	set_variable = { energy_resource_exp = 0.1 }
+	#set_variable = { energy_resource_exp = 0.1 }
 	
 	#iron_ore
 	
 	set_temp_variable = { iron_ore_exp = resource_imported@iron_ore }
-	set_variable = { iron_ore_exp = 0.05 }
+	#set_variable = { iron_ore_exp = 0.05 }
 	
 	#steel
 	
 	set_temp_variable = { steel_exp = resource_imported@steel }
-	set_variable = { steel_exp = 0.12 }
+	#set_variable = { steel_exp = 0.12 }
 	
 	#bauxite
 	
 	set_temp_variable = { bauxite_exp = resource_imported@bauxite }
-	set_variable = { bauxite_exp = 0.07 }
+	#set_variable = { bauxite_exp = 0.07 }
 	
 	#aluminium
 	
 	set_temp_variable = { aluminium_exp = resource_imported@aluminium }
-	set_variable = { aluminium_exp = 0.14 }
+	#set_variable = { aluminium_exp = 0.14 }
 	
 	#alloy_ore
 	
 	set_temp_variable = { alloy_ore_exp = resource_imported@alloy_ore }
-	set_variable = { alloy_ore_exp = 0.08 }
+	#set_variable = { alloy_ore_exp = 0.08 }
 	
 	#alloy_steel
 	
 	set_temp_variable = { alloy_steel_exp = resource_imported@alloy_steel }
-	set_variable = { alloy_steel_exp = 0.15 }
+	#set_variable = { alloy_steel_exp = 0.15 }
 	
 	#rare_earth_ore
 	
 	set_temp_variable = { rare_earth_ore_exp = resource_imported@rare_earth_ore }
-	set_variable = { rare_earth_ore_exp = 0.2 }
+	#set_variable = { rare_earth_ore_exp = 0.2 }
 	
 	#rare_metals
 	
 	set_temp_variable = { rare_metals_exp = resource_imported@rare_metals }
-	set_variable = { rare_metals_exp = 0.35 }
+	#set_variable = { rare_metals_exp = 0.35 }
 	
 	#uran
 	
 	set_temp_variable = { uran_exp = resource_imported@uran }
-	set_variable = { uran_exp = 0.2 }
+	#set_variable = { uran_exp = 0.2 }
 	
 	#enr_uran
 	
 	set_temp_variable = { enr_uran_exp = resource_imported@enr_uran }
-	set_variable = { enr_uran_exp = 0.4 }
+	#set_variable = { enr_uran_exp = 0.4 }
 	
 	#polymers
 	
 	set_temp_variable = { polymers_exp = resource_imported@polymers }
-	set_variable = { polymers_exp = 0.1 }
+	#set_variable = { polymers_exp = 0.1 }
 	
 	
 	add_to_variable = { resources_exp = oil_exp }

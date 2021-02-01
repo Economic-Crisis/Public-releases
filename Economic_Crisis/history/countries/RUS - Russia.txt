@@ -99,12 +99,12 @@ add_ideas = {
 	remove_from_faction = UZB
 }
 
-1999.12.31= {
+1999.12.31 = {
 	# Путин
 	create_country_leader = {
 		name = "Vladimir Putin" #Владимир Путин
 		desc = "POLITICS_VLADIMIR_PUTIN_DESC"
-		picture = "gfx/leaders/RUS/portrait_vladimir_putin.dds"
+		picture = "gfx/leaders/RUS/portrait_vladimir_putin_2000.dds"
 		ideology = authoritarian_democracy #Беспартийный
 		expire = "2008.3.2"
 		traits = { trait_authoritarian_democracy }
@@ -117,6 +117,50 @@ add_ideas = {
 
 2000.11.20 = {
 	add_ideas = support_cis_2_member
+}
+
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2000.3.14"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 29
+		reformism = 7
+		liberalism = 2
+		democratic = 2
+		neutrality = 50
+		fascism = 10
+		rad_islamists = 0
+	}
+	create_country_leader = {
+		name = "Gennadiy Zyuganov" #Геннадий Зюганов
+		desc = "POLITICS_GENNADIY_ZYUGANOV_DESC"
+		picture = "gfx/leaders/RUS/portrait_gennadiy_zyuganov.dds"
+		ideology = leninism #КПРФ
+		traits = { trait_leninism }
+	}
+	
+	create_country_leader = {
+		name = "Vladimir Zhirinovskiy" #Владимир Жириновский
+		desc = "POLITICS_VLADIMIR_ZHIRINOVSKIY_DESC"
+		picture = "gfx/leaders/RUS/portrait_vladimir_djirinovskiy.dds"
+		ideology = national_populism #ЛДПР
+		traits = { trait_national_populism }
+	}
+
+	create_country_leader = {
+		name = "Grigoriy Yavlinskiy" #Григорий Явлинский
+		desc = "POLITICS_GRIGORIY_YAVLINSKIY_DESC"
+		picture = "gfx/leaders/RUS/portrait_gregory_yavlinskiy.dds"
+		ideology = social_liberalism #Яблоко
+		traits = { trait_social_liberalism }
+	}
 }
 
 2006.8.16 = {
@@ -221,29 +265,13 @@ add_ideas = {
 	
 	#Остальные партии 
 
-	create_country_leader = {
-		name = "Eduard Limonov" #Эдуард Лимонов
-		desc = "POLITICS_EDUARD_LIMONOV_DESC"
-		picture = "gfx/leaders/RUS/portrait_eduard_limonov.dds"
-		ideology = national_communism #Национал-большевики
-		traits = { trait_national_communism }
-	}
-
-	create_country_leader = {
-		name = "Gennadiy Zyuganov" #Геннадий Зюганов
-		desc = "POLITICS_GENNADIY_ZYUGANOV_DESC"
-		picture = "gfx/leaders/RUS/portrait_gennadiy_zyuganov.dds"
-		ideology = leninism #КПРФ
-		traits = { trait_leninism }
-	}
-	
-	create_country_leader = {
-		name = "Vladimir Zhirinovskiy" #Владимир Жириновский
-		desc = "POLITICS_VLADIMIR_ZHIRINOVSKIY_DESC"
-		picture = "gfx/leaders/RUS/portrait_vladimir_djirinovskiy.dds"
-		ideology = national_populism #ЛДПР
-		traits = { trait_national_populism }
-	}
+	#create_country_leader = {
+	#	name = "Eduard Limonov" #Эдуард Лимонов
+	#	desc = "POLITICS_EDUARD_LIMONOV_DESC"
+	#	picture = "gfx/leaders/RUS/portrait_eduard_limonov.dds"
+	#	ideology = national_communism #Национал-большевики
+	#	traits = { trait_national_communism }
+	#}
 
 	create_country_leader = {
 		name = "Sergey Mironov" #Сергей Миронов
@@ -252,15 +280,7 @@ add_ideas = {
 		ideology = social_democracy #Справедливая Россия
 		traits = { trait_social_democracy }
 	}
-
-	create_country_leader = {
-		name = "Grigoriy Yavlinskiy" #Григорий Явлинский
-		desc = "POLITICS_GRIGORIY_YAVLINSKIY_DESC"
-		picture = "gfx/leaders/RUS/portrait_gregory_yavlinskiy.dds"
-		ideology = social_liberalism #Яблоко
-		traits = { trait_social_liberalism }
-	}
-
+	
 	create_country_leader = {
 		name = "Irina Prokhorova" #Ирина Прохорова 
 		desc = "POLITICS_IRINA_PROKHOROVA_DESC"
@@ -324,7 +344,7 @@ add_ideas = {
 	if = {
 		limit = { has_dlc = "La Resistance" }
 		create_operative_leader = {
-			name = "Aleksandr Petrov"
+			name = "Anatoliy Chepiga"
 			GFX = GFX_portrait_anatoliy_chepiga
 			traits = { }
 			bypass_recruitment = no
@@ -332,7 +352,7 @@ add_ideas = {
 			nationalities = { RUS }
 		}
 		create_operative_leader = {
-			name = "Ruslan Boshirov"
+			name = "Aleksandr Mishkin"
 			GFX = GFX_portrait_aleksandr_mishkin
 			traits = { }
 			bypass_recruitment = no

@@ -29,6 +29,12 @@ operation_rescue_operative = { ### 0 1/35
 	available = {
 		
 	}
+	
+	requirements = {
+		FROM = {
+			has_captured_operative = ROOT
+		}
+	}
 
 	equipment = {
 		
@@ -2616,40 +2622,36 @@ operation_steal_tech_navy = { ### 17 3/55
 
 		random_list = {
 			33 = {
-				if = {
-  					ROOT = {
-						steal_random_tech_bonus = {
-							folder = naval_folder
-							folder = submarines_folder
-							folder = heavy_ships_folder
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = naval_folder
+						folder = submarines_folder
+						folder = heavy_ships_folder
 
-							bonus = 3.0
-							ahead_reduction = 2
-							dynamic = yes
-							instant = yes
-							name = operation_steal_tech_navy
-							target = FROM
-							uses = 1
-						}
+						bonus = 3.0
+						ahead_reduction = 2
+						dynamic = yes
+						instant = yes
+						name = operation_steal_tech_navy
+						target = FROM
+						uses = 1
 					}
   				}			
 			}
 			67 = {
-				if = {
-					ROOT = {
-						steal_random_tech_bonus = {
-							folder = naval_folder
-							folder = submarines_folder
-							folder = heavy_ships_folder
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = naval_folder
+						folder = submarines_folder
+						folder = heavy_ships_folder
 
-							bonus = 3.0
-							ahead_reduction = 1
-							dynamic = yes
-							instant = yes
-							name = operation_steal_tech_navy
-							target = FROM
-							uses = 1
-						}
+						bonus = 3.0
+						ahead_reduction = 1
+						dynamic = yes
+						instant = yes
+						name = operation_steal_tech_navy
+						target = FROM
+						uses = 1
 					}
 				}
 			}
@@ -2659,6 +2661,8 @@ operation_steal_tech_navy = { ### 17 3/55
 		ROOT = {
 			steal_random_tech_bonus = {
 				folder = naval_folder
+				folder = submarines_folder
+				folder = heavy_ships_folder
 
 				bonus = 3.0
 				dynamic = yes

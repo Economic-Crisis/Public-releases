@@ -11,6 +11,7 @@ add_ideas = {
 	NPT
 	parliamentary_republic
 	kurd_separatism
+	controversial_parliamentarianism
 }
 
 1992.1.1 = {
@@ -21,6 +22,17 @@ add_ideas = {
 	give_guarantee = NCY
 	add_ideas = bsec_member
 	add_ideas = Turkic_Council
+}
+
+2001.9.1 = {
+	oob = "_army_minor_2013"
+	set_country_flag = pai_nondem_authoritarian
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2000.5.16"
+		election_frequency = 50
+		elections_allowed = yes
+	}
 }
 
 2013.11.1 = {
@@ -89,9 +101,27 @@ add_ideas = {
 		name = "Ekmeleddin İhsanoğlu"
 		desc = "POLITICS_EKMELEDDIN_IHSANOGLU_DESC"
 		picture = "gfx/leaders/TUR/portrait_ekmeleddin_ihsanoglu.dds"
-		ideology = irredentism
-		traits = { trait_irredentism }
+		ideology = social_democracy
+		traits = { trait_social_democracy }
 	}
+
+	#Кандидат на выборах (правда, от другой партии)
+	#create_country_leader = {
+	#	name = "Selahattin Demirtaş"
+	#	desc = "POLITICS_SELAHATTIN_DEMIRTAS_DESC"
+	#	picture = "gfx/leaders/TUR/portrait_selahattin_demirtas.dds"
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
+	#}
+
+	#Лидер партии националистического движения
+	#create_country_leader = {
+	#	name = "Devlet Bahçeli"
+	#	desc = "POLITICS_DEVLET_BAHCELI_DESC"
+	#	picture = "gfx/leaders/TUR/portrait_devlet_bahceli.dds"
+	#	ideology = national_conservatism
+	#	traits = { trait_national_conservatism }
+	#}
 	
 	#Generals
 	create_field_marshal = {

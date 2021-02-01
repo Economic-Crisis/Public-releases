@@ -917,12 +917,13 @@ country_event = { #ООН вводил новый пакет санкции
 	is_triggered_only = yes
 	
 	immediate = {
-		#hidden_effect = {	
+		hidden_effect = {	
 			every_country = {
 				limit = {
 					AND = {
 						has_idea = unsc_member
-						has_idea = eu_member }
+						has_idea = eu_member
+					}
 				}
 				add_opinion_modifier = {
 					target = FROM
@@ -957,7 +958,7 @@ country_event = { #ООН вводил новый пакет санкции
 				}
 			}
 			
-		#}	
+		}	
 	}
 	option = {
 		name = UN_event.11.a

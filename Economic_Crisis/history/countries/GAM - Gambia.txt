@@ -2,10 +2,39 @@
 
 capital = 701
 
-  add_ideas = {
-		au_member
+add_ideas = {
+	au_member
+}
+	
+2001.9.1 = {
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2001.9.22"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 3
+		reformism = 0
+		liberalism = 30
+		democratic = 0
+		neutrality = 67
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Yahya Jammeh"
+		desc = "POLITICS_YAHYA_JAMMEH_DESC"
+		picture = "gfx/leaders/GAM/portrait_yahya_jammeh.dds"
+		ideology = authoritarian_democracy
+		expire = "2016.12.5"
+		traits = { trait_authoritarian_democracy }
 	}
 	
+}
+
 2013.11.1 = {
 	set_variable = { budget_last_year = 90 }
 
@@ -71,7 +100,10 @@ capital = 701
 		ideology = populism
 		traits = { trait_populism }
 	}
+	
+}
 
+2016.12.5 = {
 	create_country_leader = {
 		name = "Adama Barrow"
 		desc = "POLITICS_ADAMA_BARROW_DESC"
@@ -79,15 +111,4 @@ capital = 701
 		ideology = authoritarian_democracy
 		traits = { trait_authoritarian_democracy }
 	}
-
-	create_country_leader = {
-		name = "Yahya Jammeh"
-		desc = "POLITICS_YAHYA_JAMMEH_DESC"
-		picture = "gfx/leaders/GAM/portrait_yahya_jammeh.dds"
-		ideology = authoritarian_democracy
-		expire = "2016.12.5"
-		traits = { trait_authoritarian_democracy }
-	}
-	
 }
-

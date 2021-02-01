@@ -781,40 +781,40 @@ put_garrisons_on_high_prio = {
 	}
 }
 
-default_spyplanes_production = { #Дроны-шпионы
-	enable = {
-		has_tech = tech_uas_company
-		OR = {
-			has_equipment = {
-				scout_dron_equipment > 50
-			}
-			has_deployed_air_force_size = {
-				size > 50
-				type = scout_plane
-			}
-		}
-	}
+# default_spyplanes_production = { #Дроны-шпионы
+# 	enable = {
+# 		has_tech = tech_uas_company
+# 		OR = {
+# 			has_equipment = {
+# 				scout_dron_equipment > 50
+# 			}
+# 			has_deployed_air_force_size = {
+# 				size > 50
+# 				type = scout_plane
+# 			}
+# 		}
+# 	}
 
-	abort_when_not_enabled = yes
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = unit_ratio
-		id = scout_plane
-		value = -99
-	}
+# 	ai_strategy = {
+# 		type = unit_ratio
+# 		id = scout_plane
+# 		value = -99
+# 	}
 
-	ai_strategy = {
-		type = equipment_production_factor
-		id = scout_plane
-		value = -99
-	}
+# 	ai_strategy = {
+# 		type = equipment_production_factor
+# 		id = scout_plane
+# 		value = -99
+# 	}
 
-	ai_strategy = {
-		type = equipment_production_min_factories
-		id = scout_plane
-		value = 1
-	}
-}
+# 	ai_strategy = {
+# 		type = equipment_production_min_factories
+# 		id = scout_plane
+# 		value = 1
+# 	}
+# }
 
 # aliance_all = {
 # 	enable = {

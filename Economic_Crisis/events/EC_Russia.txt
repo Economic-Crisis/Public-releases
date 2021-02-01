@@ -530,7 +530,13 @@ country_event = {
 	option = {  
 		name = russia.16.a #Отдать власть Оппозиции
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.a"
-		ai_chance = { factor = 0.5 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 		add_popularity = {
 			ideology = liberalism
 			popularity = 0.3

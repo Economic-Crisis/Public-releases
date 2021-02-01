@@ -2,10 +2,38 @@
 
 capital = 296
 
-  add_ideas = {
-		au_member
-	}
+add_ideas = {
+	au_member
+}
 	
+2001.9.1 = {
+	set_politics = {
+		ruling_party = reformism
+		last_election = "2000.6.19"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 40
+		reformism = 50
+		liberalism = 0
+		democratic = 0
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 0
+	}
+
+	create_country_leader = {
+		name = "Kumba Iala"
+		desc = "POLITICS_KUMBA_IALÁ_DESC"
+		picture = "gfx/leaders/GNB/portrait_kumba_iala.dds"
+		ideology = social_democracy
+		expire = "2014.4.4"
+		traits = { trait_social_democracy }
+	}
+
+}
+
 2013.11.1 = {
 	set_variable = { budget_last_year = 102 }
 
@@ -39,7 +67,6 @@ capital = 296
 	add_political_power = 0
 
 	set_convoys = 10
-	
 	
 	set_politics = {
 		ruling_party = communism
@@ -81,14 +108,6 @@ capital = 296
 		ideology = leninism 
 		expire = "2014.5.18"
 		traits = { trait_leninism }
-	}
-
-	create_country_leader = {
-		name = "Kumba Iala"
-		desc = "POLITICS_KUMBA_IALÁ_DESC"
-		picture = "gfx/leaders/GNB/portrait_kumba_iala.dds"
-		ideology = social_democracy
-		traits = { trait_social_democracy }
 	}
 
 }

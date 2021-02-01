@@ -301,4 +301,117 @@ wargoal_types = {
 		
 		threat = 2
 	}
+	
+	holy_war = {
+		# PREV = original target country
+		# ROOT = goal owner country
+
+		allowed = {
+			OR = {
+				has_idea = state_religion
+				has_idea = theocracy
+			}
+		}
+		
+		available = {
+			
+		}
+		
+		take_states = {
+			if = {
+				limit = {
+					ROOT = {
+						has_idea = christianity_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = christianity }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						has_idea = islam_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = islam }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						has_idea = buddhism_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = buddhism }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						has_idea = hinduism_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = hinduism }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						has_idea = judaism_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = judaism }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						has_idea = sintoism_idea_lvl_3
+						OR = {
+							has_idea = state_religion
+							has_idea = theocracy
+						}
+					}
+				}
+				FROM = {
+					FROM.FROM = { has_state_flag = sintoism }
+				}
+			}
+		}
+		
+		generate_base_cost = 50		
+		generate_per_state_cost = 25
+		
+		take_states_limit = 10
+		take_states_cost = -50
+		
+		expire = 150
+		
+		threat = 1
+	}
 }

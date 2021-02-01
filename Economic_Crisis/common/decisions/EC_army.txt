@@ -53,7 +53,7 @@ army = {
 		modifier = {
 			conscription = 0.01
 		}
-		remove_effect = { set_country_flag = decisions_calling_wave }
+		remove_effect = { set_country_flag = decisions_calling_wave1 }
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -74,24 +74,6 @@ army = {
 			base = 0
 			modifier = {
 				add = 20
-				has_war = yes
-			}
-		}
-	}
-	calling_wave1 = {
-		icon = generic_prepare_civil_war
-		visible = { has_country_flag = decisions_calling_wave }
-		fire_only_once = yes
-		days_remove = 30
-		cost = 50
-		modifier = {
-			conscription = 0.02
-		}
-		remove_effect = { set_country_flag = decisions_calling_wave1 }
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 4
 				has_war = yes
 			}
 		}

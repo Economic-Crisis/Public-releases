@@ -1,7 +1,5 @@
 sub_units = {
 
-
-	
 	portable_at_ml = {
 		sprite = portable_at_ml
 		map_icon_category = infantry
@@ -27,12 +25,14 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			ATGM_salw_equipment = 40
-			truck_equipment = 10
+			ATGM_salw_equipment = 15
+			light_utility_vehicle_equipment = 20
+			army_salw_equipment = 65
+			army_ammunition_equipment = 65
 			infantry_technical_means_equipment = 40
 		}
-		manpower = 40
-		max_organisation = 20
+		manpower = 80
+		max_organisation = 30
 		default_morale = 0
 		max_strength = 0.6
 		training_time = 120
@@ -44,7 +44,8 @@ sub_units = {
 			attack = -0.2
 			movement = -0.2
 		}
-
+		#ПЕРЕБАЛАНСИРОВАТЬ ХАР-КИ НА ТЕРРЕЙНЕ
+		#Баф на равнине и городе, дебаф в лесу
 		hills = {
 			movement = -0.05
 		}
@@ -101,8 +102,11 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			ATGM_salw_equipment = 40
+			ATGM_salw_equipment = 11
 			infantry_technical_means_equipment = 40
+			truck_equipment = 20
+			army_salw_equipment = 40
+			army_ammunition_equipment = 40
 			light_utility_vehicle_equipment = 20
 		}
 		manpower = 40
@@ -174,14 +178,17 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			ATGM_salw_equipment = 40
-			apc_wheeled_equipment = 10
-			infantry_technical_means_equipment = 40
+			ATGM_salw_equipment = 12
+			apc_wheeled_equipment = 12
+			army_salw_equipment = 60
+			truck_equipment = 5
+			army_ammunition_equipment = 60
+			infantry_technical_means_equipment = 60
 		}
-		manpower = 40
+		manpower = 75
 		max_organisation = 20
 		default_morale = 0
-		max_strength = 0.6
+		max_strength = 0.7
 		training_time = 120
 		weight = 0.5
 
@@ -249,12 +256,15 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			ATGM_salw_equipment = 40
-			apc_tracked_equipment = 10
-			infantry_technical_means_equipment = 40
+			ATGM_salw_equipment = 12
+			apc_tracked_equipment = 12
+			army_salw_equipment = 60
+			truck_equipment = 5
+			army_ammunition_equipment = 60
+			infantry_technical_means_equipment = 60
 		}
-		manpower = 40
-		max_organisation = 20
+		manpower = 75
+		max_organisation = 30
 		default_morale = 0
 		max_strength = 0.6
 		maximum_speed = 0.9
@@ -324,11 +334,14 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			ATGM_salw_equipment = 40
-			ifv_tracked_equipment = 20
-			infantry_technical_means_equipment = 55
+			ATGM_salw_equipment = 12
+			ifv_tracked_equipment = 12
+			truck_equipment = 5
+			army_salw_equipment = 60
+			army_ammunition_equipment = 60
+			infantry_technical_means_equipment = 60
 		}
-		manpower = 55
+		manpower = 75
 		max_organisation = 20
 		default_morale = 0
 		max_strength = 0.6
@@ -374,7 +387,7 @@ sub_units = {
 		}
 	}
 
-
+	#Прописать ПТО
 	at_artillery = {
 		sprite = at_artillery
 		map_icon_category = infantry
@@ -386,7 +399,7 @@ sub_units = {
 			artillery
 			anti_tank
 		}	
-			group = anti-tank_division
+		group = anti-tank_division
 		
 		categories = {
 			category_front_line
@@ -397,11 +410,13 @@ sub_units = {
 		combat_width = 1
 
 		need = {
-			FIELD_ARTILLERY_arch = 20
-			truck_equipment = 20
-			infantry_technical_means_equipment = 60
+			FIELD_ARTILLERY_arch = 6
+			truck_equipment = 12
+			army_salw_equipment = 35
+			army_ammunition_equipment = 35
+			infantry_technical_means_equipment = 35
 		}
-		manpower = 60
+		manpower = 45
 		max_organisation = 20
 		default_morale = 0
 		max_strength = 0.6
@@ -448,7 +463,7 @@ sub_units = {
 	}
 
 
-
+	#Возможно убрать
 	anti_tank_sau  = {
 		sprite = anti_tank_sau
 		map_icon_category = armored
@@ -474,8 +489,11 @@ sub_units = {
 		combat_width = 2
 
 		need = {
-			MRL_arch = 150
-			infantry_technical_means_equipment = 150
+			ATGM_salw_equipment = 5
+			infantry_technical_means_equipment = 35
+			army_salw_equipment = 35
+			army_ammunition_equipment = 35
+			infantry_technical_means_equipment = 35
 		}
 		manpower = 55
 		max_organisation = 20
@@ -512,7 +530,7 @@ sub_units = {
 			attack = -0.4
 		}	
 	}
-	
+	#Убрать? Возожно сделать как field_art_arch
 	air_droppable_self_propelled_at_artillery  = {
 		sprite = air_droppable_self_propelled_at_artillery
 		map_icon_category = armored
@@ -542,8 +560,10 @@ sub_units = {
 		combat_width = 2
 
 		need = {
-			MRL_arch = 140
-			infantry_technical_means_equipment = 140
+			ATGM_salw_equipment = 5
+			army_salw_equipment = 35
+			army_ammunition_equipment = 35
+			infantry_technical_means_equipment = 35
 		}
 		manpower = 55
 		max_organisation = 40
@@ -580,7 +600,7 @@ sub_units = {
 			attack = -0.4
 		}	
 	}
-	
+	#Убрать?
 	air_droppable_self_propelled_at_ml = {
 		sprite = air_droppable_self_propelled_at_ml
 		map_icon_category = armored
@@ -610,8 +630,10 @@ sub_units = {
 		combat_width = 2
 
 		need = {
-			MRL_arch = 160
-			infantry_technical_means_equipment = 160
+			ATGM_salw_equipment = 20
+			army_salw_equipment = 35
+			army_ammunition_equipment = 35
+			infantry_technical_means_equipment = 35
 		}
 		manpower = 40
 		max_organisation = 40
@@ -647,8 +669,5 @@ sub_units = {
 		amphibious = { 
 			attack = -0.4
 		}	
-	}
-	
-	
-	
+	}	
 }
