@@ -78,4 +78,10 @@ Responsibilities include: creating new and editing already existing previously l
 9. **Localizer-translator**. It is necessary to master English at the Intermediate level or more.<br>
 Responsibilities include: check for errors (logical, lexical and grammatical) English. version of the game and to translate the untranslated part of the Russian-language content as well as the creation of new texts.<br>
 
+Department of Focus Design EC announces recruitment focus-designers<br>
+
+If you know the country well, its history, its politics and realities, you are ready to work in an international team and create many realistic and interesting national focuses, and also ready for criticism, we will gladly accept you.<br>
+
 It may seem that any of these categories are very simple, but this is far from the case. We expect that the task will be completed without delaying for months.<br>
+
+If you are interested please follow our server discord and ping Team lead https://discord.com/invite/GPbPBe2
