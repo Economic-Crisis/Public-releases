@@ -48,7 +48,13 @@
 9. **Локализатор-переводчик**. Необходимо освоить английский язык на уровне Intermediate и более.<br>
 В обязанности входит: проверять на ошибки (логические, лексические и грамматические) англ. версию игры и допереводить недопереведённую часть русскоязычного контента а также создание новых текстов.<br>
 
+### Department of Focus Design EC набирает фокус-дизайнеров.<br>
+Если вы хорошо знаете страну, её историю, её политику и реалии, вы готовы работать в интернациональной команде и создавать много, реалистичных и интересных национальных фокусов, а также, готовы к критике, мы с превеликой радостью примем вас.<br>
+У нас нет обязательства уметь их скриптить, ваша задача - создать подробный концепт, чтобы скриптеры могли воплотить вашу работу в жизнь.<br>
+
 Может показаться, что какая либо из этих категорий очень проста, но это далеко не так. Мы рассчитываем что поставленная задача будет выполняться не затягиваясь на месяца.<br>
+
+Если есть желание — добро пожаловать на наш дискорд сервер и пингуйте тимлида. https://discord.com/invite/GPbPBe2
 ___
 
 # Section for English audience 
@@ -78,9 +84,10 @@ Responsibilities include: creating new and editing already existing previously l
 9. **Localizer-translator**. It is necessary to master English at the Intermediate level or more.<br>
 Responsibilities include: check for errors (logical, lexical and grammatical) English. version of the game and to translate the untranslated part of the Russian-language content as well as the creation of new texts.<br>
 
-Department of Focus Design EC announces recruitment focus-designers<br>
+### Department of Focus Design EC announces recruitment focus-designers<br>
 
 If you know the country well, its history, its politics and realities, you are ready to work in an international team and create many realistic and interesting national focuses, and also ready for criticism, we will gladly accept you.<br>
+We do not have an obligation to be able to script them, your task is to create a detailed concept so that the scripters can bring your work to life.<br>
 
 It may seem that any of these categories are very simple, but this is far from the case. We expect that the task will be completed without delaying for months.<br>
 
