@@ -40,7 +40,7 @@ The ammo technology branch represents the best development of technologies at th
 
 In the future, a separate article will be devoted to a detailed explanation of the principle of operation. So far, just a general message.
 
-Also, the branch is a unique phenomenon of using all the features of HOI for technologies. Unfortunately, I have not seen such a large-scale study in any project. © Secretary of the USSR
+Also, the branch is a unique phenomenon of using all the features of HOI for technologies. Unfortunately, I have not seen such a large-scale study in any project. © Secretary of the CPSU
 
 Previously, due to the overall complexity of the work, the game could not correctly display the modifiers. In this update, this was improved, however, all the currently visible parameters worked before and significantly played out on the player.
 
