@@ -1,138 +1,245 @@
 ﻿division_template = {
-	name = "Royal Guard"
-
+	name = "Special Forces brigade on BTR"
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
-		motorized = { x = 0 y = 2 }
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
-		motorized = { x = 2 y = 0 }
-		motorized = { x = 2 y = 1 }
-		motorized = { x = 2 y = 2 }
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		self_propelled_artillery = { x = 0 y = 2 }
+		# гранатометный_взвод = { x = 0 y = 3 }
+	# 2d Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		self_propelled_artillery = { x = 1 y = 2 }
+		# гранатометный_взвод = { x = 1 y = 3 }
+	# 3rd Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		self_propelled_artillery = { x = 2 y = 2 }
+		# гранатометный_взвод = { x = 2 y = 3 }
 	}
-	priority = 2
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		signal_company = { x = 0 y = 1 }
+		recon_battalion = { x = 0 y = 2 }
+		medical_company = { x = 0 y = 3 }
+		#uas_company = { x = 1 y = 0 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+	}
+}
+division_template = {
+	name = "Mountaineers brigade on BTR"
+	regiments = {
+	# 1st Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		animal_powered_light_mortars = { x = 0 y = 2 }
+	# 2d Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		animal_powered_light_mortars = { x = 1 y = 2 }
+	# 3st Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+	# 1st special forces battalion on wheeled BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+	# 1st reconnaissaince battalion on wheeled BTR
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 2 }	
+	# гаубичный самоходный артиллерийский дивизион	
+		self_propelled_howitzers = { x = 5 y = 0 } # батарея САО на шасси гусеничных БТР
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		#airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 1 }
+		recon_battalion = { x = 0 y = 2 }
+		#cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 3 }
+		#electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		#sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Reconnaissance Brigade on BTR"
+	regiments = {
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+
+	# 2d Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+
+	# 1st SF battalion on wheeled APC
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 0 }
+	}
+	support = {
+		#engineer_battalion = { x = 0 y = 0 }
+		#airborne_support_company = { x = 0 y = 1 }
+		#signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		#electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		#sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "rapid reaction bt"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		#airborne_support_company = { x = 0 y = 1 }
+		#signal_company = { x = 0 y = 2 }
+		#recon_battalion = { x = 0 y = 3 }
+		#cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		#electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		#sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Guard Rocket Artillery Brigade"
+	regiments = {
+	# 1st battery
+		heavy_rocket_artillery = { x = 0 y = 0 }
+		heavy_rocket_artillery = { x = 0 y = 1 }
+		heavy_rocket_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		heavy_rocket_artillery = { x = 1 y = 0 }
+		heavy_rocket_artillery = { x = 1 y = 1 }
+		heavy_rocket_artillery = { x = 1 y = 2 }	
+	# 3d battery
+		heavy_rocket_artillery = { x = 2 y = 0 }
+		heavy_rocket_artillery = { x = 2 y = 1 }
+		heavy_rocket_artillery = { x = 2 y = 2 }
+	}
 }
 
 units = {
 	#Royal Afghani Army
 	division = {
-		name = "Royal Guard"
-		location = 5020
-		division_template = "Royal Guard"	
+		name = "Reaction battalion"
+		location = 10789
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
-		location = 5020
-		division_template = "Royal Guard"	
+		name = "Reaction battalion"
+		location = 14077
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
-		location = 5020
-		division_template = "Royal Guard"	
+		name = "Reaction battalion"
+		location = 14074
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reaction battalion"
 		location = 5020
-		division_template = "Royal Guard"	
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reaction battalion"
 		location = 5020
-		division_template = "Royal Guard"	
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reaction battalion"
 		location = 5064
-		division_template = "Royal Guard"	
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reaction battalion"
 		location = 12788
-		division_template = "Royal Guard"	
+		division_template = "rapid reaction bt"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reconnaissance Brigade on BTR"
 		location = 8053
-		division_template = "Royal Guard"	
+		division_template = "Reconnaissance Brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Reconnaissance Brigade on BTR"
 		location = 12871
-		division_template = "Royal Guard"	
+		division_template = "Reconnaissance Brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Mountaineers brigade on BTR"
 		location = 2062
-		division_template = "Royal Guard"	
+		division_template = "Mountaineers brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
 	division = {
-		name = "Royal Guard"
-		location = 1948
-		division_template = "Royal Guard"	
+		name = "Mountaineers brigade on BTR"
+		location = 14080
+		division_template = "Mountaineers brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.6
 	}
 	division = {
-		name = "Royal Guard"
-		location = 2101
-		division_template = "Royal Guard"	
+		name = "Mountaineers brigade on BTR"
+		location = 10476
+		division_template = "Mountaineers brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.9
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Special Forces brigade on BTR"
 		location = 12831
-		division_template = "Royal Guard"	
+		division_template = "Special Forces brigade on BTR"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Royal Guard"
+		name = "Guard Rocket Artillery Brigade"
 		location = 12769
-		division_template = "Royal Guard"	
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.7
-	}
-	division = {
-		name = "Royal Guard"
-		location = 10789
-		division_template = "Royal Guard"	
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.7
-	}
-	division = {
-		name = "Royal Guard"
-		location = 8090
-		division_template = "Royal Guard"	
-		start_experience_factor = 0.6
-		start_equipment_factor = 0.7
-	}
-	division = {
-		name = "Royal Guard"
-		location = 1995
-		division_template = "Royal Guard"	
+		division_template = "Guard Rocket Artillery Brigade"	
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.7
 	}
@@ -153,6 +260,11 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.75
 		efficiency = 100
+	}
+	
+	add_equipment_to_stockpile = { #Д-30
+		amount = 109
+		type = FIELD_ARTILLERY_5
 	}
 	
 }

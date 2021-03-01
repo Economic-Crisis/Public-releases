@@ -295,6 +295,9 @@ on_actions = {
 					}
 				}
 			}
+			ROOT = {
+				add_stability = -0.1
+			}
 		}
 	}
 	
@@ -315,7 +318,9 @@ on_actions = {
 	#ROOT is subject FROM is overlord
 	on_subject_annexed = {
 		effect = {
-			
+			FROM = {
+				add_stability = -0.1
+			}
 		}
 	}
 	
@@ -339,6 +344,68 @@ on_actions = {
 	#ROOT = nation being released, FROM = overlord
 	on_release_as_puppet = {
 		effect = {
+			ROOT = { inherit_technology = FROM }
+			#1 Def
+			set_variable = { global.st_def_exp_percen = 0.24 }
+			#Sections cat 1 - Def
+			set_variable = { global.st_def_sal_exp_percen = 0.4 }
+			set_variable = { global.st_def_def_ind_exp_percen = 0.6 }
+			set_variable = { global.st_def_research_exp_percen = 0.3 }
+			
+			#2 Hea
+			set_variable = { global.st_he_exp_percen = 0.12 }
+			#Sections cat 2 - Hea 
+			set_variable = { global.st_he_sal_exp_percen = 0.25 }
+			set_variable = { global.spe_med_fac_exp_percen = 0.11 }
+			set_variable = { global.pub_hea_cen_exp_percen = 0.13 }
+			set_variable = { global.equ_pro_cen_exp_percen = 0.5 }
+			
+			#3 Edu
+			set_variable = { global.st_ed_exp_percen = 0.15 }
+			#Sections cat 3 - Edu
+			set_variable = { global.st_ed_sal_exp_percen = 0.25 }
+			
+			#5 Inf
+			set_variable = { global.st_inf_exp_percen = 0.15 } 
+			#Sections cat 1 - Inf
+			set_variable = { global.st_inf_sal_exp_percen = 0.3 }
+			
+			#6 Ind
+			set_variable = { global.st_ind_exp_percen = 0.4 } 
+			#Sections cat 1 - Ind
+			set_variable = { global.st_ind_sal_exp_percen = 0.3 }
+			
+			
+			
+			
+			every_country = {
+			#ST EXP begin
+				set_st_exp = yes
+			#ST EXP	end
+			
+			#START INCOME begin
+			
+			
+			#START INCOME end
+				set_variable = { budget_rest_cats_percen = 100 }
+				set_variable = { cat_1_rest_sections_percen = 100 }
+				set_variable = { cat_2_rest_sections_percen = 100 }
+				set_variable = { cat_3_rest_sections_percen = 100 }
+				set_variable = { cat_4_rest_sections_percen = 100 }
+				set_variable = { cat_5_rest_sections_percen = 100 }
+				set_variable = { cat_6_rest_sections_percen = 100 }	
+				set_planned_budget = yes
+				
+				
+				if = { limit = { has_idea = very_low_taxes } set_variable = { tax_percentage = 0.005 } }
+				else_if = { limit = { has_idea = low_taxes } set_variable = { tax_percentage = 0.01 } }
+				else_if = { limit = { has_idea = normal_taxes } set_variable = { tax_percentage = 0.015 } }
+				else_if = { limit = { has_idea = high_taxes } set_variable = { tax_percentage = 0.025 } }
+				else = { set_variable = { tax_percentage = 0.035 } }
+				
+				has_trillions = yes 
+				
+				}
 			if = {
 				limit = {
 					tag = CAY
@@ -368,7 +435,67 @@ on_actions = {
 	#ROOT is free nation FROM is releaser
 	on_release_as_free = {
 		effect = {
-
+			#1 Def
+		set_variable = { global.st_def_exp_percen = 0.24 }
+		#Sections cat 1 - Def
+		set_variable = { global.st_def_sal_exp_percen = 0.4 }
+		set_variable = { global.st_def_def_ind_exp_percen = 0.6 }
+		set_variable = { global.st_def_research_exp_percen = 0.3 }
+		
+		#2 Hea
+		set_variable = { global.st_he_exp_percen = 0.12 }
+		#Sections cat 2 - Hea 
+		set_variable = { global.st_he_sal_exp_percen = 0.25 }
+		set_variable = { global.spe_med_fac_exp_percen = 0.11 }
+		set_variable = { global.pub_hea_cen_exp_percen = 0.13 }
+		set_variable = { global.equ_pro_cen_exp_percen = 0.5 }
+		
+		#3 Edu
+		set_variable = { global.st_ed_exp_percen = 0.15 }
+		#Sections cat 3 - Edu
+		set_variable = { global.st_ed_sal_exp_percen = 0.25 }
+		
+		#5 Inf
+		set_variable = { global.st_inf_exp_percen = 0.15 } 
+		#Sections cat 1 - Inf
+		set_variable = { global.st_inf_sal_exp_percen = 0.3 }
+		
+		#6 Ind
+		set_variable = { global.st_ind_exp_percen = 0.4 } 
+		#Sections cat 1 - Ind
+		set_variable = { global.st_ind_sal_exp_percen = 0.3 }
+		
+		
+		
+		
+		every_country = {
+		#ST EXP begin
+			set_st_exp = yes
+		#ST EXP	end
+		
+		#START INCOME begin
+		
+		
+		#START INCOME end
+			set_variable = { budget_rest_cats_percen = 100 }
+			set_variable = { cat_1_rest_sections_percen = 100 }
+			set_variable = { cat_2_rest_sections_percen = 100 }
+			set_variable = { cat_3_rest_sections_percen = 100 }
+			set_variable = { cat_4_rest_sections_percen = 100 }
+			set_variable = { cat_5_rest_sections_percen = 100 }
+			set_variable = { cat_6_rest_sections_percen = 100 }	
+			set_planned_budget = yes
+			
+			
+			if = { limit = { has_idea = very_low_taxes } set_variable = { tax_percentage = 0.005 } }
+			else_if = { limit = { has_idea = low_taxes } set_variable = { tax_percentage = 0.01 } }
+			else_if = { limit = { has_idea = normal_taxes } set_variable = { tax_percentage = 0.015 } }
+			else_if = { limit = { has_idea = high_taxes } set_variable = { tax_percentage = 0.025 } }
+			else = { set_variable = { tax_percentage = 0.035 } }
+			
+			has_trillions = yes 
+			
+			}
 		}
 	}
 	
@@ -450,36 +577,55 @@ on_actions = {
 	
 	on_monthly = {
 		effect = {
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 816
-					num_provinces = 2
-					on_win = cau_border_conflicts.1
-					on_lose = cau_border_conflicts.2
+			if = {
+				limit = {
+					AZR = {
+						owns_state = 816
+						owns_state = 818
+					}
+					NKR = {
+						owns_state = 775
+					}
+					NOT = {
+						has_country_flag = cau_border_conflict
+					}
 				}
-				
-				defender = {
-					state = 775
-					num_provinces = 2
-					on_win = cau_border_conflicts.1
-					on_lose = cau_border_conflicts.2
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 816
+						num_provinces = 2
+						on_win = cau_border_conflicts.1
+						on_lose = cau_border_conflicts.2
+					}
+					
+					defender = {
+						state = 775
+						num_provinces = 2
+						on_win = cau_border_conflicts.1
+						on_lose = cau_border_conflicts.2
+					}
 				}
-			}
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 775
-					num_provinces = 2
-					on_win = cau_border_conflicts.1
-					on_lose = cau_border_conflicts.2
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 775
+						num_provinces = 2
+						on_win = cau_border_conflicts.1
+						on_lose = cau_border_conflicts.2
+					}
+					
+					defender = {
+						state = 818
+						num_provinces = 2
+						on_win = cau_border_conflicts.1
+						on_lose = cau_border_conflicts.2
+					}
 				}
-				
-				defender = {
-					state = 818
-					num_provinces = 2
-					on_win = cau_border_conflicts.1
-					on_lose = cau_border_conflicts.2
+				set_country_flag = {
+					flag = cau_border_conflict
+					days = 10
+					value = 1
 				}
 			}
 		}
@@ -801,9 +947,11 @@ on_actions = {
 				set_from = FROM
 				days = 1
 			}
-			add_opinion_modifier = {
-				target = FROM
-				modifier = agent_detected
+			ROOT = {
+				add_opinion_modifier = {
+					target = FROM
+					modifier = agent_detected
+				}
 			}
 			FROM = {
 				add_opinion_modifier = {

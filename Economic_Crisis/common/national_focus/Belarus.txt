@@ -11,7 +11,7 @@ focus_tree = {
 	focus = {
 		id = BLR_polit
 		icon = GFX_goal_generic_propaganda
-		cost = 70
+		cost = 30
 		x = 9
 		y = 0
 		ai_will_do = { factor = 5 }
@@ -25,7 +25,7 @@ focus_tree = {
 	focus = {
 		id = BLR_industri
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 50
+		cost = 20
 		x = -15
 		y = 0
 		ai_will_do = { factor = 1 }
@@ -52,7 +52,7 @@ focus_tree = {
 		id = BLR_updat_stanki
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_industri}
-		cost = 70
+		cost = 50
 		x = -14
 		y = 1
 		ai_will_do = { factor = 1 }
@@ -64,7 +64,7 @@ focus_tree = {
 	focus = {
 		id = BLR_civ_factory
 		icon = GFX_goal_generic_construct_civ_factory_red
-		cost = 70
+		cost = 50
 		prerequisite = {
 		     focus = BLR_updat_stanki
 			 focus = BLR_proverka_fabric
@@ -107,7 +107,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = BLR_civ_factory_2
+		id = BLR_civ_factory_II
 		icon = GFX_goal_generic_construct_civ_factory_red
 		cost = 70
 		prerequisite = {focus = BLR_civ_factory}
@@ -179,10 +179,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = BLR_civ_factory_3
+		id = BLR_civ_factory_III
 		icon = GFX_goal_generic_construct_civ_factory_red
 		cost = 70
-		prerequisite = {focus = BLR_civ_factory_2}
+		prerequisite = {focus = BLR_civ_factory_II}
 		x = -16
 		y = 4
 		ai_will_do = { factor = 1 }
@@ -283,7 +283,7 @@ focus_tree = {
 	focus = {
 		id = BLR_military_factory
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 70
+		cost = 50
 		prerequisite = {
 		     focus = BLR_updat_stanki
 			 focus = BLR_proverka_fabric
@@ -326,7 +326,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = BLR_military_factory_2
+		id = BLR_military_factory_II
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 70
 		prerequisite = {focus = BLR_military_factory}
@@ -398,10 +398,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = BLR_military_factory_3
+		id = BLR_military_factory_III
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 70
-		prerequisite = {focus = BLR_military_factory_2}
+		prerequisite = {focus = BLR_military_factory_II}
 		x = -14
 		y = 4	
 		ai_will_do = { factor = 1 }
@@ -502,10 +502,10 @@ focus_tree = {
 	focus = {
 		id = BLR_updat_infastructure
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 70
+		cost = 50
 		prerequisite = {
-			focus = BLR_civ_factory_3
-			focus = BLR_military_factory_3
+			focus = BLR_civ_factory_III
+			focus = BLR_military_factory_III
 		}
 		x = -15
 		y = 5
@@ -1928,9 +1928,9 @@ focus_tree = {
 	focus = {
 		id = BLR_bel_stroy_mash
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_updat_infastructure}
-		prerequisite = {focus = BLR_civ_factory_3}
+		prerequisite = {focus = BLR_civ_factory_III}
 		x = -16
 		y = 6
 		ai_will_do = { factor = 1 }
@@ -1942,9 +1942,9 @@ focus_tree = {
 	focus = {
 		id = BLR_bel_voen_prom
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_updat_infastructure}
-		prerequisite = {focus = BLR_military_factory_3}
+		prerequisite = {focus = BLR_military_factory_III}
 		x = -14
 		y = 6
 		ai_will_do = { factor = 1 }
@@ -1993,8 +1993,7 @@ focus_tree = {
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 150
-			add_stability = 0.4
+		    add_political_power = 400
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -2410,9 +2409,23 @@ focus_tree = {
 		    custom_effect_tooltip = BLR_E-40
 			subtract_from_variable = { budget_reserve = -236 }
 			add_stability = -0.05
-			add_political_power = 150
+			add_political_power = 1000
 			add_ideas = BLR_E-40
 			UKR = {
+			    add_ideas = BLR_E-40
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_positive
+				}
+			}
+			POL = {
+			    add_ideas = BLR_E-40
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_positive
+				}
+			}
+			LIT = {
 			    add_ideas = BLR_E-40
 				add_opinion_modifier = {
 					target = BLR
@@ -3668,7 +3681,7 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_timed_idea = { idea = conscription_training days = 120 }
+			add_timed_idea = { idea = conscription_training days = 320 }
 	    }
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -3969,7 +3982,6 @@ focus_tree = {
 			add_timed_idea = { idea = BLR_support_Lukash days = 110 }
 			add_stability = -0.07
 			add_political_power = 300
-			add_ideas = dictatorship_state
 			country_event = { id = belarus.11 days = 3 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -4025,7 +4037,7 @@ focus_tree = {
 			focus = BLR_kommynism
 			focus = BLR_centrism
 		}
-		x = 4
+		x = 2
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4052,7 +4064,7 @@ focus_tree = {
 			focus = BLR_Nationalism
 			focus = BLR_centrism
 		}
-		x = 8
+		x = 6
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4079,7 +4091,7 @@ focus_tree = {
 			focus = BLR_kommynism
 			focus = BLR_centrism
 		}
-		x = 6
+		x = 4
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4441,22 +4453,22 @@ focus_tree = {
 	focus = {
 		id = BLR_shive_Belarus
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 30
 		prerequisite = {focus = BLR_patriotism}
 		x = 60
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_ideas = BLR_up_patriotism
 			add_political_power = 450
 			add_stability = 0.08
-			add_war_support = 0.03
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_lyastration_1
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_Belarysizacya}
 		prerequisite = {focus = BLR_shive_Belarus}
 		x = 60
@@ -4470,7 +4482,7 @@ focus_tree = {
 	focus = {
 		id = BLR_bel_exit
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		prerequisite = {focus = BLR_shive_Belarus}
 		prerequisite = {focus = BLR_Belarysizacya}
 		x = 58
@@ -4510,7 +4522,7 @@ focus_tree = {
 			focus = BLR_kommynism
 			focus = BLR_Nationalism
 		}
-		x = 10
+		x = 8
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4979,7 +4991,7 @@ focus_tree = {
 	focus = {
 		id = BLR_EU
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_zap_diplomats}
 		available = {
 			NOT = { 
@@ -5117,7 +5129,7 @@ focus_tree = {
 	focus = {
 		id = BLR_NATO
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 30
 		prerequisite = {focus = BLR_zap_resyrs}
 		x = 12
 		y = 8
@@ -5261,7 +5273,7 @@ focus_tree = {
 	focus = {
 		id = BLR_war_against_rus
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_conviction}
 		x = 11
 		y = 17
@@ -5320,7 +5332,7 @@ focus_tree = {
 	focus = {
 		id = BLR_sankcii_RUS
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		prerequisite = {focus = BLR_otmena_sankciy}
 		x = 12
 		y = 11
@@ -5337,7 +5349,7 @@ focus_tree = {
 	focus = {
 		id = BLR_anti_communist_propogand
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 10
 		prerequisite = {
 		    focus = BLR_training_NATO
 		    focus = BLR_sankcii_RUS
@@ -5358,7 +5370,7 @@ focus_tree = {
 	focus = {
 		id = BLR_no_anti_communist_propogand
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 10
 		prerequisite = {
 		    focus = BLR_training_NATO
 		    focus = BLR_sankcii_RUS
@@ -5392,7 +5404,7 @@ focus_tree = {
 	focus = {
 		id = BLR_Rub
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 10
 		prerequisite = {
 		    focus = BLR_no_anti_communist_propogand
 		    focus = BLR_anti_communist_propogand
@@ -5432,7 +5444,7 @@ focus_tree = {
 	focus = {
 		id = BLR_russofobia
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		prerequisite = {focus = BLR_otmena_rus}
 		x = 9
 		y = 15
@@ -5661,6 +5673,7 @@ focus_tree = {
 		completion_reward = {
 		    add_political_power = 300
 			add_stability = 0.02
+			add_ideas = dictatorship_state
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -5669,7 +5682,17 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		mutually_exclusive = {focus = BLR_ynia_Polsha}
 		mutually_exclusive = {focus = BLR_ynia}
-		cost = 70
+		cost = 10
+		available = {
+			POL = {
+				has_government = fascism
+			}
+		}
+		available = {
+			RUS = {
+				has_government = fascism
+			}
+		}
 		prerequisite = {focus = BLR_vlyanie}
 		x = 61
 		y = 10
@@ -5706,7 +5729,7 @@ focus_tree = {
 	focus = {
 		id = BLR_we_lituvin
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {
 			focus = BLR_one_state_language
 			focus = BLR_two_state_language
@@ -5726,7 +5749,7 @@ focus_tree = {
 		id = BLR_lgot_for_kor_belarusian
 		icon = GFX_goal_unknown
 		cost = 70
-        prerequisite = {focus = BLR_white_legion}
+                prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
 		x = 63
@@ -5742,7 +5765,7 @@ focus_tree = {
 		id = BLR_help_for_belarusian
 		icon = GFX_goal_unknown
 		cost = 70
-        prerequisite = {focus = BLR_white_legion}
+                prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
 		x = 61
@@ -5756,7 +5779,7 @@ focus_tree = {
 	focus = {
 		id = BLR_4_gramota
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 30
 		prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
@@ -5813,8 +5836,10 @@ focus_tree = {
 			has_completed_focus = BLR_VSRB
 		}
 		prerequisite = {
-			focus = BLR_constitution_for_1994
-     	    focus = BLR_repairs_constitution
+			focus = BLR_lyastration_1
+			focus = BLR_bel_exit
+			focus = BLR_two_state_language
+			focus = BLR_one_state_language
 		}
 		x = 59
 		y = 5
@@ -5878,7 +5903,17 @@ focus_tree = {
 	focus = {
 		id = BLR_ynia
 		icon = GFX_goal_unknown
-		cost = 50
+		cost = 10
+		available = {
+			OR = {
+				UKR = {
+					has_government = fascism
+				}
+				LIT = {
+					has_government = fascism
+				}
+			}
+		}
 		prerequisite = {focus = BLR_vlyanie}
 		mutually_exclusive = {focus = BLR_ynia_Polsha}
 		mutually_exclusive = {focus = BLR_drim_Lva_Sapegi}
@@ -5898,7 +5933,7 @@ focus_tree = {
 	focus = {
 		id = BLR_ynia_Polsha
 		icon = GFX_goal_unknown
-		cost = 50
+		cost = 10
 		prerequisite = {focus = BLR_vlyanie}
 		mutually_exclusive = {focus = BLR_ynia}
 		mutually_exclusive = {focus = BLR_drim_Lva_Sapegi}
@@ -5918,9 +5953,8 @@ focus_tree = {
 	focus = {
 		id = BLR_vlyanie
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_trades_unions}
-		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		x = 61
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -6173,6 +6207,30 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
 	focus = {
+		id = BLR_yran
+		prerequisite = {focus = BLR_oil}
+		prerequisite = {focus = BLR_resource_energy_resource}
+		prerequisite = {focus = BLR_resource_alumunium}
+		prerequisite = {focus = BLR_resource_rare_earth_ore}
+		prerequisite = {focus = BLR_export_kaliy}
+		prerequisite = {focus = BLR_resource_tungsten}
+		icon =  GFX_goal_ger_resource_tungsten
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BLR_uran
+				check_variable = { budget_reserve > 1000 }
+			}
+		}
+		x = 12
+		y = 5
+		ai_will_do = { factor = 1 }
+		cost = 70
+		completion_reward = {
+			country_event = { id = belarus.50 days = 3 }
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
 		id = BLR_development_BELAZ
 		prerequisite = {focus = BLR_updat_kolhoz}
 		prerequisite = {focus = BLR_pension_reform}
@@ -6227,14 +6285,14 @@ focus_tree = {
 	focus = {
 		id = BLR_5-ka
 		icon = GFX_goal_unknown
-		cost = 100
+		cost = 30
 		prerequisite = {focus = BLR_updat_kolhoz}
 		prerequisite = {focus = BLR_pension_reform}
 		x = -5
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_timed_idea = { idea = BLR_five_year_plans_idea days = 170 }
+			add_timed_idea = { idea = BLR_five_year_plans_idea days = 400 }
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -6700,7 +6758,7 @@ focus_tree = {
 	focus = {
 		id = BLR_close_elections
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 10
 		prerequisite = {focus = BLR_elextion_race}
 		mutually_exclusive = {focus = BLR_freedom_elections}
 		x = 5
@@ -6715,7 +6773,7 @@ focus_tree = {
 	focus = {
 		id = BLR_freedom_elections
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 10
 		prerequisite = {focus = BLR_elextion_race}
 		mutually_exclusive = {focus = BLR_close_elections}
 		x = 7
@@ -6752,7 +6810,7 @@ focus_tree = {
 		available = {
 		    has_completed_focus = BLR_kommynism
 		}
-		cost = 30
+		cost = 10
 		x = 47
 		y = 2
 		ai_will_do = { factor = 1 }
@@ -6827,7 +6885,7 @@ focus_tree = {
 		id = BLR_one_partia
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_PKB}
-		cost = 70
+		cost = 30
 		x = 42
 		y = 4
 		ai_will_do = { factor = 1 }
@@ -6850,7 +6908,6 @@ focus_tree = {
 		completion_reward = {
 		    custom_effect_tooltip = total_nationalization_of_industry 
 			add_stability = -0.1
-			add_political_power = 150
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -6885,6 +6942,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 100
+            add_ideas = BLR_collectivism
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -6897,7 +6955,7 @@ focus_tree = {
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			add_stability = -0.1
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -6911,6 +6969,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 100
+            add_stability = -0.1
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -6974,7 +7033,7 @@ focus_tree = {
 		    focus = BLR_socialist
 			focus = BLR_Lykashism
 		}
-		cost = 70
+		cost = 50
 		x = 53
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -6994,7 +7053,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 100
-			add_timed_idea = { idea = BLR_rotacii_KGB days = 100 }
+			add_timed_idea = { idea = BLR_rotacii_KGB days = 150 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -7198,6 +7257,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 20
 			air_experience = 20
+			add_ideas = BLR_red_green_znamya_1
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -7238,7 +7298,7 @@ focus_tree = {
 			focus = BLR_socialist
 			focus = BLR_nationalisation_production
 		}
-		cost = 70
+		cost = 50
 		x = 48
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -7282,7 +7342,7 @@ focus_tree = {
 		id = BLR_pioneria
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_VLKSM}
-		cost = 70
+		cost = 50
 		x = 48
 		y = 12
 		ai_will_do = { factor = 1 }
@@ -7309,7 +7369,7 @@ focus_tree = {
 		id = BLR_Lenin_kylt
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_Marks_school}
-		cost = 70
+		cost = 50
 		x = 46
 		y = 14
 		ai_will_do = { factor = 1 }
@@ -7327,7 +7387,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_rotacia_book}
 		prerequisite = {focus = BLR_pioneria}
 		prerequisite = {focus = BLR_job_provision}
-		cost = 70
+		cost = 50
 		x = 46
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -7344,7 +7404,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_Lenin_kylt}
 		mutually_exclusive = {focus = BLR_Trotskism}
-		cost = 70
+		cost = 40
 		x = 44
 		y = 15
 		ai_will_do = { factor = 1 }
@@ -7438,7 +7498,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_Lenin_kylt}
 		mutually_exclusive = {focus = BLR_Stalinism}
-		cost = 70
+		cost = 40
 		x = 48
 		y = 15
 		ai_will_do = { factor = 1 }
@@ -8165,7 +8225,6 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 250
-			custom_effect_tooltip = big_protect
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -8238,18 +8297,21 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 100
+			add_timed_idea = { idea = BLR_arest_silovic days = 70 }
 		}
 	}
 	focus = {
 		id = BLR_seizure_of_property
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
 		x = 40
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			custom_effect_tooltip = BLR_seizure_of_property
+			subtract_from_variable = { budget_reserve = 80 }
 			add_stability = -0.3
 			add_political_power = 300
 		}
@@ -8349,7 +8411,7 @@ focus_tree = {
 		available = {
 		    has_completed_focus = BLR_polit
 		}
-		cost = 70
+		cost = 10
 		x = -2
 		y = 0
 		ai_will_do = { factor = 1 }
@@ -9387,12 +9449,13 @@ focus_tree = {
 				has_completed_focus = BLR_liberal
 			}
 		}
-		cost = 70
+		cost = 50
 		x = 4
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
+			add_ideas = BLR_EC_1
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -9405,7 +9468,7 @@ focus_tree = {
 				has_completed_focus = BLR_liberal
 			}
 		}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 6
 		ai_will_do = { factor = 1 }
@@ -9418,7 +9481,7 @@ focus_tree = {
 		id = BLR_EC_3
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_61}
-		cost = 70
+		cost = 50
 		x = 9
 		y = 26
 		ai_will_do = { factor = 1 }
@@ -9431,7 +9494,7 @@ focus_tree = {
 		id = BLR_EC_4
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_18}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 16
 		ai_will_do = { factor = 1 }
@@ -9444,7 +9507,7 @@ focus_tree = {
 		id = BLR_EC_5
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_1 }
-		cost = 70
+		cost = 50
 		x = 4
 		y = 7
 		ai_will_do = { factor = 1 }
@@ -9457,7 +9520,7 @@ focus_tree = {
 		id = BLR_EC_6
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_27 }
-		cost = 70
+		cost = 50
 		x = 1
 		y = 21
 		ai_will_do = { factor = 1 }
@@ -9473,7 +9536,7 @@ focus_tree = {
             focus = BLR_EC_42
             focus = BLR_EC_12
         }
-		cost = 70
+		cost = 50
 		x = 1
 		y = 19
 		ai_will_do = { factor = 1 }
@@ -9489,7 +9552,7 @@ focus_tree = {
             focus = BLR_EC_19
 			focus = BLR_EC_16
         }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 17
 		ai_will_do = { factor = 1 }
@@ -9502,7 +9565,7 @@ focus_tree = {
 		id = BLR_EC_9
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_10 }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 11
 		ai_will_do = { factor = 1 }
@@ -9516,7 +9579,7 @@ focus_tree = {
 		id = BLR_EC_10
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_28 }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 10
 		ai_will_do = { factor = 1 }
@@ -9558,7 +9621,7 @@ focus_tree = {
 		id = BLR_EC_11
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_37}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 17
 		ai_will_do = { factor = 1 }
@@ -9571,7 +9634,7 @@ focus_tree = {
 		id = BLR_EC_12
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_11}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 18
 		ai_will_do = { factor = 1 }
@@ -9584,7 +9647,7 @@ focus_tree = {
 		id = BLR_EC_13
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_24}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 15
 		ai_will_do = { factor = 1 }
@@ -9597,7 +9660,7 @@ focus_tree = {
 		id = BLR_EC_14
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_5 }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -9610,7 +9673,7 @@ focus_tree = {
 		id = BLR_EC_15
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_35}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 15
 		ai_will_do = { factor = 1 }
@@ -9625,7 +9688,7 @@ focus_tree = {
             focus = BLR_EC_20
 			focus = BLR_EC_15
         }
-		cost = 70
+		cost = 50
 		x = 7
 		y = 16
 		ai_will_do = { factor = 1 }
@@ -9638,7 +9701,7 @@ focus_tree = {
 		id = BLR_EC_17
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_8}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 18
 		ai_will_do = { factor = 1 }
@@ -9651,7 +9714,7 @@ focus_tree = {
 		id = BLR_EC_18
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_33}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 15
 		ai_will_do = { factor = 1 }		
@@ -9667,7 +9730,7 @@ focus_tree = {
             focus = BLR_EC_20
 			focus = BLR_EC_15
         }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 16
 		ai_will_do = { factor = 1 }
@@ -9683,7 +9746,7 @@ focus_tree = {
             focus = BLR_EC_35
 			focus = BLR_EC_40
         }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 15
 		ai_will_do = { factor = 1 }
@@ -9696,7 +9759,7 @@ focus_tree = {
 		id = BLR_EC_21
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_32 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 12
 		ai_will_do = { factor = 1 }
@@ -9710,7 +9773,7 @@ focus_tree = {
 		id = BLR_EC_22
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_5 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -9724,7 +9787,7 @@ focus_tree = {
 		id = BLR_EC_23
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_9 }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 12
 		ai_will_do = { factor = 1 }
@@ -9738,7 +9801,7 @@ focus_tree = {
 		id = BLR_EC_24
 		icon = GFX_goal_generic_propaganda
         prerequisite = {focus = BLR_EC_39}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 14
 		ai_will_do = { factor = 1 }
@@ -9752,7 +9815,7 @@ focus_tree = {
 		id = BLR_EC_25
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_23}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -9766,7 +9829,7 @@ focus_tree = {
 		id = BLR_EC_26
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_56}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 10
 		ai_will_do = { factor = 1 }
@@ -9779,7 +9842,7 @@ focus_tree = {
 		id = BLR_EC_27
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_7}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 20
 		ai_will_do = { factor = 1 }
@@ -9792,7 +9855,7 @@ focus_tree = {
 		id = BLR_EC_28
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_14 }
-		cost = 70
+		cost = 50
 		x = 5
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -9807,7 +9870,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_71 }
 		prerequisite = { focus = BLR_EC_30 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 22
 		ai_will_do = { factor = 1 }
@@ -9820,7 +9883,7 @@ focus_tree = {
 		id = BLR_EC_31
 		icon = GFX_goal_generic_propaganda
 	    prerequisite = { focus = BLR_EC_22 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -9833,7 +9896,7 @@ focus_tree = {
 		id = BLR_EC_32
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_38 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 11
 		ai_will_do = { factor = 1 }
@@ -9846,7 +9909,7 @@ focus_tree = {
 		id = BLR_EC_33
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_55}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 14
 		ai_will_do = { factor = 1 }
@@ -9859,7 +9922,7 @@ focus_tree = {
 		id = BLR_EC_34
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_12}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 19
 		ai_will_do = { factor = 1 }
@@ -9872,7 +9935,7 @@ focus_tree = {
 		id = BLR_EC_35
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_65}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 14
 		ai_will_do = { factor = 1 }
@@ -9887,7 +9950,7 @@ focus_tree = {
 		available = {
 				has_completed_focus = BLR_liberal
 		}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 6
 		ai_will_do = { factor = 1 }
@@ -9900,7 +9963,7 @@ focus_tree = {
 		id = BLR_EC_37
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_13}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 16
 		ai_will_do = { factor = 1 }
@@ -9913,7 +9976,7 @@ focus_tree = {
 		id = BLR_EC_38
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_31 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 10
 		ai_will_do = { factor = 1 }
@@ -9926,7 +9989,7 @@ focus_tree = {
 		id = BLR_EC_39
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = BLR_EC_21 }
-		cost = 70
+		cost = 50
 		x = 3
 		y = 13
 		completion_reward = {
@@ -9938,7 +10001,7 @@ focus_tree = {
 		id = BLR_EC_30
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_72}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 21
 		ai_will_do = { factor = 1 }
@@ -9951,7 +10014,7 @@ focus_tree = {
 		id = BLR_EC_40
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_25}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 14
 		ai_will_do = { factor = 1 }
@@ -9964,7 +10027,7 @@ focus_tree = {
 		id = BLR_EC_41
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_64}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 24
 		ai_will_do = { factor = 1 }
@@ -9977,7 +10040,7 @@ focus_tree = {
 		id = BLR_EC_42
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_68}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 18
 		ai_will_do = { factor = 1 }
@@ -9990,7 +10053,7 @@ focus_tree = {
 		id = BLR_EC_43
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_44}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 12
 		ai_will_do = { factor = 1 }
@@ -10003,7 +10066,7 @@ focus_tree = {
 		id = BLR_EC_44
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_48}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 11
 		ai_will_do = { factor = 1 }
@@ -10015,7 +10078,7 @@ focus_tree = {
 		id = BLR_EC_45
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_53}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 20
 		ai_will_do = { factor = 1 }
@@ -10028,7 +10091,7 @@ focus_tree = {
 		id = BLR_EC_46
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_57}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 12
 		ai_will_do = { factor = 1 }
@@ -10042,7 +10105,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_3}
 		prerequisite = {focus = BLR_EC_62}
-		cost = 70
+		cost = 50
 		x = 8
 		y = 27
 		ai_will_do = { factor = 1 }
@@ -10055,7 +10118,7 @@ focus_tree = {
 		id = BLR_EC_48
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_54}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 10
 		ai_will_do = { factor = 1 }
@@ -10068,7 +10131,7 @@ focus_tree = {
 		id = BLR_EC_49
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_2}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 7
 		ai_will_do = { factor = 1 }
@@ -10081,7 +10144,7 @@ focus_tree = {
 		id = BLR_EC_50
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_73}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 18
 		ai_will_do = { factor = 1 }
@@ -10094,7 +10157,7 @@ focus_tree = {
 		id = BLR_EC_51
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_45}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 21
 		ai_will_do = { factor = 1 }
@@ -10107,12 +10170,12 @@ focus_tree = {
 		id = BLR_EC_52
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_36}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
+			add_ideas = BLR_EC_52
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -10120,7 +10183,7 @@ focus_tree = {
 		id = BLR_EC_53
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_50}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 19
 		ai_will_do = { factor = 1 }
@@ -10133,7 +10196,7 @@ focus_tree = {
 		id = BLR_EC_54
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_59}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -10146,7 +10209,7 @@ focus_tree = {
 		id = BLR_EC_55
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_46}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -10159,7 +10222,7 @@ focus_tree = {
 		id = BLR_EC_56
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_67}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -10172,7 +10235,7 @@ focus_tree = {
 		id = BLR_EC_57
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_26}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 11
 		ai_will_do = { factor = 1 }
@@ -10185,7 +10248,7 @@ focus_tree = {
 		id = BLR_EC_58
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_64}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 23
 		ai_will_do = { factor = 1 }
@@ -10198,7 +10261,7 @@ focus_tree = {
 		id = BLR_EC_59
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_52}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -10212,7 +10275,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_63}
 		prerequisite = {focus = BLR_EC_47}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 28
 		ai_will_do = { factor = 1 }
@@ -10225,7 +10288,7 @@ focus_tree = {
 		id = BLR_EC_61
 		icon = GFX_goal_generic_propaganda
         prerequisite = {focus = BLR_EC_41}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 25
 		ai_will_do = { factor = 1 }
@@ -10237,7 +10300,8 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_62
 		icon = GFX_goal_generic_propaganda
-		cost = 70
+		prerequisite = {focus = BLR_EC_61}
+		cost = 50
 		x = 7
 		y = 26
 		ai_will_do = { factor = 1 }
@@ -10251,7 +10315,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_66}
 		prerequisite = {focus = BLR_EC_62}
-		cost = 70
+		cost = 50
 		x = 6
 		y = 27
 		ai_will_do = { factor = 1 }
@@ -10267,7 +10331,7 @@ focus_tree = {
 		available = {
 		    has_completed_focus = BLR_EU
 		}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 22
 		ai_will_do = { factor = 1 }
@@ -10280,7 +10344,7 @@ focus_tree = {
 		id = BLR_EC_65
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_43}
-		cost = 70
+		cost = 50
 		x = 7
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -10293,7 +10357,7 @@ focus_tree = {
 		id = BLR_EC_66
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_61}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 26
 		ai_will_do = { factor = 1 }
@@ -10306,7 +10370,7 @@ focus_tree = {
 		id = BLR_EC_67
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_49}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -10319,7 +10383,7 @@ focus_tree = {
 		id = BLR_EC_68
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_4}
-		cost = 70
+		cost = 50
 		x = 1
 		y = 17
 		ai_will_do = { factor = 1 }
@@ -10332,7 +10396,7 @@ focus_tree = {
 		id = BLR_EC_69
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_71}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 22
 		ai_will_do = { factor = 1 }
@@ -10362,7 +10426,7 @@ focus_tree = {
 		id = BLR_EC_70
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_17}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 19
 		ai_will_do = { factor = 1 }
@@ -10375,7 +10439,7 @@ focus_tree = {
 		id = BLR_EC_71
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_74}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 21
 		ai_will_do = { factor = 1 }
@@ -10388,7 +10452,7 @@ focus_tree = {
 		id = BLR_EC_72
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_34}
-		cost = 70
+		cost = 50
 		x = 3
 		y = 20
 		ai_will_do = { factor = 1 }
@@ -10404,7 +10468,7 @@ focus_tree = {
             focus = BLR_EC_19
 			focus = BLR_EC_16
         }
-		cost = 70
+		cost = 50
 		x = 7
 		y = 17
 		ai_will_do = { factor = 1 }
@@ -10417,7 +10481,7 @@ focus_tree = {
 		id = BLR_EC_74
 		icon = GFX_goal_generic_propaganda
 		prerequisite = {focus = BLR_EC_70}
-		cost = 70
+		cost = 50
 		x = 5
 		y = 20
 		ai_will_do = { factor = 1 }

@@ -1,47 +1,405 @@
 ﻿division_template = {
-	name = "Infantry Corps"		
-	
+	name = "Special Forces brigade on BTR"
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
-		motorized = { x = 0 y = 2 }
-		motorized = { x = 0 y = 3 }
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+	# 2d Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+	# 3rd Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+	# 4rd Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+	# Учебная Рота
+		special_forces_motorized = { x = 4 y = 0 }
+		special_forces_motorized = { x = 4 y = 1 }
+	# 1th Anti Tank Battalion
+		portable_at_ml = { x = 5 y = 0 }
+		light_self_propelled_at_ml = { x = 5 y = 1 }
+		light_self_propelled_at_ml = { x = 5 y = 2 }
+	# 1th Anti Air Battalion
+		portable_aa_ml = { x = 6 y = 0 }
+		portable_aa_ml = { x = 6 y = 1 }
+		portable_aa_ml = { x = 6 y = 2 }
+	# Рота СРС ( специальной радио-связи) ( 2 юнита )
+		# рота_срс = { x = 5 y = 0 }
+		# рота_срс = { x = 5 y = 1 }
 	}
-
 	support = {
-		airborne_support_company = { x = 0 y = 0 }
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+division_template = {
+	name = "Reconnaissance Brigade on BTR"
+	regiments = {
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+
+	# 2d Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+
+	# 1st SF battalion on wheeled APC
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 2 }
+
+	# Учебная Рота
+		recons_light_motorized = { x = 4 y = 0 }
+		recons_light_motorized = { x = 4 y = 1 }
+	# 1th Anti Tank Battalion
+		light_self_propelled_at_ml = { x = 5 y = 0 }
+	# 1th Anti Air Battalion
+		portable_aa_ml = { x = 6 y = 0 }
+	
+	
+	# Рота СРС ( специальной радио-связи) ( 2 юнита )
+		# рота_срс = { x = 5 y = 0 }
+		# рота_срс = { x = 5 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+division_template = {
+	name = "Guard Tank Brigade"	
+	regiments = {
+	# 1st tank battalion
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
+	# 2rd tank battalion
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+		main_battle_tank = { x = 1 y = 2 }
+		main_battle_tank = { x = 1 y = 3 }
+	# 3rd tank battalion
+		main_battle_tank_te = { x = 2 y = 0 }
+		main_battle_tank_te = { x = 2 y = 1 }
+		main_battle_tank_te = { x = 2 y = 2 }
+		main_battle_tank_te = { x = 2 y = 3 }
+	# 1st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 3 y = 0 }
+		mechanized_on_ifv_tracked = { x = 3 y = 1 }
+		mechanized_on_ifv_tracked = { x = 3 y = 2 }		
+	# 2st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 4 y = 0 }
+		mechanized_on_ifv_tracked = { x = 4 y = 1 }
+		mechanized_on_ifv_tracked = { x = 4 y = 2 }
+		# # mortar_with_truck = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 6 y = 0 }
+		heavy_self_propelled_aag = { x = 6 y = 1 }
+		portable_aa_ml = { x = 6 y = 2 }
+		portable_aa_ml = { x = 6 y = 3 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 7 y = 0 }
+		medium_self_propelled_aa_ml = { x = 7 y = 1 }
+		medium_self_propelled_aa_ml = { x = 7 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 8 y = 0 }
+		rocket_artillery_sr = { x = 8 y = 1 }
+		rocket_artillery_sr = { x = 8 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
 		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#maintenance_battalion = { x = 0 y = 4 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
 	}
 }
-
 division_template = {
-	name = "Paratroopers Brigade"		
-	
+	name = "Mechanized infantry brigade on BTR"	
 	regiments = {
-		paratroopers_motorized = { x = 0 y = 0 }
-		paratroopers_motorized = { x = 0 y = 1 }
-		paratroopers_motorized = { x = 0 y = 2 }
-		paratroopers_motorized = { x = 0 y = 3 }
-		paratroopers_motorized = { x = 1 y = 0 }
-		paratroopers_motorized = { x = 1 y = 1 }
-		paratroopers_motorized = { x = 1 y = 2 }
+	# 1st infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		# mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		mechanized_on_apc_wheeled = { x = 1 y = 2 }
+		# mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		mechanized_on_apc_wheeled = { x = 2 y = 2 }
+		# mortar_with_truck = { x = 2 y = 3 }
+	# 1st special forces battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		mechanized_on_apc_wheeled = { x = 3 y = 1 }
+		mechanized_on_apc_wheeled = { x = 3 y = 2 }
+		# agl_on_luv = { x = 2 y = 3 }	
+	# 1st Recon battalion
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 2 }
+	# 1st tank battalion
+		main_battle_tank = { x = 5 y = 0 }
+		main_battle_tank = { x = 5 y = 1 }
+		main_battle_tank = { x = 5 y = 2 }
+		main_battle_tank = { x = 5 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 6 y = 0 }
+		self_propelled_howitzers = { x = 6 y = 1 }
+		self_propelled_howitzers = { x = 6 y = 2 }
+		mortars = { x = 6 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 7 y = 0 }
+		self_propelled_howitzers = { x = 7 y = 1 }
+		self_propelled_howitzers = { x = 7 y = 2 }
+		mortars = { x = 7 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 8 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 8 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 8 y = 2 }
+		portable_at_ml = { x = 8 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 9 y = 0 }
+		heavy_self_propelled_aag = { x = 9 y = 1 }
+		heavy_self_propelled_aag = { x = 9 y = 2 }
+		portable_aa_ml = { x = 9 y = 3 }
+		portable_aa_ml = { x = 9 y = 4 }
+		portable_aa_ml = { x = 9 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		motorized_self_propelled_aa_ml = { x = 10 y = 0 }
+		motorized_self_propelled_aa_ml = { x = 10 y = 1 }
+		motorized_self_propelled_aa_ml = { x = 10 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		#rocket_artillery_sr = { x = 11 y = 0 }
+		#rocket_artillery_sr = { x = 11 y = 1 }
+		#rocket_artillery_sr = { x = 11 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#maintenance_battalion = { x = 0 y = 4 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		#uas_company = { x = 1 y = 1 }
+		#electronic_intelligence_company = { x = 0 y = 9 }
 	}
 }
-
 division_template = {
-	name = "Armored Corps"		
-	
+	name = "Mechanized infantry brigade on BMP"	
 	regiments = {
-		medium_tank = { x = 0 y = 0 }
-		medium_tank = { x = 0 y = 1 }
-		medium_tank = { x = 0 y = 2 }
-		medium_tank = { x = 0 y = 3 }
+	# 1st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 0 y = 0 }
+		mechanized_on_ifv_tracked = { x = 0 y = 1 }
+		mechanized_on_ifv_tracked = { x = 0 y = 2 }
+		#mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 1 y = 0 }
+		mechanized_on_ifv_tracked = { x = 1 y = 1 }
+		mechanized_on_ifv_tracked = { x = 1 y = 2 }
+		#mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 2 y = 0 }
+		mechanized_on_ifv_tracked = { x = 2 y = 1 }
+		mechanized_on_ifv_tracked = { x = 2 y = 2 }
+	# 1st tank battalion
+		 main_battle_tank = { x = 2 y = 0 }
+		 main_battle_tank = { x = 2 y = 1 }
+		 main_battle_tank = { x = 2 y = 2 }
+		 main_battle_tank = { x = 2 y = 3 }
+	# 2rd tank battalion
+		 main_battle_tank = { x = 3 y = 0 }
+		 main_battle_tank = { x = 3 y = 1 }
+		 main_battle_tank = { x = 3 y = 2 }
+		 main_battle_tank = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		self_propelled_howitzers = { x = 4 y = 2 }
+		mortars = { x = 4 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 2 }
+		portable_at_ml = { x = 6 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 7 y = 0 }
+		heavy_self_propelled_aag = { x = 7 y = 1 }
+		heavy_self_propelled_aag = { x = 7 y = 2 }
+		portable_aa_ml = { x = 7 y = 3 }
+		portable_aa_ml = { x = 7 y = 4 }
+		portable_aa_ml = { x = 7 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 8 y = 0 }
+		medium_self_propelled_aa_ml = { x = 8 y = 1 }
+		medium_self_propelled_aa_ml = { x = 8 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 9 y = 0 }
+		rocket_artillery_sr = { x = 9 y = 1 }
+		rocket_artillery_sr = { x = 9 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		#uas_company = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Airborne Regiment on BTR"	
+	regiments = {
+	# 1st airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 1st self-propelled air-drop howitzer battery
+		air_droppable_self_propelled_howitzers = { x = 3 y = 0 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 3 }
+	# 1st anti-tank air-drop artillery battery	
+		air_droppable_self_propelled_at_ml = { x = 4 y = 0 }
+		portable_at_ml = { x = 4 y = 1 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 5 y = 0 }
+		portable_aa_ml = { x = 5 y = 1 }
+		portable_aa_ml = { x = 5 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+division_template = {
+	name = "Mechanized infantry brigade"	
+	regiments = {
+	 #1st infantry battalion on tacked APC
+		mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+		# mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on tacked APC
 		mechanized_on_apc_tracked = { x = 1 y = 0 }
 		mechanized_on_apc_tracked = { x = 1 y = 1 }
 		mechanized_on_apc_tracked = { x = 1 y = 2 }
+		# mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on tacked APC
+		mechanized_on_apc_tracked = { x = 2 y = 0 }
+		mechanized_on_apc_tracked = { x = 2 y = 1 }
+		mechanized_on_apc_tracked = { x = 2 y = 2 }
+		# mortar_with_truck = { x = 2 y = 3 }	
+	# 1st tank battalion
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		main_battle_tank = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		self_propelled_howitzers = { x = 4 y = 2 }
+		mortars = { x = 4 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 2 }
+		portable_at_ml = { x = 6 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 7 y = 0 }
+		heavy_self_propelled_aag = { x = 7 y = 1 }
+		heavy_self_propelled_aag = { x = 7 y = 2 }
+		portable_aa_ml = { x = 7 y = 3 }
+		portable_aa_ml = { x = 7 y = 4 }
+		portable_aa_ml = { x = 7 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 8 y = 0 }
+		medium_self_propelled_aa_ml = { x = 8 y = 1 }
+		medium_self_propelled_aa_ml = { x = 8 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 9 y = 0 }
+		rocket_artillery_sr = { x = 9 y = 1 }
+		rocket_artillery_sr = { x = 9 y = 2 }
+	}
+	support = {
+		 engineer_battalion = { x = 0 y = 0 }
+		 logistics_battalion = { x = 0 y = 1 }
+		 signal_company = { x = 0 y = 2 }
+		 recon_battalion = { x = 0 y = 3 }
+		 cbrn_defense_company = { x = 0 y = 5 }
+		 medical_company = { x = 0 y = 6 }
+		 electronic_warfare_company = { x = 1 y = 0 }
+		 #uas_company = { x = 1 y = 1 }
 	}
 }
 
@@ -49,34 +407,330 @@ units = {
 	division= {		
 		name = "1st Golani Brigade"		
 		location = 1074
-		division_template = "Infantry Corps"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.7
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "1st Golani Brigade"		
+		location = 1074
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "1st Golani Brigade"		
+		location = 1074
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
 	}
 	division= {		
 		name = "84th Nahal Brigade"		
 		location = 1
-		division_template = "Infantry Corps"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.7
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
 	}
 	division= {		
 		name = "35th Paratroopers Brigade"		
 		location = 13884
-		division_template = "Paratroopers Brigade"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.75
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
 	}
 	division= {		
 		name = "7th Sa'ar Armored Brigade"		
 		location = 11970
-		division_template = "Armored Corps"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.75
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
 	}
+	division= {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 13883
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13883
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13883
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13883
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 1065
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	
 }
 
 instant_effect = {
+	add_equipment_to_stockpile = { #Меркава мк1
+		amount = 440
+		type = main_battle_tank_g3_equipment_0
+	}
+	add_equipment_to_stockpile = { #Меркава мк2
+		amount = 350
+		type = main_battle_tank_g4_equipment_0
+	}
+	add_equipment_to_stockpile = { #Меркава мк3
+		amount = 360
+		type = main_battle_tank_g5_equipment_0
+	}
+	add_equipment_to_stockpile = { #Меркава мк4
+		amount = 300
+		type = main_battle_tank_g6_equipment_0
+	}
+	add_equipment_to_stockpile = { #м-60
+		amount = 711
+		type = medium_tank_g1_equipment_0
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #Magach 
+		amount = 111
+		type = medium_tank_g1_equipment_0
+	}
+	add_equipment_to_stockpile = { #RBY-1 RAMTA
+		amount = 308
+		type = light_utility_vehicle_g4_equipment_0
+	}
+	add_equipment_to_stockpile = { #Namer
+		amount = 65
+		type = apc_wheeled_g5_equipment_0
+	}
+	add_equipment_to_stockpile = { #Achzarit
+		amount = 200
+		type = apc_wheeled_g6_equipment_0
+	}
+	add_equipment_to_stockpile = { #M113A2
+		amount = 600
+		type =  apc_tracked_g3_equipment_0
+	}
+	add_equipment_to_stockpile = { #Nagmachon
+		amount = 600
+		type =  ifv_tracked_g4_equipment_0
+	}
+	add_equipment_to_stockpile = { #M-113A1/А2
+		amount = 5000
+		type =  apc_tracked_g3_equipment_0
+	}
+	add_equipment_to_stockpile = { #Ze’ev
+		amount = 100
+		type =  apc_wheeled_light_g4_equipment_0
+	}
+	add_equipment_to_stockpile = { #M109A5
+		amount = 250
+		type =  FIELD_ARTILLERY_SAU_6
+	}
+	add_equipment_to_stockpile = { #L-33
+		amount = 148
+		type =  FIELD_ARTILLERY_SAU_5
+	}
+	add_equipment_to_stockpile = { #M109A1
+		amount = 30
+		type =  FIELD_ARTILLERY_SAU_4
+	}
+	add_equipment_to_stockpile = { #M107
+		amount = 30
+		type =  FIELD_ARTILLERY_SAU_3
+	}
+	add_equipment_to_stockpile = { #M110
+		amount = 36
+		type =  FIELD_ARTILLERY_SAU_2
+	}
+	add_equipment_to_stockpile = { #Д-30
+		amount = 5
+		type = FIELD_ARTILLERY_5
+		producer = SOV
+	}
+	add_equipment_to_stockpile = { #M-46
+		amount = 140
+		type = FIELD_ARTILLERY_4
+		producer = SOV
+	}
+	add_equipment_to_stockpile = { #M-68/M-71
+		amount = 100
+		type = FIELD_ARTILLERY_5
+		producer = SOV
+	}
+	add_equipment_to_stockpile = { #M270
+		amount = 60
+		type = MRL_2
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #BM-21
+		amount = 58
+		type = MRL_2
+		producer = SOV
+	}
+	add_equipment_to_stockpile = { #LAR-160
+		amount = 50
+		type = MRL_3
+	}
+	add_equipment_to_stockpile = { #BM-24
+		amount = 30
+		type = MRL_3
+		producer = SOV
+	}
+	add_equipment_to_stockpile = { #LAR-290
+		amount = 50
+		type = MRL_3
+	}
+	add_equipment_to_stockpile = { #Soltam M-66
+		amount = 1350
+		type = TRENCH_MORTAR_1
+	}
+	add_equipment_to_stockpile = { #Soltam M-66
+		amount = 650
+		type = TRENCH_MORTAR_2
+	}
+	add_equipment_to_stockpile = { #F-15A Eagle /F-15B
+		amount = 24
+		type = superior_fighter_equipment_4
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-15C
+		amount = 17
+		type = superior_fighter_equipment_5
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-15D
+		amount = 11
+		type = superior_fighter_equipment_6
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-16A
+		amount = 77
+		type = light_fighter_equipment_4
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-16B
+		amount = 16
+		type = light_fighter_equipment_5
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-15I Ra’am
+		amount = 25
+		type = strike_fighter_equipment_5
+	}
+	add_equipment_to_stockpile = { #F-16C Fighting Falcon
+		amount = 78
+		type = strike_fighter_equipment_5
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-16D Fighting Falcon
+		amount = 49
+		type = strike_fighter_equipment_6
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-16I Sufa
+		amount = 49
+		type = strike_fighter_equipment_6
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #A-4N Skyhawk
+		amount = 20
+		type = attack_aircraft_equipment_1
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #TA-4H Skyhawk
+		amount = 10
+		type = attack_aircraft_equipment_1
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #A-4N Skyhawk/F-4 Phantom II
+		amount = 200
+		type = strike_fighter_equipment_3
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #F-4B Phantom II
+		amount = 15
+		type = strike_fighter_equipment_3
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #KC-130H Hercules
+		amount = 2
+		type = air_transport_equipment_1
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #KC-707
+		amount = 7
+		type = air_transport_equipment_2
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #Medium 13: 5 C-130E Hercules; 8 C-130H Hercules; Light 47: 3 AT-802 Air Tractor; 9 Beech 200 King Air; 8 Beech 200T King Air; 5 Beech 200CT King Air; 22 Beech A36 Bonanza (Hofit)
+		amount = 60
+		type = air_transport_equipment_3
+	}
+	add_equipment_to_stockpile = { #AH-1E/F Cobra
+		amount = 33
+		type = attack_helicopter_equipment_3
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #AH-64A Apache
+		amount = 27
+		type = attack_helicopter_equipment_4
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #AH-64D Apache
+		amount = 17
+		type = attack_helicopter_equipment_6
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #OH-58B Kiowa
+		amount = 12
+		type = attack_helicopter_equipment_1
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #AS565SA Panther
+		amount = 7
+		type = attack_helicopter_equipment_2
+		producer = GER
+	}
+	add_equipment_to_stockpile = { #CH-53D Sea Stallion
+		amount = 26
+		type = landing_helicopter_equipment_3
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #S-70A Black Hawk
+		amount = 49
+		type = assault_helicopter_equipment_3
+		producer = USA
+	}
+	add_equipment_to_stockpile = { #Bell 206 JetRanger
+		amount = 6
+		type = assault_helicopter_equipment_4
+	}
+	add_equipment_to_stockpile = { #Hermes 450 \ Hermes 900
+		amount = 19
+		type = attack_drone_equipment_5
+	}
+	add_equipment_to_stockpile = { #RQ-5 (разных модификаций)
+		amount = 6
+		type = attack_drone_equipment_6
+		producer = USA
+	}
+	
 	add_equipment_production = {
 		equipment = {
 			type = army_salw_equipment_1

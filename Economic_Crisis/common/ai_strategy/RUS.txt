@@ -121,13 +121,29 @@ russia_friend_with_syria = {
 	}
 }
 
-RUS_anamy = {
+RUS_enemy = {
 	enable = {
 		tag = RUS
 	}
 	ai_strategy = {
 		type = prepare_for_war
 		id = "USA"
+		value = 30
+	}
+}
+RUS_enemy_with_UKR_nat = {
+	enable = {
+		tag = RUS
+		UKR = { has_government = fascism }
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "UKR"
+		value = 30
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "UKR"
 		value = 30
 	}
 }

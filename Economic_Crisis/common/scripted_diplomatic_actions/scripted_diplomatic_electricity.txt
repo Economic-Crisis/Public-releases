@@ -14,7 +14,10 @@ scripted_diplomatic_actions = {
 		
 			check_variable = { ROOT.electricity_buy_bool_sel_country = 0 }
 			check_variable = { ROOT.electricity_ratio < 1 }
-			check_variable = { this.electricity_ratio_rest > 0 }
+			custom_trigger_tooltip = {
+				tooltip = sd_electricity_TT
+				check_variable = { this.electricity_ratio_rest > 0 }
+			}
 			check_variable = { this.electricity_value_inc > 5 }
 			is_neighbor_of = ROOT
 			NOT = { 

@@ -1,0 +1,82 @@
+sub_units = {
+
+	# mechanized paratroopers on tracked armored personnel carriers (APC)
+	paratroopers_mechanized_on_ifv_tracked = {
+	
+		sprite = paratroopers_mechanized_on_apc_tracked #paratroopers_mechanized_on_ifv_tracked
+		map_icon_category = infantry
+		
+		can_be_parachuted = yes
+		special_forces = yes
+		active = no
+		priority = 681
+		ai_priority = 200
+
+		type = {
+			mechanized
+		}
+		
+		group = paratroopers_battalion
+		
+		categories = {
+			category_front_line
+			category_mechanized
+			category_all_infantry
+			category_special_corps
+			category_paratroopers
+			category_tracked
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 27
+		max_organisation = 70
+		default_morale = 0.5
+		manpower = 75 #5x increased the scale of manpower, real number is 130
+
+		#Misc Abilities
+		training_time = 220
+		suppression = 1
+		weight = 1
+		supply_consumption = 0.18
+	
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			special_salw_equipment
+			special_ammunition_equipment
+			ifv_tracked_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = ifv_tracked_equipment
+	
+		need = {
+			special_salw_equipment = 130
+			special_ammunition_equipment = 130
+			ifv_tracked_equipment = 20
+			infantry_technical_means_equipment = 150
+		}
+		
+		forest = {
+			attack = 0.16
+		}
+		mountain = {
+			attack = 0.05
+		}
+		jungle = {
+			attack = 0.25
+		}
+		marsh = {
+			attack = 0.1
+		}
+		urban = {
+			attack = 0.16
+			defence = 0.08
+		}
+		river = {
+			attack = 0.15
+			movement = 0.1
+		}
+	}
+}

@@ -51,7 +51,7 @@ static const float CITY_LIGHTS_INTENSITY 		= 6.5;
 static const float CITY_LIGHTS_BLOOM_FACTOR 	= 0.6;
 
 static const float TERRAIN_TILE_FREQ 			= 128.0f;
-static const float MAP_NUM_TILES 				= 4.0f;
+static const float MAP_NUM_TILES 				= 5.0f;
 static const float TEXELS_PER_TILE 				= 512.0f;
 static const float ATLAS_TEXEL_POW2_EXPONENT	= 11.0f;
 static const float TERRAIN_WATER_CLIP_HEIGHT    = 3.0f;
