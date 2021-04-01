@@ -439,3 +439,97 @@ adjacency_rule
 	icon = 3529
 	offset = { 0 0 0 }
 }
+#Thai Canal
+adjacency_rule
+{
+	name = "THAI_CANAL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	is_disabled = {
+		#OR = {
+			has_global_flag = THAI_CANAL_BLOCKED
+		#	has_country_flag = THAI_CANAL_BLOCKED_FOR_COUNTRY
+		#}
+		tooltip = disable_thai_canal_tt
+	}
+	
+	required_provinces = { 10158 1308 }
+		
+	icon = 10158
+	offset = { 0 0 0 }
+}
+#Nicaragua Canal
+adjacency_rule
+{
+	name = "NICARAGUA_CANAL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	is_disabled = {
+		#OR = {
+			has_global_flag = NICARAGUA_CANAL_BLOCKED
+		#	has_country_flag = NICARAGUA_CANAL_BLOCKED_FOR_COUNTRY
+		#}
+		tooltip = disable_nicaragua_canal_tt
+	}
+	
+	required_provinces = { 1988 13092 }
+		
+	icon = 1988
+	offset = { 0 0 0 }
+}

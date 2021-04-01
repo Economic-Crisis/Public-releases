@@ -51,6 +51,20 @@
 #}
 
 
+resistance_20 = {
+	type = core_resistance_modifier
+	icon = "GFX_occupation_resistance_modifier_strip:1"
+	small_icon = "GFX_occupation_resistance_modifier_small_strip:1"
+	threshold = 20
+	margin = 2
+	state_modifier = {
+		compliance_gain = -0.02
+	}
+	on_enable = {
+		custom_effect_tooltip = resistance_20_effect_tooltip
+	}
+}
+
 resistance_25 = {
 	type = state_resistance_modifier
 	icon = "GFX_occupation_resistance_modifier_strip:1"

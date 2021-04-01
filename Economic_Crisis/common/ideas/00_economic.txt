@@ -5,7 +5,9 @@ ideas = {
 
 
 	economic_mobilisation_laws = { 
-	
+		law = yes
+		use_list_view = yes
+		
 		civilian_economy = {
 			
 			cost = 550
@@ -214,6 +216,7 @@ ideas = {
 
 	economy_laws = { 
 		law = yes
+		use_list_view = yes
 		
 		market_economy = {
 		
@@ -351,6 +354,7 @@ ideas = {
 	market_laws = { 
 
 		law = yes
+		use_list_view = yes
 		
 		free_market = {
 		    
@@ -490,6 +494,7 @@ ideas = {
 	industry_focus_laws = {
 	    
 		law = yes
+		use_list_view = yes
 		
 		light_industry_focus = {
 		    
@@ -681,6 +686,7 @@ ideas = {
 	
     taxes_laws = {
 	    law = yes
+		use_list_view = yes
 		
 		very_low_taxes = {
 		    
@@ -692,6 +698,22 @@ ideas = {
 			on_add = {
 				custom_effect_tooltip = very_low_taxes_TT
 				set_variable = { tax_percentage = 0.005 }
+				if = {
+					limit = { has_idea = high_taxes	}
+					support_current_ruling_party_high = yes
+				}
+				else_if = {
+					limit = { has_idea = very_high_taxes }
+					support_current_ruling_party_very_high = yes
+				}
+				else_if = {
+					limit = { has_idea = normal_taxes }
+					support_current_ruling_party_normal = yes
+				}
+				else_if = {
+					limit = { has_idea = low_taxes }
+					support_current_ruling_party_low = yes
+				}
 			}
 	
 			#do_effect = {
@@ -701,7 +723,7 @@ ideas = {
 			#}
 			
 			modifier = {
-			#	consumer_goods_factor = -0.12
+				political_power_factor = -0.04
 			}
 		}
 		
@@ -715,6 +737,22 @@ ideas = {
 			on_add = {
 				custom_effect_tooltip = low_taxes_TT
 				set_variable = { tax_percentage = 0.01 }
+				if = {
+					limit = { has_idea = high_taxes }
+					support_current_ruling_party_normal = yes
+				}
+				else_if = {
+					limit = { has_idea = very_high_taxes }
+					support_current_ruling_party_high = yes
+				}
+				else_if = {
+					limit = { has_idea = normal_taxes }
+					support_current_ruling_party_low = yes
+				}
+				else_if = {
+					limit = { has_idea = very_low_taxes }
+					decline_current_ruling_party_low = yes
+				}				
 			}
 	
 			#do_effect = {
@@ -724,7 +762,7 @@ ideas = {
 			#}
 			
 			modifier = {
-			#    consumer_goods_factor = -0.06
+			    political_power_factor = -0.06
 			}
 		}
 		
@@ -739,6 +777,22 @@ ideas = {
 			on_add = {
 				custom_effect_tooltip = normal_taxes_TT
 				set_variable = { tax_percentage = 0.015 }
+				if = {
+					limit = { has_idea = high_taxes }
+					support_current_ruling_party_low = yes
+				}
+				else_if = {
+					limit = { has_idea = very_high_taxes }
+					support_current_ruling_party_normal = yes
+				}
+				else_if = {
+					limit = { has_idea = low_taxes }
+					decline_current_ruling_party_low = yes
+				}
+				else_if = {
+					limit = { has_idea = very_low_taxes }
+					decline_current_ruling_party_normal = yes
+				}
 			}
 	
 			#do_effect = {
@@ -748,7 +802,7 @@ ideas = {
 			#}
 			
 			modifier = {
-			#    consumer_goods_factor = -0.03
+			    political_power_factor = -0.09
 			}
 		}
 		
@@ -762,6 +816,23 @@ ideas = {
 			on_add = {
 				custom_effect_tooltip = high_taxes_TT
 				set_variable = { tax_percentage = 0.025 }
+
+				if = {
+					limit = { has_idea = very_high_taxes }
+					decline_current_ruling_party_very_low = yes
+				}
+				else_if = {
+					limit = { has_idea = normal_taxes }
+					decline_current_ruling_party_low = yes
+				}
+				else_if = {
+					limit = { has_idea = low_taxes }
+					decline_current_ruling_party_normal = yes
+				}
+				else_if = {
+					limit = { has_idea = very_low_taxes }
+					decline_current_ruling_party_high = yes
+				}
 			}
 	
 			#do_effect = {
@@ -771,8 +842,8 @@ ideas = {
 			#}
 			
 			modifier = {
-			#    consumer_goods_factor = 0.05
-			#	stability_weekly = -0.0004
+			    political_power_factor = -0.1
+				stability_weekly = -0.002
 			}
 		}
 		
@@ -786,6 +857,22 @@ ideas = {
 			on_add = {
 				custom_effect_tooltip = very_high_taxes_TT
 				set_variable = { tax_percentage = 0.035 }
+				if = {
+					limit = { has_idea = high_taxes }
+					decline_current_ruling_party_low = yes
+				}
+				else_if = {
+					limit = { has_idea = normal_taxes }
+					decline_current_ruling_party_normal = yes
+				}
+				else_if = {
+					limit = { has_idea = low_taxes }
+					decline_current_ruling_party_high = yes
+				}
+				else_if = {
+					limit = { has_idea = very_low_taxes }
+					decline_current_ruling_party_very_high = yes
+				}
 			}
 	
 			#do_effect = {
@@ -795,14 +882,15 @@ ideas = {
 			#}
 			
 			modifier = {
-			#    consumer_goods_factor = 0.10
-			#	stability_weekly = -0.0008
+			    political_power_factor = -0.12
+				stability_weekly = -0.004
 			}
 		}
 	}
 	
 	social_security_laws = {
 	    law = yes
+		use_list_view = yes
 		
 		total_social_security = {
 		    
@@ -889,6 +977,7 @@ ideas = {
 	
 	labor_rights_laws = {
 	    law = yes
+		use_list_view = yes
 		
 		no_labor_rights_protection = {
 		    
@@ -1001,6 +1090,7 @@ ideas = {
 	}
 	trade_laws = { 
 		law = yes
+		use_list_view = yes
 
 		free_trade = {
 			cost = 150

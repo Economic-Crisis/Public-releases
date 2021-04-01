@@ -2714,4 +2714,2032 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC}
 	}
+	#Вставка фокусов ЕАЭС
+	focus = {
+		id = CHI_eaeu_reform
+		icon = GFX_goal_rus_reform_eaeu
+		cost = 150
+		x = 15
+		y = 11
+		allow_branch = {
+			has_idea = eaeu_member
+		}
+		ai_will_do = { factor = 5 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform_TTT
+				check_variable = { budget_reserve > 3500 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform
+   						progress > 0.01
+					}
+				}
+				any_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform }
+			RUS = { has_completed_focus = RUS_eaeu_reform }
+			IRN = { has_completed_focus = IRN_eaeu_reform }
+			JAP = { has_completed_focus = JAP_eaeu_reform }
+			TUR = { has_completed_focus = TUR_eaeu_reform }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform
+				has_completed_focus = major_eaeu_reform
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -400
+			BLR = {
+				add_country_leader_trait = leader_eaeu
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform1
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform1_TTT
+				check_variable = { budget_reserve > 700 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform1
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform1
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 15
+		y = 12
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform1 }
+			RUS = { has_completed_focus = RUS_eaeu_reform1 }
+			IRN = { has_completed_focus = IRN_eaeu_reform1 }
+			JAP = { has_completed_focus = JAP_eaeu_reform1 }
+			TUR = { has_completed_focus = TUR_eaeu_reform1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform1
+				has_completed_focus = major_eaeu_reform1
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -800
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_advice
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform2
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform2_TTT
+				check_variable = { budget_reserve > 400 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform2
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform2
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 13
+		y = 12
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform2 }
+			RUS = { has_completed_focus = RUS_eaeu_reform2 }
+			IRN = { has_completed_focus = IRN_eaeu_reform2 }
+			JAP = { has_completed_focus = JAP_eaeu_reform2 }
+			TUR = { has_completed_focus = TUR_eaeu_reform2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform2
+				has_completed_focus = major_eaeu_reform2
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -600
+			custom_effect_tooltip = eaeu_reform2_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform3
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform3_TTT
+				check_variable = { budget_reserve > 700 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform3
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform3
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 17
+		y = 12
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform3 }
+			RUS = { has_completed_focus = RUS_eaeu_reform3 }
+			IRN = { has_completed_focus = IRN_eaeu_reform3 }
+			JAP = { has_completed_focus = JAP_eaeu_reform3 }
+			TUR = { has_completed_focus = TUR_eaeu_reform3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform3
+				has_completed_focus = major_eaeu_reform3
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -600
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_ministers
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform4
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {focus = CHI_eaeu_reform1 }
+		prerequisite = {focus = CHI_eaeu_reform3 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform4_TTT
+				check_variable = { budget_reserve > 2200 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform4
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform4
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 16
+		y = 13
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform4 }
+			RUS = { has_completed_focus = RUS_eaeu_reform4 }
+			IRN = { has_completed_focus = IRN_eaeu_reform4 }
+			JAP = { has_completed_focus = JAP_eaeu_reform4 }
+			TUR = { has_completed_focus = TUR_eaeu_reform4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform4
+				has_completed_focus = major_eaeu_reform4
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -1200
+			custom_effect_tooltip = eaeu_reform4_TT
+			hidden_effect = {
+				BLR = {
+					add_country_leader_trait = leader_eaeu
+				}
+				random_country = {
+					limit = { has_idea = eaeu_member }
+					country_event = { id = eaeu_event.4 days = 365 }
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu
+				}
+				save_global_event_target_as = get_name_country
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform5
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform4 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform5_TTT
+				check_variable = { budget_reserve > 400 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform5
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform5
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 15
+		y = 14
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform5 }
+			RUS = { has_completed_focus = RUS_eaeu_reform5 }
+			IRN = { has_completed_focus = IRN_eaeu_reform5 }
+			JAP = { has_completed_focus = JAP_eaeu_reform5 }
+			TUR = { has_completed_focus = TUR_eaeu_reform5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform5
+				has_completed_focus = major_eaeu_reform5
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -600
+			custom_effect_tooltip = eaeu_reform5_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform6
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {
+			focus = CHI_eaeu_reform5
+			focus = CHI_eaeu_infestructure
+		}
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform6_TTT
+				check_variable = { budget_reserve > 300 }
+			}
+			OR = {
+				RUS = { has_completed_focus = RUS_eaeu_reform2 }
+				BLR = { has_completed_focus = BLR_eaeu_reform2 }
+				JAP = { has_completed_focus = JAP_eaeu_reform2 }
+				IRN = { has_completed_focus = IRN_eaeu_reform2 }
+				TUR = { has_completed_focus = TUR_eaeu_reform2 }
+				all_country = {
+					has_completed_focus = generic_eaeu_reform2
+					has_completed_focus = major_eaeu_reform2
+				}
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform6
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform6
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 16
+		y = 15
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform6 }
+			RUS = { has_completed_focus = RUS_eaeu_reform6 }
+			IRN = { has_completed_focus = IRN_eaeu_reform6 }
+			JAP = { has_completed_focus = JAP_eaeu_reform6 }
+			TUR = { has_completed_focus = TUR_eaeu_reform6 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform6
+				has_completed_focus = major_eaeu_reform6
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -300
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform7
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform1 }
+		prerequisite = { focus = CHI_eaeu_reform2 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform7_TTT
+				check_variable = { budget_reserve > 900 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform7
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform7
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 14
+		y = 13
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform7 }
+			RUS = { has_completed_focus = RUS_eaeu_reform7 }
+			IRN = { has_completed_focus = IRN_eaeu_reform7 }
+			JAP = { has_completed_focus = JAP_eaeu_reform7 }
+			TUR = { has_completed_focus = TUR_eaeu_reform7 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform7
+				has_completed_focus = major_eaeu_reform7
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -500
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_antimonopoly_committee
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_reform8
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {
+			focus = CHI_eaeu_reform2
+			focus = CHI_eaeu_reform7
+		}
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_reform8_TTT
+				check_variable = { budget_reserve > 500 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform8
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform8
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 13
+		y = 14
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_reform8 }
+			RUS = { has_completed_focus = RUS_eaeu_reform8 }
+			JAP = { has_completed_focus = JAP_eaeu_reform8 }
+			IRN = { has_completed_focus = IRN_eaeu_reform8 }
+			TUR = { has_completed_focus = TUR_eaeu_reform8 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform8
+				has_completed_focus = major_eaeu_reform8
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -700
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_medical_board
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = CHI_eaeu_economy
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform3 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy_TTT
+				check_variable = { budget_reserve > 500 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 19
+		y = 13
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy }
+			RUS = { has_completed_focus = RUS_eaeu_economy }
+			IRN = { has_completed_focus = IRN_eaeu_economy }
+			JAP = { has_completed_focus = JAP_eaeu_economy }
+			TUR = { has_completed_focus = TUR_eaeu_economy }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy
+				has_completed_focus = major_eaeu_economy
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -500
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_economic_commission
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy1
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform3 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy1_TTT
+				check_variable = { budget_reserve > 70 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy1
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy1
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 21
+		y = 13
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy1 }
+			RUS = { has_completed_focus = RUS_eaeu_economy1 }
+			IRN = { has_completed_focus = IRN_eaeu_economy1 }
+			JAP = { has_completed_focus = JAP_eaeu_economy1 }
+			TUR = { has_completed_focus = TUR_eaeu_economy1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy1
+				has_completed_focus = major_eaeu_economy1
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -300
+			custom_effect_tooltip = eaeu_economy1_TT
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy2
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_economy }
+		prerequisite = { focus = CHI_eaeu_economy1 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy2_TTT
+				check_variable = { budget_reserve > 3000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy2
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy2
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 20
+		y = 14
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy2 }
+			RUS = { has_completed_focus = RUS_eaeu_economy2 }
+			IRN = { has_completed_focus = IRN_eaeu_economy2 }
+			JAP = { has_completed_focus = JAP_eaeu_economy2 }
+			TUR = { has_completed_focus = TUR_eaeu_economy2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy2
+				has_completed_focus = major_eaeu_economy2
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_political_power = -300
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_free_trading_zone
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy3
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_economy2 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy3_TTT
+				check_variable = { budget_reserve > 5000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy3
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy3
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 20
+		y = 15
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy3 }
+			RUS = { has_completed_focus = RUS_eaeu_economy3 }
+			IRN = { has_completed_focus = IRN_eaeu_economy3 }
+			JAP = { has_completed_focus = JAP_eaeu_economy3 }
+			TUR = { has_completed_focus = TUR_eaeu_economy3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy3
+				has_completed_focus = major_eaeu_economy3
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			activate_decision = fund_eaeu
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy4
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_economy3 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy4_TTT
+				check_variable = { budget_reserve > 12000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy4
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy4
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 20
+		y = 16
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy4 }
+			RUS = { has_completed_focus = RUS_eaeu_economy4 }
+			JAP = { has_completed_focus = JAP_eaeu_economy4 }
+			IRN = { has_completed_focus = IRN_eaeu_economy4 }
+			TUR = { has_completed_focus = TUR_eaeu_economy4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy4
+				has_completed_focus = major_eaeu_economy4
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			country_event = eaeu_event.1
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy5
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_economy4 }
+		prerequisite = { focus = CHI_eaeu_economy6 }
+		prerequisite = { focus = CHI_eaeu_reform6 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy5_TTT
+				check_variable = { budget_reserve > 1700 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy5
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy5
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 17
+		y = 17
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy5 }
+			RUS = { has_completed_focus = RUS_eaeu_economy5 }
+			IRN = { has_completed_focus = IRN_eaeu_economy5 }
+			JAP = { has_completed_focus = JAP_eaeu_economy5 }
+			TUR = { has_completed_focus = TUR_eaeu_economy5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy5
+				has_completed_focus = major_eaeu_economy5
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = eaeu_event_1_a
+				}
+				custom_effect_tooltip = eaeu_economy5_1_TT
+			}
+			else_if = {
+				limit = {
+					has_global_flag = eaeu_event_1_b
+				}
+				custom_effect_tooltip = eaeu_economy5_2_TT
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_economy6
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform5 }
+		prerequisite = { focus = CHI_eaeu_economy }
+		prerequisite = { focus = CHI_eaeu_economy3 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_economy6_TTT
+				check_variable = { budget_reserve > 33000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy6
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy6
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 15
+		y = 16
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_economy6 }
+			RUS = { has_completed_focus = RUS_eaeu_economy6 }
+			JAP = { has_completed_focus = JAP_eaeu_economy6 }
+			IRN = { has_completed_focus = IRN_eaeu_economy6 }
+			TUR = { has_completed_focus = TUR_eaeu_economy6 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy6
+				has_completed_focus = major_eaeu_economy6
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_global_flag = EAEU_united_bank
+			custom_effect_tooltip = eaeu_economy6_TT
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_infestructure
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform4 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_infestructure_TTT
+				check_variable = { budget_reserve > 100 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_infestructure
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_infestructure
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 17
+		y = 14
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_infestructure }
+			RUS = { has_completed_focus = RUS_eaeu_infestructure }
+			JAP = { has_completed_focus = JAP_eaeu_infestructure }
+			IRN = { has_completed_focus = IRN_eaeu_infestructure }
+			TUR = { has_completed_focus = TUR_eaeu_infestructure }
+			any_country = {
+				has_completed_focus = generic_eaeu_infestructure
+				has_completed_focus = major_eaeu_infestructure
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_infestructure_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_infestructure1
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = {
+			focus = CHI_eaeu_economy
+			focus = CHI_eaeu_infestructure
+		}
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_infestructure1_TTT
+				check_variable = { budget_reserve > 15000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_infestructure1
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_infestructure1
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 18
+		y = 15
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_infestructure }
+			RUS = { has_completed_focus = RUS_eaeu_infestructure1 }
+			IRN = { has_completed_focus = IRN_eaeu_infestructure1 }
+			JAP = { has_completed_focus = JAP_eaeu_infestructure1 }
+			TUR = { has_completed_focus = TUR_eaeu_infestructure1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_infestructure1
+				has_completed_focus = major_eaeu_infestructure1
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = UNEBBENO_member
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_sphere_TTT
+				check_variable = { budget_reserve > 3000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 24
+		y = 12
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere }
+			RUS = { has_completed_focus = RUS_eaeu_sphere }
+			IRN = { has_completed_focus = IRN_eaeu_sphere }
+			JAP = { has_completed_focus = JAP_eaeu_sphere }
+			TUR = { has_completed_focus = TUR_eaeu_sphere }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere
+				has_completed_focus = major_eaeu_sphere
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			add_ideas = shymkent_area_immigration
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere1
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_reform }
+		available = { 
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere1
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere1
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 26
+		y = 12
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere1 }
+			RUS = { has_completed_focus = RUS_eaeu_sphere1 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere1 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere1 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere1
+				has_completed_focus = major_eaeu_sphere1
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere2
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_sphere }
+		prerequisite = { focus = CHI_eaeu_sphere1 }
+		available = { 
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere2
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere2
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 25
+		y = 13
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere2 }
+			RUS = { has_completed_focus = RUS_eaeu_sphere2 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere2 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere2 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere2
+				has_completed_focus = major_eaeu_sphere2
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_global_flag = eaeu_expansion
+			custom_effect_tooltip = eaeu_sphere2_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere3
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_sphere2 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_sphere3_TTT
+				check_variable = { budget_reserve > 40000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere3
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere3
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 23
+		y = 14
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere3 }
+			RUS = { has_completed_focus = RUS_eaeu_sphere3 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere3 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere3 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere3
+				has_completed_focus = major_eaeu_sphere3
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_idea = rcep_member
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere4
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_sphere2 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_sphere4_TTT
+				check_variable = { budget_reserve > 55000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere4
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere4
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 27
+		y = 14
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere4 }
+			RUS = { has_completed_focus = RUS_eaeu_sphere4 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere4 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere4 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere4
+				has_completed_focus = major_eaeu_sphere4
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_idea = mercosur_member
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_sphere5
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_sphere2 }
+		prerequisite = {
+			focus = CHI_eaeu_sphere3
+			focus = CHI_eaeu_sphere4
+		}
+		available = { 
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere5
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere5
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 25
+		y = 15
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_sphere5 }
+			RUS = { has_completed_focus = RUS_eaeu_sphere5 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere5 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere5 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere5
+				has_completed_focus = major_eaeu_sphere5
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_global_flag = big_eaeu_concept_expansion
+			custom_effect_tooltip = eaeu_sphere5_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = CHI_eaeu_science
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = CHI_eaeu_economy2 }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = EAEU_science_TTT
+				check_variable = { budget_reserve > 17000 }
+			}
+			NOT = {
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_science
+   						progress > 0.01
+					}
+				}
+				BLR = {
+					focus_progress = {
+						focus = BLR_eaeu_science
+   						progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_science
+   						progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_science
+   						progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_science
+   						progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_science
+   						progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_science
+   						progress > 0.01
+					}
+				}
+			}
+		}
+		x = 22
+		y = 15
+		ai_will_do = { factor = 3 }
+		bypass = {
+			BLR = { has_completed_focus = BLR_eaeu_science }
+			RUS = { has_completed_focus = RUS_eaeu_science }
+			IRN = { has_completed_focus = IRN_eaeu_science }
+			JAP = { has_completed_focus = JAP_eaeu_science }
+			TUR = { has_completed_focus = TUR_eaeu_science }
+			any_country = {
+				has_completed_focus = generic_eaeu_science
+				has_completed_focus = major_eaeu_science
+			}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_country_flag = EAEU_science
+			add_to_tech_sharing_group = eau_research
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				set_country_flag = science_aliance_eau_member
+				add_to_tech_sharing_group = eau_research
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
 }

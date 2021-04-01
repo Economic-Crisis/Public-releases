@@ -384,6 +384,16 @@ guiTypes = {
 					spriteType = "GFX_win_header_short"
 				}
 				
+				instantTextBoxType = {
+					name = "name_diplomacy"
+					position = { x = 18 y = 8 }
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "DA_text_actions"
+					maxWidth = 170
+					maxHeight = 30	
+				}
+				
 				gridboxtype = {
 					name = "actions_grid"
 					position = { x = 10 y = 32 }
@@ -405,20 +415,10 @@ guiTypes = {
 				}
 				
 				
-				instantTextBoxType = {
-					name = "spirit_title"
-					position = { x = 0 y = 0 }
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
-					text = "FE_COUNTRY_SPIRIT"
-					maxWidth = 240
-					maxHeight = 30	
-				}
-				
 				containerWindowType = {
 					name = "national_spirit_container"
-					position = { x = 127 y = 0 }
-					size = { width = 385 height = 68 }
+					position = { x = 0 y = 0 }
+					size = { width = 520 height = 68 }
 					verticalScrollbar = "right_vertical_slider"
 					
 					background = {
@@ -428,20 +428,36 @@ guiTypes = {
 					
 					gridboxtype = {
 						name = "national_spirit_ideas_grid"
-						position = { x = 8 y = 0 }
+						position = { x = 148 y = 0 }
 						size = { width = 370 height = 65 }
-						slotsize = { width = 64 height = 64 }
+						slotsize = { width = 62 height = 64 }
 						max_slots = { x = 6 y = 1 }
 						format = "UPPER_LEFT"
 					}
 					gridboxtype = {
 						name = "nat_spirit_ideas_grid_over_defined"
-						position = { x = 0 y = -16 }
+						position = { x = -8 y = 12 }
 						size = { width = 370 height = 65 }
-						slotsize = { width = 33 height = 32 }
-						max_slots_horizontal = 10
+						slotsize = { width = 35 height = 32 }
+						max_slots_horizontal = 14
 						format = "UPPER_LEFT"
 					}
+				}
+				
+				iconType = {
+					name = "diplo_nat_spirits_bg1"
+					spriteType = "GFX_diplo_nat_spirits_bg1"
+					position = { x = -2 y = -5 }
+				}
+				
+				instantTextBoxType = {
+					name = "spirit_title"
+					position = { x = 0 y = 0 }
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "FE_COUNTRY_SPIRIT"
+					maxWidth = 240
+					maxHeight = 30	
 				}
 			}
 	

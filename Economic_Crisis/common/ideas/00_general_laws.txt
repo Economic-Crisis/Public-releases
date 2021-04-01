@@ -3,8 +3,8 @@
 ideas = {
 
 	form_of_government_laws = {
-	   
-	   law = yes
+		law = yes
+		use_list_view = yes
 		
 		dictatorship_state = {
 		    
@@ -166,7 +166,7 @@ ideas = {
 
 	power_structure_laws = {
 	    law = yes
-		
+		use_list_view = yes
 		confederation = {
 		    
 			cost = 500
@@ -413,7 +413,7 @@ ideas = {
 
 	
 	religion_laws = {
-	    
+		use_list_view = yes
 		law = yes
 		
 		state_atheism = {
@@ -573,7 +573,7 @@ ideas = {
 	}
 	
 	mass_media_laws = {
-	    
+	    use_list_view = yes
 		law = yes
 		
 		free_media = {
@@ -728,6 +728,7 @@ ideas = {
 
 	civil_liberties_laws = {
 	    law = yes
+		use_list_view = yes
 
 		fully_guranted_liberties = {
 		    cost = 750
@@ -903,7 +904,7 @@ ideas = {
 
 	mobilization_laws = { 
 		law = yes
-		
+		use_list_view = yes
 		contract_army = { #volunteer_only = {
 			cost = 250
 			removal_cost = -1
@@ -973,6 +974,7 @@ ideas = {
 	
 	school_system_policy = {
 	    law = yes
+		use_list_view = yes
 		
 		mixed_schools = {
 		    
@@ -1095,7 +1097,7 @@ ideas = {
 	
 	immigration_laws = {
 	    law = yes
-
+		use_list_view = yes
 		close_borders = {
 		    
 			cost = 350
@@ -1196,6 +1198,32 @@ ideas = {
 			modifier = {
 				liberalism_drift = 0.02
 				reformism_drift = 0.02
+			    monthly_population = 0.05
+				research_speed_factor = 0.05
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 3.0
+				army_intel_to_others = 3.0
+			}
+		}
+		
+		shymkent_area_immigration = {
+		    cost = 250
+			removal_cost = -1
+			cancel_if_invalid = no
+			#level = 3
+			picture = GFX_schengen_area_immigration
+			
+			available = {
+				has_idea = eaeu_member
+			}
+			
+			allowed = {
+				has_global_flag = RUS_creation_eaeu
+			}
+			
+			modifier = {
+				neutrality_drift = 0.02
+				communism_drift = 0.02
 			    monthly_population = 0.05
 				research_speed_factor = 0.05
 				civilian_intel_to_others = 20.0

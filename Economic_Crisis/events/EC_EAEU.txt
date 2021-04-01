@@ -1,0 +1,227 @@
+﻿########################
+## Economic Crisis   ###
+########################
+
+add_namespace = eaeu_event
+
+country_event = {
+	id = eaeu_event.1
+	title = eaeu_event.1.t
+	desc = eaeu_event.1.d
+	#picture = GFX_event_yemen_civilwar2
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	option = {
+   		name = eaeu_event.1.a
+		set_global_flag = eaeu_event_1_a
+	}
+	option = {
+   		name = eaeu_event.1.b
+		set_global_flag = eaeu_event_1_b
+	}
+}
+
+country_event = {
+	id = eaeu_event.2   
+	title = eaeu_event.2.t
+	desc = eaeu_event.2.d
+	#picture = GFX_event_yemen_civilwar2
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	option = {
+   		name = eaeu_event.2.a
+		every_country = {
+			limit = {
+				has_idea = eaeu_member
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = actions_negative
+			}
+		}
+		ai_chance = {
+			base = 10
+			
+		}
+	}
+	option = {
+		name = eaeu_event.2.b
+
+		trigger = {
+			OR = {
+				check_variable = { budget_reserve > 9 }
+				has_global_flag = EAEU_pay_increase
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { budget_reserve > 9 }
+			}
+			custom_effect_tooltip = fund_eaeu_TT
+			subtract_from_variable = { budget_reserve = 10 }
+			add_to_variable = { var = global.var_fund_EAEU value = 10 }
+		}
+		else_if = {
+			limit = { has_global_flag = EAEU_pay_increase }
+			custom_effect_tooltip = fund_eaeu1_TT
+			subtract_from_variable = { budget_reserve = 20 }
+			add_to_variable = { var = global.var_fund_EAEU value = 20 }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = from.opinion@ROOT
+			}
+		}
+	}
+	option = {
+		name = eaeu_event.2.c
+		FROM = {
+			remove_ideas = eaeu_member
+		}
+		ai_chance = {
+			base = 20
+			
+		}
+	}
+}
+
+country_event = {
+	id = eaeu_event.3   
+	title = eaeu_event.3.t
+	desc = eaeu_event.3.d
+	#picture = GFX_event_yemen_civilwar2
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	option = {
+    	name = eaeu_event.3.a
+		
+	}
+}
+#Избираемость лидера ЕАЭС
+country_event = {
+	id = eaeu_event.4
+	title = eaeu_event.4.t
+	desc = eaeu_event.4.d
+	#picture = GFX_event_yemen_civilwar2
+
+	is_triggered_only = yes
+
+	#major = yes
+	immediate = {
+		country_event = { id = eaeu_event.5 days = 2 }
+	}
+
+	option = {
+		name = eaeu_event.4.a
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu
+					has_idea = eaeu_member
+				}
+				remove_country_leader_trait = leader_eaeu
+				clear_global_event_target = get_name_country
+				add_country_leader_trait = leader_eaeu_tech #Техническое исполнение, удалится после нового лидера
+			}
+		}
+	}
+}
+country_event = {
+	id = eaeu_event.5   
+	title = eaeu_event.5.t
+	desc = eaeu_event.5.d
+	#picture = GFX_event_yemen_civilwar2
+
+	is_triggered_only = yes
+
+	#major = yes
+	immediate = {
+		
+	}
+
+	option = {
+		name = eaeu_event.5.a
+		random_country = {
+			limit = {
+				NOT = { has_country_leader_with_trait = leader_eaeu }
+				NOT = { has_country_leader_with_trait = leader_eaeu_tech }
+				has_idea = eaeu_member
+			}
+			add_country_leader_trait = leader_eaeu
+			news_event = eaeu_event.6
+			every_country = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu
+				}
+				save_global_event_target_as = get_name_country
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu_tech
+				}
+				remove_country_leader_trait = leader_eaeu_tech
+			}
+		}
+		country_event = { id = eaeu_event.4 days = 365 }
+	}
+}
+
+news_event = {
+	id = eaeu_event.6
+	title = eaeu_event.6.t
+	desc = eaeu_event.6.d
+
+	#picture = 
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = eaeu_event.6.a
+	}
+}
+
+news_event = {
+	id = eaeu_event.7
+	title = eaeu_event.7.t
+	desc = eaeu_event.7.d
+
+	#picture = 
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = eaeu_event.7.a
+		every_country = {
+			limit = { has_idea = eaeu_member }
+			news_event = eaeu_event.8
+		}
+	}
+}
+news_event = {
+	id = eaeu_event.8
+	title = eaeu_event.8.t
+	desc = eaeu_event.8.d
+
+	#picture = 
+	#major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = eaeu_event.8.a
+	}
+}

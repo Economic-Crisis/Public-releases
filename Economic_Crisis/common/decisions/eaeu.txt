@@ -1,0 +1,1356 @@
+eaeu = {
+	fund_eaeu = {
+		icon = generic_political_discourse
+		available = { NOT = { has_idea = eaeu_member } }
+		#days_remove = 14
+		visible = { }
+		days_mission_timeout = 30
+		is_good = yes
+		fire_only_once = no
+		ai_will_do = { factor = 1 }
+		allowed = {
+		 	
+		}
+		#complete_effect = { }
+		activation = {
+			# NOT = {
+			# 	RUS = { has_completed_focus = RUS_eaeu_economy3 }
+			# 	BLR = { has_completed_focus = BLR_eaeu_economy3 }
+			# 	CHI = { has_completed_focus = CHI_eaeu_economy3 }
+			# 	TUR = { has_completed_focus = TUR_eaeu_economy3 }
+			# 	JAP = { has_completed_focus = JAP_eaeu_economy3 }
+			# 	any_country = {
+			# 		has_completed_focus = generic_eaeu_economy3
+			# 		has_completed_focus = major_eaeu_economy3
+			# 	}
+			# }
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					check_variable = { budget_reserve > 9 }
+				}
+				custom_effect_tooltip = fund_eaeu_TT
+				subtract_from_variable = { budget_reserve = 10 }
+				add_to_variable = { var = global.var_fund_EAEU value = 10 }
+			}
+			else_if = {
+				limit = { has_global_flag = EAEU_pay_increase }
+				custom_effect_tooltip = fund_eaeu1_TT
+				subtract_from_variable = { budget_reserve = 20 }
+				add_to_variable = { var = global.var_fund_EAEU value = 20 }
+			}
+			else = {
+				custom_effect_tooltip = fund_eaeu_fail_TT
+				random_country = {
+					limit = {
+						has_country_leader_with_trait = leader_eaeu
+					}
+					country_event = eaeu_event.2 
+				}
+			}
+		}
+		#remove_effect = { }
+		#remove_trigger = {	} 
+	}
+	eaeu_invest = {
+		icon = generic_political_discourse
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = eaeu_invest_TTT
+				check_variable = { budget_reserve > 100 }
+			}
+		}
+		days_remove = 7
+		visible = { has_global_flag = EAEU_united_bank }
+		#remove_trigger = {	}
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			custom_effect_tooltip = eaeu_invest_TT
+			subtract_from_variable = { budget_reserve = 100 }
+			add_to_variable = { var = global.var_fund_EAEU value = 100 }
+		}
+	}
+	eaeu_project_infrastructure_IRN_RUS = {
+		icon = generic_political_discourse
+		available = {
+			IRN = {
+				has_idea = eaeu_member
+				has_full_control_of_state = 1032
+			}
+			RUS = {
+				has_idea = eaeu_member
+				has_full_control_of_state = 236
+			}
+		}
+		days_remove = 90
+		visible = {
+			IRN = { has_idea = eaeu_member }
+			RUS = { has_idea = eaeu_member }
+			has_country_leader_with_trait = leader_eaeu
+		}
+		fire_only_once = yes
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		custom_cost_trigger = {
+			check_variable = { global.var_fund_EAEU > 110 }
+		}
+		custom_cost_text = cost_buy_eaeu_project_infrastructure_IRN_RUS
+		complete_effect = {
+			custom_effect_tooltip = eaeu_project_infrastructure_IRN_RUS_TT
+			add_to_variable = { var = global.var_fund_EAEU value = -110 }
+		}
+		remove_effect = {
+			1032 = {
+				add_building_construction = {
+					type = naval_base
+					province = 4580
+					level = 5
+					instant_build = yes
+				}
+			}
+			236 = {
+				add_building_construction = {
+					type = naval_base
+					province = 757
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	eaeu_project_infrastructure_CHI = {
+		icon = generic_political_discourse
+		available = {
+			CHI = {
+				has_idea = eaeu_member
+				has_full_control_of_state = 618
+				has_full_control_of_state = 617
+				has_full_control_of_state = 728
+				has_full_control_of_state = 287
+				has_full_control_of_state = 619
+				has_full_control_of_state = 322
+				has_full_control_of_state = 592
+			}
+		}
+		days_remove = 30
+		visible = {
+			CHI = { has_idea = eaeu_member }
+			has_country_leader_with_trait = leader_eaeu
+		}
+		fire_only_once = yes
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		custom_cost_trigger = {
+			check_variable = { global.var_fund_EAEU > 330 }
+		}
+		custom_cost_text = cost_buy_eaeu_project_infrastructure_CHI
+		complete_effect = {
+			custom_effect_tooltip = eaeu_project_infrastructure_CHI_TT
+			add_to_variable = { var = global.var_fund_EAEU value = -330 }
+		}
+		remove_effect = {
+			618 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			617 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			728 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			287 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			619 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			322 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			592 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	eaeu_expansion_JAP = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			country_exists = JAP
+			has_opinion = {
+				target = JAP
+				value > 69
+			}
+			JAP = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = eaeu_watching
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = JAP
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_MOL = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = MOL }
+			has_opinion = {
+				target = MOL
+				value > 69
+			}
+			MOL = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = MOL
+				modifier = eaeu_watching
+			}
+			MOL = {
+				add_opinion_modifier = {
+					target = MOL
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_UZB = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = UZB }
+			has_opinion = {
+				target = UZB
+				value > 69
+			}
+			UZB = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = UZB
+				modifier = eaeu_watching
+			}
+			UZB = {
+				add_opinion_modifier = {
+					target = UZB
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_CUB = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = CUB }
+			has_opinion = {
+				target = CUB
+				value > 69
+			}
+			CUB = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = CUB
+				modifier = eaeu_watching
+			}
+			CUB = {
+				add_opinion_modifier = {
+					target = CUB
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_VIN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = VIN }
+			has_opinion = {
+				target = VIN
+				value > 69
+			}
+			VIN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+			VIN = {
+				has_opinion = {
+					target = CHI
+					value > 69
+				}
+			}
+			CHI = {
+				has_opinion = {
+					target = VIN
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = VIN
+				modifier = eaeu_watching
+			}
+			VIN = {
+				add_opinion_modifier = {
+					target = VIN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_IRN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = IRN }
+			has_opinion = {
+				target = IRN
+				value > 69
+			}
+			IRN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = IRN
+				modifier = eaeu_watching
+			}
+			IRN = {
+				add_opinion_modifier = {
+					target = IRN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_SIN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = SIN }
+			has_opinion = {
+				target = SIN
+				value > 69
+			}
+			SIN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = SIN
+				modifier = eaeu_watching
+			}
+			SIN = {
+				add_opinion_modifier = {
+					target = SIN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_SER = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = SER }
+			has_opinion = {
+				target = SER
+				value > 69
+			}
+			SER = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = SER
+				modifier = eaeu_watching
+			}
+			SER = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_EGY = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = EGY }
+			has_opinion = {
+				target = EGY
+				value > 69
+			}
+			EGY = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = EGY
+				modifier = eaeu_watching
+			}
+			EGY = {
+				add_opinion_modifier = {
+					target = EGY
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_ISR = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = ISR }
+			has_opinion = {
+				target = ISR
+				value > 69
+			}
+			ISR = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = ISR
+				modifier = eaeu_watching
+			}
+			ISR = {
+				add_opinion_modifier = {
+					target = ISR
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_CHI = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = CHI }
+			has_opinion = {
+				target = CHI
+				value > 69
+			}
+			CHI = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = CHI
+				modifier = eaeu_watching
+			}
+			CHI = {
+				add_opinion_modifier = {
+					target = CHI
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_MON = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = MON }
+			has_opinion = {
+				target = MON
+				value > 69
+			}
+			MON = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = MON
+				modifier = eaeu_watching
+			}
+			MON = {
+				add_opinion_modifier = {
+					target = MON
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_SIA = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = SIA }
+			has_opinion = {
+				target = SIA
+				value > 69
+			}
+			SIA = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = SIA
+				modifier = eaeu_watching
+			}
+			SIA = {
+				add_opinion_modifier = {
+					target = SIA
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_HUN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = HUN }
+			has_opinion = {
+				target = HUN
+				value > 69
+			}
+			HUN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = HUN
+				modifier = eaeu_watching
+			}
+			HUN = {
+				add_opinion_modifier = {
+					target = HUN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_INS = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = INS }
+			has_opinion = {
+				target = INS
+				value > 69
+			}
+			INS = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = INS
+				modifier = eaeu_watching
+			}
+			INS = {
+				add_opinion_modifier = {
+					target = INS
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_CAM = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = CAM }
+			has_opinion = {
+				target = CAM
+				value > 69
+			}
+			CAM = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = CAM
+				modifier = eaeu_watching
+			}
+			CAM = {
+				add_opinion_modifier = {
+					target = CAM
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_LAO = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = LAO }
+			has_opinion = {
+				target = LAO
+				value > 69
+			}
+			LAO = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = LAO
+				modifier = eaeu_watching
+			}
+			LAO = {
+				add_opinion_modifier = {
+					target = LAO
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_PAK = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = PAK }
+			has_opinion = {
+				target = PAK
+				value > 69
+			}
+			PAK = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+			PAK = {
+				has_opinion = {
+					target = IND
+					value > 50
+				}
+			}
+			IND = {
+				has_opinion = {
+					target = PAK
+					value > 50
+				}
+			}
+		}
+		days_remove = 20
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = PAK
+				modifier = eaeu_watching
+			}
+			PAK = {
+				add_opinion_modifier = {
+					target = PAK
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_PRU = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = PRU }
+			has_opinion = {
+				target = PRU
+				value > 69
+			}
+			PRU = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = PRU
+				modifier = eaeu_watching
+			}
+			PRU = {
+				add_opinion_modifier = {
+					target = PRU
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_KOR = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = KOR }
+			has_opinion = {
+				target = KOR
+				value > 69
+			}
+			KOR = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = KOR
+				modifier = eaeu_watching
+			}
+			KOR = {
+				add_opinion_modifier = {
+					target = KOR
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_SYR = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = SYR }
+			has_opinion = {
+				target = SYR
+				value > 69
+			}
+			SYR = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = eaeu_watching
+			}
+			SYR = {
+				add_opinion_modifier = {
+					target = SYR
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_TUN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = TUN }
+			has_opinion = {
+				target = TUN
+				value > 69
+			}
+			TUN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = TUN
+				modifier = eaeu_watching
+			}
+			TUN = {
+				add_opinion_modifier = {
+					target = TUN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_CHL = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = CHL }
+			has_opinion = {
+				target = CHL
+				value > 69
+			}
+			CHL = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = eaeu_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = CHL
+				modifier = eaeu_watching
+			}
+			CHL = {
+				add_opinion_modifier = {
+					target = CHL
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_IND = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = IND }
+			has_opinion = {
+				target = IND
+				value > 69
+			}
+			IND = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+			IND = {
+				has_opinion = {
+					target = PAK
+					value > 50
+				}
+			}
+			PAK = {
+				has_opinion = {
+					target = IND
+					value > 50
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = IND
+				modifier = eaeu_watching
+			}
+			IND = {
+				add_opinion_modifier = {
+					target = IND
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_BAN = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = BAN }
+			has_opinion = {
+				target = BAN
+				value > 69
+			}
+			BAN = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = BAN
+				modifier = eaeu_watching
+			}
+			BAN = {
+				add_opinion_modifier = {
+					target = BAN
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_LEB = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = LEB }
+			has_opinion = {
+				target = LEB
+				value > 69
+			}
+			LEB = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = LEB
+				modifier = eaeu_watching
+			}
+			LEB = {
+				add_opinion_modifier = {
+					target = LEB
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_JOR = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = JOR }
+			has_opinion = {
+				target = JOR
+				value > 69
+			}
+			JOR = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = JOR
+				modifier = eaeu_watching
+			}
+			JOR = {
+				add_opinion_modifier = {
+					target = JOR
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_PHI = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = PHI }
+			has_opinion = {
+				target = PHI
+				value > 69
+			}
+			PHI = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = PHI
+				modifier = eaeu_watching
+			}
+			PHI = {
+				add_opinion_modifier = {
+					target = PHI
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+	eaeu_expansion_AZR = {
+		icon = generic_political_discourse
+		available = {
+			has_country_leader_with_trait = leader_eaeu
+			NOT = { country_exists = AZR }
+			has_opinion = {
+				target = AZR
+				value > 69
+			}
+			AZR = {
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+			AZR = {
+				has_opinion = {
+					target = ARM
+					value > 50
+				}
+			}
+			ARM = {
+				has_opinion = {
+					target = AZR
+					value > 50
+				}
+			}
+		}
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_global_flag = big_eaeu_concept_expansion
+			has_country_leader_with_trait = leader_eaeu
+		}
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_opinion_modifier = {
+				target = AZR
+				modifier = eaeu_watching
+			}
+			AZR = {
+				add_opinion_modifier = {
+					target = AZR
+					modifier = eaeu_watching
+				}
+			}
+		}
+	}
+}
+

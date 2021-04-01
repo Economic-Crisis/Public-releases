@@ -7,7 +7,7 @@ ideas = {
 			}
             modifier = {
 			    trade_opinion_factor = 0.04
-            	production_factory_max_efficiency_factor = 0.02
+            	production_factory_max_efficiency_factor = 0.08
             }
         }
 		
@@ -35,6 +35,28 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+
+		BLR_EC_65 = { 
+			allowed = {	always = yes  }
+			removal_cost = -1
+			modifier = {
+				POLITICAL_POWER_GAIN = -0.03
+				production_speed_industrial_complex_factor = 0.03
+				production_speed_arms_factory_factor = 0.02
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+
+		BLR_EC_40 = { 
+			allowed = {	always = yes  }
+			removal_cost = -1
+			modifier = {
+				POLITICAL_POWER_GAIN = 0.01
+				production_speed_industrial_complex_factor = 0.02
+				production_speed_arms_factory_factor = 0.02
+				production_speed_infrastructure_factor = 0.02	
 			}
 		}
 		
@@ -258,6 +280,60 @@ ideas = {
 				DRIFT_DEFENCE_FACTOR = 0.15
 				enemy_operative_detection_chance = 0.05
 				root_out_resistance_effectiveness_factor = 0.5
+				compliance_gain = 0.02
+				Resistance_growth = -0.03
+			}
+		}
+		BLR_ALMAZ = { 
+			allowed = {	always = yes }
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 25
+				special_forces_no_supply_grace = 12
+				special_forces_out_of_supply_factor = -0.03
+				special_forces_training_time_factor = -0.05
+			}
+		}
+	    BLR_ALMAZ_1 = { 
+			allowed = {	always = yes }
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 15
+				special_forces_no_supply_grace = 10
+				special_forces_out_of_supply_factor = -0.02
+				special_forces_training_time_factor = -0.03
+			}
+		}
+		BLR_peresident = { 
+			available = {	
+				has_country_leader = {
+					name = "Aleksandr Lukashenko"
+					ruling_only = yes
+			    }   
+		    }
+			removal_cost = -1
+			modifier = {
+                stability_factor = -0.1
+				POLITICAL_POWER_GAIN = -0.05
+				DRIFT_DEFENCE_FACTOR = -0.02
+				compliance_gain = -0.01
+				Resistance_growth = 0.01
+			}
+		}
+		BLR_promotion_bel_language = { 
+			available = {	
+				has_country_leader = {
+					name = "Aleksandr Lukashenko"
+					ruling_only = yes
+			    }   
+		    }
+			removal_cost = -1
+			modifier = {
+                stability_factor = 0.06
+				POLITICAL_POWER_GAIN = 0.02
+				DRIFT_DEFENCE_FACTOR = 0.05
+				compliance_gain = 0.03
+				Resistance_growth = -0.02
 			}
 		}
 		BLR_strong_end_freedom_belarus = {
@@ -275,6 +351,14 @@ ideas = {
 			modifier = {
 				communism_drift = 0.01
 				stability_weekly = 0.02
+				POLITICAL_POWER_GAIN = 0.05
+			}
+		}
+		BLR_EC_36 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				communism_drift = -0.01
 			}
 		}
 		BLR_support_centrism_nationalism = { 
@@ -304,8 +388,8 @@ ideas = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
 			modifier = {
-				communism_drift = 0.03
-				stability_weekly = -0.03
+				communism_drift = 0.05
+				stability_weekly = -0.01
 			}
 		}
 		BLR_support_liberal = {
@@ -319,7 +403,16 @@ ideas = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
 			modifier = {
-				fascism_drift = 0.03
+				fascism_drift = 0.05
+				stability_weekly = -0.1
+			}
+		}
+		BLR_return_territories = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
 			}
 		}
 		BLR_support_centrism = {
@@ -394,7 +487,9 @@ ideas = {
 			allowed = {	always = yes }
 			removal_cost = -1
 			modifier = {
-            	stability_weekly = 0.01
+				stability_weekly = 0.01
+				DRIFT_DEFENCE_FACTOR = 0.02
+				Intelligence_agency_defense = 0.04
 			}
 		}
 		BLR_EC_26 = {
@@ -433,6 +528,14 @@ ideas = {
 			}
 			removal_cost = -1
 		}
+		BLR_EC_27 = {
+			allowed_civil_war = { always = no } 
+			modifier = {
+				Intelligence_agency_defense = -0.05
+				intel_from_operatives_factor = 0.05
+			}
+			removal_cost = -1
+		}
 		BLR_EC_32 = {
 			allowed_civil_war = { always = no } 
 			modifier = {
@@ -445,6 +548,7 @@ ideas = {
 			allowed_civil_war = { always = no } 
 			modifier = {
 				DRIFT_DEFENCE_FACTOR = 0.03
+				Resistance_growth = -0.01
 			}
 			removal_cost = -1
 		}
@@ -478,6 +582,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				MONTHLY_POPULATION = 0.04
+				global_building_slots = 1
 			}
 		}
 		BLR_yrbanisation_1 = { 
@@ -486,6 +591,7 @@ ideas = {
 			modifier = {
 				MONTHLY_POPULATION = 0.04
 				POLITICAL_POWER_GAIN = -0.02
+				global_building_slots = 1
 			}
 		}
 		BLR_five_year_plans_idea = {
@@ -502,6 +608,14 @@ ideas = {
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
 				production_speed_synthetic_refinery_factor = 0.05
+			}
+		}
+		BLR_development_BELAZ = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
 			}
 		}
 		BLR_KGB_army = {
@@ -559,6 +673,22 @@ ideas = {
 				Resistance_growth = -0.03
 			}
 		}
+		BLR_EC_37 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				compliance_gain = 0.02
+			}
+		}
+		BLR_EC_24 = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.01
+				compliance_gain = 0.05
+			}
+		}
 		BLR_EC_20 = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
@@ -583,18 +713,26 @@ ideas = {
 				research_speed_factor = 0.08
 			}
 		}
-		BLR_BLR_EC_55 = {
+		BLR_natioanal_library = {
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				POLITICAL_POWER_GAIN = 0.03
+				research_speed_factor = 0.15
+			}
+		}
+		BLR_EC_56 = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
 			modifier = {
 				research_speed_factor = 0.03
 			}
 		}
-		BLR_BLR_EC_56 = {
+		BLR_torg_union = {
 			allowed_civil_war = { always = no }
 			removal_cost = -1
 			modifier = {
-				research_speed_factor = 0.03
+				trade_opinion_factor = 0.15
 			}
 		}
 		BLR_EC_5 = {
@@ -602,6 +740,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				DRIFT_DEFENCE_FACTOR = 0.02
+				operative_slot = 1
 			}
 		}
 		BLR_EC_13 = {
@@ -639,19 +778,25 @@ ideas = {
 				research_speed_factor = 0.08
 			}
 		}
-		BLR_EC_56 = {
-			allowed_civil_war = { always = no }
-			removal_cost = -1
-			modifier = {
-				research_speed_factor = 0.1
-			}
-		}
 		BLR_torgovla_1 = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
 			modifier = {
 				trade_opinion_factor = 0.1
 			}
+		}
+		BLR_reform_cal-up = {
+			allowed_civil_war = {
+				always = yes
+			}
+            modifier = {
+				mobilization_speed = 0.03
+				army_core_attack_factor = -0.01
+                army_org_factor = -0.02
+				army_core_defence_factor = -0.01
+				war_support_factor = -0.01
+				training_time_army_factor = -0.06
+            }
 		}
 		BLR_white_legion = {
 			allowed_civil_war = {
@@ -686,6 +831,17 @@ ideas = {
 				DRIFT_DEFENCE_FACTOR = 0.1
             }
         }
+		BLR_kylture_1 = {
+			allowed_civil_war = {
+				always = yes
+			}
+            modifier = {
+				DRIFT_DEFENCE_FACTOR = 0.05
+				stability_weekly = 0.02
+				MONTHLY_POPULATION = 0.04
+				POLITICAL_POWER_GAIN = 0.03
+            }
+        }
 		BLR_milk_war = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
@@ -702,19 +858,19 @@ ideas = {
 				industrial_capacity_factory = 0.15
 			}
 		}
+		BLR_EC_6 = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.15
+			}
+		}
 		BLR_russofobia = { 
 			allowed = {	always = yes }
 			removal_cost = -1
 			modifier = {
             	stability_weekly = -0.02
 				MONTHLY_POPULATION = -0.04
-			}
-		}
-		BLR_BLR_20 = { 
-			allowed = {	always = yes }
-			removal_cost = -1
-			modifier = {
-				MONTHLY_POPULATION = 0.02
 			}
 		}
 		BLR_EC_15 = { 
@@ -786,13 +942,6 @@ ideas = {
 			modifier = {
             	stability_weekly = 0.02
                 DRIFT_DEFENCE_FACTOR = 0.03
-			}
-		}
-		BLR_BLR_47 = { 
-			allowed = {	always = yes }
-			removal_cost = -1
-			modifier = {
-				research_speed_factor = 0.02
 			}
 		}
 		BLR_zapad_medicaments = { 
@@ -928,7 +1077,7 @@ ideas = {
 			allowed = {	always = yes }
 			removal_cost = -1
 			modifier = {
-            	stability_weekly = -0.03
+            	stability_weekly = -0.02
 				MONTHLY_POPULATION = -0.01
 			}
 		}
@@ -1048,6 +1197,22 @@ ideas = {
 				stability_weekly = -0.04
 			}
 		}
+		BLR_AI_for_arhitectur = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				global_building_slots = 2
+			}
+		}
+		BLR_updat_Berlin-Moskva = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+				global_building_slots = 1
+			}
+		}
 		kontrakt_with_Belarus = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
@@ -1101,12 +1266,63 @@ ideas = {
 				PRODUCTION_FACTORY_EFFICIENCY_GAIN_FACTOR = 0.05
 				production_speed_infrastructure_factor = 0.05
 		    }
+		}
+		BLR_EC_53 = {
+		    allowed = { always = no }
+		    removal_cost = -1
+		    modifier = {
+				industrial_capacity_factory = -0.03
+				PRODUCTION_FACTORY_EFFICIENCY_GAIN_FACTOR = 0.03
+				production_speed_infrastructure_factor = 0.03
+		    }
+		}
+		BLR_EC_67 = {
+		    allowed = { always = no }
+		    removal_cost = -1
+		    modifier = {
+				production_speed_infrastructure_factor = 0.1
+		    }
 	    }
 		BLR_avto_prom = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
 			modifier = {
             	production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		BLR_MAZ = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		BLR_BELAZ_1 = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		BLR_MZKT = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		BLR_Bel_commun_mash = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		BLR_Bel_G = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+            	production_factory_max_efficiency_factor = 0.03
 			}
 		}
 		BLR_developed_socialism = {

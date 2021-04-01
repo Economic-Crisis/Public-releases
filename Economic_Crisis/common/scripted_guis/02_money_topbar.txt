@@ -28,9 +28,9 @@ scripted_gui = {
 			budget_bg_click_enabled = {
 				check_variable = { current_years > 0 }
 			}
-			budget_value_visible = {
-				check_variable = { current_years > 0 }
-			}
+			#budget_value_visible = {
+				#check_variable = { current_years > 0 }
+			#}
            
         }
 	}
@@ -38,7 +38,7 @@ scripted_gui = {
 	diplomacy_money_menu = {
 	
 		window_name = "diplomacy_money"      
-        parent_window_token = selected_country_view_info
+        parent_window_name = "first_container" 
  
 		context_type = selected_country_context
  

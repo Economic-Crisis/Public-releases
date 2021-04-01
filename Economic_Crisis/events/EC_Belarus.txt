@@ -1,15 +1,15 @@
 ﻿add_namespace = belarus
-country_event = { 
-    id = belarus.2
+country_event = { ###Попытка военной аннексии Вильнюса от лица Литвы
+    id = belarus.2 
     title = belarus.2.t
     desc = belarus.2.d
     picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { #Литва принимает ультиматум и отдаёт Вильнюс
         name = belarus.2.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
-            factor = 70
+            factor = 40
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
@@ -19,10 +19,42 @@ country_event = {
             set_state_controller = 96
         }
     }
-    option = { #Отказ
+    option = { #Литва отказывается > у Беларуси выскакивает ивент
         name = belarus.2.b 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
-        ai_chance = {  factor = 30 }
+        ai_chance = {  factor = 60 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LIT modifier = actions_very_negative } 
+            country_event = { id = belarus.102 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.102 ##Ивент у Беларуси после отказа Литвы в уступке территорий
+    title = belarus.102.t
+    desc = belarus.102.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.102.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        LIT = {
+            country_event = { id = belarus.202 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.102.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
         BLR = {
@@ -34,8 +66,206 @@ country_event = {
 		}
     }
 }
+country_event = { ###Беларусь предложила деньги ## От лица Литвы
+    id = belarus.202
+    title = belarus.202.t
+    desc = belarus.202.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Литва соглашается
+        name = belarus.202.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_vilno_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 96
+        }
+        LIT = {
+            custom_effect_tooltip = BLR_vilno_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.202.b ###Литва отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LIT modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LIT
+			}
+		}
+    }
+}
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.3
+    id = belarus.302 ##Ивент у Беларуси где она предлагает деньги за Вильнюс
+    title = belarus.302.t
+    desc = belarus.302.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.302.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 100
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+            country_event = { id = belarus.402 days = 3 }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица Литвы
+    id = belarus.402
+    title = belarus.402.t
+    desc = belarus.402.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Литва соглашается
+        name = belarus.402.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_vilno_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 96
+        }
+        LIT = {
+            custom_effect_tooltip = BLR_vilno_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.402.b ###Литва отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LIT modifier = actions_very_negative } 
+		}
+    }
+}
+country_event = { 
+    id = belarus.103 ####Беларусь хочет аннексировать Украину. От лица Украины
+    title = belarus.103.t
+    desc = belarus.103.d
+    picture = GFX_event_RUS_army3
+    is_triggered_only = yes
+    option = { #Уступить часть территорий
+        name = belarus.103.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.3.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        UKR = {
+            add_stability = -0.2
+        }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = UKR modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = UKR
+            }
+            set_state_controller = 93
+            set_state_controller = 193
+            set_state_controller = 914
+		} 
+    }
+    option = { #Отказ
+        name = belarus.103.с
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.3.b"
+        ai_chance = {  factor = 55 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = UKR modifier = actions_very_negative } 
+		} 
+    }
+}
+#####
+country_event = { 
+    id = belarus.404 ##Ивент у Беларуси для мирного возврата Белостока
+    title = belarus.404.t
+    desc = belarus.404.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.404.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 100
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        POL = {
+            country_event = { id = belarus.504 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица Польши
+    id = belarus.504
+    title = belarus.504.t
+    desc = belarus.504.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Польша соглашается
+        name = belarus.504.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_Belostok_1
+            subtract_from_variable = { budget_reserve = 1500 }
+            set_state_controller = 97
+        }
+        POL = {
+            custom_effect_tooltip = BLR_Belostok_1
+			subtract_from_variable = { budget_reserve = -1500 }
+        }
+    }
+    option = {
+        name = belarus.504.b ###Польша отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        BLR = {
+            create_wargoal = { type = annex_everything target = POL }
+        }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = POL modifier = actions_very_negative } 
+		}
+    }
+}
+#####
+#####
+country_event = { 
+    id = belarus.3 ####Беларусь хочет аннексировать Украину. От лица Украины
     title = belarus.3.t
     desc = belarus.3.d
     picture = GFX_event_RUS_army3
@@ -44,7 +274,7 @@ country_event = {
         name = belarus.3.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.3.a"
         ai_chance = { 
-            factor = 70
+            factor = 10
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
@@ -57,10 +287,30 @@ country_event = {
             }
         }
     }
-    option = { #Отказ
+    option = { #Уступить часть территорий
         name = belarus.3.b 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.3.b"
-        ai_chance = {  factor = 30 }
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        UKR = {
+            add_stability = -0.2
+        }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = UKR modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = UKR
+            }
+            set_state_controller = 93
+            set_state_controller = 193
+            set_state_controller = 914
+		} 
+    }
+    option = { #Отказ
+        name = belarus.3.с
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.3.b"
+        ai_chance = {  factor = 50 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
         BLR = {
@@ -72,17 +322,18 @@ country_event = {
 		} 
     }
 }
-country_event = { 
-    id = belarus.4 #####Белосток(подляшье)
+####
+country_event = { ###Попытка военной аннексии Белостока от лица Польши
+    id = belarus.4
     title = belarus.4.t
     desc = belarus.4.d
-    picture = GFX_event_RUS_army3
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { #Польша принимает ультиматум и отдаёт Вильнюс
         name = belarus.4.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.4.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
-            factor = 70
+            factor = 45
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
@@ -92,10 +343,42 @@ country_event = {
             set_state_controller = 97
         }
     }
-    option = { #Отказ
+    option = { #Польша отказывается > у Беларуси выскакивает ивент
         name = belarus.4.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.4.b"
-        ai_chance = {  factor = 30 }
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 55 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = POL modifier = actions_very_negative } 
+            country_event = { id = belarus.102 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.104 ##Ивент у Беларуси после отказа Польши в уступке территорий
+    title = belarus.104.t
+    desc = belarus.104.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.104.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        POL = {
+            country_event = { id = belarus.204 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.104.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
         BLR = {
@@ -104,18 +387,60 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = POL
 			}
-		} 
+		}
     }
 }
-country_event = { 
-    id = belarus.5  #####Брянск
+country_event = { ###Беларусь предложила деньги ## От лица Польши
+    id = belarus.204
+    title = belarus.204.t
+    desc = belarus.204.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Польша соглашается
+        name = belarus.204.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_Belostok_1
+            subtract_from_variable = { budget_reserve = 1500 }
+            set_state_controller = 97
+        }
+        POL = {
+            custom_effect_tooltip = BLR_Belostok_1
+			subtract_from_variable = { budget_reserve = -1500 }
+        }
+    }
+    option = {
+        name = belarus.204.b ###Польша отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = POL modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = POL
+			}
+		}
+    }
+}
+#####
+country_event = { ###Попытка военной аннексии Брянска от лица России
+    id = belarus.5 
     title = belarus.5.t
     desc = belarus.5.d
-    picture = GFX_event_RUS_army3
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { #Россия принимает ультиматум и отдаёт Брянск
         name = belarus.5.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.5.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -127,9 +452,82 @@ country_event = {
             set_state_controller = 224
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.5.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.5.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.105 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.105 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.105.t
+    desc = belarus.105.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.105.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.205 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.105.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.205
+    title = belarus.205.t
+    desc = belarus.205.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.205.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_bryansk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 96
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_bryansk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.205.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -139,18 +537,79 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.6 #####Смоленск
+    id = belarus.305 ##Ивент у Беларуси где она предлагает деньги за Брянск
+    title = belarus.305.t
+    desc = belarus.305.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.305.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.405 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.405
+    title = belarus.405.t
+    desc = belarus.405.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.405.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_bryansk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 224
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_bryansk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.405.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+#####
+######Смоленск
+country_event = { ###Попытка военной аннексии Смоленска от лица России
+    id = belarus.6
     title = belarus.6.t
     desc = belarus.6.d
-    picture = GFX_event_RUS_army3
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { #Россия принимает ультиматум и отдаёт Смоленск
         name = belarus.6.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.6.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -163,9 +622,83 @@ country_event = {
 			set_state_controller = 243
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.6.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.6.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.106 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.106 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.106.t
+    desc = belarus.106.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.106.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.206 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.106.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.206
+    title = belarus.206.t
+    desc = belarus.206.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.206.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_smolensk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 242
+			set_state_controller = 243
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_smolensk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.206.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -175,18 +708,80 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.7 #Великие Луки
+    id = belarus.306 ##Ивент у Беларуси где она предлагает деньги за Смоленск
+    title = belarus.306.t
+    desc = belarus.306.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.306.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.406 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.406
+    title = belarus.406.t
+    desc = belarus.406.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.406.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_smolensk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 242
+			set_state_controller = 243
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_smolensk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.406.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+####
+#####Великие Луки
+country_event = { ###Попытка военной аннексии Великие Луки от лица России
+    id = belarus.7
     title = belarus.7.t
     desc = belarus.7.d
-    picture = GFX_event_RUS_army3
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { #Россия принимает ультиматум и отдаёт Великие Луки
         name = belarus.7.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.7.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -198,9 +793,82 @@ country_event = {
             set_state_controller = 210
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.7.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.7.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.107 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.107 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.107.t
+    desc = belarus.107.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.107.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.207 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.107.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.207
+    title = belarus.207.t
+    desc = belarus.207.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.207.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_lyki_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 210
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_lyki_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.207.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -210,18 +878,79 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.8 #####Курск
-    title = belarus.8.t 
-    desc = belarus.8.d
-    picture = GFX_event_RUS_army3
+    id = belarus.307 ##Ивент у Беларуси где она предлагает деньги за Великие Луки
+    title = belarus.307.t
+    desc = belarus.307.d
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { ##Беларусь предлагает деньги
+        name = belarus.307.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.407 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.407
+    title = belarus.407.t
+    desc = belarus.407.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.407.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_lyki_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 210
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_lyki_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.407.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+#####
+######Курск
+country_event = { ###Попытка военной аннексии Курска от лица России
+    id = belarus.8
+    title = belarus.8.t
+    desc = belarus.8.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { #Россия принимает ультиматум и отдаёт Курск
         name = belarus.8.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.8.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -233,9 +962,82 @@ country_event = {
             set_state_controller = 220
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.8.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.8.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.108 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.108 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.108.t
+    desc = belarus.108.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.108.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.208 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.108.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.208
+    title = belarus.208.t
+    desc = belarus.208.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.208.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_kyrsk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 220
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_kyrsk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.208.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -245,18 +1047,79 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.9 #####Белгород
-    title = belarus.9.t 
-    desc = belarus.9.d
-    picture = GFX_event_RUS_army3
+    id = belarus.308 ##Ивент у Беларуси где она предлагает деньги за Курск
+    title = belarus.308.t
+    desc = belarus.308.d
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { ##Беларусь предлагает деньги
+        name = belarus.308.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.408 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.408
+    title = belarus.408.t
+    desc = belarus.408.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.408.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_kyrsk_1
+            subtract_from_variable = { budget_reserve = 1000 }
+			set_state_controller = 220
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_kyrsk_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.408.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+####
+#####Белгород
+country_event = { ###Попытка военной аннексии Белгорода от лица России
+    id = belarus.9
+    title = belarus.9.t
+    desc = belarus.9.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { #Россия принимает ультиматум и отдаёт Белгород
         name = belarus.9.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.9.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -268,9 +1131,82 @@ country_event = {
             set_state_controller = 240
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.9.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.9.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.109 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.109 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.109.t
+    desc = belarus.109.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.109.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.209 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.109.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.209
+    title = belarus.209.t
+    desc = belarus.209.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.209.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_belgorod_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 240
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_belgorod_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.209.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -280,18 +1216,79 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.10 #####Новгород
-    title = belarus.10.t 
-    desc = belarus.10.d
-    picture = GFX_event_RUS_army3
+    id = belarus.309 ##Ивент у Беларуси где она предлагает деньги за Белгород
+    title = belarus.309.t
+    desc = belarus.309.d
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
+    option = { ##Беларусь предлагает деньги
+        name = belarus.309.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.409 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.409
+    title = belarus.409.t
+    desc = belarus.409.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.409.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_belgorod_1
+            subtract_from_variable = { budget_reserve = 1000 }
+			set_state_controller = 240
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_belgorod_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.409.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+#####
+#######Новгород
+country_event = { ###Попытка военной аннексии Новгорода от лица России
+    id = belarus.10
+    title = belarus.10.t
+    desc = belarus.10.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { #Россия принимает ультиматум и отдаёт Новгород
         name = belarus.10.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.10.a"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -303,9 +1300,82 @@ country_event = {
             set_state_controller = 263
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.10.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.10.b"
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+            country_event = { id = belarus.110 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.110 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.110.t
+    desc = belarus.110.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.110.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.210 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.110.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RUS
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.210
+    title = belarus.210.t
+    desc = belarus.210.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.210.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_novgorod_1_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 263
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_novgorod_1_1_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.210.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -315,18 +1385,79 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = RUS
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
 country_event = { 
-    id = belarus.13 #####Дуагавпилис
-    title = belarus.13.t 
-    desc = belarus.13.d
-    picture = GFX_event_RUS_army3
+    id = belarus.310 ##Ивент у Беларуси где она предлагает деньги за Новгород
+    title = belarus.310.t
+    desc = belarus.310.d
+    picture = GFX_army_annex
     is_triggered_only = yes
-    option = { #Принятие
-        name = belarus.13.a
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.13.a"
+    option = { ##Беларусь предлагает деньги
+        name = belarus.310.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            country_event = { id = belarus.410 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица России
+    id = belarus.410
+    title = belarus.410.t
+    desc = belarus.410.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Россия соглашается
+        name = belarus.410.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_novgorod_1_1
+            subtract_from_variable = { budget_reserve = 1000 }
+			set_state_controller = 263
+        }
+        RUS = {
+            custom_effect_tooltip = BLR_novgorod_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.410.b ###Россия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = RUS modifier = actions_very_negative } 
+		}
+    }
+}
+#####
+######Дуагавпилис
+country_event = { ###Попытка военной аннексии Дуагавпилиса от лица России
+    id = belarus.13
+    title = belarus.13.t
+    desc = belarus.13.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { #Россия принимает ультиматум и отдаёт Новгород
+        name = belarus.13.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
         ai_chance = { 
             factor = 70
             modifier = {
@@ -338,9 +1469,82 @@ country_event = {
             set_state_controller = 924
         }
     }
-    option = { #Отказ
+    option = { #Россия отказывается > у Беларуси выскакивает ивент
         name = belarus.13.b 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.13.b "
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 30 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LAT modifier = actions_very_negative } 
+            country_event = { id = belarus.113 days = 2 }
+		}
+    }
+}
+country_event = { 
+    id = belarus.113 ##Ивент у Беларуси после отказа России в уступке территорий
+    title = belarus.113.t
+    desc = belarus.113.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.113.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        LAT = {
+            country_event = { id = belarus.213 days = 3 }
+        }
+    }
+    option = { ###Беларусь решает взять своё силой
+        name = belarus.113.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 40 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LAT modifier = actions_very_negative } 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LAT
+			}
+		}
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица Латвии
+    id = belarus.213
+    title = belarus.213.t
+    desc = belarus.213.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Латвия соглашается
+        name = belarus.213.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 70
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_dyagavpilis_1
+            subtract_from_variable = { budget_reserve = 1000 }
+            set_state_controller = 924
+        }
+        LAT = {
+            custom_effect_tooltip = BLR_dyagavpilis_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.213.b ###Латвия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
         ai_chance = {  factor = 30 }
         create_wargoal = { type = annex_everything target = BLR }
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
@@ -350,14 +1554,76 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = LAT
 			}
-		} 
+		}
     }
 }
+#####Для мирного присоеденения
+country_event = { 
+    id = belarus.313 ##Ивент у Беларуси где она предлагает деньги за Дуагавпилис
+    title = belarus.313.t
+    desc = belarus.313.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ##Беларусь предлагает деньги
+        name = belarus.313.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 60
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        LAT = {
+            country_event = { id = belarus.413 days = 3 }
+        }
+    }
+}
+country_event = { ###Беларусь предложила деньги ## От лица Латвии
+    id = belarus.413
+    title = belarus.413.t
+    desc = belarus.413.d
+    picture = GFX_army_annex
+    is_triggered_only = yes
+    option = { ###Латвия соглашается
+        name = belarus.413.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.a"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        BLR = {
+            custom_effect_tooltip = BLR_dyagavpilis_1
+            subtract_from_variable = { budget_reserve = 1000 }
+			set_state_controller = 924
+        }
+        LAT = {
+            custom_effect_tooltip = BLR_dyagavpilis_1
+			subtract_from_variable = { budget_reserve = -1000 }
+        }
+    }
+    option = {
+        name = belarus.413.b ###Латвия отказывается
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
+        ai_chance = {  factor = 45 }
+        create_wargoal = { type = annex_everything target = BLR }
+        add_opinion_modifier = { target = BLR modifier = actions_very_negative }
+        BLR = {
+			add_opinion_modifier = { target = LAT modifier = actions_very_negative } 
+		}
+    }
+}
+####
+##########
+#####
 country_event = { 
     id = belarus.11 
     title = belarus.11.t 
     desc = belarus.11.d
-    picture = GFX_army_annex
+    picture = GFX_event_miting_BLR
     is_triggered_only = yes
     option = { 
         name = belarus.11.a 
@@ -409,17 +1675,53 @@ country_event = { ###Убийство Лукашенко
         add_stability = -0.1
     }
 }
-country_event = { 
+country_event = { ###Беларусь хочет стать главой альянса
+    id = belarus.114
+    title = belarus.114.t 
+    desc = belarus.114.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { ###Согласие
+        name = belarus.114.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		BLR = {
+			create_faction = Polish-Lithuanian
+		}
+        BLR = {
+            add_to_faction = POL
+        }
+    }
+	option = { ###Отказ
+        name = belarus.114.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.b"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        country_event = { id = belarus.214 days = 3 }
+    }
+}
+country_event = { ###Речь Посполитая
     id = belarus.14
     title = belarus.14.t 
     desc = belarus.14.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { ###Согласие дать Польше главенство
         name = belarus.14.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.a"
         ai_chance = { 
-            factor = 50
+            factor = 45
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
@@ -431,8 +1733,43 @@ country_event = {
 			create_faction = Polish-Lithuanian
 		}
     }
-	option = { 
+	option = { ###Стать главой альянса
         name = belarus.14.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.b"
+        ai_chance = { 
+            factor = 55
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        country_event = { id = belarus.114 days = 1 }
+    }
+}
+country_event = { ###Польша отказывается
+    id = belarus.214
+    title = belarus.214.t 
+    desc = belarus.214.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { ###Согласие
+        name = belarus.214.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.a"
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+		add_stability = -0.5
+		POL = {
+		    puppet = BLR
+			create_faction = Polish-Lithuanian
+		}
+    }
+	option = { ###Отказ
+        name = belarus.214.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.14.b"
         ai_chance = { 
             factor = 50
@@ -441,16 +1778,15 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
-        create_faction = Polish-Lithuanian
     }
 }
-country_event = { 
+country_event = { ###Приглашение Украины в междуморье
     id = belarus.30
     title = belarus.30.t 
     desc = belarus.30.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { ###Украина соглашается
         name = belarus.30.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.30.a"
         ai_chance = { 
@@ -461,15 +1797,19 @@ country_event = {
             }
         }
         add_stability = -0.05
+        set_global_flag = Intermarium_1
 		BLR = {
 			create_faction = Intermarium
 			add_opinion_modifier = {
 				target = UKR
 				modifier = actions_positive
 			}
+            BLR = {
+				add_to_faction = UKR
+			}
 		}
     }
-	option = { 
+	option = { ###Украина отказывается
         name = belarus.30.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.30.b"
         ai_chance = { 
@@ -486,7 +1826,7 @@ country_event = {
 			}
 		}
     }
-	option = { 
+	option = { ###Украина выдвигает сои условия
         name = belarus.30.f
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.30.f"
         ai_chance = { 
@@ -497,40 +1837,52 @@ country_event = {
             }
         }
 		BLR = {
-			country_event = { id = belarus.31 days = 3 }
+			country_event = { id = belarus.31 days = 1 }
 		}
     }
 }
-country_event = { 
+country_event = { ###Приглашение Литвы в междуморье
     id = belarus.32
     title = belarus.32.t 
     desc = belarus.32.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { ###Литва соглашается
         name = belarus.32.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.32.a"
         ai_chance = { 
-            factor = 40
+            factor = 55
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
             }
         }
-        add_stability = -0.05
+        if = {
+            limit = {
+                has_global_flag = Intermarium_1
+            }
+            BLR = {
+                add_to_faction = LIT
+            }
+        }
+        add_stability = -0.5
+        set_global_flag = Intermarium_2
 		BLR = {
 			create_faction = Intermarium
 			add_opinion_modifier = {
 				target = LIT
 				modifier = actions_positive
 			}
+            BLR = {
+                add_to_faction = LIT
+            }
 		}
     }
-	option = { 
+	option = { ###Литва отказывается
         name = belarus.32.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.32.b"
         ai_chance = { 
-            factor = 20
+            factor = 45
             modifier = {
                 factor = 0
                 is_historical_focus_on = yes
@@ -543,28 +1895,14 @@ country_event = {
 			}
 		}
     }
-	option = { 
-        name = belarus.32.f
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.32.f"
-        ai_chance = { 
-            factor = 40
-            modifier = {
-                factor = 0
-                is_historical_focus_on = yes
-            }
-        }
-		BLR = {
-			country_event = { id = belarus.33 days = 3 }
-		}
-    }
 }
-country_event = { 
+country_event = { ###Ивент после того как Украина выдвинула свои условия
     id = belarus.31
     title = belarus.31.t 
     desc = belarus.31.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { ###Беларусь соглашается
         name = belarus.31.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.31.a"
         ai_chance = { 
@@ -575,15 +1913,25 @@ country_event = {
             }
         }
         add_stability = -0.05
+        if = {
+            limit = {
+                has_global_flag = Intermarium_2
+            }
+            UKR = {
+                add_to_faction = BLR
+            }
+            UKR = {
+                add_to_faction = LIT
+            }
+        }
 		UKR = {
 			create_faction = Intermarium
-			dismantle_faction = yes
-			UKR = {
-				add_to_faction = BLR
-			}
-		}
+        }
+        UKR = {
+            add_to_faction = BLR
+        }
     }
-	option = { 
+	option = { ###Беларусь отказывается
         name = belarus.31.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.31.b"
         ai_chance = { 
@@ -601,57 +1949,14 @@ country_event = {
 		}
     }
 }
-country_event = { 
-    id = belarus.33
-    title = belarus.33.t 
-    desc = belarus.33.d
-    picture = GFX_repot_event_TUR_coup
-    is_triggered_only = yes
-    option = { 
-        name = belarus.33.a 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.33.a "
-        ai_chance = { 
-            factor = 55
-            modifier = {
-                factor = 0
-                is_historical_focus_on = yes
-            }
-        }
-        add_stability = -0.05
-		LIT = {
-			create_faction = Intermarium
-			dismantle_faction = yes
-			LIT = {
-				add_to_faction = BLR
-			}
-		}
-    }
-	option = { 
-        name = belarus.33.b
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.33.b"
-        ai_chance = { 
-            factor = 45
-            modifier = {
-                factor = 0
-                is_historical_focus_on = yes
-            }
-        }
-		BLR = {
-			add_opinion_modifier = {
-				target = LIT
-				modifier = actions_negative
-			}
-		}
-    }
-}
 
-country_event = { 
+country_event = {  ###Мечта льва сапеги
     id = belarus.80
     title = belarus.80.t 
     desc = belarus.80.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { #Поьша соглашается вступить в альянс
         name = belarus.80.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.80.a "
         ai_chance = { 
@@ -661,15 +1966,15 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
+        set_global_flag = Slavian_brathers_1
 		BLR = {
 			create_faction = Slavian_brathers
-			dismantle_faction = yes
-			POL = {
-				add_to_faction = BLR
+			BLR = {
+				add_to_faction = POL
 			}
 		}
     }
-	option = { 
+	option = { ##Польша не соглашается
         name = belarus.80.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.80.b"
         ai_chance = { 
@@ -679,22 +1984,16 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
-		BLR = {
-			add_opinion_modifier = {
-				target = POL
-				modifier = actions_negative
-			}
-		}
     }
 }
 
-country_event = { 
+country_event = { ###Мечта льва сапеги
     id = belarus.81
     title = belarus.81.t 
     desc = belarus.81.d
     picture = GFX_repot_event_TUR_coup
     is_triggered_only = yes
-    option = { 
+    option = { #Россия соглашается
         name = belarus.81.a 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.81.a "
         ai_chance = { 
@@ -704,15 +2003,22 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
-		BLR = {
+        if = {
+            limit = {
+                has_global_flag = Slavian_brathers_1
+            }
+            BLR = {
+                add_to_faction = RUS
+            }
+        }
+        BLR = {
 			create_faction = Slavian_brathers
-			dismantle_faction = yes
-			RUS = {
-				add_to_faction = BLR
+			BLR = {
+				add_to_faction = RUS
 			}
 		}
     }
-	option = { 
+	option = { #Россия не соглашается
         name = belarus.81.b
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.81.b"
         ai_chance = { 
@@ -749,11 +2055,11 @@ country_event = { ##Закупка танков (РФ)
         }
         add_equipment_to_stockpile = {
 				type = medium_tank_g5_equipment_0
-				amount = 33
+				amount = 50
 				producer = RUS
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -32 }
+		custom_effect_tooltip = BLR_buy_tanks_rus
+	    subtract_from_variable = { budget_reserve = 49 }
     }
 	option = { 
         name = belarus.16.b
@@ -767,11 +2073,11 @@ country_event = { ##Закупка танков (РФ)
         }
         add_equipment_to_stockpile = {
 				type = main_battle_tank_g6_equipment_0
-				amount = 33
+				amount = 50
 				producer = RUS
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -115 }
+		custom_effect_tooltip = BLR_buy_tanks_rus
+	    subtract_from_variable = { budget_reserve = 170 }
     }
 }
 country_event = { ##Закупка танков (Китай)
@@ -795,8 +2101,8 @@ country_event = { ##Закупка танков (Китай)
 				amount = 33
 				producer = CHI
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -25 }
+		custom_effect_tooltip = BLR_buy_tanks_chi
+	    subtract_from_variable = { budget_reserve = 25 }
     }
 	option = { 
         name = belarus.17.b
@@ -813,8 +2119,8 @@ country_event = { ##Закупка танков (Китай)
 				amount = 33
 				producer = CHI
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -132 }
+		custom_effect_tooltip = BLR_buy_tanks_chi
+	    subtract_from_variable = { budget_reserve = 132 }
     }
 }
 country_event = { ##Закупка танков (США)
@@ -825,7 +2131,6 @@ country_event = { ##Закупка танков (США)
     is_triggered_only = yes
 	option = { 
         name = belarus.18.b
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.18.b"
         ai_chance = { 
             factor = 50
             modifier = {
@@ -838,8 +2143,8 @@ country_event = { ##Закупка танков (США)
 				amount = 33
 				producer = USA
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -204 }
+		custom_effect_tooltip = BLR_buy_tanks_usa
+	    subtract_from_variable = { budget_reserve = 204 }
     }
 }
 country_event = { ##Закупка танков (Германия)
@@ -863,8 +2168,8 @@ country_event = { ##Закупка танков (Германия)
 				amount = 33
 				producer = GER
 		}
-		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -224 }
+		custom_effect_tooltip = BLR_buy_tanks_ger
+	    subtract_from_variable = { budget_reserve = 224 }
     }
 }
 country_event = { ##Закупка самалётов (РФ)
@@ -889,7 +2194,7 @@ country_event = { ##Закупка самалётов (РФ)
 				producer = RUS
 		}
 		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -700 }
+	    subtract_from_variable = { budget_reserve = 700 }
     }
 	option = { 
         name = belarus.20.b ##Штурмовик
@@ -907,7 +2212,7 @@ country_event = { ##Закупка самалётов (РФ)
 				producer = RUS
 		}
 		custom_effect_tooltip = BLR_buy_stormtrooper_rus
-	    subtract_from_variable = { budget_reserve = -70 }
+	    subtract_from_variable = { budget_reserve = 70 }
     }
 	option = { 
         name = belarus.20.f ##Вертолёт (десантно-штурмовой)
@@ -925,7 +2230,7 @@ country_event = { ##Закупка самалётов (РФ)
 				producer = RUS
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -164 }
+	    subtract_from_variable = { budget_reserve = 164 }
     }
 	option = { 
         name = belarus.20.c ##Вертолёт (ударный)
@@ -943,7 +2248,7 @@ country_event = { ##Закупка самалётов (РФ)
 				producer = RUS
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -360 }
+	    subtract_from_variable = { budget_reserve = 360 }
     }
 }
 country_event = { ##Закупка самалётов (США)
@@ -968,7 +2273,7 @@ country_event = { ##Закупка самалётов (США)
 				producer = USA
 		}
 		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -680 }
+	    subtract_from_variable = { budget_reserve = 680 }
     }
 	option = { 
         name = belarus.22.b ##Штурмовик
@@ -986,7 +2291,7 @@ country_event = { ##Закупка самалётов (США)
 				producer = USA
 		}
 		custom_effect_tooltip = BLR_buy_stormtrooper_usa
-	    subtract_from_variable = { budget_reserve = -320 }
+	    subtract_from_variable = { budget_reserve = 320 }
     }
 	option = { 
         name = belarus.22.f ##Вертолёт (десантно-штурмовой)
@@ -1004,7 +2309,7 @@ country_event = { ##Закупка самалётов (США)
 				producer = USA
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -140 }
+	    subtract_from_variable = { budget_reserve = 140 }
     }
 	option = { 
         name = belarus.22.c ##Вертолёт (ударный)
@@ -1022,7 +2327,7 @@ country_event = { ##Закупка самалётов (США)
 				producer = USA
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -280 }
+	    subtract_from_variable = { budget_reserve = 280 }
     }
 }
 country_event = { ##Закупка самалётов (Германия)
@@ -1047,7 +2352,7 @@ country_event = { ##Закупка самалётов (Германия)
 				producer = GER
 		}
 		custom_effect_tooltip = BLR_buy_air_rus
-	    subtract_from_variable = { budget_reserve = -680 }
+	    subtract_from_variable = { budget_reserve = 680 }
     }
 	option = { 
         name = belarus.23.b ##Штурмовик
@@ -1065,7 +2370,7 @@ country_event = { ##Закупка самалётов (Германия)
 				producer = GER
 		}
 		custom_effect_tooltip = BLR_buy_stormtrooper_ger
-	    subtract_from_variable = { budget_reserve = -320 }
+	    subtract_from_variable = { budget_reserve = 320 }
     }
 	option = { 
         name = belarus.23.f ##Вертолёт (десантно-штурмовой)
@@ -1083,7 +2388,7 @@ country_event = { ##Закупка самалётов (Германия)
 				producer = GER
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -140 }
+	    subtract_from_variable = { budget_reserve = 140 }
     }
 	option = { 
         name = belarus.23.c ##Вертолёт (ударный)
@@ -1101,7 +2406,7 @@ country_event = { ##Закупка самалётов (Германия)
 				producer = GER
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -280 }
+	    subtract_from_variable = { budget_reserve = 280 }
     }
 }
 country_event = { ##Закупка самалётов (Китай)
@@ -1126,7 +2431,7 @@ country_event = { ##Закупка самалётов (Китай)
 				producer = CHI
 		}
 		custom_effect_tooltip = BLR_buy_air_chi
-	    subtract_from_variable = { budget_reserve = -615 }
+	    subtract_from_variable = { budget_reserve = 615 }
     }
 	option = { 
         name = belarus.24.b ##Штурмовик
@@ -1144,7 +2449,7 @@ country_event = { ##Закупка самалётов (Китай)
 				producer = CHI
 		}
 		custom_effect_tooltip = BLR_buy_stormtrooper_chi
-	    subtract_from_variable = { budget_reserve = -90 }
+	    subtract_from_variable = { budget_reserve = 90 }
     }
 	option = { 
         name = belarus.24.f ##Вертолёт (десантно-штурмовой)
@@ -1162,7 +2467,7 @@ country_event = { ##Закупка самалётов (Китай)
 				producer = CHI
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -200 }
+	    subtract_from_variable = { budget_reserve = 200 }
     }
 	option = { 
         name = belarus.24.c ##Вертолёт (ударный)
@@ -1180,7 +2485,7 @@ country_event = { ##Закупка самалётов (Китай)
 				producer = CHI
 		}
 		custom_effect_tooltip = BLR_buy_helicopter_rus
-	    subtract_from_variable = { budget_reserve = -250 }
+	    subtract_from_variable = { budget_reserve = 250 }
     }
 }
 country_event = { ##Закупка автоматов (РФ)
@@ -1200,7 +2505,7 @@ country_event = { ##Закупка автоматов (РФ)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = army_salw_equipment_4
 			amount = 3000
@@ -1218,7 +2523,7 @@ country_event = { ##Закупка автоматов (РФ)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = special_ammunition_equipment_4	
 			amount = 3000
@@ -1243,7 +2548,7 @@ country_event = { ##Закупка автоматов (США)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = army_salw_equipment_4
 			amount = 3000
@@ -1261,7 +2566,7 @@ country_event = { ##Закупка автоматов (США)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = special_ammunition_equipment_4	
 			amount = 3000
@@ -1286,7 +2591,7 @@ country_event = { ##Закупка автоматов (Германия)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = army_salw_equipment_4
 			amount = 3000
@@ -1304,7 +2609,7 @@ country_event = { ##Закупка автоматов (Германия)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = special_ammunition_equipment_4	
 			amount = 3000
@@ -1329,7 +2634,7 @@ country_event = { ##Закупка автоматов (Китай)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = army_salw_equipment_4
 			amount = 3000
@@ -1347,7 +2652,7 @@ country_event = { ##Закупка автоматов (Китай)
             }
         }
         custom_effect_tooltip = BLR_buy_ak_rus
-	    subtract_from_variable = { budget_reserve = -2 }
+	    subtract_from_variable = { budget_reserve = 2 }
 		add_equipment_to_stockpile = {
 			type = special_ammunition_equipment_4	
 			amount = 3000
@@ -1373,11 +2678,11 @@ country_event = { ##Закупка танков (Украина)
         }
         add_equipment_to_stockpile = {
 				type = main_battle_tank_g6_equipment_0
-				amount = 33
+				amount = 50
 				producer = UKR
 		}
 		custom_effect_tooltip = BLR_buy_tanks_ukr
-	    subtract_from_variable = { budget_reserve = -161 }
+	    subtract_from_variable = { budget_reserve = 245 }
     }
 }
 country_event = { 
@@ -1407,7 +2712,7 @@ country_event = {
             60 = {}
         }
         custom_effect_tooltip = BLR_uran
-        subtract_from_variable = { budget_reserve = -500 }
+        subtract_from_variable = { budget_reserve = 500 }
     }
     option = { 
         name = belarus.50.b
@@ -1430,8 +2735,233 @@ country_event = {
             40 = {}
         }
         custom_effect_tooltip = BLR_uran
-	    subtract_from_variable = { budget_reserve = -1000 }
+	    subtract_from_variable = { budget_reserve = 1000 }
     }
+}
+
+country_event = { 
+    id = belarus.900
+    title = belarus.900.t 
+    desc = belarus.900.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.900.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = presidential_republic
+    }
+    option = { 
+        name = belarus.900.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = semi-presidential_republic
+    }
+    option = { 
+        name = belarus.900.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = parliamentary_republic
+    }
+    option = { 
+        name = belarus.900.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = directorial_republic
+    }
+}
+
+country_event = { 
+    id = belarus.901
+    title = belarus.901.t 
+    desc = belarus.901.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.901.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = state_atheism
+    }
+    option = { 
+        name = belarus.901.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = preference_religion
+    }
+    option = { 
+        name = belarus.901.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = state_religion
+    }
+}
+
+country_event = { 
+    id = belarus.902
+    title = belarus.902.t 
+    desc = belarus.902.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.902.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = free_market
+    }
+    option = { 
+        name = belarus.902.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = nationalization_of_heavy_industry
+    }
+    option = { 
+        name = belarus.902.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = nationalization_of_extractive_industries
+    }
+    option = { 
+        name = belarus.902.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_ideas = ban_on_private_enterprise
+    }
+}
+
+country_event = { 
+    id = belarus.903
+    title = belarus.903.t 
+    desc = belarus.903.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.903.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = 0.05
+        add_political_power = 100
+    }
+    option = { 
+        name = belarus.903.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        RUS = {
+            add_opinion_modifier = {
+                target = BLR
+                modifier = actions_positive
+            }
+        }
+    }
+    option = { 
+        name = belarus.903.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.1
+        add_political_power = 500
+    }
+    option = { 
+        name = belarus.903.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.b"
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        UKR = {
+            add_opinion_modifier = {
+                target = BLR
+                modifier = actions_positive
+            }
+        }
+    }
+}
 #country_event = { 
     #id = belarus.4
     #title = belarus.4.t

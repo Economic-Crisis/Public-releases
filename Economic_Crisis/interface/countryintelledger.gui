@@ -412,7 +412,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "resource_container"
 					position = { x = 20 y = 15 }
-					size = { width = 500 height = 140 }
+					size = { width = 500 height = 200 }
 					clipping = no
 					
 					background = {
@@ -424,16 +424,16 @@ guiTypes = {
 						position = { x = -47 y = 5 }
 						size = { width = 300 height = 60 }
 						format = "UPPER_LEFT"
-						slotsize = { width = 55 height = 60 }
+						slotsize = { width = 80 height = 60 }
 						max_slots_vertical = 6
-						max_slots_horizontal = 9
+						max_slots_horizontal = 6
 					}
 				}
 				
 				containerWindowType = {
 					name = "first_container"
-					position = { x = 250 y = 75 }
-					size = { width = 270 height = 75 }
+					position = { x = 100 y = 136 }
+					size = { width = 416 height = 75 }
 					clipping = no
 					
 					background = {
@@ -443,7 +443,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_industry"
-						position = { x = 10 y = 5 }
+						position = { x = 238 y = 5 }
 						size = { width = 100 height = 60 }
 						
 
@@ -476,7 +476,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_manpower"
-						position = { x = 60 y = 5 }
+						position = { x = 282 y = 5 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
@@ -510,7 +510,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_convoy"
-						position = { x = 160 y = 5 }
+						position = { x = 370 y = 5 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						
@@ -543,7 +543,7 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "prod_fuel"
-						position = { x = 110 y = 5 }
+						position = { x = 326 y = 5 }
 						size = { width = 100 height = 60 }
 						clipping = no
 						iconType = {
@@ -577,8 +577,8 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "industry_container"
-					position = { x = 20  y = 150 }
-					size = { width = 500 height = 180 }
+					position = { x = 20  y = 212 }
+					size = { width = 500 height = 160 }
 
 
 					background = {
@@ -588,23 +588,23 @@ guiTypes = {
 					
 					containerWindowType = {
 						name = "industry_factory_container"
-						position = { x = 5 y = 0 }
+						position = { x = 5 y = -20 }
 						
 						iconType = {
 							name = "estimated_civil_industry_bg"
 							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 15 y = 15 }
+							position = { x = 15 y = 35 }
 						}
 						
 						iconType = {
 							name = "estimated_civil_industry_icon"
 							quadTextureSprite ="GFX_endgame_civ_industry_button"
-							position = { x = 0 y = 5 }
+							position = { x = 0 y = 25 }
 						}
 						
 						instantTextboxType = {
 							name = "estimated_civil_industry_size"
-							position = { x = 35 y = 19 }
+							position = { x = 35 y = 39 }
 							font = "hoi_18mbs"
 							text = "45-120"
 							maxWidth = 100
@@ -614,13 +614,13 @@ guiTypes = {
 
 						iconType = {
 							name = "civil_industry_damaged_bg"
-							position = { x = 125 y = 15 }
+							position = { x = 125 y = 35 }
 							spriteType = "GFX_generic_text_bg_60"
 						}
 						
 						iconType = {
 							name = "civil_industry_damaged_icon"
-							position = { x = 123 y = 13 }
+							position = { x = 123 y = 33 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
@@ -629,7 +629,7 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "civil_industry_damaged_rate"
-							position = { x = 139 y = 19 }
+							position = { x = 139 y = 39 }
 							font = "hoi_18mbs"
 							text = "35%"
 							maxWidth = 50
@@ -641,18 +641,18 @@ guiTypes = {
 						iconType = {
 							name = "estimated_mil_industry_bg"
 							quadTextureSprite ="GFX_generic_text_bg_108"
-							position = { x = 15 y = 75 }
+							position = { x = 15 y = 85 }
 						}
 						
 						iconType = {
 							name = "estimated_mil_industry_icon"
 							quadTextureSprite ="GFX_endgame_industry_button"
-							position = { x = 0 y = 65 }
+							position = { x = 0 y = 75 }
 						}
 						
 						instantTextboxType = {
 							name = "estimated_military_industry_size"
-							position = { x = 35 y = 79 }
+							position = { x = 35 y = 89 }
 							font = "hoi_18mbs"
 							text = "45-120"
 							maxWidth = 100
@@ -662,13 +662,13 @@ guiTypes = {
 
 						iconType = {
 							name = "mil_industry_damaged_bg"
-							position = { x = 125 y = 75 }
+							position = { x = 125 y = 85 }
 							spriteType = "GFX_generic_text_bg_60"
 						}
 						
 						iconType = {
 							name = "mil_industry_damaged_icon"
-							position = { x = 123 y = 73 }
+							position = { x = 123 y = 83 }
 							quadTextureSprite = "GFX_building_status_overlay"
 							alwaystransparent = yes
 							frame = 3
@@ -677,7 +677,7 @@ guiTypes = {
 						
 						instantTextboxType = {
 							name = "mil_industry_damaged_rate"
-							position = { x = 139 y = 79 }
+							position = { x = 139 y = 89 }
 							font = "hoi_18mbs"
 							text = "35%"
 							maxWidth = 50
@@ -759,7 +759,7 @@ guiTypes = {
 
 					containerWindowType = {
 						name = "equipment_container"
-						position = { x = 195  y = 75 }
+						position = { x = 195  y = 55 }
 							
 									
 						iconType = {
@@ -910,9 +910,9 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "civilian_production_container"
-					position = { x=20 y=330}
+					position = { x=20 y=370}
 					show_position = { x=539 y =78 }
-					size = { width = 500 height = 240 }
+					size = { width = 500 height = 206 }
 					
 					background = {
 						name = "Background"

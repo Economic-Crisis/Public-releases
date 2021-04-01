@@ -1,0 +1,157 @@
+
+scripted_diplomatic_actions = {
+
+	economical_union_credit_tranche = { # will be used in most localizations
+	
+		# root is the initiator of action and this is the target country
+		allowed = { #if action is valid
+			always = yes
+		}
+		visible = { #if action is visible on gui
+			THIS = {
+				OR = {
+					#has_idea = eu_member
+					has_idea = eaeu_member
+				}
+				has_country_leader_with_trait = leader_eaeu
+			}
+			has_global_flag = EAEU_united_bank
+		}
+		selectable = { #if action is selectable on gui
+			THIS = {
+				if = {
+					limit = {
+						has_idea = eaeu_member
+					}
+					custom_trigger_tooltip = {
+						tooltip = economical_union_credit_tranche_eaeu_tt
+						check_variable = { global.var_fund_EAEU > 100 }
+					}
+					has_country_leader_with_trait = leader_eaeu
+				}
+				# else_if = {
+				# 	limit = {
+				# 		has_idea = eu_member
+				# 	}
+				# 	custom_trigger_tooltip = {
+				# 		tooltip = economical_union_credit_tranche_eu_tt
+				# 		check_variable = { global.var_fund_EU > 100 }
+				# 	}
+				# 	#Бюджета ЕС пока нет. Может пора сделать его?
+				# }
+				else = {
+					always = no
+				}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = economical_union_credit_tranche_tt
+					check_variable = { budget_reserve < 1 }
+				}
+				NOT = {
+					has_country_flag = economical_union_credit_tranche_insolvency
+					has_country_flag = economical_union_credit_tranche_debtor
+				}
+			}
+		} 
+
+		requires_acceptance = yes # if true the action will require acceptance of target country
+		cost = 400 # pp cost, can be zero
+
+		cost_string = economical_union_credit_tranche_money # if you have a custom cost, use this loc to display it
+		show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
+
+		icon = 1 # icon frame to use in notification
+
+      #for effects/triggers/variables, root is the sender and this is receiver
+
+		# runs when the action is sent
+		on_sent_effect = {
+
+		}
+
+		# runs when the action is properly sent and accepted
+		complete_effect = {
+			ROOT = {
+				subtract_from_variable = { budget_reserve = 100 }
+				set_country_flag = economical_union_credit_tranche_debtor
+			}
+			THIS = {
+				country_event = eaeu_event.7
+			}
+			add_to_variable = { var = global.var_fund_EAEU value = -100 }
+			# else_if = {
+			# 	limit = {
+			# 		THIS = {
+			# 			has_idea = eu_member
+			# 		}
+			# 	}
+			# 	add_to_variable = { var = global.var_fund_EU value = -99 }
+			# 	ROOT = { subtract_from_variable = { budget_reserve = -99 } }
+			# }
+		}
+
+		# runs when the action is properly sent and rejected
+		reject_effect = {
+			ROOT = {
+				set_country_flag = {
+					flag = economical_union_credit_tranche_insolvency
+					days = 130
+				}
+			}
+		}
+
+		# SEND POPUP CUSTOMIZATION
+		# use diplomatic_action as context in scripted gui
+		# send_scripted_gui = send_scripted_gui_name # if specified, the diplomatic action will use this scripted gui before sending the request. the player (or ai) can make changes on that gui and store stuff as variable to customize action
+		reset_send_effect = { # if action has a send scripted gui, this effect will be used for clearing the state of gui (will run when player opens the scripted gui by sending the action or when ai proposes action
+			# clear action
+			if = {
+				
+			}
+		}
+		can_be_sent = { # send button will be disabled if no
+			always = yes
+		}
+		send_description = economical_union_credit_tranche_send # if there is no scripted gui, this desc will be used in send yes/no pop up
+
+
+		# RECEIVE POPUP CUSTOMIZATION
+		# use diplomatic_action as context in scripted gui
+		# receive_scripted_gui = receive_scripted_gui_name #if specified the receiver of the action will get this scripted gui instead of yes-no popup when they receive the propose
+		reset_receive_effect = {
+			# clear action
+		}
+		can_be_accepted = { # accept button will be disabled if no
+			always = yes
+		}
+		receive_description = economical_union_credit_tranche_receive # if there is no scripted gui, this desc will be used in send yes/no pop up
+
+		
+		# PLAYER FEEDBACK ON ACCEPT/REJECT
+		accept_title = economical_union_credit_tranche_accept #can be overridden to customize accepted/rejected pop ups for the sender
+		accept_description = economical_union_credit_tranche_accept_desc
+		reject_title = economical_union_credit_tranche_reject
+		reject_description = economical_union_credit_tranche_reject_desc
+	
+		
+		# AI
+		# список записей ai_will_do, которые будут использоваться, чтобы решить, должен ли ИИ принять или отклонить запрос
+		ai_acceptance = {
+			base = -50
+			modifier = {
+				add = this.opinion@ROOT
+			}
+			modifier = {
+				add = -1000
+				ROOT = { has_country_flag = economical_union_credit_tranche_debtor }
+			}
+		}
+
+		# ai_will_do, чтобы решить, должен ли ИИ отправлять это действие или нет
+		ai_desire = {
+			base = -100
+			modifier = { check_variable = { budget_reserve < 1 } add = 100 }
+		}
+	}
+}

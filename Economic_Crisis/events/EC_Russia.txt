@@ -285,25 +285,38 @@ country_event = { #Договор о создание ЕАЭС
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.10.a"
 		ai_chance = { factor = 90 }
 		add_ideas = eaeu_member
+		mark_focus_tree_layout_dirty = yes
 		if = {
 			limit = { country_exists = ARM }
-			ARM = { add_ideas = eaeu_member }
+			ARM = {
+				add_ideas = eaeu_member
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 		if = {
 			limit = { country_exists = BLR }
-			BLR = { add_ideas = eaeu_member }
+			BLR = {
+				add_ideas = eaeu_member
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 		if = {
 			limit = { country_exists = KAZ }
-			KAZ = { add_ideas = eaeu_member }
+			KAZ = {
+				add_ideas = eaeu_member
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 		if = {
 			limit = { country_exists = KYR }
-			KYR = { add_ideas = eaeu_member }
+			KYR = {
+				add_ideas = eaeu_member
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 		hidden_effect = {
 			news_event = { id = russia_news.16 days = 1 }
-			set_country_flag = RUS_creation_eaeu
+			set_global_flag = RUS_creation_eaeu
 		}
 	}
 

@@ -1,6 +1,5 @@
 ﻿# Economic Crisis edit for 0.7.6 alpha
 
-# NOT EDITED LEADERS (ONLY START LEADER)
 # NOT EDITED LAWS
 # NOT EDITED POLITICS
 
@@ -21,6 +20,7 @@ capital = 586
 
 2013.11.1 = {
 	set_variable = { budget_last_year = 733 }
+	subtract_from_variable = { budget_reserve = -2238 }
 
 	load_oob = "_tech_csto_minor_2013"
 	oob = "KYR_2013"
@@ -49,18 +49,18 @@ capital = 586
 	
 
 	set_politics = {
-		ruling_party = neutrality
+		ruling_party = reformism
 		last_election = "2011.10.30"
 		election_frequency = 72
 		elections_allowed = yes
 	}
 	set_popularities = {
 		communism = 0
-		reformism = 15
-		liberalism = 10
-		democratic = 3
-		neutrality = 65
-		fascism = 7
+		reformism = 55
+		liberalism = 8
+		democratic = 15
+		neutrality = 6
+		fascism = 16
 		rad_islamists = 0
 	}
 
@@ -68,17 +68,51 @@ capital = 586
 	#	name = "Sooronbay Jeenbekov"
 	#	desc = ""
 	#	picture = "gfx/leaders/KYR/portrait_sooronbay_jeenbekov.dds"
-	#	ideology = authoritarian_democracy
-	#	traits = { trait_authoritarian_democracy }
+	#	ideology = social_democracy
+	#	traits = { trait_social_democracy }
 	#}
 
 
 	create_country_leader = {
 		name = "Almazbek Atambayev"
-		desc = ""
 		picture = "gfx/leaders/KYR/portrait_almazbek_atambayev.dds"
-		ideology = authoritarian_democracy
-		traits = { trait_authoritarian_democracy }
+		ideology = social_democracy
+		traits = { trait_social_democracy }
+	}
+
+	create_country_leader = {
+		name = "Adakhan Madumarov"
+		picture = "gfx/leaders/KYR/portrait_adakhan_madumarov.dds"
+		ideology = national_conservatism
+		traits = { trait_national_conservatism }
+	}
+
+	create_country_leader = {
+		name = "Kamchybek Tashiev"
+		picture = "gfx/leaders/KYR/portrait_kamchybek_tashiev.dds"
+		ideology = national_conservatism_dem
+		traits = { trait_national_conservatism_dem }
+	}
+
+	create_country_leader = {
+		name = "Bakyt Torobayev"
+		picture = "gfx/leaders/KYR/portrait_bakyt_torobayev.dds"
+		ideology = centrist_democracy
+		traits = { trait_centrist_democracy }
+	}
+
+	create_country_leader = {
+		name = "Altynbek Sulaymanov"
+		picture = "gfx/leaders/KYR/portrait_altynbek_sulaymanov.dds"
+		ideology = liberal_democracy
+		traits = { trait_liberal_democracy }
+	}
+
+	create_country_leader = {
+		name = "Ishak Masaliev"
+		picture = "gfx/leaders/KYR/portrait_ishak_masaliev.dds"
+		ideology = leninism
+		traits = { trait_leninism }
 	}
 
 }

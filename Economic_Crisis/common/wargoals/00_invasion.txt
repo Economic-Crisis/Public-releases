@@ -5,11 +5,13 @@ wargoal_types = {
 		# ROOT = goal owner country
 
 		allowed = {
-
+			NOT = {
+				has_idea = JAP_article_9
+			}
 		}
 		
 		available = {
-		
+			
 		}
 		
 		take_states = {
@@ -59,7 +61,15 @@ wargoal_types = {
 		# ROOT = goal owner country
 
 		allowed = {
-			
+			NOT = {
+				has_idea = JAP_article_9
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = JAP_article_9
+			}
 		}
 		
 		puppet = {
@@ -413,5 +423,32 @@ wargoal_types = {
 		expire = 150
 		
 		threat = 1
+	}
+
+	liberty_state = {
+		# PREV = original target country
+		# ROOT = goal owner country
+
+		allowed = {
+			
+		}
+		
+		available = {
+			
+		}
+		
+		take_states = {
+			FROM = { FROM.FROM = { is_core_of = THIS } }
+		}
+		
+		generate_base_cost = 110		
+		generate_per_state_cost = 25
+		
+		take_states_limit = 5
+		take_states_cost = -20
+		
+		expire = 60
+		
+		threat = 2
 	}
 }

@@ -43,6 +43,9 @@ scripted_diplomatic_actions = {
 					captured_by = FROM
 					all = yes
 				}
+				hidden_effect = {
+					set_country_flag = just_freed_operative_flag
+				}
 			}
 		}
 
@@ -103,7 +106,7 @@ scripted_diplomatic_actions = {
 
 		# ai_will_do, чтобы решить, должен ли ИИ отправлять это действие или нет
 		ai_desire = {
-			base = -10
+			base = -10 
 			modifier = {
 				add = this.opinion@ROOT
 			}
