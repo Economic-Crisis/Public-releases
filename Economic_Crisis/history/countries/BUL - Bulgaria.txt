@@ -6,10 +6,40 @@
 # NOT EDITED POLITICS
 
 capital = 48
-add_ideas = {
-	eu_member
-	parliamentary_republic
-	NPT
+
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+	    SOV_support_warshaw
+    }
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "1954.3.4"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 100
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+	   name = "Todor Zhivkov"
+	   desc = "POLITICS_TODOR_ZHIVKOV_DESC"
+	   picture = "gfx/leaders/BUL/portrait_todor_zhivkov.dds"
+	   ideology = leninism 
+	   traits = { trait_leninism  }
+	}
+}
+
+1991.2.15 = {
+	remove_ideas = SOV_support_warshaw
 }
 1994.6.10 = {
 	add_ideas = {
@@ -27,7 +57,6 @@ add_ideas = {
 	add_political_power = 0
 
 	set_convoys = 5
-	add_ideas = low_terrorism
 	create_intelligence_agency = yes
 	
 	set_country_flag = pai_democrat_neutral
@@ -45,6 +74,13 @@ add_ideas = {
 		neutrality = 0
 		fascism = 6
 		rad_islamists = 0
+	}
+	
+	add_ideas = {
+		eu_member
+		parliamentary_republic
+		NPT
+		low_terrorism
 	}
 
 	create_country_leader = {

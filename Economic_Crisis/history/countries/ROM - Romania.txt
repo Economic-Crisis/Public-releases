@@ -8,7 +8,47 @@
 
 capital = 46
 
-	add_ideas = eu_member
+	
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+	    SOV_support_warshaw
+    }
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "1974.3.29"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 100
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+	   name = "Nicolae Ceausescu"
+	   desc = "POLITICS_NICOLAE_CEAUSESCU_DESC"
+	   picture = "gfx/leaders/ROM/portrait_nicolae_ceausescu.dds"
+	   ideology = national_communism 
+	   traits = { trait_national_communism }
+	}
+	
+	set_party_name = {
+		ideology = communism
+		long_name = ROM_communism_1985_party_long
+		name = ROM_communism_1985_party
+	}
+}
+
+1991.2.15 = {
+	remove_ideas = SOV_support_warshaw
+}
 
 1994.6.10 = {
 	add_ideas = bsec_member
@@ -38,6 +78,7 @@ capital = 46
 		middle_social_security
 		pensions
 		terrorism_discounted
+		eu_member
 	}
 
 	set_stability = 0.5

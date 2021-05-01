@@ -5,13 +5,34 @@
 
 capital = 440
 
-add_ideas = {
-	regional_country
+1985.1.1 = {
+    add_ideas = {
+	    regional_country
+    }
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1968.3.27"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 0
+		reformism = 0
+		liberalism = 0
+		democratic = 80
+		neutrality = 10
+		fascism = 0
+		rad_islamists = 10
+	}
 	
-	overpopulation
-	nuclear_country
-	
-	islam_idea_lvl_3
+	create_country_leader = {
+	   name = "Nuhammad Zia-ul-Haq"
+	   desc = "POLITICS_MUHHAMAD_ZIA-UL-HAQ_DESC"
+	   picture = "gfx/leaders/PAK/portrait_muhammad_zia-ul-haq.dds"
+	   ideology = sunni_islamism 
+	   traits = { trait_sunni_islamism }
+	}
 }
 
 1971.12.17 = {
@@ -53,6 +74,11 @@ add_ideas = {
 		base_social_security
 		normal_working_time
 		decaying_state
+	
+		overpopulation
+		nuclear_country
+	
+		islam_idea_lvl_3
 	}
 	
 	diplomatic_relation = {

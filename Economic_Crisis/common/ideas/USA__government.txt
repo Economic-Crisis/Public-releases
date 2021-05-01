@@ -14,15 +14,17 @@ ideas = {
 					has_government = liberalism
 					has_country_flag = coalition_with_liberals
 				}
+				NOT = {	has_country_flag = joseph_biden_resigned }
 			}
 			
 			allowed = {
 				original_tag = "USA"
 			}
 			
-			traits = { party_leader_liberal
-						pm_liberal
-					}
+			traits = {
+				party_leader_liberal
+				pm_liberal
+			}
 
 			on_add = {
 				news_event = head_of_government.1
@@ -94,6 +96,73 @@ ideas = {
 	
 		}
 		
+		usa_barack_obama_hog = {
+			
+			cost = 1000
+			#removal_cost = -1
+				
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+				NOT = {
+					has_country_flag = barack_obama_resigned
+					
+				}
+			}
+			
+			allowed = {
+				original_tag = "USA"
+			}
+			
+			traits = {
+				trait_liberal_democracy
+			}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+	
+		}
+		
+		usa_donald_trump_hog = {
+			
+			cost = 1000
+			#removal_cost = -1
+				
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+				NOT = { has_country_flag = donald_trump_resigned }
+			}
+			
+			allowed = {
+				original_tag = "USA"
+				date > 2020.11.1
+			}
+			
+			traits = {
+				trait_conservative_democracy
+				industry_top_managment
+			}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+	
+		}
+		
 		usa_albert_gore_hog = {
 			
 			cost = 1000
@@ -134,6 +203,7 @@ ideas = {
 					has_government = reformism
 					has_country_flag = coalition_with_reformists
 				}
+				NOT = {	has_country_flag = bernard_sanders_resigned }
 			}
 			
 			allowed = {
@@ -198,6 +268,7 @@ ideas = {
 					has_government = reformism
 					has_country_flag = coalition_with_reformists
 				}
+				NOT = {	has_country_flag = jill_stein_resigned }
 			}
 			
 			allowed = {
@@ -327,6 +398,7 @@ ideas = {
 					has_government = communism
 					has_country_flag = coalition_with_socialists
 				}
+				NOT = {	has_country_flag = john_bachtell_resigned }
 			}
 
 			allowed = {
@@ -393,7 +465,7 @@ ideas = {
 				}
 				NOT = {
 					has_idea = usa_hillary_clinton_fgm
-					has_country_leader = { id = 100004 ruling_only = yes name = "Hillary Clinton" }
+					has_country_flag = hillary_clinton_resigned
 				}
 			}
 			

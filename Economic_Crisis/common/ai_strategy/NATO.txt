@@ -73,16 +73,8 @@ NATO_membership = {
 USA_NATO = {
 	enable = {
 		tag = USA
-		has_country_leader = {
-			name = "Donald Trump"
-		}
 	}
 	
-	ai_strategy = {
-		type = prepare_for_war
-		id = "CHI"
-		value = 50
-	}
 	ai_strategy = {
 		type = prepare_for_war
 		id = "IRN"
@@ -97,11 +89,6 @@ USA_NATO = {
 		type = prepare_for_war
 		id = "NKO"
 		value = 100
-	}
-	ai_strategy = {
-		type = antagonize
-		id = "CHI"
-		value = 50
 	}
 	ai_strategy = {
 		type = antagonize
@@ -119,10 +106,54 @@ USA_NATO = {
 		value = 100
 	}
 }
+
+USA_CHINA = {
+	enable = {
+		tag = USA
+		has_country_leader = {
+			name = "Donald Trump"
+		}
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = "CHI"
+		value = 50
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "CHI"
+		value = 50
+	}
+}
+
+USA_befriend = {
+
+	enable = {
+		tag = USA
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SAU"
+		value = 30
+	}
+	ai_strategy = {
+		type = befriend
+		id = "KOR"
+		value = 30
+	}
+	ai_strategy = {
+		type = befriend
+		id = "JAP"
+		value = 30
+	}
+}
+
 protect_USA = {
 	enable = {
 		tag = USA
-		}
+	}
 	ai_strategy = {
 		type = protect
 		id = "KOR"

@@ -13,7 +13,16 @@ unit_leader_event = {
 		name = mtg_exile_leader_added.1.a
 		ai_chance = {
 			factor = 1
-		}		
+		}	
+		if = {
+			limit = {
+				always = no
+			}
+			set_country_flag = coalition_with_nationalists
+			set_country_flag = coalition_with_islamists
+			set_country_flag = coalition_with_rad_islamists
+			set_country_flag = coalition_with_neutrality
+		}	
 	}
 }
 

@@ -56,7 +56,7 @@ country_event = { #Голос США
 		trigger = {		
 			FROM = {
 				has_country_flag = applicaton_for_joining_into_UN
-				#NOT = { has_country_flag = country_justifying_wargoal }
+				NOT = { has_country_flag = country_justifying_wargoal }
 			}	
 		}
 	}
@@ -77,21 +77,19 @@ country_event = { #Голос США
 		ai_chance = { 
 		    factor = 35 
 			modifier = {
-			    factor = 90
-				AND = {    
+			    factor = 90 
 					USA = {  
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }
-				    }
-				    FROM = { 
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }	
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}
+				}
+				FROM = { 
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
 				    }
 			    }
 		    }
@@ -157,7 +155,7 @@ country_event = { #Голос Великобритании
 		trigger = {		
 			FROM = {
 				has_country_flag = applicaton_for_joining_into_UN
-				#NOT = { has_country_flag = country_justifying_wargoal }
+				NOT = { has_country_flag = country_justifying_wargoal }
 			}	
 		}
 	}
@@ -179,19 +177,17 @@ country_event = { #Голос Великобритании
 		    factor = 40 
 			modifier = {
 			    factor = 90
-				AND = {    
-					ENG = {  
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-					    }
-				    }
-				    FROM = { 
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-					    }	
-				    }
+				ENG = {  
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+					}
+				}
+				FROM = { 
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+					}	
 			    }
 		    }
 			modifier = {
@@ -244,7 +240,7 @@ country_event = { #Голос Франция
 		trigger = {		
 			FROM = {
 				has_country_flag = applicaton_for_joining_into_UN
-				#NOT = { has_country_flag = country_justifying_wargoal }
+				NOT = { has_country_flag = country_justifying_wargoal }
 			}	
 		}
 	}
@@ -266,20 +262,18 @@ country_event = { #Голос Франция
 		    factor = 35 
 			modifier = {
 			    factor = 90
-				AND = {    
-					FRA = {  
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }
-				    }
-				    FROM = { 
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }	
+				FRA = {  
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}
+				}
+				FROM = { 
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
 				    }
 			    }
 		    }
@@ -334,7 +328,7 @@ country_event = { #Голос Россия
 		trigger = {		
 			FROM = {
 				has_country_flag = applicaton_for_joining_into_UN
-				#NOT = { has_country_flag = country_justifying_wargoal }
+				NOT = { has_country_flag = country_justifying_wargoal }
 			}	
 		}
 	}
@@ -356,20 +350,18 @@ country_event = { #Голос Россия
 		    factor = 55 
 			modifier = {
 			    factor = 15
-				AND = {    
-					RUS = {  
-				        NOT = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }
-				    }
-				    FROM = { 
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }	
+				RUS = {  
+				    NOT = {   
+				        has_government = democratic
+					    has_government = liberalism
+					    has_government = reformism
+					}
+				}
+				FROM = { 
+				    OR = {   
+					    has_government = democratic
+						has_government = liberalism
+						has_government = reformism
 				    }
 			    }
 		    }
@@ -413,7 +405,7 @@ country_event = { #Голос Китай
 		trigger = {		
 			FROM = {
 				has_country_flag = applicaton_for_joining_into_UN
-				#NOT = { has_country_flag = country_justifying_wargoal }
+				NOT = { has_country_flag = country_justifying_wargoal }
 			}	
 		}
 	}
@@ -435,21 +427,19 @@ country_event = { #Голос Китай
 		    factor = 55 
 			modifier = {
 			    factor = 15
-				AND = {    
-					CHI = {  
-				        NOT = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }
-				    }
-				    FROM = { 
-				        OR = {   
-					        has_government = democratic
-						    has_government = liberalism
-						    has_government = reformism
-					    }	
-				    }
+				CHI = {  
+					NOT = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}
+				}
+				FROM = { 
+					OR = {   
+						has_government = democratic
+						has_government = liberalism
+						has_government = reformism
+					}	
 			    }
 		    }
 			modifier = {
@@ -873,10 +863,10 @@ country_event = { #(hidden event remove country flag)
 		        limit = { has_country_flag = applicaton_for_joining_into_UN }
 			    clr_country_flag = applicaton_for_joining_into_UN
 			}
-			#if = {  
-		    #    limit = { has_country_flag = country_justifying_wargoal }
-			#    clr_country_flag = country_justifying_wargoal
-			#}
+			if = {  
+		        limit = { has_country_flag = country_justifying_wargoal }
+			    clr_country_flag = country_justifying_wargoal
+			}
 		}
 	}
 	
@@ -898,7 +888,14 @@ country_event = { #Заседания СовБез ООН(hidden)
 		USA = { country_event = { id = UN_event.2 days = 2 } }
 		ENG = { country_event = { id = UN_event.3 days = 2 } }
 		FRA = { country_event = { id = UN_event.4 days = 2 } }
-		RUS = { country_event = { id = UN_event.5 days = 3 } }
+		if = {
+			limit = { country_exists = RUS }
+			RUS = { country_event = { id = UN_event.5 days = 3 } }
+		}
+		if = {
+			limit = { country_exists = SOV }
+			SOV = { country_event = { id = UN_event.5 days = 3 } }
+		}
 		CHI = { country_event = { id = UN_event.6 days = 3 } }
 		news_event = { id = news.75 days = 1 } #allowed
 	}
@@ -912,50 +909,74 @@ country_event = { #ООН вводил новый пакет санкции
 	id = UN_event.11
 	title = UN_event.11.t
 	desc = UN_event.11.d
+	desc = {
+		text = UN_event.11_2.d
+		trigger = {		
+			has_idea = sanctions1
+			has_idea = sanctions
+			has_idea = sanctions3
+			has_idea = sanctions2
+			has_idea = sanctions4
+		}
+	}
 	picture = GFX_event_konferensiya_UN
 	
 	is_triggered_only = yes
 	
 	immediate = {
-		hidden_effect = {	
-			every_country = {
-				limit = {
-					AND = {
-						has_idea = unsc_member
-						has_idea = eu_member
-					}
-				}
-				add_opinion_modifier = {
-					target = FROM
-					modifier = embargo
-				}
-			}
+		#hidden_effect = {	
 			if = {
 				limit = { NOT = { has_idea = sanctions } }
 				add_ideas = sanctions
+				every_country = {
+					limit = {
+						OR = {
+							has_idea = unsc_member
+							has_idea = eu_member
+						}
+					}
+					add_opinion_modifier = {
+						target = FROM
+						modifier = embargo
+					}
+				}
 			}
 			else_if = {
 				limit = { has_idea = sanctions NOT = { has_idea = sanctions1 } }  
 				add_ideas = sanctions1
 			}
 			else_if = {
-				limit = { AND = { has_idea = sanctions1 has_idea = sanctions } NOT = { has_idea = sanctions2 } }
+				limit = { has_idea = sanctions1 has_idea = sanctions NOT = { has_idea = sanctions2 } }
 				add_ideas = sanctions2
 			}
 			else_if = {
-				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions2 } NOT = { has_idea = sanctions3 } }
+				limit = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions2 NOT = { has_idea = sanctions3 } }
 				add_ideas = sanctions3
 			}
 			else_if = {
-				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2 }  NOT = { has_idea = sanctions4 } }
+				limit = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2  NOT = { has_idea = sanctions4 } }
 				add_ideas = sanctions4
 			}
 			else_if = {
-				limit = { AND = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2 has_idea = sanctions4 }  }
+				limit = { has_idea = sanctions1 has_idea = sanctions has_idea = sanctions3 has_idea = sanctions2 has_idea = sanctions4 }
 				every_country = {
-					limit = { has_idea = unsc_member }
+					limit = {
+						exists = yes
+					}
 					declare_war_on = { target = ROOT type = war_with_aggressor } 
 				}
+				every_country = {
+					#limit = {
+					#	NOT = {
+					#		has_idea = unsc_member
+					#		has_idea = eu_member
+					#	}
+					#}
+					add_opinion_modifier = {
+						target = FROM
+						modifier = sanctions
+					}
+				#}
 			}
 			
 		}	
@@ -988,11 +1009,9 @@ country_event = { #ООН вводил новый пакет санкции
 		}	
 		if = {
 			limit = {
-				NOT = {
-					OR = {	
-						has_government = communism
-						has_government = reformism
-					}	
+				NOT = {	
+					has_government = communism
+					has_government = reformism
 					CHI = { 
 						OR = {	
 							has_government = communism

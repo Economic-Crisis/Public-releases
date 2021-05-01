@@ -8,19 +8,14 @@ news_event = {
 	id = ai_cheats.1
 
 	trigger = {
-		has_equipment = { special_salw_equipment > -300 }
+		has_equipment = { special_salw_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -36,19 +31,14 @@ news_event = {
 	id = ai_cheats.2
 
 	trigger = {
-		has_equipment = { army_salw_equipment > -300 }
+		has_equipment = { army_salw_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = {	has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -64,19 +54,14 @@ news_event = {
 	id = ai_cheats.3
 
 	trigger = {
-		has_equipment = { army_ammunition_equipment > -300 }
+		has_equipment = { army_ammunition_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -92,19 +77,14 @@ news_event = {
 	id = ai_cheats.4
 
 	trigger = {
-		has_equipment = { special_ammunition_equipment > -300 }
+		has_equipment = { special_ammunition_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -120,19 +100,14 @@ news_event = {
 	id = ai_cheats.5
 
 	trigger = {
-		has_equipment = { truck_equipment > -300 }
+		has_equipment = { truck_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -152,15 +127,10 @@ news_event = {
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -176,19 +146,14 @@ news_event = {
 	id = ai_cheats.7
 
 	trigger = {
-		has_equipment = { infantry_technical_means_equipment > -300 }
+		has_equipment = { infantry_technical_means_equipment > -100 }
 		is_ai = yes
 		is_tutorial = no
 		has_civil_war = no
-		NOT = {
-			has_government = rad_islamists
-		}
+		NOT = { has_government = rad_islamists }
 		num_divisions > 5
 	}
-	mean_time_to_happen = {
-		days = 30
-	}
-
+	mean_time_to_happen = { days = 14 }
 	hidden = yes
 
 	option = {
@@ -198,5 +163,28 @@ news_event = {
 			amount = 100
 		}
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): balanced equipment note 7"
+	}
+}
+news_event = {
+	id = ai_cheats.8
+
+	trigger = {
+		has_equipment = { support_equipment > -100 }
+		is_ai = yes
+		is_tutorial = no
+		has_civil_war = no
+		NOT = { has_government = rad_islamists }
+		num_divisions > 5
+	}
+	mean_time_to_happen = { days = 14 }
+	hidden = yes
+
+	option = {
+		name = ai_cheats.1.a
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 100
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): balanced equipment note 8"
 	}
 }

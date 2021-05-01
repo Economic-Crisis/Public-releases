@@ -4,9 +4,234 @@ news_event = {
 	id = head_of_government.1   
 	title = head_of_government.1.t
 	desc = head_of_government.1.d
-	#picture = 
+	picture = GFX_news_change_hog
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = JAP
+					has_idea = jap_shinzo_abe_hog
+				}
+				create_country_leader = {
+					name = "Shinzo Abe"
+					desc = "POLITICS_SHINZO_ABE_DESC"
+					picture = "gfx/leaders/JAP/portrait_shinzo_abe.dds"
+					ideology = conservative_democracy
+					traits = { trait_conservative_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = JAP
+					has_idea = jap_yoshihide_suga_hog
+				}
+				create_country_leader = {
+					name = "Yoshihide Suga"
+					desc = "POLITICS_YOSHIHIDE_SUGA_DESC"
+					picture = "gfx/leaders/JAP/portrait_yoshihide_suga.dds"
+					ideology = conservative_democracy
+					traits = { trait_conservative_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_David_Cameron_hog
+				}
+				create_country_leader = {
+					name = "David Cameron"
+					desc = "POLITICS_DAVID_CAMERON_DESC"
+					picture = "gfx/leaders/ENG/portrait_david_cameron.dds"
+					ideology = conservative_democracy
+					expire = "2016.7.1"
+					traits = { trait_conservative_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Theresa_May_hog
+				}
+				create_country_leader = {
+					name = "Theresa May"
+					desc = "POLITICS_THERESA_MAY_DESC"
+					picture = "gfx/leaders/ENG/portrait_theresa_may.dds"
+					ideology = conservative_democracy
+					traits = { party_leader_conservative foreign_minister_euroscepticism }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Nigel_Farage_hog
+				}
+				create_country_leader = {
+					name = "Nigel Farage"
+					desc = "POLITICS_NIGEL_FARAGE_DESC"
+					picture = "gfx/leaders/ENG/portrait_nigel_farage.dds"
+					ideology = euroscepticism
+					traits = { trait_euroscepticism }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Ed_Miliband_hog
+				}
+				create_country_leader = {
+					name = "Ed Miliband"
+					desc = "POLITICS_ED_MILIBAND_DESC"
+					picture = "gfx/leaders/ENG/portrait_ed_miliband.dds"
+					ideology = reformist_royalism
+					traits = { pm_reformist }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Jeremy_Corbyn_hog
+				}
+				create_country_leader = {
+					name = "Jeremy Corbyn"
+					desc = "POLITICS_JEREMY_CORBYN_DESC"
+					picture = "gfx/leaders/Europe/portrait_jeremy_corbyn.dds"
+					ideology = social_democracy
+					traits = { pm_reformist }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Nick_Clegg_hog
+				}
+				create_country_leader = {
+					name = "Nick Clegg"
+					desc = "POLITICS_NICK_CLEGG_DESC"
+					picture = "gfx/leaders/ENG/portrait_nick_clegg.dds"
+					ideology = liberal_democracy
+					traits = { trait_liberal_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Alex_Callinicos_hog
+				}
+				create_country_leader = {
+					name = "Alex Callinicos"
+					desc = "POLITICS_ALEX_CALLINICOS_DESC"
+					picture = "gfx/leaders/ENG/portrait_alex_callinicos.dds"
+					ideology = trotskizm
+					traits = { trait_trotskizm }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = ENG
+					has_idea = ENG_Nick_Griffin_hog
+				}
+				create_country_leader = {
+					name = "Nick Griffin"
+					desc = "POLITICS_NICK_GRIFFIN_DESC"
+					picture = "gfx/leaders/ENG/portrait_nick_griffin.dds"
+					ideology = national_liberalism
+					traits = { trait_national_liberalism }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_barack_obama_hog
+				}
+				create_country_leader = {
+					name = "Barack Obama"
+					desc = "POLITICS_BARACK_OBAMA_DESC"
+					picture = "gfx/leaders/USA/portrait_barack_obama.dds"
+					expire = "2016.12.1"
+					ideology = liberal_democracy
+					traits = { trait_liberal_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_donald_trump_hog
+				}
+				create_country_leader = {
+					name = "Donald Trump"
+					ideology = conservative_democracy 
+					picture = "gfx/leaders/USA/portrait_donald_trump.dds"
+					expire = "2025.1.1"
+					traits = { trait_conservative_democracy industry_top_managment }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_hillary_clinton_hog
+				}
+				create_country_leader = {
+					name = "Hillary Clinton"
+					ideology = liberal_democracy
+					picture = "gfx/leaders/USA/portrait_hillary_clinton.dds"
+					#expire = "2025.1.1"
+					traits = { trait_liberal_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_bernard_sanders_hog
+				}
+				create_country_leader = {
+					name = "Bernie Sanders"
+					ideology = social_democracy 
+					picture = "gfx/leaders/USA/portrait_bernie_sanders.dds"
+					traits = { trait_social_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_joseph_biden_hog
+				}
+				create_country_leader = {
+					name = "Joe Biden" 
+					ideology = liberal_democracy
+					picture = "gfx/leaders/USA/portrait_joe_biden.dds"
+					traits = { trait_liberal_democracy }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_jill_stein_hog
+				}
+				create_country_leader = {
+					name = "Jill Stein" 
+					ideology = democratic_socialism
+					picture = "gfx/leaders/USA/portrait_jill_stein.dds"
+					traits = { trait_democratic_socialism }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = USA
+					has_idea = usa_john_bachtell_hog
+				}
+				create_country_leader = {
+					name = "John Bachtell"
+					desc = "POLITICS_JOHN_BACHTELL_DESC"
+					picture = "gfx/leaders/USA/portrait_john_bachtell.dds"
+					ideology = leninism
+					traits = { trait_leninism }
+				}
+			}
+		}
+	}
 
 	option = {
         name = head_of_government.1.a

@@ -11,10 +11,80 @@ ideas = {
 			cost = 1000
 			#removal_cost = -1
 			
-						available = {
+			available = {
 				OR = {
-						has_government = democratic
-						has_country_flag = coalition_with_conservators
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+				#NOT = {
+				#	has_country_flag = taro_aso_resigned
+				#}
+			}
+			
+			allowed = {
+				original_tag = "JAP"
+			}
+			
+			traits = {
+				#party_leader_conservative 
+				pm_conservative
+			}
+			
+			on_add = {
+			
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		jap_yoshihide_suga_hog = {
+		
+			picture = GFX_idea_jap_yoshihide_suga_hog
+			cost = 1000
+			#removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+				NOT = {	has_country_flag = yoshihide_suga_resigned }
+			}
+			
+			allowed = {
+				original_tag = "JAP"
+			}
+			
+			traits = {
+				party_leader_conservative 
+				#conomic_minister_social_reformer
+			}
+			
+			on_add = {
+				news_event = head_of_government.1
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		jap_shinzo_abe_hog = {
+		
+			picture = GFX_idea_jap_shinzo_abe_hog
+			cost = 1000
+			#removal_cost = -1
+			
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+				NOT = {
+					has_country_flag = shinzo_abe_resigned
 				}
 			}
 			
@@ -22,12 +92,12 @@ ideas = {
 				original_tag = "JAP"
 			}
 			
-			traits = { party_leader_conservative 
-						pm_conservative
-					}
+			traits = {
+				party_leader_conservative 
+				foreign_minister_policy_conversation
+			}
 			
 			on_add = {
-			
 				news_event = head_of_government.1
 			}
 			

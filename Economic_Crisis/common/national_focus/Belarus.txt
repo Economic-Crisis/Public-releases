@@ -31,12 +31,21 @@ focus_tree = {
 	focus = {
 		id = BLR_proverka_fabric
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 70
+		cost = 40
 		prerequisite = {focus = BLR_industri}
 		x = -16
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+				    	name = "Aleksandr Lukashenko"
+				    	ruling_only = yes
+				    }	
+			    }	
+				news_event = { id = belarus_news.12 days = 5 }
+			}
 		    add_political_power = 150
 			add_timed_idea = { idea = BLR_proverki days = 120 }
 		}
@@ -668,6 +677,20 @@ focus_tree = {
 				tooltip = BLR_monorels
 				check_variable = { budget_reserve > 10 }
 			}
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_monorels
+					check_variable = { budget_reserve > 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_monorels
+					check_variable = { budget_reserve > 0.001 }
+				}
+			}
 		}
 		x = -9
 		y = 6
@@ -675,6 +698,14 @@ focus_tree = {
 		completion_reward = {
 		    custom_effect_tooltip = BLR_monorels
 			subtract_from_variable = { budget_reserve = 10 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 10 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.001 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -808,13 +839,34 @@ focus_tree = {
 				tooltip = BLR_SkyWay
 				check_variable = { budget_reserve > 50 }
 			}
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_SkyWay
+					check_variable = { budget_reserve > 50 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_SkyWay
+					check_variable = { budget_reserve > 0.05 }
+				}
+			}
 		}
 		x = -7
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_SkyWay
-			subtract_from_variable = { budget_reserve = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 50 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.05 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -974,9 +1026,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_SkyWay}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_developed_funiculars
-				check_variable = { budget_reserve > 25 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_developed_funiculars
+					check_variable = { budget_reserve > 25 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_developed_funiculars
+					check_variable = { budget_reserve > 0.025 }
+				}
 			}
 		}
 		x = -7
@@ -984,7 +1046,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_developed_funiculars
-			subtract_from_variable = { budget_reserve = 25 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 25 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.025 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1144,9 +1213,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_monorels}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_updat_metro
-				check_variable = { budget_reserve > 30 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_metro
+					check_variable = { budget_reserve > 30 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_metro
+					check_variable = { budget_reserve > 0.030 }
+				}
 			}
 		}
 		x = -9
@@ -1154,7 +1233,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_updat_metro
-			subtract_from_variable = { budget_reserve = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 30 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.030 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1314,9 +1400,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_updat_metro}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_metro_for_small_city
-				check_variable = { budget_reserve > 100 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_metro_for_small_city
+					check_variable = { budget_reserve > 100 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_metro_for_small_city
+					check_variable = { budget_reserve > 0.1 }
+				}
 			}
 		}
 		x = -9
@@ -1324,7 +1420,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_metro_for_small_city
-			subtract_from_variable = { budget_reserve = 100 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 100 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.1 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1484,9 +1587,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_speed_train}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_speed_tram
-				check_variable = { budget_reserve > 50 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_speed_tram
+					check_variable = { budget_reserve > 50 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_speed_tram
+					check_variable = { budget_reserve > 0.050 }
+				}
 			}
 		}
 		x = -11
@@ -1494,7 +1607,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_speed_tram
-			subtract_from_variable = { budget_reserve = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 50 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.050 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1595,9 +1715,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_updat_infastructure}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_speed_train
-				check_variable = { budget_reserve > 130 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_speed_train
+					check_variable = { budget_reserve > 130 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_speed_train
+					check_variable = { budget_reserve > 0.013 }
+				}
 			}
 		}
 		x = -11
@@ -1605,7 +1735,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_speed_train
-			subtract_from_variable = { budget_reserve = 130 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 130 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.013 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1705,9 +1842,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_developed_funiculars}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_ships
-				check_variable = { budget_reserve > 200 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_ships
+					check_variable = { budget_reserve > 200 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_ships
+					check_variable = { budget_reserve > 0.02 }
+				}
 			}
 		}
 		x = -7
@@ -1715,7 +1862,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_ships
-			subtract_from_variable = { budget_reserve = 200 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 200 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.02 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -1815,9 +1969,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_speed_train}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_magnetic_levitation_train
-				check_variable = { budget_reserve > 120 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_magnetic_levitation_train
+					check_variable = { budget_reserve > 120 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_magnetic_levitation_train
+					check_variable = { budget_reserve > 0.012 }
+				}
 			}
 		}
 		x = -11
@@ -1825,7 +1989,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_magnetic_levitation_train
-			subtract_from_variable = { budget_reserve = 120 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 120 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.012 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -2025,7 +2196,7 @@ focus_tree = {
 	focus = {
 		id = BLR_AI_for_arhitectur
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_bel_voen_prom}
 		prerequisite = {focus = BLR_bel_stroy_mash}
 		x = -17
@@ -2033,6 +2204,12 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = BLR_AI_for_arhitectur
 			add_political_power = 250
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.1
+				uses = 2
+				category = electronics
+			}
 			random_owned_state = {
 				add_building_construction = {
 					type = infrastructure
@@ -2088,6 +2265,12 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_ideas = BLR_AI_for_industry
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.1
+				uses = 2
+				category = electronics
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2456,7 +2639,6 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.1
@@ -2475,7 +2657,7 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
+			army_experience = 20
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -2485,17 +2667,39 @@ focus_tree = {
 		cost = 120
 		prerequisite = {focus = BLR_civ}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_E-40
-				check_variable = { budget_reserve > 236 }
+			AND = {
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					custom_trigger_tooltip = {
+						tooltip = BLR_E-40_1
+						check_variable = { budget_reserve > 6000 }
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					custom_trigger_tooltip = {
+						tooltip = BLR_E-40_1
+						check_variable = { budget_reserve > 6.0 }
+					}
+				}
+				OR = {
+					has_completed_focus = BLR_E-40_2
+				}
 			}
 		}
 		x = -19
 		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_E-40
-			subtract_from_variable = { budget_reserve = 236 }
+		    custom_effect_tooltip = BLR_E-40_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 6000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 6.0 }
+			}
 			add_stability = -0.05
 			add_political_power = 1000
 			add_ideas = BLR_E-40
@@ -2529,17 +2733,34 @@ focus_tree = {
 		cost = 50
 		prerequisite = {focus = BLR_civ}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_Berlin-Moskva
-				check_variable = { budget_reserve > 1000 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_Berlin-Moskva_1
+					check_variable = { budget_reserve > 1000 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_Berlin-Moskva_1
+					check_variable = { budget_reserve > 1.0 }
+				}
 			}
 		}
 		x = -17
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			custom_effect_tooltip = BLR_Berlin-Moskva
-			subtract_from_variable = { budget_reserve = 1000 }
+			custom_effect_tooltip = BLR_Berlin-Moskva_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 1000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 1.0 }
+			}
 		    94 = {
 				add_building_construction = {
 					type = infrastructure
@@ -2737,7 +2958,7 @@ focus_tree = {
 	focus = {
 		id = BLR_green_energy
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 40
 		prerequisite = {focus = BLR_civ}
 		x = -18
 		y = 13
@@ -2794,9 +3015,19 @@ focus_tree = {
 		cost = 100
 		prerequisite = {focus = BLR_green_energy}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_AES
-				check_variable = { budget_reserve > 1500 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_AES
+					check_variable = { budget_reserve > 1500 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_AES
+					check_variable = { budget_reserve > 1.5 }
+				}
 			}
 		}
 		x = -18
@@ -2804,11 +3035,18 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = BLR_buy_AES
-			subtract_from_variable = { budget_reserve = 1500 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 1500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 1.5 }
+			}
 		    95 = {
 				add_building_construction = {
 					type = nuclear_reactor
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2821,17 +3059,34 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_vostok_stena
-				check_variable = { budget_reserve > 500 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_vostok_stena_1
+					check_variable = { budget_reserve > 500 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_vostok_stena_1
+					check_variable = { budget_reserve > 0.5 }
+				}
 			}
 		}
 		x = -13
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_vostok_stena
-			subtract_from_variable = { budget_reserve = 500 }
+		    custom_effect_tooltip = BLR_vostok_stena_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.5 }
+			}
 		    194 = {
 				add_building_construction = {
 					type = bunker
@@ -2913,17 +3168,34 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_zap_stena
-				check_variable = { budget_reserve > 500 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_zap_stena_1
+					check_variable = { budget_reserve > 500 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_zap_stena_1
+					check_variable = { budget_reserve > 0.5 }
+				}
 			}
 		}
 		x = -13
 		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_zap_stena
-			subtract_from_variable = { budget_reserve = 500 }
+		    custom_effect_tooltip = BLR_zap_stena_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.5 }
+			}
 		    95 = {
 				add_building_construction = {
 					type = bunker
@@ -3003,9 +3275,19 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_firtified_area
-				check_variable = { budget_reserve > 250 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_firtified_area
+					check_variable = { budget_reserve > 250 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_firtified_area
+					check_variable = { budget_reserve > 0.25 }
+				}
 			}
 		}
 		x = -12
@@ -3013,7 +3295,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = BLR_firtified_area
-			subtract_from_variable = { budget_reserve = 250 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 250 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.25 }
+			}
 		    94 = {
 				add_building_construction = {
 					type = bunker
@@ -3079,13 +3368,23 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_updat_140_zavod
-		icon = GFX_goal_unknown
-		cost = 70
+		icon = GFX_goal_140
+		cost = 50
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_updat_140_zavod
-				check_variable = { budget_reserve > 300 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_140_zavod
+					check_variable = { budget_reserve > 300 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_140_zavod
+					check_variable = { budget_reserve > 0.03 }
+				}
 			}
 		}
 		x = -11
@@ -3093,7 +3392,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    custom_effect_tooltip = BLR_updat_140_zavod
-			subtract_from_variable = { budget_reserve = 300 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 300 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.03 }
+			}
 		    206 = {
 				add_building_construction = {
 					type = arms_factory
@@ -3116,9 +3422,19 @@ focus_tree = {
 		cost = 30
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_updat_VOLGA
-				check_variable = { budget_reserve > 50 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_VOLGA
+					check_variable = { budget_reserve > 50 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_updat_VOLGA
+					check_variable = { budget_reserve > 0.05 }
+				}
 			}
 		}
 		x = -12
@@ -3126,7 +3442,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = BLR_updat_VOLGA
-			subtract_from_variable = { budget_reserve = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 50 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.05 }
+			}
 		    206 = {
 				add_building_construction = {
 					type = radar_station  
@@ -3143,9 +3466,19 @@ focus_tree = {
 		cost = 50
 		prerequisite = {focus = BLR_voen}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_topl_sklad
-				check_variable = { budget_reserve > 80 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_topl_sklad
+					check_variable = { budget_reserve > 80 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_topl_sklad
+					check_variable = { budget_reserve > 0.08 }
+				}
 			}
 		}
 		x = -10
@@ -3153,7 +3486,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = BLR_topl_sklad
-			subtract_from_variable = { budget_reserve = 80 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 80 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.08 }
+			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -3537,16 +3877,6 @@ focus_tree = {
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = air_transport_equipment_1
-				amount = 15
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = air_transport_equipment_5
-				amount = 2
-				producer = RUS
-			}
 			air_experience = 15
 		}
 		search_filters = { FOCUS_FILTER_AVIATION }
@@ -3720,6 +4050,34 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
 	focus = {
+		id = BLR_updat_su-27_and_sy-25
+		icon = GFX_goal_rus_bet_on_Su-27SMZ
+		cost = 30
+		prerequisite = {focus = BLR_air}
+		x = 38
+		y = 2
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = superior_fighter_equipment_5
+				amount = 4
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = attack_aircraft_equipment_4
+				amount = 22
+				producer = RUS
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_ground_attack_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_AVIATION }
+	}
+	focus = {
 		id = BLR_special_forses
 		icon = GFX_goal_almaz3
 		prerequisite = {focus = BLR_doctrine_effort_3}
@@ -3731,41 +4089,15 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 15
 			add_ideas = BLR_ALMAZ_1
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_special_forces
+				 
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_updat_su-27_and_sy-25
-		icon = GFX_goal_rus_bet_on_Su-27SMZ
-		cost = 30
-		prerequisite = {focus = BLR_air}
-		x = 38
-		y = 2
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = attack_aircraft_equipment_4
-				amount = 20
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = superior_fighter_equipment_4
-				amount = 20
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = superior_fighter_equipment_5
-				amount = 4
-				producer = RUS
-			}
-			add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 0.5
-				uses = 2
-				category = cat_ground_attack_tech
-			}
-		}
-		search_filters = { FOCUS_FILTER_AVIATION }
 	}
 	focus = {
 		id = BLR_updat_helicpter
@@ -3782,26 +4114,6 @@ focus_tree = {
 				uses = 2
 				category = cat_attack_helicopter_tech 
 			}
-			add_equipment_to_stockpile = {
-				type = assault_helicopter_equipment_4
-				amount = 12
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = assault_helicopter_equipment_3
-				amount = 12
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = landing_helicopter_equipment_3
-				amount = 8
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
-				type = landing_helicopter_equipment_4
-				amount = 6
-				producer = RUS
-			}
 		}
 		search_filters = { FOCUS_FILTER_AVIATION }
 	}
@@ -3815,13 +4127,8 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = light_fighter_equipment_6
-				amount = 20
-				producer = RUS
-			}
-			add_equipment_to_stockpile = {
 				type = strike_fighter_equipment_5
-				amount = 10
+				amount = 8
 				producer = RUS
 		    }
 			add_tech_bonus = {
@@ -3990,9 +4297,19 @@ focus_tree = {
 		id = BLR_updat_army
 		icon = GFX_goal_unknown
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_army_investment
-				check_variable = { budget_reserve > 20 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_army_investment
+					check_variable = { budget_reserve > 500 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_army_investment
+					check_variable = { budget_reserve > 0.5 }
+				}
 			}
 		}
 		cost = 70
@@ -4001,6 +4318,7 @@ focus_tree = {
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			news_event = { id = belarus_news.1 days = 1 }
 			army_experience = 20
 			air_experience = 20
 			add_tech_bonus = {
@@ -4025,7 +4343,14 @@ focus_tree = {
 				technology = tech_motorized_infantry
 			}
 			custom_effect_tooltip = BLR_army_investment
-			subtract_from_variable = { budget_reserve = 20 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.5 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -4033,13 +4358,13 @@ focus_tree = {
 		id = BLR_demonstration_power
 		icon = GFX_goal_unknown
 		cost = 40
-		prerequisite = {focus = BLR_army_reforms}
+		prerequisite = {focus = BLR_reform_cal-up}
 		prerequisite = {focus = BLR_updat_army}
 		x = 23
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 200
 			army_experience = 50
 			air_experience = 50
 		}
@@ -4101,7 +4426,7 @@ focus_tree = {
 	focus = {
 		id = BLR_politica
 		icon = GFX_goal_continuous_boost_freedom
-		cost = 50
+		cost = 30
 		x = 11
 		y = 0
 		ai_will_do = { factor = 5 }
@@ -4164,7 +4489,7 @@ focus_tree = {
 	focus = {
 		id = BLR_place_a_bet_on_law_enforcement_agencies
 		icon = GFX_goal_generic_military_sphere
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_kill_NEHTA}
 		available = {
 			has_country_leader = {
@@ -4276,6 +4601,16 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = { idea = BLR_posledstvie_rasgona_2 days = 90 }
 			add_stability = -0.1
+			news_event = { id = belarus_news.7 days = 18 }
+			news_event = { id = belarus_news.8 days = 24 }
+			news_event = { id = belarus_news.9 days = 32 }
+			news_event = { id = belarus_news.13 days = 35 }
+			news_event = { id = belarus_news.14 days = 40 }
+			news_event = { id = belarus_news.15 days = 52 }
+			news_event = { id = belarus_news.16 days = 68 }
+			news_event = { id = belarus_news.17 days = 69 }
+			news_event = { id = belarus_news.18 days = 74 }
+			news_event = { id = belarus_news.19 days = 80 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4293,7 +4628,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_our_history
-		icon = GFX_goal_ukr_freedom_of_belarus
+		icon = GFX_goal_pogona
 		cost = 30
 		prerequisite = {focus = BLR_road}
 		mutually_exclusive = {
@@ -4341,6 +4676,8 @@ focus_tree = {
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			set_cosmetic_tag = COMMONTWEALTH_1
+			add_ideas = parliamentary_monarchy
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4658,7 +4995,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_Belarysizacya
-		icon = GFX_goal_Belarusian_gerb
+		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 50
 		prerequisite = {focus = BLR_patriotism}
 		x = 62
@@ -4682,6 +5019,10 @@ focus_tree = {
 			add_ideas = BLR_up_patriotism
 			add_political_power = 450
 			add_stability = 0.08
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4701,7 +5042,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_bel_exit
-		icon = GFX_goal_ukr_freedom_of_belarus
+		icon = GFX_goal_sobranie
 		cost = 20
 		prerequisite = {focus = BLR_shive_Belarus}
 		prerequisite = {focus = BLR_Belarysizacya}
@@ -4710,7 +5051,9 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 250
-			add_stability = 0.04
+			country_event = { id = belarus.906 days = 1 }
+			country_event = { id = belarus.907 days = 2 }
+			country_event = { id = belarus.908 days = 3 }
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -4724,10 +5067,10 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			
+			add_timed_idea = { idea = BLR_promotion_bel_language days = 500 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-}
+    }
 	###Россия
 	focus = {
 		id = BLR_vostok
@@ -4753,6 +5096,7 @@ focus_tree = {
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			news_event = { id = belarus_news.2 days = 1 }
 			add_opinion_modifier = {
 				target = RUS
 				modifier = actions_positive
@@ -4890,13 +5234,14 @@ focus_tree = {
 				target = RUS
 				modifier = actions_positive
 			}
+            add_ideas = BLR_court
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_one_currency
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_union_contry}
 		available = { 
 			NOT = { has_war_with = RUS }
@@ -4926,6 +5271,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 70
 		prerequisite = {focus = BLR_rus_base}
+		prerequisite = {focus = BLR_ros_atom}
+		prerequisite = {focus = BLR_dolg}
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -4956,8 +5303,10 @@ focus_tree = {
 	focus = {
 	    id = BLR_joint_research_with_Russia
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_rus_base}
+		prerequisite = {focus = BLR_ros_atom}
+		prerequisite = {focus = BLR_dolg}
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -4982,7 +5331,7 @@ focus_tree = {
 	focus = {
 		id = BLR_gos_sovet
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_union_contry}
 		available = { 
 			NOT = { has_war_with = RUS }
@@ -5010,7 +5359,7 @@ focus_tree = {
 	focus = {
 		id = BLR_accounts_chamber
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_union_contry}
 		available = { 
 			NOT = { has_war_with = RUS }
@@ -5032,13 +5381,14 @@ focus_tree = {
 				target = RUS
 				modifier = actions_positive
 			}
+			add_ideas = BLR_accounts_chamber
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_parlament
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 60
 		prerequisite = {focus = BLR_union_contry}
 		available = { 
 			NOT = { has_war_with = RUS }
@@ -5060,6 +5410,7 @@ focus_tree = {
 				target = RUS
 				modifier = actions_positive
 			}
+			add_ideas = BLR_parlament
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -5116,7 +5467,7 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_stability = -0.2
+		    add_stability = -0.4
 			add_political_power = 300
 			add_opinion_modifier = {
 				target = RUS
@@ -5183,7 +5534,7 @@ focus_tree = {
 	focus = {
 		id = BLR_resyrs
 		icon = GFX_goal_irn_rab_konst
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_updat_Friend}
 		available = { 
 			NOT = { has_war_with = RUS }
@@ -5208,7 +5559,34 @@ focus_tree = {
 	focus = {
 		id = BLR_rus_base
 		icon = GFX_goal_rus_peacemaker_on_ukraine
-		cost = 70
+		cost = 50
+		prerequisite = {focus = BLR_war_traning}
+		prerequisite = {focus = BLR_resyrs}
+		available = { 
+			NOT = { has_war_with = RUS }
+            OR = {
+				has_country_leader = {
+					name = "Aleksandr Lukashenko"
+					ruling_only = yes
+				}
+				has_government = neutrality
+				has_government = democratic
+                has_completed_focus = BLR_Lykashenko
+            }
+		}
+		x = 15
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			give_military_access = RUS
+			army_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = BLR_ros_atom
+		icon = GFX_goal_irn_rab_konst
+		cost = 50
 		prerequisite = {focus = BLR_war_traning}
 		prerequisite = {focus = BLR_resyrs}
 		available = { 
@@ -5227,8 +5605,46 @@ focus_tree = {
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			give_military_access = RUS
-			army_experience = 30
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = nuclear_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id = BLR_dolg
+		icon = GFX_goal_irn_rab_konst
+		cost = 30
+		prerequisite = {focus = BLR_war_traning}
+		prerequisite = {focus = BLR_resyrs}
+		available = { 
+			NOT = { has_war_with = RUS }
+            OR = {
+				has_country_leader = {
+					name = "Aleksandr Lukashenko"
+					ruling_only = yes
+				}
+				has_government = neutrality
+				has_government = democratic
+                has_completed_focus = BLR_Lykashenko
+            }
+		}
+		x = 19
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = BLR_dolg_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -1000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -1.0 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -5237,9 +5653,9 @@ focus_tree = {
 	focus = {
 		id = BLR_coruption
 		icon = GFX_anticorruption_campaign
-		cost = 40
+		cost = 30
 		prerequisite = {focus = BLR_reforms}
-		x = -34
+		x = -36
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -5253,7 +5669,7 @@ focus_tree = {
 		icon = GFX_anticorruption_reforms
 		cost = 50
 		prerequisite = {focus = BLR_coruption}
-		x = -34
+		x = -36
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -5271,7 +5687,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_tax_reforms}
 		prerequisite = {focus = BLR_improving_agriculture}
 		prerequisite = {focus = BLR_reforms_research}
-		x = -34
+		prerequisite = {focus = BLR_money_reform_1}
+		x = -36
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -5286,7 +5703,7 @@ focus_tree = {
 		icon = GFX_economic_reforms
 		prerequisite = { focus = BLR_reforms }
 		cost = 50
-		x = -31
+		x = -32
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -5298,7 +5715,7 @@ focus_tree = {
 	focus = {
 		id = BLR_kill_NEHTA
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		prerequisite = {focus = BLR_cleaning}
 		prerequisite = {focus = BLR_razgon_mitinga}
 		available = {
@@ -5341,6 +5758,7 @@ focus_tree = {
 			OR = {	
 				AND = {
 					OR = {
+						has_global_flag = Liberals
                         has_government = liberalism
 						has_completed_focus = BLR_Lykashenko
 					}
@@ -5555,7 +5973,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
-		id = BLR_two_state_language
+		id = BLR_nation
 		icon = GFX_goal_unknown
 		cost = 30
 		available = { 
@@ -5563,14 +5981,6 @@ focus_tree = {
 			    has_war_with = USA 
 				has_war_with = GER 
 				has_war_with = ENG 				
-			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
 			}
 		}
 		prerequisite = {focus = BLR_shive_Belarus}
@@ -5580,6 +5990,8 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = 0.05
+			add_war_support = 0.04
+			add_ideas = nation_1
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -5903,6 +6315,7 @@ focus_tree = {
 		id = BLR_anti_communist_propogand
 		icon = GFX_goal_unknown
 		cost = 10
+		mutually_exclusive = {focus = BLR_no_anti_communist_propogand}
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
@@ -5939,6 +6352,7 @@ focus_tree = {
 		id = BLR_no_anti_communist_propogand
 		icon = GFX_goal_unknown
 		cost = 10
+		mutually_exclusive = {focus = BLR_anti_communist_propogand}
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
@@ -6275,6 +6689,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = BLR_zaym_1
 			subtract_from_variable = { budget_reserve = -15 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -15 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.0015 }
+			}
 		    add_political_power = 150
 			add_timed_idea = { idea = BLR_imf_loan_idea days = 120 }
 		}
@@ -6300,7 +6722,7 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		x = 83
+		x = 81
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -6370,8 +6792,8 @@ focus_tree = {
 	focus = {
 		id = BLR_Kommynarka
 		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_development_BELAZ}
+		cost = 30
+		prerequisite = {focus = BLR_bet_on_agriculture}
 		prerequisite = {focus = BLR_5-ka}
 		prerequisite = {focus = BLR_strong_belarus}
 		available = {
@@ -6385,7 +6807,7 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		x = 84
+		x = 83
 		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -6403,10 +6825,37 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
+		id = BLR_BRSM
+		icon = GFX_goal_unknown
+		cost = 45
+		prerequisite = {focus = BLR_bet_on_agriculture}
+		prerequisite = {focus = BLR_5-ka}
+		prerequisite = {focus = BLR_strong_belarus}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+            NOT = {
+				has_government = communism
+				has_government = liberalism
+				has_government = fascism
+			}
+		}
+		x = 85
+		y = 9
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_Kommynarka
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
 		id = BLR_Batkya
 		icon = GFX_goal_unknown
 		cost = 70
 		prerequisite = {focus = BLR_Kommynarka}
+		prerequisite = {focus = BLR_BRSM}
 		available = {
 			has_country_leader = {
 				name = "Aleksandr Lukashenko"
@@ -6424,13 +6873,15 @@ focus_tree = {
 		completion_reward = {
 		    add_political_power = 300
 			add_stability = -0.05
+			add_ideas = BLR_Europes_last_dictator
 			add_ideas = dictatorship_state
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
+	#####
 	focus = {
 		id = BLR_drim_Lva_Sapegi
-		icon = GFX_goal_unknown
+		icon = GFX_goal_ukr_freedom_of_belarus
 		mutually_exclusive = {focus = BLR_ynia_Polsha}
 		mutually_exclusive = {focus = BLR_ynia}
 		cost = 10
@@ -6449,7 +6900,7 @@ focus_tree = {
 		}
 		prerequisite = {focus = BLR_vlyanie}
 		x = 61
-		y = 12
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    POL = {
@@ -6462,12 +6913,287 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
+		id = BLR_suppression_conflict_1
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_drim_Lva_Sapegi}
+		cost = 50
+		x = 61
+		y = 14
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = POL
+					modifier = actions_positive
+				}
+			}
+			POL = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+    focus = {
+		id = BLR_open_border_1
+		icon = GFX_goal_continuous_boost_freedom
+		prerequisite = {focus = BLR_suppression_conflict_1}
+		cost = 50
+		x = 60
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_free_zone
+		icon = GFX_goal_continuous_boost_freedom
+		prerequisite = {focus = BLR_suppression_conflict_1}
+		cost = 50
+		x = 62
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				add_ideas = BLR_free_zone
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_open_border_2
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_suppression_conflict_1}
+		cost = 50
+		x = 60
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				add_ideas = BLR_open_borders
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_common_money
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_open_border_2}
+        prerequisite = {focus = BLR_free_zone}
+		cost = 30
+		x = 61
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = POL
+				modifier = actions_positive
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_positive
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_standart_1
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_money}
+		cost = 50
+		x = 60
+		y = 17
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 30
+            air_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_exchange_xp_1
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_standart_1}
+		cost = 50
+		x = 60
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				army_experience = 30
+				air_experience = 30
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_common_investors_for_industri
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_money}
+		cost = 50
+		x = 62
+		y = 17
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				add_ideas = BLR_common_investors_for_industri
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_common_research_1
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_investors_for_industri}
+		cost = 50
+		x = 62
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				add_research_slot = 1
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_slavian_kylture
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_research_1}
+		cost = 50
+		x = 62
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+	        every_country = {
+				limit = {
+					has_global_flag = Slavian_brathers_1
+				}
+				add_ideas = BLR_kylture_2
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_training_POL_RUS
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp_1}
+		cost = 50
+		x = 60
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 30
+            air_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_slavian_community
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_slavian_kylture}
+		prerequisite = {focus = BLR_training_POL_RUS}
+		cost = 50
+		x = 61
+		y = 20
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			RUS = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			UKR = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			POL = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			CZE = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			SLO = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			BUL = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			SER = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			MAC = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			MNT = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			BOS = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	####
+	focus = {
 		id = BLR_white_legion
-		icon = GFX_goal_rus_peacemaker_on_ukraine
+		icon = GFX_goal_voin
 		cost = 70
 		prerequisite = {
 			focus = BLR_promotion_bel_language
-			focus = BLR_two_state_language
+			focus = BLR_nation
 			focus = BLR_bel_exit
 			focus = BLR_lyastration_1
 		}
@@ -6486,7 +7212,7 @@ focus_tree = {
 		cost = 30
 		prerequisite = {
 			focus = BLR_promotion_bel_language
-			focus = BLR_two_state_language
+			focus = BLR_nation
 			focus = BLR_bel_exit
 			focus = BLR_lyastration_1
 		}
@@ -6496,37 +7222,57 @@ focus_tree = {
 		completion_reward = {
 		    add_war_support = 0.01
 			add_stability = 0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_lgot_for_kor_belarusian
+		id = BLR_kylture
 		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 30
         prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
 		x = 63
-		y = 8
+		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_ideas = BLR_lgot_for_kor_belarusian_1
-			add_stability = 0.2
+			add_timed_idea = { idea = BLR_kylture_1	days = 300 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_help_for_belarusian
+		id = BLR_liberal_question
 		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 30
-                prerequisite = {focus = BLR_white_legion}
+        prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
 		x = 61
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.2
+			country_event = { id = belarus.35 days = 1 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Communistst_clean
+		icon = GFX_goal_ukr_freedom_of_belarus
+		cost = 30
+        prerequisite = {focus = BLR_liberal_question}
+		x = 61
+		y = 9
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+            add_stability = -0.15
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -6538,7 +7284,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
 		prerequisite = {focus = BLR_we_lituvin}
 		x = 59
-		y = 8
+		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_political_power = 350
@@ -6550,15 +7296,19 @@ focus_tree = {
 		icon = GFX_goal_irn_rab_konst
 		cost = 20
 		prerequisite = {focus = BLR_4_gramota}
-		prerequisite = {focus = BLR_help_for_belarusian}
-		prerequisite = {focus = BLR_lgot_for_kor_belarusian}
+		prerequisite = {focus = BLR_Communistst_clean}
+		prerequisite = {focus = BLR_kylture}
 		mutually_exclusive = {focus = BLR_constitution_for_1994}
 		x = 60
-		y = 9
+		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 300
+			add_political_power = 300
 			add_stability = -0.03
+		    country_event = { id = belarus.900 days = 1 }
+			country_event = { id = belarus.901 days = 2 }
+			country_event = { id = belarus.902 days = 3 }
+			country_event = { id = belarus.903 days = 4 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -6567,11 +7317,11 @@ focus_tree = {
 		icon = GFX_goal_irn_rab_konst
 		cost = 20
 		prerequisite = {focus = BLR_4_gramota}
-		prerequisite = {focus = BLR_help_for_belarusian}
-		prerequisite = {focus = BLR_lgot_for_kor_belarusian}
+		prerequisite = {focus = BLR_Communistst_clean}
+		prerequisite = {focus = BLR_kylture}
 		mutually_exclusive = {focus = BLR_repairs_constitution}
 		x = 62
-		y = 9
+		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = parliamentary_republic
@@ -6593,7 +7343,7 @@ focus_tree = {
 		prerequisite = {
 			focus = BLR_lyastration_1
 			focus = BLR_bel_exit
-			focus = BLR_two_state_language
+			focus = BLR_nation
 			focus = BLR_promotion_bel_language
 		}
 		x = 59
@@ -6616,7 +7366,7 @@ focus_tree = {
      	    focus = BLR_repairs_constitution
 		}
 		x = 61
-		y = 10
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = slavic_brotherhood
@@ -6655,9 +7405,10 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
+	###
 	focus = {
 		id = BLR_ynia
-		icon = GFX_goal_unknown
+		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 10
 		available = {
 			NOT = {
@@ -6675,8 +7426,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_vlyanie}
 		mutually_exclusive = {focus = BLR_ynia_Polsha}
 		mutually_exclusive = {focus = BLR_drim_Lva_Sapegi}
-		x = 59
-		y = 12
+		x = 57
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    UKR = {
@@ -6689,8 +7440,463 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
+		id = BLR_free_zone_1
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_ynia}
+		cost = 50
+		x = 57
+		y = 14
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+                    OR = {
+                        has_global_flag = Intermarium_1
+						has_global_flag = Intermarium_2
+                    }
+					
+				}
+				add_ideas = BLR_free_zone
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_exchange_xp_2
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_free_zone_1}
+		cost = 50
+		x = 58
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 20
+            air_experience = 15
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_exchange_xp_army
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_free_zone_1}
+		cost = 50
+		x = 56
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+                    OR = {
+                        has_global_flag = Intermarium_1
+						has_global_flag = Intermarium_2
+                    }
+					
+				}
+				add_tech_bonus = {
+					name = infantry_weapons_bonus
+					bonus = 0.25
+					uses = 1
+					category = infantry_weapons
+					category = artillery
+					category = armor
+				}
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_update_railway_station
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp_army}
+		cost = 50
+		x = 56
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			94 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			95 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			707 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			206 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			194 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			241 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			297 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			96 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			11 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			241 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			189 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			188 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_training_intermarriage
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp_2}
+		cost = 50
+		x = 58
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 30
+            air_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_bank_aliance
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_update_railway_station}
+		prerequisite = {focus = BLR_training_intermarriage}
+		cost = 50
+		x = 57
+		y = 17
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+                    OR = {
+                        has_global_flag = Intermarium_1
+						has_global_flag = Intermarium_2
+                    }
+					
+				}
+				add_ideas = BLR_bank
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_E-40_2
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_bank_aliance}
+		cost = 50
+		x = 57
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			every_country = {
+				limit = {
+                    OR = {
+                        has_global_flag = Intermarium_1
+						has_global_flag = Intermarium_2
+                    }
+					NOT = {
+						has_idea = BLR_E-40
+					}
+				}
+				add_ideas = BLR_E-40 
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+    focus = {
+		id = BLR_conviction_for_agressive
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_E-40_2}
+		cost = 30
+		x = 57
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_negative
+			}
+			add_opinion_modifier = {
+				target = GER
+				modifier = actions_negative
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_extended
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_conviction_for_agressive}
+		cost = 10
+		x = 57
+		y = 20
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_extended_Europe
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_extended}
+		cost = 10
+		x = 57
+		y = 21
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_extended_Skandinavian
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_extended}
+		cost = 10
+		x = 60
+		y = 22
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+    focus = {
+		id = BLR_extended_pribaltic
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_extended}
+		cost = 10
+		x = 54
+		y = 22
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_Latvian
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			LAT = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_extended_pribaltic}
+		cost = 20
+		x = 54
+		y = 23
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = LAT
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_Estonia
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			EST = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_Latvian}
+		cost = 20
+		x = 54
+		y = 24
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = EST
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_Finland
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			FIN = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_extended_Skandinavian}
+		cost = 20
+		x = 60
+		y = 23
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = FIN
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_POL
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			POL = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_extended_Europe}
+		cost = 20
+		x = 57
+		y = 22
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = POL
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_ROM
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			ROM = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_extended_Europe}
+		cost = 20
+		x = 58
+		y = 23
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = ROM
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_CHE
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			CHE = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_extended_Europe}
+		cost = 20
+		x = 56
+		y = 23
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = CHE
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_Serbia
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			SER = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_ROM}
+		cost = 20
+		x = 58
+		y = 24
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = SER
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_MOL
+		icon = GFX_goal_ukr_freedom_of_belarus
+		available = {
+			MOL = {
+				has_government = fascism
+			}
+		}
+		prerequisite = {focus = BLR_CHE}
+		cost = 20
+		x = 56
+		y = 24
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			BLR = {
+				add_to_faction = MOL
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	###
+	focus = {
 		id = BLR_ynia_Polsha
-		icon = GFX_goal_unknown
+		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 10
 		prerequisite = {focus = BLR_vlyanie}
 		mutually_exclusive = {focus = BLR_ynia}
@@ -6703,8 +7909,8 @@ focus_tree = {
 			    has_government = fascism
 			}
 		}
-		x = 63
-		y = 12
+		x = 66
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
             country_event = { id = belarus.14 days = 3 }
@@ -6712,12 +7918,277 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
+		id = BLR_common_history
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_ynia_Polsha}
+		cost = 50
+		x = 66
+		y = 14
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = POL
+				modifier = actions_positive
+			}
+			POL = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			BLR = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_single_currency
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_history}
+		mutually_exclusive = {focus = BLR_bel_rubl}
+		cost = 50
+		x = 64
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = POL
+				modifier = actions_positive
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_bank
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_single_currency}
+		cost = 50
+		x = 64
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = BLR_bank
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_bel_rubl
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_history}
+		mutually_exclusive = {focus = BLR_single_currency}
+		cost = 10
+		x = 66
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 300
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_open_border
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_bel_rubl}
+		cost = 30
+		x = 66
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = BLR_open_borders
+			add_opinion_modifier = {
+				target = POL
+				modifier = actions_positive
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+    focus = {
+		id = BLR_katolic
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_history}
+		cost = 20
+		x = 68
+		y = 15
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_political_power = 200
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_common_research
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_katolic}
+		cost = 50
+		x = 68
+		y = 16
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_research_slot = 1
+            every_country = {
+				limit = {
+					has_global_flag = RP
+				}
+				add_ideas = BLR_common_research_with_aliance
+		    }
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_exchange_xp
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {
+			focus = BLR_open_border
+			focus = BLR_bank
+			focus = BLR_common_research
+		}
+		cost = 30
+		x = 66
+		y = 17
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 20
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_training_for_pol
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp}
+		cost = 40
+		x = 66
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 20
+            air_experience = 15
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_common_IT_research
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp}
+		cost = 50
+		x = 64
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.55
+				uses = 2
+				category = electronics
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_pol_port
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_common_IT_research}
+		cost = 30
+		x = 64
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = BLR_pol_port
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_help_pol_VPK
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_exchange_xp}
+		cost = 35
+		x = 68
+		y = 18
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.45
+				uses = 1
+				category = infantry_weapons
+			}
+			add_ideas = BLR_help_pol_VPK
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_pol_investors
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_help_pol_VPK}
+		cost = 50
+		x = 68
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = BLR_pol_investors
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_standart
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_training_for_pol}
+		cost = 50
+		x = 66
+		y = 19
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 30
+            air_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_blokade_Kaliningrad
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_standart}
+		cost = 50
+		x = 66
+		y = 20
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_negative
+			}
+			RUS = {
+				add_ideas = BLR_blokade_Kaliningrad
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_rematch
+		icon = GFX_goal_ukr_freedom_of_belarus
+		prerequisite = {focus = BLR_blokade_Kaliningrad}
+		cost = 70
+		x = 66
+		y = 21
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = RUS
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	####
+	focus = {
 		id = BLR_vlyanie
-		icon = GFX_goal_unknown
+		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 50
 		prerequisite = {focus = BLR_trades_unions}
 		x = 61
-		y = 11
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			POL = {
@@ -6751,7 +8222,10 @@ focus_tree = {
 		id = BLR_derectiva_9
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_money_reform}
+		prerequisite = {
+			focus = BLR_money_reform
+			focus = BLR_cleaning
+		}
 		available = {
 			has_country_leader = {
 				name = "Aleksandr Lukashenko"
@@ -6775,7 +8249,7 @@ focus_tree = {
 	focus = {
 		id = BLR_money_reform
 		icon = GFX_goal_unknown
-		cost = 50
+		cost = 90
 		prerequisite = {focus = BLR_Lykashenko}
 		available = {
 			has_country_leader = {
@@ -6792,9 +8266,9 @@ focus_tree = {
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 150
-			add_stability = 0.02
-			add_timed_idea = { idea = BLR_money_reform_1 days = 120 }
+		    add_political_power = 500
+			news_event = { id = belarus_news.3 days = 2 }
+			country_event = { id = belarus.40 days = 1 }
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -7032,9 +8506,19 @@ focus_tree = {
 		prerequisite = {focus = BLR_resource_tungsten}
 		icon =  GFX_goal_ukr_the_development_of_uranium_deposits
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BLR_uran
-				check_variable = { budget_reserve > 1000 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_uran
+					check_variable = { budget_reserve > 1000 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_uran
+					check_variable = { budget_reserve > 1.0 }
+				}
 			}
 		}
 		x = -26
@@ -7047,9 +8531,12 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
 	focus = {
-		id = BLR_development_BELAZ
-		prerequisite = {focus = BLR_updat_kolhoz}
-		prerequisite = {focus = BLR_pension_reform}
+		id = BLR_bet_on_agriculture
+		prerequisite = {
+            focus = BLR_updat_kolhoz
+            focus = BLR_pension_reform
+			focus = BLR_invests_for_industri
+		}
 		icon =  GFX_goal_ger_resource_tungsten
 		available = {
 			has_country_leader = {
@@ -7064,10 +8551,10 @@ focus_tree = {
 		}
 		x = 86
 		y = 8
-		cost = 70
+		cost = 40
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_development_BELAZ
+			add_ideas = BLR_bet_on_agriculture
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -7085,10 +8572,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
 	focus = {
+		id = BLR_money_reform_1 
+		prerequisite = { focus = BLR_generic_reform_economics }
+		icon =  GFX_goal_ger_improving_agriculture
+		cost = 50
+		x = -32
+		y = 2
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = BLR_unstability_money
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
 		id = BLR_tax_reforms 
 		prerequisite = { focus = BLR_generic_reform_economics }
 		icon =  GFX_goal_ger_tax_reforms
-		x = -32
+		x = -34
 		y = 2
 		cost = 50
 		ai_will_do = { factor = 1 }
@@ -7111,6 +8611,7 @@ focus_tree = {
 		cost = 30
 		prerequisite = {focus = BLR_updat_kolhoz}
 		prerequisite = {focus = BLR_pension_reform}
+		prerequisite = {focus = BLR_invests_for_industri}
 		available = {
 			has_country_leader = {
 				name = "Aleksandr Lukashenko"
@@ -7131,6 +8632,31 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
 	focus = {
+		id = BLR_invests_for_industri
+		icon = GFX_goal_unknown
+		cost = 30
+		prerequisite = {focus = BLR_export_milk_production}
+		prerequisite = {focus = BLR_yrbanisation}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+            NOT = {
+				has_government = communism
+				has_government = liberalism
+				has_government = fascism
+			}
+		}
+		x = 84
+		y = 7
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = BLR_subsidies_to_unprofitable_enterprises
+		}
+		search_filters = { FOCUS_FILTER_ECONOMIC }
+	}
+	focus = {
 		id = BLR_strong_belarus
 		icon = GFX_goal_unknown
 		cost = 50
@@ -7144,8 +8670,11 @@ focus_tree = {
 			has_completed_focus = BLR_air
 			has_completed_focus = BLR_VSRB
 		}
-		prerequisite = {focus = BLR_updat_kolhoz}
-		prerequisite = {focus = BLR_pension_reform}
+		prerequisite = {
+            focus = BLR_updat_kolhoz
+            focus = BLR_pension_reform
+			focus = BLR_invests_for_industri
+		}
 		available = {
             NOT = {
 				has_government = communism
@@ -7315,9 +8844,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_tanks_rus
-				check_variable = { budget_reserve > 170 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 170 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 0.017 }
+				}
 			}
 		}
 		x = 31
@@ -7341,9 +8880,20 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_tanks_rus
-				check_variable = { budget_reserve > 132 }
+			
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 132 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 0.0132 }
+				}
 			}
 		}
 		x = 35
@@ -7367,9 +8917,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_air_rus
-				check_variable = { budget_reserve > 2 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 2 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 0.002 }
+				}
 			}
 		}
 		x = 32
@@ -7393,9 +8953,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_air_rus
-				check_variable = { budget_reserve > 700 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 700 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 0.7 }
+				}
 			}
 		}
 		x = 31
@@ -7419,9 +8989,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_tanks_rus
-				check_variable = { budget_reserve > 204 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 204 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_rus
+					check_variable = { budget_reserve > 0.204 }
+				}
 			}
 		}
 		x = 29
@@ -7444,9 +9024,19 @@ focus_tree = {
 				target = GER
 				value > 29
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_tanks_ger
-				check_variable = { budget_reserve > 224 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_ger
+					check_variable = { budget_reserve > 224 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_ger
+					check_variable = { budget_reserve > 0.224 }
+				}
 			}
 		}
 		x = 25
@@ -7470,9 +9060,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_ak_rus
-				check_variable = { budget_reserve > 2 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ak_rus
+					check_variable = { budget_reserve > 2 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ak_rus
+					check_variable = { budget_reserve > 0.002 }
+				}
 			}
 		}
 		x = 28
@@ -7496,9 +9096,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_ar_rus
-				check_variable = { budget_reserve > 2 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ar_rus
+					check_variable = { budget_reserve > 2 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ar_rus
+					check_variable = { budget_reserve > 0.002 }
+				}
 			}
 		}
 		x = 26
@@ -7522,9 +9132,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_ak_rus
-				check_variable = { budget_reserve > 2 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ak_rus
+					check_variable = { budget_reserve > 2 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_ak_rus
+					check_variable = { budget_reserve > 0.002 }
+				}
 			}
 		}
 		x = 34
@@ -7548,9 +9168,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_air_rus
-				check_variable = { budget_reserve > 680 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 680 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 0.680 }
+				}
 			}
 		}
 		x = 29
@@ -7573,9 +9203,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_air_rus
-				check_variable = { budget_reserve > 680 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 680 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 0.680 }
+				}
 			}
 		}
 		x = 25
@@ -7599,9 +9239,19 @@ focus_tree = {
 		    		value > 19
 		    	}
 			}
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_air_rus
-				check_variable = { budget_reserve > 615 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 615 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_air_rus
+					check_variable = { budget_reserve > 0.615 }
+				}
 			}
 		}
 		x = 35
@@ -7996,9 +9646,8 @@ focus_tree = {
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			custom_effect_tooltip = BLR_rasledovanie_1
-			subtract_from_variable = { budget_reserve = 300 }
-			add_political_power = 500
+			news_event = { id = belarus_news.4 days = 1 }
+			add_political_power = 320
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -8060,8 +9709,19 @@ focus_tree = {
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 300
-			add_stability = -0.1
+			add_political_power = 150
+			news_event = { id = belarus_news.5 days = 1 }
+			news_event = { id = belarus_news.6 days = 2 }
+			add_stability = -0.15
+			custom_effect_tooltip = BLR_arest_privatisation_men_1
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -980 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.980 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -8363,7 +10023,7 @@ focus_tree = {
 				has_government = liberalism
 			}
 		}
-		cost = 50
+		cost = 20
 		x = 47
 		y = 11
 		ai_will_do = { factor = 1 }
@@ -9571,7 +11231,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = BLR_seizure_of_property
-			subtract_from_variable = { budget_reserve = 80 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -80 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.008 }
+			}
 			add_stability = -0.3
 			add_political_power = 300
 		}
@@ -9588,7 +11255,7 @@ focus_tree = {
 				has_government = liberalism
 			}
 		}
-		cost = 50
+		cost = 40
 		x = 47
 		y = 3
 		ai_will_do = { factor = 1 }
@@ -9690,7 +11357,7 @@ focus_tree = {
 		id = BLR_reforms
 		icon = GFX_goal_irn_rab_konst
 		cost = 10
-		x = -34
+		x = -36
 		y = 0
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -9703,7 +11370,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_reforms}
 		icon =  GFX_goal_ger_improving_medical_services
 		cost = 40
-		x = -36
+		x = -38
 		y = 1
 		completion_reward = {
 		    add_ideas = BLR_medcit
@@ -9715,7 +11382,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_improving_medical_services}
 		cost = 40
 		icon = GFX_goal_ger_tax_reforms
-		x = -36
+		x = -38
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -9727,8 +11394,8 @@ focus_tree = {
 		id = BLR_reforms_sports
 		prerequisite = {focus = BLR_reforms}
 		cost = 40
-		icon = GFX_goal_sport_blr
-		x = -38
+		icon = GFX_goal_ger_great_germany
+		x = -40
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -9748,7 +11415,7 @@ focus_tree = {
 		}
 		cost = 50
 		icon = GFX_focus_research2
-		x = -38
+		x = -40
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -9773,7 +11440,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_yrbanisation}
 		prerequisite = {focus = BLR_export_milk_production}
 		cost = 30
-		x = 85
+		x = 87
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -10021,6 +11688,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.04
+			add_timed_idea = { idea = BLR_return_territories days = 400}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -10296,7 +11964,7 @@ focus_tree = {
 	focus = {
 		id = BLR_Vilnys
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		prerequisite = {focus = BLR_litva}
 		x = 70
 		y = 11
@@ -10305,6 +11973,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_completed_focus = BLR_war_accession
+					has_completed_focus = BLR_republic
 				}
 				LIT = {
 			        country_event = { id = belarus.2 days = 3 }
@@ -10312,6 +11981,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
+					has_completed_focus = BLR_republic
 					has_completed_focus = BLR_peaceful_accession
 				}
 				LIT = {
@@ -10647,10 +12317,20 @@ focus_tree = {
 		id = BLR_buy_BM_Oplot
 		icon = GFX_goal_unknown
 		cost = 30
-		available = { 
-			custom_trigger_tooltip = {
-				tooltip = BLR_buy_tanks_ukr
-				check_variable = { budget_reserve > 245 }
+		available = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_ukr
+					check_variable = { budget_reserve > 245 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_buy_tanks_ukr
+					check_variable = { budget_reserve > 0.245 }
+				}
 			}
 		    UKR = {
 		        has_opinion = {
@@ -11829,2032 +13509,2440 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-		#Вставка фокусов ЕАЭС
-		focus = {
-			id = BLR_eaeu_reform
-			icon = GFX_goal_rus_reform_eaeu
-			cost = 150
-			x = 15
-			y = 20
-			allow_branch = {
-				has_idea = eaeu_member
-			}
-			ai_will_do = { factor = 5 }
-			available = { 
+	#Вставка фокусов ЕАЭС
+	focus = {
+		id = BLR_eaeu_reform
+		icon = GFX_goal_rus_reform_eaeu
+		cost = 150
+		x = 15
+		y = 20
+		allow_branch = {
+			#has_idea = eaeu_member
+		}
+		ai_will_do = { factor = 5 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform_TTT
 					check_variable = { budget_reserve > 3500 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform
-							   progress > 0.01
-						}
-					}
-					any_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform
-							   progress > 0.01
-						}
-					}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform_TTT
+					check_variable = { budget_reserve > 3.5 }
 				}
 			}
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform }
-				CHI = { has_completed_focus = CHI_eaeu_reform }
-				IRN = { has_completed_focus = IRN_eaeu_reform }
-				JAP = { has_completed_focus = JAP_eaeu_reform }
-				TUR = { has_completed_focus = TUR_eaeu_reform }
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform
+							progress > 0.01
+					}
+				}
 				any_country = {
-					has_completed_focus = generic_eaeu_reform
-					has_completed_focus = major_eaeu_reform
+					focus_progress = {
+						focus = generic_eaeu_reform
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform
+							progress > 0.01
+					}
 				}
 			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -400
-				BLR = {
-					add_country_leader_trait = leader_eaeu
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+			has_political_power > 400
 		}
-		focus = {
-			id = BLR_eaeu_reform1
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform }
-			available = { 
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform }
+			CHI = { has_completed_focus = CHI_eaeu_reform }
+			IRN = { has_completed_focus = IRN_eaeu_reform }
+			JAP = { has_completed_focus = JAP_eaeu_reform }
+			TUR = { has_completed_focus = TUR_eaeu_reform }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform
+				has_completed_focus = major_eaeu_reform
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -3500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -3.5 }
+			}
+			add_political_power = -400
+			BLR = {
+				add_country_leader_trait = leader_eaeu
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform1
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform1_TTT
 					check_variable = { budget_reserve > 700 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform1
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform1_TTT
+					check_variable = { budget_reserve > 0.7 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform1
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform1
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform1
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform1
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform1
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform1
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform1
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform1
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform1
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform1
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform1
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform1
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform1
+							progress > 0.01
 					}
 				}
 			}
-			x = 15
-			y = 21
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform1 }
-				CHI = { has_completed_focus = CHI_eaeu_reform1 }
-				IRN = { has_completed_focus = IRN_eaeu_reform1 }
-				JAP = { has_completed_focus = JAP_eaeu_reform1 }
-				TUR = { has_completed_focus = TUR_eaeu_reform1 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform1
-					has_completed_focus = major_eaeu_reform1
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -800
-				random_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_advice
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 800
 		}
-		focus = {
-			id = BLR_eaeu_reform2
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform }
-			available = { 
+		x = 15
+		y = 21
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform1 }
+			CHI = { has_completed_focus = CHI_eaeu_reform1 }
+			IRN = { has_completed_focus = IRN_eaeu_reform1 }
+			JAP = { has_completed_focus = JAP_eaeu_reform1 }
+			TUR = { has_completed_focus = TUR_eaeu_reform1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform1
+				has_completed_focus = major_eaeu_reform1
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform1_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -700 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.7 }
+			}
+			add_political_power = -800
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_advice
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform2
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform2_TTT
 					check_variable = { budget_reserve > 400 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform2
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform2_TTT
+					check_variable = { budget_reserve > 0.4 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform2
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform2
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform2
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform2
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform2
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform2
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform2
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform2
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform2
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform2
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform2
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform2
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform2
+							progress > 0.01
 					}
 				}
 			}
-			x = 13
-			y = 21
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform2 }
-				CHI = { has_completed_focus = CHI_eaeu_reform2 }
-				IRN = { has_completed_focus = IRN_eaeu_reform2 }
-				JAP = { has_completed_focus = JAP_eaeu_reform2 }
-				TUR = { has_completed_focus = TUR_eaeu_reform2 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform2
-					has_completed_focus = major_eaeu_reform2
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -600
-				custom_effect_tooltip = eaeu_reform2_TT
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 600
 		}
-		focus = {
-			id = BLR_eaeu_reform3
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform }
-			available = { 
+		x = 13
+		y = 21
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform2 }
+			CHI = { has_completed_focus = CHI_eaeu_reform2 }
+			IRN = { has_completed_focus = IRN_eaeu_reform2 }
+			JAP = { has_completed_focus = JAP_eaeu_reform2 }
+			TUR = { has_completed_focus = TUR_eaeu_reform2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform2
+				has_completed_focus = major_eaeu_reform2
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -400 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.4 }
+			}
+			add_political_power = -600
+			custom_effect_tooltip = eaeu_reform2_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform3
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform3_TTT
 					check_variable = { budget_reserve > 700 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform3
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform3_TTT
+					check_variable = { budget_reserve > 0.7 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform3
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform3
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform3
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform3
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform3
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform3
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform3
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform3
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform3
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform3
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform3
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform3
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform3
+							progress > 0.01
 					}
 				}
 			}
-			x = 17
-			y = 21
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform3 }
-				CHI = { has_completed_focus = CHI_eaeu_reform3 }
-				IRN = { has_completed_focus = IRN_eaeu_reform3 }
-				JAP = { has_completed_focus = JAP_eaeu_reform3 }
-				TUR = { has_completed_focus = TUR_eaeu_reform3 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform3
-					has_completed_focus = major_eaeu_reform3
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -600
-				random_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_ministers
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 600
 		}
-		focus = {
-			id = BLR_eaeu_reform4
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = {focus = BLR_eaeu_reform1 }
-			prerequisite = {focus = BLR_eaeu_reform3 }
-			available = { 
+		x = 17
+		y = 21
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform3 }
+			CHI = { has_completed_focus = CHI_eaeu_reform3 }
+			IRN = { has_completed_focus = IRN_eaeu_reform3 }
+			JAP = { has_completed_focus = JAP_eaeu_reform3 }
+			TUR = { has_completed_focus = TUR_eaeu_reform3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform3
+				has_completed_focus = major_eaeu_reform3
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform3_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -700 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.7 }
+			}
+			add_political_power = -600
+			random_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				add_ideas = eaeu_member_ministers
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform4
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {focus = BLR_eaeu_reform1 }
+		prerequisite = {focus = BLR_eaeu_reform3 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform4_TTT
-					check_variable = { budget_reserve > 2200 }
-				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform4
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform4
-							   progress > 0.01
-						}
-					}
-				}
-			}
-			x = 16
-			y = 22
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform4 }
-				CHI = { has_completed_focus = CHI_eaeu_reform4 }
-				IRN = { has_completed_focus = IRN_eaeu_reform4 }
-				JAP = { has_completed_focus = JAP_eaeu_reform4 }
-				TUR = { has_completed_focus = TUR_eaeu_reform4 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform4
-					has_completed_focus = major_eaeu_reform4
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -1200
-				custom_effect_tooltip = eaeu_reform4_TT
-				hidden_effect = {
-					BLR = {
-						add_country_leader_trait = leader_eaeu
-					}
-					random_country = {
-						limit = { has_idea = eaeu_member }
-						country_event = { id = eaeu_event.4 days = 365 }
-					}
-				}
-				every_country = {
-					limit = {
-						has_country_leader_with_trait = leader_eaeu
-					}
-					save_global_event_target_as = get_name_country
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
-		}
-		focus = {
-			id = BLR_eaeu_reform5
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform4 }
-			available = { 
-				custom_trigger_tooltip = {
-					tooltip = EAEU_reform5_TTT
 					check_variable = { budget_reserve > 400 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform5
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform4_TTT
+					check_variable = { budget_reserve > 0.4 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform4
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform5
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform4
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform5
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform4
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform5
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform4
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform5
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform4
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform5
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform5
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform4
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform4
+							progress > 0.01
 					}
 				}
 			}
-			x = 15
-			y = 23
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform5 }
-				CHI = { has_completed_focus = CHI_eaeu_reform5 }
-				IRN = { has_completed_focus = IRN_eaeu_reform5 }
-				JAP = { has_completed_focus = JAP_eaeu_reform5 }
-				TUR = { has_completed_focus = TUR_eaeu_reform5 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform5
-					has_completed_focus = major_eaeu_reform5
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -600
-				custom_effect_tooltip = eaeu_reform5_TT
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 1200
 		}
-		focus = {
-			id = BLR_eaeu_reform6
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = {
-				focus = BLR_eaeu_reform5
-				focus = BLR_eaeu_infestructure
+		x = 16
+		y = 22
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform4 }
+			CHI = { has_completed_focus = CHI_eaeu_reform4 }
+			IRN = { has_completed_focus = IRN_eaeu_reform4 }
+			JAP = { has_completed_focus = JAP_eaeu_reform4 }
+			TUR = { has_completed_focus = TUR_eaeu_reform4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform4
+				has_completed_focus = major_eaeu_reform4
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -400 }
 			}
-			available = { 
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.4 }
+			}
+			add_political_power = -1200
+			custom_effect_tooltip = eaeu_reform4_TT
+			hidden_effect = {
+				BLR = {
+					add_country_leader_trait = leader_eaeu
+				}
+				random_country = {
+					limit = { has_idea = eaeu_member }
+					country_event = { id = eaeu_event.4 days = 365 }
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu
+				}
+				save_global_event_target_as = get_name_country
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform5
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform4 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform5_TTT
+					check_variable = { budget_reserve > 300 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform5_TTT
+					check_variable = { budget_reserve > 0.3 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform5
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform5
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform5
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform5
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform5
+							progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform5
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform5
+							progress > 0.01
+					}
+				}
+			}
+			has_political_power > 600
+		}
+		x = 15
+		y = 23
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform5 }
+			CHI = { has_completed_focus = CHI_eaeu_reform5 }
+			IRN = { has_completed_focus = IRN_eaeu_reform5 }
+			JAP = { has_completed_focus = JAP_eaeu_reform5 }
+			TUR = { has_completed_focus = TUR_eaeu_reform5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform5
+				has_completed_focus = major_eaeu_reform5
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -300 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.3 }
+			}
+			add_political_power = -600
+			custom_effect_tooltip = eaeu_reform5_TT
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform6
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {
+			focus = BLR_eaeu_reform5
+			focus = BLR_eaeu_infestructure
+		}
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform6_TTT
 					check_variable = { budget_reserve > 300 }
 				}
-				OR = {
-					CHI = { has_completed_focus = CHI_eaeu_reform2 }
-					BLR = { has_completed_focus = BLR_eaeu_reform2 }
-					IRN = { has_completed_focus = IRN_eaeu_reform2 }
-					JAP = { has_completed_focus = JAP_eaeu_reform2 }
-					TUR = { has_completed_focus = TUR_eaeu_reform2 }
-					all_country = {
-						has_completed_focus = generic_eaeu_reform2
-						has_completed_focus = major_eaeu_reform2
-					}
-				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform6
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform6
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform6
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform6
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform6
-							   progress > 0.01
-						}
-					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform6
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform6
-							   progress > 0.01
-						}
-					}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform6_TTT
+					check_variable = { budget_reserve > 0.3 }
 				}
 			}
-			x = 16
-			y = 24
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform6 }
-				CHI = { has_completed_focus = CHI_eaeu_reform6 }
-				IRN = { has_completed_focus = IRN_eaeu_reform6 }
-				JAP = { has_completed_focus = JAP_eaeu_reform6 }
-				TUR = { has_completed_focus = TUR_eaeu_reform6 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform6
-					has_completed_focus = major_eaeu_reform6
+			OR = {
+				CHI = { has_completed_focus = CHI_eaeu_reform2 }
+				BLR = { has_completed_focus = BLR_eaeu_reform2 }
+				IRN = { has_completed_focus = IRN_eaeu_reform2 }
+				JAP = { has_completed_focus = JAP_eaeu_reform2 }
+				TUR = { has_completed_focus = TUR_eaeu_reform2 }
+				all_country = {
+					has_completed_focus = generic_eaeu_reform2
+					has_completed_focus = major_eaeu_reform2
 				}
 			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform6
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform6
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform6
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform6
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform6
+							progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform6
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform6
+							progress > 0.01
+					}
+				}
 			}
-			completion_reward = {
-				add_political_power = -300
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 300
 		}
-		focus = {
-			id = BLR_eaeu_reform7
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform1 }
-			prerequisite = { focus = BLR_eaeu_reform2 }
-			available = { 
+		x = 16
+		y = 24
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform6 }
+			CHI = { has_completed_focus = CHI_eaeu_reform6 }
+			IRN = { has_completed_focus = IRN_eaeu_reform6 }
+			JAP = { has_completed_focus = JAP_eaeu_reform6 }
+			TUR = { has_completed_focus = TUR_eaeu_reform6 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform6
+				has_completed_focus = major_eaeu_reform6
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform6_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -300 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.3 }
+			}
+			add_political_power = -300
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform7
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform1 }
+		prerequisite = { focus = BLR_eaeu_reform2 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform7_TTT
 					check_variable = { budget_reserve > 900 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform7
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform7_TTT
+					check_variable = { budget_reserve > 0.9 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform7
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform7
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform7
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform7
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform7
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform7
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform7
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform7
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform7
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform7
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform7
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform7
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform7
+							progress > 0.01
 					}
 				}
 			}
-			x = 14
-			y = 22
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform7 }
-				CHI = { has_completed_focus = CHI_eaeu_reform7 }
-				IRN = { has_completed_focus = IRN_eaeu_reform7 }
-				JAP = { has_completed_focus = JAP_eaeu_reform7 }
-				TUR = { has_completed_focus = TUR_eaeu_reform7 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform7
-					has_completed_focus = major_eaeu_reform7
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -500
-				random_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_antimonopoly_committee
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 500
 		}
-		focus = {
-			id = BLR_eaeu_reform8
-			icon = GFX_goal_rus_parliament_eas
-			cost = 150
-			prerequisite = {
-				focus = BLR_eaeu_reform2
-				focus = BLR_eaeu_reform7
+		x = 14
+		y = 22
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform7 }
+			CHI = { has_completed_focus = CHI_eaeu_reform7 }
+			IRN = { has_completed_focus = IRN_eaeu_reform7 }
+			JAP = { has_completed_focus = JAP_eaeu_reform7 }
+			TUR = { has_completed_focus = TUR_eaeu_reform7 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform7
+				has_completed_focus = major_eaeu_reform7
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform7_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -900 }
 			}
-			available = { 
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.9 }
+			}
+			add_political_power = -500
+			random_country = {
+				limit = { has_idea = eaeu_member }
+				add_ideas = eaeu_member_antimonopoly_committee
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_reform8
+		icon = GFX_goal_rus_parliament_eas
+		cost = 150
+		prerequisite = {
+			focus = BLR_eaeu_reform2
+			focus = BLR_eaeu_reform7
+		}
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_reform8_TTT
 					check_variable = { budget_reserve > 500 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_reform8
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_reform8_TTT
+					check_variable = { budget_reserve > 0.5 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_reform8
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_reform8
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_reform8
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_reform8
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_reform8
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_reform8
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_reform8
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_reform8
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_reform8
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_reform8
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_reform8
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_reform8
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_reform8
+							progress > 0.01
 					}
 				}
 			}
-			x = 13
-			y = 23
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_reform8 }
-				CHI = { has_completed_focus = CHI_eaeu_reform8 }
-				IRN = { has_completed_focus = IRN_eaeu_reform8 }
-				JAP = { has_completed_focus = JAP_eaeu_reform8 }
-				TUR = { has_completed_focus = TUR_eaeu_reform8 }
-				any_country = {
-					has_completed_focus = generic_eaeu_reform8
-					has_completed_focus = major_eaeu_reform8
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -700
-				random_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_medical_board
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+			has_political_power > 700
 		}
-		focus = {
-			id = BLR_eaeu_economy
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform3 }
-			available = { 
+		x = 13
+		y = 23
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_reform8 }
+			CHI = { has_completed_focus = CHI_eaeu_reform8 }
+			IRN = { has_completed_focus = IRN_eaeu_reform8 }
+			JAP = { has_completed_focus = JAP_eaeu_reform8 }
+			TUR = { has_completed_focus = TUR_eaeu_reform8 }
+			any_country = {
+				has_completed_focus = generic_eaeu_reform8
+				has_completed_focus = major_eaeu_reform8
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_reform8_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.5 }
+			}
+			add_political_power = -700
+			random_country = {
+				limit = { has_idea = eaeu_member }
+				add_ideas = eaeu_member_medical_board
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY}
+	}
+	focus = {
+		id = BLR_eaeu_economy
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform3 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy_TTT
 					check_variable = { budget_reserve > 500 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy_TTT
+					check_variable = { budget_reserve > 0.5 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy
+							progress > 0.01
 					}
 				}
 			}
-			x = 19
-			y = 22
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy }
-				CHI = { has_completed_focus = CHI_eaeu_economy }
-				IRN = { has_completed_focus = IRN_eaeu_economy }
-				JAP = { has_completed_focus = JAP_eaeu_economy }
-				TUR = { has_completed_focus = TUR_eaeu_economy }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy
-					has_completed_focus = major_eaeu_economy
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -500
-				every_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_economic_commission
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+			has_political_power > 500
 		}
-		focus = {
-			id = BLR_eaeu_economy1
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform3 }
-			available = { 
+		x = 19
+		y = 22
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy }
+			CHI = { has_completed_focus = CHI_eaeu_economy }
+			IRN = { has_completed_focus = IRN_eaeu_economy }
+			JAP = { has_completed_focus = JAP_eaeu_economy }
+			TUR = { has_completed_focus = TUR_eaeu_economy }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy
+				has_completed_focus = major_eaeu_economy
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_economy_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.5 }
+			}
+			add_political_power = -500
+			every_country = {
+				limit = { has_idea = eaeu_member }
+				add_ideas = eaeu_member_economic_commission
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy1
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform3 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy1_TTT
 					check_variable = { budget_reserve > 70 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy1
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy1_TTT
+					check_variable = { budget_reserve > 0.07 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy1
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy1
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy1
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy1
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy1
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy1
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy1
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy1
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy1
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy1
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy1
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy1
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy1
+							progress > 0.01
 					}
 				}
 			}
-			x = 21
-			y = 22
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy1 }
-				CHI = { has_completed_focus = CHI_eaeu_economy1 }
-				IRN = { has_completed_focus = IRN_eaeu_economy1 }
-				JAP = { has_completed_focus = JAP_eaeu_economy1 }
-				TUR = { has_completed_focus = TUR_eaeu_economy1 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy1
-					has_completed_focus = major_eaeu_economy1
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -300
-				custom_effect_tooltip = eaeu_economy1_TT
-				every_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_opinion_modifier = {
-						target = PREV
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+			has_political_power > 300
 		}
-		focus = {
-			id = BLR_eaeu_economy2
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_economy }
-			prerequisite = { focus = BLR_eaeu_economy1 }
-			available = { 
+		x = 21
+		y = 22
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy1 }
+			CHI = { has_completed_focus = CHI_eaeu_economy1 }
+			IRN = { has_completed_focus = IRN_eaeu_economy1 }
+			JAP = { has_completed_focus = JAP_eaeu_economy1 }
+			TUR = { has_completed_focus = TUR_eaeu_economy1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy1
+				has_completed_focus = major_eaeu_economy1
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -70 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.07 }
+			}
+			add_political_power = -300
+			custom_effect_tooltip = eaeu_economy1_TT
+			every_country = {
+				limit = { has_idea = eaeu_member }
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy2
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_economy }
+		prerequisite = { focus = BLR_eaeu_economy1 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy2_TTT
 					check_variable = { budget_reserve > 3000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy2
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy2_TTT
+					check_variable = { budget_reserve > 3.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy2
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy2
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy2
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy2
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy2
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy2
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy2
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy2
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy2
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy2
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy2
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy2
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy2
+							progress > 0.01
 					}
 				}
 			}
-			x = 20
-			y = 23
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy2 }
-				CHI = { has_completed_focus = CHI_eaeu_economy2 }
-				IRN = { has_completed_focus = IRN_eaeu_economy2 }
-				JAP = { has_completed_focus = JAP_eaeu_economy2 }
-				TUR = { has_completed_focus = TUR_eaeu_economy2 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy2
-					has_completed_focus = major_eaeu_economy2
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_political_power = -300
-				every_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = eaeu_member_free_trading_zone
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+			has_political_power > 300
 		}
-		focus = {
-			id = BLR_eaeu_economy3
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_economy2 }
-			available = { 
+		x = 20
+		y = 23
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy2 }
+			CHI = { has_completed_focus = CHI_eaeu_economy2 }
+			IRN = { has_completed_focus = IRN_eaeu_economy2 }
+			JAP = { has_completed_focus = JAP_eaeu_economy2 }
+			TUR = { has_completed_focus = TUR_eaeu_economy2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy2
+				has_completed_focus = major_eaeu_economy2
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_economy2_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -3000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -3.0 }
+			}
+			add_political_power = -300
+			every_country = {
+				limit = { has_idea = eaeu_member }
+				add_ideas = eaeu_member_free_trading_zone
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy3
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_economy2 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy3_TTT
 					check_variable = { budget_reserve > 5000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy3
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy3_TTT
+					check_variable = { budget_reserve > 5.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy3
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy3
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy3
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy3
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy3
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy3
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy3
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy3
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy3
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy3
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy3
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy3
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy3
+							progress > 0.01
 					}
 				}
 			}
-			x = 20
-			y = 24
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy3 }
-				CHI = { has_completed_focus = CHI_eaeu_economy3 }
-				IRN = { has_completed_focus = IRN_eaeu_economy3 }
-				JAP = { has_completed_focus = JAP_eaeu_economy3 }
-				TUR = { has_completed_focus = TUR_eaeu_economy3 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy3
-					has_completed_focus = major_eaeu_economy3
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				activate_decision = fund_eaeu
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_economy4
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_economy3 }
-			available = { 
+		x = 20
+		y = 24
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy3 }
+			CHI = { has_completed_focus = CHI_eaeu_economy3 }
+			IRN = { has_completed_focus = IRN_eaeu_economy3 }
+			JAP = { has_completed_focus = JAP_eaeu_economy3 }
+			TUR = { has_completed_focus = TUR_eaeu_economy3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy3
+				has_completed_focus = major_eaeu_economy3
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_economy3_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -5000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -5.0 }
+			}
+			activate_decision = fund_eaeu
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy4
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_economy3 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy4_TTT
 					check_variable = { budget_reserve > 12000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy4
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy4_TTT
+					check_variable = { budget_reserve > 12.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy4
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy4
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy4
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy4
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy4
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy4
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy4
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy4
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy4
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy4
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy4
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy4
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy4
+							progress > 0.01
 					}
 				}
 			}
-			x = 20
-			y = 25
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy4 }
-				CHI = { has_completed_focus = CHI_eaeu_economy4 }
-				JAP = { has_completed_focus = JAP_eaeu_economy4 }
-				IRN = { has_completed_focus = IRN_eaeu_economy4 }
-				TUR = { has_completed_focus = TUR_eaeu_economy4 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy4
-					has_completed_focus = major_eaeu_economy4
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				country_event = eaeu_event.1
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_economy5
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_economy4 }
-			prerequisite = { focus = BLR_eaeu_economy6 }
-			prerequisite = { focus = BLR_eaeu_reform6 }
-			available = { 
+		x = 20
+		y = 25
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy4 }
+			CHI = { has_completed_focus = CHI_eaeu_economy4 }
+			JAP = { has_completed_focus = JAP_eaeu_economy4 }
+			IRN = { has_completed_focus = IRN_eaeu_economy4 }
+			TUR = { has_completed_focus = TUR_eaeu_economy4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy4
+				has_completed_focus = major_eaeu_economy4
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_economy4_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -12000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -12.0 }
+			}
+			country_event = eaeu_event.1
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy5
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_economy4 }
+		prerequisite = { focus = BLR_eaeu_economy6 }
+		prerequisite = { focus = BLR_eaeu_reform6 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy5_TTT
 					check_variable = { budget_reserve > 1700 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy5
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy5_TTT
+					check_variable = { budget_reserve > 1.7 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy5
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy5
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy5
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy5
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy5
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy5
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy5
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy5
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy5
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy5
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy5
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy5
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy5
+							progress > 0.01
 					}
 				}
 			}
-			x = 17
-			y = 26
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy5 }
-				CHI = { has_completed_focus = CHI_eaeu_economy5 }
-				JAP = { has_completed_focus = JAP_eaeu_economy5 }
-				IRN = { has_completed_focus = IRN_eaeu_economy5 }
-				TUR = { has_completed_focus = TUR_eaeu_economy5 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy5
-					has_completed_focus = major_eaeu_economy5
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				if = {
-					limit = {
-						has_global_flag = eaeu_event_1_a
-					}
-					custom_effect_tooltip = eaeu_economy5_1_TT
-				}
-				else_if = {
-					limit = {
-						has_global_flag = eaeu_event_1_b
-					}
-					custom_effect_tooltip = eaeu_economy5_2_TT
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_economy6
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform5 }
-			prerequisite = { focus = BLR_eaeu_economy }
-			prerequisite = { focus = BLR_eaeu_economy3 }
-			available = { 
+		x = 17
+		y = 26
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy5 }
+			CHI = { has_completed_focus = CHI_eaeu_economy5 }
+			JAP = { has_completed_focus = JAP_eaeu_economy5 }
+			IRN = { has_completed_focus = IRN_eaeu_economy5 }
+			TUR = { has_completed_focus = TUR_eaeu_economy5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy5
+				has_completed_focus = major_eaeu_economy5
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_economy5_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -1700 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -1.7 }
+			}
+			if = {
+				limit = {
+					has_global_flag = eaeu_event_1_a
+				}
+				custom_effect_tooltip = eaeu_economy5_1_TT
+			}
+			else_if = {
+				limit = {
+					has_global_flag = eaeu_event_1_b
+				}
+				custom_effect_tooltip = eaeu_economy5_2_TT
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_economy6
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform5 }
+		prerequisite = { focus = BLR_eaeu_economy }
+		prerequisite = { focus = BLR_eaeu_economy3 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_economy6_TTT
 					check_variable = { budget_reserve > 33000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_economy6
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_economy6_TTT
+					check_variable = { budget_reserve > 33.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_economy6
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_economy6
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_economy6
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_economy6
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_economy6
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_economy6
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_economy6
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_economy6
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_economy6
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_economy6
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_economy6
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_economy6
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_economy6
+							progress > 0.01
 					}
 				}
 			}
-			x = 15
-			y = 25
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_economy6 }
-				CHI = { has_completed_focus = CHI_eaeu_economy6 }
-				IRN = { has_completed_focus = IRN_eaeu_economy6 }
-				JAP = { has_completed_focus = JAP_eaeu_economy6 }
-				TUR = { has_completed_focus = TUR_eaeu_economy6 }
-				any_country = {
-					has_completed_focus = generic_eaeu_economy6
-					has_completed_focus = major_eaeu_economy6
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				set_global_flag = EAEU_united_bank
-				custom_effect_tooltip = eaeu_economy6_TT
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_infestructure
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform4 }
-			available = { 
+		x = 15
+		y = 25
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_economy6 }
+			CHI = { has_completed_focus = CHI_eaeu_economy6 }
+			IRN = { has_completed_focus = IRN_eaeu_economy6 }
+			JAP = { has_completed_focus = JAP_eaeu_economy6 }
+			TUR = { has_completed_focus = TUR_eaeu_economy6 }
+			any_country = {
+				has_completed_focus = generic_eaeu_economy6
+				has_completed_focus = major_eaeu_economy6
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -33000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -33.0 }
+			}
+			set_global_flag = EAEU_united_bank
+			custom_effect_tooltip = eaeu_economy6_TT
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_infestructure
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform4 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_infestructure_TTT
 					check_variable = { budget_reserve > 100 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_infestructure
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_infestructure_TTT
+					check_variable = { budget_reserve > 0.01 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_infestructure
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_infestructure
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_infestructure
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_infestructure
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_infestructure
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_infestructure
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_infestructure
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_infestructure
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_infestructure
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_infestructure
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_infestructure
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_infestructure
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_infestructure
+							progress > 0.01
 					}
 				}
 			}
-			x = 17
-			y = 23
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_infestructure }
-				CHI = { has_completed_focus = CHI_eaeu_infestructure }
-				IRN = { has_completed_focus = IRN_eaeu_infestructure }
-				JAP = { has_completed_focus = JAP_eaeu_infestructure }
-				TUR = { has_completed_focus = TUR_eaeu_infestructure }
-				any_country = {
-					has_completed_focus = generic_eaeu_infestructure
-					has_completed_focus = major_eaeu_infestructure
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				custom_effect_tooltip = eaeu_infestructure_tt
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_infestructure1
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = {
-				focus = BLR_eaeu_economy
-				focus = BLR_eaeu_infestructure
+		x = 17
+		y = 23
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_infestructure }
+			CHI = { has_completed_focus = CHI_eaeu_infestructure }
+			IRN = { has_completed_focus = IRN_eaeu_infestructure }
+			JAP = { has_completed_focus = JAP_eaeu_infestructure }
+			TUR = { has_completed_focus = TUR_eaeu_infestructure }
+			any_country = {
+				has_completed_focus = generic_eaeu_infestructure
+				has_completed_focus = major_eaeu_infestructure
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -100 }
 			}
-			available = { 
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -0.01 }
+			}
+			custom_effect_tooltip = eaeu_infestructure_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_infestructure1
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = {
+			focus = BLR_eaeu_economy
+			focus = BLR_eaeu_infestructure
+		}
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_infestructure1_TTT
 					check_variable = { budget_reserve > 15000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_infestructure1
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_infestructure1_TTT
+					check_variable = { budget_reserve > 15.00 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_infestructure1
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_infestructure1
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_infestructure1
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_infestructure1
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_infestructure1
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_infestructure1
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_infestructure1
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_infestructure1
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_infestructure1
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_infestructure1
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_infestructure1
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_infestructure1
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_infestructure1
+							progress > 0.01
 					}
 				}
 			}
-			x = 18
-			y = 24
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_infestructure }
-				CHI = { has_completed_focus = CHI_eaeu_infestructure1 }
-				IRN = { has_completed_focus = IRN_eaeu_infestructure1 }
-				JAP = { has_completed_focus = JAP_eaeu_infestructure1 }
-				TUR = { has_completed_focus = TUR_eaeu_infestructure1 }
-				any_country = {
-					has_completed_focus = generic_eaeu_infestructure1
-					has_completed_focus = major_eaeu_infestructure1
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				every_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					add_ideas = UNEBBENO_member
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_sphere
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform }
-			available = { 
+		x = 18
+		y = 24
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_infestructure }
+			CHI = { has_completed_focus = CHI_eaeu_infestructure1 }
+			IRN = { has_completed_focus = IRN_eaeu_infestructure1 }
+			JAP = { has_completed_focus = JAP_eaeu_infestructure1 }
+			TUR = { has_completed_focus = TUR_eaeu_infestructure1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_infestructure1
+				has_completed_focus = major_eaeu_infestructure1
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_infestructure1_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -15000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -15.0 }
+			}
+			every_country = {
+				limit = { has_idea = eaeu_member }
+				add_ideas = UNEBBENO_member
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_sphere_TTT
 					check_variable = { budget_reserve > 3000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_sphere_TTT
+					check_variable = { budget_reserve > 3.00 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere
+							progress > 0.01
 					}
 				}
 			}
-			x = 24
-			y = 21
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere }
-				CHI = { has_completed_focus = CHI_eaeu_sphere }
-				IRN = { has_completed_focus = IRN_eaeu_sphere }
-				JAP = { has_completed_focus = JAP_eaeu_sphere }
-				TUR = { has_completed_focus = TUR_eaeu_sphere }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere
-					has_completed_focus = major_eaeu_sphere
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				add_ideas = shymkent_area_immigration
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_sphere1
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_reform }
-			available = { 
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere1
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere1
-							   progress > 0.01
-						}
-					}
-				}
-			}
-			x = 26
-			y = 21
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere1 }
-				CHI = { has_completed_focus = CHI_eaeu_sphere1 }
-				IRN = { has_completed_focus = IRN_eaeu_sphere1 }
-				JAP = { has_completed_focus = JAP_eaeu_sphere1 }
-				TUR = { has_completed_focus = TUR_eaeu_sphere1 }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere1
-					has_completed_focus = major_eaeu_sphere1
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+		x = 24
+		y = 21
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere }
+			CHI = { has_completed_focus = CHI_eaeu_sphere }
+			IRN = { has_completed_focus = IRN_eaeu_sphere }
+			JAP = { has_completed_focus = JAP_eaeu_sphere }
+			TUR = { has_completed_focus = TUR_eaeu_sphere }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere
+				has_completed_focus = major_eaeu_sphere
+			}}
 		}
-		focus = {
-			id = BLR_eaeu_sphere2
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_sphere }
-			prerequisite = { focus = BLR_eaeu_sphere1 }
-			available = { 
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere2
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere2
-							   progress > 0.01
-						}
-					}
-				}
-			}
-			x = 25
-			y = 22
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere2 }
-				CHI = { has_completed_focus = CHI_eaeu_sphere2 }
-				IRN = { has_completed_focus = IRN_eaeu_sphere2 }
-				JAP = { has_completed_focus = JAP_eaeu_sphere2 }
-				TUR = { has_completed_focus = TUR_eaeu_sphere2 }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere2
-					has_completed_focus = major_eaeu_sphere2
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				set_global_flag = eaeu_expansion
-				custom_effect_tooltip = eaeu_sphere2_tt
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
 		}
-		focus = {
-			id = BLR_eaeu_sphere3
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_sphere2 }
-			available = { 
+		completion_reward = {
+			custom_effect_tooltip = eaeu_sphere_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -3000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -3.0 }
+			}
+			add_ideas = shymkent_area_immigration
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere1
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_reform }
+		available = { 
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere1
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere1
+							progress > 0.01
+					}
+				}
+			}
+		}
+		x = 26
+		y = 21
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere1 }
+			CHI = { has_completed_focus = CHI_eaeu_sphere1 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere1 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere1 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere1 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere1
+				has_completed_focus = major_eaeu_sphere1
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere2
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_sphere }
+		prerequisite = { focus = BLR_eaeu_sphere1 }
+		available = { 
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere2
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere2
+							progress > 0.01
+					}
+				}
+			}
+		}
+		x = 25
+		y = 22
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere2 }
+			CHI = { has_completed_focus = CHI_eaeu_sphere2 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere2 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere2 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere2 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere2
+				has_completed_focus = major_eaeu_sphere2
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_global_flag = eaeu_expansion
+			custom_effect_tooltip = eaeu_sphere2_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere3
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_sphere2 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_sphere3_TTT
 					check_variable = { budget_reserve > 40000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere3
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_sphere3_TTT
+					check_variable = { budget_reserve > 40.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere3
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere3
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere3
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere3
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere3
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere3
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere3
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere3
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere3
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere3
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere3
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere3
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere3
+							progress > 0.01
 					}
 				}
 			}
-			x = 23
-			y = 23
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere3 }
-				CHI = { has_completed_focus = CHI_eaeu_sphere3 }
-				JAP = { has_completed_focus = JAP_eaeu_sphere3 }
-				IRN = { has_completed_focus = IRN_eaeu_sphere3 }
-				TUR = { has_completed_focus = TUR_eaeu_sphere3 }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere3
-					has_completed_focus = major_eaeu_sphere3
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				every_country = {
-					limit = {
-						has_idea = rcep_member
-					}
-					add_opinion_modifier = {
-						target = PREV
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_sphere4
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_sphere2 }
-			available = { 
+		x = 23
+		y = 23
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere3 }
+			CHI = { has_completed_focus = CHI_eaeu_sphere3 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere3 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere3 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere3 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere3
+				has_completed_focus = major_eaeu_sphere3
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_sphere3_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -40000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -40.0 }
+			}
+			every_country = {
+				limit = { has_idea = rcep_member }
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere4
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_sphere2 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_sphere4_TTT
 					check_variable = { budget_reserve > 55000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere4
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_sphere4_TTT
+					check_variable = { budget_reserve > 55.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere4
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere4
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere4
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere4
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere4
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere4
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere4
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere4
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere4
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere4
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere4
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere4
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere4
+							progress > 0.01
 					}
 				}
 			}
-			x = 27
-			y = 23
-			ai_will_do = {	factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere4 }
-				CHI = { has_completed_focus = CHI_eaeu_sphere4 }
-				IRN = { has_completed_focus = IRN_eaeu_sphere4 }
-				JAP = { has_completed_focus = JAP_eaeu_sphere4 }
-				TUR = { has_completed_focus = TUR_eaeu_sphere4 }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere4
-					has_completed_focus = major_eaeu_sphere4
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				every_country = {
-					limit = {
-						has_idea = mercosur_member
-					}
-					add_opinion_modifier = {
-						target = PREV
-						modifier = actions_positive
-					}
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
-		focus = {
-			id = BLR_eaeu_sphere5
-			icon = GFX_goal_rus_integration_army_in_eaeu
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_sphere2 }
-			prerequisite = {
-				focus = BLR_eaeu_sphere3
-				focus = BLR_eaeu_sphere4
-			}
-			available = { 
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_sphere5
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_sphere5
-							   progress > 0.01
-						}
-					}
-				}
-			}
-			x = 25
-			y = 24
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_sphere5 }
-				CHI = { has_completed_focus = CHI_eaeu_sphere5 }
-				IRN = { has_completed_focus = IRN_eaeu_sphere5 }
-				JAP = { has_completed_focus = JAP_eaeu_sphere5 }
-				TUR = { has_completed_focus = TUR_eaeu_sphere5 }
-				any_country = {
-					has_completed_focus = generic_eaeu_sphere5
-					has_completed_focus = major_eaeu_sphere5
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				set_global_flag = big_eaeu_concept_expansion
-				custom_effect_tooltip = eaeu_sphere5_tt
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+		x = 27
+		y = 23
+		ai_will_do = {	factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere4 }
+			CHI = { has_completed_focus = CHI_eaeu_sphere4 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere4 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere4 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere4 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere4
+				has_completed_focus = major_eaeu_sphere4
+			}}
 		}
-		focus = {
-			id = BLR_eaeu_science
-			icon = GFX_goal_rus_science_aliance
-			cost = 150
-			prerequisite = { focus = BLR_eaeu_economy2 }
-			available = { 
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_sphere4_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -55000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -55.0 }
+			}
+			every_country = {
+				limit = { has_idea = mercosur_member }
+				add_opinion_modifier = {
+					target = PREV
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_sphere5
+		icon = GFX_goal_rus_integration_army_in_eaeu
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_sphere2 }
+		prerequisite = {
+			focus = BLR_eaeu_sphere3
+			focus = BLR_eaeu_sphere4
+		}
+		available = { 
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_sphere5
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_sphere5
+							progress > 0.01
+					}
+				}
+			}
+		}
+		x = 25
+		y = 24
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_sphere5 }
+			CHI = { has_completed_focus = CHI_eaeu_sphere5 }
+			IRN = { has_completed_focus = IRN_eaeu_sphere5 }
+			JAP = { has_completed_focus = JAP_eaeu_sphere5 }
+			TUR = { has_completed_focus = TUR_eaeu_sphere5 }
+			any_country = {
+				has_completed_focus = generic_eaeu_sphere5
+				has_completed_focus = major_eaeu_sphere5
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			set_global_flag = big_eaeu_concept_expansion
+			custom_effect_tooltip = eaeu_sphere5_tt
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_eaeu_science
+		icon = GFX_goal_rus_science_aliance
+		cost = 150
+		prerequisite = { focus = BLR_eaeu_economy2 }
+		available = { 
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
 					tooltip = EAEU_science_TTT
 					check_variable = { budget_reserve > 17000 }
 				}
-				NOT = {
-					CHI = {
-						focus_progress = {
-							focus = CHI_eaeu_science
-							   progress > 0.01
-						}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = EAEU_science_TTT
+					check_variable = { budget_reserve > 17.0 }
+				}
+			}
+			NOT = {
+				CHI = {
+					focus_progress = {
+						focus = CHI_eaeu_science
+							progress > 0.01
 					}
-					RUS = {
-						focus_progress = {
-							focus = RUS_eaeu_science
-							   progress > 0.01
-						}
+				}
+				RUS = {
+					focus_progress = {
+						focus = RUS_eaeu_science
+							progress > 0.01
 					}
-					IRN = {
-						focus_progress = {
-							focus = IRN_eaeu_science
-							   progress > 0.01
-						}
+				}
+				IRN = {
+					focus_progress = {
+						focus = IRN_eaeu_science
+							progress > 0.01
 					}
-					JAP = {
-						focus_progress = {
-							focus = JAP_eaeu_science
-							   progress > 0.01
-						}
+				}
+				JAP = {
+					focus_progress = {
+						focus = JAP_eaeu_science
+							progress > 0.01
 					}
-					TUR = {
-						focus_progress = {
-							focus = TUR_eaeu_science
-							   progress > 0.01
-						}
+				}
+				TUR = {
+					focus_progress = {
+						focus = TUR_eaeu_science
+							progress > 0.01
 					}
-					all_country = {
-						focus_progress = {
-							focus = generic_eaeu_science
-							   progress > 0.01
-						}
-						focus_progress = {
-							focus = major_eaeu_science
-							   progress > 0.01
-						}
+				}
+				all_country = {
+					focus_progress = {
+						focus = generic_eaeu_science
+							progress > 0.01
+					}
+					focus_progress = {
+						focus = major_eaeu_science
+							progress > 0.01
 					}
 				}
 			}
-			x = 22
-			y = 24
-			ai_will_do = { factor = 3 }
-			bypass = {
-				RUS = { has_completed_focus = RUS_eaeu_science }
-				CHI = { has_completed_focus = CHI_eaeu_science }
-				IRN = { has_completed_focus = IRN_eaeu_science }
-				JAP = { has_completed_focus = JAP_eaeu_science }
-				TUR = { has_completed_focus = TUR_eaeu_science }
-				any_country = {
-					has_completed_focus = generic_eaeu_science
-					has_completed_focus = major_eaeu_science
-				}
-			}
-			select_effect = {
-				add_timed_idea = { idea = select_focus_eaeu days = 150 }
-			}
-			completion_reward = {
-				set_country_flag = EAEU_science
-				add_to_tech_sharing_group = eau_research
-				every_country = {
-					limit = {
-						has_idea = eaeu_member
-					}
-					set_country_flag = science_aliance_eau_member
-					add_to_tech_sharing_group = eau_research
-				}
-			}
-			search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 		}
+		x = 22
+		y = 24
+		ai_will_do = { factor = 3 }
+		bypass = {
+			OR = { RUS = { has_completed_focus = RUS_eaeu_science }
+			CHI = { has_completed_focus = CHI_eaeu_science }
+			IRN = { has_completed_focus = IRN_eaeu_science }
+			JAP = { has_completed_focus = JAP_eaeu_science }
+			TUR = { has_completed_focus = TUR_eaeu_science }
+			any_country = {
+				has_completed_focus = generic_eaeu_science
+				has_completed_focus = major_eaeu_science
+			}}
+		}
+		select_effect = {
+			add_timed_idea = { idea = select_focus_eaeu days = 150 }
+		}
+		completion_reward = {
+			custom_effect_tooltip = eaeu_science_tt
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -17000 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -17.0 }
+			}
+			set_country_flag = EAEU_science
+			add_to_tech_sharing_group = eau_research
+			every_country = {
+				limit = {
+					has_idea = eaeu_member
+				}
+				set_country_flag = science_aliance_eau_member
+				add_to_tech_sharing_group = eau_research
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
 }

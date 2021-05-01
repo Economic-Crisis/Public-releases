@@ -31,13 +31,27 @@ eaeu = {
 					check_variable = { budget_reserve > 9 }
 				}
 				custom_effect_tooltip = fund_eaeu_TT
-				subtract_from_variable = { budget_reserve = 10 }
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = 10 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = 0.001 }
+				}
 				add_to_variable = { var = global.var_fund_EAEU value = 10 }
 			}
 			else_if = {
 				limit = { has_global_flag = EAEU_pay_increase }
 				custom_effect_tooltip = fund_eaeu1_TT
-				subtract_from_variable = { budget_reserve = 20 }
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = 20 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = 0.002 }
+				}
 				add_to_variable = { var = global.var_fund_EAEU value = 20 }
 			}
 			else = {
@@ -990,7 +1004,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = SYR }
+			country_exists = SYR
 			has_opinion = {
 				target = SYR
 				value > 69
@@ -1028,7 +1042,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = TUN }
+			country_exists = TUN
 			has_opinion = {
 				target = TUN
 				value > 69
@@ -1066,7 +1080,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = CHL }
+			country_exists = CHL
 			has_opinion = {
 				target = CHL
 				value > 69
@@ -1104,7 +1118,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = IND }
+			country_exists = IND
 			has_opinion = {
 				target = IND
 				value > 69
@@ -1154,7 +1168,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = BAN }
+			country_exists = BAN
 			has_opinion = {
 				target = BAN
 				value > 69
@@ -1192,7 +1206,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = LEB }
+			country_exists = LEB
 			has_opinion = {
 				target = LEB
 				value > 69
@@ -1230,7 +1244,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = JOR }
+			country_exists = JOR
 			has_opinion = {
 				target = JOR
 				value > 69
@@ -1268,7 +1282,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = PHI }
+			country_exists = PHI
 			has_opinion = {
 				target = PHI
 				value > 69
@@ -1306,7 +1320,7 @@ eaeu = {
 		icon = generic_political_discourse
 		available = {
 			has_country_leader_with_trait = leader_eaeu
-			NOT = { country_exists = AZR }
+			country_exists = AZR
 			has_opinion = {
 				target = AZR
 				value > 69

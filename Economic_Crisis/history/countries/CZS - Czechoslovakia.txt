@@ -1,6 +1,6 @@
 ﻿# Economic Crisis edit for 0.6.1 alpha
 
-# NON-EXISTENT ON START GAME STATE (FROM EARLY SCENARIOS)
+# NON-EXISTENT ON START GAME STATE 2013 (FROM EARLY SCENARIOS)
 
 # NOT EDITED EC OPTIMISED
 # NOT EDITED LEADERS (ONLY START LEADER)
@@ -9,24 +9,36 @@
 
 capital = 9
 
-add_ideas = mixed_schools
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+	    SOV_support_warshaw
+    }
 
-	load_oob = "_tech_minor_2013"
-	oob = "_army_minor_2013"
-	set_convoys = 25
 	set_politics = {
 		ruling_party = communism
-		last_election = "2017.11.1"
+		last_election = "1971.5.29"
 		election_frequency = 48
-		elections_allowed = yes
+		elections_allowed = no
 	}
 	set_popularities = {
-		communism = 60
-		reformism = 0
+		communism = 80
+		reformism = 4
 		liberalism = 0
-		democratic = 30
+		democratic = 8
 		neutrality = 0
-		fascism = 10
+		fascism = 8
 		rad_islamists = 0
 	}
-
+	
+	create_country_leader = {
+	   name = "Gustav Husak"
+	   desc = "POLITICS_GUSTAV_HUSAK_DESC"
+	   picture = "gfx/leaders/CZS/portrait_gustav_husak.dds"
+	   ideology = leninism 
+	   traits = { trait_leninism }
+	}
+}
+1991.2.15 = {
+	remove_ideas = SOV_support_warshaw
+}

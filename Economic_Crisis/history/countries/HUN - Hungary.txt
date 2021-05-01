@@ -5,10 +5,48 @@
 
 capital = 43
 
-add_ideas = eu_member
+add_ideas = SOV_support_warshaw
+
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+	    SOV_support_warshaw
+    }
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2017.11.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 100
+		reformism = 0
+		liberalism = 0
+		democratic = 0
+		neutrality = 0
+		fascism = 0
+		rad_islamists = 0
+	}
+	
+	create_country_leader = {
+	   name = "Janos Hadar"
+	   desc = "POLITICS_JANOS_HADAR_DESC"
+	   picture = "gfx/leaders/HUN/portrait_janos_hadar.dds"
+	   ideology = leninism 
+	   traits = { trait_leninism }
+	}
+	
+	set_party_name = {
+		ideology = communism
+		long_name = HUN_communism_1985_party_long
+		name = HUN_communism_1985_party
+	}
+}
 
 1991.2.15 = {
 	add_ideas = visegrad_group_member
+	remove_ideas = SOV_support_warshaw
 }
 
 2013.11.1 = {
@@ -37,6 +75,7 @@ add_ideas = eu_member
 		mixed_economic
 		NPT
 		low_terrorism
+		eu_member
 	}
 
 	set_country_flag = pai__centrist

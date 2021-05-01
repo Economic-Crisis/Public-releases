@@ -2,34 +2,66 @@
 
 
 has_trillions = {
-	if = { limit = { AND = { OR = { check_variable = { current_budget > 1200000 } check_variable = { planned_budget > 1300000 } } NOT = { has_country_flag = money_trillions } } } 
+	if = {
+		limit = {
+			OR = {
+				check_variable = { current_budget > 1200000 }
+				check_variable = { planned_budget > 1300000 }
+			}
+			NOT = { has_country_flag = money_trillions }
+		}
 	
-	set_country_flag = money_trillions 
-	divide_variable = { current_budget = 1000 }
-	divide_variable = { planned_budget = 1000 }
-	divide_variable = { budget_last_year = 1000 }
-	divide_variable = { budget_reserve = 1000 }
-	divide_variable = { budget_rest = 1000 }
+		set_country_flag = money_trillions 
+		divide_variable = { current_budget = 1000 }
+		divide_variable = { planned_budget = 1000 }
+		divide_variable = { budget_last_year = 1000 }
+		divide_variable = { budget_reserve = 1000 }
+		divide_variable = { budget_rest = 1000 }
 	
-	set_st_exp = yes
-	if = { limit = { check_variable = { budget_credit > 184 } } divide_variable = { budget_credit = 1000 } }
-	else_if = { limit = { check_variable = { budget_credit < 185 } check_variable = { budget_credit > 0 } } set_variable = { budget_credit = 0.185 } }
-	
-	update_categories = yes
+		set_st_exp = yes
+		if = {
+			limit = {
+				check_variable = { budget_credit > 184 }
+			} 
+			divide_variable = { budget_credit = 1000 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { budget_credit < 185 }
+				check_variable = { budget_credit > 0 }
+			}
+			set_variable = { budget_credit = 0.185 }
+		}
+		
+		update_categories = yes
 	}
 
-	else_if = { limit = { AND = { has_country_flag = money_trillions check_variable = { planned_budget < 100 } } } 
-	
-	clr_country_flag = money_trillions
-	multiply_variable = { current_budget = 1000 }
-	multiply_variable = { planned_budget = 1000 }
-	multiply_variable = { budget_last_year = 1000 }
-	multiply_variable = { budget_reserve = 1000 }
-	multiply_variable = { budget_rest = 1000 }
-	set_st_exp = yes
-	if = { limit = { check_variable = { budget_credit > 1999 } } set_variable = { budget_credit = 1900000 } }
-	else_if = { limit = { check_variable = { budget_credit > 0 } check_variable = { budget_credit < 2000 } } multiply_variable = { budget_credit = 1000 } }
-	update_categories = yes
+	else_if = {
+		limit = {
+			has_country_flag = money_trillions
+			check_variable = { planned_budget < 100 }
+		} 
+		clr_country_flag = money_trillions
+		multiply_variable = { current_budget = 1000 }
+		multiply_variable = { planned_budget = 1000 }
+		multiply_variable = { budget_last_year = 1000 }
+		multiply_variable = { budget_reserve = 1000 }
+		multiply_variable = { budget_rest = 1000 }
+		set_st_exp = yes
+		if = {
+			limit = {
+				check_variable = { budget_credit > 1999 }
+			}
+			set_variable = { budget_credit = 1900000 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { budget_credit > 0 }
+				check_variable = { budget_credit < 2000 }
+			}
+			multiply_variable = { budget_credit = 1000 }
+		}
+		update_categories = yes
 	}
 }
 update_current_budget_buf = {
@@ -733,36 +765,42 @@ if = { limit = { date > 2014.1.2 }
 
 ######CAT 1 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_1_ratio_st = 3 } } }	add_ideas = cat_1_sec_1_good }
+if = {
+	limit = {
+		check_variable = { def_prof_switch = 1 }
+		check_variable = { cat_1_sec_1_ratio_st = 3 }
+	}	
+	add_ideas = cat_1_sec_1_good
+}
 if = { limit = { check_variable = { cat_1_sec_1_ratio_st = 1 } } add_ideas = cat_1_sec_1_bad }
 
 ######CAT 1 SEC 2
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_2_ratio_st = 3 } } }	add_ideas = cat_1_sec_2_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_2_ratio_st = 3 } } add_ideas = cat_1_sec_2_good }
 if = { limit = { check_variable = { cat_1_sec_2_ratio_st = 1 } } add_ideas = cat_1_sec_2_bad }
 
 ######CAT 1 SEC 3
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_3_ratio_st = 3 } } }	add_ideas = cat_1_sec_3_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_1_sec_3_ratio_st = 3 } } add_ideas = cat_1_sec_3_good }
 if = { limit = { check_variable = { cat_1_sec_3_ratio_st = 1 } } add_ideas = cat_1_sec_3_bad }
 
 ##################CAT 2 
 
 ######CAT 2 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_1_ratio_st = 3 } } }	add_ideas = cat_2_sec_1_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_1_ratio_st = 3 } }	add_ideas = cat_2_sec_1_good }
 if = { limit = { check_variable = { cat_2_sec_1_ratio_st = 1 } } add_ideas = cat_2_sec_1_bad }
 
 ######CAT 2 SEC 2 
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_2_ratio_st = 3 } } }	add_ideas = cat_2_sec_2_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_2_sec_2_ratio_st = 3 } }	add_ideas = cat_2_sec_2_good }
 if = { limit = { check_variable = { cat_2_sec_2_ratio_st = 1 } } add_ideas = cat_2_sec_2_bad }
 
 ##################CAT 3 
 
 ######CAT 3 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_3_sec_1_ratio_st = 3 } } }	add_ideas = cat_3_sec_1_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_3_sec_1_ratio_st = 3 } }	add_ideas = cat_3_sec_1_good }
 if = { limit = { check_variable = { cat_3_sec_1_ratio_st = 1 } } add_ideas = cat_3_sec_1_bad }
 
 
@@ -770,21 +808,21 @@ if = { limit = { check_variable = { cat_3_sec_1_ratio_st = 1 } } add_ideas = cat
 
 ######CAT 4 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_4_sec_1_ratio_st = 3 } } }	add_ideas = cat_4_sec_1_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_4_sec_1_ratio_st = 3 } }	add_ideas = cat_4_sec_1_good }
 if = { limit = { check_variable = { cat_4_sec_1_ratio_st = 1 } } add_ideas = cat_4_sec_1_bad }
 
 ##################CAT 5 
 
 ######CAT 5 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_5_sec_1_ratio_st = 3 } } }	add_ideas = cat_5_sec_1_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_5_sec_1_ratio_st = 3 } }	add_ideas = cat_5_sec_1_good }
 if = { limit = { check_variable = { cat_5_sec_1_ratio_st = 1 } } add_ideas = cat_5_sec_1_bad }
 
 ##################CAT 6 
 
 ######CAT 6 SEC 1
 
-if = { limit = { AND = { check_variable = { def_prof_switch = 1 } check_variable = { cat_6_sec_1_ratio_st = 3 } } }	add_ideas = cat_6_sec_1_good }
+if = { limit = { check_variable = { def_prof_switch = 1 } check_variable = { cat_6_sec_1_ratio_st = 3 } }	add_ideas = cat_6_sec_1_good }
 if = { limit = { check_variable = { cat_6_sec_1_ratio_st = 1 } } add_ideas = cat_6_sec_1_bad }
 
 	}

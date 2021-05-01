@@ -16,6 +16,7 @@ ideas = {
 					has_government = democratic
 					has_country_flag = coalition_with_conservators
 				}
+				NOT = { has_country_flag = theresa_may_resigned }
 			}
 
 			allowed = {
@@ -48,6 +49,7 @@ ideas = {
 					has_government = democratic
 					has_country_flag = coalition_with_conservators
 				}
+				NOT = { has_country_flag = david_cameron_resigned }
 			}
 
 			allowed = {
@@ -79,6 +81,7 @@ ideas = {
 					has_government = neutrality
 					has_country_flag = coalition_with_centrists
 				}
+				NOT = { has_country_flag = nigel_farage_resigned }
 			}
 
 			allowed = {
@@ -110,6 +113,7 @@ ideas = {
 					has_government = reformism
 					has_country_flag = coalition_with_reformists
 				}
+				NOT = { has_country_flag = ed_miliband_resigned }
 			}
 
 			allowed = {
@@ -141,6 +145,7 @@ ideas = {
 					has_government = reformism
 					has_country_flag = coalition_with_reformists
 				}
+				NOT = { has_country_flag = jeremy_corbyn_resigned }
 			}
 
 			allowed = {
@@ -172,6 +177,7 @@ ideas = {
 					has_government = liberalism
 					has_country_flag = coalition_with_liberals
 				}
+				NOT = { has_country_flag = nick_clegg_resigned }
 			}
 
 			allowed = {
@@ -203,6 +209,7 @@ ideas = {
 				has_government = communism
 				has_country_flag = coalition_with_socialists
 			}
+			NOT = { has_country_flag = alex_callinicos_resigned }
 		}
 
 		allowed = {
@@ -231,11 +238,10 @@ ideas = {
 
 			available = {
 				OR = {
-
 					has_government = fascism
-					has_country_flag = coalition_with_nareftionalists
-
+					has_country_flag = coalition_with_nationalists
 				}
+				NOT = { has_country_flag = nick_griffin_resigned }
 			}
 
 			allowed = {
@@ -263,10 +269,8 @@ ideas = {
 			#removal_cost = -1
 
 			available = {
-				OR = {
-						has_government = democratic
-						has_country_flag = coalition_with_islamists
-				}
+				has_government = democratic
+				has_country_flag = coalition_with_islamists
 			}
 
 			allowed = {
@@ -1076,11 +1080,10 @@ ideas = {
 			allowed = {
 				original_tag = "ENG"
 			}
-			available =
-			{
-			NOT = {
-				has_idea = ENG_Muhammad_Abdul_Barin_hog
-			}
+			available =	{
+				NOT = {
+					has_idea = ENG_Muhammad_Abdul_Barin_hog
+				}
 			}
 
 			traits = { islamists_demagogue }

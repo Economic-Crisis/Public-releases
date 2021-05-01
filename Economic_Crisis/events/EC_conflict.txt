@@ -42,20 +42,26 @@ news_event = {
 	desc = ind_border_conflicts.1.d
 	hidden = yes
 	major = yes
-	fire_only_once = yes
+	#fire_only_once = yes
 	trigger = {
-		date > 2019.12.26
+		date > 2014.2.26
 		
 		country_exists = IND
+		IND = { controls_state = 441 }
 		country_exists = PAK
+		PAK = {
+			controls_state = 440
+			controls_state = 806
+		}
 	}
+	mean_time_to_happen = { days = 20 }
 	
 	immediate = {
 		start_border_war = {
 			change_state_after_war = no
 			attacker = {
 				state = 441
-				num_provinces = 2
+				num_provinces = 3
 				on_win = ind_border_conflicts.2
 				on_lose = ind_border_conflicts.3
 			}
@@ -63,6 +69,22 @@ news_event = {
 			defender = {
 				state = 440
 				num_provinces = 2
+				on_win = ind_border_conflicts.2
+				on_lose = ind_border_conflicts.3
+			}
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 441
+				num_provinces = 3
+				on_win = ind_border_conflicts.2
+				on_lose = ind_border_conflicts.3
+			}
+			
+			defender = {
+				state = 806
+				num_provinces = 4
 				on_win = ind_border_conflicts.2
 				on_lose = ind_border_conflicts.3
 			}
@@ -103,5 +125,178 @@ news_event = {
 
 	option = {
 		name = ind_border_conflicts.3.a
+	}
+}
+
+# add_namespace = chi_border_conflicts
+
+# news_event = {
+# 	id = chi_border_conflicts.1   
+# 	title = chi_border_conflicts.1.t
+# 	desc = chi_border_conflicts.1.d
+# 	hidden = yes
+# 	major = yes
+# 	#fire_only_once = yes
+# 	trigger = {
+# 		date > 2014.2.26
+		
+# 		country_exists = IND
+# 		IND = { controls_state = 441 }
+# 		country_exists = CHI
+# 		CHI = {
+# 			controls_state = 440
+# 			controls_state = 806
+# 		}
+# 	}
+# 	mean_time_to_happen = { days = 20 }
+	
+# 	immediate = {
+# 		start_border_war = {
+# 			change_state_after_war = no
+# 			attacker = {
+# 				state = 441
+# 				num_provinces = 3
+# 				on_win = chi_border_conflicts.2
+# 				on_lose = chi_border_conflicts.3
+# 			}
+			
+# 			defender = {
+# 				state = 440
+# 				num_provinces = 2
+# 				on_win = chi_border_conflicts.2
+# 				on_lose = chi_border_conflicts.3
+# 			}
+# 		}
+# 	}
+
+# 	option = {
+# 		name = ind_border_conflicts.1.a
+# 	}
+# }
+# news_event = {
+# 	id = chi_border_conflicts.2   
+# 	title = chi_border_conflicts.2.t
+# 	desc = chi_border_conflicts.2.d
+# 	picture = GFX_kashmir_win
+# 	is_triggered_only = yes
+	
+# 	immediate = {
+# 		army_experience = 5
+# 		add_manpower = -33
+# 	}
+
+# 	option = {
+# 		name = chi_border_conflicts.2.a
+# 	}
+# }
+# news_event = {
+# 	id = chi_border_conflicts.3   
+# 	title = chi_border_conflicts.3.t
+# 	desc = chi_border_conflicts.3.d
+# 	picture = GFX_kashmir_fail
+# 	is_triggered_only = yes
+	
+# 	immediate = {
+# 		army_experience = 5
+# 		add_manpower = -33
+# 	}
+
+# 	option = {
+# 		name = chi_border_conflicts.3.a
+# 	}
+# }
+
+add_namespace = eth_border_conflicts
+
+news_event = {
+	id = eth_border_conflicts.1   
+	title = eth_border_conflicts.1.t
+	desc = eth_border_conflicts.1.d
+	#hidden = yes
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		date > 2016.6.12
+		
+		country_exists = ERI
+		ERI = { controls_state = 550 }
+		country_exists = ETH
+		ETH = {
+			controls_state = 271
+		}
+	}
+	mean_time_to_happen = { days = 20 }
+	
+	immediate = {
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 550
+				num_provinces = 2
+				on_win = eth_border_conflicts.2
+				on_lose = eth_border_conflicts.3
+				on_cancel = eth_border_conflicts.4
+			}
+			
+			defender = {
+				state = 271
+				num_provinces = 2
+				on_win = eth_border_conflicts.2
+				on_lose = eth_border_conflicts.3
+				on_cancel = eth_border_conflicts.4
+			}
+		}
+	}
+
+	option = {
+		name = eth_border_conflicts.1.a
+	}
+}
+news_event = {
+	id = eth_border_conflicts.2   
+	title = eth_border_conflicts.2.t
+	desc = eth_border_conflicts.2.d
+	picture = GFX_kashmir_win
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = eth_border_conflicts.2.a
+	}
+}
+news_event = {
+	id = eth_border_conflicts.3   
+	title = eth_border_conflicts.3.t
+	desc = eth_border_conflicts.3.d
+	picture = GFX_kashmir_fail
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = eth_border_conflicts.3.a
+	}
+}
+news_event = {
+	id = eth_border_conflicts.4  
+	title = eth_border_conflicts.4.t
+	desc = eth_border_conflicts.4.d
+	picture = GFX_kashmir_fail
+	is_triggered_only = yes
+	
+	immediate = {
+		army_experience = 5
+		add_manpower = -33
+	}
+
+	option = {
+		name = eth_border_conflicts.4.a
 	}
 }

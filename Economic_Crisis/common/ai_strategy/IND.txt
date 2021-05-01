@@ -8,16 +8,15 @@ IND_war_PAK = {
 		id = "PAK"
 		value = 100
 	}
-}
-IND_war_PAK2 = {
-	enable = {
-		tag = IND
-	}
-	
 	ai_strategy = {
 		type = prepare_for_war
 		id = "PAK"
 		value = 100
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = "PAK"
+		value = 10
 	}
 }
 IND_war_PAK = {
@@ -30,16 +29,21 @@ IND_war_PAK = {
 		id = "IND"
 		value = 200
 	}
-}
-IND_war_PAK2 = {
-	enable = {
-		tag = IND
-	}
-	
 	ai_strategy = {
 		type = prepare_for_war
 		id = "IND"
 		value = 200
+	}
+}
+WAZ_war_PAK = {
+	enable = {
+		tag = PAK
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "WAZ"
+		value = 50
 	}
 }
 IND_balance = {

@@ -15,6 +15,47 @@ add_ideas = {
 	musulman_collapse
 }
 
+1985.1.1 = {
+	set_variable = { budget_last_year = 1 }
+
+	set_popularities = {
+		communism = 40
+		reformism = 5
+		liberalism = 5
+		democratic = 5
+		neutrality = 5
+		fascism = 20
+		rad_islamists = 20
+	}
+	
+	set_politics = {
+		ruling_party = communism
+		last_election = "1960.7.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	
+	create_country_leader = {
+	   name = "Mohammad Siad Barre"
+	   desc = "POLITICS_MOHAMED_SIAD_BARRE_DESC"
+	   picture = "gfx/leaders/SOM/portrait_mohamed_siad_barre.dds"
+	   ideology = national_communism
+	   traits = { trait_national_communism }
+	}
+	
+	set_party_name = {
+		ideology = communism
+		long_name = SOM_communism_1985_party_long
+		name = SOM_communism_1985_party
+	}
+	set_party_name = {
+		ideology = fascism
+		long_name = SOM_fascism_1985_party_long
+		name = SOM_fascism_1985_party
+	}
+
+}
+
 2012.8.1 = {
     # crating FGS (Федеральное правительство Сомали)
 	create_faction = FGS

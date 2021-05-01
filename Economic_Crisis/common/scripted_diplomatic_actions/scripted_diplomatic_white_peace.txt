@@ -1,0 +1,115 @@
+
+scripted_diplomatic_actions = {
+
+	white_peace = { # will be used in most localizations
+	
+		# root is the initiator of action and this is the target country
+		allowed = { #if action is valid
+			always = yes
+		}
+		visible = { #if action is visible on gui
+			has_war_with = ROOT
+			any_war_score > 9
+			THIS = {
+				NOT = {
+					has_government = rad_islamists
+					is_ai = yes
+				}
+			}
+			has_civil_war = yes
+			ROOT = { NOT = { is_ai = yes } }
+		}
+		selectable = { #if action is selectable on gui
+			has_war_with = ROOT
+			any_war_score > 9
+			THIS = {
+				NOT = {
+					has_government = rad_islamists
+					is_ai = yes
+				}
+			}
+			has_civil_war = yes
+			ROOT = { NOT = { is_ai = yes } }
+		} 
+
+		requires_acceptance = yes # if true the action will require acceptance of target country
+		cost = 300 # pp cost, can be zero
+
+		#cost_string = white_peace_money # if you have a custom cost, use this loc to display it
+		#show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
+
+		icon = 1 # icon frame to use in notification
+
+      #for effects/triggers/variables, root is the sender and this is receiver
+
+		# runs when the action is sent
+		on_sent_effect = {
+			
+		}
+
+		# runs when the action is properly sent and accepted
+		complete_effect = {
+			white_peace = FROM
+		}
+
+		# runs when the action is properly sent and rejected
+		reject_effect = {
+		}
+
+		# SEND POPUP CUSTOMIZATION
+		# use diplomatic_action as context in scripted gui
+		# send_scripted_gui = send_scripted_gui_name # if specified, the diplomatic action will use this scripted gui before sending the request. the player (or ai) can make changes on that gui and store stuff as variable to customize action
+		reset_send_effect = { # if action has a send scripted gui, this effect will be used for clearing the state of gui (will run when player opens the scripted gui by sending the action or when ai proposes action
+			# clear action
+			if = {
+				limit = { 
+					root = {
+						is_ai = yes
+					}
+				}
+				# initialize for ai
+			}
+		}
+		can_be_sent = { # send button will be disabled if no
+			always = yes
+		}
+		send_description = white_peace_send # if there is no scripted gui, this desc will be used in send yes/no pop up
+
+
+		# RECEIVE POPUP CUSTOMIZATION
+		# use diplomatic_action as context in scripted gui
+		# receive_scripted_gui = receive_scripted_gui_name #if specified the receiver of the action will get this scripted gui instead of yes-no popup when they receive the propose
+		reset_receive_effect = {
+			# clear action
+			if = {
+				limit = { 
+					is_ai = yes
+				}
+				# change stuff for ai
+			}
+		}
+		can_be_accepted = { # accept button will be disabled if no
+			always = yes
+		}
+		receive_description = white_peace_receive # if there is no scripted gui, this desc will be used in send yes/no pop up
+
+		
+		# PLAYER FEEDBACK ON ACCEPT/REJECT
+		accept_title = white_peace_accept #can be overridden to customize accepted/rejected pop ups for the sender
+		accept_description = white_peace_accept_desc
+		reject_title = white_peace_reject
+		reject_description = white_peace_reject_desc
+	
+		
+		# AI
+		# список записей ai_will_do, которые будут использоваться, чтобы решить, должен ли ИИ принять или отклонить запрос
+		ai_acceptance = {
+			base = -10000
+		}
+
+		# ai_will_do, чтобы решить, должен ли ИИ отправлять это действие или нет
+		ai_desire = {
+			base = -100000
+		}
+	}
+}

@@ -1,8 +1,7 @@
 
 ##################################################################
 ### Terrain Categories
-###
-###
+##################################################################
 
 categories =  {
 	unknown = {
@@ -94,7 +93,18 @@ categories =  {
 		match_value = 0.5	
 		sound_type = weather_snow_blizzard
 	}
-	
+
+	glacier_mountain = {
+		color = { 50 25 55 }
+		attrition = 0.4
+		movement_cost = 1.0
+		combat_width = -0.81
+		ai_terrain_importance_factor = 0.0
+		match_value = 0.5	
+		sound_type = weather_snow_blizzard
+		enemy_army_bonus_air_superiority_factor = -0.10	
+	}
+
 	urban = {
 		color = { 120 120 120 }
 		movement_cost = 1.2
@@ -299,47 +309,50 @@ categories =  {
 	}
 	
 }
-	
-
 
 ##################################################################
-### Graphical terrain
-###		type	=	refers to the terrain defined above, "terrain category"'s 
-### 	color 	= 	index in bitmap color table (see terrain.bmp)
-###
+### Графическая местность с текстурами.
+### type = относится к местности, определенной выше, "Terrain Categories" 
+### color = индекс в таблице цветов растрового изображения (см. terrain.bmp в GIMP, разделе палитр данного изображения) 
+##################################################################
+### Рекемендации по работе с файлом terrian.map
+### Откройте палтиру (Окна -> Стыгуемые диалоги -> Образцы цветов(палитра))
+### Сделайте копию. Измените цвета. Сохраните.
+### Цвет -> отображение -> изменить цветовую карту, выбираете копию палитры и готово.
+##################################################################
 
 terrain = {
-	terrain_0					= { type = plains			color = { 	0	 } texture = 1 } # edit EC
-	terrain_1					= { type = forest			color = { 	1	 } texture = 5 } # edit EC
-	desert_mountain				= { type = hills			color = { 	2	 } texture = 3 } # edit EC
-	desert						= { type = desert			color = { 	3	 } texture = 11 } # edit EC
-		
-	terrain_4					= { type = forest			color = { 	4	 } texture = 6 } # edit EC
-	terrain_5					= { type = plains	 		color = { 	5	 } texture = 0 } # edit EC
-	terrain_6					= { type = mountain			color = { 	6	 } texture = 13 } # edit EC
-	terrain_7					= { type = desert			color = { 	7	 } texture = 15 } # edit EC
-	desert_hills				= { type = desert			color = { 	8	 } texture = 17 } # edit EC
-	terrain_9					= { type = marsh			color = { 	9	 } texture = 7 } # edit EC
-	terrain_10					= { type = mountain   		color = { 	10	 } texture = 16 } # edit EC
-			
-	desert						= { type = mountain			color = { 	11	 } texture = 13 } # edit EC
-	desert						= { type = desert			color = { 	12	 } texture = 10 } # edit EC
-		
-	forest_13					= { type = urban			color = { 	13	 } texture = 12 spawn_city = yes } # edit EC
-	forest_14					= { type = lakes			color = { 	23	 } texture = 255 } # wtf?
-	ocean_15					= { type = ocean			color = { 	15	 } texture = 11 } # edit EC
-		
-	snow_16						= { type = mountain			color = { 	16	 } texture = 13  perm_snow = yes } # edit EC
-	plains_17					= { type = plains			color = { 	19	 } texture = 0  perm_snow = yes } # edit EC
-	glacier_18					= { type = glacier			color = { 	14	 } texture = 4  perm_snow = yes } # edit EC
-	
-	hills_blend					= { type = hills			color = { 	17	 } texture = 2 } # edit EC
-	mountain_variation_sand	 	= { type = mountain			color = { 	18	 } texture = 8 } # edit EC
-	mountain_variation_grass 	= { type = mountain			color = { 	20	 } texture = 8 } # edit EC
-	jungle_18					= { type = jungle			color = { 	21	 } texture = 5 } # edit EC
-	jungle_blend_18				= { type = jungle			color = { 	22	 } texture = 6 } # edit EC
-	
-	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 8 } # edit EC
-	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 18 } # edit EC
-	
+	terrain_0					= { type = plains				color = { 	0	 } texture = 1 } # edit EC
+	terrain_1					= { type = forest				color = { 	1	 } texture = 5 } # edit EC
+	desert_mountain				= { type = hills				color = { 	2	 } texture = 3 } # edit EC
+	desert						= { type = desert				color = { 	3	 } texture = 11 } # edit EC
+
+	terrain_4					= { type = forest				color = { 	4	 } texture = 6 } # edit EC
+	terrain_5					= { type = plains	 			color = { 	5	 } texture = 0 } # edit EC
+	terrain_6					= { type = mountain				color = { 	6	 } texture = 13 } # edit EC
+	terrain_7					= { type = desert				color = { 	7	 } texture = 15 } # edit EC
+	desert_hills				= { type = desert				color = { 	8	 } texture = 17 } # edit EC
+	terrain_9					= { type = marsh				color = { 	9	 } texture = 7 } # edit EC
+	terrain_10					= { type = mountain   			color = { 	10	 } texture = 16 } # edit EC
+
+	desert						= { type = mountain				color = { 	11	 } texture = 13 } # edit EC
+	desert						= { type = desert				color = { 	12	 } texture = 10 } # edit EC
+
+	forest_13					= { type = urban				color = { 	13	 } texture = 12 spawn_city = yes } # edit EC
+	forest_14					= { type = lakes				color = { 	23	 } texture = 255 } # wtf?
+	ocean_15					= { type = ocean				color = { 	15	 } texture = 11 } # edit EC
+
+	snow_16						= { type = mountain				color = { 	16	 } texture = 13 perm_snow = yes } # edit EC
+	plains_17					= { type = plains				color = { 	19	 } texture = 0  perm_snow = yes } # edit EC
+	glacier_18					= { type = glacier				color = { 	14	 } texture = 4  perm_snow = yes } # edit EC
+	glacier_mountain 			= { type = glacier_mountain 	color = { 	36	 } texture = 9  perm_snow = yes } # edit EC
+
+	hills_blend					= { type = hills				color = { 	17	 } texture = 2 } # edit EC
+	mountain_variation_sand	 	= { type = mountain				color = { 	18	 } texture = 8 } # edit EC
+	mountain_variation_grass 	= { type = mountain				color = { 	20	 } texture = 8 } # edit EC
+	jungle_18					= { type = jungle				color = { 	21	 } texture = 5 } # edit EC
+	jungle_blend_18				= { type = jungle				color = { 	22	 } texture = 6 } # edit EC
+
+	jungle_blend_18				= { type = mountain				color = { 	27	 } texture = 8 } # edit EC
+	desert_mountain_tops		= { type = mountain				color = { 	31	 } texture = 18 } # edit EC
 }

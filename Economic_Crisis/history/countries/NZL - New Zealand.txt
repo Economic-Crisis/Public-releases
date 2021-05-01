@@ -6,14 +6,36 @@
 
 capital = 284
 
-add_ideas = {
-	parliamentary_monarchy
-	queen_elizabet
-	anzus_member
-	low_terrorism
-	mixed_schools
+1985.1.1 = {
+    add_ideas = {
+	    mixed_schools
+		queen_elizabet
+		parliamentary_monarchy
+    }
+
+	set_politics = {
+		ruling_party = reformism
+		last_election = "1984.7.26"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		communism = 5
+		reformism = 50
+		liberalism = 20
+		democratic = 20
+		neutrality = 3
+		fascism = 2
+		rad_islamists = 0
+	}
 	
-	rcep_member
+	create_country_leader = {
+	   name = "David Lange"
+	   desc = "POLITICS_DAVID_LANGE_DESC"
+	   picture = "gfx/leaders/INS/portrait_david_lange.dds"
+	   ideology = social_democracy 
+	   traits = { trait_social_democracy }
+	}
 }
 	
 2013.11.1 = {
@@ -31,6 +53,10 @@ add_ideas = {
 	
 	add_ideas = {
 		TPP_member
+		anzus_member
+		low_terrorism
+	
+		rcep_member
 	}
 
 	set_politics = {

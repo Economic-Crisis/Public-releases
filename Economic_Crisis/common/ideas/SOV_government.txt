@@ -1,0 +1,846 @@
+# Economic Crisis - only ministers
+
+ideas = {
+
+	head_of_government = {
+
+		SOV_Nikolay_Tikhonov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				has_government = communism
+			}
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_communist	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		SOV_Nikolay_Ryzhkov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = communism
+					has_government = reformism
+					has_government = neutrality
+					has_country_flag = coalition_with_centrists
+					has_country_flag = coalition_with_reformists
+				}
+			}
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_reformist }
+	
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Grigoriy_Romanov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = { has_government = communism }
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_communist	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Valentin_Pavlov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = { has_government = communism }
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_communist	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Leonid_Abalkin_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = { has_government = communism }
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_communist	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Anatoliy_Lukyanov_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = { has_government = communism }
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_communist	}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Ivan_Laptev_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = liberalism
+					has_country_flag = coalition_with_liberals
+				}
+			}
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { pm_liberal }
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		SOV_Ivan_Silaev_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = { original_tag = "SOV" }
+
+			traits = {
+				pm_conservative
+				party_leader_conservative
+			}
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Boris_Yeltsin_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+					has_government = democratic
+					has_government = liberalism
+					has_government = neutrality
+					has_country_flag = coalition_with_conservators
+				}
+			}
+
+			allowed = { original_tag = "SOV" }
+
+			traits = { 
+			    pm_conservative 
+				party_leader_conservative
+			}  
+
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Aleksandr_Solzhenitsyn_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    party_leader_nationalist 
+				pm_nationalist			
+			}
+	
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		SOV_Dmitriy_Vasilyev_hog = {
+
+			cost = 1000
+			#removal_cost = -1
+
+			available = {
+				OR = {
+
+					has_government = fascism
+					has_country_flag = coalition_with_nationalists
+				}
+			}
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    party_leader_nationalist 
+				pm_nationalist			
+			}
+	
+			on_add = {
+				news_event = head_of_government.1
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+
+	defence_minister = {
+
+		SOV_Sergey_Sokolov_dm = {
+
+			cost = 650
+
+			allowed = {
+				original_tag = SOV
+			}
+
+
+			available =	{
+
+			}
+
+			traits = {
+				defence_minister_army_order
+			}
+
+			on_add = {
+
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		SOV_Dmitriy_Yazov_dm = {
+
+			cost = 250
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_regime_loyalist
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		SOV_Mikhail_Moiseev_dm = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_bureaucrat
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SOV_Evgeniy_Shaposhnikov_dm = {
+
+			cost = 450
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_distinguished_military
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SOV_Vasiliy_Petrov_dm = {
+
+			cost = 350
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_serve_and_protect
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SOV_Vladislav_Achalov_dm = {
+
+			cost = 400
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SOV_Pavel_Grachev_dm = {
+
+			cost = 400
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SOV_Aleksandr_Lebed_dm = {
+
+			cost = 400
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = {
+				defence_minister_analyst
+				army_chief_reform_1
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+
+	foreign_minister ={
+
+		SOV_Andrey_Gromyko_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		SOV_Eduard_Shevarnadze_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		SOV_Aleksasndr_Bessmertnykh_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		SOV_Boris_Pankin_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		SOV_Anatoliy_Kovalev_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+		
+		SOV_Andrey_Kozyrev_fm = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { foreign_minister_policy_defender }
+		}
+	}
+	
+	economic_minister = {
+	
+		SOV_Nikolay_Baybakov_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Nikolay_Talyzin_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Yuriy_Maslyukov_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Sergey_Afanasyev_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Viktor_Chernomyrdin_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Egor_Gaydar_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_public_administration }
+		}
+		
+		SOV_Andrey_Nechaev_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_banking_credit_system }
+		}
+		
+		SOV_Evgeniy_Yasin_em = {
+
+			cost = 450
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { economic_minister_international_trade }
+		}
+	}
+
+	secret_service_chief = {
+
+		SOV_Viktor_Chebrikov_ssc = {
+
+			cost = 550
+
+			#picture = 
+
+			allowed = { original_tag = SOV }
+
+			available = {	}
+
+			traits = { secret_service_chief_counterespionage }
+		}
+
+
+		SOV_Boris_Pugo_ssc = {
+
+			cost = 350
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{
+
+			}
+
+			traits = { secret_service_chief_spy }
+		}
+		
+		SOV_Vladimir_Kryuchkov_ssc = {
+
+			cost = 350
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{ }
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+
+		SOV_Filipp_Bobkov_ssc = {
+
+			cost = 150
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{ }
+
+			traits = { secret_service_chief_executioner_2 }
+		}
+		
+		SOV_Leonid_Shebarshin_ssc = {
+
+			cost = 350
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{ }
+
+			traits = { secret_service_chief_counterespionage_2 }
+		}
+		
+		SOV_Vadim_Bakatin_ssc = {
+
+			cost = 350
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{ }
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+		
+		SOV_Nikolay_Golushko_ssc = {
+
+			cost = 350
+
+			#picture = 
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available =	{ }
+
+			traits = { secret_service_chief_eminence_grise }
+		}
+	}
+	
+	political_advisor = {
+	
+		SOV_Aleksandr_Vlasov_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { police_reformer }
+		}
+		
+		SOV_Viktor_Alksnis_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+
+			traits = { regime_defender }
+		}
+		
+		SOV_Richard_Kosolapov_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+
+			traits = { 
+			    communist_revolutionary 
+				propaganda_reformer
+			}
+		}
+		
+		SOV_Yegor_Ligachev_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    reformism_reformer
+				propaganda_reformer
+			}
+		}
+		
+		SOV_Aleksandr_Yakovlev_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    liberalism_demagogue
+				backstage_assistant
+			}
+		}
+
+		SOV_Vladimir_Dolgikh_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    tek_reformer
+			}
+		}
+		
+		SOV_Vadim_Medvedev_adv = {
+
+			cost = 150
+
+			allowed = {
+				original_tag = "SOV"
+			}
+
+			traits = { 
+			    industry_developer
+			}
+		}
+    }
+}

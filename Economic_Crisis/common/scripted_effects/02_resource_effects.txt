@@ -94,15 +94,27 @@ set_null_production_of_uran_factory = {
 		    }
 			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
 			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_uran_factory }
-			add_offsite_building = { type = cl_uran_factory level = temp_resource_ratio_add }
+			every_state = {
+				limit = {
+					uran_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_uran_factory level = temp_resource_ratio_add }
+			}
 			set_variable = { NUM_cl_uran_factory = temp_resource_ratio }
 		}
 	
 		}
 		
-		else_if = { limit = { AND = { check_variable = { NUM_cl_uran_factory > 0 } check_variable = { resource@uran > -1 } } }
+		else_if = { limit = { check_variable = { NUM_cl_uran_factory > 0 } check_variable = { resource@uran > -1 } }
 			multiply_variable = { NUM_cl_uran_factory = -1 }
-			add_offsite_building = { type = cl_uran_factory level = NUM_cl_uran_factory }
+			every_state = {
+				limit = {
+					uran_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_uran_factory level = NUM_cl_uran_factory }
+			}
 			set_variable = { NUM_cl_uran_factory = 0 }
 		}
 	
@@ -130,15 +142,27 @@ set_null_production_of_steel_factory = {
 		    }
 			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
 			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_steel_factory }
-			add_offsite_building = { type = cl_steel_factory level = temp_resource_ratio_add }
+			every_state = {
+				limit = {
+					steel_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_steel_factory level = temp_resource_ratio_add }
+			}
 			set_variable = { NUM_cl_steel_factory = temp_resource_ratio }
 		}
 	
 		}
 		
-		else_if = { limit = { AND = { check_variable = { NUM_cl_steel_factory > 0 } check_variable = { resource@iron_ore > -1 } } }
+		else_if = { limit = { check_variable = { NUM_cl_steel_factory > 0 } check_variable = { resource@iron_ore > -1 } }
 			multiply_variable = { NUM_cl_steel_factory = -1 }
-			add_offsite_building = { type = cl_steel_factory level = NUM_cl_steel_factory }
+			every_state = {
+				limit = {
+					steel_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_steel_factory level = NUM_cl_steel_factory }
+			}
 			set_variable = { NUM_cl_steel_factory = 0 }
 		}
 	
@@ -166,15 +190,27 @@ if = { limit = { check_variable = { num_of_aluminium_factory > 0 } }
 		    }
 			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
 			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_aluminium_factory }
-			add_offsite_building = { type = cl_aluminium_factory level = temp_resource_ratio_add }
+			every_state = {
+				limit = {
+					aluminium_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_aluminium_factory level = temp_resource_ratio_add }
+			}
 			set_variable = { NUM_cl_aluminium_factory = temp_resource_ratio }
 		}
 	
 		}
 		
-		else_if = { limit = { AND = { check_variable = { NUM_cl_aluminium_factory > 0 } check_variable = { resource@bauxite > -1 } } }
+		else_if = { limit = { check_variable = { NUM_cl_aluminium_factory > 0 } check_variable = { resource@bauxite > -1 } }
 			multiply_variable = { NUM_cl_aluminium_factory = -1 }
-			add_offsite_building = { type = cl_aluminium_factory level = NUM_cl_aluminium_factory }
+			every_state = {
+				limit = {
+					aluminium_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_aluminium_factory level = NUM_cl_aluminium_factory }
+			}
 			set_variable = { NUM_cl_aluminium_factory = 0 }
 		}
 	
@@ -206,15 +242,27 @@ if = { limit = { check_variable = { num_of_alloy_steel_factory > 0 } }
 		    }
 			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
 			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_alloy_steel_factory }
-			add_offsite_building = { type = cl_alloy_steel_factory level = temp_resource_ratio_add }
+			every_state = {
+				limit = {
+					alloy_steel_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_alloy_steel_factory level = temp_resource_ratio_add }
+			}
 			set_variable = { NUM_cl_alloy_steel_factory = temp_resource_ratio }
 		}
 	
 		}
 		
-		else_if = { limit = { AND = { check_variable = { NUM_cl_alloy_steel_factory > 0 } check_variable = { needed_resource > -1 } } }
+		else_if = { limit = { check_variable = { NUM_cl_alloy_steel_factory > 0 } check_variable = { needed_resource > -1 } }
 			multiply_variable = { NUM_cl_alloy_steel_factory = -1 }
-			add_offsite_building = { type = cl_alloy_steel_factory level = NUM_cl_alloy_steel_factory }
+			every_state = {
+				limit = {
+					alloy_steel_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_alloy_steel_factory level = NUM_cl_alloy_steel_factory }
+			}
 			set_variable = { NUM_cl_alloy_steel_factory = 0 }
 		}
 	
@@ -242,15 +290,27 @@ if = { limit = { check_variable = { num_of_rare_earth_factory > 0 } }
 		    }
 			set_temp_variable = { temp_resource_ratio_add = temp_resource_ratio }
 			subtract_from_temp_variable = { temp_resource_ratio_add = NUM_cl_rare_earth_factory }
-			add_offsite_building = { type = cl_rare_earth_factory level = temp_resource_ratio_add }
+			every_state = {
+				limit = {
+					rare_earth_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_rare_earth_factory level = temp_resource_ratio_add }
+			}
 			set_variable = { NUM_cl_rare_earth_factory = temp_resource_ratio }
 		}
 	
 		}
 		
-		else_if = { limit = { AND = { check_variable = { NUM_cl_rare_earth_factory > 0 } check_variable = { resource@rare_earth_ore > -1 } } }
+		else_if = { limit = { check_variable = { NUM_cl_rare_earth_factory > 0 } check_variable = { resource@rare_earth_ore > -1 } }
 			multiply_variable = { NUM_cl_rare_earth_factory = -1 }
-			add_offsite_building = { type = cl_rare_earth_factory level = NUM_cl_rare_earth_factory }
+			every_state = {
+				limit = {
+					rare_earth_factory > 1
+					is_controlled_by = ROOT
+				}
+				add_building_construction = { type = cl_rare_earth_factory level = NUM_cl_rare_earth_factory }
+			}
 			set_variable = { NUM_cl_rare_earth_factory = 0 }
 		}
 	
