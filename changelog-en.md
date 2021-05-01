@@ -1,3 +1,82 @@
+# 0.7.6.4
+
+ - The modification is synchronized with the game version 1.10.5
+
+### Scripting Department
+
+ - Redesigned the mobilization system
+
+> The mobilization system was a good idea for implementing the wave appeal, however, it was made quite raw, now we have revised it for the sake of even more realism.
+> We decided to choose 44% of the percentage of conscripts as the basis, but why?
+> And the fact is that the population in HOI4 is only a figure, there is no division into segments of the population, for example, gender, disability, age, which means that if you set 100% of the population in a certain Andorra whose population is only 85,100 people, you will get in the army absolutely the same number of conscripts, I think you will agree that this situation is quite delusional. Of course, in the original game, you can mobilize no more than half of the country's population, but not everyone can serve, so we decided that it is necessary to take into account different segments of the population, for example, gender, civil servants, prisoners, disabled people, pensioners, students, children, etc., etc. Thus, now we and the developers of submods have more ways to implement ideas and clarify the realities of the state.
+
+ - Corrected history files.
+ - Revised requirements for the Cabinet of Ministers of Ukraine, France, Germany, Greece and the United Kingdom.
+ - The first attempt to correct the work of the penalty script after the 1.9 patch.
+ - In the templates of Belarus, the OBT has been replaced with Medium tanks.
+ - Fixed a bug that caused troops to be removed from Japan.
+ - Fixed technology transfer when releasing the state.
+ - Implemented a script for changing the leader when the prime Minister is re-appointed in countries where the Prime Minister heads the government. So far, the script is only available in the United Kingdom, the United States and Japan.
+ - Turkey's magic tricks have been somewhat improved.
+ - Fixed Turkey's EU candidate status.
+ - Fixed an issue where some magic tricks were not available due to incorrect reading of the budget status.
+ - Improved the effects of the EAEU focuses.
+ - Fixed the condition of the EAEU decisions when allocating observer status.
+ - Fixed a bug that made it impossible to simultaneously explore the EAEU foci.
+
+### Belarus
+
+ - Improved tricks on the nationalist branch.
+ - Added tricks on the Lukashenko branch.
+ - Added magic tricks on the "Friendship with the East"branch.
+ - Improved the focus of the industry.
+ - Updated and added new events.
+ - Fixed some bugs.
+ - Added new nats. perfume.
+
+### Technology Department
+
+ - Improved fleet technologies.
+ - Fixed a bug where it was impossible to build initial ships without modularity due to the module requirement, provided that module technologies were not previously explored.
+ - Improved technologies of heavy tracked vehicles.
+
+### Diplomacy
+
+ - Added the ability to conclude a white world in multiplayer only between players.
+
+### AI Development Department
+
+ - Adjusted by the US AI
+
+### 2D Designers
+
+ - An audit of resource paths was conducted.
+ - Added portrait of Yoshihida Suga
+ - Improved icons for Belarus ' magic tricks.
+
+### 3D Designers
+
+ - Changed the external display of cities.
+
+### Map Development Department
+
+ - Added the Olivenza region as a disputed territory between Spain and Portugal.
+ - Added the Ilemi Triangle region as a disputed territory between South Sudan and Kenya.
+ - Added the Jiandao region as a disputed region between the People's Republic of China, the Republic of China, and South Korea.
+ - Split Madagascar, added the regions of Tulyara, Fianarantsoa, Antananarivo, Tuamasina, Mahajanga, Antsiranana.
+ - Fixed an issue where a region was not considered urban even though its 3d model was displayed.
+ - Made mapping of Antarctic stations.
+
+### Localization Department
+
+ - Increased the number of quotes in Russian
+ - Fixed incorrect translation of the New Guinea Sea.
+ - Localized events in Turkey.
+ - Localized the ammunition tab.
+ - Updated the description of the tricks of Belarus.
+ - Localized fleet modules.
+
+
 # 0.7.6.3
 
 ### Scripting Department
