@@ -1,3 +1,24 @@
+# 0.7.6.4 - Fix Pack
+
+# Critical Fix
+
+ - Global correction of supply area.
+ 
+# Minor Fix
+
+ - Added events for Belarus.
+ - Fixed localization of solutions.
+ - Fixed terrain status for provinces: 12128, 11473, 10253, 12329, 7757, 7789, 12174, 1775, 4824, 7328, 4261 and 117.
+ - Added industrial enterprises for Belarus.
+ - Fixed the placement of buildings and airfields in different regions.
+ - Added the Darien Gap regions divided between Colombia and Panama.
+ - Fixed victory points and conducted audits in the following regions: Sima, Tatarstan, Chuang Son Mountains, Panama, Singapore, La Libertad, Rio de Janeiro, Sao Paulo, Tubu, Jiangsu, Shanghai, Tacheng, Beitun, Congo, Singapore, Northern Thailand, Mekong Lowlands and Eastern Cambodia.
+ - Fixed the effect of withdrawing funds from the state reserve in the focus branch of the EAEU.
+ - Fixed the issue of displaying the EAEU magic tricks from the start of the game.
+ - Fixed withdrawal effects and withdrawal requirements in Belarus focuses.
+
+
+
 # 0.7.6.4
 
  - The modification is synchronized with the game version 1.10.5

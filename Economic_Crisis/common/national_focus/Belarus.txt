@@ -112,7 +112,7 @@ focus_tree = {
 	focus = {
 		id = BLR_civ_factory_II
 		icon = GFX_goal_generic_construct_civ_factory_red
-		cost = 70
+		cost = 60
 		prerequisite = {focus = BLR_civ_factory}
 		x = -16
 		y = 3
@@ -331,7 +331,7 @@ focus_tree = {
 	focus = {
 		id = BLR_military_factory_II
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 70
+		cost = 60
 		prerequisite = {focus = BLR_military_factory}
 		x = -14
 		y = 3
@@ -674,20 +674,20 @@ focus_tree = {
 		prerequisite = {focus = BLR_updat_infastructure}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = BLR_monorels
+				tooltip = BLR_monorels_1_t
 				check_variable = { budget_reserve > 10 }
 			}
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_monorels
+					tooltip = BLR_monorels_1_t
 					check_variable = { budget_reserve > 10 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_monorels
+					tooltip = BLR_monorels_1_t
 					check_variable = { budget_reserve > 0.001 }
 				}
 			}
@@ -696,7 +696,8 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_monorels
+			news_event = { id = belarus_news.21 days = 5 }
+		    custom_effect_tooltip = BLR_monorels_2_t
 			subtract_from_variable = { budget_reserve = 10 }
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
@@ -836,20 +837,20 @@ focus_tree = {
 		prerequisite = {focus = BLR_updat_infastructure}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = BLR_SkyWay
+				tooltip = BLR_SkyWay_1_t
 				check_variable = { budget_reserve > 50 }
 			}
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_SkyWay
+					tooltip = BLR_SkyWay_1_t
 					check_variable = { budget_reserve > 50 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_SkyWay
+					tooltip = BLR_SkyWay_1_t
 					check_variable = { budget_reserve > 0.05 }
 				}
 			}
@@ -858,7 +859,8 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_SkyWay
+			news_event = { id = belarus_news.20 days = 5 }
+		    custom_effect_tooltip = BLR_SkyWay_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 50 }
@@ -1029,14 +1031,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_developed_funiculars
+					tooltip = BLR_developed_funiculars_1_t
 					check_variable = { budget_reserve > 25 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_developed_funiculars
+					tooltip = BLR_developed_funiculars_1_t
 					check_variable = { budget_reserve > 0.025 }
 				}
 			}
@@ -1045,7 +1047,7 @@ focus_tree = {
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_developed_funiculars
+		    custom_effect_tooltip = BLR_developed_funiculars_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 25 }
@@ -1216,14 +1218,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_updat_metro
+					tooltip = BLR_updat_metro_1_t
 					check_variable = { budget_reserve > 30 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_updat_metro
+					tooltip = BLR_updat_metro_1_t
 					check_variable = { budget_reserve > 0.030 }
 				}
 			}
@@ -1232,7 +1234,7 @@ focus_tree = {
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_updat_metro
+		    custom_effect_tooltip = BLR_updat_metro_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 30 }
@@ -1403,14 +1405,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_metro_for_small_city
+					tooltip = BLR_metro_for_small_city_1_t
 					check_variable = { budget_reserve > 100 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_metro_for_small_city
+					tooltip = BLR_metro_for_small_city_1_t
 					check_variable = { budget_reserve > 0.1 }
 				}
 			}
@@ -1419,7 +1421,7 @@ focus_tree = {
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_metro_for_small_city
+		    custom_effect_tooltip = BLR_metro_for_small_city_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 100 }
@@ -1590,14 +1592,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_speed_tram
+					tooltip = BLR_speed_tram_1_t
 					check_variable = { budget_reserve > 50 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_speed_tram
+					tooltip = BLR_speed_tram_1_t
 					check_variable = { budget_reserve > 0.050 }
 				}
 			}
@@ -1606,7 +1608,7 @@ focus_tree = {
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_speed_tram
+		    custom_effect_tooltip = BLR_speed_tram_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 50 }
@@ -1718,14 +1720,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_speed_train
+					tooltip = BLR_speed_train_1_t
 					check_variable = { budget_reserve > 130 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_speed_train
+					tooltip = BLR_speed_train_1_t
 					check_variable = { budget_reserve > 0.013 }
 				}
 			}
@@ -1734,7 +1736,8 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_speed_train
+			news_event = { id = belarus_news.22 days = 5 }
+		    custom_effect_tooltip = BLR_speed_train_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 130 }
@@ -1845,14 +1848,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_ships
+					tooltip = BLR_ships_1_t
 					check_variable = { budget_reserve > 200 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_ships
+					tooltip = BLR_ships_1_t
 					check_variable = { budget_reserve > 0.02 }
 				}
 			}
@@ -1861,7 +1864,7 @@ focus_tree = {
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_ships
+		    custom_effect_tooltip = BLR_ships_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 200 }
@@ -1972,14 +1975,14 @@ focus_tree = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				custom_trigger_tooltip = {
-					tooltip = BLR_magnetic_levitation_train
+					tooltip = BLR_magnetic_levitation_train_1_t
 					check_variable = { budget_reserve > 120 }
 				}
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
 				custom_trigger_tooltip = {
-					tooltip = BLR_magnetic_levitation_train
+					tooltip = BLR_magnetic_levitation_train_1_t
 					check_variable = { budget_reserve > 0.012 }
 				}
 			}
@@ -1988,7 +1991,8 @@ focus_tree = {
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    custom_effect_tooltip = BLR_magnetic_levitation_train
+			news_event = { id = belarus_news.23 days = 5 }
+		    custom_effect_tooltip = BLR_magnetic_levitation_train_2_t
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 120 }
@@ -2163,7 +2167,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_zavershenie_restavracii
+		id = BLR_Belgazprom
 		icon = GFX_goal_unknown
 		cost = 50
 		prerequisite = {focus = BLR_bel_voen_prom}
@@ -2173,15 +2177,14 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_political_power = 150
-			add_stability = 0.05
-			add_timed_idea = { idea = BLR_tyrism days = 120 }
+			add_ideas = BLR_Belgazprom
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_green_school
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_zavershenie_restavracii}
+		prerequisite = {focus = BLR_Belgazprom}
 		cost = 50
 		x = -14
 		y = 8
@@ -6846,7 +6849,7 @@ focus_tree = {
 		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_Kommynarka
+			add_ideas = BLR_BRSM
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -11419,7 +11422,7 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_research_slot = 2
+		    add_research_slot = 1
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -13517,7 +13520,7 @@ focus_tree = {
 		x = 15
 		y = 20
 		allow_branch = {
-			#has_idea = eaeu_member
+			has_idea = eaeu_member
 		}
 		ai_will_do = { factor = 5 }
 		available = { 
@@ -13597,11 +13600,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -3500 }
+				subtract_from_variable = { budget_reserve = 3500 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -3.5 }
+				subtract_from_variable = { budget_reserve = 3.5 }
 			}
 			add_political_power = -400
 			BLR = {
@@ -13695,11 +13698,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform1_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -700 }
+				subtract_from_variable = { budget_reserve = 700 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.7 }
+				subtract_from_variable = { budget_reserve = 0.7 }
 			}
 			add_political_power = -800
 			random_country = {
@@ -13799,11 +13802,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -400 }
+				subtract_from_variable = { budget_reserve = 400 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.4 }
+				subtract_from_variable = { budget_reserve = 0.4 }
 			}
 			add_political_power = -600
 			custom_effect_tooltip = eaeu_reform2_TT
@@ -13895,11 +13898,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform3_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -700 }
+				subtract_from_variable = { budget_reserve = 700 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.7 }
+				subtract_from_variable = { budget_reserve = 0.7 }
 			}
 			add_political_power = -600
 			random_country = {
@@ -14000,11 +14003,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -400 }
+				subtract_from_variable = { budget_reserve = 400 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.4 }
+				subtract_from_variable = { budget_reserve = 0.4 }
 			}
 			add_political_power = -1200
 			custom_effect_tooltip = eaeu_reform4_TT
@@ -14110,11 +14113,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -300 }
+				subtract_from_variable = { budget_reserve = 300 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.3 }
+				subtract_from_variable = { budget_reserve = 0.3 }
 			}
 			add_political_power = -600
 			custom_effect_tooltip = eaeu_reform5_TT
@@ -14220,11 +14223,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform6_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -300 }
+				subtract_from_variable = { budget_reserve = 300 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.3 }
+				subtract_from_variable = { budget_reserve = 0.3 }
 			}
 			add_political_power = -300
 		}
@@ -14316,11 +14319,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform7_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -900 }
+				subtract_from_variable = { budget_reserve = 900 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.9 }
+				subtract_from_variable = { budget_reserve = 0.9 }
 			}
 			add_political_power = -500
 			random_country = {
@@ -14422,11 +14425,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_reform8_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -500 }
+				subtract_from_variable = { budget_reserve = 500 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.5 }
+				subtract_from_variable = { budget_reserve = 0.5 }
 			}
 			add_political_power = -700
 			random_country = {
@@ -14525,11 +14528,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_economy_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -500 }
+				subtract_from_variable = { budget_reserve = 500 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.5 }
+				subtract_from_variable = { budget_reserve = 0.5 }
 			}
 			add_political_power = -500
 			every_country = {
@@ -14627,11 +14630,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -70 }
+				subtract_from_variable = { budget_reserve = 70 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.07 }
+				subtract_from_variable = { budget_reserve = 0.07 }
 			}
 			add_political_power = -300
 			custom_effect_tooltip = eaeu_economy1_TT
@@ -14731,11 +14734,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_economy2_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -3000 }
+				subtract_from_variable = { budget_reserve = 3000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -3.0 }
+				subtract_from_variable = { budget_reserve = 3.0 }
 			}
 			add_political_power = -300
 			every_country = {
@@ -14829,11 +14832,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_economy3_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -5000 }
+				subtract_from_variable = { budget_reserve = 5000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -5.0 }
+				subtract_from_variable = { budget_reserve = 5.0 }
 			}
 			activate_decision = fund_eaeu
 		}
@@ -14923,11 +14926,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_economy4_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -12000 }
+				subtract_from_variable = { budget_reserve = 12000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -12.0 }
+				subtract_from_variable = { budget_reserve = 12.0 }
 			}
 			country_event = eaeu_event.1
 		}
@@ -15019,11 +15022,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_economy5_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -1700 }
+				subtract_from_variable = { budget_reserve = 1700 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -1.7 }
+				subtract_from_variable = { budget_reserve = 1.7 }
 			}
 			if = {
 				limit = {
@@ -15125,11 +15128,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -33000 }
+				subtract_from_variable = { budget_reserve = 33000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -33.0 }
+				subtract_from_variable = { budget_reserve = 33.0 }
 			}
 			set_global_flag = EAEU_united_bank
 			custom_effect_tooltip = eaeu_economy6_TT
@@ -15219,11 +15222,11 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -100 }
+				subtract_from_variable = { budget_reserve = 100 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.01 }
+				subtract_from_variable = { budget_reserve = 0.01 }
 			}
 			custom_effect_tooltip = eaeu_infestructure_tt
 		}
@@ -15316,11 +15319,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_infestructure1_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -15000 }
+				subtract_from_variable = { budget_reserve = 15000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -15.0 }
+				subtract_from_variable = { budget_reserve = 15.0 }
 			}
 			every_country = {
 				limit = { has_idea = eaeu_member }
@@ -15413,11 +15416,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_sphere_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -3000 }
+				subtract_from_variable = { budget_reserve = 3000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -3.0 }
+				subtract_from_variable = { budget_reserve = 3.0 }
 			}
 			add_ideas = shymkent_area_immigration
 		}
@@ -15651,11 +15654,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_sphere3_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -40000 }
+				subtract_from_variable = { budget_reserve = 40000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -40.0 }
+				subtract_from_variable = { budget_reserve = 40.0 }
 			}
 			every_country = {
 				limit = { has_idea = rcep_member }
@@ -15751,11 +15754,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_sphere4_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -55000 }
+				subtract_from_variable = { budget_reserve = 55000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -55.0 }
+				subtract_from_variable = { budget_reserve = 55.0 }
 			}
 			every_country = {
 				limit = { has_idea = mercosur_member }
@@ -15927,11 +15930,11 @@ focus_tree = {
 			custom_effect_tooltip = eaeu_science_tt
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
-				subtract_from_variable = { budget_reserve = -17000 }
+				subtract_from_variable = { budget_reserve = 17000 }
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -17.0 }
+				subtract_from_variable = { budget_reserve = 17.0 }
 			}
 			set_country_flag = EAEU_science
 			add_to_tech_sharing_group = eau_research
