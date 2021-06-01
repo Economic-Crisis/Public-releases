@@ -345,3 +345,194 @@ news_event = {
 		name = belarus_news.25.a	 
 	}
 }
+news_event = {
+	id = belarus_news.26 
+	title = belarus_news.26.t
+	desc = belarus_news.26.d
+	#picture = GFX_karabah_win
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		RUS = {
+			has_opinion = {
+				target = BLR
+				value > 200
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_named_threat = { threat = 3 name = threat_BLR_military_conflict	}
+			PPR = {
+				transfer_state = 94
+				transfer_state = 194
+				
+				add_state_claim = 93
+				add_state_claim = 940
+				add_state_claim = 201
+				add_state_claim = 202
+				add_state_claim = 914
+				
+				add_state_core = 94
+				add_state_core = 194
+				add_state_core = 204
+				
+				add_opinion_modifier = {
+					target = BLR
+					modifier = attacked_in_our_border
+				}
+				
+				add_opinion_modifier = {
+					target = BLR
+					modifier = post_war
+				}
+
+				add_equipment_to_stockpile = {
+					amount = 10000
+					type = army_salw_equipment_1
+				}
+				add_equipment_to_stockpile = {
+					amount = 10000
+					type = army_ammunition_equipment_1
+				}
+				add_equipment_to_stockpile = {
+					amount = 10000
+					type = truck_g0_equipment_0
+				}
+
+				load_oob = "_tech_csto_minor_2013"
+				load_oob = "PPR_2013"
+
+				army_experience = 20
+			}
+			RUS = {
+				recall_attache = PPR
+				give_guarantee = PPR
+				remove_from_faction = BLR
+			}
+			BLR = {
+				add_opinion_modifier = {
+					target = PPR
+					modifier = attacked_in_our_border
+				}
+				
+				add_opinion_modifier = {
+					target = PPR
+					modifier = post_war
+				}
+				
+				add_opinion_modifier = {
+					target = PPR
+					modifier = separatist
+				}
+				army_experience = 20
+				add_manpower = -347
+			}
+		}
+	}
+
+	option = {
+		name = belarus_news.26.a
+		hidden_effect = {
+			# 94 = { set_border_war = yes }
+			# 95 = { set_border_war = yes }
+			# 194 = { set_border_war = yes }
+			# 204 = { set_border_war = yes }
+			# 206 = { set_border_war = yes }
+			# 241 = { set_border_war = yes }
+			BLR = {
+				start_border_war = {
+					change_state_after_war = yes
+					attacker = {
+						state = 194
+						num_provinces = 15
+						on_win = belarus_news.27
+						on_lose = belarus_news.28
+					}
+								
+					defender = {
+						state = 204
+						num_provinces = 1
+						on_win = belarus_news.27
+						on_lose = belarus_news.28
+					}
+				}
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 194
+						num_provinces = 15
+						on_win = belarus_news.27
+						on_lose = belarus_news.28
+					}
+								
+					defender = {
+						state = 241
+						num_provinces = 11
+						on_win = belarus_news.28
+						on_lose = belarus_news.27
+					}
+				}
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 194
+						num_provinces = 15
+						on_win = belarus_news.27
+						on_lose = belarus_news.28
+					}
+								
+					defender = {
+						state = 206
+						num_provinces = 14
+						on_win = belarus_news.28
+						on_lose = belarus_news.27
+					}
+				}
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 94
+						num_provinces = 12
+						on_win = belarus_news.27
+						on_lose = belarus_news.28
+					}
+								
+					defender = {
+						state = 95
+						num_provinces = 11
+						on_win = belarus_news.28
+						on_lose = belarus_news.27
+					}
+				}
+			}
+		}
+	}
+}
+
+news_event = { 
+	id = belarus_news.27
+	title = belarus_news.27.t
+	desc = belarus_news.27.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = belarus_news.27.a	 
+	}
+}
+
+news_event = { 
+	id = belarus_news.28
+	title = belarus_news.28.t
+	desc = belarus_news.28.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = belarus_news.28.a	 
+	}
+}

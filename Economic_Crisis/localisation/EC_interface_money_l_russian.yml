@@ -8,10 +8,15 @@
   
   money_menu_btn_text:0 "Бюджет"
   
-
+  money_info_1:0 "Валовой внутренний продукт."
+  delaye_money_info_1:0 "Валовой внутренний продукт ((ВВП)) — макроэкономический показатель, отражающий рыночную стоимость всех конечных товаров и услуг (то есть предназначенных для непосредственного употребления, использования или применения), произведённых за год во всех отраслях экономики на территории государства для потребления, экспорта и накопления, вне зависимости от национальной принадлежности использованных факторов производства."
+  
+  money_trillions:0 "Мощная экономика"
   
   budget_alert_info:0 "Вы не составили бюджет на [GetYear]-ый год."
   budget_alert_info_time:0 "Составление бюджета будет доступно лишь §Rдо нового года§!! В противном случае в нашем государстве будет объявлен §Rлокдаун§!!"
+  
+  default:0 "Дефолт"
   
   money_menu_budget_last_year_text:0 "Бюджет в прошлом году:                           §Y[?budget_last_year] [money_budget_text]"
   money_menu_planned_budget_text:0 "Планируемый бюджет:                                §Y[?planned_budget] [money_budget_text]"
@@ -28,6 +33,7 @@
   def_prof_text_def:0 "§RДефицит: [?def_prof_percen]%"
   
   money_menu_inc_exp_info_text:0 "§GДоходы:\n\n§WДоходы с фабрик: §G[?civ_fact_inc] [money_budget_text]/день\n§WНалоги: §G[?taxes_inc] [money_budget_text]/день\n§WПродажа ресурсов: §G[?resources_inc] [money_budget_text]/день\n§WПродажа электроэнергии: §G[?money_electricity_inc] [money_budget_text]/день\n\n§RРасходы:\n\n§WМинистерства: §R[?minist_exp] [money_budget_text]/день\n§WПокупка ресурсов: §R[?resources_exp] [money_budget_text]/день\n§WДолги: §R[?credit_exp] [money_budget_text]/день\n§WПокупка электроэнергии: §R[?money_electricity_dec] [money_budget_text]/день\n\n\n\n§WБаланс: §Y[?total_money] [money_budget_text]/неделя\n\n§WРезервный фонд: §G[?budget_reserve] [money_budget_text]§!"
+  money_menu_inc_exp_reset_all_text:0 "Сбросить всё\n§RЭкспериментальная функция!\nИспользовать лишь в крайних случаях!§!"
   
   money_menu_ministries_text:0 "Министерства"
   
@@ -96,11 +102,11 @@
   cat_2_sec_2_text_percen:0 "§Y[?cat_2_sec_2_ratio]%"
   cat_2_sec_2_text_money:0 "§Y[?cat_2_sec_2_budget] [money_budget_text]"
   cat_2_sec_2_ratio_text_tp:0 "[cat_2_sec_2_ratio_text]"
-  cat_2_sec_2_ratio_text_good:0 "Расходы на СМЗ\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §GВысокая\n\n§YЭффекты:\n\n§WПотеря опыта: §G-10%"
-  cat_2_sec_2_ratio_text_normal:0 "Расходы на СМЗ\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §YНормальная\n\n§YЭффекты:\n\n§WПотеря опыта: §W-Отсутствуют-%"
-  cat_2_sec_2_ratio_text_bad:0 "Расходы на СМЗ\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §RНизкая\n\n§YЭффекты:\n\n§WПотеря опыта: §R+10%"
-  cat_2_sec_2_good:0 "Расходы на СМЗ"
-  cat_2_sec_2_bad:0 "Расходы на СМЗ"
+  cat_2_sec_2_ratio_text_good:0 "Расходы на Специальные Медицинские Заведения\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §GВысокая\n\n§YЭффекты:\n\n§WПотеря опыта: §G-10%"
+  cat_2_sec_2_ratio_text_normal:0 "Расходы на Специальные Медицинские Заведения\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §YНормальная\n\n§YЭффекты:\n\n§WПотеря опыта: §W-Отсутствуют-%"
+  cat_2_sec_2_ratio_text_bad:0 "Расходы на Специальные Медицинские Заведения\n\nТребуемое кол-во денег: §Y[?spe_med_fac_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §RНизкая\n\n§YЭффекты:\n\n§WПотеря опыта: §R+10%"
+  cat_2_sec_2_good:0 "Расходы на Специальные Медицинские Заведения"
+  cat_2_sec_2_bad:0 "Расходы на Специальные Медицинские Заведения"
   
   cat_2_sec_3_text_percen:0 "§Y[?cat_2_sec_3_ratio]%§!"
   cat_2_sec_3_text_money:0 "§Y[?cat_2_sec_3_budget] [money_budget_text]§!"
@@ -114,9 +120,9 @@
   cat_2_sec_4_text_percen:0 "§Y[?cat_2_sec_4_ratio]%§!"
   cat_2_sec_4_text_money:0 "§Y[?cat_2_sec_4_budget] [money_budget_text]§!"
   cat_2_sec_4_ratio_text_tp:0 "[cat_2_sec_4_ratio_text]§!"
-  cat_2_sec_4_ratio_text_bad:0 "Расходы на Центр закупки оборудования\n\nТребуемое кол-во денег: §Y[?equ_pro_cen_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §GВысокая\n\n§YЭффекты:\n\n§WПродолжительности жизни населения: §R-10%§!"
+  cat_2_sec_4_ratio_text_bad:0 "Расходы на Центр закупки оборудования\n\nТребуемое кол-во денег: §Y[?equ_pro_cen_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §RНизкая\n\n§YЭффекты:\n\n§WПродолжительности жизни населения: §R-10%§!"
   cat_2_sec_4_ratio_text_normal:0 "Расходы на Центр закупки оборудования\n\nТребуемое кол-во денег: §Y[?equ_pro_cen_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §YНормальная\n\n§YЭффекты:\n\n§WПродолжительности жизни населения: §W-Отсутствуют-§!"
-  cat_2_sec_4_ratio_text_good:0 "Расходы на Центр закупки оборудования\n\nТребуемое кол-во денег: §Y[?equ_pro_cen_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §RНизкая\n\n§YЭффекты:\n\n§WПродолжительности жизни населения: §G+10%§!"
+  cat_2_sec_4_ratio_text_good:0 "Расходы на Центр закупки оборудования\n\nТребуемое кол-во денег: §Y[?equ_pro_cen_exp] [money_budget_text] \n§!Степень удовлетворения потребностей: §GВысокая\n\n§YЭффекты:\n\n§WПродолжительности жизни населения: §G+10%§!"
   cat_2_sec_4_good:0 "Расходы на Центр закупки оборудования"
   cat_2_sec_4_bad:0 "Расходы на Центр закупки оборудования"
   

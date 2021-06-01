@@ -35,7 +35,7 @@ guiTypes = {
 	}
 	
 
-		containerWindowType = {
+	containerWindowType = {
 		name = "diplomacy_money"
 		position = { x = 8 y = 8 } #x15 y350
 
@@ -44,7 +44,6 @@ guiTypes = {
 			spriteType = "GFX_ec_generic_box_255"
 			position = { x = 0 y = 28 }
 			Orientation = "UPPER_LEFT"
-			pdx_tooltip = electricity_info_4
 		}
 		
 		iconType = {
@@ -53,6 +52,8 @@ guiTypes = {
 			position = { x = 0 y = 28 }
 			Orientation = "UPPER_LEFT"
 			#alwaystransparent = yes
+			pdx_tooltip = electricity_info_4
+			pdx_tooltip_delayed = electricity_info_5
 		}
 		
 		instantTextBoxType = {
@@ -65,6 +66,8 @@ guiTypes = {
 			maxHeight = 24
 			fixedsize = yes
 			#alwaystransparent = yes
+			pdx_tooltip = electricity_info_4
+			pdx_tooltip_delayed = electricity_info_5
 		}
 		
 		iconType ={
@@ -81,6 +84,8 @@ guiTypes = {
 			position = { x = 0 y = 5 }
 			Orientation = "UPPER_LEFT"
 			#alwaystransparent = yes
+			pdx_tooltip = money_info_1
+			pdx_tooltip_delayed = delaye_money_info_1
 		}
 		
 		instantTextBoxType = {
@@ -93,7 +98,23 @@ guiTypes = {
 			maxHeight = 24
 			fixedsize = yes
 			#alwaystransparent = yes
+			pdx_tooltip = money_info_1
+			pdx_tooltip_delayed = delaye_money_info_1
 		}
 		
-	}	
+		instantTextBoxType = {
+			name ="national_unity_value"
+			position = { x = 111 y = 33 }
+			font = "hoi_18mbs"
+			text = "diplomacy_national_unity_text"
+			format = center
+			maxWidth = 100
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+			pdx_tooltip = national_unity_info_1
+			pdx_tooltip_delayed = delaye_national_unity_info_1
+		}
+		
+	}
 }

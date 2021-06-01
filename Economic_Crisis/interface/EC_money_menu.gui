@@ -214,9 +214,16 @@ guiTypes = {
 		iconType = {
 			name ="money_menu_inc_exp_info"
 			spriteType = "GFX_money_menu_info_btn"
-			position = { x = 550 y = 71 }
+			position = { x = 550 y = 75 }
 			pdx_tooltip = money_menu_inc_exp_info_text
 		}
+		
+		#iconType = {
+		#	name ="money_menu_inc_exp_reset_all"
+		#	spriteType = "GFX_money_menu_reset_all_btn"
+		#	position = { x = 584 y = 75 }
+		#	pdx_tooltip = money_menu_inc_exp_reset_all_text
+		#}
 	
 
 		instantTextBoxType = {
@@ -2359,8 +2366,18 @@ guiTypes = {
 			alwaystransparent = yes
 		}	
 	}
-
-
-
+	
+	containerWindowType = {
+		name = "container_reset_all"
+		position = { x = 0 y = 0 }
+		moveable = yes
+		
+		ButtonType = {
+			name ="money_menu_reset_all_btn"
+			spriteType = "GFX_money_menu_reset_all_btn"
+			position = { x = 584 y = 75 }
+			pdx_tooltip = money_menu_inc_exp_reset_all_text
+		}
+	}
 }
 

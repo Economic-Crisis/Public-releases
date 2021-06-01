@@ -423,6 +423,19 @@ on_actions = {
 	#Root - current country
 	on_daily = {
 		effect = {
+			if = {
+				limit = {
+					has_variable = national_unity
+				}
+				clamp_variable = {
+					var = national_unity
+					min = 0
+					max = 100
+				}
+			}
+			else = {
+				ROOT = { NU_on_startup_settings = yes }
+			}
 			
 		}
 	}
@@ -441,6 +454,7 @@ on_actions = {
 					NOT = {
 						has_country_flag = cau_border_conflict
 					}
+					tag = NKR
 				}
 				start_border_war = {
 					change_state_after_war = no
@@ -487,7 +501,16 @@ on_actions = {
 	on_startup = {
 		effect = {
 			log = EC_version
-			
+
+			every_country = { NU_on_startup_settings = yes }
+
+			every_country = {
+				limit = {
+					is_ai = yes
+				}
+				add_timed_idea = { idea = AI_industry_hidden_buff days = 5 }
+			}
+
 			set_global_flag = THAI_CANAL_BLOCKED #Это лишь обговариваемый проект
 			set_global_flag = NICARAGUA_CANAL_BLOCKED #Это лишь обговариваемый проект
 			every_country = {

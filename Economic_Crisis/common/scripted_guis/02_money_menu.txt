@@ -921,5 +921,102 @@ set_variable = { money_menu_switcher = 7 }
         }
         
 	}
-
+	
+	reset_brn = {
+		window_name = "container_reset_all"
+		parent_window_name = "money_menu_gui"
+ 
+		context_type = player_context
+ 
+		visible = {
+			OR = {
+				has_country_flag = test_reset_all
+				is_debug = yes
+			}
+		}
+ 
+        effects = {
+			money_menu_reset_all_btn_click = {
+				#Обнулить выделенные деньги
+				set_variable = { cat_1_budget = 0 }
+				set_variable = { cat_2_budget = 0 }
+				set_variable = { cat_3_budget = 0 }
+				set_variable = { cat_4_budget = 0 }
+				set_variable = { cat_5_budget = 0 }
+				set_variable = { cat_6_budget = 0 }
+				#Обнулить проценты
+				set_variable = { cat_1_ratio = 0 }
+				set_variable = { cat_2_ratio = 0 }
+				set_variable = { cat_3_ratio = 0 }
+				set_variable = { cat_4_ratio = 0 }
+				set_variable = { cat_5_ratio = 0 }
+				set_variable = { cat_6_ratio = 0 }
+				#Обнулить процентное распределение
+				set_variable = { budget_rest_cats_percen = 100 }
+				#Обнулить выделенные деньги в секции 1
+				set_variable = { cat_1_sec_1_budget = 0 }
+				set_variable = { cat_1_sec_2_budget = 0 }
+				set_variable = { cat_1_sec_3_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_1_sec_1_ratio_st = 1 }
+				set_variable = { cat_1_sec_2_ratio_st = 1 }
+				set_variable = { cat_1_sec_3_ratio_st = 1 }
+				#Обнулить проценты в секции 1
+				set_variable = { cat_1_sec_1_ratio = 0 }
+				set_variable = { cat_1_sec_2_ratio = 0 }
+				set_variable = { cat_1_sec_3_ratio = 0 }
+				#Обнулить процентное распределение в секции 1
+				set_variable = { cat_1_rest_sections_percen = 100 }
+				#Обнулить выделенные деньги в секции 2
+				set_variable = { cat_2_sec_1_budget = 0 }
+				set_variable = { cat_2_sec_2_budget = 0 }
+				set_variable = { cat_2_sec_3_budget = 0 }
+				set_variable = { cat_2_sec_4_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_2_sec_1_ratio_st = 0 }
+				set_variable = { cat_2_sec_2_ratio_st = 0 }
+				set_variable = { cat_2_sec_3_ratio_st = 0 }
+				set_variable = { cat_2_sec_4_ratio_st = 0 }
+				#Обнулить проценты в секции 2
+				set_variable = { cat_2_sec_1_ratio = 0 }
+				set_variable = { cat_2_sec_2_ratio = 0 }
+				set_variable = { cat_2_sec_3_ratio = 0 }
+				set_variable = { cat_2_sec_4_ratio = 0 }
+				#Обнулить процентное распределение в секции 2
+				set_variable = { cat_2_rest_sections_percen = 100 }
+				#Обнулить выделенные деньги в секции 3
+				set_variable = { cat_3_sec_1_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_3_sec_1_ratio_st = 1 }
+				#Обнулить проценты в секции 3
+				set_variable = { cat_3_sec_1_ratio = 0 }
+				#Обнулить процентное распределение в секции 3
+				set_variable = { cat_3_rest_sections_percen = 100 }
+				#Обнулить выделенные деньги в секции 4
+				set_variable = { cat_4_sec_1_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_4_sec_1_ratio_st = 1 }
+				#Обнулить проценты в секции 4
+				set_variable = { cat_4_sec_1_ratio = 0 }
+				#Обнулить процентное распределение в секции 4
+				set_variable = { cat_4_rest_sections_percen = 100 }
+				#Обнулить выделенные деньги в секции 5
+				set_variable = { cat_5_sec_1_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_5_sec_1_ratio_st = 0 }
+				#Обнулить проценты в секции 5
+				set_variable = { cat_5_sec_1_ratio = 0 }
+				#Обнулить процентное распределение в секции 5
+				set_variable = { cat_5_rest_sections_percen = 100 }
+				#Обнулить выделенные деньги в секции 6
+				set_variable = { cat_6_sec_1_budget = 0 }
+				#Обнулить эффекты секции
+				set_variable = { cat_6_sec_1_ratio_st = 1 }
+				#Обнулить проценты в секции 6
+				set_variable = { cat_6_sec_1_ratio = 0 }
+				#Обнулить процентное распределение в секции 6
+				set_variable = { cat_6_rest_sections_percen = 100 }
+			}
+        }
+	}
 }

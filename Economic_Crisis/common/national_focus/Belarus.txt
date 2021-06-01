@@ -2405,7 +2405,7 @@ focus_tree = {
 		x = -11
 		y = 2
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -2562,7 +2562,7 @@ focus_tree = {
 		x = -9
 		y = 2
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			194 = {
 				add_building_construction = {
 					type = eco_power_plant 
@@ -2602,7 +2602,7 @@ focus_tree = {
 		x = -10
 		y = 3
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			194 = {
 				add_building_construction = {
 					type = thermal_power_plant 
@@ -3467,7 +3467,7 @@ focus_tree = {
 		id = BLR_topl_sklad
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_voen}
+		prerequisite = { focus = BLR_voen }
 		available = {
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
@@ -3612,6 +3612,12 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_tech_bonus = {
+				name = truck_vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_truck_vehicle
+			}
 			add_ideas = BLR_MAZ
 			random_owned_state = {
 				limit = {
@@ -3655,6 +3661,12 @@ focus_tree = {
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_tech_bonus = {
+				name = tracked_vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_tracked_vehicle
+			}
 			add_ideas = BLR_BELAZ_1
 			random_owned_state = {
 				limit = {
@@ -3698,6 +3710,12 @@ focus_tree = {
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_tech_bonus = {
+				name = truck_vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_truck_vehicle
+			}
 			add_ideas = BLR_MZKT
 			random_owned_state = {
 				limit = {
@@ -3741,6 +3759,12 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_tech_bonus = {
+				name = wheeled_vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_wheeled_vehicle
+			}
 			add_ideas = BLR_Bel_commun_mash
 			random_owned_state = {
 				limit = {
@@ -3784,6 +3808,12 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			add_tech_bonus = {
+				name = light_utility_vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_light_utility_vehicle
+			}
 			add_ideas = BLR_Bel_G
 			random_owned_state = {
 				limit = {
@@ -3831,8 +3861,116 @@ focus_tree = {
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			add_ideas = BLR_avto_export
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = BLR_industry_conversion_iron
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = BLR_export_BLR_avto }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = blr_industry_conversion_iron_ore_t
+				check_variable = { resource@iron_ore > 8 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = blr_industry_conversion_iron_energy_t
+				check_variable = { resource@energy_resource > 5 }
+			}
+		}
+		cost = 30
+		x = -19
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = steel_factory 
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = steel_factory 
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = steel_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = BLR_industry_conversion_alloy
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = BLR_export_BLR_avto }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = blr_industry_conversion_alloy_steel_t
+				check_variable = { resource@steel > 6 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = blr_industry_conversion_alloy_ore_t
+				check_variable = { resource@alloy_ore > 4 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = blr_industry_conversion_alloy_energy_t
+				check_variable = { resource@energy_resource > 5 }
+			}
+		}
+		cost = 30
+		x = -21
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = alloy_steel_factory 
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = alloy_steel_factory 
+										size > 0
+										include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = alloy_steel_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -3863,7 +4001,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 40
 			add_tech_bonus = {
-				name = BLR_VSRB
+				name = infantry_weapons_bonus
 				bonus = 0.05
 				uses = 1
 				category = infantry_weapons
@@ -4399,9 +4537,9 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 300
-			add_war_support = 0.05
-			add_timed_idea = { idea = BLR_parad days = 120 }
+			#add_political_power = 300
+			add_war_support = 0.03
+			#add_timed_idea = { idea = BLR_parad days = 120 }
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -4485,7 +4623,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_kylt
-			add_stability = 0.02
+			#add_stability = 0.02
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4499,19 +4637,14 @@ focus_tree = {
 				name = "Aleksandr Lukashenko"
 				ruling_only = yes
 			}
-            NOT = {
-				has_government = communism
-				has_government = liberalism
-				has_government = fascism
-			}
 		}	
 		x = 82
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_siloviki
-			add_political_power = 150
-			add_stability = 0.02
+			#add_political_power = 150
+			add_stability = -0.02
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4528,10 +4661,9 @@ focus_tree = {
 				name = "Aleksandr Lukashenko"
 				ruling_only = yes
 			}
-            NOT = {
-				has_government = communism
-				has_government = liberalism
-				has_government = fascism
+			OR = {
+				has_idea = blr_mikhail_myasnikovich_hog
+				has_idea = generic_head_of_government_centrist
 			}
 		}
 		cost = 30
@@ -4603,17 +4735,19 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_timed_idea = { idea = BLR_posledstvie_rasgona_2 days = 90 }
-			add_stability = -0.1
-			news_event = { id = belarus_news.7 days = 18 }
-			news_event = { id = belarus_news.8 days = 24 }
-			news_event = { id = belarus_news.9 days = 32 }
-			news_event = { id = belarus_news.13 days = 35 }
-			news_event = { id = belarus_news.14 days = 40 }
-			news_event = { id = belarus_news.15 days = 52 }
-			news_event = { id = belarus_news.16 days = 68 }
-			news_event = { id = belarus_news.17 days = 69 }
-			news_event = { id = belarus_news.18 days = 74 }
-			news_event = { id = belarus_news.19 days = 80 }
+			#add_stability = -0.1
+			hidden_effect = {
+				news_event = { id = belarus_news.7 days = 18 }
+				news_event = { id = belarus_news.8 days = 24 }
+				news_event = { id = belarus_news.9 days = 32 }
+				news_event = { id = belarus_news.13 days = 35 }
+				news_event = { id = belarus_news.14 days = 40 }
+				news_event = { id = belarus_news.15 days = 52 }
+				news_event = { id = belarus_news.16 days = 68 }
+				news_event = { id = belarus_news.17 days = 69 }
+				news_event = { id = belarus_news.18 days = 74 }
+				news_event = { id = belarus_news.19 days = 80 }
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4639,18 +4773,15 @@ focus_tree = {
 			focus = BLR_Lykashenko
 		}
 		available = {
-			has_government = fascism
-			NOT = {
-				has_government = communism
-				has_government = liberalism
-			}
+			fascism > 0.2
+			has_idea = generic_nationalists_leader
 		}
 		x = 61
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
-			add_stability = 0.04
+			#add_political_power = 150
+			add_stability = -0.04
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4658,9 +4789,12 @@ focus_tree = {
 		id = BLR_republic
 		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 40
+		available = { 
+			has_idea = generic_nationalists_leader 
+		}
 		prerequisite = {focus = BLR_our_history}
-		mutually_exclusive = {focus = BLR_VKL}
-		x = 60
+		#mutually_exclusive = {focus = BLR_VKL}
+		x = 61 
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4673,9 +4807,13 @@ focus_tree = {
 		id = BLR_VKL
 		icon = GFX_goal_eng_affirmation_of_people_chairman
 		cost = 50
+		available = { 
+			has_government = fascism
+			has_idea = generic_head_of_government_nationalist
+		}
 		prerequisite = {focus = BLR_our_history}
-		mutually_exclusive = {focus = BLR_republic}
-		x = 62
+		#mutually_exclusive = {focus = BLR_republic}  
+		x = 66
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4684,31 +4822,40 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	focus = {
-		id = BLR_peaceful_accession
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 20
-		prerequisite = {
-		    focus = BLR_VKL
-			focus = BLR_republic
-		}
-		mutually_exclusive = {focus = BLR_war_accession}
-		x = 65
-		y = 4
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_peaceful_accession
+	# 	icon = GFX_focus_eng_concessions_to_the_trade_unions
+	# 	cost = 20
+	# 	prerequisite = {
+	# 	    focus = BLR_VKL
+	# 		focus = BLR_republic
+	# 	}
+	# 	mutually_exclusive = {focus = BLR_war_accession}
+	# 	x = 65
+	# 	y = 4
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
 	focus = {
 		id = BLR_navy_country
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_VKL}
+		prerequisite = {
+			#focus = BLR_peaceful_accession
+			#focus = BLR_war_accession
+		}
 		available = {
 		    BLR = { controls_state = 188 }
 			BLR = { controls_state = 189 }
+		}
+		allow_branch = {
+			any_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+			}
 		}
 		x = 66
 		y = 5
@@ -4830,24 +4977,31 @@ focus_tree = {
 		id = BLR_capital
 		icon = GFX_goal_unknown
 		cost = 10
-		prerequisite = { focus = BLR_new_capital_and_decommunisation}
+		prerequisite = { focus = BLR_new_capital_and_decommunisation }
 		x = 69
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
             add_political_power = 100
 		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
     focus = {
 		id = BLR_Novogrudok
 		icon = GFX_goal_unknown
 		cost = 30
-		prerequisite = { focus = BLR_capital}
+		prerequisite = { focus = BLR_capital }
+		mutually_exclusive = {
+			focus = BLR_Vilno
+		}
+		available = {
+			has_political_power > 400
+		}
 		x = 68
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-            add_political_power = 100
+            add_political_power = -400
 			set_capital = 95
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -4857,11 +5011,17 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 30
 		prerequisite = { focus = BLR_capital}
+		mutually_exclusive = {
+			focus = BLR_Novogrudok
+		}
+		available = {
+			has_political_power > 400
+		}
 		x = 70
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-            add_political_power = 100
+            add_political_power = -400
 			set_capital = 96
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -4875,109 +5035,115 @@ focus_tree = {
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-            add_political_power = 100
+			custom_effect_tooltip = BLR_rename_t
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_decommunisation
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	focus = {
-		id = BLR_rename_Minsk
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = { focus = BLR_rename}
-		x = 72
-		y = 6
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			set_province_name = {
-                id = 11370 
-                name = "Mensk" 
-            }
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_rename_Vilnys
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = { focus = BLR_rename}
-		x = 74
-		y = 6
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			set_province_name = {
-                id = 13822
-                name = "Vilno" 
-            }
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_rename_Brest
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = { focus = BLR_rename}
-		x = 73
-		y = 7
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			set_province_name = {
-                id = 3392
-                name = "Breste" 
-            }
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_rename_Vitebsk
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = { focus = BLR_rename}
-		x = 71
-		y = 7
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			set_province_name = {
-                id = 11241
-                name = "Vitebesk" 
-            }
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_rename_Novogorodok
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = { focus = BLR_rename}
-		x = 75
-		y = 7
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			set_province_name = {
-                id = 9359
-                name = "Novogorodok" 
-            }
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_war_accession
-		icon = GFX_goal_rus_peacemaker_on_ukraine
-		cost = 20
-		prerequisite = { focus = BLR_VKL}
-		mutually_exclusive = {focus = BLR_peaceful_accession}
-		x = 67
-		y = 4
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            add_political_power = 100
-			add_war_support = 0.05
-		}
-	}
+	# focus = { 
+	# 	id = BLR_rename_Minsk
+	# 	icon = GFX_goal_unknown
+	# 	cost = 30
+	# 	prerequisite = { focus = BLR_rename}
+	# 	x = 72
+	# 	y = 6
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		set_province_name = {
+    #             id = 11370 
+    #             name = "Mensk" 
+    #         }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_rename_Vilnys
+	# 	icon = GFX_goal_unknown
+	# 	cost = 30
+	# 	prerequisite = { focus = BLR_rename}
+	# 	x = 74
+	# 	y = 6
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		set_province_name = {
+    #             id = 13822
+    #             name = "Vilno" 
+    #         }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_rename_Brest
+	# 	icon = GFX_goal_unknown
+	# 	cost = 30
+	# 	prerequisite = { focus = BLR_rename}
+	# 	x = 73
+	# 	y = 7
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		set_province_name = {
+    #             id = 3392
+    #             name = "Breste" 
+    #         }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_rename_Vitebsk
+	# 	icon = GFX_goal_unknown
+	# 	cost = 30
+	# 	prerequisite = { focus = BLR_rename}
+	# 	x = 71
+	# 	y = 7
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		set_province_name = {
+    #             id = 11241
+    #             name = "Vitebesk" 
+    #         }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_rename_Novogorodok  
+	# 	icon = GFX_goal_unknown
+	# 	cost = 30
+	# 	prerequisite = { focus = BLR_rename}
+	# 	x = 75
+	# 	y = 7
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		set_province_name = {
+    #             id = 9359
+    #             name = "Novogorodok" 
+    #         }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_war_accession
+	# 	icon = GFX_goal_rus_peacemaker_on_ukraine
+	# 	cost = 20
+	# 	prerequisite = { focus = BLR_VKL}
+	# 	mutually_exclusive = {focus = BLR_peaceful_accession}
+	# 	x = 67
+	# 	y = 4
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+    #         add_political_power = 100
+	# 		add_war_support = 0.05
+	# 	}
+	# }
 	focus = {
 		id = BLR_patriotism
 		icon = GFX_goal_ukr_freedom_of_belarus
@@ -4991,8 +5157,8 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_ideas = BLR_patriotism_2
-			add_political_power = 150
-			add_stability = 0.05
+			#add_political_power = 150
+			#add_stability = 0.05
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -5000,15 +5166,21 @@ focus_tree = {
 		id = BLR_Belarysizacya
 		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 50
-		prerequisite = {focus = BLR_patriotism}
+		prerequisite = { focus = BLR_patriotism }
 		x = 62
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
-			add_stability = 0.05 
+			add_stability = -0.05 
 			add_timed_idea = { idea = BLR_belarusizacia	days = 100 }
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_language_reform
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_shive_Belarus
@@ -5020,8 +5192,8 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_up_patriotism
-			add_political_power = 450
-			add_stability = 0.08
+			#add_political_power = 450
+			add_stability = -0.08
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.1
@@ -5035,42 +5207,65 @@ focus_tree = {
 		cost = 50
 		prerequisite = {focus = BLR_Belarysizacya}
 		prerequisite = {focus = BLR_shive_Belarus}
-		x = 60
+		x = 59
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = -0.05
+			set_country_flag = conducted_anticorruption_company
+			custom_effect_tooltip = reducing_corruption_focus_TT
+			decline_current_ruling_party_very_low = yes
+			retire_ideology_leader = neutrality
+			create_country_leader = {
+				name = "Lidia Yermoshina"
+				desc = "POLITICS_LIDIA_YERMOSHINA_DESC"
+				picture = "gfx/leaders/BLR/portrait_lidia_yermoshina.dds"
+				ideology = sovereign_democracy
+				traits = { trait_sovereign_democracy foreign_minister_addiction_RUS }
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_lyastration_1
+				}	
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_bel_exit
-		icon = GFX_goal_sobranie
-		cost = 20
-		prerequisite = {focus = BLR_shive_Belarus}
-		prerequisite = {focus = BLR_Belarysizacya}
-		x = 58
-		y = 6
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 250
-			country_event = { id = belarus.906 days = 1 }
-			country_event = { id = belarus.907 days = 2 }
-			country_event = { id = belarus.908 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_bel_exit
+	# 	icon = GFX_goal_sobranie
+	# 	cost = 20
+	# 	prerequisite = {focus = BLR_shive_Belarus}
+	# 	prerequisite = {focus = BLR_Belarysizacya}
+	# 	x = 58
+	# 	y = 6
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		#add_political_power = 250
+	# 		country_event = { id = belarus.906 days = 1 }
+	# 		country_event = { id = belarus.907 days = 2 }
+	# 		country_event = { id = belarus.908 days = 3 }
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_promotion_bel_language
 		icon = GFX_goal_unknown
 		cost = 30
 		prerequisite = {focus = BLR_shive_Belarus}
 		prerequisite = {focus = BLR_Belarysizacya}
-		x = 64
+		x = 63
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_timed_idea = { idea = BLR_promotion_bel_language days = 500 }
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_promotion_bel_lang
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
     }
@@ -5082,15 +5277,7 @@ focus_tree = {
 		cost = 50
 		available = { 
 			NOT = { has_war_with = RUS }
-            OR = {
-				has_country_leader = {
-					name = "Aleksandr Lukashenko"
-					ruling_only = yes
-				}
-				has_government = neutrality
-				has_government = democratic
-                has_completed_focus = BLR_Lykashenko
-            }
+            has_idea_with_trait = foreign_minister_addiction_RUS
 		}
 		mutually_exclusive = {
 			focus = BLR_zapad
@@ -5245,7 +5432,7 @@ focus_tree = {
 		id = BLR_one_currency
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_union_contry}
+		prerequisite = { focus = BLR_gos_sovet }
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -5335,7 +5522,7 @@ focus_tree = {
 		id = BLR_gos_sovet
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_union_contry}
+		prerequisite = { focus = BLR_court }
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -5363,7 +5550,7 @@ focus_tree = {
 		id = BLR_accounts_chamber
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_union_contry}
+		prerequisite = { focus = BLR_court }
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -5421,7 +5608,7 @@ focus_tree = {
 		id = BLR_supreme_council_state
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_union_contry}
+		prerequisite = { focus = BLR_accounts_chamber }
 		available = { 
 			NOT = { has_war_with = RUS }
             OR = {
@@ -5443,6 +5630,7 @@ focus_tree = {
 				modifier = actions_positive
 			}
 		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_gorgeoulsy
@@ -5458,7 +5646,8 @@ focus_tree = {
 				has_government = neutrality
 				has_government = democratic
                 has_completed_focus = BLR_Lykashenko
-            }
+			}
+			has_political_power > 1500
 		}
         prerequisite = {focus = BLR_parlament}
 		prerequisite = {focus = BLR_gos_sovet}
@@ -5470,15 +5659,31 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_stability = -0.4
-			add_political_power = 300
+		    add_stability = -0.3
+			add_political_power = -1500
 			add_opinion_modifier = {
 				target = RUS
 				modifier = actions_positive
 			}
-		    RUS = {
-				puppet = BLR
+		    if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Man the Guns"
+					}
+				}
+				set_autonomy = {
+					target = BLR
+					autonomy_state = union_state
+					freedom_level = 0.0
+				}
 			}
+			#else_if = {
+			#	limit = { 
+			#		NOT = { has_dlc = "Together for Victory" }
+			#	}
+			#	puppet = BLR
+			#}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -5653,68 +5858,68 @@ focus_tree = {
 	}
 	###
 	###
-	focus = {
-		id = BLR_coruption
-		icon = GFX_anticorruption_campaign
-		cost = 30
-		prerequisite = {focus = BLR_reforms}
-		x = -36
-		y = 1
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			set_country_flag = conducted_anticorruption_company
-			custom_effect_tooltip = reducing_corruption_focus_TT
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_coryption_2
-		icon = GFX_anticorruption_reforms
-		cost = 50
-		prerequisite = {focus = BLR_coruption}
-		x = -36
-		y = 2
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			set_country_flag = reform_laws_against_corruption
-			custom_effect_tooltip = reducing_corruption_focus_TT
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_contry_for_life
-		icon = GFX_goal_unknown
-		cost = 50
-		prerequisite = {focus = BLR_coryption_2}
-		prerequisite = {focus = BLR_reforms_ZP}
-		prerequisite = {focus = BLR_tax_reforms}
-		prerequisite = {focus = BLR_improving_agriculture}
-		prerequisite = {focus = BLR_reforms_research}
-		prerequisite = {focus = BLR_money_reform_1}
-		x = -36
-		y = 3
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_contry_for_life
-			add_political_power = 250
-			add_stability = 0.1
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_generic_reform_economics
-		icon = GFX_economic_reforms
-		prerequisite = { focus = BLR_reforms }
-		cost = 50
-		x = -32
-		y = 1
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			set_country_flag = reform_economy
-			custom_effect_tooltip = reform_economy_focus_TT
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
+	# focus = {
+	# 	id = BLR_coruption
+	# 	icon = GFX_anticorruption_campaign
+	# 	cost = 30
+	# 	prerequisite = {focus = BLR_reforms}
+	# 	x = -36
+	# 	y = 1
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		set_country_flag = conducted_anticorruption_company
+	# 		custom_effect_tooltip = reducing_corruption_focus_TT
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_coryption_2
+	# 	icon = GFX_anticorruption_reforms
+	# 	cost = 50
+	# 	prerequisite = {focus = BLR_coruption}
+	# 	x = -36
+	# 	y = 2
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		set_country_flag = reform_laws_against_corruption
+	# 		custom_effect_tooltip = reducing_corruption_focus_TT
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_contry_for_life
+	# 	icon = GFX_goal_unknown
+	# 	cost = 50
+	# 	#prerequisite = {focus = BLR_coryption_2}
+	# 	#prerequisite = {focus = BLR_reforms_ZP}
+	# 	#prerequisite = {focus = BLR_tax_reforms}
+	# 	#prerequisite = {focus = BLR_improving_agriculture}
+	# 	#prerequisite = {focus = BLR_reforms_research}
+	# 	#prerequisite = {focus = BLR_money_reform_1}
+	# 	x = -36
+	# 	y = 3
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_contry_for_life
+	# 		add_political_power = 250
+	# 		add_stability = 0.1
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_generic_reform_economics
+	# 	icon = GFX_economic_reforms
+	# 	prerequisite = { focus = BLR_reforms }
+	# 	cost = 50
+	# 	x = -32
+	# 	y = 1
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		set_country_flag = reform_economy
+	# 		custom_effect_tooltip = reform_economy_focus_TT
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
 	focus = {
 		id = BLR_kill_NEHTA
 		icon = GFX_goal_unknown
@@ -5738,7 +5943,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = BLR_smert_nexta
 			add_stability = -0.08
-			add_political_power = 250
+			#add_political_power = 250
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -5758,14 +5963,9 @@ focus_tree = {
 				has_war_with = FRA
                 has_war_with = POL 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-						has_global_flag = Liberals
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
+			OR = {
+				has_idea_with_trait = foreign_minister_addiction_USA
+				has_idea_with_trait = foreign_minister_addiction_EU
 			}
 		}
 		mutually_exclusive = {
@@ -5775,6 +5975,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = { factor = 1 }
 	    completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_cource_zapad
+				}
+			}
 		    add_opinion_modifier = {
 				target = USA
 				modifier = actions_positive
@@ -5802,7 +6008,9 @@ focus_tree = {
 		id = BLR_EU
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_zap_diplomats}
+		prerequisite = { focus = BLR_EU_integration }
+		prerequisite = { focus = BLR_EC_61 }
+		prerequisite = { focus = BLR_EC_69 }
 		available = {
 			NOT = { 
 			    has_war_with = USA 
@@ -5813,9 +6021,15 @@ focus_tree = {
 			}
 		}
 		x = 10
-		y = 3
+		y = 17 
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_EU
+				}
+			}
 			add_opinion_modifier = {
 				target = USA
 				modifier = actions_positive
@@ -5843,10 +6057,10 @@ focus_tree = {
 		id = BLR_EU_integration
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_EU}
-		
+		prerequisite = { focus = BLR_NATO_standart }
+		prerequisite = { focus = BLR_EC_12 }
 		x = 10
-		y = 4
+		y = 16
 		ai_will_do = { factor = 1 }
 		available = {
 			NOT = { 
@@ -5856,83 +6070,16 @@ focus_tree = {
 				has_war_with = FRA
          	    has_war_with = POL 				
 			}
-			has_completed_focus = BLR_EC_1
-			has_completed_focus = BLR_EC_2
-			has_completed_focus = BLR_EC_3
-			has_completed_focus = BLR_EC_4
-			has_completed_focus = BLR_EC_5
-			has_completed_focus = BLR_EC_6
-			has_completed_focus = BLR_EC_7
-			has_completed_focus = BLR_EC_8
-			has_completed_focus = BLR_EC_9
-			has_completed_focus = BLR_EC_10
-			has_completed_focus = BLR_EC_11
-			has_completed_focus = BLR_EC_12
-			has_completed_focus = BLR_EC_13
-			has_completed_focus = BLR_EC_14
-			has_completed_focus = BLR_EC_15
-			has_completed_focus = BLR_EC_16
-			has_completed_focus = BLR_EC_17
-			has_completed_focus = BLR_EC_18
-			has_completed_focus = BLR_EC_19
-			has_completed_focus = BLR_EC_20
-			has_completed_focus = BLR_EC_21
-			has_completed_focus = BLR_EC_22
-			has_completed_focus = BLR_EC_23
-			has_completed_focus = BLR_EC_24
-			has_completed_focus = BLR_EC_25
-			has_completed_focus = BLR_EC_26
-			has_completed_focus = BLR_EC_27
-			has_completed_focus = BLR_EC_28
-			has_completed_focus = BLR_EC_29
-			has_completed_focus = BLR_EC_30
-			has_completed_focus = BLR_EC_31
-			has_completed_focus = BLR_EC_32
-			has_completed_focus = BLR_EC_33
-			has_completed_focus = BLR_EC_34
-			has_completed_focus = BLR_EC_35
-			has_completed_focus = BLR_EC_36
-			has_completed_focus = BLR_EC_37
-			has_completed_focus = BLR_EC_38
-			has_completed_focus = BLR_EC_39
-			has_completed_focus = BLR_EC_40
-			has_completed_focus = BLR_EC_41
-			has_completed_focus = BLR_EC_42
-			has_completed_focus = BLR_EC_43
-			has_completed_focus = BLR_EC_44
-			has_completed_focus = BLR_EC_45
-			has_completed_focus = BLR_EC_46
-			has_completed_focus = BLR_EC_47
-			has_completed_focus = BLR_EC_48
-			has_completed_focus = BLR_EC_49
-			has_completed_focus = BLR_EC_50
-			has_completed_focus = BLR_EC_51
-			has_completed_focus = BLR_EC_52
-			has_completed_focus = BLR_EC_53
-			has_completed_focus = BLR_EC_54
-			has_completed_focus = BLR_EC_55
-			has_completed_focus = BLR_EC_56
-			has_completed_focus = BLR_EC_57
-			has_completed_focus = BLR_EC_58
-			has_completed_focus = BLR_EC_59
-			has_completed_focus = BLR_EC_60
-			has_completed_focus = BLR_EC_61
-			has_completed_focus = BLR_EC_62
-			has_completed_focus = BLR_EC_63
-			has_completed_focus = BLR_EC_64
-			has_completed_focus = BLR_EC_65
-			has_completed_focus = BLR_EC_66
-			has_completed_focus = BLR_EC_67
-			has_completed_focus = BLR_EC_68
-			has_completed_focus = BLR_EC_69
-			has_completed_focus = BLR_EC_70
-			has_completed_focus = BLR_EC_71
-			has_completed_focus = BLR_EC_72
-			has_completed_focus = BLR_EC_73
-			has_completed_focus = BLR_EC_74
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		completion_reward = {
-			add_ideas = EU_accession_negotiations
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_EU_integration
+				}
+			}
+			set_country_flag = country_ready_to_join_EU
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -5940,7 +6087,8 @@ focus_tree = {
 		id = BLR_NATO
 		icon = GFX_goal_unknown
 		cost = 30
-		prerequisite = {focus = BLR_zap_resyrs}
+		prerequisite = { focus = BLR_usa_base }
+		prerequisite = { focus = BLR_EC_26 }
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
@@ -5955,22 +6103,28 @@ focus_tree = {
 					}
 				}
 			}
-		}
-		x = 12
-		y = 3
-		ai_will_do = {
-			factor = 5
-		}
-		available = {
 			OR = {
 				has_government = democratic
 				has_government = liberalism
 			}
 		}
+		x = 12
+		y = 17
+		ai_will_do = {
+			factor = 5
+		}
 		completion_reward = {
 			dismantle_faction = yes
-			USA = {
-				add_to_faction = BLR
+			add_ideas = aspiring_nato
+			set_country_flag = NATO_aspiring
+			#USA = {
+			#	add_to_faction = BLR
+			#} 
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_NATO
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -5988,13 +6142,19 @@ focus_tree = {
 		}
 		prerequisite = {focus = BLR_shive_Belarus}
 		prerequisite = {focus = BLR_Belarysizacya}
-		x = 62
+		x = 61
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.04
-			add_ideas = nation_1
+			add_stability = -0.05
+			add_war_support = 0.01
+			add_ideas = BLR_nation_1
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_nationalism
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -6009,14 +6169,7 @@ focus_tree = {
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		x = 12
 		y = 2
@@ -6030,27 +6183,26 @@ focus_tree = {
 		id = BLR_usa_base
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 40
-		prerequisite = {focus = BLR_NATO}
+		prerequisite = { focus = BLR_NATO_standart }
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		x = 12
-		y = 4
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {	
 			give_military_access = USA
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_usa_base
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
@@ -6064,21 +6216,11 @@ focus_tree = {
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_USA
 		}
-		prerequisite = {
-            focus = BLR_EU_integration
-            focus = BLR_usa_base
-        }
-		x = 10
-		y = 5
+		prerequisite = { focus = BLR_training_NATO }
+		x = 11
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			remove_ideas = obsolete_army
@@ -6090,6 +6232,12 @@ focus_tree = {
 				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_NATO_standart
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
@@ -6105,13 +6253,9 @@ focus_tree = {
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
+			OR = {
+				has_idea_with_trait = foreign_minister_addiction_EU
+				has_idea_with_trait = foreign_minister_addiction_USA
 			}
 		}
 		x = 10
@@ -6149,26 +6293,21 @@ focus_tree = {
 		id = BLR_conviction
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_joint_research_with_zapad}
-		prerequisite = {focus = BLR_european_values}
-		prerequisite = {focus = BLR_russofobia}
+		#prerequisite = { focus = BLR_european_values }
+		# prerequisite = {
+		# 	focus = BLR_russofobia
+		# 	focus = BLR_joint_research_with_zapad
+		# }
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		x = 11
-		y = 11
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_opinion_modifier = {
@@ -6178,69 +6317,55 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_war_against_rus
-		icon = GFX_goal_unknown
-		cost = 50
-		prerequisite = {focus = BLR_conviction}
-		available = { 
-			NOT = { 
-			    has_war_with = USA 
-				has_war_with = GER 
-				has_war_with = ENG 				
-			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
-		}
-		x = 11
-		y = 12
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = RUS
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_war_against_rus
+	# 	icon = GFX_goal_unknown
+	# 	cost = 50
+	# 	prerequisite = {focus = BLR_conviction}
+	# 	available = { 
+	# 		NOT = { 
+	# 		    has_war_with = USA 
+	# 			has_war_with = GER 
+	# 			has_war_with = ENG
+	# 		}
+    #         has_government = liberalism
+	# 	}
+	# 	x = 15
+	# 	y = 12
+	# 	completion_reward = {
+	# 		create_wargoal = {
+	# 			type = puppet_wargoal_focus
+	# 			target = RUS
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_otmena_sankciy
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_usa_base}
-		prerequisite = {focus = BLR_NATO_standart}
+		prerequisite = { focus = BLR_zap_resyrs }
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_EU
+			has_political_power > 500
 		}
 		x = 12
-		y = 5
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 150
+		    add_political_power = -500
 			add_popularity = {
 				ideology = democratic
-				popularity = 0.1
+				popularity = 0.02
 			}
 			add_popularity = {
 				ideology = liberalism
-				popularity = 0.1
+				popularity = 0.02
 			}
 			add_stability = 0.08
 		}
@@ -6250,25 +6375,17 @@ focus_tree = {
 		id = BLR_training_NATO
 		icon = GFX_goal_unknown
 		cost = 30
-		prerequisite = {focus = BLR_otmena_sankciy}
-		prerequisite = {focus = BLR_NATO_standart}
+		prerequisite = { focus = BLR_conviction }
 		available = { 
 			NOT = { 
 			    has_war_with = USA 
 				has_war_with = GER 
 				has_war_with = ENG 				
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
+			has_idea_with_trait = foreign_minister_addiction_USA
 		}
-		x = 10
-		y = 6
+		x = 11
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			army_experience = 20
@@ -6286,103 +6403,105 @@ focus_tree = {
 		id = BLR_sankcii_RUS
 		icon = GFX_goal_unknown
 		cost = 20
-		prerequisite = {focus = BLR_otmena_sankciy}
+		prerequisite = { focus = BLR_zap_diplomats }
 		available = { 
 			NOT = { 
-			    has_war_with = USA 
-				has_war_with = GER 
-				has_war_with = ENG 				
+			    has_war_with = USA
+				has_war_with = GER
+				has_war_with = ENG
 			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
+			OR = {
+				has_idea_with_trait = foreign_minister_addiction_EU
+				has_idea_with_trait = foreign_minister_addiction_USA
 			}
 		}
-		x = 12
-		y = 6
+		x = 10
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_political_power = 150
 			add_opinion_modifier = {
 				target = RUS
-				modifier = actions_negative
+				modifier = embargo
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_embargo
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_anti_communist_propogand
-		icon = GFX_goal_unknown
-		cost = 10
-		mutually_exclusive = {focus = BLR_no_anti_communist_propogand}
-		available = { 
-			NOT = { 
-			    has_war_with = USA 
-				has_war_with = GER 
-				has_war_with = ENG 				
-			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
-		}
-		prerequisite = {
-		    focus = BLR_training_NATO
-		    focus = BLR_sankcii_RUS
-		}
-		x = 12
-		y = 7
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-		    add_political_power = 150
-			add_stability = -0.15
-			add_popularity = {
-				ideology = communism
-				popularity = -0.05
-			}
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_no_anti_communist_propogand
-		icon = GFX_goal_unknown
-		cost = 10
-		mutually_exclusive = {focus = BLR_anti_communist_propogand}
-		available = { 
-			NOT = { 
-			    has_war_with = USA 
-				has_war_with = GER 
-				has_war_with = ENG 				
-			}
-			OR = {	
-				AND = {
-					OR = {
-                        has_government = liberalism
-						has_completed_focus = BLR_Lykashenko
-					}
-				}
-			}
-		}
-		prerequisite = {
-		    focus = BLR_training_NATO
-		    focus = BLR_sankcii_RUS
-		}
-		x = 10
-		y = 7
-		ai_will_do = { factor = 1 }
-        completion_reward = {
-		    add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_anti_communist_propogand
+	# 	icon = GFX_goal_unknown
+	# 	cost = 10
+	# 	#mutually_exclusive = {focus = BLR_no_anti_communist_propogand}
+	# 	available = { 
+	# 		NOT = { 
+	# 		    has_war_with = USA 
+	# 			has_war_with = GER 
+	# 			has_war_with = ENG 				
+	# 		}
+	# 		OR = {	
+	# 			AND = {
+	# 				OR = {
+    #                     has_government = liberalism
+	# 					has_completed_focus = BLR_Lykashenko
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	# prerequisite = {
+	# 	#     focus = BLR_training_NATO
+	# 	#     focus = BLR_sankcii_RUS
+	# 	# }
+	# 	x = 12
+	# 	y = 7
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 	    add_political_power = 150
+	# 		add_stability = -0.15
+	# 		add_popularity = {
+	# 			ideology = communism
+	# 			popularity = -0.05
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_no_anti_communist_propogand
+	# 	icon = GFX_goal_unknown
+	# 	cost = 10
+	# 	mutually_exclusive = {focus = BLR_anti_communist_propogand}
+	# 	available = { 
+	# 		NOT = { 
+	# 		    has_war_with = USA 
+	# 			has_war_with = GER 
+	# 			has_war_with = ENG 				
+	# 		}
+	# 		OR = {	
+	# 			AND = {
+	# 				OR = {
+    #                     has_government = liberalism
+	# 					has_completed_focus = BLR_Lykashenko
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	prerequisite = {
+	# 	    focus = BLR_training_NATO
+	# 	    focus = BLR_sankcii_RUS
+	# 	}
+	# 	x = 10
+	# 	y = 7
+	# 	ai_will_do = { factor = 1 }
+    #     completion_reward = {
+	# 	    add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
 	focus = {
 		id = BLR_EURO
 		icon = GFX_goal_unknown
@@ -6403,8 +6522,8 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-		    focus = BLR_no_anti_communist_propogand
-		    focus = BLR_anti_communist_propogand
+		    focus = BLR_EC_43
+		    focus = BLR_EC_36
 		}
 		mutually_exclusive = {focus = BLR_Rub}
 		x = 9
@@ -6436,8 +6555,8 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-		    focus = BLR_no_anti_communist_propogand
-		    focus = BLR_anti_communist_propogand
+		    focus = BLR_EC_43
+		    focus = BLR_EC_36
 		}
 		mutually_exclusive = {focus = BLR_EURO}
 		x = 11
@@ -6594,6 +6713,7 @@ focus_tree = {
 		   focus = BLR_zaym
 		   focus = BLR_Rub
 		}
+		prerequisite = { focus = BLR_EC_40 }
 		x = 13
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -6683,9 +6803,10 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-		    focus = BLR_no_anti_communist_propogand
-		    focus = BLR_anti_communist_propogand
+		    focus = BLR_EC_43
+		    focus = BLR_EC_36
 		}
+		prerequisite = { focus = BLR_EC_15 }
 		x = 13
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -6698,7 +6819,7 @@ focus_tree = {
 			}
 			else_if = {
 				limit = { has_country_flag = money_trillions }
-				subtract_from_variable = { budget_reserve = -0.0015 }
+				subtract_from_variable = { budget_reserve = -0.015 }
 			}
 		    add_political_power = 150
 			add_timed_idea = { idea = BLR_imf_loan_idea days = 120 }
@@ -6885,15 +7006,13 @@ focus_tree = {
 	focus = {
 		id = BLR_drim_Lva_Sapegi
 		icon = GFX_goal_ukr_freedom_of_belarus
-		mutually_exclusive = {focus = BLR_ynia_Polsha}
-		mutually_exclusive = {focus = BLR_ynia}
+		mutually_exclusive = { focus = BLR_ynia_Polsha }
+		mutually_exclusive = { focus = BLR_ynia }
 		cost = 10
 		available = {
 			POL = {
 				has_government = fascism
 			}
-		}
-		available = {
 			NOT = {
                 has_completed_focus = BLR_union_with_Ukrain
 			}
@@ -6901,7 +7020,7 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		prerequisite = {focus = BLR_vlyanie}
+		prerequisite = { focus = BLR_vlyanie }
 		x = 61
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -6918,7 +7037,7 @@ focus_tree = {
 	focus = {
 		id = BLR_suppression_conflict_1
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_drim_Lva_Sapegi}
+		prerequisite = { focus = BLR_drim_Lva_Sapegi }
 		cost = 50
 		x = 61
 		y = 14
@@ -6936,26 +7055,38 @@ focus_tree = {
 					modifier = actions_positive
 				}
 			}
+			if = {
+				limit = {
+					POL = {	has_war_with = RUS }
+					RUS = { has_war_with = POL }
+				}
+				RUS = {
+					white_peace = {
+						tag = POL
+						message = BLR_suppression_conflict_1_t
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-    focus = {
-		id = BLR_open_border_1
-		icon = GFX_goal_continuous_boost_freedom
-		prerequisite = {focus = BLR_suppression_conflict_1}
-		cost = 50
-		x = 60
-		y = 15
-		ai_will_do = { factor = 5 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+    # focus = {
+	# 	id = BLR_open_border_1
+	# 	icon = GFX_goal_continuous_boost_freedom
+	# 	prerequisite = { focus = BLR_suppression_conflict_1 }
+	# 	cost = 50
+	# 	x = 60
+	# 	y = 15
+	# 	ai_will_do = { factor = 5 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_free_zone
 		icon = GFX_goal_continuous_boost_freedom
-		prerequisite = {focus = BLR_suppression_conflict_1}
+		prerequisite = { focus = BLR_suppression_conflict_1 }
 		cost = 50
 		x = 62
 		y = 15
@@ -6963,7 +7094,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
 				add_ideas = BLR_free_zone
 		    }
@@ -6973,7 +7104,7 @@ focus_tree = {
 	focus = {
 		id = BLR_open_border_2
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_suppression_conflict_1}
+		prerequisite = { focus = BLR_suppression_conflict_1 }
 		cost = 50
 		x = 60
 		y = 15
@@ -6981,7 +7112,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
 				add_ideas = BLR_open_borders
 		    }
@@ -6991,8 +7122,8 @@ focus_tree = {
 	focus = {
 		id = BLR_common_money
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_open_border_2}
-        prerequisite = {focus = BLR_free_zone}
+		prerequisite = { focus = BLR_open_border_2 }
+        prerequisite = { focus = BLR_free_zone }
 		cost = 30
 		x = 61
 		y = 16
@@ -7012,7 +7143,7 @@ focus_tree = {
 	focus = {
 		id = BLR_standart_1
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_common_money}
+		prerequisite = {focus = BLR_common_money }
 		cost = 50
 		x = 60
 		y = 17
@@ -7034,7 +7165,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
 				army_experience = 30
 				air_experience = 30
@@ -7053,7 +7184,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
 				add_ideas = BLR_common_investors_for_industri
 		    }
@@ -7071,9 +7202,10 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					#has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
-				add_research_slot = 1
+				add_to_tech_sharing_group = slavic_aliance_research
 		    }
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -7089,7 +7221,7 @@ focus_tree = {
 		completion_reward = {
 	        every_country = {
 				limit = {
-					has_global_flag = Slavian_brathers_1
+					is_in_faction_with = BLR
 				}
 				add_ideas = BLR_kylture_2
 		    }
@@ -7113,79 +7245,14 @@ focus_tree = {
 	focus = {
 		id = BLR_slavian_community
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_slavian_kylture}
-		prerequisite = {focus = BLR_training_POL_RUS}
+		prerequisite = { focus = BLR_slavian_kylture }
+		prerequisite = { focus = BLR_training_POL_RUS }
 		cost = 50
 		x = 61
 		y = 20
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			BLR = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			RUS = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			UKR = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			POL = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			CZE = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			SLO = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			BUL = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			SER = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			MAC = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			MNT = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
-			BOS = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.1
-				}
-			}
+			add_ideas = BLR_slavian_community
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -7197,14 +7264,14 @@ focus_tree = {
 		prerequisite = {
 			focus = BLR_promotion_bel_language
 			focus = BLR_nation
-			focus = BLR_bel_exit
+			#focus = BLR_bel_exit
 			focus = BLR_lyastration_1
 		}
 		x = 63
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_war_support = 0.02
+		    #add_war_support = 0.02
 			add_ideas = BLR_white_legion
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
@@ -7216,7 +7283,7 @@ focus_tree = {
 		prerequisite = {
 			focus = BLR_promotion_bel_language
 			focus = BLR_nation
-			focus = BLR_bel_exit
+			#focus = BLR_bel_exit
 			focus = BLR_lyastration_1
 		}
 		x = 61
@@ -7224,10 +7291,16 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_war_support = 0.01
-			add_stability = 0.05
+			add_stability = -0.05
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.15
+				popularity = 0.05
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_we_lituvin
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -7244,6 +7317,12 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_timed_idea = { idea = BLR_kylture_1	days = 300 }
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_kylture
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -7290,7 +7369,13 @@ focus_tree = {
 		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 350
+			add_political_power = 350
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_4_gramota
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -7298,6 +7383,9 @@ focus_tree = {
 		id = BLR_repairs_constitution
 		icon = GFX_goal_irn_rab_konst
 		cost = 20
+		available = {
+			has_political_power > 800
+		}
 		prerequisite = {focus = BLR_4_gramota}
 		prerequisite = {focus = BLR_Communistst_clean}
 		prerequisite = {focus = BLR_kylture}
@@ -7306,7 +7394,7 @@ focus_tree = {
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 300
+			add_political_power = -800
 			add_stability = -0.03
 		    country_event = { id = belarus.900 days = 1 }
 			country_event = { id = belarus.901 days = 2 }
@@ -7345,7 +7433,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = BLR_lyastration_1
-			focus = BLR_bel_exit
+			#focus = BLR_bel_exit
 			focus = BLR_nation
 			focus = BLR_promotion_bel_language
 		}
@@ -7356,7 +7444,7 @@ focus_tree = {
 			army_experience = 20
 			air_experience = 20
 			add_ideas = BLR_strong_end_freedom_belarus
-			remove_ideas = obsolete_army
+			#remove_ideas = obsolete_army
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -7453,10 +7541,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-                    OR = {
-                        has_global_flag = Intermarium_1
-						has_global_flag = Intermarium_2
-                    }
+                    is_in_faction_with = BLR
 					
 				}
 				add_ideas = BLR_free_zone
@@ -7489,10 +7574,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-                    OR = {
-                        has_global_flag = Intermarium_1
-						has_global_flag = Intermarium_2
-                    }
+                    is_in_faction_with = BLR
 					
 				}
 				add_tech_bonus = {
@@ -7629,10 +7711,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-                    OR = {
-                        has_global_flag = Intermarium_1
-						has_global_flag = Intermarium_2
-                    }
+                    is_in_faction_with = BLR
 					
 				}
 				add_ideas = BLR_bank
@@ -7651,10 +7730,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-                    OR = {
-                        has_global_flag = Intermarium_1
-						has_global_flag = Intermarium_2
-                    }
+					is_in_faction_with = BLR
 					NOT = {
 						has_idea = BLR_E-40
 					}
@@ -7716,7 +7792,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_extended}
 		cost = 10
 		x = 60
-		y = 22
+		y = 21
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			add_political_power = 150
@@ -7729,7 +7805,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_extended}
 		cost = 10
 		x = 54
-		y = 22
+		y = 21
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			add_political_power = 150
@@ -7742,12 +7818,13 @@ focus_tree = {
 		available = {
 			LAT = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_extended_pribaltic}
 		cost = 20
 		x = 54
-		y = 23
+		y = 22
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			BLR = {
@@ -7762,12 +7839,13 @@ focus_tree = {
 		available = {
 			EST = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_Latvian}
 		cost = 20
 		x = 54
-		y = 24
+		y = 23
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			BLR = {
@@ -7782,12 +7860,13 @@ focus_tree = {
 		available = {
 			FIN = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_extended_Skandinavian}
 		cost = 20
 		x = 60
-		y = 23
+		y = 22
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			BLR = {
@@ -7802,6 +7881,7 @@ focus_tree = {
 		available = {
 			POL = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_extended_Europe}
@@ -7822,6 +7902,7 @@ focus_tree = {
 		available = {
 			ROM = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_extended_Europe}
@@ -7842,6 +7923,7 @@ focus_tree = {
 		available = {
 			CHE = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_extended_Europe}
@@ -7862,6 +7944,7 @@ focus_tree = {
 		available = {
 			SER = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_ROM}
@@ -7882,6 +7965,7 @@ focus_tree = {
 		available = {
 			MOL = {
 				has_government = fascism
+				NOT = { is_in_faction = yes }
 			}
 		}
 		prerequisite = {focus = BLR_CHE}
@@ -8025,18 +8109,18 @@ focus_tree = {
 	focus = {
 		id = BLR_common_research
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_katolic}
+		prerequisite = { focus = BLR_katolic }
 		cost = 50
 		x = 68
 		y = 16
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			add_research_slot = 1
+			#add_research_slot = 1
             every_country = {
 				limit = {
-					has_global_flag = RP
+					is_in_faction_with = BLR
 				}
-				add_ideas = BLR_common_research_with_aliance
+				add_to_tech_sharing_group = continuous_tech_share
 		    }
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -8090,19 +8174,19 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_pol_port
-		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_common_IT_research}
-		cost = 30
-		x = 64
-		y = 19
-		ai_will_do = { factor = 5 }
-		completion_reward = {
-			add_ideas = BLR_pol_port
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_pol_port
+	# 	icon = GFX_goal_ukr_freedom_of_belarus
+	# 	prerequisite = {focus = BLR_common_IT_research}
+	# 	cost = 30
+	# 	x = 64
+	# 	y = 19
+	# 	ai_will_do = { factor = 5 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_pol_port
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_help_pol_VPK
 		icon = GFX_goal_ukr_freedom_of_belarus
@@ -8145,36 +8229,40 @@ focus_tree = {
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			army_experience = 30
-            air_experience = 25
+			air_experience = 25
+			mark_focus_tree_layout_dirty = yes
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_blokade_Kaliningrad
-		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_standart}
-		cost = 50
-		x = 66
-		y = 20
-		ai_will_do = { factor = 5 }
-		completion_reward = {
-			add_opinion_modifier = {
-				target = RUS
-				modifier = actions_negative
-			}
-			RUS = {
-				add_ideas = BLR_blokade_Kaliningrad
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_blokade_Kaliningrad
+	# 	icon = GFX_goal_ukr_freedom_of_belarus
+	# 	prerequisite = {focus = BLR_standart}
+	# 	cost = 50
+	# 	x = 66
+	# 	y = 20
+	# 	ai_will_do = { factor = 5 }
+	# 	completion_reward = {
+	# 		add_opinion_modifier = {
+	# 			target = RUS
+	# 			modifier = actions_negative
+	# 		}
+	# 		RUS = {
+	# 			add_ideas = BLR_blokade_Kaliningrad
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_rematch
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = {focus = BLR_blokade_Kaliningrad}
+		prerequisite = { focus = BLR_standart }
+		allow_branch = {
+			has_completed_focus = BLR_standart
+		}
 		cost = 70
 		x = 66
-		y = 21
+		y = 20
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			create_wargoal = {
@@ -8226,7 +8314,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 50
 		prerequisite = {
-			focus = BLR_money_reform
+			#focus = BLR_money_reform
 			focus = BLR_cleaning
 		}
 		available = {
@@ -8239,12 +8327,13 @@ focus_tree = {
 				has_government = liberalism
 				has_government = fascism
 			}
+			has_political_power > 500
 		}
 		x = 84
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 150
+		    add_political_power = -500
 			add_ideas = BLR_derectiva_9
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -8269,9 +8358,9 @@ focus_tree = {
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 500
 			news_event = { id = belarus_news.3 days = 2 }
 			country_event = { id = belarus.40 days = 1 }
+			remove_ideas = BLR_unstability_money
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -8438,11 +8527,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		cost = 70
 		completion_reward = {
-			add_resource = {
-				type = alloy_ore
-				amount = 6
-				state = 94
-			}
+			add_ideas = extractive_industries_focus
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -8563,51 +8648,51 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_improving_agriculture 
-		prerequisite = { focus = BLR_generic_reform_economics }
+		prerequisite = { focus = BLR_updat_stanki }
 		icon =  GFX_goal_ger_improving_agriculture
 		cost = 50
-		x = -30
-		y = 2
+		x = -12
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_improving_agriculture_1 
+			add_ideas = BLR_improving_agriculture_1  
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
-	focus = {
-		id = BLR_money_reform_1 
-		prerequisite = { focus = BLR_generic_reform_economics }
-		icon =  GFX_goal_ger_improving_agriculture
-		cost = 50
-		x = -32
-		y = 2
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			remove_ideas = BLR_unstability_money
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
-	focus = {
-		id = BLR_tax_reforms 
-		prerequisite = { focus = BLR_generic_reform_economics }
-		icon =  GFX_goal_ger_tax_reforms
-		x = -34
-		y = 2
-		cost = 50
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			custom_effect_tooltip = reform_taxes_TT
-			if = {
-				limit = { has_idea = normal_taxes }	
-				swap_ideas = { remove_idea = high_taxes add_idea = reform_normal_taxes }
-			}
-			if = {
-				limit = { has_idea = high_taxes }	
-				swap_ideas = { remove_idea = high_taxes add_idea = reform_high_taxes }
-			}	
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
+	# focus = {
+	# 	id = BLR_money_reform_1 
+	# 	prerequisite = { focus = BLR_generic_reform_economics }
+	# 	icon =  GFX_goal_ger_improving_agriculture
+	# 	cost = 50
+	# 	x = -32
+	# 	y = 2
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		remove_ideas = BLR_unstability_money
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
+	# focus = {
+	# 	id = BLR_tax_reforms 
+	# 	prerequisite = { focus = BLR_generic_reform_economics }
+	# 	icon =  GFX_goal_ger_tax_reforms
+	# 	x = -34
+	# 	y = 2
+	# 	cost = 50
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		custom_effect_tooltip = reform_taxes_TT
+	# 		if = {
+	# 			limit = { has_idea = normal_taxes }	
+	# 			swap_ideas = { remove_idea = high_taxes add_idea = reform_normal_taxes }
+	# 		}
+	# 		if = {
+	# 			limit = { has_idea = high_taxes }	
+	# 			swap_ideas = { remove_idea = high_taxes add_idea = reform_high_taxes }
+	# 		}	
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
 	focus = {
 		id = BLR_5-ka
 		icon = GFX_goal_unknown
@@ -8656,6 +8741,8 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			remove_ideas = BLR_subsidies_to_unprofitable_enterprises
+			set_country_flag = reform_economy
+			custom_effect_tooltip = reform_economy_focus_TT
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -8672,18 +8759,17 @@ focus_tree = {
 			has_completed_focus = BLR_reform_cal-up
 			has_completed_focus = BLR_air
 			has_completed_focus = BLR_VSRB
+
+			NOT = {
+				has_government = communism
+				has_government = liberalism
+				has_government = fascism
+			}
 		}
 		prerequisite = {
             focus = BLR_updat_kolhoz
             focus = BLR_pension_reform
 			focus = BLR_invests_for_industri
-		}
-		available = {
-            NOT = {
-				has_government = communism
-				has_government = liberalism
-				has_government = fascism
-			}
 		}
 		x = 84
 		y = 8
@@ -8692,7 +8778,7 @@ focus_tree = {
 			army_experience = 20
 			air_experience = 20
 			add_ideas = BLR_strong_end_freedom_belarus
-			remove_ideas = obsolete_army
+			#remove_ideas = obsolete_army
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -8743,6 +8829,12 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_zapad_1
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -9275,99 +9367,105 @@ focus_tree = {
 			focus = BLR_Lykashenko
 		}
 	    available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_socialists_leader
 		}
 		cost = 10
 		x = 48
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.1
-			}
+			# add_popularity = {
+			# 	ideology = communism
+			# 	popularity = 0.1
+			# }
+			add_stability = -0.03
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_PKB
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Communism}
+		prerequisite = { focus = BLR_Communism } 
 		available = {
-			has_government = communism
+			communism > 0.2
+			has_idea = generic_socialists_leader
 			NOT = {
-				has_government = fascism
-				has_government = liberalism
 				has_completed_focus = BLR_KPB 
 			}
 		}
 		cost = 50
-		x = 42
+		x = 53
 		y = 3
 		ai_will_do = { factor = 2 }
 		completion_reward = {
-			set_party_name = {
-                ideology = communism
-                long_name = BLR_Party_communism_Belarus
-                name = BLR_PKB
-            }
+			set_party_name = { 
+				ideology = communism
+				long_name = BLR_communism_party_focus_long 
+				name = BLR_communism_party_focus 
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_KPB
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Communism}
+		prerequisite = { focus = BLR_Communism }
 		available = {
-			has_government = communism
+			communism > 0.2
+			has_idea = generic_socialists_leader
 			NOT = {
-				has_government = fascism
-				has_government = liberalism
 				has_completed_focus = BLR_PKB 
 			}
 		}
 		cost = 10
-		x = 53
+		x = 42
 		y = 3
 		ai_will_do = { factor = 1 }
-		completion_reward = {}
+		completion_reward = {
+
+		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_lustracia
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_PKB}
+		prerequisite = {focus = BLR_KPB}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
+			has_political_power > 400
 		}
 		cost = 70
 		x = 40
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = -0.1
-			add_political_power = 200
+			add_political_power = -400
+			retire_ideology_leader = neutrality
+			create_country_leader = {
+				name = "Lidia Yermoshina"
+				desc = "POLITICS_LIDIA_YERMOSHINA_DESC"
+				picture = "gfx/leaders/BLR/portrait_lidia_yermoshina.dds"
+				ideology = sovereign_democracy
+				traits = { trait_sovereign_democracy foreign_minister_addiction_RUS }
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_lyastration_1
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_konstitucia_BSSR
 		icon = GFX_goal_irn_rab_konst
-		prerequisite = {focus = BLR_PKB}
+		prerequisite = {focus = BLR_KPB}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 40
 		x = 44
@@ -9382,13 +9480,10 @@ focus_tree = {
 	focus = {
 		id = BLR_one_partia
 		icon = GFX_goal_rus_ussr_claims
-		prerequisite = {focus = BLR_PKB}
+		prerequisite = {focus = BLR_KPB}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 30
 		x = 42
@@ -9408,10 +9503,6 @@ focus_tree = {
 		prerequisite = {focus = BLR_arest_lykash}
 		available = {
 			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
 		}
 		cost = 70
 		x = 42
@@ -9420,6 +9511,7 @@ focus_tree = {
 		completion_reward = {
 		    custom_effect_tooltip = total_nationalization_of_industry 
 			add_stability = -0.05
+			add_ideas = total_nationalization_of_industry
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -9428,10 +9520,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		available = {
 			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			has_political_power > 350
 		}
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
@@ -9445,29 +9534,41 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = -0.15
-			add_political_power = 150
+			add_political_power = -350
+			custom_effect_tooltip = BLR_represii_2_t
 			kill_ideology_leader = neutrality
-		    country_event = { id = belarus.15 days = 3 }
+			country_event = { id = belarus.15 days = 3 }
+			every_country = {
+				limit = {
+					OR = {
+						has_idea = eu_member
+						has_idea = unsc_member
+					}
+				}
+				PREV = {
+					add_opinion_modifier = {
+						target = BLR
+						modifier = actions_very_negative
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
 	focus = {
 		id = BLR_collectivism
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_KPB}
+		prerequisite = { focus = BLR_PKB }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 52
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
             add_ideas = BLR_collectivism
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
@@ -9475,13 +9576,10 @@ focus_tree = {
 	focus = {
 		id = BLR_ykrep_Belarus
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_KPB}
+		prerequisite = { focus = BLR_PKB }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 54
@@ -9497,11 +9595,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_KPB}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 53
@@ -9518,21 +9613,28 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_stavka_na_socialism}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
+			has_political_power > 300
 		}
 		cost = 70
 		x = 53
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = -300
+			add_stability = -0.1
 			add_opinion_modifier = {
 				target = RUS
 				modifier = actions_positive
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
 			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -9543,25 +9645,26 @@ focus_tree = {
 		prerequisite = {focus = BLR_we_russkie}
 		mutually_exclusive = {focus = BLR_socialist}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.35
+			has_idea = generic_head_of_government_socialist
+			has_idea = generic_socialists_leader
 		}
 		cost = 10
 		x = 52
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			add_stability = -0.3
 			create_country_leader = {
 				name = "Aleksandr Lukashenko"
-				desc = ""
-				picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko.dds"
-				ideology = leninism
-				traits = { }
+				desc = "POLITICS_ALEKSANDR_LUKASHENKO_GENERAL_DESC"
+				picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko_general.dds"
+				ideology = stalinism
+				traits = { trait_stalinism }
+			}
+			hidden_effect = {
+				retire_ideology_leader = neutrality
 			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -9572,11 +9675,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_we_russkie}
 		mutually_exclusive = {focus = BLR_Lykashism}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.30
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 10
 		x = 54
@@ -9595,19 +9695,17 @@ focus_tree = {
 			focus = BLR_Lykashism
 		}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.30
+			has_idea = generic_head_of_government_socialist
+			has_political_power > 400
 		}
 		cost = 50
 		x = 53
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.20
+			add_political_power = -400
+			#add_stability = 0.20
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -9616,11 +9714,8 @@ focus_tree = {
 		icon = GFX_goal_KGB
 		prerequisite = {focus = BLR_socialism_21_century}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 54
@@ -9638,11 +9733,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 44
@@ -9659,53 +9751,42 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_rotacii_KGB}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
-		x = 53
+		x = 54
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			set_country_flag = reform_laws_against_corruption
-			custom_effect_tooltip = reducing_corruption_focus_TT
+			corruption_decreased = yes
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	focus = {
-		id = BLR_SMERSH_2.0
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_rotacii_KGB}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 70
-		x = 55
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_SMERSH
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_SMERSH_2.0
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_rotacii_KGB}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 70
+	# 	x = 55
+	# 	y = 11
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_SMERSH
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
 	focus = {
 		id = BLR_arest_privatisation_men
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_SMERSH_2.0}
+		#prerequisite = {focus = BLR_SMERSH_2.0}
 		prerequisite = {focus = BLR_big_rasledovanie_for_corruption}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 54
@@ -9733,11 +9814,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_arest_privatisation_men}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 53
@@ -9754,11 +9832,8 @@ focus_tree = {
 		icon = GFX_goal_GNSS_effort_2
 		prerequisite = {focus = BLR_arest_privatisation_men}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 55
@@ -9777,11 +9852,8 @@ focus_tree = {
 			focus = BLR_kill_bourgeois_elements
 		}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 55
@@ -9800,11 +9872,8 @@ focus_tree = {
 			focus = BLR_kill_bourgeois_elements
 		}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 53
@@ -9823,13 +9892,9 @@ focus_tree = {
 			has_completed_focus = BLR_reform_cal-up
 			has_completed_focus = BLR_air
 			has_completed_focus = BLR_VSRB
-		}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		prerequisite = {focus = BLR_socialism_21_century}
 		cost = 50
@@ -9848,14 +9913,11 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_new_red-green_army}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
-		x = 49
+		x = 50 
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -9887,39 +9949,32 @@ focus_tree = {
 			air_experience = 15
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_KGB_army
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_new_red-green_army}
-		prerequisite = {focus = BLR_rotacii_KGB}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 50
-		x = 51
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_KGB_army
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
+	} 
+	# focus = {
+	# 	id = BLR_KGB_army
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_new_red-green_army}
+	# 	prerequisite = {focus = BLR_rotacii_KGB}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 50
+	# 	x = 51
+	# 	y = 11
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_KGB_army
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ARMY }
+	# }
 	focus = {
 		id = BLR_red_green_znamya
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_KGB_army}
+		#prerequisite = {focus = BLR_KGB_army}
 		prerequisite = {focus = BLR_updat_post_sov_tech}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 50
@@ -9937,11 +9992,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_red_green_znamya}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 50
@@ -9977,18 +10029,15 @@ focus_tree = {
 			focus = BLR_nationalisation_production
 		}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.40
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 48
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.1
+			#add_stability = 0.1
 			add_ideas = BLR_socialism_21_century
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -9998,19 +10047,16 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_sov_culture}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 30
 		x = 45
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
-			add_stability = 0.05
+			#add_political_power = 150
+			#add_stability = 0.05
 			add_ideas = BLR_VLKSM
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -10020,11 +10066,8 @@ focus_tree = {
 		icon = MAJOR_government_reforms
 		prerequisite = {focus = BLR_sov_culture}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 20
 		x = 47
@@ -10042,11 +10085,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_VLKSM}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 48
@@ -10063,11 +10103,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_VLKSM}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 44
@@ -10081,13 +10118,10 @@ focus_tree = {
 	focus = {
 		id = BLR_Lenin_kylt
 		icon = GFX_goal_rus_new_commintern
-		prerequisite = {focus = BLR_Marks_school}
+		prerequisite = { focus = BLR_Marks_school }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 30
 		x = 46
@@ -10108,11 +10142,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_pioneria}
 		prerequisite = {focus = BLR_job_provision}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 46
@@ -10121,52 +10152,45 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = communism
-				popularity = 0.1
+				popularity = 0.02
 			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	focus = {
-		id = BLR_Stalinism
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Lenin_kylt}
-		mutually_exclusive = {focus = BLR_Trotskism}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 30
-		x = 44
-		y = 15
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_Stalinism
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_Lenin_kylt}
+	# 	mutually_exclusive = {focus = BLR_Trotskism}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 30
+	# 	x = 44
+	# 	y = 15
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_popularity = {
+	# 			ideology = communism
+	# 			popularity = 0.05
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
 	focus = {
 		id = BLR_unitet_community
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Stalinism}
+		prerequisite = {focus = BLR_Lenin_kylt}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 43
-		y = 16
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.1
+			#add_stability = 0.02
 			add_ideas = BLR_unitet_community
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
@@ -10174,21 +10198,18 @@ focus_tree = {
 	focus = {
 		id = BLR_suppression_conflict
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Stalinism}
+		prerequisite = {focus = BLR_Lenin_kylt} 
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 45
-		y = 16
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 100
-			add_stability = 0.1
+			add_stability = 0.02
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -10197,130 +10218,113 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_unitet_community}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 43
-		y = 17
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			add_ideas = BLR_socialism_in_single_country
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_new_sov_people
+		id = BLR_state_atheism
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_suppression_conflict}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 45
-		y = 17
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			hidden_effect = {
 				set_rule = {
 					can_use_kamikaze_pilots = yes
 				}
 			}
-			add_stability = 0.1
-			add_ideas = sov_people
+			#add_stability = 0.1
+			#add_ideas = sov_people
+			add_ideas = state_atheism
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_developed_socialism
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_new_sov_people}
-		prerequisite = {focus = BLR_socialism_in_single_country}
+		prerequisite = { focus = BLR_state_atheism }
+		prerequisite = { focus = BLR_socialism_in_single_country }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.6
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 44
-		y = 18
+		y = 17
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			add_ideas = BLR_developed_socialism
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	focus = {
-		id = BLR_Trotskism
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Lenin_kylt}
-		mutually_exclusive = {focus = BLR_Stalinism}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 30
-		x = 48
-		y = 15
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_Trotskism
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_Lenin_kylt}
+	# 	mutually_exclusive = {focus = BLR_Stalinism}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 30
+	# 	x = 48
+	# 	y = 15
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_popularity = {
+	# 			ideology = communism
+	# 			popularity = 0.05
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	# }
 	focus = {
 		id = BLR_de-bureaucratisation_power
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Trotskism}
+		prerequisite = {focus = BLR_Lenin_kylt}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
+			has_political_power > 1200
 		}
 		cost = 70
 		x = 47
-		y = 16
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
-			add_stability = -0.1
+			add_political_power = -1200
+			corruption_increased = yes
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_workis_country
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Trotskism}
+		prerequisite = {focus = BLR_Lenin_kylt}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 49
-		y = 16
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_workis_country
@@ -10332,66 +10336,16 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_de-bureaucratisation_power}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 47
-		y = 17
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
-			UKR = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			LIT = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			LAT = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			CZE = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			CRO = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			ROM = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			MOL = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
-			BUL = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 120
-				}
-			}
+			#add_political_power = 100
+			add_ideas = BLR_permament_revolution
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -10400,18 +10354,15 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_workis_country}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 49
-		y = 17
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
 			add_ideas = BLR_order_18
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
@@ -10422,19 +10373,16 @@ focus_tree = {
 		prerequisite = {focus = BLR_order_18}
 		prerequisite = {focus = BLR_permanent_revolution}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.5
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 48
-		y = 18
+		y = 17
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
-			add_war_support = 0.1
+			#add_political_power = 100
+			#add_war_support = 0.1
 			add_ideas = BLR_spirite_war
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -10447,246 +10395,226 @@ focus_tree = {
 			focus = BLR_developed_socialism
 		}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.6
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 30
 		x = 46
-		y = 19
+		y = 18
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			#add_political_power = 100
+			add_ideas = BLR_world_revolution
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_Europe
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_world_revolution}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 70
-		x = 46
-		y = 20
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 100
-			POL = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			UKR = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			GER = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			FRA = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			SPR = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			ITA = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			CZE = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			ROM = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			GRE = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_Asia
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_world_revolution}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 70
-		x = 48
-		y = 20
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 100
-			CHI = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			IND = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			AFG = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			VIN = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			MYN = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_Africa
-		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_world_revolution}
-		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
-		}
-		cost = 70
-		x = 44
-		y = 20
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 100
-			EGY = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			LBA = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			MAD = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			SAF = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			ALG = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			SUD = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-			RCG = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism_revolution
-					days = 200
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_Europe
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_world_revolution}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 70
+	# 	x = 46
+	# 	y = 20
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 100
+	# 		POL = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		UKR = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		GER = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		FRA = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		SPR = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		ITA = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		CZE = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		ROM = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		GRE = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_Asia
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_world_revolution}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 70
+	# 	x = 48
+	# 	y = 20
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 100
+	# 		CHI = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		IND = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		AFG = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		VIN = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		MYN = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_Africa
+	# 	icon = GFX_goal_unknown
+	# 	prerequisite = {focus = BLR_world_revolution}
+	# 	available = {
+	# 		has_government = communism
+	# 	}
+	# 	cost = 70
+	# 	x = 44
+	# 	y = 20
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 100
+	# 		EGY = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		LBA = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		MAD = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		SAF = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		ALG = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		SUD = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 		RCG = {
+	# 			ADD_TIMED_IDEA = {
+	# 				idea = BLR_support_communism_revolution
+	# 				days = 200
+	# 			}
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# } 
 	focus = {
 		id = BLR_job_provision
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_VLKSM}
 		prerequisite = {focus = BLR_free_education}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 46
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_stability = 0.1 
+		    #add_stability = 0.1 
 			add_ideas = no_uneployment
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_new_comm_5-ka
+		id = BLR_planning
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_industrializacia}
 		prerequisite = {focus = BLR_mas_bild_kolhoz}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 50
 		x = 42
 		y = 12
 		completion_reward = {
-			add_timed_idea = { idea = BLR_five_year_plans_idea days = 400 }
+			add_ideas = planned_economy
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -10696,11 +10624,8 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_GOERLO}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 43
 		y = 11
@@ -10756,107 +10681,14 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_GOERLO}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 100
 		x = 41
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-										is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			random_owned_state = {
 				limit = {
 					free_building_slots = {
@@ -10955,11 +10787,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_socialism_21_century}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		cost = 70
 		x = 42
@@ -11093,13 +10922,10 @@ focus_tree = {
 		id = BLR_preobrashenie_fauna
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_new_comm_5-ka}
+		prerequisite = { focus = BLR_planning }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 41
 		y = 13
@@ -11113,13 +10939,10 @@ focus_tree = {
 		id = BLR_yrbanisation_1
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_new_comm_5-ka}
+		prerequisite = { focus = BLR_planning }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.3
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 43
 		y = 13
@@ -11136,11 +10959,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 41
 		y = 6
@@ -11159,11 +10979,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_one_partia}
 		prerequisite = {focus = BLR_konstitucia_BSSR}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 41
 		y = 5
@@ -11181,17 +10998,27 @@ focus_tree = {
 		prerequisite = {focus = BLR_one_partia}
 		prerequisite = {focus = BLR_konstitucia_BSSR}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 43
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			retire_ideology_leader = neutrality
+			create_country_leader = {
+				name = "Lidia Yermoshina"
+				desc = "POLITICS_LIDIA_YERMOSHINA_DESC"
+				picture = "gfx/leaders/BLR/portrait_lidia_yermoshina.dds"
+				ideology = sovereign_democracy
+				traits = { trait_sovereign_democracy foreign_minister_addiction_RUS }
+			}
+			if = {
+				limit = {
+					has_country_leader_with_trait = leader_eaeu
+				}
+				country_event = eaeu_event.5 
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -11202,11 +11029,8 @@ focus_tree = {
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
 		}
 		x = 43
 		y = 6
@@ -11215,6 +11039,7 @@ focus_tree = {
 			add_political_power = 100
 			add_timed_idea = { idea = BLR_arest_silovic days = 70 }
 		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_seizure_of_property
@@ -11223,11 +11048,9 @@ focus_tree = {
 		prerequisite = {focus = BLR_represii}
 		prerequisite = {focus = BLR_arest_lykash}
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			communism > 0.2
+			has_idea = generic_head_of_government_socialist
+			has_political_power > 600
 		}
 		x = 40
 		y = 7
@@ -11243,20 +11066,16 @@ focus_tree = {
 				subtract_from_variable = { budget_reserve = -0.008 }
 			}
 			add_stability = -0.3
-			add_political_power = 300
+			add_political_power = -600
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_china_friend
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Communism}
+		prerequisite = { focus = BLR_Communism }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			has_idea_with_trait = foreign_minister_addiction_CHI
 		}
 		cost = 40
 		x = 47
@@ -11267,67 +11086,28 @@ focus_tree = {
 				target = CHI
 				modifier = actions_positive
 			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_china_friend
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_Communism_for_post_sov
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_Communism}
+		prerequisite = { focus = BLR_Communism }
 		available = {
-			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
-			}
+			has_idea_with_trait = foreign_minister_addiction_CHI
 		}
 		cost = 50
 		x = 49
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    UKR = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			RUS = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			KAZ = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			LIT = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			UZB = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			GEO = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
-			AZR = {
-				ADD_TIMED_IDEA = {
-					idea = BLR_support_communism
-					days = 200
-				}
-			}
+			
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11338,77 +11118,78 @@ focus_tree = {
 		prerequisite = {focus = BLR_china_friend}
 		available = {
 			has_government = communism
-			NOT = {
-				has_government = fascism
-				has_government = liberalism
+			CHI = {
+				is_faction_leader = yes
 			}
+			has_idea_with_trait = foreign_minister_addiction_CHI
 		}
 		cost = 25
 		x = 48
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-            add_political_power = 100
+            #add_political_power = 100
 			dismantle_faction = yes
 			CHI = {
 				add_to_faction = BLR
 			}
+			add_ideas = integration_in_china_sphere
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_reforms
-		icon = GFX_goal_irn_rab_konst
-		cost = 10
-		x = -36
-		y = 0
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
-	focus = {
-		id = BLR_improving_medical_services 
-		prerequisite = {focus = BLR_reforms}
-		icon =  GFX_goal_ger_improving_medical_services
-		cost = 40
-		x = -38
-		y = 1
-		completion_reward = {
-		    add_ideas = BLR_medcit
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
-	focus = {
-		id = BLR_reforms_ZP 
-		prerequisite = {focus = BLR_improving_medical_services}
-		cost = 40
-		icon = GFX_goal_ger_tax_reforms
-		x = -38
-		y = 2
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-		    add_ideas = prohibition_of_forced_labour
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
-	focus = {
-		id = BLR_reforms_sports
-		prerequisite = {focus = BLR_reforms}
-		cost = 40
-		icon = GFX_goal_ger_great_germany
-		x = -40
-		y = 1
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_sports
-		}
-		search_filters = { FOCUS_FILTER_ECONOMIC }
-	}
+	# focus = {
+	# 	id = BLR_reforms
+	# 	icon = GFX_goal_irn_rab_konst
+	# 	cost = 10
+	# 	x = -36
+	# 	y = 0
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# } 
+	# focus = {
+	# 	id = BLR_improving_medical_services 
+	# 	prerequisite = {focus = BLR_reforms}
+	# 	icon =  GFX_goal_ger_improving_medical_services
+	# 	cost = 40
+	# 	x = -38
+	# 	y = 1
+	# 	completion_reward = {
+	# 	    add_ideas = BLR_medcit
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
+	# focus = {
+	# 	id = BLR_reforms_ZP 
+	# 	prerequisite = {focus = BLR_improving_medical_services}
+	# 	cost = 40
+	# 	icon = GFX_goal_ger_tax_reforms
+	# 	x = -38
+	# 	y = 2
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 	    add_ideas = prohibition_of_forced_labour
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
+	# focus = {
+	# 	id = BLR_reforms_sports
+	# 	prerequisite = {focus = BLR_reforms}
+	# 	cost = 40
+	# 	icon = GFX_goal_ger_great_germany
+	# 	x = -40
+	# 	y = 1
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_sports
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_ECONOMIC }
+	# }
 	focus = {
 		id = BLR_reforms_research
-		prerequisite = {focus = BLR_reforms_sports}
+		prerequisite = { focus = BLR_military_factory_II } 
 		available = {
             NOT = {
 				has_government = communism
@@ -11418,8 +11199,8 @@ focus_tree = {
 		}
 		cost = 50
 		icon = GFX_focus_research2
-		x = -40
-		y = 2
+		x = -12
+		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_research_slot = 1
@@ -11457,7 +11238,7 @@ focus_tree = {
 		id = BLR_we_zmagars_for_terrorism
 		icon = GFX_goal_unknown
 		cost = 40
-		prerequisite = {focus = BLR_Batkya}
+		prerequisite = { focus = BLR_Lykashenko }
 		available = {
             NOT = {
 				has_government = communism
@@ -11465,8 +11246,8 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		x = 84
-		y = 11
+		x = 90
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_war_support = 0.02
@@ -11486,8 +11267,8 @@ focus_tree = {
 			}
 		}
 		cost = 70
-		x = 84
-		y = 12
+		x = 90
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11511,15 +11292,14 @@ focus_tree = {
 				has_government = liberalism
 				has_government = fascism
 			}
-		}
-		available = {
+
 		    SYR = { has_war_with = ISS }
 			country_exists = ISS
 			country_exists = SYR
 		}
 		cost = 10
-		x = 83
-		y = 13
+		x = 89
+		y = 8 
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11547,8 +11327,8 @@ focus_tree = {
 			}
 		}
 		cost = 10
-		x = 85
-		y = 13
+		x = 91
+		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11575,13 +11355,11 @@ focus_tree = {
 				has_government = liberalism
 				has_government = fascism
 			}
-		}
-		available = {
 		    RUS = { has_war_with = ISS }
 		}
 		cost = 50
-		x = 84
-		y = 14
+		x = 90
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11610,13 +11388,13 @@ focus_tree = {
 			}
 		}
 		cost = 50
-		x = 88
-		y = 11
+		x = 90
+		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
-			army_experience = 10
-			air_experience = 5
+			army_experience = 30
+			air_experience = 20
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11632,8 +11410,8 @@ focus_tree = {
 			}
 		}
 		cost = 40
-		x = 87
-		y = 12
+		x = 89
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11653,8 +11431,8 @@ focus_tree = {
 			}
 		}
 		cost = 40
-		x = 89
-		y = 12
+		x = 91
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11673,12 +11451,12 @@ focus_tree = {
 	focus = {
 		id = BLR_territory
 		icon = GFX_goal_rus_ter_belarus
-		available = {
-		    OR = {
-			    has_completed_focus = BLR_peaceful_accession
-				has_completed_focus = BLR_war_accession
-			}
-		}
+		# available = {
+		#     OR = {
+		# 	    has_completed_focus = BLR_peaceful_accession
+		# 		has_completed_focus = BLR_war_accession
+		# 	}
+		# }
 		cost = 30
 		x = 70
 		y = 8
@@ -11687,11 +11465,11 @@ focus_tree = {
 			OR = {
 				has_completed_focus = BLR_VKL
 				has_completed_focus = BLR_republic
-			}	
+			}
 		}
 		completion_reward = {
 			add_war_support = 0.04
-			add_timed_idea = { idea = BLR_return_territories days = 400}
+			#add_timed_idea = { idea = BLR_return_territories days = 400}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11704,7 +11482,14 @@ focus_tree = {
 		x = 67
 		y = 9
 		ai_will_do = { factor = 1 }
-		completion_reward = {}
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
+				}
+			}
+		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
@@ -11715,20 +11500,7 @@ focus_tree = {
 		x = 65
 		y = 12
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.7 days = 3 }
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.307 days = 3 }
-			    }
-			}
+			add_state_claim = 210
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11741,20 +11513,7 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.6 days = 3 }
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.306 days = 3 }
-			    }
-			}
+			add_state_claim = 242
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11767,20 +11526,7 @@ focus_tree = {
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.8 days = 3 }
-			    }	
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-			    country_event = { id = belarus.308 days = 3 }
-			}
+		    add_state_claim = 220
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -11796,81 +11542,68 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.10 days = 3 }
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.310 days = 3 }
-			    }
-			}
+			add_state_claim = 263
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	#####
-	focus = {
-		id = BLR_colonian_country
-		icon = GFX_goal_unknown
-		available = {
-		    has_completed_focus = BLR_VKL
-		}
-		cost = 50
-		prerequisite = {focus = BLR_territory}
-		available = {
-		    has_completed_focus = BLR_navy_country
-		}
-		x = 79
-		y = 9
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 120
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_gambia
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_colonian_country}
-		available = {
-		    has_completed_focus = BLR_navy_country
-		}
-		x = 78
-		y = 10
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = GAM
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_kyrlandia
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_colonian_country}
-		available = {
-		    has_completed_focus = BLR_navy_country
-		}
-		x = 80
-		y = 10
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = TRI
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_colonian_country
+	# 	icon = GFX_goal_unknown
+	# 	available = {
+	# 	    has_completed_focus = BLR_VKL
+	# 	}
+	# 	cost = 50
+	# 	prerequisite = {focus = BLR_territory}
+	# 	available = {
+	# 	    has_completed_focus = BLR_navy_country
+	# 	}
+	# 	x = 79
+	# 	y = 9
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 120
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_gambia
+	# 	icon = GFX_goal_unknown
+	# 	cost = 70
+	# 	prerequisite = {focus = BLR_colonian_country}
+	# 	available = {
+	# 	    has_completed_focus = BLR_navy_country
+	# 	}
+	# 	x = 78
+	# 	y = 10
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		create_wargoal = {
+	# 			type = puppet_wargoal_focus
+	# 			target = GAM
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_kyrlandia
+	# 	icon = GFX_goal_unknown
+	# 	cost = 70
+	# 	prerequisite = {focus = BLR_colonian_country}
+	# 	available = {
+	# 	    has_completed_focus = BLR_navy_country
+	# 	}
+	# 	x = 80
+	# 	y = 10
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		create_wargoal = {
+	# 			type = puppet_wargoal_focus
+	# 			target = TRI
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	###Украина
 	focus = {
 		id = BLR_Ukrain
@@ -11884,21 +11617,13 @@ focus_tree = {
 		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				UKR = {
-					country_event = { id = belarus.103 days = 3 }
-				}
-			}
-			if = {
-				limit = {
-				    has_completed_focus = BLR_VKL
-					has_completed_focus = BLR_war_accession
-				}
-				UKR = {
-					country_event = { id = belarus.3 days = 3 }
+			add_state_core = 93
+			add_state_core = 193
+			add_state_core = 914
+			UKR = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
 				}
 			}
 		} 
@@ -11913,18 +11638,7 @@ focus_tree = {
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-			}
-			if = {
-				limit = {
-				    has_completed_focus = BLR_VKL
-					has_completed_focus = BLR_war_accession
-				}
-				add_state_core = 73	
-			}
+			add_state_core = 73	
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -11939,7 +11653,24 @@ focus_tree = {
 		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-            add_political_power = 100
+            EST = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
+				}
+			}
+            LAT = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
+				}
+			}
+            LIT = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11952,15 +11683,7 @@ focus_tree = {
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-					has_completed_focus = BLR_VKL
-				}
-				LIT = {
-			        country_event = { id = belarus.2 days = 3 }
-			    }
-			}
+			#add_state_core = 96
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -11973,24 +11696,7 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-					has_completed_focus = BLR_republic
-				}
-				LIT = {
-			        country_event = { id = belarus.2 days = 3 }
-			    }
-			}
-			if = {
-				limit = {
-					has_completed_focus = BLR_republic
-					has_completed_focus = BLR_peaceful_accession
-				}
-				LIT = {
-			        country_event = { id = belarus.302 days = 3 }
-			    }
-			}
+			add_state_core = 96
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -12014,26 +11720,7 @@ focus_tree = {
 		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-					OR = {
-						has_completed_focus = BLR_republic
-						has_completed_focus = BLR_VKL
-					}
-					
-				}
-				country_event = { id = belarus.13 days = 3 }
-			}
-			if = {
-				limit = {
-					    has_completed_focus = BLR_peaceful_accession
-						has_completed_focus = BLR_republic
-				}
-				LAT = {
-			        country_event = { id = belarus.313 days = 3 }
-			    }
-			}
+			add_state_core = 924
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -12047,7 +11734,14 @@ focus_tree = {
 		x = 74
 		y = 9
 		ai_will_do = { factor = 1 }
-		completion_reward = {}
+		completion_reward = {
+			POL = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = actions_very_negative
+				}
+			}
+		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
@@ -12059,20 +11753,7 @@ focus_tree = {
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.4 days = 3 }
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				POL = {
-			        country_event = { id = belarus.404 days = 3 }
-			    }
-			}
+		    add_state_core = 97
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -12086,20 +11767,7 @@ focus_tree = {
 		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.5 days = 3 }
-			}
-			if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.305 days = 3 }
-			    }
-			}
+			add_state_core = 224
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -12112,20 +11780,7 @@ focus_tree = {
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = BLR_war_accession
-				}
-				country_event = { id = belarus.9 days = 3 }
-			}
-			 if = {
-				limit = {
-					has_completed_focus = BLR_peaceful_accession
-				}
-				RUS = {
-			        country_event = { id = belarus.309 days = 3 }
-			    }
-			}
+			add_state_core = 240
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -12229,9 +11884,9 @@ focus_tree = {
 		id = BLR_union_with_Ukrain
 		icon = GFX_goal_unknown
 		cost = 70
-		prerequisite = {focus = BLR_defence_union}
-		prerequisite = {focus = BLR_training_Ukrain}
-		prerequisite = {focus = BLR_buy_BM_Oplot}
+		prerequisite = { focus = BLR_defence_union }
+		prerequisite = { focus = BLR_training_Ukrain }
+		prerequisite = { focus = BLR_buy_BM_Oplot }
 		available = { 
 		    UKR = {
 		        has_opinion = {
@@ -12252,8 +11907,13 @@ focus_tree = {
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			give_guarantee = UKR
+			give_military_access = UKR
+			#give_attache = UKR
 		    UKR = {
-		        country_event = { id = belarus.30 days = 3 }
+				give_guarantee = BLR
+				give_military_access = BLR
+				#recall_attache = BLR
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -12262,9 +11922,9 @@ focus_tree = {
 		id = BLR_research_with_Ukrain
 		icon = GFX_goal_unknown
 		cost = 50
-		prerequisite = {focus = BLR_defence_union}
-		prerequisite = {focus = BLR_training_Ukrain}
-		prerequisite = {focus = BLR_buy_BM_Oplot}
+		prerequisite = { focus = BLR_defence_union }
+		prerequisite = { focus = BLR_training_Ukrain }
+		prerequisite = { focus = BLR_buy_BM_Oplot }
 		available = { 
 		    UKR = {
 		        has_opinion = {
@@ -12444,8 +12104,8 @@ focus_tree = {
 		    	}
 			}
 		}
-		prerequisite = {focus = BLR_research_with_Ukrain}
-		prerequisite = {focus = BLR_union_with_Ukrain}
+		prerequisite = { focus = BLR_research_with_Ukrain }
+		prerequisite = { focus = BLR_union_with_Ukrain }
 		x = 4
 		y = 5
 		ai_will_do = {
@@ -12463,59 +12123,53 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_1
 		icon = GFX_goals_generic_eu
-		available = {
-		    OR = {
-			    has_completed_focus = BLR_Lykashenko
-			}
+		prerequisite = { focus = BLR_EC_37 }
+		available = { 
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		cost = 50
-		x = 4
+		x = 11
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
-			add_ideas = BLR_EC_1
+			#add_political_power = 150
+			swap_ideas = { add_idea = unitary_state_with_devolution remove_idea = unitary_state }
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_EC_2
 		icon = GFX_goals_generic_eu
-		available = {
-		    OR = {
-				has_completed_focus = BLR_Lykashenko
-				has_government = liberalism
-			}
-		}
+		prerequisite = { focus = BLR_union_with_Ukrain }
 		cost = 50
-		x = 1
-		y = 6
+		x = 2
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_2
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_3
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_61}
-		cost = 50
-		x = 9
-		y = 26
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_3
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = { focus = BLR_EC_61 }
+	# 	cost = 50
+	# 	x = 9
+	# 	y = 26
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_4
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_18}
+		prerequisite = { focus = BLR_EC_17 }
 		cost = 50
-		x = 1
-		y = 16
+		x = 7
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -12525,9 +12179,12 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_5
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_1 }
+		prerequisite = {
+			focus = BLR_EC_27
+			focus = BLR_EC_28
+		}
 		cost = 50
-		x = 4
+		x = 6
 		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -12538,55 +12195,58 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_6
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_27 }
+		prerequisite = { focus = BLR_EC_18 }
 		cost = 50
-		x = 1
-		y = 21
+		x = 13 
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_6
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_7
-		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_42
-            focus = BLR_EC_12
-        }
-		cost = 50
-		x = 1
-		y = 19
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_stability = 0.1
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_EC_8
-		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_19
-			focus = BLR_EC_16
-        }
-		cost = 50
-		x = 5
-		y = 17
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_stability = 0.05
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_7
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {
+    #         focus = BLR_EC_42
+    #         focus = BLR_EC_12
+    #     }
+	# 	cost = 50
+	# 	x = 1
+	# 	y = 19
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_stability = 0.1
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_EC_8
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {
+    #         #focus = BLR_EC_19
+	# 		#focus = BLR_EC_16
+    #     }
+	# 	cost = 50
+	# 	x = 5
+	# 	y = 17
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_stability = 0.05
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_9
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_10 }
+		prerequisite = {
+			focus = BLR_EC_52
+			focus = BLR_EC_28
+		}
 		cost = 50
-		x = 5
-		y = 11
+		x = 8
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_country_flag = reform_laws_against_corruption
@@ -12597,7 +12257,7 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_10
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_28 }
+		prerequisite = { focus = BLR_EC_38 }
 		cost = 50
 		x = 5
 		y = 10
@@ -12639,10 +12299,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_11
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_37}
+		prerequisite = { focus = BLR_EC_58 }
 		cost = 50
-		x = 3
-		y = 17
+		x = 13
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_11
@@ -12652,10 +12312,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_12
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_11}
+		prerequisite = { focus = BLR_EC_72 }
 		cost = 50
-		x = 3
-		y = 18
+		x = 9
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_12
@@ -12665,10 +12325,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_13
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_24}
+		prerequisite = { focus = BLR_EC_5 }
 		cost = 50
-		x = 3
-		y = 15
+		x = 5
+		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_13
@@ -12680,7 +12340,7 @@ focus_tree = {
 		icon = GFX_goals_generic_eu
 		prerequisite = { focus = BLR_EC_5 }
 		cost = 50
-		x = 5
+		x = 7
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -12691,26 +12351,24 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_15
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_35}
+		prerequisite = { focus = BLR_EC_56 }
 		cost = 50
-		x = 7
-		y = 15
+		x = 14
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_EC_15
+			#add_ideas = BLR_EC_15
 			add_ideas = respect_of_liberties
 		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_EC_16
 		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_20
-			focus = BLR_EC_15
-        }
+		prerequisite = { focus = BLR_EC_48 }
 		cost = 50
-		x = 7
-		y = 16
+		x = 9
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_16
@@ -12720,10 +12378,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_17
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_8}
+		prerequisite = { focus = BLR_EC_41 }
 		cost = 50
-		x = 5
-		y = 18
+		x = 7
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_17
@@ -12733,10 +12391,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_18
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_33}
+		prerequisite = { focus = BLR_EC_11 }
 		cost = 50
-		x = 1
-		y = 15
+		x = 13
+		y = 13
 		ai_will_do = { factor = 1 }		
 		completion_reward = {
 			add_political_power = 150
@@ -12746,13 +12404,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_19
 		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_20
-			focus = BLR_EC_15
-        }
+		prerequisite = { focus = BLR_EC_16 }
 		cost = 50
-		x = 5
-		y = 16
+		x = 9
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = 0.05
@@ -12762,54 +12417,52 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_20
 		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_35
-			focus = BLR_EC_40
-        }
+		prerequisite = { focus = BLR_EC_65 }
+		prerequisite = { focus = BLR_EC_23 }
 		cost = 50
-		x = 5
-		y = 15
+		x = 13
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_20
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_21
-		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_32 }
-		cost = 50
-		x = 3
-		y = 12
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			set_country_flag = reform_laws_against_corruption
-			custom_effect_tooltip = reducing_corruption_focus_TT
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_EC_22
-		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_5 }
-		cost = 50
-		x = 3
-		y = 8
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			set_country_flag = reform_laws_against_corruption
-			custom_effect_tooltip = reducing_corruption_focus_TT
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_21
+	# 	icon = GFX_goals_generic_eu
+	# 	#prerequisite = { focus = BLR_EC_32 }
+	# 	cost = 50
+	# 	x = 3
+	# 	y = 12
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		set_country_flag = reform_laws_against_corruption
+	# 		custom_effect_tooltip = reducing_corruption_focus_TT
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_EC_22
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = { focus = BLR_EC_5 }
+	# 	cost = 50
+	# 	x = 5
+	# 	y = 8
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		set_country_flag = reform_laws_against_corruption
+	# 		custom_effect_tooltip = reducing_corruption_focus_TT
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_23
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_9 }
+		prerequisite = { focus = BLR_EC_32 }
 		cost = 50
-		x = 5
-		y = 12
+		x = 14
+		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_country_flag = reform_laws_against_corruption
@@ -12820,10 +12473,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_24
 		icon = GFX_goals_generic_eu
-        prerequisite = {focus = BLR_EC_39}
+        #prerequisite = {focus = BLR_EC_39}
 		cost = 50
-		x = 3
-		y = 14
+		x = 5
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_country_flag = reform_laws_against_corruption
@@ -12835,10 +12488,11 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_25
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_23}
+		prerequisite = { focus = BLR_EC_35 }
+		prerequisite = { focus = BLR_EC_39 }
 		cost = 50
-		x = 5
-		y = 13
+		x = 9 
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_country_flag = reform_laws_against_corruption
@@ -12849,10 +12503,11 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_26
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_56}
+		prerequisite = { focus = BLR_EC_57 }
+		prerequisite = { focus = BLR_EC_33 }
 		cost = 50
-		x = 1
-		y = 10
+		x = 14
+		y = 16 
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_26
@@ -12862,10 +12517,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_27
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_7}
+		prerequisite = { focus = BLR_EC_59 }
 		cost = 50
-		x = 1
-		y = 20
+		x = 5
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -12875,10 +12530,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_28
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_14 }
+		prerequisite = { focus = BLR_EC_59 }
 		cost = 50
-		x = 5
-		y = 9
+		x = 7
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_country_flag = reform_laws_against_corruption
@@ -12889,11 +12544,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_29
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_71 }
-		prerequisite = { focus = BLR_EC_30 }
+		prerequisite = { focus = BLR_EC_19 }
 		cost = 50
-		x = 3
-		y = 22
+		x = 9
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -12903,10 +12557,13 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_31
 		icon = GFX_goals_generic_eu
-	    prerequisite = { focus = BLR_EC_22 }
+		prerequisite = { focus = BLR_zap_diplomats }
+		available = {
+			has_idea_with_trait = foreign_minister_addiction_EU
+		}
 		cost = 50
-		x = 3
-		y = 9
+		x = 8
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_31
@@ -12916,10 +12573,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_32
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_38 }
+		prerequisite = { focus = BLR_zap_resyrs }
 		cost = 50
-		x = 3
-		y = 11
+		x = 14
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_32
@@ -12929,10 +12586,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_33
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_55}
+		prerequisite = { focus = BLR_EC_64 }
 		cost = 50
-		x = 1
-		y = 14
+		x = 15
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_33
@@ -12942,10 +12599,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_34
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_12}
+		prerequisite = { focus = BLR_EC_4 }
 		cost = 50
-		x = 3
-		y = 19
+		x = 7
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -12955,10 +12612,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_35
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_65}
+		prerequisite = { focus = BLR_EC_31 }
 		cost = 50
-		x = 7
-		y = 14
+		x = 8
+		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_35
@@ -12968,15 +12625,17 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_36
 		icon = GFX_goals_generic_eu
-		available = {
-			has_government = liberalism
+		prerequisite = { focus = BLR_EC_52 }
+		prerequisite = { focus = BLR_EC_1 }
+		available = { 
+			has_idea_with_trait = foreign_minister_addiction_EU
 		}
 		cost = 50
-		x = 7
-		y = 6
+		x = 10
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
+			#add_political_power = 150
 			add_ideas = BLR_EC_36
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -12984,10 +12643,11 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_37
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_13}
+		prerequisite = { focus = BLR_EC_39 }
+		prerequisite = { focus = BLR_EC_65 }
 		cost = 50
-		x = 3
-		y = 16
+		x = 11
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_37
@@ -12997,10 +12657,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_38
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_31 }
+		prerequisite = { focus = BLR_EC_13 }
 		cost = 50
-		x = 3
-		y = 10
+		x = 5
+		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_38
@@ -13010,22 +12670,25 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_39
 		icon = GFX_goals_generic_eu
-		prerequisite = { focus = BLR_EC_21 }
+		prerequisite = { focus = BLR_sankcii_RUS }
 		cost = 50
-		x = 3
-		y = 13
+		x = 10
+		y = 4
 		completion_reward = {
-			add_political_power = 150
+			add_opinion_modifier = {
+				target = RUS
+				modifier = embargo
+			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
 		id = BLR_EC_30
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_72}
+		prerequisite = { focus = BLR_EC_68 }
 		cost = 50
-		x = 3
-		y = 21
+		x = 5
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = fully_guranted_liberties
@@ -13035,10 +12698,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_40
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_25}
+		prerequisite = { focus = BLR_EC_15 }
 		cost = 50
-		x = 5
-		y = 14
+		x = 15
+		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_40
@@ -13048,36 +12711,43 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_41
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_64}
-		cost = 50
-		x = 7
-		y = 24
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_EC_42
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_68}
-		cost = 50
-		x = 1
-		y = 18
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_EC_43
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_44}
+		prerequisite = { focus = BLR_EC_44 }
 		cost = 50
 		x = 7
 		y = 12
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 150
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_EC_41
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	# focus = {
+	# 	id = BLR_EC_42
+	# 	icon = GFX_goals_generic_eu
+	# 	#prerequisite = {focus = BLR_EC_68}
+	# 	cost = 50
+	# 	x = 1
+	# 	y = 18
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	focus = {
+		id = BLR_EC_43
+		icon = GFX_goals_generic_eu
+		prerequisite = { focus = BLR_EC_1 }
+		prerequisite = { focus = BLR_EC_56 }
+		cost = 50
+		x = 12
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_43
@@ -13087,7 +12757,7 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_44
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_48}
+		prerequisite = { focus = BLR_EC_48 }
 		cost = 50
 		x = 7
 		y = 11
@@ -13095,51 +12765,52 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.03
 		}
-	}
-	focus = {
-		id = BLR_EC_45
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_53}
-		cost = 50
-		x = 7
-		y = 20
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_stability = 0.03
-		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
+	# focus = {
+	# 	id = BLR_EC_45
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_53}
+	# 	cost = 50
+	# 	x = 7
+	# 	y = 20
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_stability = 0.03
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_46
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_57}
+		prerequisite = { focus = BLR_european_values }
 		cost = 50
-		x = 1
-		y = 12
+		x = 11
+		y = 11 
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = 0.03
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_47
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_3}
-		prerequisite = {focus = BLR_EC_62}
-		cost = 50
-		x = 8
-		y = 27
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_EC_47
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_47
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_3}
+	# 	prerequisite = {focus = BLR_EC_62}
+	# 	cost = 50
+	# 	x = 8
+	# 	y = 27
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_EC_47
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_48
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_54}
+		prerequisite = { focus = BLR_EC_54 }
 		cost = 50
 		x = 7
 		y = 10
@@ -13152,10 +12823,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_49
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_2}
+		prerequisite = { focus = BLR_EC_2 }
 		cost = 50
-		x = 1
-		y = 7
+		x = 2
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13165,10 +12836,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_50
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_73}
+		prerequisite = { focus = BLR_EC_10 }
 		cost = 50
-		x = 7
-		y = 18
+		x = 5
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13178,10 +12849,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_51
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_45}
+		prerequisite = { focus = BLR_EC_50 }
 		cost = 50
-		x = 7
-		y = 21
+		x = 5
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13191,33 +12862,33 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_52
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_36}
+		prerequisite = { focus = BLR_EC_25 }
 		cost = 50
-		x = 7
-		y = 7
+		x = 9
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_52
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_53
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_50}
-		cost = 50
-		x = 7
-		y = 19
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_EC_53
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_53
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_50}
+	# 	cost = 50
+	# 	x = 7
+	# 	y = 19
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_EC_53
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_54
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_59}
+		prerequisite = { focus = BLR_EC_14 }
 		cost = 50
 		x = 7
 		y = 9
@@ -13230,10 +12901,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_55
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_46}
+		prerequisite = { focus = BLR_EC_46 }
 		cost = 50
-		x = 1
-		y = 13
+		x = 11
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_55
@@ -13243,10 +12914,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_56
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_67}
+		prerequisite = { focus = BLR_EC_20 }
 		cost = 50
-		x = 1
-		y = 9
+		x = 13
+		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_56
@@ -13256,10 +12927,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_57
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_26}
+		prerequisite = { focus = BLR_EC_6 }
 		cost = 50
-		x = 1
-		y = 11
+		x = 13
+		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13269,10 +12940,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_58
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_64}
+		prerequisite = { focus = BLR_joint_research_with_zapad }
 		cost = 50
-		x = 7
-		y = 23
+		x = 13
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13282,80 +12953,84 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_59
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_52}
+		prerequisite = { focus = BLR_EC_35 } 
 		cost = 50
 		x = 7
-		y = 8
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_60
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_63}
-		prerequisite = {focus = BLR_EC_47}
-		cost = 50
-		x = 7
-		y = 28
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_60
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_63}
+	# 	prerequisite = {focus = BLR_EC_47}
+	# 	cost = 50
+	# 	x = 7
+	# 	y = 28
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_61
 		icon = GFX_goals_generic_eu
-        prerequisite = {focus = BLR_EC_41}
+        prerequisite = { focus = BLR_EC_34 }
+        prerequisite = { focus = BLR_EC_12 }
 		cost = 50
-		x = 7
-		y = 25
+		x = 8
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_stability = 0.01
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_62
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_61}
-		cost = 50
-		x = 7
-		y = 26
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_EC_62
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_EC_63
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_66}
-		prerequisite = {focus = BLR_EC_62}
-		cost = 50
-		x = 6
-		y = 27
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_EC_63
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_62
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_61}
+	# 	cost = 50
+	# 	x = 7
+	# 	y = 26
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_EC_62
+	# 		RUS = {
+	# 			add_opinion_modifier = {
+	# 				target = BLR
+	# 				modifier = RUS_BLR_EC_62
+	# 			}
+	# 		}
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
+	# focus = {
+	# 	id = BLR_EC_63
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_66}
+	# 	prerequisite = {focus = BLR_EC_62}
+	# 	cost = 50
+	# 	x = 6
+	# 	y = 27
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_EC_63
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_64
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_51}
-		available = {
-		    has_completed_focus = BLR_EU
-		}
+		prerequisite = { focus = BLR_EC_74 }
 		cost = 50
-		x = 7
-		y = 22
+		x = 15
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
@@ -13365,36 +13040,36 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_65
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_43}
+		prerequisite = { focus = BLR_otmena_sankciy }
 		cost = 50
-		x = 7
-		y = 13
+		x = 12
+		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_65
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_66
-		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_61}
-		cost = 50
-		x = 5
-		y = 26
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_66
+	# 	icon = GFX_goals_generic_eu
+	# 	prerequisite = {focus = BLR_EC_61}
+	# 	cost = 50
+	# 	x = 5
+	# 	y = 26
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_political_power = 150
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_67
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_49}
+		prerequisite = { focus = BLR_EC_49 }
 		cost = 50
-		x = 1
-		y = 8
+		x = 2
+		y = 7
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_67
@@ -13404,10 +13079,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_68
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_4}
+		prerequisite = { focus = BLR_EC_70 }
 		cost = 50
-		x = 1
-		y = 17
+		x = 5
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
             add_political_power = 150
@@ -13417,12 +13092,19 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_69
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_71}
+		prerequisite = { focus = BLR_EC_30 }
+		prerequisite = { focus = BLR_EC_34 }
 		cost = 50
-		x = 5
-		y = 22
+		x = 6
+		y = 16
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = BLR
+					modifier = RUS_BLR_EC_69
+				}
+			}
 			ENG = {
 			    add_opinion_modifier = {
 				    target = BLR
@@ -13447,10 +13129,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_70
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_17}
+		prerequisite = { focus = BLR_EC_51 }
 		cost = 50
 		x = 5
-		y = 19
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_70
@@ -13460,10 +13142,10 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_71
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_74}
+		prerequisite = { focus = BLR_EC_58 }
 		cost = 50
-		x = 5
-		y = 21
+		x = 15
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_71
@@ -13473,39 +13155,39 @@ focus_tree = {
 	focus = {
 		id = BLR_EC_72
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_34}
+		prerequisite = { focus = BLR_EC_29 }
 		cost = 50
-		x = 3
-		y = 20
+		x = 9
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 150
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_EC_73
-		icon = GFX_goals_generic_eu
-		prerequisite = {
-            focus = BLR_EC_19
-			focus = BLR_EC_16
-        }
-		cost = 50
-		x = 7
-		y = 17
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_EC_73
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
+	# focus = {
+	# 	id = BLR_EC_73
+	# 	icon = GFX_goals_generic_eu
+	# 	# prerequisite = {
+    #     #     focus = BLR_EC_19
+	# 	# 	focus = BLR_EC_16
+    #     # }
+	# 	cost = 50
+	# 	x = 7
+	# 	y = 13
+	# 	ai_will_do = { factor = 1 }
+	# 	completion_reward = {
+	# 		add_ideas = BLR_EC_73
+	# 	}
+	# 	search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	# }
 	focus = {
 		id = BLR_EC_74
 		icon = GFX_goals_generic_eu
-		prerequisite = {focus = BLR_EC_70}
+		prerequisite = { focus = BLR_EC_71 }
 		cost = 50
-		x = 5
-		y = 20
+		x = 15
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_EC_74

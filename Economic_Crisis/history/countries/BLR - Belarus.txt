@@ -61,7 +61,7 @@ capital = 206
 		presidential_republic
 		unitary_state
 		preference_religion
-		mixed_media
+		state_media_only
 		suspended_liberties
 		mandatory_urgent_service
 		mixed_schools
@@ -74,12 +74,17 @@ capital = 206
 		normal_taxes
 		middle_social_security
 		pensions
-		terrorism_discounted
+		low_terrorism
+		
+		BLR_EU_sanctions
 	}
 
 	add_political_power = 0
 
 	set_convoys = 0
+	
+	set_war_support = 0.2
+	set_stability = 0.4
 
 	set_country_flag = pai_nondem_authoritarian
 	set_politics = {
@@ -100,7 +105,7 @@ capital = 206
 	
 	create_country_leader = {
 		name = "Aleksandr Lukashenko"
-		desc = ""
+		desc = "POLITICS_ALEKSANDR_LUKASHENKO_DESC"
 		picture = "gfx/leaders/BLR/portrait_aleksandr_lukashenko.dds"
 		ideology = authoritarian_democracy
 		traits = { trait_authoritarian_democracy }
@@ -108,7 +113,7 @@ capital = 206
 
 	create_country_leader = {
 		name = "Aleksey Sokol"
-		desc = ""
+		desc = "POLITICS_ALEKSEY_SOKOL_DESC"
 		picture = "gfx/leaders/portrait_aleksey_sokol.dds"
 		ideology = leninism
 		traits = { trait_leninism }
@@ -116,7 +121,7 @@ capital = 206
 
 	create_country_leader = {
 		name = "Igor Karpenko"
-		desc = ""
+		desc = "POLITICS_IGOR KARPENKO_DESC"
 		picture = "gfx/leaders/BLR/portrait_igor_karpenko.dds"
 		expire = "2017.5.14"
 		ideology = leninism
@@ -125,7 +130,7 @@ capital = 206
 
 	create_country_leader = {
 		name = "Anatoliy Lebedko"
-		desc = ""
+		desc = "POLITICS_ANATOLIY_LEBEDKO_DESC"
 		picture = "gfx/leaders/BLR/portrait_anatoliy_lebedko.dds"
 		ideology = liberal_democracy
 		traits = { trait_liberal_democracy }
@@ -133,19 +138,27 @@ capital = 206
 
 	create_country_leader = {
 		name = "Irina Veshtard"
-		desc = ""
-		picture = "gfx/leaders/portrait_no_photo.dds"
-		ideology = social_democracy
+		desc = "POLITICS_IRINA_VESHTARD_DESC"
+		picture = "gfx/leaders/BLR/portrait_irina_veshtord.dds"
+		ideology = liberal_conservatism
 		#expire = ""
-		traits = { trait_social_democracy }
+		traits = { trait_liberal_conservatism }
 	}	
 
 	create_country_leader = {
 		name = "Zianon Pazniak"
-		desc = ""
+		desc = "POLITICS_ZIANON_PAZNIAK_DESC"
 		picture = "gfx/leaders/BLR/portrait_zianon_pazniak.dds"
-		ideology = conservative_democracy
-		traits = { trait_conservative_democracy }
+		ideology = national_liberalism
+		traits = { trait_national_liberalism }
+	}
+	
+	create_country_leader = {
+		name = "Vasiliy Zadnepryaniy"
+		desc = "POLITICS_VASILIY_ZABDEPRYADNIY_DESC"
+		picture = "gfx/leaders/BLR/portrait_vasiliy_zandepryadniy.dds"
+		ideology = social_democracy
+		traits = { trait_social_democracy }
 	}	
 	
   create_field_marshal = {

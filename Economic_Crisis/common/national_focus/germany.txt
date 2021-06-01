@@ -657,12 +657,12 @@ focus_tree = {
 				if = {
 					limit = { GER = { has_government = communism }	}
 					add_popularity = { ideology = communism popularity = 0.10 }
-					add_ideas = communism_unrest_GER
+					add_timed_idea = { idea = communism_unrest_GER days = 180	}
 				}
 				if = {
 					limit = { GER = { has_government = fascism } }
 					add_popularity = { ideology = fascism popularity = 0.10 }
-					add_ideas = fascism_unrest_GER
+					add_timed_idea = { idea = fascism_unrest_GER days = 180	}
 				}
 			}
 		}
@@ -687,10 +687,10 @@ focus_tree = {
 				}
 			}
 		}
-		#complete_tooltip = {
-		#	annex_country = { target = LUX }
-		#	LIE = { start_civil_war = { ideology = fascism size = 0.5 } }
-		#}
+		complete_tooltip = {
+			annex_country = { target = LUX }
+			LIE = { start_civil_war = { ideology = fascism size = 0.5 } }
+		}
 		completion_reward = {
 			if = {
 				limit = {
@@ -742,28 +742,32 @@ focus_tree = {
 					limit = { has_idea = communism_unrest_GER }
 					if = {
 						limit = { NOT = { has_government = communism } }
-						start_civil_war = { ideology = communism size = 0.5 }
+						PREV = {
+							every_owned_state = { add_resistance = 60 } 
+						}
 					}
 					every_country = {
 						limit = {
 							original_tag = FROM
 							has_government = communism
 						}
-						add_ideas = support_of_GER
+						add_timed_idea = { idea = support_of_GER days = 180	}
 					}
 				}
 				if = {
 					limit = { has_idea = fascism_unrest_GER	}
 					if = {
 						limit = { NOT = { has_government = fascism } }
-						start_civil_war = { ideology = fascism size = 0.5 }
+						PREV = {
+							every_owned_state = { add_resistance = 60 } 
+						}
 					}
 					every_country = {
 						limit = {
 							original_tag = FROM
 							has_government = fascism
 						}
-						add_ideas = support_of_GER
+						add_timed_idea = { idea = support_of_GER days = 180	}
 					}
 				}
 				hidden_effect = {	news_event = { id = gernews.13 hours = 9 }	}
@@ -787,13 +791,15 @@ focus_tree = {
 						has_idea = communism_unrest_GER
 						NOT = { has_government = communism }
 					}
-					start_civil_war = { ideology = communism size = 0.5 }
+					PREV = {
+						every_owned_state = { add_resistance = 60 } 
+					}
 					every_country = {
 						limit = {
 							original_tag = FROM
 							has_government = communism
 						}
-						add_ideas = support_of_GER
+						add_timed_idea = { idea = support_of_GER days = 180	}
 					}
 				}
 				if = {
@@ -801,13 +807,15 @@ focus_tree = {
 						has_idea = fascism_unrest_GER
 						NOT = { has_government = fascism }
 					}
-					start_civil_war = { ideology = fascism size = 0.5 }
+					PREV = {
+						every_owned_state = { add_resistance = 60 } 
+					}
 					every_country = {
 						limit = {
 							original_tag = FROM
 							has_government = fascism
 						}
-						add_ideas = support_of_GER
+						add_timed_idea = { idea = support_of_GER days = 180	}
 					}
 				}
 				hidden_effect = { news_event = { id = gernews.14 hours = 9 } }
@@ -1187,7 +1195,11 @@ focus_tree = {
 	focus = {
 		id = GER_nuclear_effort
 		icon = GFX_goal_ger_nuclear_effort
-		prerequisite = { focus = GER_gdr_revival focus = GER_reich_revival  }
+		prerequisite = {
+			focus = GER_gdr_revival
+			focus = GER_reich_revival
+		}
+		prerequisite = { focus = GER_cope_exit_eu_consequences }
 		x = 6
 		y = 6
 		cost = 70

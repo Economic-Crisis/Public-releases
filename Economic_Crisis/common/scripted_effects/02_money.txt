@@ -858,7 +858,7 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				set_variable = { cat_1_sec_1_budget = cat_1_budget }
 				divide_variable = { cat_1_sec_1_budget = 100 }
 				multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }
-		}
+			}
 	
 	
 	#-----------------------------------------------------------------------------------
@@ -1515,7 +1515,10 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				set_variable = { cat_1_sec_1_percen_switcher = 1 }
 			}
 			
-			else_if = { limit = { check_variable = { cat_1_sec_1_percen_switcher = 3 } }
+			else_if = {
+				limit = {
+					check_variable = { cat_1_sec_1_percen_switcher = 3 }
+				}
 				set_variable = { cat_1_sec_1_ratio = 10 }
 				add_to_variable = { cat_1_rest_sections_percen = 90 }
 				set_variable = { cat_1_sec_1_percen_switcher = 2 }
@@ -1525,10 +1528,8 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 			
 			set_variable = { cat_1_sec_1_budget = cat_1_budget }
 				divide_variable = { cat_1_sec_1_budget = 100 }
-				multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }
-			
-					
-		}
+				multiply_variable = { cat_1_sec_1_budget = cat_1_sec_1_ratio }	
+			}
 		
 #-----------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------
@@ -1566,10 +1567,8 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 			
 			set_variable = { cat_1_sec_2_budget = cat_1_budget }
 				divide_variable = { cat_1_sec_2_budget = 100 }
-				multiply_variable = { cat_1_sec_2_budget = cat_1_sec_2_ratio }
-			
-					
-		}	
+				multiply_variable = { cat_1_sec_2_budget = cat_1_sec_2_ratio }	
+			}	
 	
 	
 #-----------------------------------------------------------------------------------
@@ -1611,12 +1610,12 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_1_sec_3_budget = cat_1_sec_3_ratio }
 			
 					
-		}	
+			}	
 	
 	
 	
 	
-	}
+		}
 ########################################################################## Cat 2
 	else_if = { limit = { check_variable = { money_menu_switcher = 3 } }	
 	
@@ -1657,7 +1656,7 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_2_sec_1_budget = cat_2_sec_1_ratio }
 			
 					
-		}	
+			}	
 	
 		if = { limit = { check_variable = { section_percen_change = 2 } } 	#Cat 2 Sec 2 
 		
@@ -1693,7 +1692,7 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_2_sec_2_budget = cat_2_sec_2_ratio }
 			
 					
-		}
+			}
 		
 		if = { limit = { check_variable = { section_percen_change = 3 } } 	#Cat 2 Sec 3 
 		
@@ -1729,7 +1728,7 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_2_sec_3_budget = cat_2_sec_3_ratio }
 			
 					
-		}
+			}
 		if = { limit = { check_variable = { section_percen_change = 4 } } 	#Cat 2 Sec 4 
 		
 			if = { limit = { check_variable = { cat_2_sec_4_percen_switcher = 0 } }
@@ -1764,10 +1763,10 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_2_sec_4_budget = cat_2_sec_4_ratio }
 			
 					
-		}
+			}
 
 	
-	}
+		}
 	
 ########################################################################## Cat 3
 	else_if = { limit = { check_variable = { money_menu_switcher = 4 } }	
@@ -1809,9 +1808,9 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_3_sec_1_budget = cat_3_sec_1_ratio }
 			
 					
-		}	
+			}	
 
-	}	
+		}	
 	
 ########################################################################## Cat 4
 	else_if = { limit = { check_variable = { money_menu_switcher = 5 } }	
@@ -1851,10 +1850,10 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_4_sec_1_budget = cat_4_sec_1_ratio }
 			
 					
-		}
+			}
 
 	
-	}	
+		}	
 
 ########################################################################## Cat 5
 	else_if = { limit = { check_variable = { money_menu_switcher = 6 } }	
@@ -1894,10 +1893,10 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_5_sec_1_budget = cat_5_sec_1_ratio }
 			
 					
-		}
+			}
 
 	
-	}
+		}
 
 
 ########################################################################## Cat 6
@@ -1937,13 +1936,13 @@ if = { limit = { check_variable = { budget_alert = 1 } }
 				multiply_variable = { cat_6_sec_1_budget = cat_6_sec_1_ratio }
 			
 					
-		}
+			}
 
 	
-	}
+		}
 
-	set_current_to_st_exp_ratio = yes
-}
+		set_current_to_st_exp_ratio = yes
+	}
 }
 
 update_categories = {

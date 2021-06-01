@@ -1,0 +1,28 @@
+on_actions = {
+	on_army_leader_won_combat = {
+		effect = {
+			FROM = {
+				random_list = {
+					log = yes
+					90 = { }
+					10 = {
+						subtract_from_variable = { national_unity = -0.1 }
+					}
+				}
+			}
+		}
+	}
+	on_army_leader_lost_combat  = {
+		effect = {
+			FROM = {
+				random_list = {
+					log = yes
+					90 = { }
+					10 = {
+						subtract_from_variable = { national_unity = 0.1 }
+					}
+				}
+			}
+		}
+	}
+}

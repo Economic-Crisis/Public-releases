@@ -371,8 +371,9 @@ news_event = {
 	}
 
 	major = yes
+	fire_only_once = yes
 	mean_time_to_happen = { days = 1 }
-	is_triggered_only = yes
+	#is_triggered_only = yes
 
 	immediate = {
 		set_variable = { oil_inc = 0.2 }
@@ -395,8 +396,9 @@ news_event = {
 	}
 
 	major = yes
+	fire_only_once = yes
 	mean_time_to_happen = { days = 1 }
-	is_triggered_only = yes
+	#is_triggered_only = yes
 
 	immediate = {
 		set_variable = { oil_inc = 0.4 }
@@ -419,10 +421,11 @@ news_event = {
 	}
 
 	major = yes
+	fire_only_once = yes
 	mean_time_to_happen = {
 		days = 1
 	}
-	is_triggered_only = yes
+	#is_triggered_only = yes
 
 	immediate = {
 		set_variable = { oil_inc = -0.02 }
@@ -445,8 +448,9 @@ news_event = {
 	}
 
 	major = yes
+	fire_only_once = yes
 	mean_time_to_happen = { days = 1 }
-	is_triggered_only = yes
+	#is_triggered_only = yes
 
 	immediate = {
 		set_variable = { oil_inc = 0.1 }
@@ -455,5 +459,139 @@ news_event = {
 
 	option = {
 		name = news.79.a
+	}
+}
+
+news_event = {
+	id = news.80
+	title = news.80.t
+	desc = news.80.d
+	picture = GFX_news_boeing_shot_down_ukr
+
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			AFG = {
+				add_manpower = -13
+				add_stability = -0.01
+			}
+			ENG = {
+				add_manpower = -4
+				add_stability = -0.01
+			}
+			IRN = {
+				add_manpower = -81
+				add_stability = -0.01
+			}
+			CAN = {
+				add_manpower = -57
+				add_stability = -0.01
+			}
+			UKR = {
+				add_manpower = -11
+				add_stability = -0.01
+			}
+			SWE = {
+				add_manpower = -10
+				add_stability = -0.01
+			}
+		}
+	}
+
+	major = yes
+
+	option = {
+		name = news.80.a
+	}
+}
+
+news_event = {
+	id = news.81
+	title = news.81.t
+	desc = {
+		text = news.81.d
+		trigger = {
+			NOT = {
+				tag = RUS
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}
+		}
+	}
+	desc = {
+		text = news.81.dd
+		trigger = {
+			OR = {
+				tag = RUS
+				tag = DON
+				tag = LUG
+				tag = NRU
+			}
+		}
+	}
+	picture = GFX_news_boeing_shot_down_mal
+	fire_only_once = yes
+
+	trigger = {
+		date > 2014.7.17
+		country_exists = UKR
+		OR = {
+			country_exists = DON
+			country_exists = LUG
+			country_exists = NRU
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			HOL = {
+				add_manpower = -192
+				add_stability = -0.01
+			}
+			MAL = {
+				add_manpower = -44
+				add_stability = -0.01
+			}
+			AST = {
+				add_manpower = -27
+				add_stability = -0.01
+			}
+			INS = {
+				add_manpower = -12
+				add_stability = -0.01
+			}
+			ENG = {
+				add_manpower = -10
+				add_stability = -0.01
+			}
+			BEL = {
+				add_manpower = -4
+				add_stability = -0.01
+			}
+			GER = {
+				add_manpower = -4
+				add_stability = -0.01
+			}
+			PHI = {
+				add_manpower = -3
+				add_stability = -0.01
+			}
+			CAN = {
+				add_manpower = -1
+				add_stability = -0.01
+			}
+			NZL = {
+				add_manpower = -1
+				add_stability = -0.01
+			}
+			
+		}
+	}
+
+	major = yes
+
+	option = {
+		name = news.81.a
 	}
 }

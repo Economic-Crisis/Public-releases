@@ -1,0 +1,139 @@
+defined_text = { 
+	name = get_modicator_UN
+
+	text = {
+		trigger = {
+			OR = {
+				has_idea = terrorism_discounted
+				has_idea = low_terrorism
+				has_idea = average_terrorism
+				has_idea = high_terrorism
+				has_idea = decaying_state
+
+				has_idea = unitary_state_with_devolution
+				has_idea = unitary_state
+				has_idea = national_federation
+				has_idea = administrative_federation
+				has_idea = federation
+				has_idea = confederation
+			}
+		}
+		localization_key = UN_under_influence
+	}
+}
+
+defined_text = { 
+	name = get_modicator_terrorism_level
+
+	text = {
+		trigger = {
+			has_idea = terrorism_discounted
+		}
+		localization_key = terrorism_discounted_tt
+	}
+	text = {
+		trigger = {
+			has_idea = low_terrorism
+		}
+		localization_key = low_terrorism_tt
+	}
+	text = {
+		trigger = {
+			has_idea = average_terrorism
+		}
+		localization_key = average_terrorism_tt
+	}
+	text = {
+		trigger = {
+			has_idea = high_terrorism
+		}
+		localization_key = high_terrorism_tt
+	}
+	text = {
+		trigger = {
+			has_idea = decaying_state
+		}
+		localization_key = decaying_state_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = get_modicator_power_structure_level
+
+	text = {
+		trigger = {
+			has_idea = confederation
+		}
+		localization_key = confederation_T
+	}
+	text = {
+		trigger = {
+			has_idea = federation
+		}
+		localization_key = federation_T
+	}
+	text = {
+		trigger = {
+			has_idea = administrative_federation
+		}
+		localization_key = administrative_federation_T
+	}
+	text = {
+		trigger = {
+			has_idea = national_federation
+		}
+		localization_key = nanational_federation_T
+	}
+	text = {
+		trigger = {
+			has_idea = unitary_state
+		}
+		localization_key = unitary_state_T
+	}
+	text = {
+		trigger = {
+			has_idea = unitary_state_with_devolution
+		}
+		localization_key = unitary_state_with_devolution_T
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = get_modicator_status_country
+
+	text = {
+		trigger = {
+			has_idea = partially_recognized_country
+		}
+		localization_key = partially_recognized_country_tt
+	}
+	text = {
+		trigger = {
+			has_idea = not_recognized_country
+		}
+		localization_key = not_recognized_country_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = get_modicator_national_country
+
+	text = {
+		trigger = {
+			has_idea = mono_ethnic_country
+		}
+		localization_key = mono_ethnic_country_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}

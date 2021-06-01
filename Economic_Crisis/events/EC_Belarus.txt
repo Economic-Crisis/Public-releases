@@ -22,7 +22,13 @@ country_event = { ###Попытка военной аннексии Вильню
     option = { #Литва отказывается > у Беларуси выскакивает ивент
         name = belarus.2.b 
         log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.2.b"
-        ai_chance = {  factor = 60 }
+        ai_chance = {
+			factor = 60
+			modifier = {
+                factor = 1000
+                is_historical_focus_on = yes
+            }
+		}
         add_opinion_modifier = { target = BLR modifier = actions_very_negative }
         BLR = {
             create_wargoal = { type = annex_everything target = LIT }

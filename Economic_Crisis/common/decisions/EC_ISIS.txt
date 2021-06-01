@@ -1,0 +1,22 @@
+isis_decision = {
+	make_army_1 = {
+		icon = generic_political_discourse
+		available = { 822 = { is_fully_controlled_by = ISS } }
+		days_remove = 14
+		visible = { tag = ISS }
+		#remove_trigger = {	} 
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = { country_event = { id = isis.35 } }
+	}
+	sale_oil = {
+		icon = generic_political_discourse
+		available = {  }
+		days_remove = 20 
+		visible = { tag = ISS }
+		cost = 200
+		ai_will_do = { factor = 1 }
+		complete_effect = {	subtract_from_variable = { budget_reserve = -10 }	}
+	}
+}
+

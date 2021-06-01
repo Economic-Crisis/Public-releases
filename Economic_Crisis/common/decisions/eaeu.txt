@@ -62,7 +62,11 @@ eaeu = {
 					}
 					country_event = eaeu_event.2 
 				}
+				ROOT = {
+					save_global_event_target_as = eaeu_credit
+				}
 			}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]) [?budget_reserve] budget reserve: eaeu_invest"
 		}
 		#remove_effect = { }
 		#remove_trigger = {	} 
@@ -72,17 +76,38 @@ eaeu = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = eaeu_invest_TTT
-				check_variable = { budget_reserve > 100 }
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					custom_trigger_tooltip = {
+						tooltip = BLR_buy_tanks_ukr
+						check_variable = { budget_reserve > 100 }
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					custom_trigger_tooltip = {
+						tooltip = BLR_buy_tanks_ukr
+						check_variable = { budget_reserve > 0.01 }
+					}
+				}
 			}
 		}
 		days_remove = 7
 		visible = { has_global_flag = EAEU_united_bank }
 		#remove_trigger = {	}
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0 }
 		complete_effect = {
 			custom_effect_tooltip = eaeu_invest_TT
-			subtract_from_variable = { budget_reserve = 100 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 100 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.01 }
+			}
 			add_to_variable = { var = global.var_fund_EAEU value = 100 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]) [?budget_reserve] budget reserve: eaeu_invest"
 		}
 	}
 	eaeu_project_infrastructure_IRN_RUS = {

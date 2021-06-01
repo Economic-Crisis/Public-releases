@@ -98,24 +98,24 @@ country_event = { #Белуджистан
 		add_state_claim = 445
 		add_state_core = 445
 		add_opinion_modifier = {
-		target = PAK
-		modifier = actions_negative
+			target = PAK
+			modifier = actions_negative
 		}
 		add_opinion_modifier = {
-		target = SAU
-		modifier = actions_negative
+			target = SAU
+			modifier = actions_negative
 		}
 	}
 	option = { 
 		name = iran.4.c
 		ai_chance = { factor = 10 }
 		add_opinion_modifier = {
-		target = PAK
-		modifier = actions_negative
+			target = PAK
+			modifier = actions_negative
 		}
 		add_opinion_modifier = {
-		target = SAU
-		modifier = actions_negative
+			target = SAU
+			modifier = actions_negative
 		}
 		BLD = {
 		add_state_claim = 444
@@ -125,9 +125,22 @@ country_event = { #Белуджистан
 		transfer_state = 444
 		transfer_state = 445
 		declare_war_on = {
-		target = PAK
-		type = liberate_wargoal
+			target = PAK
+			type = liberate_wargoal
 			}
 		}
+	}
+}
+
+country_event = {
+	id = iran.5
+	title = iran.5.t
+	desc = iran.5.d
+	picture = GFX_event_soleimani_funeral
+	is_triggered_only = yes
+
+	option = { 
+		name = iran.5.a
+		ai_chance = { factor = 100 }
 	}
 }

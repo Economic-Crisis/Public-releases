@@ -53,6 +53,8 @@ news_event = {
 			controls_state = 440
 			controls_state = 806
 		}
+		#tag = PAK
+		tag = IND
 	}
 	mean_time_to_happen = { days = 20 }
 	
@@ -73,22 +75,23 @@ news_event = {
 				on_lose = ind_border_conflicts.3
 			}
 		}
-		start_border_war = {
-			change_state_after_war = no
-			attacker = {
-				state = 441
-				num_provinces = 3
-				on_win = ind_border_conflicts.2
-				on_lose = ind_border_conflicts.3
-			}
-			
-			defender = {
-				state = 806
-				num_provinces = 4
-				on_win = ind_border_conflicts.2
-				on_lose = ind_border_conflicts.3
-			}
-		}
+		#start_border_war = {
+		#	change_state_after_war = no
+		#	attacker = {
+		#		state = 441
+		#		num_provinces = 3
+		#		on_win = ind_border_conflicts.2
+		#		on_lose = ind_border_conflicts.3
+		#	}
+		#	
+		#	defender = {
+		#		state = 806
+		#		num_provinces = 4
+		#		on_win = ind_border_conflicts.2
+		#		on_lose = ind_border_conflicts.3
+		#	}
+		#}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ind_border_conflicts.1"
 	}
 
 	option = {
@@ -147,6 +150,8 @@ news_event = {
 # 			controls_state = 440
 # 			controls_state = 806
 # 		}
+		#tag = CHI
+		#tag = IND
 # 	}
 # 	mean_time_to_happen = { days = 20 }
 	
@@ -167,6 +172,7 @@ news_event = {
 # 				on_lose = chi_border_conflicts.3
 # 			}
 # 		}
+#		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): ind_border_conflicts.1"
 # 	}
 
 # 	option = {
@@ -224,6 +230,9 @@ news_event = {
 		ETH = {
 			controls_state = 271
 		}
+		
+		tag = ERI
+		#tag = ETH
 	}
 	mean_time_to_happen = { days = 20 }
 	
@@ -246,6 +255,7 @@ news_event = {
 				on_cancel = eth_border_conflicts.4
 			}
 		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): eth_border_conflicts.1"
 	}
 
 	option = {

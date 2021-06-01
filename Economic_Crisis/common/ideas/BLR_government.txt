@@ -16,6 +16,12 @@ ideas = {
 					has_government = neutrality
 					has_country_flag = coalition_with_neutrality
 				}
+				NOT = {
+					OR = {
+						has_completed_focus = BLR_lustracia
+						has_completed_focus = BLR_lyastration_1
+					}
+				}
 			}
 
 			allowed = {
@@ -40,11 +46,12 @@ ideas = {
 
 		blr_yuri_zhadobin_defm = {
 
-		picture = GFX_idea_blr_yuri_zhadobin
+			picture = GFX_idea_blr_yuri_zhadobin
 
 			cost = 350
 			#removal_cost = -1
 			available = {
+				date < 2014.11.25
 			}
 
 			allowed = {
@@ -52,6 +59,30 @@ ideas = {
 			}
 
 			traits = { defence_minister_serve_and_protect }
+			
+			on_add = {
+				news_event = defence.minister.1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		blr_andrei_ravkov_defm = {
+
+			picture = GFX_idea_blr_andrei_ravkov
+
+			cost = 350
+			#removal_cost = -1
+			available = {
+				
+			}
+
+			allowed = {
+				original_tag = "BLR"
+			}
+
+			traits = { defence_minister_distinguished_military }
 			
 			on_add = {
 				news_event = defence.minister.1
@@ -70,14 +101,21 @@ ideas = {
 
       		cost = 350
       		#removal_cost = -1
-      		available = {	}
+      		available = {
+				NOT = {
+					OR = {
+						has_completed_focus = BLR_lustracia
+						has_completed_focus = BLR_lyastration_1
+					}
+				}
+			}
 
 
       		allowed = { 
 				original_tag  = "BLR" 
 			}
 
-      		traits = { foreign_minister_policy_defender }
+      		traits = { foreign_minister_policy_defender foreign_minister_addiction_RUS }
 
  	    	on_add = { 
 				news_event = foreign.minister.1
@@ -125,6 +163,12 @@ ideas = {
 			cost = 350
 			#removal_cost = -1
 			available = {
+				NOT = {
+					OR = {
+						has_completed_focus = BLR_lustracia
+						has_completed_focus = BLR_lyastration_1
+					}
+				}
 			}
 			
 			allowed = {

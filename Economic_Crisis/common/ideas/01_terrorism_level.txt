@@ -3,7 +3,9 @@
 ideas = {
 
 	terrorism_level = {
+		law = yes
 		use_list_view = yes
+
 		terrorism_discounted = {
 			cost = 500
 			removal_cost = -1
@@ -17,6 +19,10 @@ ideas = {
 				stability_factor = 0.05
 				political_power_gain = 0.05
 				foreign_subversive_activites = -0.05
+			}
+			
+			on_add = {
+				custom_effect_tooltip = terrorism_level_t
 			}
 		}
 		
@@ -39,6 +45,10 @@ ideas = {
 				monthly_population = -0.01
 				foreign_subversive_activites = 0.05
 			}
+
+			on_add = {
+				custom_effect_tooltip = regional_terrorism_t
+			}
 		}
 		
 		low_terrorism = {
@@ -55,6 +65,10 @@ ideas = {
 				political_power_gain = -0.10
 				monthly_population = -0.02
 				foreign_subversive_activites = 0.10
+			}
+
+			on_add = {
+				custom_effect_tooltip = low_terrorism_t
 			}
 		}
 		
@@ -73,6 +87,10 @@ ideas = {
 				monthly_population = -0.03
 				foreign_subversive_activites = 0.15
 			}
+
+			on_add = {
+				custom_effect_tooltip = average_terrorism_t
+			}
 		}
 		
 		high_terrorism = {
@@ -90,6 +108,10 @@ ideas = {
 				monthly_population = -0.04
 				foreign_subversive_activites = 0.20
 			}
+
+			on_add = {
+				custom_effect_tooltip = high_terrorism_t
+			}
 		}
 		
 		decaying_state = {
@@ -101,15 +123,15 @@ ideas = {
 			
 			#picture = civilian_economy1
 			
-			on_add = {
-				
-			}
-			
 			modifier = {
 				stability_factor = -0.25
 				political_power_gain = -0.25
 				monthly_population = -0.05
 				foreign_subversive_activites = 0.25
+			}
+
+			on_add = {
+				custom_effect_tooltip = decaying_state_t
 			}
 		}
 	}

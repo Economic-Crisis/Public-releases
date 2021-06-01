@@ -54,6 +54,7 @@ ideas = {
 	
 	country_status = {
 		use_list_view = yes
+		law = yes
 		superstate = {
 			cost = 2000
 			removal_cost = -1
@@ -65,10 +66,43 @@ ideas = {
 				is_major = yes
 				has_country_flag = joined_into_UN
 				num_of_factories > 150
+				has_country_flag = money_trillions
+				custom_trigger_tooltip = {
+					tooltip = law_superstate_t
+					check_variable = { current_budget > 1500000 }
+				}
+				custom_trigger_tooltip = {
+					tooltip = law_superstate_tt
+					check_variable = { num_of_controlled_states > 45 }
+				}
+				custom_trigger_tooltip = {
+					tooltip = law_superstate_ttt
+					check_variable = { researched_techs > 600 }
+				}
+				has_army_size = {
+					size > 119
+				}
+				has_navy_size  = {
+					size > 39
+				}
+				is_faction_leader = yes
+				is_subject = no
+				NOT = {
+					has_idea = default
+				}
 			}
 			
 			on_add = {
-				
+				add_named_threat = { 
+					threat = 2
+					name = threat_law_change_state_status
+				}
+				set_major = yes
+			}
+			
+			on_remove = {
+				add_ideas = major_country
+				set_major = no
 			}
 			
 			modifier = {
@@ -76,7 +110,7 @@ ideas = {
 				opinion_gain_monthly_factor = 0.5
 				POLITICAL_POWER_GAIN = 0.5
 				research_speed_factor = 0.1
-				LOCAL_NON_CORE_MANPOWER = 0.25
+				non_core_manpower = 0.25
 				PRODUCTION_SPEED_INDUSTRIAL_COMPLEX_FACTOR = 0.22
 				INDUSTRIAL_CAPACITY_FACTORY = 0.22
 				INDUSTRIAL_CAPACITY_DOCKYARD = 0.22
@@ -94,10 +128,35 @@ ideas = {
 				is_major = yes
 				has_country_flag = joined_into_UN
 				num_of_factories > 80
+				custom_trigger_tooltip = {
+					tooltip = law_major_country_t
+					check_variable = { current_budget > 800000 }
+				}
+				custom_trigger_tooltip = {
+					tooltip = law_major_country_tt
+					check_variable = { researched_techs > 400 }
+				}
+				has_army_size = {
+					size > 79
+				}
+				has_navy_size  = {
+					size > 19
+				}
+				is_subject = no
+				NOT = {
+					has_idea = default
+				}
 			}
 			
 			on_add = {
-				
+				add_named_threat = { 
+					threat = 1.5 
+					name = threat_law_change_state_status
+				}
+			}
+			
+			on_remove = {
+				add_ideas = regional_country
 			}
 			
 			modifier = {
@@ -123,6 +182,10 @@ ideas = {
 				num_of_factories > 45
 			}
 			
+			on_remove = {
+				add_ideas = minor_country
+			}
+			
 			modifier = {
 				POLITICAL_POWER_GAIN = 0.15
 				research_speed_factor = 0.05
@@ -142,6 +205,35 @@ ideas = {
 			
 			available = {
 				has_country_flag = joined_into_UN
+			}
+			
+			on_remove = {
+				add_ideas = minor_country
+			}
+			
+			on_add = {
+				every_country = {
+					if = {
+						limit = { has_idea = regional_country }
+						remove_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = minor_country }
+						remove_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = major_country }
+						remove_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = superstate }
+						remove_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = small_country }
+						remove_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
+					}
+				}
 			}
 			
 			modifier = {
@@ -184,10 +276,32 @@ ideas = {
 					}
 					else_if = {
 						limit = { has_idea = small_country }
-						add_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+						add_opinion_modifier = { target = PREV modifier = partially_recognized_country_opinion_modifiers }
 					}
-					
 				}
+				every_country = {
+					if = {
+						limit = { has_idea = regional_country }
+						remove_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = minor_country }
+						remove_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = major_country }
+						remove_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = superstate }
+						remove_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+					else_if = {
+						limit = { has_idea = small_country }
+						remove_opinion_modifier = { target = PREV modifier = not_recognized_country_opinion_modifiers }
+					}
+				}
+				custom_effect_tooltip = partially_recognized_country_t
 			}
 			
 			modifier = {
@@ -232,8 +346,8 @@ ideas = {
 						limit = { has_idea = small_country }
 						add_opinion_modifier = { target = PREV	 modifier = not_recognized_country_opinion_modifiers }
 					}
-					
 				}
+				custom_effect_tooltip = not_recognized_country_t
 			}
 			
 			modifier = {

@@ -13,14 +13,27 @@ guiTypes = {
 		name = "main_trade_window_top_container"
 		position = { x = 0 y = 50 }
 		size = { width = 516 height = 35 }
-		
-		
 	}
+		
 	
 	containerWindowType = {
 		name = "main_trade_window_middle_container"
 		position = { x = 0 y = 285 }
 		size = { width = 350 height = 300 }
+
+		containerWindowType = {
+			name = "bg_main_trade_window"
+			position = { x = 470 y = -10 }
+			size = { width = 600 height = 155 }
+			clipping = no
+			
+			
+			background = {
+				name = "Background"
+				spriteType ="GFX_mini_bg"
+				alwaystransparent = yes
+			}
+		}
  
 		iconType = {
 			name ="money_topbar_icon"

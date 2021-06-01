@@ -1,0 +1,66 @@
+NU_on_startup_settings = {
+	add_to_variable = { national_unity = 50 } #Стартовый
+	clamp_variable = {
+		var = national_unity
+		min = 0
+		max = 100
+	}
+
+	if = { #Терроризм
+		limit = { has_idea = terrorism_discounted }
+		subtract_from_variable = { national_unity = -2 }
+	}
+	if = {
+		limit = { has_idea = low_terrorism }
+		subtract_from_variable = { national_unity = 2 }
+	}
+	if = {
+		limit = { has_idea = average_terrorism }
+		subtract_from_variable = { national_unity = 7 }
+	}
+	if = {
+		limit = { has_idea = high_terrorism }
+		subtract_from_variable = { national_unity = 11 }
+	}
+	if = {
+		limit = { has_idea = decaying_state }
+		subtract_from_variable = { national_unity = 15 }
+	}
+	if = { #форма гос. устройства
+		limit = { has_idea = unitary_state_with_devolution }
+		subtract_from_variable = { national_unity = 3 }
+	}
+	if = {
+		limit = { has_idea = unitary_state }
+		subtract_from_variable = { national_unity = 7 }
+	}
+	if = {
+		limit = { has_idea = national_federation }
+		subtract_from_variable = { national_unity = -3 }
+	}
+	if = {
+		limit = { has_idea = administrative_federation }
+		subtract_from_variable = { national_unity = -2 }
+	}
+	if = {
+		limit = { has_idea = federation }
+		subtract_from_variable = { national_unity = -4 }
+	}
+	if = {
+		limit = { has_idea = confederation }
+		subtract_from_variable = { national_unity = -7 }
+	}
+	if = {#Статус государства
+		limit = { has_idea = partially_recognized_country }
+		subtract_from_variable = { national_unity = 12 }
+	}
+	if = {
+		limit = { has_idea = not_recognized_country }
+		subtract_from_variable = { national_unity = 20 }
+	}
+
+	if = { #Национальное государство
+		limit = { has_idea = mono_ethnic_country }
+		subtract_from_variable = { national_unity = -30 }
+	}
+}
