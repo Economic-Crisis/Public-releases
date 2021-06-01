@@ -2,8 +2,8 @@
 
 
  [![Github](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/Economic-Crisis-2013)
- [![VK](https://img.shields.io/badge/-Steam-171a21?style=flat-square&logo=Steam&logoColor=white)](https://vk.com/ec_hoi_mod)
- [![Steam](https://img.shields.io/badge/-VK-blue?style=flat-square&logo=VK&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2000532465) 
+ [![VK](https://img.shields.io/badge/-Steam-171a21?style=flat-square&logo=Steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2000532465)
+ [![Steam](https://img.shields.io/badge/-VK-blue?style=flat-square&logo=VK&logoColor=white)](https://vk.com/ec_hoi_mod) 
  [![Discord](https://img.shields.io/badge/-Discord-2c2f33?style=flat-square&logo=Discord&logoColor=white)](https://discord.gg/jjbue3F)
  [![Reddit](https://img.shields.io/badge/-Reddit-FF5700?style=flat-square&logo=Reddit&logoColor=white)](https://www.reddit.com/r/EC2013/)
  [![Youtube](https://img.shields.io/badge/-Youtube-c4302b?style=flat-square&logo=Youtube&logoColor=white)](https://www.youtube.com/c/HeartsofIronIVEconomicCrisis2013)
