@@ -1,10 +1,111 @@
+# 0.7.6.5 
+
+### Scripting Department
+
+ - **Fixed crash when loading save**.
+ - Added the "Mono-ethnic state" modifier.
+ - Border transparency edits canceled.
+
+ - Revised the conditions and effects of corruption.
+
+Now nothing prevents you from increasing corruption in the exchange of bonuses.
+Replaced all negative effects with one common one.
+The dependence of the appointment of certain individuals with high corruption or oligarchy is implemented.
+
+ - Implemented the effects of reducing or increasing national unity.
+ - The laws of the form of state structure and the status of terrorism have been revised for national unity.
+ - Added Japanese magic tricks to the script.
+ - Increased debuffs from power shortage.
+ - Revised the conditions for the formation of a potential superpower and a potential power.
+ - An increase in tension is prescribed when the status of the state increases.
+ - Implemented a reduction in militarism and stability when participating in the war.
+ - Implemented the reduction and increase of national unity in the case of successes and defeats in the war.
+ - Fixed the bug of withdrawing billions instead of millions when investing in the EEU.
+ - Fixed a bug with spam ter. conflicts.
+ - Added a separatist state-the Polesie People's Republic. (Not available at the beginning of the game.)
+
+### Belarus
+
+> During the filming of the passage of Embro for this country along the nationalist path, we noticed certain problems, which is why I **(Secretary)** had to personally take up the tricks of Belarus and start correcting them. Let's start the list of edits.
+
+ - Removed the reform branch.
+ - Historical AI is registered.
+ - Foreign policy branches have been reworked.
+ - The code has been reviewed and audited.
+ - Removed the requirements of the ruling party and made a tie to the Cabinet of Ministers.
+ - Rename focuses have been moved to Solutions.
+ - Removed the mutual exclusion of BNR and ON.
+ - PBC and PKB are reversed.
+ - Replaced the starting batches
+	* Conservatives - United Civil Party of Belarus.
+	* Liberals - Belarusian People's Front
+	* Reformists-Republican Party of Labor and Justice
+	* Nationalists-Conservative Christian Party BPF
+
+ - Added parties after lustration.
+	* Socialists - Belarusian Party of the Left " Just World»
+
+ - Added leaderboards:
+    * Vasily Vasilyevich Zadnepryany.
+    * Veshtord Irina Zenonovna.
+    * Yermoshina Lydia Mikhailovna.
+
+ - Changed the starting conditions.
+	* Reduced stability.
+	* Reduced militarism.
+	* Added the "EU Sanctions" modifier
+
+ - Redesigned the claims branch.
+ - The counter-terrorism branch has been moved closer to the beginning of the Lukashenka branch.
+ - Replaced the ruling party's demand for the support of the population and the appointment of a cabinet minister.
+ - Fixed and redesigned alliance branches.
+ - The branch of socialism has been reworked.
+ - Redesigned buffs and debuffs of modifiers.
+
+### AI Department
+
+ - A historical AI is registered for Belarus.
+ - A temporary starting boost for AI production is registered.
+
+### Technology Department
+
+ - Added organization growth effect to empty technologies.
+ - Many CSTO and NATO countries have registered the technologies of infantry units.
+ - Increased the organization of the support companies.
+ - Technologies for China, Germany, Iran, Russia, Ukraine, the United States, as well as for NATO majors, other Majors, NATO and CSTO minors, regional NATO and CSTO countries are registered at the start.
+
+### 2D designers
+
+* Added portraits of the leaders of Belarus:
+  - Lukashenko is a tolitarist communist
+  - Veshtord
+  - Rear-straight
+  - Yermoshina
+
+### Map Development Department
+
+ - Removed the minority in Kaliningrad.
+ - Fixed incorrect provinces in those parts of the world(North America, South America, Oceania, Antarctica) where a different type of continent was set instead of the desired one.
+ - Fixed the location of Pavlodar, Chelyabinsk.
+ - Redesign of the night map of cities.
+ - Fixed visual display for some cities and mountains.
+ - Some fixes to the technical aspect of the map visual.
+ - Power stations in India have been set up.
+ - Oil refining stations are located in the world.
+ - Power stations have been set up in South Korea.
+
+### Localization Department
+
+ - Spelled out the display and localization of various values in the diplomacy panel.
+ - Removed all Reichs in the name of the states.
+
 # 0.7.6.4 - Пакет исправлений
 
-# Критические исправления 
+### Критические исправления 
 
  - Глобальное исправление регионов снабжения.
 
-# Минорные исправления
+### Минорные исправления
 
  - Добавлены события для Беларуси.
  - Исправлена локализация решений.
@@ -156,7 +257,7 @@
 
 ### Отдел технологий
 
- - Добавлены пункты модернизации колёсной техники — подвижность и орудие.
+ - Добавлены пункты модернизации колёсной техники  - подвижность и орудие.
  - Добавлен пункт модернизации бронирования у колесной и гусеничной легкой техники.
  - Исправлен баг с обнулением стоимости при модернизации надёжности.
  - Артиллерии была добавлена возможность модернизации огневой мощи, надёжности и дешевизны.
