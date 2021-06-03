@@ -1,112 +1,112 @@
-# 0.7.6.5 - Big Fix Pack
+# 0.7.6.5 - Большой пакет исправлений
 
-**Update to game version 1.10.6**
+**Обновление до версии игры 1.10.6**
 
-### Fix:
- - Fixed the chance of the minister "Supporter of European Integration" appearing in all countries.
- - Fixed a typo in "Unitary countries" in national unity modifiers
- - Weakened the effects of the " Supporter of National Unity (master)"
+### Исправлено:
+ - Исправлена вероятность появления министра "Сторонника европейской интеграции" во всех странах.
+ - Исправлена опечатка в "Унитарных странах" в модификаторах национального единства
+ - Ослаблены последствия " Сторонника национального единства (мастер)"
 
 # 0.7.6.5 
 
-### Scripting Department
+### Отдел скриптеров
 
- - **Fixed crash when loading save**.
- - Added the "Mono-ethnic state" modifier.
- - Border transparency edits canceled.
+ - **Исправлен сбой при загрузке сохранения**.
+ - Добавлен модификатор "Моноэтническое государство".
+ - Изменения прозрачности границ отменены.
 
- - Revised the conditions and effects of corruption.
+ - Пересмотрены условия и последствия коррупции.
 
-Now nothing prevents you from increasing corruption in the exchange of bonuses.
-Replaced all negative effects with one common one.
-The dependence of the appointment of certain individuals with high corruption or oligarchy is implemented.
+Теперь ничто не мешает вам увеличить коррупцию при обмене бонусами.
+Заменил все негативные эффекты одним общим.
+Реализуется зависимость назначения определенных лиц с высокой коррупцией или олигархией.
 
- - Implemented the effects of reducing or increasing national unity.
- - The laws of the form of state structure and the status of terrorism have been revised for national unity.
- - Added Japanese magic tricks to the script.
- - Increased debuffs from power shortage.
- - Revised the conditions for the formation of a potential superpower and a potential power.
- - An increase in tension is prescribed when the status of the state increases.
- - Implemented a reduction in militarism and stability when participating in the war.
- - Implemented the reduction and increase of national unity in the case of successes and defeats in the war.
- - Fixed the bug of withdrawing billions instead of millions when investing in the EEU.
- - Fixed a bug with spam ter. conflicts.
- - Added a separatist state-the Polesie People's Republic. (Not available at the beginning of the game.)
+ - Реализуются эффекты снижения или повышения национального единства.
+ - Законы о форме государственного устройства и статусе терроризма были пересмотрены в интересах национального единства.
+ - Добавлены японские фокусы в сценарий.
+ - Увеличенные дебаффы от нехватки энергии.
+ - Пересмотрены условия формирования потенциальной сверхдержавы и потенциальной державы.
+ - Повышение напряженности предписывается при повышении статуса государства.
+ - Осуществлено снижение милитаризма и стабильности при участии в войне.
+ - Осуществлялось сокращение и увеличение национального единства в случае успехов и поражений в войне.
+ - Исправлена ошибка вывода миллиардов вместо миллионов при инвестировании в ЕАЭС.
+ - Исправлена ошибка со спамом. конфликты.
+ - Добавлено сепаратистское государство-Полесская Народная Республика. (Недоступно в начале игры.)
 
-### Belarus
+### Беларусь
 
-> During the filming of the passage of Embro for this country along the nationalist path, we noticed certain problems, which is why I **(Secretary)** had to personally take up the tricks of Belarus and start correcting them. Let's start the list of edits.
+> Во время съемок прохождения Эмбро для этой страны по националистическому пути мы заметили определенные проблемы, поэтому мне **(Секретарю)** пришлось лично взяться за трюки Беларуси и начать их исправлять. Давайте начнем список правок.
 
- - Removed the reform branch.
- - Historical AI is registered.
- - Foreign policy branches have been reworked.
- - The code has been reviewed and audited.
- - Removed the requirements of the ruling party and made a tie to the Cabinet of Ministers.
- - Rename focuses have been moved to Solutions.
- - Removed the mutual exclusion of BNR and ON.
- - PBC and PKB are reversed.
- - Replaced the starting batches
-	* Conservatives - United Civil Party of Belarus.
-	* Liberals - Belarusian People's Front
-	* Reformists-Republican Party of Labor and Justice
-	* Nationalists-Conservative Christian Party BPF
+ - Убрали реформаторскую ветвь.
+ - Исторический ИИ зарегистрирован.
+ - Внешнеполитические отрасли были переработаны.
+ - Кодекс был пересмотрен и проверен.
+ - Сняли требования правящей партии и сделали привязку к Кабинету министров.
+ - Переименование фокусов было перенесено на решения.
+ - Снято взаимное исключение БНР и ВКЛ.
+ - PBC и PKB поменялись местами.
+ - Заменены стартовые партии
+	* Консерваторы - Объединенная гражданская партия Беларуси.
+	* Либералы - Белорусский народный фронт
+	* Реформисты-Республиканская партия труда и справедливости
+	* Националисты-Консервативная христианская партия БНФ
 
- - Added parties after lustration.
-	* Socialists - Belarusian Party of the Left " Just World»
+ - Добавлены партии после люстрации.
+	* Социалисты - Белорусская партия левых " Справедливый мир»
 
- - Added leaderboards:
-    * Vasily Vasilyevich Zadnepryany.
-    * Veshtord Irina Zenonovna.
-    * Yermoshina Lydia Mikhailovna.
+ - Добавлены таблицы лидеров:
+    * Василий Васильевич Заднепряный.
+    * Вешторд Ирина Зеноновна.
+    * Ермошина Лидия Михайловна.
 
- - Changed the starting conditions.
-	* Reduced stability.
-	* Reduced militarism.
-	* Added the "EU Sanctions" modifier
+ - Изменились стартовые условия.
+	* Снижение стабильности.
+	* Снижение милитаризма.
+	* Добавлен модификатор "Санкции ЕС" 
 
- - Redesigned the claims branch.
- - The counter-terrorism branch has been moved closer to the beginning of the Lukashenka branch.
- - Replaced the ruling party's demand for the support of the population and the appointment of a cabinet minister.
- - Fixed and redesigned alliance branches.
- - The branch of socialism has been reworked.
- - Redesigned buffs and debuffs of modifiers.
+ - Переработан раздел претензий.
+ - Отделение по борьбе с терроризмом было перенесено ближе к началу отделения Лукашенко.
+ - Заменил требование правящей партии о поддержке населения и назначении министра кабинета министров.
+ - Исправлены и переработаны ветви альянса.
+ - Отрасль социализма была переработана.
+ - Переработаны баффы и дебаффы модификаторов.
 
-### AI Department
+### Отдел ИИ
 
- - A historical AI is registered for Belarus.
- - A temporary starting boost for AI production is registered.
+ - Для Беларуси зарегистрирован исторический ИИ.
+ - Зарегистрирован временный стартовый импульс для производства ИИ.
 
-### Technology Department
+### Технологии
 
- - Added organization growth effect to empty technologies.
- - Many CSTO and NATO countries have registered the technologies of infantry units.
- - Increased the organization of the support companies.
- - Technologies for China, Germany, Iran, Russia, Ukraine, the United States, as well as for NATO majors, other Majors, NATO and CSTO minors, regional NATO and CSTO countries are registered at the start.
+ - Добавлен эффект роста организации к пустым технологиям.
+ - Многие страны ОДКБ и НАТО зарегистрировали технологии пехотных подразделений.
+ - Увеличена организация вспомогательных компаний.
+ - На старте зарегистрированы технологии для Китая, Германии, Ирана, России, Украины, США, а также для майоров НАТО, других Майоров, несовершеннолетних членов НАТО и ОДКБ, региональных стран НАТО и ОДКБ.
 
-### 2D designers
+### 2D-дизайнеры
 
-* Added portraits of the leaders of Belarus:
-  - Lukashenko is a tolitarist communist
-  - Veshtord
-  - Rear-straight
-  - Yermoshina
+* Добавлены портреты лидеров Беларуси:
+  - Лукашенко
+  - Вешторд
+  - Заднеприводный
+  - Ермошина
 
-### Map Development Department
+### Отдел разработки карты
 
- - Removed the minority in Kaliningrad.
- - Fixed incorrect provinces in those parts of the world(North America, South America, Oceania, Antarctica) where a different type of continent was set instead of the desired one.
- - Fixed the location of Pavlodar, Chelyabinsk.
- - Redesign of the night map of cities.
- - Fixed visual display for some cities and mountains.
- - Some fixes to the technical aspect of the map visual.
- - Power stations in India have been set up.
- - Oil refining stations are located in the world.
- - Power stations have been set up in South Korea.
+ - Убрали меньшинство в Калининграде.
+ - Исправлены неправильные провинции в тех частях света(Северная Америка, Южная Америка, Океания, Антарктида), где вместо желаемого был установлен другой тип континента.
+ - Исправлено местоположение Павлодара, Челябинска.
+ - Редизайн ночной карты городов.
+ - Исправлено визуальное отображение некоторых городов и гор.
+ - Некоторые исправления в техническом аспекте визуальной карты.
+ - В Индии созданы электростанции.
+ - Нефтеперерабатывающие станции расположены по всему миру.
+ - В Южной Корее созданы электростанции.
 
-### Localization Department
+### Отдел локализации
 
- - Spelled out the display and localization of various values in the diplomacy panel.
- - Removed all Reichs in the name of the states.
+ - Прописано отображение и локализация различных значений на панели "Дипломатия".
+ - Убрали все рейхи в названии стран.
 
 # 0.7.6.4 - Пакет исправлений
 
