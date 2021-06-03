@@ -3192,6 +3192,56 @@ ideas = {
 				factor = 0
 			}
 		}
+		
+		generic_foreign_minister_addiction_EU = {
+
+			cost = 150
+			#removal_cost = -1
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = rad_islamists
+						has_government = fascism
+						has_country_flag = coalition_with_rad_islamists
+						has_country_flag = coalition_with_nationalists
+					}
+				}
+			}
+
+			allowed = {
+				NOT = {
+					OR = {
+						original_tag = RUS
+						original_tag = SOV
+						original_tag = USA
+						original_tag = UKR
+						original_tag = ENG
+						original_tag = GER
+						original_tag = CHI
+						original_tag = POL
+						original_tag = ROC
+						original_tag = ISS
+						original_tag = IRN
+						original_tag = CZE
+						original_tag = SLO
+					}
+				}
+			}
+
+			traits = { foreign_minister_addiction_EU }
+
+			on_add = {
+			country_event = { days = 10 id = minister.3 }
+			}
+
+			do_effect = {
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
 	}
 
 	economic_minister = {
