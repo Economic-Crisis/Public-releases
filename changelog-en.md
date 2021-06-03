@@ -1,3 +1,12 @@
+# 0.7.6.5 - Big Fix Pack
+
+**Update to game version 1.10.6**
+
+### Fix:
+ - Fixed the chance of the minister "Supporter of European Integration" appearing in all countries.
+ - Fixed a typo in "Unitary countries" in national unity modifiers
+ - Weakened the effects of the " Supporter of National Unity (master)"
+
 # 0.7.6.5 
 
 ### Scripting Department
