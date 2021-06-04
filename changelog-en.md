@@ -1,4 +1,12 @@
-# 0.7.6.5 - Big Fix Pack
+# 0.7.6.5.6
+
+** Update to game version 1.10.7**
+
+- Change in defines.lua due to the new version of the game.
+- Russian localization fixes.
+
+
+# 0.7.6.5.3 - Big Fix Pack
 
 **Update to game version 1.10.6**
 
