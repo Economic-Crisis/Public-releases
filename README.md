@@ -6,7 +6,7 @@
  [![Steam](https://img.shields.io/badge/-VK-blue?style=flat-square&logo=VK&logoColor=white)](https://vk.com/ec_hoi_mod) 
  [![Discord](https://img.shields.io/badge/-Discord-2c2f33?style=flat-square&logo=Discord&logoColor=white)](https://discord.gg/jjbue3F)
  [![Reddit](https://img.shields.io/badge/-Reddit-FF5700?style=flat-square&logo=Reddit&logoColor=white)](https://www.reddit.com/r/EC2013/)
- [![Youtube](https://img.shields.io/badge/-Youtube-c4302b?style=flat-square&logo=Youtube&logoColor=white)](https://www.youtube.com/c/HeartsofIronIVEconomicCrisis2013)
+ [![Youtube](https://img.shields.io/badge/-Youtube-c4302b?style=flat-square&logo=Youtube&logoColor=white)](https://www.youtube.com/c/HeartsofIronIVEconomicCrisis)
  ![Version-Game](https://img.shields.io/badge/Version--Game--HOI4-1.10.7-green?style=flat-square)
  ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.6.5-red?style=flat-square)
 
