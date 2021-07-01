@@ -1,3 +1,94 @@
+# 0.7.6.6
+
+### Scripting Department
+
+- A script for population fatigue has been created.
+- Added a reusable event for Syria and Iraq that should help in the war against ISIS.
+- Fixed a missing effect in the focus of Japan, and also, the effects of the focus "Bloom, Yamato!" were revised.
+- The cost of building an environmentally friendly power plant has been increased.
+- The cost of construction of thermal power plants has been increased.
+- The cost of building nuclear power plants has been reduced.
+
+### China
+
+To our great surprise, after the release of the trailer, our modification was liked by Chinese players and one of them posted it on a Chinese video hosting. The Chinese have provided extensive assistance, and also actively consult us with the national characteristics of the country and the situation.
+
+And also, Chinese volunteers have started actively translating our modification into Chinese, if you know or are actively learning and have success in Chinese, you can contact the head or managers of the team.
+
+Taking this opportunity.
+We congratulate the Chinese on the holiday, on the centenary of the Communist Party of China, comrades!
+
+**List of edits:**
+
+- The Chinese army has been worked out.
+- China's start-up technologies have been redesigned.
+- Added three focuses to China on opening channels.
+- The level of infrastructure has been increased in some regions.
+- China's power plants have been redesigned.
+  
+  Regions affected by the edits:
+  -- Jiandao
+  -- Gans
+  -- Yunnan
+  -- Hong Kong
+  -- Fujian
+  -- Zhejiang
+  -- Shandong
+  -- Jiangsu
+  -- Guangxi
+  -- Jiangxi
+  -- Nyingchi
+  -- Hunan
+  -- Guizhou
+  -- Qinghai
+  -- Sichuan
+  -- Anhui
+  -- Henan
+  -- Beijing
+  -- Chifeng-Tongliao
+  -- Hohhot
+  -- Shilin-Gol
+  -- Shanghai
+  -- Habey
+  -- Shanxi
+  -- Tachen
+  -- Beitun
+  -- Hubei
+  -- Alashan
+  -- Shaanxi
+  -- Heilongjiang
+  -- Hulun-Buir-Khingan
+  -- Liaodong
+  -- Songjiang
+  -- Hami-Turfan
+  -- Paracel Islands
+  -- Spratly
+  -- Chongqing
+
+- The level of naval bases on the Paracel Islands and Spratly Islands has been increased.
+- The limit of environmentally friendly and thermal power plants has been increased, since it was impossible for China to improve the situation with electricity.
+
+In the future, we hope that our fruitful cooperation will continue and we will create the right political situation, as well as develop a decent tree of tricks.
+
+### Technology Department
+
+- Increased the effects of mouth support.
+
+### Map Department
+
+- ALL supply zones have been added and redone, the balance of supply zones has been made from scratch.
+
+> The total number of supply zones is 416 units.
+
+- Fixed some cities victory points (Lagos).
+- Fixed a bug with supply zones when they were incorrectly calculated.
+- Fixed the borders of some states in the United States.
+
+### Localization Department
+
+- English localization is synchronized with Russian.
+- Fixed the names of some cities in Brazil (Salvador).
+
 # 0.7.6.5.6
 
 ** Update to game version 1.10.7**
