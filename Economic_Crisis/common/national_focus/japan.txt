@@ -4009,6 +4009,9 @@ focus_tree = {
 		cost = 140
 		x = 23
 		y = 24
+		available = {
+			has_political_power > 800
+		}
 		prerequisite = { focus = JAP_nac5 }
 		ai_will_do = { factor = 5 } 
 		completion_reward = {
@@ -4016,8 +4019,19 @@ focus_tree = {
 				limit = {
 					has_completed_focus = JAP_pol_start17
 				}
-				add_political_power = -500
-				set_cosmetic_tag = JAP_Yamato
+				add_political_power = -800
+				add_state_claim = 971
+				add_state_claim = 972
+				add_state_claim = 970
+				add_state_claim = 973
+				add_state_claim = 969
+				add_state_claim = 525
+
+
+				add_state_claim = 807
+				add_state_claim = 527
+				add_state_claim = 974
+				add_state_claim = 975
 			}
 			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
 		}
@@ -4175,7 +4189,8 @@ focus_tree = {
 				limit = {
 					has_completed_focus = JAP_pol_start17
 				}
-				#Доработать
+				give_guarantee = KOR
+				give_military_access = KOR
 			}
 			if = { limit = { NOT = { has_completed_focus = JAP_pol_start17 } } custom_effect_tooltip = JAP_null_effect_TT }
 		}

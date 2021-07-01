@@ -2603,6 +2603,105 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY}
 	}
 	focus = {
+		id = CHI_megaprojects
+		prerequisite = { focus = CHI_construction_effort_4 }
+		icon = GFX_goal_chi_megaprojects
+		x = 27
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+		    #custom_effect доработать
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = CHI_thai_canal
+		prerequisite = { focus = CHI_megaprojects }
+		icon = GFX_goal_chi_megaprojects
+		available = {
+			num_of_civilian_factories_available_for_projects > 25
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = CHI_thai_canal_t
+					check_variable = { budget_reserve > 12000 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = CHI_thai_canal_t
+					check_variable = { budget_reserve > 12 }
+				}
+			}
+		}
+		x = 26
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			clr_global_flag = THAI_CANAL_BLOCKED
+			#country_event
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -1500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -1.5 }
+			}
+			custom_effect_tooltip = CHI_thai_canal_tt
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
+		id = CHI_nicaragua_canal
+		prerequisite = { focus = CHI_megaprojects }
+		icon = GFX_goal_chi_megaprojects
+		available = {
+			num_of_civilian_factories_available_for_projects > 25
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = CHI_nicaragua_canal_t
+					check_variable = { budget_reserve > 12000 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = CHI_nicaragua_canal_t
+					check_variable = { budget_reserve > 12 }
+				}
+			}
+		}
+		x = 28
+		y = 8
+		cost = 70
+		ai_will_do = { factor = 5 }
+		select_effect = {
+			add_timed_idea = { idea = GEN.civilian_factory25 days = 70 }
+		}
+		completion_reward = {
+			clr_global_flag = NICARAGUA_CANAL_BLOCKED
+			#country_event
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = -1500 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = -1.5 }
+			}
+			custom_effect_tooltip = CHI_nicaragua_canal_tt
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+	}
+	focus = {
 		id = CHI_nuclear_effort
 		icon = GFX_focus_wonderweapons
 		prerequisite = { focus = CHI_infrastructure_effort_2 }

@@ -107,3 +107,101 @@ country_event = { #if AI FSA will create Syria to puppet, after peace conference
 		name = syria.4.a
 	}
 }
+
+country_event = { #Получение экстренной поддержки от России
+	id = syria.9
+	title = syria.9.t
+	desc = syria.9.d
+	#picture = GFX_event_FSA_army
+	
+	trigger = {
+		tag = SYR
+		SYR = {
+			has_war_with = ISS
+			surrender_progress > 0.3
+		}
+	}
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	immediate = {
+		if = {
+			limit = { has_equipment = { army_salw_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 10000
+				type = army_salw_equipment
+				producer = RUS
+			}
+		}
+		if = {
+			limit = { has_equipment = { army_ammunition_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 10000
+				type = army_ammunition_equipment
+				producer = RUS
+			}
+		}
+		if = {
+			limit = { has_equipment = { infantry_technical_means_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 10000
+				type = infantry_technical_means_equipment
+				producer = RUS
+			}
+		}
+	}
+	
+	option = { 
+		name = syria.9.a
+		
+	}
+}
+country_event = { #Получение экстренной поддержки от США. Находится в Сирии ибо нет файла под Ирак.
+	id = syria.10
+	title = syria.10.t
+	desc = syria.10.d
+	#picture = GFX_event_FSA_army
+	
+	trigger = {
+		tag = IRQ
+		IRQ = {
+			has_war_with = ISS
+			surrender_progress > 0.3
+		}
+	}
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	immediate = {
+		if = {
+			limit = { has_equipment = { army_salw_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = army_salw_equipment
+				producer = USA
+			}
+		}
+		if = {
+			limit = { has_equipment = { army_ammunition_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = army_ammunition_equipment
+				producer = USA
+			}
+		}
+		if = {
+			limit = { has_equipment = { infantry_technical_means_equipment < 1 } }
+			add_equipment_to_stockpile = {
+				amount = 1000
+				type = infantry_technical_means_equipment
+				producer = USA
+			}
+		}
+	}
+	
+	option = { 
+		name = syria.10.a
+	}
+}

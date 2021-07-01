@@ -18,3 +18,29 @@ defined_text = {
 		localization_key = get_season_name_4
 	}
 }
+
+defined_text = { 
+	name = get_fatigue
+
+	text = {
+		trigger = { check_variable = { var_fatigue = 30 } } 
+		localization_key = get_fatigue_1
+	}
+	text = {
+		trigger = { check_variable = { var_fatigue = 40 } } 
+		localization_key = get_fatigue_2
+	}
+	text = {
+		trigger = { check_variable = { var_fatigue = 50 } } 
+		localization_key = get_fatigue_3
+	}
+	text = {
+		trigger = { check_variable = { var_fatigue = 60 } } 
+		localization_key = get_fatigue_4
+	}
+	text = {
+		trigger = { check_variable = { var_fatigue > 70 } } 
+		localization_key = get_fatigue_5
+	}
+	
+}

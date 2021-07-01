@@ -1,0 +1,372 @@
+on_actions = {
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = var_fatigue
+				}
+				if = {
+					limit = { has_idea = civilian_economy }
+					subtract_from_variable = { var_fatigue = 1 }
+				}
+				if = {
+					limit = { has_idea = low_economic_mobilisation }
+					subtract_from_variable = { var_fatigue = -1 }
+				}
+				if = {
+					limit = { has_idea = partial_economic_mobilisation }
+					subtract_from_variable = { var_fatigue = -2 }
+				}
+				if = {
+					limit = { has_idea = war_economy }
+					subtract_from_variable = { var_fatigue = -3 }
+				}
+				if = {
+					limit = { has_idea = tot_economic_mobilisation }
+					subtract_from_variable = { var_fatigue = -4 }
+				}
+
+				if = {
+					limit = { has_war = yes	}
+					subtract_from_variable = { var_fatigue = -3 }
+				}
+			}
+			
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			ROOT = {
+				if = {
+					limit = { has_civil_war = yes }
+					add_to_variable = { var_fatigue = 24 }
+				}
+				if = {
+					limit = { has_idea = low_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 18 }
+				}
+				if = {
+					limit = { has_idea = partial_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = war_economy	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = tot_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 20 }
+				}
+				else = {
+					add_to_variable = { var_fatigue = 15 }
+				}
+				
+				if = { #Терроризм
+					limit = { has_idea = terrorism_discounted }
+					add_to_variable = { var_fatigue = -2 }
+				}
+				if = {
+					limit = { has_idea = low_terrorism }
+					add_to_variable = { var_fatigue = 2 }
+				}
+				if = {
+					limit = { has_idea = average_terrorism }
+					add_to_variable = { var_fatigue = 7 }
+				}
+				if = {
+					limit = { has_idea = high_terrorism }
+					add_to_variable = { var_fatigue = 11 }
+				}
+				if = {
+					limit = { has_idea = decaying_state }
+					add_to_variable = { var_fatigue = 15 }
+				}
+			}
+			FROM = { add_to_variable = { var_fatigue = 4 } }
+		}
+	}
+
+	on_release_as_free = {
+		effect = {
+			ROOT = {
+				if = {
+					limit = { has_civil_war = yes }
+					add_to_variable = { var_fatigue = 24 }
+				}
+				if = {
+					limit = { has_idea = low_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 18 }
+				}
+				if = {
+					limit = { has_idea = partial_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = war_economy	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = tot_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 20 }
+				}
+				else = {
+					add_to_variable = { var_fatigue = 15 }
+				}
+				
+				if = { #Терроризм
+					limit = { has_idea = terrorism_discounted }
+					add_to_variable = { var_fatigue = -2 }
+				}
+				if = {
+					limit = { has_idea = low_terrorism }
+					add_to_variable = { var_fatigue = 2 }
+				}
+				if = {
+					limit = { has_idea = average_terrorism }
+					add_to_variable = { var_fatigue = 7 }
+				}
+				if = {
+					limit = { has_idea = high_terrorism }
+					add_to_variable = { var_fatigue = 11 }
+				}
+				if = {
+					limit = { has_idea = decaying_state }
+					add_to_variable = { var_fatigue = 15 }
+				}
+			}
+			FROM = { add_to_variable = { var_fatigue = 4 } }
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = var_fatigue
+				}
+				clamp_variable = {
+					var = var_fatigue
+					min = 0
+					#max = 100
+				}
+				if = {
+					limit = {
+						check_variable = { var_fatigue > 30 }
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_idea = idea_fatigue_1
+							}
+						}
+						add_ideas = idea_fatigue_1
+						else_if = {
+							limit = {
+								has_idea = idea_fatigue_1
+							}
+							remove_ideas = idea_fatigue_1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var_fatigue > 40 }
+					}
+					if = {
+						limit = {
+							has_idea = idea_fatigue_1
+						}
+						swap_ideas = {
+							add_idea = idea_fatigue_2
+							remove_idea = idea_fatigue_1
+						}
+						else_if = {
+							limit = {
+								has_idea = idea_fatigue_2
+							}
+							swap_ideas = {
+								add_idea = idea_fatigue_1
+								remove_idea = idea_fatigue_2
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var_fatigue = 50 }
+					}
+					if = {
+						limit = {
+							has_idea = idea_fatigue_2
+						}
+						swap_ideas = {
+							add_idea = idea_fatigue_3
+							remove_idea = idea_fatigue_2
+						}
+						else_if = {
+							limit = {
+								has_idea = idea_fatigue_3
+							}
+							swap_ideas = {
+								add_idea = idea_fatigue_2
+								remove_idea = idea_fatigue_3
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var_fatigue = 60 }
+					}
+					if = {
+						limit = {
+							has_idea = idea_fatigue_3
+						}
+						swap_ideas = {
+							add_idea = idea_fatigue_4
+							remove_idea = idea_fatigue_3
+						}
+						else_if = {
+							limit = {
+								has_idea = idea_fatigue_4
+							}
+							swap_ideas = {
+								add_idea = idea_fatigue_3
+								remove_idea = idea_fatigue_4
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { var_fatigue = 70 }
+					}
+					if = {
+						limit = {
+							has_idea = idea_fatigue_4
+						}
+						swap_ideas = {
+							add_idea = idea_fatigue_5
+							remove_idea = idea_fatigue_4
+						}
+						else_if = {
+							limit = {
+								has_idea = idea_fatigue_5
+							}
+							swap_ideas = {
+								add_idea = idea_fatigue_4
+								remove_idea = idea_fatigue_5
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_army_leader_won_combat = {
+		effect = {
+			if = {
+				limit = {
+					has_stability > 0.0
+					has_stability < 0.1
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						80 = { }
+						20 = {
+							subtract_from_variable = { var_fatigue = -1 }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_stability > 0.2
+					has_stability < 0.3
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						70 = { }
+						30 = {
+							subtract_from_variable = { var_fatigue = -1 }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_stability > 0.4
+					has_stability < 0.5
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						80 = { }
+						20 = {
+							subtract_from_variable = { var_fatigue = 1 }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_army_leader_lost_combat = {
+		effect = {
+			if = {
+				limit = {
+					has_stability > 0.1
+					has_stability < 0.2
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						80 = { }
+						20 = {
+							subtract_from_variable = {  var_fatigue = -1 }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_stability > 0.4
+					has_stability < 0.3
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						70 = { }
+						30 = {
+							subtract_from_variable = { var_fatigue = -1 }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_stability > 0.6
+					has_stability < 0.5
+				}
+				FROM = {
+					random_list = {
+						log = yes
+						80 = { }
+						20 = {
+							subtract_from_variable = { var_fatigue = -1 }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_government_change = {
+		effect = {			
+			subtract_from_variable = { var_fatigue = 20 }
+		}
+	}
+}

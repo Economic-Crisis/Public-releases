@@ -1,135 +1,368 @@
-﻿division_template = {
-	name = "Juntuán"				# Represents: German-trained divisions (better equipment than rest),
-									# 	as well as two-division infantry corps (generally poorly-equipped militias),
-	regiments = {					#	and local militia groups.
-		motorized = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
-		motorized = { x = 0 y = 1 }
-		motorized = { x = 0 y = 2 }
-		motorized = { x = 0 y = 3 }
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
-		motorized = { x = 1 y = 3 }
-		motorized = { x = 2 y = 0 }
-		motorized = { x = 2 y = 1 }
-		artillery_brigade = { x = 3 y = 0 }
-		artillery_brigade = { x = 3 y = 1 }
-	  
-	}
-	support = {
-        airborne_support_company = { x = 0 y = 0 }
-        #artillery = { x = 0 y = 1 }
-	}
+﻿
 
-}
+##### Division Templates #####
 division_template = {
-	name = "Sanjiao Jun"	# Represents three-division infantry corps (generally poorly-equipped militias)
-
+	name = "Mechanized infantry brigade on MT-LB"	
 	regiments = {
-		marines_motorized = { x = 0 y = 0 }
-		marines_motorized = { x = 0 y = 1 }
-		marines_motorized = { x = 1 y = 0 }
-		marines_motorized = { x = 1 y = 1 }
-		marines_motorized = { x = 2 y = 0 }
-		marines_motorized = { x = 2 y = 1 }
-	}
-}
-division_template = {
-	name = "Brigade on APC wheeled"	# Represents three-division infantry corps (generally poorly-equipped militias)
-
-	regiments = {
-		mechanized_on_apc_wheeled = { x = 0 y = 0 }
-		mechanized_on_apc_wheeled = { x = 0 y = 1 }
-		mechanized_on_apc_wheeled = { x = 1 y = 0 }
-		mechanized_on_apc_wheeled = { x = 1 y = 1 }
-		mechanized_on_apc_wheeled = { x = 2 y = 0 }
-		mechanized_on_apc_wheeled = { x = 2 y = 1 }
-	}
-}
-division_template = {
-	name = "Brigade on APC tracked"	# Represents three-division infantry corps (generally poorly-equipped militias)
-
-	regiments = {
+	 #1st infantry battalion on tacked APC
 		mechanized_on_apc_tracked = { x = 0 y = 0 }
 		mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mechanized_on_apc_tracked = { x = 0 y = 2 }
+		# mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on tacked APC
 		mechanized_on_apc_tracked = { x = 1 y = 0 }
 		mechanized_on_apc_tracked = { x = 1 y = 1 }
+		mechanized_on_apc_tracked = { x = 1 y = 2 }
+		# mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on tacked APC
 		mechanized_on_apc_tracked = { x = 2 y = 0 }
 		mechanized_on_apc_tracked = { x = 2 y = 1 }
-	}
-}
-division_template = {
-	name = "Brigade on IFV tracked"	# Represents three-division infantry corps (generally poorly-equipped militias)
-
-	regiments = {
-		mechanized_on_ifv_tracked = { x = 0 y = 0 }
-		mechanized_on_ifv_tracked = { x = 0 y = 1 }
-		mechanized_on_ifv_tracked = { x = 1 y = 0 }
-		mechanized_on_ifv_tracked = { x = 1 y = 1 }
-		mechanized_on_ifv_tracked = { x = 2 y = 0 }
-		mechanized_on_ifv_tracked = { x = 2 y = 1 }
-	}
-}
-division_template = {
-	name = "Motuo Hua Bubing Jun"		# Represents: 5th Corps/200th Division, which was a well-equipped & experienced (semi-)motorized/armored unit 
-	
-	regiments = {					
-		light_motorized = { x = 0 y = 0 }	
-		light_motorized = { x = 0 y = 1 }
-		light_motorized = { x = 1 y = 0 }
-		light_motorized = { x = 1 y = 1 }
-		light_motorized = { x = 2 y = 0 }
-		light_motorized = { x = 2 y = 1 }
+		mechanized_on_apc_tracked = { x = 2 y = 2 }
+		# mortar_with_truck = { x = 2 y = 3 }	
+	# 1st tank battalion
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		main_battle_tank = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		self_propelled_howitzers = { x = 4 y = 2 }
+		mortars = { x = 4 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 2 }
+		portable_at_ml = { x = 6 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 7 y = 0 }
+		heavy_self_propelled_aag = { x = 7 y = 1 }
+		heavy_self_propelled_aag = { x = 7 y = 2 }
+		portable_aa_ml = { x = 7 y = 3 }
+		portable_aa_ml = { x = 7 y = 4 }
+		portable_aa_ml = { x = 7 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 8 y = 0 }
+		medium_self_propelled_aa_ml = { x = 8 y = 1 }
+		medium_self_propelled_aa_ml = { x = 8 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 9 y = 0 }
+		rocket_artillery_sr = { x = 9 y = 1 }
+		rocket_artillery_sr = { x = 9 y = 2 }
 	}
 	support = {
-       	recon_battalion = { x = 0 y = 0 }		# Support represents light tanks and other vehicles assigned to 200th Division
-	 	airborne_support_company = { x = 0 y = 1 }
+		 engineer_battalion = { x = 0 y = 0 }
+		 logistics_battalion = { x = 0 y = 1 }
+		 signal_company = { x = 0 y = 2 }
+		 recon_battalion = { x = 0 y = 3 }
+		 cbrn_defense_company = { x = 0 y = 5 }
+		 medical_company = { x = 0 y = 6 }
+		 electronic_warfare_company = { x = 1 y = 0 }
+		 #uas_company = { x = 1 y = 1 }
 	}
 }
-division_template = {
-	name = "Tank Brigade"				# Represents (light) Army Tank Brigades (LT Mk VIs, some Matilda Is)
 
+division_template = {
+	name = "Mechanized infantry brigade on BTR"	
 	regiments = {
-		main_battle_tank = { x = 0 y = 0 }		# Light Tanks Mk VI, or Matilda I's
+	# 1st infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		# mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		mechanized_on_apc_wheeled = { x = 1 y = 2 }
+		# mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		mechanized_on_apc_wheeled = { x = 2 y = 2 }
+		# mortar_with_truck = { x = 2 y = 3 }
+	# 1st special forces battalion on wheeled APC
+		mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		mechanized_on_apc_wheeled = { x = 3 y = 1 }
+		mechanized_on_apc_wheeled = { x = 3 y = 2 }
+		# agl_on_luv = { x = 2 y = 3 }	
+	# 1st Recon battalion
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 2 }
+	# 1st tank battalion
+		main_battle_tank = { x = 5 y = 0 }
+		main_battle_tank = { x = 5 y = 1 }
+		main_battle_tank = { x = 5 y = 2 }
+		main_battle_tank = { x = 5 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 6 y = 0 }
+		self_propelled_howitzers = { x = 6 y = 1 }
+		self_propelled_howitzers = { x = 6 y = 2 }
+		mortars = { x = 6 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 7 y = 0 }
+		self_propelled_howitzers = { x = 7 y = 1 }
+		self_propelled_howitzers = { x = 7 y = 2 }
+		mortars = { x = 7 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 8 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 8 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 8 y = 2 }
+		portable_at_ml = { x = 8 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 9 y = 0 }
+		heavy_self_propelled_aag = { x = 9 y = 1 }
+		heavy_self_propelled_aag = { x = 9 y = 2 }
+		portable_aa_ml = { x = 9 y = 3 }
+		portable_aa_ml = { x = 9 y = 4 }
+		portable_aa_ml = { x = 9 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		motorized_self_propelled_aa_ml = { x = 10 y = 0 }
+		motorized_self_propelled_aa_ml = { x = 10 y = 1 }
+		motorized_self_propelled_aa_ml = { x = 10 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		#rocket_artillery_sr = { x = 11 y = 0 }
+		#rocket_artillery_sr = { x = 11 y = 1 }
+		#rocket_artillery_sr = { x = 11 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#maintenance_battalion = { x = 0 y = 4 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		#uas_company = { x = 1 y = 1 }
+		#electronic_intelligence_company = { x = 0 y = 9 }
+	}
+}
+
+division_template = {
+	name = "Mechanized infantry brigade on BMP"	
+	regiments = {
+	# 1st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 0 y = 0 }
+		mechanized_on_ifv_tracked = { x = 0 y = 1 }
+		mechanized_on_ifv_tracked = { x = 0 y = 2 }
+		#mortar_with_truck = { x = 0 y = 3 }
+	# 2d infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 1 y = 0 }
+		mechanized_on_ifv_tracked = { x = 1 y = 1 }
+		mechanized_on_ifv_tracked = { x = 1 y = 2 }
+		#mortar_with_truck = { x = 1 y = 3 }
+	# 3d infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 2 y = 0 }
+		mechanized_on_ifv_tracked = { x = 2 y = 1 }
+		mechanized_on_ifv_tracked = { x = 2 y = 2 }
+	# 1st tank battalion
+		 main_battle_tank = { x = 2 y = 0 }
+		 main_battle_tank = { x = 2 y = 1 }
+		 main_battle_tank = { x = 2 y = 2 }
+		 main_battle_tank = { x = 2 y = 3 }
+	# 2rd tank battalion
+		 main_battle_tank = { x = 3 y = 0 }
+		 main_battle_tank = { x = 3 y = 1 }
+		 main_battle_tank = { x = 3 y = 2 }
+		 main_battle_tank = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		self_propelled_howitzers = { x = 4 y = 2 }
+		mortars = { x = 4 y = 3 }
+	# 2d self-propelled howitzer division (artillery battalion)	
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-tank division (artillery battalion)	
+		mechanized_self_propelled_at_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 6 y = 2 }
+		portable_at_ml = { x = 6 y = 3}
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 7 y = 0 }
+		heavy_self_propelled_aag = { x = 7 y = 1 }
+		heavy_self_propelled_aag = { x = 7 y = 2 }
+		portable_aa_ml = { x = 7 y = 3 }
+		portable_aa_ml = { x = 7 y = 4 }
+		portable_aa_ml = { x = 7 y = 5 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 8 y = 0 }
+		medium_self_propelled_aa_ml = { x = 8 y = 1 }
+		medium_self_propelled_aa_ml = { x = 8 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 9 y = 0 }
+		rocket_artillery_sr = { x = 9 y = 1 }
+		rocket_artillery_sr = { x = 9 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		#uas_company = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Tank Brigade"
+	regiments = {
+	# 1st tank battalion
+		main_battle_tank = { x = 0 y = 0 }
 		main_battle_tank = { x = 0 y = 1 }
 		main_battle_tank = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
+	# 2rd tank battalion
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+		main_battle_tank = { x = 1 y = 2 }
+		main_battle_tank = { x = 1 y = 3 }
+	# 3rd tank battalion
+		main_battle_tank = { x = 2 y = 0 }
+		main_battle_tank = { x = 2 y = 1 }
+		main_battle_tank = { x = 2 y = 2 }
+		main_battle_tank = { x = 2 y = 3 }
+	# 1st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 3 y = 0 }
+		mechanized_on_ifv_tracked = { x = 3 y = 1 }
+		mechanized_on_ifv_tracked = { x = 3 y = 2 }
+		# # mortar_with_truck = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		self_propelled_howitzers = { x = 4 y = 2 }
+		mortars = { x = 4 y = 3 }
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 5 y = 0 }
+		heavy_self_propelled_aag = { x = 5 y = 1 }
+		portable_aa_ml = { x = 5 y = 2 }
+		portable_aa_ml = { x = 5 y = 3 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 6 y = 0 }
+		medium_self_propelled_aa_ml = { x = 6 y = 1 }
+		medium_self_propelled_aa_ml = { x = 6 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 7 y = 0 }
+		rocket_artillery_sr = { x = 7 y = 1 }
+		rocket_artillery_sr = { x = 7 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#maintenance_battalion = { x = 0 y = 4 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
 	}
 }
 
 division_template = {
-	name = "Airborne Assault Brigade on BMD"	
+	name = "Guard Tank Brigade"	
 	regiments = {
-	# 1st airborne assault battalion
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 0 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 1 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 2 }
-	# 2d airborne assault battalion
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 0 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 1 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 2 }
-	# 3d airborne assault battalion
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 0 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 1 }
-		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 2 }
-	# 1st Independend Recon Battalion
-		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 0 }
-		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 1 }
-		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 2 }
 	# 1st tank battalion
-		airdroppable_light_tank = { x = 3 y = 0}
-		airdroppable_light_tank = { x = 3 y = 1}
-		airdroppable_light_tank = { x = 3 y = 2}
-	# 1st self-propelled air-drop howitzer battery
-		air_droppable_self_propelled_howitzers = { x = 4 y = 0 }
-		air_droppable_self_propelled_howitzers = { x = 4 y = 1 }
-		air_droppable_self_propelled_howitzers = { x = 4 y = 2 }
-		air_droppable_self_propelled_howitzers = { x = 4 y = 3 }
-	# 1st anti-tank air-drop artillery battery	
-		air_droppable_self_propelled_at_ml = { x = 5 y = 0 }
-		air_droppable_self_propelled_at_ml = { x = 5 y = 1 }
-	# 1st surface-to-air missile air-drop artillery battery
+		main_battle_tank = { x = 0 y = 0 }
+		main_battle_tank = { x = 0 y = 1 }
+		main_battle_tank = { x = 0 y = 2 }
+		main_battle_tank = { x = 0 y = 3 }
+	# 2rd tank battalion
+		main_battle_tank = { x = 1 y = 0 }
+		main_battle_tank = { x = 1 y = 1 }
+		main_battle_tank = { x = 1 y = 2 }
+		main_battle_tank = { x = 1 y = 3 }
+	# 3rd tank battalion
+		main_battle_tank_te = { x = 2 y = 0 }
+		main_battle_tank_te = { x = 2 y = 1 }
+		main_battle_tank_te = { x = 2 y = 2 }
+		main_battle_tank_te = { x = 2 y = 3 }
+	# 1st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 3 y = 0 }
+		mechanized_on_ifv_tracked = { x = 3 y = 1 }
+		mechanized_on_ifv_tracked = { x = 3 y = 2 }		
+	# 2st infantry battalion on tracked IFV
+		mechanized_on_ifv_tracked = { x = 4 y = 0 }
+		mechanized_on_ifv_tracked = { x = 4 y = 1 }
+		mechanized_on_ifv_tracked = { x = 4 y = 2 }
+		# # mortar_with_truck = { x = 3 y = 3 }
+	# 1st self-propelled howitzer division (artillery battalion)
+		self_propelled_howitzers = { x = 5 y = 0 }
+		self_propelled_howitzers = { x = 5 y = 1 }
+		self_propelled_howitzers = { x = 5 y = 2 }
+		mortars = { x = 5 y = 3 }
+	# 1st anti-air artillery division (artillery battalion)	
+		heavy_self_propelled_aag = { x = 6 y = 0 }
+		heavy_self_propelled_aag = { x = 6 y = 1 }
+		portable_aa_ml = { x = 6 y = 2 }
+		portable_aa_ml = { x = 6 y = 3 }
+	# 1st short-range surface-to-air missile division (artillery battalion)	
+		medium_self_propelled_aa_ml = { x = 7 y = 0 }
+		medium_self_propelled_aa_ml = { x = 7 y = 1 }
+		medium_self_propelled_aa_ml = { x = 7 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 8 y = 0 }
+		rocket_artillery_sr = { x = 8 y = 1 }
+		rocket_artillery_sr = { x = 8 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		logistics_battalion = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		#maintenance_battalion = { x = 0 y = 4 }
+		cbrn_defense_company = { x = 0 y = 5 }
+		medical_company = { x = 0 y = 6 }
+		electronic_warfare_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Reconnaissance Brigade on BTR"
+	regiments = {
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+
+	# 2d Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+
+	# 1st Reconnaissance battalion on wheeled APC
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+
+	# 1st SF battalion on wheeled APC
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 2 }
+
+	# Учебная Рота
+		recons_light_motorized = { x = 4 y = 0 }
+		recons_light_motorized = { x = 4 y = 1 }
+	# 1th Anti Tank Battalion
+		light_self_propelled_at_ml = { x = 5 y = 0 }
+	# 1th Anti Air Battalion
 		portable_aa_ml = { x = 6 y = 0 }
-		mechanized_self_propelled_aa_ml = { x = 6 y = 1 }
+	
+	
+	# Рота СРС ( специальной радио-связи) ( 2 юнита )
+		# рота_срс = { x = 5 y = 0 }
+		# рота_срс = { x = 5 y = 1 }
 	}
 	support = {
 		engineer_battalion = { x = 0 y = 0 }
@@ -139,12 +372,13 @@ division_template = {
 		cbrn_defense_company = { x = 0 y = 4 }
 		medical_company = { x = 0 y = 5 }
 		electronic_warfare_company = { x = 0 y = 6 }
-		# #uas_company = { x = 0 y = 7 }
+		#uas_company = { x = 1 y = 0 }
 		sniper_company = { x = 1 y = 1 }
 		# tech_engineer_battalion = { x = 0 y = 9 }
 		 
 	}
 }
+
 
 division_template = {
 	name = "Special Forces brigade on APC"
@@ -193,7 +427,61 @@ division_template = {
 		cbrn_defense_company = { x = 0 y = 4 }
 		medical_company = { x = 0 y = 5 }
 		electronic_warfare_company = { x = 0 y = 6 }
-		# #uas_company = { x = 0 y = 7 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+
+division_template = {
+	name = "Special Forces brigade on BTR"
+	regiments = {
+	# 1st Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		# гранатометный_взвод = { x = 0 y = 3 }
+	# 2d Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+		# гранатометный_взвод = { x = 1 y = 3 }
+	# 3rd Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+		# гранатометный_взвод = { x = 2 y = 3 }
+	# 4rd Special-Forces battalion on tracked BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 2 }
+		# гранатометный_взвод = { x = 3 y = 3 }
+	# Учебная Рота
+		special_forces_motorized = { x = 4 y = 0 }
+		special_forces_motorized = { x = 4 y = 1 }
+	# 1th Anti Tank Battalion
+		portable_at_ml = { x = 5 y = 0 }
+		light_self_propelled_at_ml = { x = 5 y = 1 }
+		light_self_propelled_at_ml = { x = 5 y = 2 }
+	# 1th Anti Air Battalion
+		portable_aa_ml = { x = 6 y = 0 }
+		portable_aa_ml = { x = 6 y = 1 }
+		portable_aa_ml = { x = 6 y = 2 }
+	# Рота СРС ( специальной радио-связи) ( 2 юнита )
+		# рота_срс = { x = 5 y = 0 }
+		# рота_срс = { x = 5 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
 		sniper_company = { x = 1 y = 1 }
 		# tech_engineer_battalion = { x = 0 y = 9 }
 		 
@@ -201,7 +489,627 @@ division_template = {
 }
 
 division_template = {
-	name = "Marines assault brigade on IFV"	
+	name = "Airborne special forces regiment"	
+	regiments = {
+	# 1st airborne sf battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d airborne sf battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d airborne special forces battalion
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 4d airborne reconnaissance battalion
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 0 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 1 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 2 }
+	# 5th Artillery Battalion
+		towed_howitzers = { x = 4 y = 0 }
+		towed_howitzers = { x = 4 y = 1 }
+		towed_howitzers = { x = 4 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 3 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 4 }
+	# 6th Anti Tank Battalion
+		portable_at_ml = { x = 5 y = 0 }
+		portable_at_ml = { x = 5 y = 1 }
+		portable_at_ml = { x = 5 y = 2 }
+	# 7th Anti Air Battalion
+		portable_aa_ml = { x = 6 y = 0 }
+		portable_aa_ml = { x = 6 y = 1 }
+		portable_aa_ml = { x = 6 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Airborne Regiment on BTR"	
+	regiments = {
+	# 1st airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d airborne assault battalion
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		paratroopers_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 1st self-propelled air-drop howitzer battery
+		air_droppable_self_propelled_howitzers = { x = 3 y = 0 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 3 }
+	# 1st anti-tank air-drop artillery battery	
+		air_droppable_self_propelled_at_ml = { x = 4 y = 0 }
+		portable_at_ml = { x = 4 y = 1 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 5 y = 0 }
+		portable_aa_ml = { x = 5 y = 1 }
+		portable_aa_ml = { x = 5 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Airborne Assault Brigade on BMD"	
+	regiments = {
+	# 1st airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 0 y = 2 }
+	# 2d airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 1 y = 2 }
+	# 3d airborne assault battalion
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 0 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 1 }
+		paratroopers_mechanized_on_ifv_airdroppable = { x = 2 y = 2 }
+	# 1st Independend Recon Battalion
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 0 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 1 }
+		recons_mechanized_on_light_ifv_airdroppable = { x = 3 y = 2 }
+	# 1st tank battalion
+		airdroppable_light_tank = { x = 3 y = 0}
+		airdroppable_light_tank = { x = 3 y = 1}
+		airdroppable_light_tank = { x = 3 y = 2}
+	# 1st self-propelled air-drop howitzer battery
+		air_droppable_self_propelled_howitzers = { x = 4 y = 0 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 3 }
+	# 1st anti-tank air-drop artillery battery	
+		air_droppable_self_propelled_at_ml = { x = 5 y = 0 }
+		air_droppable_self_propelled_at_ml = { x = 5 y = 1 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_aa_ml = { x = 6 y = 1 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Airborne Artillery Regiment"	
+	regiments = {
+	# 1st battery
+		air_droppable_self_propelled_howitzers = { x = 0 y = 0 }
+		air_droppable_self_propelled_howitzers = { x = 0 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 0 y = 2 }
+	# 2d battery
+		air_droppable_self_propelled_howitzers = { x = 1 y = 0 }
+		air_droppable_self_propelled_howitzers = { x = 1 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 1 y = 2 }
+	# 3d battery
+		air_droppable_self_propelled_mortars = { x = 2 y = 0 }
+		air_droppable_self_propelled_mortars = { x = 2 y = 1 }
+		air_droppable_self_propelled_mortars = { x = 2 y = 2 }
+	# 1st air-drop howitzer battery
+		towed_howitzers = { x = 3 y = 0 }
+		towed_howitzers = { x = 3 y = 1 }
+		towed_howitzers = { x = 3 y = 2 }
+		towed_howitzers = { x = 3 y = 3 }
+	# 1st anti-tank air-drop artillery battery	
+		air_droppable_self_propelled_at_ml = { x = 4 y = 0 }
+		air_droppable_self_propelled_at_ml = { x = 4 y = 1 }
+		air_droppable_self_propelled_at_ml = { x = 4 y = 2 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 5 y = 0 }
+		portable_aa_ml = { x = 5 y = 1 }
+		portable_aa_ml = { x = 5 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Airborne Anti-Air Regiment"	
+	regiments = {
+	# 1st battery
+		mechanized_self_propelled_aa_ml = { x = 0 y = 0 }
+		mechanized_self_propelled_aa_ml = { x = 0 y = 1 }
+		mechanized_self_propelled_aa_ml = { x = 0 y = 2 }
+	# 2d battery
+		mechanized_self_propelled_aa_ml = { x = 1 y = 0 }
+		mechanized_self_propelled_aa_ml = { x = 1 y = 1 }
+		mechanized_self_propelled_aa_ml = { x = 1 y = 2 }
+	# 3d battery
+		mechanized_self_propelled_aa_ml = { x = 2 y = 0 }
+		mechanized_self_propelled_aa_ml = { x = 2 y = 1 }
+		mechanized_self_propelled_aa_ml = { x = 2 y = 2 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 3 y = 0 }
+		portable_aa_ml = { x = 3 y = 1 }
+		portable_aa_ml = { x = 3 y = 2 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 4 y = 0 }
+		portable_aa_ml = { x = 4 y = 1 }
+		portable_aa_ml = { x = 4 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "AT Artillery Brigade"
+	regiments = {
+	# 1st battery
+		mechanized_self_propelled_at_ml = { x = 0 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 0 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 0 y = 2 }
+	# 2nd battery
+		mechanized_self_propelled_at_ml = { x = 1 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 1 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 1 y = 2 }	
+	# 3 battery
+		anti_tank_sau = { x = 2 y = 0 }
+		anti_tank_sau = { x = 2 y = 1 }
+		anti_tank_sau = { x = 2 y = 2 }
+	# 1st Artillery short range battalion
+		rocket_artillery_sr = { x = 3 y = 0 }
+		rocket_artillery_sr = { x = 3 y = 1 }
+		rocket_artillery_sr = { x = 3 y = 2 }
+	# Heavy Artillery Battalion
+		heavy_rocket_artillery = { x = 4 y = 0 }
+		heavy_rocket_artillery = { x = 4 y = 1 }
+		heavy_rocket_artillery = { x = 4 y = 2 }
+	# Батальон переносных ПТУР	
+		portable_at_ml = { x = 5 y = 0 } # 
+		portable_at_ml = { x = 5 y = 1 } # 
+		portable_at_ml = { x = 5 y = 2 } # 
+	# зенитный ракетный дивизион
+		mechanized_self_propelled_aa_ml = { x = 6 y = 0 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+		mechanized_self_propelled_aa_ml = { x = 6 y = 1 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Artillery Brigade Heavy"
+	regiments = {
+	# 1st battery
+		self_propelled_artillery = { x = 0 y = 0 }
+		self_propelled_artillery = { x = 0 y = 1 }
+		self_propelled_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		self_propelled_artillery = { x = 1 y = 0 }
+		self_propelled_artillery = { x = 1 y = 1 }
+		self_propelled_artillery = { x = 1 y = 2 }	
+	# 1st battery
+		self_propelled_heavy_artillery = { x = 2 y = 0 }
+		self_propelled_heavy_artillery = { x = 2 y = 1 }
+		self_propelled_heavy_artillery = { x = 2 y = 2 }
+	# 1st battery Rocket Artillery
+		medium_rocket_artillery = { x = 3 y = 0 }
+		heavy_rocket_artillery = { x = 3 y = 1 }
+		heavy_rocket_artillery = { x = 3 y = 2 }
+	# 1st Anti Tank Battery
+		mechanized_self_propelled_at_ml = { x = 4 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 2 }
+	# Разведбат Арт Дивизиона	
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 1 } 
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 2 } 
+
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Artillery Brigade"
+	regiments = {
+	# 1st battery
+		self_propelled_artillery = { x = 0 y = 0 }
+		self_propelled_artillery = { x = 0 y = 1 }
+		self_propelled_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		self_propelled_artillery = { x = 1 y = 0 }
+		self_propelled_artillery = { x = 1 y = 1 }
+		self_propelled_artillery = { x = 1 y = 2 }	
+	# 1st battery
+		self_propelled_howitzers = { x = 2 y = 0 }
+		self_propelled_howitzers = { x = 2 y = 1 }
+		self_propelled_howitzers = { x = 2 y = 2 }
+	# 1st battery Rocket Artillery
+		rocket_artillery_sr = { x = 3 y = 0 }
+		rocket_artillery_sr = { x = 3 y = 1 }
+		rocket_artillery_sr = { x = 3 y = 2 }
+	# 1st Anti Tank Battery
+		mechanized_self_propelled_at_ml = { x = 4 y = 0 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 1 }
+		mechanized_self_propelled_at_ml = { x = 4 y = 2 }
+	# Разведбат Арт Дивизиона	
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 1 } 
+		recons_mechanized_on_apc_wheeled = { x = 5 y = 2 } 
+
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Rocket Artillery Regiment"
+	regiments = {
+	# 1st battery
+		rocket_artillery_sr = { x = 0 y = 0 }
+		rocket_artillery_sr = { x = 0 y = 1 }
+		rocket_artillery_sr = { x = 0 y = 2 }
+	# 2nd battery
+		rocket_artillery_sr = { x = 1 y = 0 }
+		rocket_artillery_sr = { x = 1 y = 1 }
+		rocket_artillery_sr = { x = 1 y = 2 }	
+	# 3d battery
+		rocket_artillery_sr = { x = 2 y = 0 }
+		rocket_artillery_sr = { x = 2 y = 1 }
+		rocket_artillery_sr = { x = 2 y = 2 }
+	# Разведбат Арт Дивизиона	
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+
+division_template = {
+	name = "Guard Rocket Artillery Brigade"
+	regiments = {
+	# 1st battery
+		heavy_rocket_artillery = { x = 0 y = 0 }
+		heavy_rocket_artillery = { x = 0 y = 1 }
+		heavy_rocket_artillery = { x = 0 y = 2 }
+	# 2nd battery
+		heavy_rocket_artillery = { x = 1 y = 0 }
+		heavy_rocket_artillery = { x = 1 y = 1 }
+		heavy_rocket_artillery = { x = 1 y = 2 }	
+	# 3d battery
+		heavy_rocket_artillery = { x = 2 y = 0 }
+		heavy_rocket_artillery = { x = 2 y = 1 }
+		heavy_rocket_artillery = { x = 2 y = 2 }
+	# Разведбат Арт Дивизиона	
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Anti Air Brigade"
+	regiments = {
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 0 y = 0 }
+		medium_self_propelled_aa_ml = { x = 0 y = 1 }
+		medium_self_propelled_aa_ml = { x = 0 y = 2 }
+	# 2nd battery
+		medium_self_propelled_aa_ml = { x = 1 y = 0 }
+		medium_self_propelled_aa_ml = { x = 1 y = 1 }
+		medium_self_propelled_aa_ml = { x = 1 y = 2 }	
+	# 1st battery
+		medium_self_propelled_aa_ml = { x = 2 y = 0 }
+		medium_self_propelled_aa_ml = { x = 2 y = 1 }
+		medium_self_propelled_aa_ml = { x = 2 y = 2 }
+	# 1st Anti Air Recon and Guard company
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+
+	}
+	support = {
+		 engineer_battalion = { x = 0 y = 0 }
+		 airborne_support_company = { x = 0 y = 1 }
+		 signal_company = { x = 0 y = 2 }
+		 recon_battalion = { x = 0 y = 3 }
+		 cbrn_defense_company = { x = 0 y = 4 }
+		 medical_company = { x = 0 y = 5 }
+		 electronic_warfare_company = { x = 0 y = 6 }
+		 #uas_company = { x = 1 y = 0 }
+		 sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+
+division_template = {
+	name = "Marines light regiment on tracks"	
+	regiments = {
+	# 1st Marines Assault battalion
+		marines_motorized = { x = 0 y = 0 }
+		marines_motorized = { x = 0 y = 1 }
+		marines_motorized = { x = 0 y = 2 }
+	# 2d Marines Assault battalion
+		marines_motorized = { x = 1 y = 0 }
+		marines_motorized = { x = 1 y = 1 }
+		marines_motorized = { x = 1 y = 2 }
+	# 3d Marines Assault battalion
+		marines_motorized = { x = 2 y = 0 }
+		marines_motorized = { x = 2 y = 1 }
+		marines_motorized = { x = 2 y = 2 }
+	# 1st self-propelled air-drop howitzer battery
+		self_propelled_howitzers = { x = 3 y = 0 }
+		self_propelled_howitzers = { x = 3 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 3 }
+		air_droppable_self_propelled_howitzers = { x = 3 y = 4 }
+	# 1st anti-tank air-drop artillery battery	
+		at_artillery = { x = 4 y = 0 }
+		portable_at_ml = { x = 4 y = 1 }
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 5 y = 0 }
+		truck_self_propelled_aag = { x = 5 y = 1 }
+		truck_self_propelled_aag = { x = 5 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 6 y = 0 }
+		rocket_artillery_sr = { x = 6 y = 1 }
+		rocket_artillery_sr = { x = 6 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Marines assault brigade on MT-LB"	
+	regiments = {
+	# 1st Marines Assault battalion
+		marines_mechanized_on_apc_tracked = { x = 0 y = 0 }
+		marines_mechanized_on_apc_tracked = { x = 0 y = 1 }
+		marines_mechanized_on_apc_tracked = { x = 0 y = 2 }
+	# 2d Marines Assault battalion
+		marines_mechanized_on_apc_tracked = { x = 1 y = 0 }
+		marines_mechanized_on_apc_tracked = { x = 1 y = 1 }
+		marines_mechanized_on_apc_tracked = { x = 1 y = 2 }
+	# 3d Marines Assault battalion
+		marines_mechanized_on_apc_tracked = { x = 2 y = 0 }
+		marines_mechanized_on_apc_tracked = { x = 2 y = 1 }
+		marines_mechanized_on_apc_tracked = { x = 2 y = 2 }
+	# 1st tank battalion
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		main_battle_tank = { x = 3 y = 3 }		
+	# 1st self-propelled air-drop howitzer battery
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 3 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 4 }	
+	# 1st anti-tank air-drop artillery battery	
+		at_artillery = { x = 5 y = 0 }
+		portable_at_ml = { x = 5 y = 1 }	
+	# 1st surface-to-air missile air-drop artillery battery
+		mechanized_self_propelled_aa_ml = { x = 6 y = 0 }
+		mechanized_self_propelled_aa_ml = { x = 6 y = 1 }
+		truck_self_propelled_aag = { x = 6 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 7 y = 0 }
+		rocket_artillery_sr = { x = 7 y = 1 }
+		rocket_artillery_sr = { x = 7 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Marines assault brigade on BTR"	
+	regiments = {
+	# 1st Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+	# 2d Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+	# 3d Marines Assault battalion
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		marines_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+	# 1st tank battalion
+		main_battle_tank = { x = 3 y = 0 }
+		main_battle_tank = { x = 3 y = 1 }
+		main_battle_tank = { x = 3 y = 2 }
+		main_battle_tank = { x = 3 y = 3 }		
+	# 1st self-propelled air-drop howitzer battery
+		self_propelled_howitzers = { x = 4 y = 0 }
+		self_propelled_howitzers = { x = 4 y = 1 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 2 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 3 }
+		air_droppable_self_propelled_howitzers = { x = 4 y = 4 }	
+	# 1st anti-tank air-drop artillery battery	
+		at_artillery = { x = 5 y = 0 }
+		portable_at_ml = { x = 5 y = 1 }	
+	# 1st surface-to-air missile air-drop artillery battery
+		portable_aa_ml = { x = 6 y = 0 }
+		truck_self_propelled_aag = { x = 6 y = 1 }
+		truck_self_propelled_aag = { x = 6 y = 2 }
+	# 1st multiple rocket launcher division (artillery battalion)
+		rocket_artillery_sr = { x = 7 y = 0 }
+		rocket_artillery_sr = { x = 7 y = 1 }
+		rocket_artillery_sr = { x = 7 y = 2 }
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Marines assault brigade on BMP"	
 	regiments = {
 	# 1st Marines Assault battalion
 		marines_mechanized_on_ifv_tracked = { x = 0 y = 0 }
@@ -246,451 +1154,2972 @@ division_template = {
 		cbrn_defense_company = { x = 0 y = 4 }
 		medical_company = { x = 0 y = 5 }
 		electronic_warfare_company = { x = 0 y = 6 }
-		# #uas_company = { x = 0 y = 7 }
+		#uas_company = { x = 1 y = 0 }
 		sniper_company = { x = 1 y = 1 }
 		# tech_engineer_battalion = { x = 0 y = 9 }
 		 
 	}
 }
 
-units = {
-	
-	division = {
-		name = "5 Juntuán"
-		location = 7097
-		division_template = "Brigade on APC wheeled"
-		start_experience_factor = 0.3
-		
+division_template = {
+	name = "Marine Artillery Brigade"
+	regiments = {
+	# 1st marines_mechanized on apc tracked
+		marines_mechanized_on_apc_tracked = { x = 0 y = 0 }
+		marines_mechanized_on_apc_tracked = { x = 0 y = 1 }
+		marines_mechanized_on_apc_tracked = { x = 0 y = 2 }
+	# 1d Marine Rocket Artillery far range battalion
+		heavy_rocket_artillery = { x = 1 y = 0 }
+		heavy_rocket_artillery = { x = 1 y = 1 }
+		heavy_rocket_artillery = { x = 1 y = 2 }	
+	# 2st Marine Rocket Artillery far range battalion
+		heavy_rocket_artillery = { x = 2 y = 0 }
+		heavy_rocket_artillery = { x = 2 y = 1 }
+		heavy_rocket_artillery = { x = 2 y = 2 }
+	# 1st Marine Rocket Artillery short range battalion
+		rocket_artillery_sr = { x = 3 y = 0 }
+		rocket_artillery_sr = { x = 3 y = 1 }
+		rocket_artillery_sr = { x = 3 y = 2 }
+	# Heavy Artillery Battalion
+		self_propelled_heavy_artillery = { x = 4 y = 0 }
+		self_propelled_heavy_artillery = { x = 4 y = 1 }
+		self_propelled_heavy_artillery = { x = 4 y = 2 }
+	# гаубичный самоходный артиллерийский дивизион	
+		self_propelled_howitzers = { x = 5 y = 0 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 5 y = 1 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 5 y = 2 } # батарея САО на шасси гусеничных БТР
+	# зенитный ракетный дивизион
+		mechanized_self_propelled_aa_ml = { x = 6 y = 0 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+		mechanized_self_propelled_aa_ml = { x = 6 y = 1 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
 	}
-	division = {
-		name = "75 Juntuán"
-		location = 7097
-		division_template = "Brigade on APC wheeled"
-		start_experience_factor = 0.3
-		
-
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
 	}
-	### 1st Army Group (CO: Song Zheyuan) ###
-	division = {
-		name = "58 Juntuán"
-		location = 4013
-		division_template = "Tank Brigade"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "60 Juntuán"
-		location = 1195
-		division_template = "Tank Brigade"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "Xin 3 Juntuán"
-		location = 11947
-		division_template = "Motuo Hua Bubing Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 15th Army Group (CO: Chen Cheng) ###
-	division = {
-		name = "2 Bubing Shi"
-		location = 7007
-		division_template = "Juntuán"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
-		start_experience_factor = 0.3
-
-	}
-	division = {
-		name = "25 Bubing Shi"
-		location = 7007
-		division_template = "Juntuán"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "37 Juntuán"
-		location = 7007
-		division_template = "Motuo Hua Bubing Jun"
-		start_experience_factor = 0.3
-
-	}
-	division = {
-		name = "52 Juntuán"
-		location = 7054
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "79 Juntuán"
-		location = 7054
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 19th Army Group (CO: Luo Zhuoying) ###
-	division = {
-		name = "32 Juntuán"
-		location = 10058
-		division_template = "Sanjiao Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "49 Juntuán"
-		location = 7146
-		division_template = "Brigade on APC tracked"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "70 Juntuán"
-		location = 12059
-		division_template = "Brigade on APC tracked"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 20th Army Group (CO: Shang Zhen) ###
-	division = {
-		name = "14 Bubing Shi"
-		location = 10086
-		division_template = "Sanjiao Jun"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "53 Juntuán"
-		location = 10086
-		division_template = "Sanjiao Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "87 Juntuán"
-		location = 1125
-		division_template = "Brigade on IFV tracked"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 27th Army Group (CO: Yang Sen) ###
-	division = {
-		name = "20 Juntuán"
-		location = 7104
-		division_template = "Brigade on IFV tracked"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 30th Army Group (CO: Wang Lingji) ###
-	division = {
-		name = "73 Juntuán"
-		location = 12019
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "78 Juntuán"
-		location = 12019
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	### Hunan C-in-C (CO: ) ###
-	division = {
-		name = "3 Bubing Shi"
-		location = 7097
-		division_template = "Juntuán"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "73 Juntuán"
-		location = 7097
-		division_template = "Sanjiao Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "Xin 6 Juntuán"
-		location = 7097
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-
-	##### Tenth War Area (CO: Jiang Dingwen) #####
-	division = {
-		name = "16 Juntuán"
-		location = 7625
-		division_template = "Sanjiao Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 34th Army Group (CO: Hu Zongnan) ###
-	division = {
-		name = "27 Juntuán"
-		location = 7625
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "90 Juntuán"
-		location = 7625
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-
-	##### Kuomintang Reserves (CO: Bai Chongxi) #####
-	division = {
-		name = "43 Juntuán"
-		location = 6999
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "86 Juntuán"
-		location = 6999
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 8th Army Group (CO: Sun Chu) ###
-	division = {
-		name = "9 Bubing Shi"
-		location = 6999
-		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "36 Bubing Shi"
-		location = 6999
-		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "87 Bubing Shi"
-		location = 6999
-		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "88 Bubing Shi"
-		location = 6999
-		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "1 Juntuán"
-		location = 6999
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "2 Juntuán"
-		location = 6999
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 24th Army Group (CO: Pang Bingxun) ###
-	division = {
-		name = "6 Bubing Shi"
-		location = 4925
-		division_template = "Juntuán"		# German-trained division (frontline infantry, better equipment and experience)
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "6 Juntuán"
-		location = 4925
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "64 Juntuán"
-		location = 4925
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-	### 28th Army Group (CO: Pan Wenhua) ###
-	division = {
-		name = "23 Juntuán"
-		location = 4925
-		division_template = "Sanjiao Jun"
-		start_experience_factor = 0.3
-		
-
-	}
-	division = {
-		name = "26 Juntuán"
-		location = 4925
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		
-
-	}
-
-	### TROOPS FROM ANNEXED WARLORDS
-	### Yunnan ###
-	division = {
-		name = "Kunming Jingbei"
-		location = 12789
-		division_template = "Juntuán"		# Provincial militia unit (poor equipment and training)
-		start_equipment_factor = 0.3
-
-	}
-	division = {
-		name = "Yunnan Baoan Ke"
-		location = 10346
-		division_template = "Juntuán"		# Provincial militia unit (poor equipment and training)
-		start_equipment_factor = 0.3
-
-	}
-	division = {
-		name = "Dali Baoan Ke"
-		location = 10346
-		division_template = "Juntuán"		# Provincial militia unit (poor equipment and training)
-		start_equipment_factor = 0.3
-
-	}
-	### Guangxi ###
-	division = {
-		name = "Guilin Jingbei"
-		location = 10404
-		division_template = "Juntuán"		# Provincial militia unit (poor equipment and training)
-		start_equipment_factor = 0.3
-
-	}
-	### Xibei San Ma ###
-	##### Eighth War Area (CO: Zhu Shaoling) [Subordinate to KMT but acting quasi-independently within their own theatre] #####
-	division = {
-		name = "80 Juntuán"
-		location = 8081
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.8
-
-	}
-	division = {
-		name = "82 Juntuán"
-		location = 3745
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.8
-
-	}
-	division = {
-		name = "Xin 2 Juntuán"
-		location = 1647
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.8
-
-	}
-	division = {
-		name = "Golmud Jingbei"
-		location = 12846
-		division_template = "Juntuán"		# Provincial militia unit (poor equipment and training)
-		start_equipment_factor = 0.3
-
-	}
-	### 17th Army Group (CO: Hu Zongnan) ###
-	division = {
-		name = "81 Juntuán"
-		location = 10724
-		division_template = "Juntuán"
-		start_experience_factor = 0.3
-	}
-	
-	division = {
-		name = "43rd Airborne Division"
-		location = 11781
-		division_template = "Airborne Assault Brigade on BMD"
-		start_experience_factor = 0.8
-		start_equipment_factor = 0.8
-
-	}
-	
-	division = {
-		name = "44rd Airborne Division"
-		location = 11886
-		division_template = "Airborne Assault Brigade on BMD"
-		start_experience_factor = 0.8
-		start_equipment_factor = 0.8
-
-	}
-	
-	division = {
-		name = "Units of quick reaction 'Magic sword of the East'"
-		location = 9843
-		division_template = "Special Forces brigade on APC"		
-		start_experience_factor = 0.9
-		start_equipment_factor = 0.9
-
-	}
-	
-	division = {
-		name = "Special Forces 'Siberian tiger'"
-		location = 7693
-		division_template = "Special Forces brigade on APC"		
-		start_experience_factor = 0.9
-		start_equipment_factor = 0.9
-
-	}
-	
-	division = {
-		name = "1st Marine Corps"
-		location = 1070
-		division_template = "Marines assault brigade on IFV"
-		start_experience_factor = 0.8
-		start_equipment_factor = 0.8
-		
-
-	}
-	
 }
+
+division_template = {
+	name = "Mountaineers brigade on MT-LB"
+	regiments = {
+	# 1st Mountaineers battalion on MT-LB
+		mountaineers_mechanized_on_apc_tracked = { x = 0 y = 0 }
+		mountaineers_mechanized_on_apc_tracked = { x = 0 y = 1 }
+		mountaineers_mechanized_on_apc_tracked = { x = 0 y = 2 }
+		animal_powered_light_mortars = { x = 0 y = 3}
+	# 2d Mountaineers battalion on MT-LB
+		mountaineers_mechanized_on_apc_tracked = { x = 1 y = 0 }
+		mountaineers_mechanized_on_apc_tracked = { x = 1 y = 1 }
+		mountaineers_mechanized_on_apc_tracked = { x = 1 y = 2 }
+		animal_powered_light_mortars = { x = 1 y = 3}
+	# 3st Mountaineers battalion MT-LB
+		mountaineers_mechanized_on_apc_tracked = { x = 2 y = 0 }
+		mountaineers_mechanized_on_apc_tracked = { x = 2 y = 1 }
+		mountaineers_mechanized_on_apc_tracked = { x = 2 y = 2 }
+		animal_powered_light_mortars = { x = 2 y = 3}
+	# 1st special forces battalion on apc tracked
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_tracked = { x = 3 y = 2 }
+	# reconnaissaince battalion MT-LB
+		recons_mechanized_on_light_apc_tracked = { x = 4 y = 0 }
+		recons_mechanized_on_light_apc_tracked = { x = 4 y = 1 }
+		recons_mechanized_on_light_apc_tracked = { x = 4 y = 2 }
+	# реактивный артиллерийский дивизион ( 3 юнита )
+		rocket_artillery_sr = { x = 5 y = 0 }
+		rocket_artillery_sr = { x = 5 y = 1 }
+		rocket_artillery_sr = { x = 5 y = 2 }
+	# гаубичный самоходный артиллерийский дивизион	
+		self_propelled_howitzers = { x = 6 y = 0 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 6 y = 1 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 6 y = 2 } # батарея САО на шасси гусеничных БТР
+	# зенитный ракетный дивизион
+		mechanized_self_propelled_aa_ml = { x = 7 y = 0 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+		mechanized_self_propelled_aa_ml = { x = 7 y = 1 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Mountaineers brigade on BTR"
+	regiments = {
+	# 1st Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 0 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 0 y = 1 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 0 y = 2 }
+		animal_powered_light_mortars = { x = 0 y = 3}
+	# 2d Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 1 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 1 y = 1 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 1 y = 2 }
+		animal_powered_light_mortars = { x = 1 y = 3}
+	# 3st Mountaineers battalion on wheeled BTR
+		mountaineers_mechanized_on_apc_wheeled = { x = 2 y = 0 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 2 y = 1 }
+		mountaineers_mechanized_on_apc_wheeled = { x = 2 y = 2 }
+		animal_powered_light_mortars = { x = 2 y = 3}
+	# 1st special forces battalion on wheeled BTR
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 0 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 1 }
+		special_forces_mechanized_on_apc_wheeled = { x = 3 y = 2 }
+	# 1st reconnaissaince battalion on wheeled BTR
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 0 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 1 }
+		recons_mechanized_on_apc_wheeled = { x = 4 y = 2 }	
+	# реактивный артиллерийский дивизион ( 3 юнита )
+		rocket_artillery_sr = { x = 5 y = 0 }
+		rocket_artillery_sr = { x = 5 y = 1 }
+		rocket_artillery_sr = { x = 5 y = 2 }
+	# гаубичный самоходный артиллерийский дивизион	
+		self_propelled_howitzers = { x = 6 y = 0 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 6 y = 1 } # батарея САО на шасси гусеничных БТР
+		self_propelled_howitzers = { x = 6 y = 2 } # батарея САО на шасси гусеничных БТР
+	# зенитный ракетный дивизион
+		mechanized_self_propelled_aa_ml = { x = 7 y = 0 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+		mechanized_self_propelled_aa_ml = { x = 7 y = 1 } # батарея самоходных ЗРК малого радиуса на шасси гусеничного БТР
+	}
+	support = {
+		engineer_battalion = { x = 0 y = 0 }
+		airborne_support_company = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		recon_battalion = { x = 0 y = 3 }
+		cbrn_defense_company = { x = 0 y = 4 }
+		medical_company = { x = 0 y = 5 }
+		electronic_warfare_company = { x = 0 y = 6 }
+		#uas_company = { x = 1 y = 0 }
+		sniper_company = { x = 1 y = 1 }
+		# tech_engineer_battalion = { x = 0 y = 9 }
+		 
+	}
+}
+
+division_template = {
+	name = "Vnutrenniye voyska"
+
+	regiments = {
+		gendarmes_light_motorized = { x = 0 y = 0 }
+		gendarmes_light_motorized = { x = 0 y = 1 }
+		gendarmes_light_motorized = { x = 0 y = 2 }
+		gendarmes_light_motorized = { x = 0 y = 3 }
+		gendarmes_light_motorized = { x = 0 y = 4 }
+	}
+}
+
+##### OOB #####
+units = {
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 4852
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"
+		location = 4852
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 4852
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 10433
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 10433
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 10463
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade Heavy"		
+		location = 10463
+		division_template = "Artillery Brigade Heavy"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#####
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10463
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12500
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4551
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10368
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10698
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1693
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4745
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10638
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1811
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1871
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4555
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4222
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1796
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4655
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12331
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12609
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10629
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12880
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	######
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 10463
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 10463
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 10463
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 10433
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 10433
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 7737
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 4849
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 4823
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 5042
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 8112
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12789
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12898
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 10863
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 7976
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 5009
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 10413
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 10776
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 1522
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 1114
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 1196
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 1172
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 4656
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 1469
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 10433
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 10433
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 10433
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4852
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4852
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4852
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4852
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12690
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 10521
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 7569
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10000
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10000
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10000
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 4205
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 4205
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 4205
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10068
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10068
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 10068
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 1150
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BTR"		
+		location = 1150
+		division_template = "Marines assault brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#####################
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 1150
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 11981
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 11981
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#################
+	division = {		
+		name = "Anti Air Brigade"	
+		location = 12443
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 12590
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 1844
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 1844
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 4828
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 12705
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 1070
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 7159
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	####################
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 1708
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 7693
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 11771
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 11771
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 11771
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###############
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 12705
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 12705
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 1070
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 1070
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Regiment on BTR"	
+		location = 1070
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Regiment on BTR"	
+		location = 7159
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##########
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 7159
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 7159	
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 9866
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 9866
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 9866
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 9866
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 10776
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 1196
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12898
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 8041
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 2014
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 13859
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 13859
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 13859
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 8029
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 8029
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 5033
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 5102
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 8041
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 10741
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 5018
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 8112
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 12601
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 12671
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 4849
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 4783
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 12609
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Rocket Artillery Regiment"	
+		location = 4222
+		division_template = "Rocket Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 9974
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 9974
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 9974
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7191
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7191
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7191
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7014
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7014
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marines assault brigade on MT-LB"	
+		location = 7014
+		division_template = "Marines assault brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 861
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 800
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 944
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 9897
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 6860
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 5087
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Tank Brigade"		
+		location = 5087
+		division_template = "Guard Tank Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#####
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 6863
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1732
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 7832
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10675
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 7848
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13150
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10541
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12537
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 7697
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10612
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 2015
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 2015
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 2015
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 8068
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 8068
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 2015
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12899
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12899
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	######
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 6806
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 3944
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 6981
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 6860
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 9848
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 783
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 6811
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 3815
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12548
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 7743
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 13858
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 1991
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12807
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 4900
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 2014
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 2098
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 12732
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 12732
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 12732
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 8055
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 8055
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 3949
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 11781
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1608
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1608
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1608
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 10885
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 10885
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4709
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4709
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 5018
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 8041
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 5102
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 7071
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 7071
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 7071
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 4196
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 4196
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 4196
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1055
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1055
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1055
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 7108
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 7108
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#####################
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 13921
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 13920
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 7108
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#################
+	division = {		
+		name = "Anti Air Brigade"	
+		location = 10517
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 8041
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 4407
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 10741
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "AT Artillery Brigade"	
+		location = 5009
+		division_template = "AT Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4121
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 10004
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1319
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1319
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1319
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7965
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7965
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7965
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4925
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4925
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4925
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 12524
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 9803
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7167
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7167
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 10517
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 10517
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1367
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1367
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 4431
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 4431
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 7549
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	####################
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 10413
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 5009
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 7094
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 7988
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 10691
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###############
+	division = {		
+		name = "Artillery Brigade"	
+		location = 2074
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade"	
+		location = 2074
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade"	
+		location = 2028
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Artillery Brigade"	
+		location = 8049
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Artillery Brigade"	
+		location = 7631
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Artillery Brigade"	
+		location = 7631
+		division_template = "Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##########
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 6932
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 6932
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 10034
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 10034
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 1597
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 1597
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 4655
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12524
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 10787
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12767
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12767
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 1069
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 1069
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 1069
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 1069
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 7071
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 4196
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 1055
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 9974
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Marine Artillery Brigade"	
+		location = 7191
+		division_template = "Marine Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 7803
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12880
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 10899
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4783
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 7727
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1778
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4843
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12598
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 12671
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4083
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4083
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 4083
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 5087
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1970
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 8029
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13213
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 13859
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BMP"		
+		location = 1961
+		division_template = "Mechanized infantry brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	######
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 7418
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 7418
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 7418
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 8049
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 8049
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 1766
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 7693
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12119
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12590
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 4828
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 1844
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 1703
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 1708
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12526
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 786
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 12601
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 7137
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 7137
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 10404
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 10404
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on MT-LB"		
+		location = 10404
+		division_template = "Mechanized infantry brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 9958
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mechanized infantry brigade on BTR"		
+		location = 9958
+		division_template = "Mechanized infantry brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1519
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1519
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 1519
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4093
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4093
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4093
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on BTR"		
+		location = 4093
+		division_template = "Special Forces brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 9803
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"	
+		location = 944
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on BTR"		
+		location = 3929
+		division_template = "Mountaineers brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#############
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 13921
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 13921
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 13921
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 13920
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 13920
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1047
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1047
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1047
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1047
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 1047
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines assault brigade on BMP"		
+		location = 9938
+		division_template = "Marines assault brigade on BMP"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#####################
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 9938
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 9938
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Marines light regiment on tracks"	
+		location = 9938
+		division_template = "Marines light regiment on tracks"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	#################
+	division = {		
+		name = "Anti Air Brigade"	
+		location = 1200
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##############
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7866
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 7866
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1519
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1519
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1519
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4093
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4093
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 4093
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1638
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1638
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 1638
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 11913
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 11913
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 11913
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 11913
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 9958
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 9958
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 10834
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Special Forces brigade on APC"	
+		location = 10834
+		division_template = "Special Forces brigade on APC"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 3814
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 12074
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Artillery Regiment"	
+		location = 12074
+		division_template = "Airborne Artillery Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	####################
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 7743
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Mountaineers brigade on MT-LB"	
+		location = 10822
+		division_template = "Mountaineers brigade on MT-LB"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 10822
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 10822
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Guard Rocket Artillery Brigade"	
+		location = 4121
+		division_template = "Guard Rocket Artillery Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###############
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 6932
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 4431
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 7549
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {		
+		name = "Airborne Regiment on BTR"	
+		location = 7549
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Regiment on BTR"	
+		location = 7549
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Regiment on BTR"	
+		location = 1597
+		division_template = "Airborne Regiment on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	##########
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 1597
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 3814
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 10034
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Anti-Air Regiment"	
+		location = 10034
+		division_template = "Airborne Anti-Air Regiment"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 10034
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Airborne Assault Brigade on BMD"	
+		location = 10034
+		division_template = "Airborne Assault Brigade on BMD"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	###########
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12776
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 1551
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12724
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12724
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Reconnaissance Brigade on BTR"	
+		location = 12724
+		division_template = "Reconnaissance Brigade on BTR"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	############
+	division = {
+		name = "Anti Air Brigade"	
+		location = 9843
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7141
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 1193
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 4070
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 1094
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7004
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 1999
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 12067
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7200
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7094
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 11988
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 1976
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7397
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 1519
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 4093
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 13920
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 13921
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 3742
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 7631
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 9843
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 9843
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "Anti Air Brigade"	
+		location = 9843
+		division_template = "Anti Air Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+}
+
+
 
 ### Air Forces ###
 air_wings = {

@@ -6,7 +6,7 @@ ideas = {
 
 	economic_mobilisation_laws = { 
 		law = yes
-		use_list_view = yes
+		#use_list_view = yes
 		
 		civilian_economy = {
 			
@@ -31,6 +31,10 @@ ideas = {
 				civilian_intel_to_others = 40.0
 				navy_intel_to_others = 20
 				airforce_intel_to_others = 15.0
+			}
+
+			on_add = {
+				custom_effect_tooltip = civilian_economy_fatigue
 			}
 			
 		}
@@ -66,6 +70,10 @@ ideas = {
 				civilian_intel_to_others = 35.0
 				navy_intel_to_others = 18
 				airforce_intel_to_others = 13.0
+			}
+
+			on_add = {
+				custom_effect_tooltip = low_economic_mobilisation_fatigue
 			}
 
 			ai_will_do = {
@@ -110,6 +118,10 @@ ideas = {
 				civilian_intel_to_others = 20.0
 				navy_intel_to_others = 10
 				airforce_intel_to_others = 10.0
+			}
+
+			on_add = {
+				custom_effect_tooltip = partial_economic_mobilisation_fatigue
 			}
 			
 			ai_will_do = {
@@ -165,7 +177,12 @@ ideas = {
 				airforce_intel_to_others = 7.0
 				navy_intel_to_others = 2
 			}
-						
+			
+			on_add = {
+				country_event = mobilisation_economy.1
+				custom_effect_tooltip = war_economy_fatigue
+			}
+			
 			ai_will_do = {
    				factor = 1
 
@@ -209,6 +226,10 @@ ideas = {
 				conversion_cost_civ_to_mil_factor=  0.20
 				conversion_cost_mil_to_civ_factor = 0.10
 				airforce_intel_to_others = 3.0
+			}
+
+			on_add = {
+				custom_effect_tooltip = tot_economic_mobilisation_fatigue
 			}
 			
 		}
