@@ -27,43 +27,43 @@ We congratulate the Chinese on the holiday, on the centenary of the Communist Pa
 - China's power plants have been redesigned.
   
   Regions affected by the edits:
-  -- Jiandao
-  -- Gans
-  -- Yunnan
-  -- Hong Kong
-  -- Fujian
-  -- Zhejiang
-  -- Shandong
-  -- Jiangsu
-  -- Guangxi
-  -- Jiangxi
-  -- Nyingchi
-  -- Hunan
-  -- Guizhou
-  -- Qinghai
-  -- Sichuan
-  -- Anhui
-  -- Henan
-  -- Beijing
-  -- Chifeng-Tongliao
-  -- Hohhot
-  -- Shilin-Gol
-  -- Shanghai
-  -- Habey
-  -- Shanxi
-  -- Tachen
-  -- Beitun
-  -- Hubei
-  -- Alashan
-  -- Shaanxi
-  -- Heilongjiang
-  -- Hulun-Buir-Khingan
-  -- Liaodong
-  -- Songjiang
-  -- Hami-Turfan
-  -- Paracel Islands
-  -- Spratly
-  -- Chongqing
+  - Jiandao
+  - Gans
+  - Yunnan
+  - Hong Kong
+  - Fujian
+  - Zhejiang
+  - Shandong
+  - Jiangsu
+  - Guangxi
+  - Jiangxi
+  - Nyingchi
+  - Hunan
+  - Guizhou
+  - Qinghai
+  - Sichuan
+  - Anhui
+  - Henan
+  - Beijing
+  - Chifeng-Tongliao
+  - Hohhot
+  - Shilin-Gol
+  - Shanghai
+  - Habey
+  - Shanxi
+  - Tachen
+  - Beitun
+  - Hubei
+  - Alashan
+  - Shaanxi
+  - Heilongjiang
+  - Hulun-Buir-Khingan
+  - Liaodong
+  - Songjiang
+  - Hami-Turfan
+  - Paracel Islands
+  - Spratly
+  - Chongqing
 
 - The level of naval bases on the Paracel Islands and Spratly Islands has been increased.
 - The limit of environmentally friendly and thermal power plants has been increased, since it was impossible for China to improve the situation with electricity.
