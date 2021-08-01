@@ -43,7 +43,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -62,13 +62,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}	
 		}
@@ -113,7 +117,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -132,13 +136,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -182,7 +190,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -201,13 +209,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -253,7 +265,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -272,13 +284,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -320,7 +336,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -339,13 +355,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -388,7 +408,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -407,13 +427,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -455,7 +479,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -474,13 +498,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -524,7 +552,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -543,13 +571,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -592,7 +624,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -611,13 +643,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -661,7 +697,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -680,13 +716,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -729,7 +769,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -748,13 +788,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -799,7 +843,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -818,13 +862,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -864,7 +912,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -883,13 +931,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -932,7 +984,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -951,13 +1003,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -999,7 +1055,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -1018,13 +1074,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -1068,7 +1128,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -1087,13 +1147,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -1126,7 +1190,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -1145,13 +1209,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -1191,7 +1259,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -1210,13 +1278,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -1260,7 +1332,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { 
-					#OR = {
+					OR = {
 						NOT = { has_government = rad_islamists }
 						NOT = {
 							THIS = {
@@ -1279,13 +1351,17 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ISA } }
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
-					#}
+					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
 					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}
@@ -1339,12 +1415,16 @@ country_event = {
 						NOT = { ROOT = { is_justifying_wargoal_against = ALQ } }
 						NOT = { ROOT = { is_justifying_wargoal_against = TAL } }
 					}
+					NOT = { has_global_flag = UN.off }
 				}
 				news_event = { id = news.74 days = 4 }
 				ROOT = { 
-					#save_event_target_as = country_aggressor
+					save_event_target_as = country_aggressor
 					set_country_flag = country_justifying_wargoal
-					country_event = { id = UN_event.10 days = 10 }
+					if = {
+						limit = { NOT = { has_global_flag = UN.off } }							
+						country_event = { id = UN_event.10 days = 10 }
+					}
 				}
 			}
 		}

@@ -7,9 +7,10 @@ blr_decision = {
 		}
 		days_remove = 14
 		visible = {
-			#has_completed_focus = BLR_rename
+			has_government = fascism
 			controls_state = 206
 		}
+		
 		#remove_trigger = {	} 
 		cost = 400
 		fire_only_once = yes
@@ -18,7 +19,11 @@ blr_decision = {
 			set_province_name = {
                 id = 11370 
                 name = "Mensk" 
-            }
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
 		}
 	}
 	BLR_rename_Vilnys = {
@@ -29,7 +34,7 @@ blr_decision = {
 		}
 		days_remove = 14
 		visible = {
-			#has_completed_focus = BLR_rename
+			has_government = fascism
 			controls_state = 96
 		}
 		#remove_trigger = {	} 
@@ -40,7 +45,11 @@ blr_decision = {
 			set_province_name = {
                 id = 13822
                 name = "Vilno" 
-            }
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
 		}
 	}
 	BLR_rename_Brest = {
@@ -51,7 +60,7 @@ blr_decision = {
 		}
 		days_remove = 14
 		visible = {
-			#has_completed_focus = BLR_rename
+			has_government = fascism
 			controls_state = 94
 		}
 		#remove_trigger = {	} 
@@ -62,7 +71,11 @@ blr_decision = {
 			set_province_name = {
                 id = 3392
                 name = "Breste" 
-            }
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
 		}
 	}
 	BLR_rename_Vitebsk = {
@@ -73,7 +86,7 @@ blr_decision = {
 		}
 		days_remove = 14
 		visible = {
-			#has_completed_focus = BLR_rename
+			has_government = fascism
 			controls_state = 207
 		}
 		#remove_trigger = {	} 
@@ -84,7 +97,11 @@ blr_decision = {
 			set_province_name = {
                 id = 11241
                 name = "Vitebesk" 
-            }
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
 		}
 	}
 	BLR_rename_Novogorodok = {
@@ -95,7 +112,7 @@ blr_decision = {
 		}
 		days_remove = 14
 		visible = {
-			#has_completed_focus = BLR_rename
+			has_government = fascism
 			controls_state = 95
 		}
 		#remove_trigger = {	} 
@@ -106,8 +123,143 @@ blr_decision = {
 			set_province_name = {
                 id = 9359
                 name = "Novogorodok" 
-            }
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
 		}
 	}
 }
 
+omon_decision = {
+	BLR_car_Mars = {
+		icon = generic_political_discourse
+		available = {
+			has_completed_focus = BLR_new_equipment_for_OMON
+		}
+		days_remove = 14
+		visible = {has_completed_focus = BLR_new_equipment_for_OMON}
+		#remove_trigger = {	} 
+		cost = 80
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			set_province_name = {
+                id = 11370 
+                name = "Mensk" 
+			}
+			add_equipment_to_stockpile = {
+				type = apc_wheeled_g3_equipment_0
+				amount = -50
+				producer = BLR
+			}
+		}
+	}
+	BLR_MP_5 = {
+		icon = generic_political_discourse
+		available = {
+			has_completed_focus = BLR_new_equipment_for_OMON
+		}
+		days_remove = 14
+		visible = {has_completed_focus = BLR_new_equipment_for_OMON}
+		#remove_trigger = {	} 
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			set_province_name = {
+                id = 11370 
+                name = "Mensk" 
+			}
+			add_equipment_to_stockpile = {
+				type = army_salw_equipment_3
+				amount = 500
+				producer = GER
+			}
+			country_event = { id = belarus.42 days = 1 }
+		}
+	}
+	BLR_armored_cars = {
+		icon = generic_political_discourse
+		available = {
+			has_completed_focus = BLR_new_equipment_for_OMON
+			has_equipment = { apc_wheeled_g3_equipment_0 > 50 }
+		}
+		days_remove = 14
+		visible = {has_completed_focus = BLR_new_equipment_for_OMON}
+		#remove_trigger = {	} 
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = apc_wheeled_g3_equipment_0
+				amount = -50
+				producer = BLR
+			}
+		}
+	}
+}
+
+omon_fund_decision = {
+	fund_OMON = {
+		icon = generic_political_discourse
+		available = {has_completed_focus = BLR_place_a_bet_on_law_enforcement_agencies}
+		#days_remove = 14
+		visible = { has_completed_focus = BLR_place_a_bet_on_law_enforcement_agencies }
+		days_mission_timeout = 30
+		is_good = yes
+		fire_only_once = no
+		ai_will_do = { factor = 1 }
+        activation = {has_completed_focus = BLR_place_a_bet_on_law_enforcement_agencies}
+		allowed = {}
+		timeout_effect = {
+			if = {
+				limit = {
+					check_variable = { budget_reserve > 79 }
+				}
+				custom_effect_tooltip = fund_omon_TT
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = 80 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = 0.008 }
+				}
+			}
+		}
+	}
+}
+
+war_training_decision = {
+	BLR_training = {
+		icon = generic_political_discourse
+		available = {
+			has_completed_focus = BLR_voen_parad
+		}
+		days_remove = 14
+		visible = { has_completed_focus = BLR_voen_parad }
+		#remove_trigger = {	} 
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			If = {
+				limit = {
+            	    is_in_faction_with = RUS
+				}
+				country_event = { id = belarus.30 days = 3 }	
+			}
+			If = {
+				limit = { 
+					NOT = {
+						is_in_faction_with = RUS
+					}
+				}
+				country_event = { id = belarus.31 days = 3 }	
+			}
+		}
+	}
+}

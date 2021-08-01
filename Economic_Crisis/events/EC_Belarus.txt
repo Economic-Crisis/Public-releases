@@ -2765,6 +2765,7 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
+        custom_effect_tooltip = BLR_belarus_35_a_t
         add_popularity = {
 			ideology = liberalism
 			popularity = -0.05
@@ -2786,10 +2787,16 @@ country_event = {
                 is_historical_focus_on = yes
             }
         }
+        custom_effect_tooltip = BLR_belarus_35_b_t
         add_popularity = {
 			ideology = liberalism
 			popularity = 0.1
         }
+        add_popularity = {
+			ideology = fascism
+			popularity = -0.03
+        }
+        add_stability = -0.05
         set_global_flag = Liberals
     }
 }
@@ -3211,5 +3218,294 @@ country_event = {
             }
         }
         add_timed_idea = { idea = BLR_devaluvation days = 730 }
+    }
+}
+country_event = { 
+    id = belarus.41 
+    title = belarus.41.t 
+    desc = belarus.41.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.41.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 100
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_timed_idea = { idea = BLR_devaluvation days = 730 }
+    }
+    option = { 
+        name = belarus.41.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 100
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_timed_idea = { idea = BLR_devaluvation days = 730 }
+    }
+    option = { 
+        name = belarus.41.c 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 100
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_timed_idea = { idea = BLR_devaluvation days = 730 }
+    }
+}
+country_event = { 
+    id = belarus.42
+    title = belarus.42.t 
+    desc = belarus.42.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.42.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+            type = army_salw_equipment_3
+            amount = -500
+            producer = GER
+        }
+    }
+    option = { 
+        name = belarus.42.b 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_equipment_to_stockpile = {
+            type = army_salw_equipment_3
+            amount = -250
+            producer = GER
+        }
+        army_experience = 20
+    }
+}
+country_event = { 
+    id = belarus.43
+    title = belarus.43.t 
+    desc = belarus.43.d
+    is_triggered_only = no
+    fire_only_once = yes
+    #picture = GFX_event_event_Lykashenko_dead
+    trigger = {
+        tag = BLR
+        has_stability < 0.1
+        has_idea = BLR_the_anger_of_people
+        has_country_leader = {
+            name = "Aleksandr Lukashenko"
+            ruling_only = yes
+        }
+    }
+    option = { 
+        name = belarus.43.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        kill_ideology_leader = neutrality
+        add_political_power = -300
+        set_global_flag = Lykashenko_dead
+    }
+}
+country_event = { 
+    id = belarus.44
+    title = belarus.44.t 
+    desc = belarus.44.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.44.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_stability = -0.1
+    }
+    option = { 
+        name = belarus.44.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 50
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        country_event = { id = belarus.45 days = 2 }
+        add_stability = 0.1
+    }
+}
+country_event = { 
+    id = belarus.45
+    title = belarus.45.t 
+    desc = belarus.45.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.45.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
+        }
+        add_stability = 0.1
+    }
+    option = { 
+        name = belarus.45.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+        }
+        add_stability = 0.1
+    }
+    option = { 
+        name = belarus.45.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = liberalism
+            elections_allowed = no
+        }
+        add_stability = 0.1
+    }
+    option = { 
+        name = belarus.45.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+        add_stability = -0.03
+    }
+}
+country_event = { 
+    id = belarus.46
+    title = belarus.46.t 
+    desc = belarus.46.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.46.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_popularity = {
+            ideology = fascism
+            popularity = -0.02
+        }
+        add_stability = -0.05
+    }
+    option = { 
+        name = belarus.46.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_popularity = {
+            ideology = fascism
+            popularity = -0.04
+        }
+        add_stability = -0.08
+    }
+    option = { 
+        name = belarus.46.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_popularity = {
+            ideology = fascism
+            popularity = -0.01
+        }
+        add_ideas = BLR_workers_discontent
+        add_stability = 0.03
+    }
+    option = { 
+        name = belarus.46.f
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        add_popularity = {
+            ideology = fascism
+            popularity = -0.08
+        }
+        add_stability = -0.1
     }
 }

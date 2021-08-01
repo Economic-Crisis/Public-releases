@@ -1,0 +1,116 @@
+guiTypes = {
+	containerWindowType = {
+		name = "colonization_gui"
+		position = { x = 0 y = 0 }	
+		
+		iconType ={
+			name ="bg"
+			spriteType = "GFX_state_colonization_bg"
+			position = { x = 147 y = 37 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="bg1"
+			spriteType = "GFX_state_colonization_bg1"
+			position = { x = 15 y = 38 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType ={
+			name ="bg2"
+			spriteType = "GFX_state_colonization_bg2"
+			position = { x = 15 y = 445 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		instantTextBoxType = {
+			name = "manpower"
+			position = { x = 20 y = 456 }
+			font = "hoi_18mbs"
+			text = "col_manpower"
+			format = left
+			maxWidth = 120
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+			pdx_tooltip = STATE_POPULATION_DESC
+		}
+		
+		instantTextBoxType = {
+			name = "owner"
+			position = { x = 24 y = 39 }
+			font = "hoi_18mbs"
+			text = "col_owner"
+			format = left
+			maxWidth = 90
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+
+		iconType ={
+			name ="text_bg"
+			spriteType = "GFX_state_colonization_text_bg"
+			position = { x = 152 y = 40 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextBoxType = {
+			name = "colonozation_label"
+			position = { x = 200 y = 39 }
+			font = "hoi_18mbs"
+			text = "colonozation_label"
+			format = left
+			#maxWidth = 90
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+
+		
+		buttonType ={
+			name ="invest_button"
+			spriteType = "GFX_stateview_button"
+			position = { x = 54 y = 485 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = col_investments
+		}
+
+		instantTextBoxType = {
+			name = "invest_text"
+			position = { x = 56 y = 485 }
+			font = "hoi_18mbs"
+			text = "Investments"
+			format = left
+			maxWidth = 90
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+			#pdx_tooltip = col_investments
+		}
+	}
+
+	containerWindowType = {
+		name = "col_race_gui"
+		position = { x = 146 y = 620 }	
+
+		iconType ={
+			name ="text_bg"
+			spriteType = "GFX_state_colonization_text_bg"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextBoxType = {
+			name = "invest_text"
+			position = { x = 56 y = 0 }
+			font = "hoi_18mbs"
+			text = "col_race"
+			format = left
+			maxWidth = 90
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+			#pdx_tooltip = col_investments
+		}
+	}
+}

@@ -32,9 +32,9 @@ focus_tree = {
 		id = BLR_proverka_fabric
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		cost = 40
-		prerequisite = {focus = BLR_industri}
-		x = -16
-		y = 1
+		prerequisite = {focus = BLR_civ_factory}
+		x = -18
+		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			if = {
@@ -54,13 +54,45 @@ focus_tree = {
 	focus = {
 		id = BLR_updat_stanki
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = {focus = BLR_industri}
+		prerequisite = {focus = BLR_civ_factory_II}
 		cost = 50
+		x = -18
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_new_stanok
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = BLR_light_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {focus = BLR_industri}
+		mutually_exclusive = {
+			focus = BLR_military_industry
+		}
+		cost = 30
+		x = -16
+		y = 1
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_light_industry
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = BLR_military_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {focus = BLR_industri}
+		mutually_exclusive = {
+			focus = BLR_light_industry
+		}
+		cost = 30
 		x = -14
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_new_stanok
+			add_ideas = BLR_military_industry
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -69,8 +101,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory_red
 		cost = 50
 		prerequisite = {
-		     focus = BLR_updat_stanki
-			 focus = BLR_proverka_fabric
+			focus = BLR_light_industry
+			focus = BLR_military_industry
 		}
 		x = -16
 		y = 2
@@ -288,8 +320,8 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 50
 		prerequisite = {
-		     focus = BLR_updat_stanki
-			 focus = BLR_proverka_fabric
+			focus = BLR_light_industry
+			focus = BLR_military_industry
 		}
 		x = -14
 		y = 2
@@ -2266,7 +2298,6 @@ focus_tree = {
 		x = -16
 		y = 8
 		completion_reward = {
-			add_political_power = 100
 			add_ideas = BLR_AI_for_industry
 			add_tech_bonus = {
 				name = electronics_bonus
@@ -2280,14 +2311,15 @@ focus_tree = {
 	focus = {
 		id = BLR_improving_extractive_industries
 		icon = GFX_goal_unknown
-		cost = 50
-		prerequisite = {focus = BLR_AI_for_industry}
-		prerequisite = {focus = BLR_green_school}
-		prerequisite = {focus = BLR_ice_palaces}
+		cost = 40
+		prerequisite = {
+			focus = BLR_AI_for_industry
+			focus = BLR_green_school
+			focus = BLR_ice_palaces
+		}
 		x = -15
 		y = 9
 		completion_reward = {
-			add_political_power = 100
 			add_ideas = BLR_improved_extractive_industries
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2625,11 +2657,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {focus = BLR_bel_stroy_mash}
+		prerequisite = {focus = BLR_improving_extractive_industries}
 		x = -15
 		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 150
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2810,7 +2843,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = BLR_tractor_factory
+		id = BLR_Lighprom
 		icon = GFX_goal_unknown
 		cost = 50
 		prerequisite = {focus = BLR_civ}
@@ -2818,10 +2851,9 @@ focus_tree = {
 		y = 15
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_political_power = 150
 			add_tech_bonus = {
 				name = industrial_bonus
-				bonus = 0.2
+				bonus = 0.15
 				uses = 1
 				category = industry
 			}
@@ -2831,7 +2863,7 @@ focus_tree = {
 	focus = {
 		id = BLR_updat_railroad_tracks
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_updat_Berlin-Moskva}
 		x = -17
 		y = 14
@@ -3595,7 +3627,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_industri}
 		cost = 30
-		x = -20
+		x = -21
 		y = 1
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3608,7 +3640,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_developed_nacional_avto_prom}
 		cost = 50
-		x = -20
+		x = -21
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3657,7 +3689,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_developed_nacional_avto_prom}
 		cost = 50
-		x = -21
+		x = -22
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3706,7 +3738,7 @@ focus_tree = {
 		icon = GFX_goal_mzkt
 		prerequisite = {focus = BLR_developed_nacional_avto_prom}
 		cost = 50
-		x = -19
+		x = -20
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3755,7 +3787,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_developed_nacional_avto_prom}
 		cost = 50
-		x = -18
+		x = -19
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3804,7 +3836,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = {focus = BLR_developed_nacional_avto_prom}
 		cost = 50
-		x = -22
+		x = -23
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3857,7 +3889,7 @@ focus_tree = {
 		prerequisite = {focus = BLR_BELAZ_1}
 		prerequisite = {focus = BLR_MAZ}
 		cost = 30
-		x = -20
+		x = -21
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3881,7 +3913,7 @@ focus_tree = {
 			}
 		}
 		cost = 30
-		x = -19
+		x = -20
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -3937,7 +3969,7 @@ focus_tree = {
 			}
 		}
 		cost = 30
-		x = -21
+		x = -22
 		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4628,27 +4660,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_place_a_bet_on_law_enforcement_agencies
-		icon = GFX_goal_generic_military_sphere
-		cost = 50
-		prerequisite = {focus = BLR_kill_NEHTA}
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-		}	
-		x = 82
-		y = 5
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_siloviki
-			#add_political_power = 150
-			add_stability = -0.02
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
 		id = BLR_Lykashenko
 		icon = GFX_goal_unknown	
 		prerequisite = {focus = BLR_road}
@@ -4735,6 +4746,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_timed_idea = { idea = BLR_posledstvie_rasgona_2 days = 90 }
+			add_timed_idea = { idea = BLR_the_anger_of_people days = 730 }
 			#add_stability = -0.1
 			hidden_effect = {
 				news_event = { id = belarus_news.7 days = 18 }
@@ -4780,8 +4792,10 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			#add_political_power = 150
-			add_stability = -0.04
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4793,8 +4807,8 @@ focus_tree = {
 			has_idea = generic_nationalists_leader 
 		}
 		prerequisite = {focus = BLR_our_history}
-		#mutually_exclusive = {focus = BLR_VKL}
-		x = 61 
+		mutually_exclusive = {focus = BLR_VKL}
+		x = 60
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4812,8 +4826,8 @@ focus_tree = {
 			has_idea = generic_head_of_government_nationalist
 		}
 		prerequisite = {focus = BLR_our_history}
-		#mutually_exclusive = {focus = BLR_republic}  
-		x = 66
+		mutually_exclusive = {focus = BLR_republic}  
+		x = 62
 		y = 3
 		ai_will_do = { factor = 1 }
 		completion_reward = {
@@ -4964,7 +4978,10 @@ focus_tree = {
 		id = BLR_new_capital_and_decommunisation
 		icon = GFX_goal_unknown
 		cost = 10
-		prerequisite = { focus = BLR_VKL}
+		prerequisite = {
+			focus = BLR_republic
+			focus = BLR_VKL
+		}
 		x = 71
 		y = 4
 		ai_will_do = { factor = 1 }
@@ -5157,8 +5174,10 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_ideas = BLR_patriotism_2
-			#add_political_power = 150
-			#add_stability = 0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -5375,6 +5394,12 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 99
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5406,6 +5431,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_union_contry}
 		available = { 
 			NOT = { has_war_with = RUS }
+			    RUS = {
+					has_opinion = {
+						target = BLR
+						value > 69
+					}
+				}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5435,6 +5466,12 @@ focus_tree = {
 		prerequisite = { focus = BLR_gos_sovet }
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 69
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5465,6 +5502,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_dolg}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 69
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5479,8 +5522,6 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-		    add_political_power = 100
-			remove_ideas = obsolete_army
 			add_tech_bonus = {
 				name = infantry_bonus
 				bonus = 0.5
@@ -5499,6 +5540,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_dolg}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 59
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5672,10 +5719,12 @@ focus_tree = {
 						has_dlc = "Man the Guns"
 					}
 				}
+                RUS = {
 				set_autonomy = {
 					target = BLR
 					autonomy_state = union_state
 					freedom_level = 0.0
+				}
 				}
 			}
 			#else_if = {
@@ -5693,13 +5742,20 @@ focus_tree = {
 		cost = 70
 		prerequisite = {focus = BLR_defence_of_russian_people}
 		prerequisite = {focus = BLR_pro_russian_propoganda}
-		available = { 
+		available = {
+			 	RUS = {
+					has_opinion = {
+						target = BLR
+						value > 49
+					}
+				}
 			NOT = { has_war_with = RUS }
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
 					ruling_only = yes
 				}
+
 				has_government = neutrality
 				has_government = democratic
                 has_completed_focus = BLR_Lykashenko
@@ -5720,6 +5776,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_updat_Friend}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 49
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5746,6 +5808,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_updat_Friend}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 49
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5772,6 +5840,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_resyrs}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 49
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5798,6 +5872,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_war_traning}
 		prerequisite = {focus = BLR_resyrs}
 		available = { 
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 89
+				}
+			}
 			NOT = { has_war_with = RUS }
             OR = {
 				has_country_leader = {
@@ -5830,6 +5910,12 @@ focus_tree = {
 		prerequisite = {focus = BLR_resyrs}
 		available = { 
 			NOT = { has_war_with = RUS }
+			RUS = {
+				has_opinion = {
+					target = BLR
+					value > 79
+				}
+			}
             OR = {
 				has_country_leader = {
 					name = "Aleksandr Lukashenko"
@@ -5923,7 +6009,7 @@ focus_tree = {
 	focus = {
 		id = BLR_kill_NEHTA
 		icon = GFX_goal_unknown
-		cost = 20
+		cost = 50
 		prerequisite = {focus = BLR_cleaning}
 		prerequisite = {focus = BLR_razgon_mitinga}
 		available = {
@@ -5939,6 +6025,31 @@ focus_tree = {
 		}
 		x = 82
 		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_smert_nexta
+			add_stability = -0.1
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_new_legislation
+		icon = GFX_goal_unknown
+		cost = 40
+		prerequisite = {focus = BLR_kill_NEHTA}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+            NOT = {
+				has_government = communism
+				has_government = liberalism
+				has_government = fascism
+			}
+		}
+		x = 82
+		y = 5
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = BLR_smert_nexta
@@ -6832,8 +6943,8 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 50
 		prerequisite = {
-		    focus = BLR_yrbanisation
-			focus = BLR_export_milk_production
+		    focus = BLR_revival_of_the_village
+			focus = BLR_extreme_measures
 		}
 		available = {
 			has_country_leader = {
@@ -6996,9 +7107,483 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_political_power = 300
-			add_stability = -0.05
+			add_stability = -0.15
 			add_ideas = BLR_Europes_last_dictator
 			add_ideas = dictatorship_state
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_martial_law
+		icon = GFX_goal_unknown
+		cost = 10
+		available = {
+			has_global_flag = Lykashenko_dead
+		}
+		x = 84
+		y = 11
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = martial_law
+			country_event = { id = belarus.44 days = 3 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Lykashenko_defense
+		icon = GFX_goal_unknown
+		cost = 30
+		prerequisite = {focus = BLR_martial_law}
+		x = 82
+		y = 12
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = BLR_defence_Lykashenko_t
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_repression
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {focus = BLR_investigation}
+		x = 86
+		y = 13
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_investigation
+		icon = GFX_goal_unknown
+		cost = 50
+		prerequisite = {focus = BLR_martial_law}
+		available = {
+			has_political_power > 150
+		}
+		x = 86
+		y = 12
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_political_power = -150
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_repression_ministries
+		icon = GFX_goal_unknown
+		cost = 50
+		prerequisite = {focus = BLR_repression}
+		x = 86
+		y = 14
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_ideas = BLR_repressed_ministries
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_army_on_the_streets
+		icon = GFX_goal_unknown
+		cost = 30
+		prerequisite = {focus = BLR_repression_ministries}
+		mutually_exclusive = {focus = BLR_OMON_on_the_streets}
+		x = 86
+		y = 15
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_ideas = BLR_army_on_the_streets
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_repression_army
+		icon = GFX_goal_unknown
+		cost = 50
+		prerequisite = {focus = BLR_repression}
+		x = 88
+		y = 14
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_ideas = BLR_repressed_army
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_OMON_on_the_streets
+		icon = GFX_goal_unknown
+		cost = 30
+		mutually_exclusive = {focus = BLR_army_on_the_streets}
+		prerequisite = {focus = BLR_repression_army}
+		x = 88
+		y = 15
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_ideas = BLR_OMON_on_the_streets
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_repression_party
+		icon = GFX_goal_unknown
+		cost = 40
+		prerequisite = {focus = BLR_repression}
+		x = 90
+		y = 14
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.1
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_unlimited_powers
+		icon = GFX_goal_unknown
+		cost = 30
+		prerequisite = {focus = BLR_martial_law}
+		x = 84
+		y = 12
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_political_power = 500
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_stabilization
+		icon = GFX_goal_unknown
+		cost = 50
+		prerequisite = {focus = BLR_unlimited_powers}
+		prerequisite = {focus = BLR_Lykashenko_defense}
+		x = 84
+		y = 13
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.15
+			remove_ideas = BLR_unsable_situation
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_russian_observers
+		icon = GFX_goal_unknown
+		cost = 40
+		prerequisite = {focus = BLR_stabilization}
+		mutually_exclusive = {focus = BLR_on_own_strength}
+		x = 84
+		y = 14
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_stability = 0.05
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_positive
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_on_own_strength
+		icon = GFX_goal_unknown
+		cost = 40
+		prerequisite = {focus = BLR_stabilization}
+		mutually_exclusive = {focus = BLR_russian_observers}
+		x = 82
+		y = 14
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_stability = 0.15
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_transfer_of_power
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = BLR_on_own_strength
+		    focus = BLR_russian_observers
+	    }
+		x = 84
+		y = 16
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Kolya
+		icon = GFX_goal_unknown
+		cost = 10
+		mutually_exclusive = {
+			focus = BLR_Dmitriy
+			focus = BLR_Viktor
+			focus = BLR_under_Russia
+		}
+		prerequisite = {focus = BLR_transfer_of_power}
+		x = 86
+		y = 17
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_an_inexperienced_politicain_in_power
+		    create_country_leader = {
+				name = "Nikolai Lukashenko"
+				desc = "POLITICS_ALEKSANDR_LUKASHENKO_DESC"
+				picture = "gfx/leaders/BLR/portrait_Nikolai_Lukashenko.dds"
+				ideology = liberal_democracy
+		        traits = { trait_liberal_democracy }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Viktor
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {focus = BLR_transfer_of_power}
+		mutually_exclusive = {
+			focus = BLR_Dmitriy
+			focus = BLR_Kolya
+			focus = BLR_under_Russia
+		}
+		x = 79
+		y = 17
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    create_country_leader = {
+				name = "Viktor Lukashenko"
+				desc = "POLITICS_ALEKSANDR_LUKASHENKO_DESC"
+				picture = "gfx/leaders/BLR/portrait_Viktor_Lukashenko.dds"
+				ideology = authoritarian_democracy
+				traits = { trait_authoritarian_democracy}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Dmitriy
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {focus = BLR_transfer_of_power}
+		mutually_exclusive = {
+			focus = BLR_Viktor
+			focus = BLR_Kolya
+			focus = BLR_under_Russia
+		}
+		x = 82
+		y = 17
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    create_country_leader = {
+				name = "Dmitry Lukashenko"
+				desc = "POLITICS_ALEKSANDR_LUKASHENKO_DESC"
+				picture = "gfx/leaders/BLR/portrait_Dmitry_Lukashenko.dds"
+				ideology = authoritarian_democracy
+				traits = { trait_authoritarian_democracy}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_under_Russia
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {focus = BLR_transfer_of_power}
+		mutually_exclusive = {
+			focus = BLR_Viktor
+			focus = BLR_Kolya
+			focus = BLR_Dmitriy
+        }
+		x = 89
+		y = 17
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		    add_stability = -0.05
+			add_opinion_modifier = {
+				target = RUS
+				modifier = actions_positive
+			}
+		    if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Man the Guns"
+					}
+				}
+                RUS = {
+				set_autonomy = {
+					target = BLR
+					autonomy_state = union_state
+					freedom_level = 0.0
+				}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_place_a_bet_on_law_enforcement_agencies
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_Lykashenko}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 78
+		y = 3
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_siloviki
+			add_stability = -0.05
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_new_equipment_for_OMON
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_place_a_bet_on_law_enforcement_agencies}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 77
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = BLR_omon_t
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_up_ZP
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_place_a_bet_on_law_enforcement_agencies}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 79
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = BLR_defence_OMON
+				}
+				remove_ideas = BLR_loyalty_silovic_small
+				add_ideas = BLR_loyalty_silovic_medium
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_defence_OMON
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_new_equipment_for_OMON}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 77
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = BLR_up_ZP
+				}
+				remove_ideas = BLR_loyalty_silovic_small
+				add_ideas = BLR_loyalty_silovic_medium
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_homes_for_OMON
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_up_ZP}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+			has_completed_focus = BLR_defence_OMON
+		}	
+		x = 79
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+            remove_ideas = BLR_loyalty_silovic_medium
+			add_ideas = BLR_loyalty_silovic_large
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_new_doctrin_overclocks
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {
+			focus = BLR_homes_for_OMON
+			focus = BLR_defence_OMON
+		}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 78
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas =  BLR_new_doctrin
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_introduction_of_smart_cameras
+		icon = GFX_goal_generic_military_sphere
+		cost = 50
+		prerequisite = {focus = BLR_new_doctrin_overclocks}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 78
+		y = 7
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_uravnenie_smart_cameras
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -7006,8 +7591,8 @@ focus_tree = {
 	focus = {
 		id = BLR_drim_Lva_Sapegi
 		icon = GFX_goal_ukr_freedom_of_belarus
-		mutually_exclusive = { focus = BLR_ynia_Polsha }
-		mutually_exclusive = { focus = BLR_ynia }
+		mutually_exclusive = {focus = BLR_ynia_Polsha}
+		mutually_exclusive = {focus = BLR_ynia}
 		cost = 10
 		available = {
 			POL = {
@@ -7020,7 +7605,7 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		prerequisite = { focus = BLR_vlyanie }
+		prerequisite = {focus = BLR_vlyanie}
 		x = 61
 		y = 13
 		ai_will_do = { factor = 1 }
@@ -7245,14 +7830,14 @@ focus_tree = {
 	focus = {
 		id = BLR_slavian_community
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = { focus = BLR_slavian_kylture }
-		prerequisite = { focus = BLR_training_POL_RUS }
+		prerequisite = {focus = BLR_slavian_kylture}
+		prerequisite = {focus = BLR_training_POL_RUS}
 		cost = 50
 		x = 61
 		y = 20
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			add_ideas = BLR_slavian_community
+			
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -7277,7 +7862,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY }
 	}
 	focus = {
-		id = BLR_we_lituvin
+		id = BLR_we_litvins
 		icon = GFX_goal_ukr_freedom_of_belarus
 		cost = 30
 		prerequisite = {
@@ -7311,7 +7896,7 @@ focus_tree = {
 		cost = 30
         prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
-		prerequisite = {focus = BLR_we_lituvin}
+		prerequisite = {focus = BLR_we_litvins}
 		x = 63
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -7332,7 +7917,7 @@ focus_tree = {
 		cost = 30
         prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
-		prerequisite = {focus = BLR_we_lituvin}
+		prerequisite = {focus = BLR_we_litvins}
 		x = 61
 		y = 8
 		ai_will_do = { factor = 1 }
@@ -7364,7 +7949,7 @@ focus_tree = {
 		cost = 30
 		prerequisite = {focus = BLR_white_legion}
 		prerequisite = {focus = BLR_strong_end_freedom_belarus}
-		prerequisite = {focus = BLR_we_lituvin}
+		prerequisite = {focus = BLR_we_litvins}
 		x = 59
 		y = 9
 		ai_will_do = { factor = 1 }
@@ -7918,10 +8503,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
-		id = BLR_CHE
+		id = BLR_CZE 
 		icon = GFX_goal_ukr_freedom_of_belarus
 		available = {
-			CHE = {
+			CZE = {
 				has_government = fascism
 				NOT = { is_in_faction = yes }
 			}
@@ -7933,7 +8518,7 @@ focus_tree = {
 		ai_will_do = { factor = 5 }
 		completion_reward = {
 			BLR = {
-				add_to_faction = CHE
+				add_to_faction = CZE
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -7968,7 +8553,7 @@ focus_tree = {
 				NOT = { is_in_faction = yes }
 			}
 		}
-		prerequisite = {focus = BLR_CHE}
+		prerequisite = {focus = BLR_CZE}
 		cost = 20
 		x = 56
 		y = 24
@@ -8109,13 +8694,13 @@ focus_tree = {
 	focus = {
 		id = BLR_common_research
 		icon = GFX_goal_ukr_freedom_of_belarus
-		prerequisite = { focus = BLR_katolic }
+		prerequisite = {focus = BLR_katolic}
 		cost = 50
 		x = 68
 		y = 16
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			#add_research_slot = 1
+			add_research_slot = 1
             every_country = {
 				limit = {
 					is_in_faction_with = BLR
@@ -8174,7 +8759,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	# focus = {
+# focus = {
 	# 	id = BLR_pol_port
 	# 	icon = GFX_goal_ukr_freedom_of_belarus
 	# 	prerequisite = {focus = BLR_common_IT_research}
@@ -8228,7 +8813,6 @@ focus_tree = {
 		y = 19
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			army_experience = 30
 			air_experience = 25
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -8271,6 +8855,130 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_platform_for_negotiations
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = {focus = BLR_Lykashenko}
+		cost = 50
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 90
+		y = 3
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_platform_for_negotiations
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_ukrain_conflicte
+		icon = GFX_goal_generic_military_sphere
+		cost = 30
+		prerequisite = {focus = BLR_platform_for_negotiations}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+			NOT = { has_war_with = UKR }
+			OR = {	
+				UKR = { has_civil_war = yes }
+				UKR = { has_war_with = DON }
+				UKR = { has_war_with = LUG }
+				UKR = { has_war_with = NRU }
+				UKR = { has_war_with = CRM }
+			}	
+		}	
+		x = 90
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_exchange_prisoners
+		icon = GFX_goal_generic_military_sphere
+		cost = 40
+		prerequisite = {focus = BLR_dont_fire}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 91
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			UKR = {
+				add_opinion_modifier = {
+					target = DON
+					modifier = actions_positive
+				}
+				add_opinion_modifier = {
+					target = LUG
+					modifier = actions_positive
+				}
+			}
+			DON = {
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_positive
+				}
+			}
+			LUG = {
+				add_opinion_modifier = {
+					target = UKR
+					modifier = actions_positive
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_dont_fire
+		icon = GFX_goal_generic_military_sphere
+		cost = 40
+		prerequisite = {focus = BLR_ukrain_conflicte}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 90
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_belarusian_observers
+		icon = GFX_goal_generic_military_sphere
+		cost = 40
+		prerequisite = {focus = BLR_dont_fire}
+		available = {
+			has_country_leader = {
+				name = "Aleksandr Lukashenko"
+				ruling_only = yes
+			}
+		}	
+		x = 89
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	####
 	focus = {
@@ -8390,11 +9098,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_yrbanisation
+		id = BLR_revival_of_the_village
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 50
 		prerequisite = {
-			focus = BLR_place_a_bet_on_law_enforcement_agencies
+			focus = BLR_new_legislation
 			focus = BLR_legitimy_depytats
 			focus = BLR_propoganda
 		}
@@ -8413,16 +9121,16 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_timed_idea = { idea = BLR_yrbanisation days = 150 }
+			add_timed_idea = { idea = BLR_revival_of_the_village days = 730 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_export_milk_production
+		id = BLR_extreme_measures
 		icon = GFX_goal_unknown
 		cost = 50
 		prerequisite = {
-			focus = BLR_place_a_bet_on_law_enforcement_agencies
+			focus = BLR_new_legislation
 			focus = BLR_legitimy_depytats
 			focus = BLR_propoganda
 		}
@@ -8449,7 +9157,7 @@ focus_tree = {
 		id = BLR_resource_steel 
 		prerequisite = { focus = BLR_resource_tungsten }
 		icon =  GFX_goal_ger_resource_alumunium 
-		x = -26
+		x = -27
 		y = 2
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8466,7 +9174,7 @@ focus_tree = {
 		id = BLR_resource_rare_earth_ore 
 		prerequisite = { focus = BLR_resource_tungsten }
 		icon =  GFX_goal_ger_resource_steel 
-		x = -27
+		x = -28
 		y = 3
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8483,7 +9191,7 @@ focus_tree = {
 		id = BLR_resource_energy_resource 
 		prerequisite = { focus = BLR_resource_tungsten }
 		icon =  GFX_goal_ger_resource_steel 
-		x = -28
+		x = -29
 		y = 2
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8505,7 +9213,7 @@ focus_tree = {
 		id = BLR_resource_alumunium
 		prerequisite = { focus = BLR_resource_tungsten }
 		icon =  GFX_goal_ger_resource_alumunium
-		x = -25
+		x = -26
 		y = 3
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8522,7 +9230,7 @@ focus_tree = {
 		id = BLR_resource_tungsten
 		icon =  GFX_goal_ger_resource_tungsten
 		prerequisite = { focus = BLR_industri }
-		x = -26
+		x = -27
 		y = 1
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8535,7 +9243,7 @@ focus_tree = {
 		id = BLR_oil
 		prerequisite = {focus = BLR_resource_tungsten}
 		icon =  GFX_goal_generic_oil_refinery
-		x = -24
+		x = -25
 		y = 2
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8568,7 +9276,7 @@ focus_tree = {
 			focus = BLR_resource_tungsten
 		}
 		icon =  GFX_goal_kaliy
-		x = -26
+		x = -27
 		y = 4
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8609,7 +9317,7 @@ focus_tree = {
 				}
 			}
 		}
-		x = -26
+		x = -27
 		y = 5
 		ai_will_do = { factor = 1 }
 		cost = 70
@@ -8648,7 +9356,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BLR_improving_agriculture 
-		prerequisite = { focus = BLR_updat_stanki }
+		prerequisite = { focus = BLR_military_factory }
 		icon =  GFX_goal_ger_improving_agriculture
 		cost = 50
 		x = -12
@@ -8715,7 +9423,7 @@ focus_tree = {
 		y = 8
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_timed_idea = { idea = BLR_five_year_plans_idea days = 400 }
+			add_timed_idea = { idea = BLR_five_year_plans_idea days = 1825 }
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
 	}
@@ -8723,8 +9431,8 @@ focus_tree = {
 		id = BLR_invests_for_industri
 		icon = GFX_goal_unknown
 		cost = 30
-		prerequisite = {focus = BLR_export_milk_production}
-		prerequisite = {focus = BLR_yrbanisation}
+		prerequisite = {focus = BLR_extreme_measures}
+		prerequisite = {focus = BLR_revival_of_the_village}
 		available = {
 			has_country_leader = {
 				name = "Aleksandr Lukashenko"
@@ -8782,581 +9490,6 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
-	###Закупка вооружения
-	focus = {
-		id = BLR_buy_armor
-		icon = GFX_goal_generic_propaganda
-        available = {
-			has_completed_focus = BLR_army
-		}
-		cost = 30
-		x = 30
-		y = 9
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_vostok_1
-		icon = GFX_goal_generic_propaganda
-		cost = 30
-		prerequisite = {focus = BLR_buy_armor}
-		mutually_exclusive = {focus = BLR_zapad_1}
-		available = { 
-			NOT = { has_war_with = RUS }
-		}
-		x = 33
-		y = 10
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 50
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_zapad_1
-		icon = GFX_goal_generic_propaganda
-		cost = 30
-		prerequisite = {focus = BLR_buy_armor}
-		available = { 
-			NOT = { has_war_with = USA }
-		}
-		mutually_exclusive = {focus = BLR_vostok_1}
-		x = 27
-		y = 10
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 50
-			RUS = {
-				add_opinion_modifier = {
-					target = BLR
-					modifier = RUS_BLR_zapad_1
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_CHI
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = {focus = BLR_vostok_1}
-		available = { 
-			NOT = { has_war_with = CHI }
-			CHI = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-		}
-		x = 34
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_RUS
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = {focus = BLR_vostok_1}
-		available = { 
-			NOT = { has_war_with = RUS }
-			RUS = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-		}
-		x = 32
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_USA
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = {focus = BLR_zapad_1}
-		available = { 
-			NOT = { has_war_with = USA }
-			USA = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-		}
-		x = 28
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_GER
-		icon = GFX_goal_unknown
-		cost = 30
-		prerequisite = {focus = BLR_zapad_1}
-		available = { 
-			NOT = { has_war_with = GER }
-			GER = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-		}
-		x = 26
-		y = 11
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
-	}
-	focus = {
-		id = BLR_zakypka_rus_tanks 
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_RUS}
-		available = { 
-			NOT = { has_war_with = RUS }
-			RUS = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 170 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 0.017 }
-				}
-			}
-		}
-		x = 31
-		y = 12
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.16 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_chi_tanks #отнимает деньги
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_CHI}
-		available = { 
-			NOT = { has_war_with = CHI }
-			CHI = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 132 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 0.0132 }
-				}
-			}
-		}
-		x = 35
-		y = 12
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.17 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_rus_ak 
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_RUS}
-		available = { 
-			NOT = { has_war_with = RUS }
-			RUS = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 2 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 0.002 }
-				}
-			}
-		}
-		x = 32
-		y = 13
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-		    country_event = { id = belarus.25 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_rus_air
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_zakypka_rus_tanks}
-		available = { 
-			NOT = { has_war_with = RUS }
-			RUS = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 700 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 0.7 }
-				}
-			}
-		}
-		x = 31
-		y = 14
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-            country_event = { id = belarus.20 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_AVIATION }
-	}
-	focus = {
-		id = BLR_zakypka_usa_tanks 
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_USA}
-		available = { 
-			NOT = { has_war_with = USA }
-			USA = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 204 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_rus
-					check_variable = { budget_reserve > 0.204 }
-				}
-			}
-		}
-		x = 29
-		y = 12
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.18 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	
-	focus = {
-		id = BLR_zakypka_GER_tanks #отнимает деньги
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_GER}
-		available = { 
-			NOT = { has_war_with = GER }
-			has_opinion = {
-				target = GER
-				value > 29
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_ger
-					check_variable = { budget_reserve > 224 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_tanks_ger
-					check_variable = { budget_reserve > 0.224 }
-				}
-			}
-		}
-		x = 25
-		y = 12
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.19 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_USA_ak #отнимает деньги
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_USA}
-		available = { 
-			NOT = { has_war_with = USA }
-			USA = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ak_rus
-					check_variable = { budget_reserve > 2 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ak_rus
-					check_variable = { budget_reserve > 0.002 }
-				}
-			}
-		}
-		x = 28
-		y = 13
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.26 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_GER_ak
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_GER}
-		available = { 
-			NOT = { has_war_with = GER }
-			GER = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ar_rus
-					check_variable = { budget_reserve > 2 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ar_rus
-					check_variable = { budget_reserve > 0.002 }
-				}
-			}
-		}
-		x = 26
-		y = 13
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.27 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_CHI_ak
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_CHI}
-		available = { 
-			NOT = { has_war_with = CHI }
-			CHI = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ak_rus
-					check_variable = { budget_reserve > 2 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_ak_rus
-					check_variable = { budget_reserve > 0.002 }
-				}
-			}
-		}
-		x = 34
-		y = 13
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.28 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-	}
-	focus = {
-		id = BLR_zakypka_USA_air #отнимает деньги
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_zakypka_usa_tanks}
-		available = { 
-			NOT = { has_war_with = USA }
-			USA = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 680 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 0.680 }
-				}
-			}
-		}
-		x = 29
-		y = 14
-		completion_reward = {
-			country_event = { id = belarus.22 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_AVIATION }
-	}
-	focus = {
-		id = BLR_zakypka_GER_air
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_zakypka_GER_tanks}
-		available = { 
-			NOT = { has_war_with = GER }
-			GER = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 680 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 0.680 }
-				}
-			}
-		}
-		x = 25
-		y = 14
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.23 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_AVIATION }
-	}
-	focus = {
-		id = BLR_zakypka_CHI_air
-		icon = GFX_goal_unknown
-		cost = 70
-		prerequisite = {focus = BLR_zakypka_chi_tanks}
-		available = { 
-			NOT = { has_war_with = CHI }
-			CHI = {
-		        has_opinion = {
-		    		target = BLR
-		    		value > 19
-		    	}
-			}
-			if = {
-				limit = { NOT = { has_country_flag = money_trillions } }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 615 }
-				}
-			}
-			else_if = {
-				limit = { has_country_flag = money_trillions }
-				custom_trigger_tooltip = {
-					tooltip = BLR_buy_air_rus
-					check_variable = { budget_reserve > 0.615 }
-				}
-			}
-		}
-		x = 35
-		y = 14
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			country_event = { id = belarus.24 days = 3 }
-		}
-		search_filters = { FOCUS_FILTER_AVIATION }
-	}
 	#####
 	focus = {
 		id = BLR_Communism
@@ -9384,9 +9517,29 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_PKB
+		id = BLR_KPB
 		icon = GFX_goal_unknown
 		prerequisite = { focus = BLR_Communism } 
+		available = {
+			communism > 0.2
+			has_idea = generic_socialists_leader
+			NOT = {
+				has_completed_focus = BLR_PKB 
+			}
+		}
+		cost = 50
+		x = 53
+		y = 3
+		ai_will_do = { factor = 2 }
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_PKB
+		icon = GFX_goal_unknown
+		prerequisite = { focus = BLR_Communism }
 		available = {
 			communism > 0.2
 			has_idea = generic_socialists_leader
@@ -9394,10 +9547,10 @@ focus_tree = {
 				has_completed_focus = BLR_KPB 
 			}
 		}
-		cost = 50
-		x = 53
+		cost = 10
+		x = 42
 		y = 3
-		ai_will_do = { factor = 2 }
+		ai_will_do = { factor = 1 }
 		completion_reward = {
 			set_party_name = { 
 				ideology = communism
@@ -9408,29 +9561,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_KPB
-		icon = GFX_goal_unknown
-		prerequisite = { focus = BLR_Communism }
-		available = {
-			communism > 0.2
-			has_idea = generic_socialists_leader
-			NOT = {
-				has_completed_focus = BLR_PKB 
-			}
-		}
-		cost = 10
-		x = 42
-		y = 3
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
 		id = BLR_lustracia
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_KPB}
+		prerequisite = {focus = BLR_PKB}
 		available = {
 			communism > 0.2
 			has_idea = generic_head_of_government_socialist
@@ -9462,7 +9595,7 @@ focus_tree = {
 	focus = {
 		id = BLR_konstitucia_BSSR
 		icon = GFX_goal_irn_rab_konst
-		prerequisite = {focus = BLR_KPB}
+		prerequisite = {focus = BLR_PKB}
 		available = {
 			communism > 0.2
 			has_idea = generic_head_of_government_socialist
@@ -9480,7 +9613,7 @@ focus_tree = {
 	focus = {
 		id = BLR_one_partia
 		icon = GFX_goal_rus_ussr_claims
-		prerequisite = {focus = BLR_KPB}
+		prerequisite = {focus = BLR_PKB}
 		available = {
 			communism > 0.2
 			has_idea = generic_head_of_government_socialist
@@ -9558,7 +9691,7 @@ focus_tree = {
 	focus = {
 		id = BLR_collectivism
 		icon = GFX_goal_unknown
-		prerequisite = { focus = BLR_PKB }
+		prerequisite = { focus = BLR_KPB }
 		available = {
 			communism > 0.2
 			has_idea = generic_head_of_government_socialist
@@ -9568,7 +9701,6 @@ focus_tree = {
 		y = 4
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			#add_political_power = 100
             add_ideas = BLR_collectivism
 		}
 		search_filters = { FOCUS_FILTER_ECONOMIC }
@@ -9576,7 +9708,7 @@ focus_tree = {
 	focus = {
 		id = BLR_ykrep_Belarus
 		icon = GFX_goal_unknown
-		prerequisite = { focus = BLR_PKB }
+		prerequisite = { focus = BLR_KPB }
 		available = {
 			communism > 0.2
 			has_idea = generic_head_of_government_socialist
@@ -9591,7 +9723,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
 	focus = {
-		id = BLR_stavka_na_socialism
+		id = BLR_bet_on_socialism
 		icon = GFX_goal_unknown
 		prerequisite = {focus = BLR_KPB}
 		available = {
@@ -9609,9 +9741,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
-		id = BLR_we_russkie
+		id = BLR_we_russians
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_stavka_na_socialism}
+		prerequisite = {focus = BLR_bet_on_socialism}
 		available = {
 			communism > 0.3
 			has_idea = generic_head_of_government_socialist
@@ -9632,17 +9764,13 @@ focus_tree = {
 				ideology = communism
 				popularity = -0.04
 			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 	focus = {
 		id = BLR_Lykashism
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_we_russkie}
+		prerequisite = {focus = BLR_we_russians}
 		mutually_exclusive = {focus = BLR_socialist}
 		available = {
 			communism > 0.35
@@ -9672,7 +9800,7 @@ focus_tree = {
 	focus = {
 		id = BLR_socialist
 		icon = GFX_goal_unknown
-		prerequisite = {focus = BLR_we_russkie}
+		prerequisite = {focus = BLR_we_russians}
 		mutually_exclusive = {focus = BLR_Lykashism}
 		available = {
 			communism > 0.30
@@ -11221,8 +11349,8 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
-		prerequisite = {focus = BLR_yrbanisation}
-		prerequisite = {focus = BLR_export_milk_production}
+		prerequisite = {focus = BLR_revival_of_the_village}
+		prerequisite = {focus = BLR_extreme_measures}
 		cost = 30
 		x = 87
 		y = 7
@@ -11238,16 +11366,8 @@ focus_tree = {
 		id = BLR_we_zmagars_for_terrorism
 		icon = GFX_goal_unknown
 		cost = 40
-		prerequisite = { focus = BLR_Lykashenko }
-		available = {
-            NOT = {
-				has_government = communism
-				has_government = liberalism
-				has_government = fascism
-			}
-		}
-		x = 90
-		y = 3
+		x = 30
+		y = 9
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 		    add_war_support = 0.02
@@ -11267,8 +11387,8 @@ focus_tree = {
 			}
 		}
 		cost = 70
-		x = 90
-		y = 6
+		x = 30
+		y = 12
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11298,8 +11418,8 @@ focus_tree = {
 			country_exists = SYR
 		}
 		cost = 10
-		x = 89
-		y = 8 
+		x = 31
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11327,8 +11447,8 @@ focus_tree = {
 			}
 		}
 		cost = 10
-		x = 91
-		y = 8
+		x = 29
+		y = 13
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11358,8 +11478,8 @@ focus_tree = {
 		    RUS = { has_war_with = ISS }
 		}
 		cost = 50
-		x = 90
-		y = 7
+		x = 30
+		y = 14
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11388,8 +11508,8 @@ focus_tree = {
 			}
 		}
 		cost = 50
-		x = 90
-		y = 4
+		x = 30
+		y = 10
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11410,8 +11530,8 @@ focus_tree = {
 			}
 		}
 		cost = 40
-		x = 89
-		y = 5
+		x = 29
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -11431,8 +11551,8 @@ focus_tree = {
 			}
 		}
 		cost = 40
-		x = 91
-		y = 5
+		x = 31
+		y = 11
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_political_power = 50
@@ -12024,7 +12144,7 @@ focus_tree = {
 	focus = {
 		id = BLR_army_help_for_Ukrain
 		icon = GFX_goal_rus_peacemaker_on_ukraine
-		cost = 70
+		cost = 50
 		prerequisite = {focus = BLR_Ukrain_friend}
 		available = {
 		    NOT = { has_war_with = UKR }
@@ -12094,13 +12214,13 @@ focus_tree = {
 	focus = {
 		id = BLR_we_brathers
 		icon = GFX_goal_unknown
-		cost = 70
+		cost = 20
 		available = { 
 			NOT = { has_war_with = UKR }
 			UKR = {
 		        has_opinion = {
 		    		target = BLR
-		    		value > 39
+		    		value > 49
 		    	}
 			}
 		}

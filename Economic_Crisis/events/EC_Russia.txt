@@ -516,129 +516,129 @@ country_event = {
 		set_capital = 195
 	}
 }
-country_event = {
-	id = russia.16
-	title = russia.16.t
-	desc = russia.16.d
-	picture = GFX_event_ne_tsar
+# country_event = { 
+# 	id = russia.16
+# 	title = russia.16.t
+# 	desc = russia.16.d
+# 	picture = GFX_event_ne_tsar
 	
-	fire_only_once = yes
+# 	fire_only_once = yes
 
-	trigger = { 
-	    tag = RUS
-		date > 2018.05.05
-	    country_exists = RUS
-		has_country_leader = { 
-            id = 100002  #уникальный номер Путина (id из файла history/countries/RUS - Russia.txt)
-            ruling_only = yes 
-            name = "Vladimir Putin" 
-        }
-		has_stability < 0.45
-	}
+# 	trigger = { 
+# 	    tag = RUS
+# 		date > 2018.05.05
+# 	    country_exists = RUS
+# 		has_country_leader = { 
+#             id = 100002  #уникальный номер Путина (id из файла history/countries/RUS - Russia.txt)
+#             ruling_only = yes 
+#             name = "Vladimir Putin" 
+#         }
+# 		has_stability < 0.45
+# 	}
 	
-	mean_time_to_happen = {
-	    days = 1
-	}
+# 	mean_time_to_happen = {
+# 	    days = 1
+# 	}
 	
-	option = {  
-		name = russia.16.a #Отдать власть Оппозиции
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.a"
-		ai_chance = { 
-			factor = 1
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		add_popularity = {
-			ideology = liberalism
-			popularity = 0.3
-		}
-		add_popularity = {
-			ideology = democratic
-			popularity = 0.2
-		}
-		add_popularity = {
-			ideology = reformism
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = neutrality
-			popularity = -0.51
-		}
-		set_politics = {
-			ruling_party = liberalism
-			elections_allowed = yes
-		}
+# 	option = {  
+# 		name = russia.16.a #Отдать власть Оппозиции
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.a"
+# 		ai_chance = { 
+# 			factor = 1
+# 			modifier = {
+# 				factor = 0
+# 				is_historical_focus_on = yes
+# 			}
+# 		}
+# 		add_popularity = {
+# 			ideology = liberalism
+# 			popularity = 0.3
+# 		}
+# 		add_popularity = {
+# 			ideology = democratic
+# 			popularity = 0.2
+# 		}
+# 		add_popularity = {
+# 			ideology = reformism
+# 			popularity = -1
+# 		}
+# 		add_popularity = {
+# 			ideology = neutrality
+# 			popularity = -0.51
+# 		}
+# 		set_politics = {
+# 			ruling_party = liberalism
+# 			elections_allowed = yes
+# 		}
 		   
-	    retire_country_leader = yes
+# 	    retire_country_leader = yes
 			
-		create_country_leader = {
-	        name = "Alexey Navalny"
-	        desc = ""
-	        picture = "gfx/leaders/RUS/portrait_alexey_navalny.dds"
-	        ideology = liberal_democracy
-	        traits = { trait_liberal_democracy }
-        }
-		create_country_leader = {
-	        name = "Dmitry Medvedev"
-	        desc = ""
-	        picture = "gfx/leaders/RUS/portrait_dmitry_medvedev.dds"
-	        ideology = oligarchy
-	        traits = { trait_oligarchy }
-        }
+# 		create_country_leader = {
+# 	        name = "Alexey Navalny"
+# 	        desc = ""
+# 	        picture = "gfx/leaders/RUS/portrait_alexey_navalny.dds"
+# 	        ideology = liberal_democracy
+# 	        traits = { trait_liberal_democracy }
+#         }
+# 		create_country_leader = {
+# 	        name = "Dmitry Medvedev"
+# 	        desc = ""
+# 	        picture = "gfx/leaders/RUS/portrait_dmitry_medvedev.dds"
+# 	        ideology = oligarchy
+# 	        traits = { trait_oligarchy }
+#         }
 
-		if = {
-			limit = {
-				date > 2012.12.15
-				date < 2014.2.8
-			}
-			set_party_name = { 
-				ideology = liberalism
-				long_name = RUS_liberalism_navalny_2012_party
-				name = RUS_liberalism_navalny_2012_party 
-			}
-		}
+# 		if = {
+# 			limit = {
+# 				date > 2012.12.15
+# 				date < 2014.2.8
+# 			}
+# 			set_party_name = { 
+# 				ideology = liberalism
+# 				long_name = RUS_liberalism_navalny_2012_party
+# 				name = RUS_liberalism_navalny_2012_party 
+# 			}
+# 		}
 
-		if = {
-			limit = {
-				date > 2014.2.8
-				date < 2018.5.19
-			}
-			set_party_name = { 
-				ideology = liberalism
-				long_name = RUS_liberalism_navalny_2016_party
-				name = RUS_liberalism_navalny_2016_party 
-			}
-		}
+# 		if = {
+# 			limit = {
+# 				date > 2014.2.8
+# 				date < 2018.5.19
+# 			}
+# 			set_party_name = { 
+# 				ideology = liberalism
+# 				long_name = RUS_liberalism_navalny_2016_party
+# 				name = RUS_liberalism_navalny_2016_party 
+# 			}
+# 		}
 
-		if = {
-			limit = {
-				date > 2018.5.19
-			}
-			set_party_name = { 
-				ideology = liberalism
-				long_name = RUS_liberalism_navalny_2018_party
-				name = RUS_liberalism_navalny_2018_party 
-			}
+# 		if = {
+# 			limit = {
+# 				date > 2018.5.19
+# 			}
+# 			set_party_name = { 
+# 				ideology = liberalism
+# 				long_name = RUS_liberalism_navalny_2018_party
+# 				name = RUS_liberalism_navalny_2018_party 
+# 			}
 
-		}
+# 		}
 
-	}	
+# 	}	
 	
-	option = {
-		name = russia.16.b #Разогнать митингующих и арестовать некоторых
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.b"
-		ai_chance = { 
-			factor = 99.5
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		add_stability = -0.02		
-	}
-}
+# 	option = {
+# 		name = russia.16.b #Разогнать митингующих и арестовать некоторых
+# 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.16.b"
+# 		ai_chance = { 
+# 			factor = 99.5
+# 			modifier = {
+# 				factor = 0
+# 				is_historical_focus_on = yes
+# 			}
+# 		}
+# 		add_stability = -0.02		
+# 	}
+# }
 country_event = { #Падение А321 над Синайском полуострове
 	id = russia.17
 	title = russia.17.t

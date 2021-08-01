@@ -47,7 +47,10 @@ should_initiate_resistance = {
 		# 	has_global_flag = scw_over
 		# }
 	}
-	# NOT = { is_core_of = FROM  } # never for our cores
+	NOT = {
+		#is_core_of = FROM # never for our cores
+		has_state_flag = state_flag_antartica
+	}
 }
 
 #should_initiate_resistance_5 = {

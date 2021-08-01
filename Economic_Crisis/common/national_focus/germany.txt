@@ -426,22 +426,22 @@ focus_tree = {
 		cost = 250
 		available = { communism > 0.4 }
 		completion_reward = {
-			if = {
-				limit = { has_government = democratic }
-				start_civil_war = { ideology = democratic size = 0.2 }
-			}
-			if = {
-				limit = { has_government = liberalism }
-				start_civil_war = { ideology = liberalism size = 0.2 }
-			}
-			if = {
-				limit = { has_government = reformism }
-				start_civil_war = { ideology = reformism size = 0.2 }
-			}
-			if = {
-				limit = { NOT = { has_government = communism }	}
-				set_politics = { ruling_party = communism elections_allowed = no }
-			}
+			# if = {
+			# 	limit = { has_government = democratic }
+			# 	start_civil_war = { ideology = democratic size = 0.2 }
+			# }
+			# if = {
+			# 	limit = { has_government = liberalism }
+			# 	start_civil_war = { ideology = liberalism size = 0.2 }
+			# }
+			# if = {
+			# 	limit = { has_government = reformism }
+			# 	start_civil_war = { ideology = reformism size = 0.2 }
+			# }
+			# if = {
+			# 	limit = { NOT = { has_government = communism }	}
+			# 	set_politics = { ruling_party = communism elections_allowed = no }
+			# }
 			add_popularity = { ideology = communism popularity = 0.2 }
 			add_stability = 0.2
 			add_ideas = GER_gdr
@@ -514,32 +514,27 @@ focus_tree = {
 		cost = 270
 		available = { fascism > 0.4 }
 		completion_reward = {
-			if = {
-				limit = { has_government = democratic }
-				start_civil_war = { ideology = democratic size = 0.2 }
-				hidden_effect = { add_popularity = { ideology = democratic popularity = -1 } }
-			}
-			if = {
-				limit = { has_government = liberalism }
-				start_civil_war = { ideology = liberalism size = 0.2 }
-				hidden_effect = { add_popularity = { ideology = liberalism popularity = -1 } }
-			}
-			if = {
-				limit = { has_government = reformism }
-				start_civil_war = { ideology = reformism size = 0.2 }
-				hidden_effect = { add_popularity = { ideology = reformism popularity = -1 } }
-			}
-			if = {
-				limit = { has_government = neutrality }
-				start_civil_war = { ideology = neutrality size = 0.2 }
-				hidden_effect = { add_popularity = { ideology = neutrality popularity = -1 } }
-			}
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_government = fascism } }
-					set_politics = { ruling_party = fascism elections_allowed = no }
-				}
-			}
+			# if = {
+			# 	limit = { has_government = democratic }
+			# 	start_civil_war = { ideology = democratic size = 0.2 }
+			# 	hidden_effect = { add_popularity = { ideology = democratic popularity = -1 } }
+			# }
+			# if = {
+			# 	limit = { has_government = liberalism }
+			# 	start_civil_war = { ideology = liberalism size = 0.2 }
+			# 	hidden_effect = { add_popularity = { ideology = liberalism popularity = -1 } }
+			# }
+			# if = {
+			# 	limit = { has_government = reformism }
+			# 	start_civil_war = { ideology = reformism size = 0.2 }
+			# 	hidden_effect = { add_popularity = { ideology = reformism popularity = -1 } }
+			# }
+			# if = {
+			# 	limit = { has_government = neutrality }
+			# 	start_civil_war = { ideology = neutrality size = 0.2 }
+			# 	hidden_effect = { add_popularity = { ideology = neutrality popularity = -1 } }
+			# }
+			
 			add_popularity = { ideology = fascism popularity = 0.15 }
 			add_ideas = GER_reich
 			hidden_effect = {
@@ -689,7 +684,7 @@ focus_tree = {
 		}
 		complete_tooltip = {
 			annex_country = { target = LUX }
-			LIE = { start_civil_war = { ideology = fascism size = 0.5 } }
+			#LIE = { start_civil_war = { ideology = fascism size = 0.5 } }
 		}
 		completion_reward = {
 			if = {

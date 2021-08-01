@@ -495,3 +495,55 @@ defined_text = {
 	}
 
 }
+
+defined_text = { 
+	name = investments_inc
+
+	text = {
+		trigger = {
+			controls_state = 453
+			controls_state = 446
+		}
+		localization_key = "15000"
+	}
+	text = {
+		trigger = {
+			controls_state = 685
+		}
+		localization_key = "6000"
+	}
+	text = {
+		trigger = {
+			OR = {
+				controls_state = 724
+				tag = CHI
+			}
+			NOT = { has_global_flag = THAI_CANAL_BLOCKED }
+		}
+		localization_key = "4700"
+	}
+	text = {
+		trigger = {
+			OR = {
+				controls_state = 317
+				tag = CHI
+			}
+			NOT = { has_global_flag = NICARAGUA_CANAL_BLOCKED }
+		}
+		localization_key = "3200"
+	}
+	text = {
+		trigger = {
+			tag = CHI
+			NOT = {
+				has_global_flag = NICARAGUA_CANAL_BLOCKED
+				has_global_flag = THAI_CANAL_BLOCKED
+			}
+		}
+		localization_key = "7900"
+	}
+	text = {
+		localization_key = "0"
+	}
+
+}

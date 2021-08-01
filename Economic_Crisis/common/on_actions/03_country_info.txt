@@ -62,38 +62,39 @@ on_actions = {
 	on_daily = {
 	
 		effect = {
-		clr_num_of_factories = yes
-		clr_oil_cons = yes
-		clear_num_of_electricity_factories = yes	
-		clear_country_population = yes
-		every_owned_state = {
-		set_country_population = yes
-		set_num_of_factories = yes
-		set_num_of_electricity_factroeis = yes
-		
-		set_oil_cons = yes
-		}
-				set_total_oil_cons = yes
-	random_country = {	
-		#Season
-	set_variable = { global.current_date = global.date }	
-		#Winter		
-		if = {
-			limit = {
-				check_variable = { global.current_date > global.season^0 }
-				check_variable = { global.current_date < global.season^1 }
+			clr_num_of_factories = yes
+			clr_oil_cons = yes
+			clear_num_of_electricity_factories = yes	
+			clear_country_population = yes
+			every_owned_state = {
+				set_country_population = yes
+				set_num_of_factories = yes
+				set_num_of_electricity_factroeis = yes
+			
+				set_oil_cons = yes
 			}
-			set_variable = { global.current_season = 1 }
+			
+			set_total_oil_cons = yes
+			random_country = {	
+			#Season
+			set_variable = { global.current_date = global.date }	
+			#Winter		
+			if = {
+				limit = {
+					check_variable = { global.current_date > global.season^0 }
+					check_variable = { global.current_date < global.season^1 }
+				}
+				set_variable = { global.current_season = 1 }
+			}
+			#Spring
+			else_if = { limit = { check_variable = { global.current_date > global.season^2 } check_variable = { global.current_date < global.season^3 } } set_variable = { global.current_season = 2 } }
+			#Summer
+			else_if = { limit = { check_variable = { global.current_date > global.season^3 } check_variable = { global.current_date < global.season^4 } } set_variable = { global.current_season = 3 } }
+			#Autumn
+			else_if = { limit = { check_variable = { global.current_date > global.season^5 } check_variable = { global.current_date < global.season^6 } } set_variable = { global.current_season = 4 } }
+			
+			}	
+			
 		}
-		#Spring
-		else_if = { limit = { check_variable = { global.current_date > global.season^2 } check_variable = { global.current_date < global.season^3 } } set_variable = { global.current_season = 2 } }
-		#Summer
-		else_if = { limit = { check_variable = { global.current_date > global.season^3 } check_variable = { global.current_date < global.season^4 } } set_variable = { global.current_season = 3 } }
-		#Autumn
-		else_if = { limit = { check_variable = { global.current_date > global.season^5 } check_variable = { global.current_date < global.season^6 } } set_variable = { global.current_season = 4 } }
-		
-	}	
-		
- }
-}
+	}
 }	

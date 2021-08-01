@@ -107,7 +107,74 @@ on_actions = {
 				}
 			}
 		}
- 	}
+	 }
+	on_weekly = {
+		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						controls_state = 724
+						tag = CHI
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = -33000 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = -0.33 }
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						controls_state = 317
+						tag = CHI
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = -23000 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = -0.23 }
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						controls_state = 685
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = -42000 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = -0.42 }
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						controls_state = 453
+						controls_state = 446
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = money_trillions } }
+					subtract_from_variable = { budget_reserve = -105000 }
+				}
+				else_if = {
+					limit = { has_country_flag = money_trillions }
+					subtract_from_variable = { budget_reserve = -0.105 }
+				}
+			}
+		}
+	}
 	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
 	#ROOT = nation being released, FROM = overlord
 	on_release_as_puppet = {

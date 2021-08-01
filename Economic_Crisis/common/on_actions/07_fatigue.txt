@@ -266,48 +266,12 @@ on_actions = {
 
 	on_army_leader_won_combat = {
 		effect = {
-			if = {
-				limit = {
-					has_stability > 0.0
-					has_stability < 0.1
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						80 = { }
-						20 = {
-							subtract_from_variable = { var_fatigue = -1 }
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_stability > 0.2
-					has_stability < 0.3
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						70 = { }
-						30 = {
-							subtract_from_variable = { var_fatigue = -1 }
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_stability > 0.4
-					has_stability < 0.5
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						80 = { }
-						20 = {
-							subtract_from_variable = { var_fatigue = 1 }
-						}
+			FROM = {
+				random_list = {
+					log = yes
+					80 = { }
+					20 = {
+						subtract_from_variable = { var_fatigue = 1 }
 					}
 				}
 			}
@@ -316,48 +280,12 @@ on_actions = {
 
 	on_army_leader_lost_combat = {
 		effect = {
-			if = {
-				limit = {
-					has_stability > 0.1
-					has_stability < 0.2
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						80 = { }
-						20 = {
-							subtract_from_variable = {  var_fatigue = -1 }
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_stability > 0.4
-					has_stability < 0.3
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						70 = { }
-						30 = {
-							subtract_from_variable = { var_fatigue = -1 }
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_stability > 0.6
-					has_stability < 0.5
-				}
-				FROM = {
-					random_list = {
-						log = yes
-						80 = { }
-						20 = {
-							subtract_from_variable = { var_fatigue = -1 }
-						}
+			FROM = {
+				random_list = {
+					log = yes
+					80 = { }
+					20 = {
+						subtract_from_variable = { var_fatigue = -1 }
 					}
 				}
 			}
