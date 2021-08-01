@@ -1,3 +1,54 @@
+# 0.7.6.7
+
+### Scripting Department
+
+ - Fixed the effect of the event of the Third World War.
+ - Increased rationalism of Artificial Intelligence.
+	> No more United States of Russia.
+ - Fixed the Czech Republic tag in the focuses of Belarus.
+ - Fixed an erroneous condition that required 150 trillion instead of 1.5 trillion.
+ - Corrections of text icons.
+ - Fixed the Belarus icon.
+ - Fixed spam fatigue system errors.
+ - Realized profit from shipping channels.
+ - Flip the interface of the region overview window only for Antarctica.
+ - Added a background for the riot police for the tricks of Belarus.
+ - The experimental branch "Platform for negotiations"has been added.
+ - Added a system of dependence on the OMON.
+ - Added a link to the embezzlement system for security forces.
+ - Added new tricks for Lukashenka.
+ - Added new nats. spirits of Belarus.
+ - New events of Belarus have been added.
+ - New news events of Belarus have been added.
+ - New solutions of Belarus have been added.
+ - Added a chance of killing Lukashenka.
+ - A new branch has been added, which opens after the murder of Lukashenka.
+ - Added the ability to bring one of the sons of Lukashenka.
+ - The branch of the east of tricks of Belarus has been finalized.
+
+### Technology Department
+
+ - Fixed the requirement to study a nuclear reactor from the heavy fleet tab.
+ - The starting technologies of light tanks are prescribed for the USA, China, Russia and Germany.
+ - The effect is registered for two technologies in the Wheeled Armored Vehicles tab.
+ - The stock of Russian weapons has been replenished.
+
+### 2D artists
+
+ - Fixed the format of saving generals of China.
+
+### Map Development Department
+
+ - Territorial claims have been placed in Antarctica.
+ - The nations are placed in the following countries:
+	- Japan;
+ - Power plants in Saudi Arabia have been rebuilt.
+
+### Localization Department
+
+ - Fixed localization of the Economy Summary in English.
+ - Fixed the name of Alaska in English.
+
 # 0.7.6.6
 
 ### Scripting Department
