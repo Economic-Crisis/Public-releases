@@ -1,0 +1,25 @@
+scripted_gui = {
+	state_manpower_zero = {
+		window_name = "state_manpower_zero_gui"      
+        parent_window_token = selected_state_view
+		context_type = selected_state_context
+ 
+		visible = {
+            NOT = { has_state_flag = state_flag_antartica }
+			state_population < 2
+			#always = yes
+		}
+	}
+
+	# antacrtic_race = {
+	# 	window_name = "col_race_gui"      
+    #     parent_window_name = "colonization_gui"
+	# 	context_type = player_context
+ 
+	# 	visible = {
+    #         #has_state_flag = state_flag_antartica
+	# 		always = yes
+	# 	}
+	# }
+	
+}

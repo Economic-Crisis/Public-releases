@@ -500,6 +500,38 @@ on_actions = {
 	on_startup = {
 		effect = {
 			log = EC_version
+			if = {
+				limit = { has_dlc = "Waking the Tiger" }
+				log = "DLC active: Waking the Tiger"
+			}
+			else_if = {
+				limit = { NOT = { has_dlc = "Waking the Tiger" } }
+				log = "DLC nope: Waking the Tiger"
+			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				log = "DLC active: Man the Guns"
+			}
+			else_if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				log = "DLC nope: Man the Guns"
+			}
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				log = "DLC active: La Resistance"
+			}
+			else_if = {
+				limit = { NOT = { has_dlc = "La Resistance" } }
+				log = "DLC nope: La Resistance"
+			}
+			if = {
+				limit = { has_dlc = "Death or Dishonor" }
+				log = "DLC active: Death or Dishonor"
+			}
+			else_if = {
+				limit = { NOT = { has_dlc = "Death or Dishonor" } }
+				log = "DLC nope: Death or Dishonor"
+			}
 
 			every_country = { NU_on_startup_settings = yes }
 			every_country = { start_fatigue = yes }
