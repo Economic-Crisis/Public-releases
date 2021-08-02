@@ -1,3 +1,14 @@
+# 0.7.6.7.3
+
+### Critical fixes:
+
+ - Fixed the game hanging when loading a new game. (The AI rationalism edit was canceled)
+
+### Minor improvements:
+
+ - Added a window with zero population if the region has a population of 1 person.
+ - Check for the presence of DLC when loading the game is registered.
+
 # 0.7.6.7
 
 ### Scripting Department
