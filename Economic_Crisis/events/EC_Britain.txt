@@ -1234,3 +1234,24 @@ news_event = {
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.66.a"		
 	}
 }
+news_event = {
+	id = britain.67   # Philipp Death
+	title = britain.67.t
+	desc = britain.67.d
+	picture = GFX_event_philipp_isdead_news
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 2021.4.9
+		country_exists = ENG
+		tag = ENG
+	}
+		
+	
+	option = {
+	    name = britain.67.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): britain.67.a"
+	}
+}

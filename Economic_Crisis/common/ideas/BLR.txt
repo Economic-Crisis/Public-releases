@@ -575,6 +575,7 @@ ideas = {
 				Intelligence_agency_defense = -0.02
 				Resistance_growth = 0.01
 				POLITICAL_POWER_GAIN = -0.02
+				stability_weekly = 0.02
 			}
 			removal_cost = -1
 		}
@@ -589,6 +590,7 @@ ideas = {
 			modifier = {
 				Intelligence_agency_defense = 0.01
 				Resistance_growth = -0.02
+				stability_weekly = 0.04
 			}
 			removal_cost = -1
 		}
@@ -604,6 +606,7 @@ ideas = {
 				Intelligence_agency_defense = 0.03
 				Resistance_growth = -0.03
 				POLITICAL_POWER_GAIN = 0.02
+				stability_weekly = 0.08
 			}
 			removal_cost = -1
 		}
@@ -798,7 +801,7 @@ ideas = {
 		    }
 			removal_cost = -1
 			modifier = {
-				stability_factor = -0.1
+				stability_factor = -0.05
 				POLITICAL_POWER_GAIN = 0.05
 				DRIFT_DEFENCE_FACTOR = -0.03
 			}
@@ -1040,6 +1043,17 @@ ideas = {
 				terrain_penalty_reduction = 0.03
             }
 		}
+		BLR_white_legion_2 = {
+			allowed_civil_war = {
+				always = yes
+			}
+            modifier = {
+				stability_factor = -0.05
+				DRIFT_DEFENCE_FACTOR = -0.01
+				compliance_gain = -0.02
+				Resistance_growth = 0.03
+            }
+		}
 		BLR_up_patriotism = {
 			allowed_civil_war = {
 				always = yes
@@ -1153,6 +1167,17 @@ ideas = {
 				POLITICAL_POWER_GAIN = 0.03
             }
         }
+		BLR_EU_sanctions_2 = { 
+			allowed = {	always = yes	}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = -0.15
+				industrial_capacity_factory = 0.03
+				min_export = -0.25
+				stability_factor = -0.1
+				stability_weekly = -0.004
+			}
+		}
 		BLR_milk_war = { 
 			allowed = {	always = yes	}
 			removal_cost = -1

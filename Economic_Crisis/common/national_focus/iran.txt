@@ -103,89 +103,110 @@ focus_tree = {
 		x = 1
 		y = 3
 		available = {
-				NOT = {
-					OR = {
-						has_government = fascism
-						has_government = rad_islamists
-					}
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = rad_islamists
 				}
+			}
 		}
 		completion_reward = { 
-			custom_effect_tooltip = IRN_middle_asia_TT
+			#custom_effect_tooltip = IRN_middle_asia_TT
 
-				hidden_effect = {
-				add_opinion_modifier = {
-					target = KAZ
-					modifier = IRN_strategic_partner
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
 				}
 				add_opinion_modifier = {
-					target = UZB
+					target = PREV
 					modifier = IRN_strategic_partner
 				}
-				add_opinion_modifier = {
-					target = TMS
-					modifier = IRN_strategic_partner
+			}
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.MIDDLE_ASIA
 				}
-				add_opinion_modifier = {
-					target = KYR
-					modifier = IRN_strategic_partner
+				PREV = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRN_strategic_partner
+					}
 				}
-				add_opinion_modifier = {
-					target = TAJ
-					modifier = IRN_strategic_partner
-				}
-				add_opinion_modifier = {
-					target = AFG
-					modifier = IRN_strategic_partner
-				}
-				add_opinion_modifier = {
-					target = PAK
-					modifier = IRN_strategic_partner
-				}
+			}
 
-				KAZ = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				UZB = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				TMS = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				KYR = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				TAJ = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				AFG = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-				PAK = {
-					add_opinion_modifier = {
-						target = IRN
-						modifier = IRN_strategic_partner
-					}
-				}
-			}	 
+			# hidden_effect = {
+			# 	add_opinion_modifier = {
+			# 		target = KAZ
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = UZB
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = TMS
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = KYR
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = TAJ
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = AFG
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = PAK
+			# 		modifier = IRN_strategic_partner
+			# 	}
+
+			# 	KAZ = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	UZB = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	TMS = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	KYR = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	TAJ = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	AFG = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	PAK = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# }	 
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -197,121 +218,142 @@ focus_tree = {
 		x = 2
 		y = 2
 		completion_reward = {
-				custom_effect_tooltip = IRN_balkan_TT
-	
-					hidden_effect = {
-					add_opinion_modifier = {
-						target = SER
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = BOS
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = CRO
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = SLV
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = MNT
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = KOS
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = ALB
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = MAC
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = GRE
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = ROM
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = BUL
-						modifier = IRN_strategic_partner
-					}
+			#custom_effect_tooltip = IRN_balkan_TT
 
-					SER = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.BALKANS
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = IRN_strategic_partner
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.BALKANS
+				}
+				PREV = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRN_strategic_partner
 					}
-					BOS = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					CRO = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					SLV = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					MNT = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					KOS = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					ALB = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					MAC = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					GRE = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					ROM = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					BUL = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-				}	
+				}
+			}
+	
+			# hidden_effect = {
+			# 	add_opinion_modifier = {
+			# 		target = SER
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = BOS
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = CRO
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = SLV
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = MNT
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = KOS
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = ALB
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = MAC
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = GRE
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = ROM
+			# 		modifier = IRN_strategic_partner
+			# 	}
+			# 	add_opinion_modifier = {
+			# 		target = BUL
+			# 		modifier = IRN_strategic_partner
+			# 	}
+
+			# 	SER = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	BOS = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	CRO = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	SLV = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	MNT = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	KOS = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	ALB = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	MAC = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	GRE = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	ROM = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			# 	BUL = {
+			# 		add_opinion_modifier = {
+			# 			target = IRN
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 	}
+			#}	
         }
 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -335,153 +377,174 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip = IRN_middle_east_TT
+
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.MIDDLE_EAST
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = IRN_strategic_partner
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.MIDDLE_EAST
+				}
+				PREV = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = IRN_strategic_partner
+					}
+				}
+			}
+			# custom_effect_tooltip = IRN_middle_east_TT
 		
-				hidden_effect = {
-					add_opinion_modifier = {
-						target = SAU
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = JOR
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = YEM
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = OMA
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = UAE
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = QAT
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = BHR
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = KUW
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = IRQ
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = SYR
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = ISR
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = LEB
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = ROJ
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = KUR
-						modifier = IRN_strategic_partner
-					}
+			# 	hidden_effect = {
+			# 		add_opinion_modifier = {
+			# 			target = SAU
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = JOR
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = YEM
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = OMA
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = UAE
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = QAT
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = BHR
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = KUW
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = IRQ
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = SYR
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = ISR
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = LEB
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = ROJ
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = KUR
+			# 			modifier = IRN_strategic_partner
+			# 		}
 			
-					SAU = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					JOR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					YEM = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					OMA = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					UAE = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					QAT = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
+			# 		SAU = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		JOR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		YEM = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		OMA = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		UAE = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		QAT = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
 		
-					BHR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					KUW = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					IRQ = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					SYR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					ISR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					LEB = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					ROJ = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					KUR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
+			# 		BHR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		KUW = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		IRQ = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		SYR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		ISR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		LEB = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		ROJ = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		KUR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
 		
-			}	
+			# }	
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -500,72 +563,94 @@ focus_tree = {
 		x = 4
 		y = 2
 		completion_reward = {
-			custom_effect_tooltip = IRN_caucas_TT
 
-				hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.CAUCAS
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = IRN_strategic_partner
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = COUNTRY_FLAG.CAUCAS
+				}
+				PREV = {
 					add_opinion_modifier = {
-						target = ABZ
+						target = ROOT
 						modifier = IRN_strategic_partner
 					}
-					add_opinion_modifier = {
-						target = SOS
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = GEO
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = AZR
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = ARM
-						modifier = IRN_strategic_partner
-					}
-					add_opinion_modifier = {
-						target = NKR
-						modifier = IRN_strategic_partner
-					}
+				}
+			}
+
+			# custom_effect_tooltip = IRN_caucas_TT
+
+			# 	hidden_effect = {
+			# 		add_opinion_modifier = {
+			# 			target = ABZ
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = SOS
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = GEO
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = AZR
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = ARM
+			# 			modifier = IRN_strategic_partner
+			# 		}
+			# 		add_opinion_modifier = {
+			# 			target = NKR
+			# 			modifier = IRN_strategic_partner
+			# 		}
 		
-					ABZ = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					SOS = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					GEO = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					AZR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					ARM = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
-					NKR = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
+			# 		ABZ = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		SOS = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		GEO = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		AZR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		ARM = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
+			# 		NKR = {
+			# 			add_opinion_modifier = {
+			# 				target = IRN
+			# 				modifier = IRN_strategic_partner
+			# 			}
+			# 		}
 
-			}	
+			# }	
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -591,34 +676,30 @@ focus_tree = {
 		x = 5
 		y = 3
 		completion_reward = {
-			custom_effect_tooltip = IRN_europe_TT
+			#custom_effect_tooltip = IRN_europe_TT
 
-			hidden_effect = { 
+			#hidden_effect = { 
 				every_country = {
-					if = {
-						limit = {
-							has_idea = eu_member
-						}
+					#if = {
+						limit = { has_idea = eu_member }
 						add_opinion_modifier = {
 							target = IRN
 							modifier = IRN_strategic_partner
 						}
-					}
+					#}
 				}
 		
 				every_country = {
-					if = {
-						limit = {
-							has_idea = eu_member
-						}
+					#if = {
+						limit = { has_idea = eu_member }
 						IRN = {
 							add_opinion_modifier = {
 								target = PREV
 								modifier = IRN_strategic_partner
 							}
 						}
-					}
-				}
+					#}
+				#}
 			}
 
 		} 
@@ -662,8 +743,8 @@ focus_tree = {
 		bypass = { NOT = { country_exists = GER } }
 		completion_reward = { 
 
-			custom_effect_tooltip = IRN_germany_TT
-			hidden_effect = {
+			#custom_effect_tooltip = IRN_germany_TT
+			#hidden_effect = {
 				add_opinion_modifier = {
 					target = GER
 					modifier = IRN_strategic_partner
@@ -674,7 +755,7 @@ focus_tree = {
 						modifier = IRN_strategic_partner
 					}
 				}
-			}
+			#}
 
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -717,34 +798,34 @@ focus_tree = {
 		y = 2
 		bypass = { NOT = { country_exists = RUS } }
 		completion_reward = { 
-			if = {
-				limit = {
-					RUS = { has_government = neutrality }
-				}
-				custom_effect_tooltip = IRN_russia_centrism_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		RUS = { has_government = neutrality }
+			# 	}
+			# 	custom_effect_tooltip = IRN_russia_centrism_TT
+			# }
 
-			if = {
-				limit = {
-					RUS = { has_government = communism }
-				}
-				custom_effect_tooltip = IRN_russia_socialism_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		RUS = { has_government = communism }
+			# 	}
+			# 	custom_effect_tooltip = IRN_russia_socialism_TT
+			# }
 
-			if = {
-				limit = {
-					RUS = { 
-						OR = {
-							has_government = democratic 
-							has_government = liberalism 
-							has_government = reformism
-						} 
-					}
-				}
-				custom_effect_tooltip = IRN_russia_democratic_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		RUS = { 
+			# 			OR = {
+			# 				has_government = democratic 
+			# 				has_government = liberalism 
+			# 				has_government = reformism
+			# 			} 
+			# 		}
+			# 	}
+			# 	custom_effect_tooltip = IRN_russia_democratic_TT
+			# }
 
-			hidden_effect = {
+			#hidden_effect = {
 				add_opinion_modifier = {
 					target = RUS
 					modifier = IRN_strategic_partner
@@ -755,7 +836,7 @@ focus_tree = {
 						modifier = IRN_strategic_partner
 					}
 				}
-			}
+			#}
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -768,19 +849,19 @@ focus_tree = {
 		x = 9
 		y = 3
 		completion_reward = {
-				custom_effect_tooltip = IRN_japan_TT
-				hidden_effect = {
+			#custom_effect_tooltip = IRN_japan_TT
+			#hidden_effect = {
+				add_opinion_modifier = {
+					target = JAP
+					modifier = IRN_strategic_partner
+				}
+				JAP = {
 					add_opinion_modifier = {
-						target = JAP
+						target = IRN
 						modifier = IRN_strategic_partner
 					}
-					JAP = {
-						add_opinion_modifier = {
-							target = IRN
-							modifier = IRN_strategic_partner
-						}
-					}
 				}
+			#}
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -810,41 +891,41 @@ focus_tree = {
 		x = 10
 		y = 2
 		completion_reward = { 
-			if = {
-				limit = {
-					CHI = { has_government = communism }
-				}
-				custom_effect_tooltip = IRN_chi_socialism_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		CHI = { has_government = communism }
+			# 	}
+			# 	custom_effect_tooltip = IRN_chi_socialism_TT
+			# }
 
-			if = {
-				limit = {
-					CHI = { 
-						OR = {
-							has_government = democratic 
-							has_government = liberalism 
-							has_government = reformism
-						} 
-					}
-				}
-				custom_effect_tooltip = IRN_chi_democratic_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		CHI = { 
+			# 			OR = {
+			# 				has_government = democratic 
+			# 				has_government = liberalism 
+			# 				has_government = reformism
+			# 			} 
+			# 		}
+			# 	}
+			# 	custom_effect_tooltip = IRN_chi_democratic_TT
+			# }
 
-			if = {
-				limit = {
-					CHI = { has_government = neutrality }
-				}
-				custom_effect_tooltip = IRN_chi_centrism_TT
-			}
+			# if = {
+			# 	limit = {
+			# 		CHI = { has_government = neutrality }
+			# 	}
+			# 	custom_effect_tooltip = IRN_chi_centrism_TT
+			# }
 			
-			if = {
-				limit = {
-					NOT = {
-						has_government = fascism
-						has_government = rad_islamists
-					}
-				}
-				hidden_effect = {
+			# if = {
+			# 	limit = {
+			# 		NOT = {
+			# 			has_government = fascism
+			# 			has_government = rad_islamists
+			# 		}
+			# 	}
+				#hidden_effect = {
 					add_opinion_modifier = {
 						target = CHI
 						modifier = IRN_strategic_partner
@@ -855,8 +936,8 @@ focus_tree = {
 							modifier = IRN_strategic_partner
 						}
 					}
-				}
-			}
+				#}
+			#}
 
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
@@ -869,8 +950,8 @@ focus_tree = {
 		x = 11
 		y = 3
 		completion_reward = {
-			custom_effect_tooltip = IRN_turkey_TT
-			hidden_effect = {
+			#custom_effect_tooltip = IRN_turkey_TT
+			#hidden_effect = {
 				add_opinion_modifier = {
 					target = TUR
 					modifier = IRN_strategic_partner
@@ -881,7 +962,7 @@ focus_tree = {
 						modifier = IRN_strategic_partner
 					}
 				}
-			}
+			#}
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -902,36 +983,36 @@ focus_tree = {
 		y = 2
 		bypass = { NOT = { country_exists = USA } }
 		completion_reward = { 
-			if = { 
-				limit = { 
-					USA = { 
-						has_government = liberalism 
-					} 
-				} 
-				custom_effect_tooltip = IRN_usa_liberalism_TT
-			}
+			# if = { 
+			# 	limit = { 
+			# 		USA = { 
+			# 			has_government = liberalism 
+			# 		} 
+			# 	} 
+			# 	custom_effect_tooltip = IRN_usa_liberalism_TT
+			# }
 
-			if = { 
-				limit = { 
-					USA = { 
-						has_government = democratic 
-					} 
-				} 
-				custom_effect_tooltip = IRN_usa_conservatism_TT
-			}
+			# if = { 
+			# 	limit = { 
+			# 		USA = { 
+			# 			has_government = democratic 
+			# 		} 
+			# 	} 
+			# 	custom_effect_tooltip = IRN_usa_conservatism_TT
+			# }
 
-			if = {
-				limit = {
-					USA = {
-						NOT = {
-							has_government = democratic 
-							has_government = liberalism
-						}
-					}
-				}
-				custom_effect_tooltip = IRN_usa_conservatism_TT
-			}
-			hidden_effect = {
+			# if = {
+			# 	limit = {
+			# 		USA = {
+			# 			NOT = {
+			# 				has_government = democratic 
+			# 				has_government = liberalism
+			# 			}
+			# 		}
+			# 	}
+			# 	custom_effect_tooltip = IRN_usa_conservatism_TT
+			# }
+			# hidden_effect = {
 				add_opinion_modifier = {
 					target = USA
 					modifier = IRN_strategic_partner
@@ -942,7 +1023,7 @@ focus_tree = {
 						modifier = IRN_strategic_partner
 					}
 				}
-			}
+			#}
 		} 
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
@@ -969,8 +1050,8 @@ focus_tree = {
 		x = 13
 		y = 3
 		completion_reward = { 
-			custom_effect_tooltip = IRN_great_britain_TT
-			hidden_effect = {
+			#custom_effect_tooltip = IRN_great_britain_TT
+			#hidden_effect = {
 				add_opinion_modifier = {
 					target = ENG
 					modifier = IRN_strategic_partner
@@ -981,7 +1062,7 @@ focus_tree = {
 						modifier = IRN_strategic_partner
 					}
 				}
-			}
+			#}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}

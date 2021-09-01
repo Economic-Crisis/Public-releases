@@ -35,6 +35,20 @@ scripted_gui = {
         }
 	}
 	
+	topbar_money1111 = {
+		window_name = "money_menu_cl_gui"      
+        parent_window_name = "money_menu_gui"
+ 
+		context_type = player_context
+ 
+		visible = {
+			NOT = { check_variable = { budget_alert = 1 } }
+		}
+		
+		
+ 
+	}
+	
 	diplomacy_money_menu = {
 	
 		window_name = "diplomacy_money"      

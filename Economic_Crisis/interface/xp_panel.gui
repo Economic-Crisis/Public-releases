@@ -1,0 +1,103 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "panel_xp_gui"
+		position = { x = 657 y = 0 }	
+		
+		iconType ={
+			name ="panel_xp_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 319 y = 5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = panel_xp_tooltip
+			pdx_tooltip_delayed = panel_xp_tooltip_delayed
+		}
+		
+		instantTextBoxType = {
+			name ="panel_xp"
+			position = { x = 320 y = 9 }
+			font = "hoi_18mbs"
+			text = "panel_xp"
+			format = center
+			maxWidth = 70
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "panel_xp_open_gui"
+		position = { x = 973 y = 28 }
+		size = { width = 76 height = 86 }
+		clipping = no
+					
+		background = {
+			name = "Background"
+			spriteType ="GFX_mini_bg"
+		}		
+		
+		iconType ={
+			name ="panel_xp_bg1"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 3 y = 5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = ARMY_EXPERIENCE_DESC
+			#pdx_tooltip_delayed = ARMY_EXPERIENCE_DESC
+		}
+		
+		iconType ={
+			name ="panel_xp_bg2"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 3 y = 30 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = NAVY_EXPERIENCE_DESC
+			#pdx_tooltip_delayed = NAVY_EXPERIENCE_DESC
+		}
+		
+		iconType ={
+			name ="panel_xp_bg3"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 3 y = 55 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = AIR_EXPERIENCE_DESC
+			#pdx_tooltip_delayed = AIR_EXPERIENCE_DESC
+		}
+		
+		instantTextBoxType = {
+			name ="panel_xp_army"
+			position = { x = 6 y = 9 }
+			font = "hoi_18mbs"
+			text = "panel_xp_army"
+			format = center
+			maxWidth = 67
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="panel_xp_navy"
+			position = { x = 6 y = 33 }
+			font = "hoi_18mbs"
+			text = "panel_xp_navy"
+			format = center
+			maxWidth = 67
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name ="panel_xp_air"
+			position = { x = 6 y = 57 }
+			font = "hoi_18mbs"
+			text = "panel_xp_air"
+			format = center
+			maxWidth = 67
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+	
+}

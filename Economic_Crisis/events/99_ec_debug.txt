@@ -48,18 +48,14 @@ country_event = {
 	}
 	option = {  
 		name = debug.1.b
-		RUS = { add_country_leader_trait = leader_eaeu }
-		every_country = {
-			limit = {
-				has_country_leader_with_trait = leader_eaeu
-			}
-			save_global_event_target_as = get_name_country
-		}
+		set_global_flag = winer_civil_war.TAL
+		mark_focus_tree_layout_dirty = yes
 		
 	}
 	option = {  
 		name = debug.1.c
-		save_global_event_target_as = eaeu_credit
+		clr_global_flag = winer_civil_war.TAL
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -74,9 +70,11 @@ country_event = {
 	}
 	option = {  
 		name = debug.1.b
+		set_variable = { budget_alert = 1 }
 	}
 	option = {  
 		name = debug.1.c
+		set_variable = { budget_alert = 0 }
 	}
 	option = {  
 		name = debug.1.d

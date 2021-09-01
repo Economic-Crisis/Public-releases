@@ -924,17 +924,17 @@ country_event = { #ООН вводил новый пакет санкции
 	is_triggered_only = yes
 	
 	immediate = {
-		#hidden_effect = {	
+		hidden_effect = {	
 			if = {
 				limit = { NOT = { has_idea = sanctions } }
 				add_ideas = sanctions
 				every_country = {
-					limit = {
-						OR = {
-							has_idea = unsc_member
-							has_idea = eu_member
-						}
-					}
+					#limit = {
+					#	OR = {
+					#		has_idea = unsc_member
+					#		has_idea = eu_member
+					#	}
+					#}
 					add_opinion_modifier = {
 						target = FROM
 						modifier = embargo
@@ -976,7 +976,7 @@ country_event = { #ООН вводил новый пакет санкции
 						target = FROM
 						modifier = sanctions
 					}
-				#}
+				}
 			}
 			
 		}	

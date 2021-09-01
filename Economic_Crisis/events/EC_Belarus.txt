@@ -3312,7 +3312,7 @@ country_event = {
     #picture = GFX_event_event_Lykashenko_dead
     trigger = {
         tag = BLR
-        has_stability < 0.1
+        has_stability < 0.03
         has_idea = BLR_the_anger_of_people
         has_country_leader = {
             name = "Aleksandr Lukashenko"
@@ -3507,5 +3507,60 @@ country_event = {
             popularity = -0.08
         }
         add_stability = -0.1
+    }
+}
+country_event = { 
+    id = belarus.47
+    title = belarus.47.t 
+    desc = belarus.47.d
+    picture = GFX_repot_event_TUR_coup
+    is_triggered_only = yes
+    option = { 
+        name = belarus.47.a 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
+        }
+        add_stability = 0.1
+    }
+    option = { 
+        name = belarus.47.b
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+        }
+        add_stability = 0.1
+    }
+    option = { 
+        name = belarus.47.c
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+        ai_chance = { 
+            factor = 25
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        set_politics = {
+            ruling_party = liberalism
+            elections_allowed = no
+        }
+        add_stability = 0.1
     }
 }

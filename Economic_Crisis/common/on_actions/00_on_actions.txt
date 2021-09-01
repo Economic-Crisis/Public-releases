@@ -535,11 +535,10 @@ on_actions = {
 
 			every_country = { NU_on_startup_settings = yes }
 			every_country = { start_fatigue = yes }
+			every_country = { add_ideas = naval_invasion_capacity }
 
 			every_country = {
-				limit = {
-					is_ai = yes
-				}
+				limit = { is_ai = yes }
 				add_timed_idea = { idea = AI_industry_hidden_buff days = 5 }
 			}
 
@@ -673,7 +672,7 @@ on_actions = {
 			# }
 			
 			# ### set default global variables
-			# every_country = {
+			every_country = {
 				# set_oil_cost = yes
 				# set_aluminium_cost = yes
 				# set_rubber_cost = yes
@@ -687,8 +686,8 @@ on_actions = {
 				# set_polymers_cost = yes
 				# set_alloy_ore_cost = yes
 				# set_current_export_value = yes
-				# set_tax_percentage = yes
-			# }
+				set_tax_percentage = yes
+			}
 		}
 	}
 			
@@ -990,7 +989,9 @@ on_actions = {
 	#ROOT is winner #FROM is loser
 	on_peaceconference_ended = {
 		effect = {
-			
+		if = {
+			limit = { has_navy_size = { size > 1 } }
+			FROM = { transfer_navy = { target = ROOT } }
 		}
 	}	
 }

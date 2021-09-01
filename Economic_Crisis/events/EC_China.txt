@@ -248,3 +248,21 @@ country_event = { #Ивент на советника
 		name = china.10.b
 	}
 }
+country_event = { #Ивент на энергодоговор КНДР и Китая.
+	id = china.11
+	title = china.11.t
+	desc = china.11.d 
+	#picture = GFX_event_arest_chinese_general
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.11.a 
+		NKO = {
+			give_resource_rights = { receiver = CHI state = 527 }
+		}
+	}
+	option = {
+		name = china.11.b
+	}
+}

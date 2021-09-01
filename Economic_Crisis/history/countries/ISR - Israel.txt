@@ -3,6 +3,8 @@
 # NOT EDITED LAWS
 # NOT EDITED POLITICS
 
+set_country_flag = COUNTRY_FLAG.MIDDLE_EAST
+
 capital = 454
 
 add_ideas = {
@@ -12,6 +14,18 @@ add_ideas = {
 	regional_country
 	IZR_surrounded_by_enemies
 }
+
+#Прописание особых отношений евреев с арабскими соседями
+add_opinion_modifier = { target = EGY modifier = post_war }
+add_opinion_modifier = { target = JOR modifier = post_war }
+add_opinion_modifier = { target = SAU modifier = post_war }
+add_opinion_modifier = { target = YEM modifier = post_war }
+add_opinion_modifier = { target = IRQ modifier = post_war }
+add_opinion_modifier = { target = SYR modifier = post_war }
+add_opinion_modifier = { target = LEB modifier = post_war }
+
+add_opinion_modifier = { target = PAL modifier = semi_active_war }
+add_opinion_modifier = { target = PAL modifier = post_war }
 
 2013.11.1 = {
 	set_variable = { budget_last_year = 29330 }

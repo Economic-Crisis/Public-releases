@@ -143,7 +143,8 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 5 }
 		completion_reward = {
-			add_ideas = militirisation_north_korea
+			#add_ideas = militirisation_north_korea
+			add_war_support = 0.07
 		}
 		search_filters = {FOCUS_FILTER_ARMY} 
 	}
@@ -166,6 +167,12 @@ focus_tree = {
 		id = NKO_nuclear_programm #Программа ядерных исследований
 		icon = GFX_goal_nko_nuclear_programs
 		prerequisite = { focus = NKO_million_army }
+		available = {
+			OR = {
+				has_completed_focus = NKO_dogovor_China
+				has_completed_focus = NKO_dogovor_Russia
+			}
+		}
 		x = 0
 		y = 5
 		cost = 70
@@ -275,12 +282,12 @@ focus_tree = {
 							traits = { trait_juche }
 						}
 					}
-					country_event = {id = north_korea.4}
-					news_event = {id = north_korea.6}
+					country_event = { id = north_korea.4 }
+					news_event = { id = north_korea.6 }
 					set_country_flag = succesful_coup
 				}
 				70 = {
-					country_event = {id = north_korea.5}
+					country_event = { id = north_korea.5 }
 					set_country_flag = failed_coup
 				}
 			}
@@ -340,7 +347,9 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 3  }
 		completion_reward = {
-			
+			807 = {	set_border_war = yes }
+			969 = {	set_border_war = yes }
+			525 = {	set_border_war = yes }
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY} 
 	}
@@ -359,7 +368,9 @@ focus_tree = {
 		completion_reward = {
 			807 = { set_demilitarized_zone = no }
 			add_named_threat = { threat = 5 name = threat_NKO_remlitrisation_DMZ }
-			set_province_name = { id = 807 name = "Keson-Kimgansan" }
+			807 = {
+				set_state_name = "Keson-Kimgansan"
+			}
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY} 
 	}
@@ -412,7 +423,7 @@ focus_tree = {
 		y = 8
 		cost = 70
 		available = {
-		    NUM_OF_NUKES > 4
+		    #NUM_OF_NUKES > 4
 			NOT = { country_exists = KOR }
 		}
 		ai_will_do = { factor = 3  }
@@ -432,6 +443,7 @@ focus_tree = {
 		ai_will_do = { factor = 3  }
 		completion_reward = {
 			#Event
+			every_state = { add_resistance = -70 }
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY} 
 	}
@@ -558,15 +570,17 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 3  }
 		completion_reward = {
-			add_resource = {
-				type = polymers 
-				amount = 16
-				state = 527
-			}
-			add_resource = {
-				type = steel 
-				amount = 10
-				state = 527
+			527 = {
+				add_building_construction = {
+					type = steel_factory
+					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 5
+					instant_build = yes
+				}
 			}
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_INDUSTRY} 
@@ -582,7 +596,9 @@ focus_tree = {
 		y = 7
 		cost = 70
 		ai_will_do = { factor = 3  }
-		completion_reward = {	}
+		completion_reward = {
+			
+		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ECONOMIC} 
 	}
 	
@@ -756,7 +772,7 @@ focus_tree = {
 		completion_reward = {	
 		    set_cosmetic_tag = NKO_unific
 			KOR = { set_autonomy = { target = NKO autonomy_state = autonomous_area } }
-		
+			add_ideas = idea_economic_pressure
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY} 
 	}
@@ -789,7 +805,7 @@ focus_tree = {
 		id = NKO_dogovor_Russia #Договор 
 		icon = GFX_goal_nko_coop_with_russia
 		prerequisite = { focus = NKO_friend_Russia }
-		
+		mutually_exclusive = { focus = NKO_dogovor_China }
 		available = {
 		    is_in_faction = no
 			RUS = {
@@ -840,7 +856,7 @@ focus_tree = {
 		id = NKO_dogovor_China #Договор о военим сотрудничества
 		icon = GFX_goal_nko_coop_with_china
 		prerequisite = { focus = NKO_friend_China }
-		
+		mutually_exclusive = { focus = NKO_dogovor_Russia }
 		available = {
 		    is_in_faction = no
 			CHI = {
@@ -858,6 +874,24 @@ focus_tree = {
 		ai_will_do = { factor = 3  }
 		completion_reward = {
 			CHI = { add_to_faction = NKO }			
+		}
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY} 
+	}
+
+	focus = {
+		id = NKO_China_energy #Энергетический договор
+		icon = GFX_goal_nko_friendship_with_china
+		prerequisite = { focus = NKO_dogovor_China }
+		available = {
+		    
+		}
+		
+		x = 13
+		y = 7
+		cost = 70
+		ai_will_do = { factor = 3  }
+		completion_reward = {
+			CHI = { country_event = china.11 }
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY} 
 	}
@@ -945,6 +979,31 @@ focus_tree = {
 		completion_reward = {
             swap_ideas = { remove_idea = single-party_state add_idea =  presidential_republic }
 			add_stability = -0.25
+			if = {
+				limit = { has_completed_focus = NKO_support_conservativ	}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+					election_frequency = 48
+				}
+			}
+			if = {
+				limit = { has_completed_focus = NKO_support_liberalism	}
+				set_politics = {
+					ruling_party = liberalism
+					elections_allowed = yes
+					election_frequency = 48
+				}
+			}
+			if = {
+				limit = { has_completed_focus = NKO_support_reformism	}
+				set_politics = {
+					ruling_party = reformism
+					elections_allowed = yes
+					election_frequency = 48
+				}
+			}
+			
 			if = {
 				limit = {
 					OR = {
@@ -1258,7 +1317,8 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 3  }
 		completion_reward = {
-			add_ideas = militirisation_north_korea
+			#add_ideas = militirisation_north_korea
+			add_war_support = 0.07
 		}
 		search_filters = {FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY} 
 	}
@@ -1341,7 +1401,9 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 3  }
 		completion_reward = {
-			
+			807 = {	set_border_war = yes }
+			969 = {	set_border_war = yes }
+			525 = {	set_border_war = yes }
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_ARMY} 
 	}
@@ -1356,7 +1418,9 @@ focus_tree = {
 		cost = 70
 		ai_will_do = { factor = 3  }
 		completion_reward = {
-			
+			807 = {
+				add_resistance = 12
+			}
 		}
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY FOCUS_FILTER_DOMESTIC_POLICY FOCUS_FILTER_ARMY} 
 	}

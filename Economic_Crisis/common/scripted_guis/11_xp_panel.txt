@@ -1,0 +1,42 @@
+scripted_gui = {
+	panel_xp = {
+		window_name = "panel_xp_gui"
+        parent_window_token = top_bar
+ 
+		context_type = player_context
+ 
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			panel_xp_bg_click = {
+				if = {
+					limit = {
+						has_country_flag = panel_xp_gui
+					}
+					clr_country_flag = panel_xp_gui
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_country_flag = panel_xp_gui
+						}
+					}
+					set_country_flag = panel_xp_gui
+				}
+			}
+		}
+	}
+	panel_xp_open = {
+		window_name = "panel_xp_open_gui"
+        parent_window_token = top_bar
+ 
+		context_type = player_context
+ 
+		visible = {
+			has_country_flag = panel_xp_gui
+			#always = yes
+		}
+	}
+}
