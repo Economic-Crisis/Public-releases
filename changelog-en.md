@@ -23,6 +23,14 @@
 - Reduced the size of the US Army.
 - Template corrections have been carried out in the World Bank, the USA and Russia.
 - Fixed the starting stock of US mortars.
+- The "country for negotiations" branch has been removed from Belarus. (Now you can't just remove Lukashenka.)
+- New features have been added to ministers, and old ones have been changed in Belarus.
+- Added new Events in Belarus.
+- A new democratic version of the branch for the change of the Lukashenka regime has been added.
+- The resignation and murder of Lukashenka have been finalized.
+- Changed and removed some tricks from Belarus.
+- Belarus has added new nats. spirits, and the old ones are changed.
+- The starting conditions of Belarus have been changed.
 
 ### AI
 
@@ -65,6 +73,7 @@
 - The localization of light tanks has been redesigned, as well as the localization of light tanks for Russia has been partially prescribed.
 - Fixed some bugs in Russian and English localization.
 - Fixed localization of Kiev in English at the beginning of the game.
+- Updated localization in Belarus.
 
 ### Music
 
