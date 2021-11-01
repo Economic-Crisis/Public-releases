@@ -1,34 +1,11 @@
 guiTypes = {
-
-	containerWindowType = {
-		name = "panel_xp_gui"
-		position = { x = 657 y = 0 }	
-		
-		iconType ={
-			name ="panel_xp_bg"
-			spriteType = "GFX_generic_box_smallest"
-			position = { x = 319 y = 5 }
-			Orientation = "UPPER_LEFT"
-			pdx_tooltip = panel_xp_tooltip
-			pdx_tooltip_delayed = panel_xp_tooltip_delayed
-		}
-		
-		instantTextBoxType = {
-			name ="panel_xp"
-			position = { x = 320 y = 9 }
-			font = "hoi_18mbs"
-			text = "panel_xp"
-			format = center
-			maxWidth = 70
-			maxHeight = 24
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-	}
-	
 	containerWindowType = {
 		name = "panel_xp_open_gui"
-		position = { x = 973 y = 28 }
+		position = { x = 973 y = -20 }
+		show_position = { x=973 y =28 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
 		size = { width = 76 height = 86 }
 		clipping = no
 					
@@ -36,7 +13,6 @@ guiTypes = {
 			name = "Background"
 			spriteType ="GFX_mini_bg"
 		}		
-		
 		iconType ={
 			name ="panel_xp_bg1"
 			spriteType = "GFX_generic_box_smallest"
@@ -99,5 +75,29 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 	}
-	
+	containerWindowType = {
+		name = "panel_xp_gui"
+		position = { x = 657 y = 0 }	
+		
+		iconType ={
+			name ="panel_xp_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 319 y = 5 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = panel_xp_tooltip
+			pdx_tooltip_delayed = panel_xp_tooltip_delayed
+		}
+		
+		instantTextBoxType = {
+			name ="panel_xp"
+			position = { x = 320 y = 9 }
+			font = "hoi_18mbs"
+			text = "panel_xp"
+			format = center
+			maxWidth = 70
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
 }

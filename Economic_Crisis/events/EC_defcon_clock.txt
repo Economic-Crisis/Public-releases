@@ -1,0 +1,115 @@
+﻿############################
+## Economic Crisis        ##
+############################
+
+
+add_namespace = defcon
+
+news_event = {
+	id = defcon.1
+	title = defcon.1.t
+	desc = defcon.1.d
+	picture = GFX_event_defcon
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = defcon.1.a
+	}
+}
+
+add_namespace = doomsday_clock
+
+country_event = {
+	id = doomsday_clock.1
+	#title = doomsday_clock.1.t
+	#desc = doomsday_clock.1.d
+
+	trigger = {
+		tag = ROOT
+		is_ai = no
+		date > 2015.01.22
+	}
+
+	major = yes
+	hidden = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Ok"
+		set_global_flag = doomsday_clock_2015
+		doomsday_clock_time_up_2 = yes
+		set_global_flag = set_doomsdey_clock
+	}
+}
+
+country_event = {
+	id = doomsday_clock.2
+	#title = doomsday_clock.1.t
+	#desc = doomsday_clock.1.d
+
+	trigger = {
+		tag = ROOT
+		is_ai = no
+		date > 2017.01.26
+	}
+
+	major = yes
+	hidden = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Ok"
+		set_global_flag = doomsday_clock_2017
+		doomsday_clock_second_down_30 = yes
+		set_global_flag = set_doomsdey_clock
+	}
+}
+
+country_event = {
+	id = doomsday_clock.3
+	#title = doomsday_clock.1.t
+	#desc = doomsday_clock.1.d
+
+	trigger = {
+		tag = ROOT
+		is_ai = no
+		date > 2018.01.24
+	}
+
+	major = yes
+	hidden = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Ok"
+		set_global_flag = doomsday_clock_2018
+		doomsday_clock_second_down_30 = yes
+		set_global_flag = set_doomsdey_clock
+	}
+}
+
+country_event = {
+	id = doomsday_clock.4
+	#title = doomsday_clock.1.t
+	#desc = doomsday_clock.1.d
+
+	trigger = {
+		tag = ROOT
+		is_ai = no
+		date > 2020.12.24
+	}
+
+	major = yes
+	hidden = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Ok"
+		set_global_flag = doomsday_clock_2020
+		doomsday_clock_second_down_20 = yes
+		set_global_flag = set_doomsdey_clock
+	}
+}

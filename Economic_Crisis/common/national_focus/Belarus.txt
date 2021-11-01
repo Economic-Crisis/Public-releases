@@ -4747,19 +4747,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = { idea = BLR_posledstvie_rasgona_2 days = 90 }
 			add_timed_idea = { idea = BLR_the_anger_of_people days = 730 }
-			#add_stability = -0.1
-			hidden_effect = {
-				news_event = { id = belarus_news.7 days = 18 }
-				news_event = { id = belarus_news.8 days = 24 }
-				news_event = { id = belarus_news.9 days = 32 }
-				news_event = { id = belarus_news.13 days = 35 }
-				news_event = { id = belarus_news.14 days = 40 }
-				news_event = { id = belarus_news.15 days = 52 }
-				news_event = { id = belarus_news.16 days = 68 }
-				news_event = { id = belarus_news.17 days = 69 }
-				news_event = { id = belarus_news.18 days = 74 }
-				news_event = { id = belarus_news.19 days = 80 }
-			}
+			country_event = { id = belarus.48 days = 3 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -4807,7 +4795,6 @@ focus_tree = {
 			has_idea = generic_nationalists_leader 
 		}
 		prerequisite = {focus = BLR_our_history}
-		mutually_exclusive = {focus = BLR_VKL}
 		x = 60
 		y = 3
 		ai_will_do = { factor = 1 }
@@ -4825,8 +4812,7 @@ focus_tree = {
 			has_government = fascism
 			has_idea = generic_head_of_government_nationalist
 		}
-		prerequisite = {focus = BLR_our_history}
-		mutually_exclusive = {focus = BLR_republic}  
+		prerequisite = {focus = BLR_our_history}  
 		x = 62
 		y = 3
 		ai_will_do = { factor = 1 }
@@ -8856,130 +8842,6 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
 	}
-	focus = {
-		id = BLR_platform_for_negotiations
-		icon = GFX_goal_generic_military_sphere
-		prerequisite = {focus = BLR_Lykashenko}
-		cost = 50
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-		}	
-		x = 90
-		y = 3
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_ideas = BLR_platform_for_negotiations
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_ukrain_conflicte
-		icon = GFX_goal_generic_military_sphere
-		cost = 30
-		prerequisite = {focus = BLR_platform_for_negotiations}
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-			NOT = { has_war_with = UKR }
-			OR = {	
-				UKR = { has_civil_war = yes }
-				UKR = { has_war_with = DON }
-				UKR = { has_war_with = LUG }
-				UKR = { has_war_with = NRU }
-				UKR = { has_war_with = CRM }
-			}	
-		}	
-		x = 90
-		y = 4
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_exchange_prisoners
-		icon = GFX_goal_generic_military_sphere
-		cost = 40
-		prerequisite = {focus = BLR_dont_fire}
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-		}	
-		x = 91
-		y = 6
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			UKR = {
-				add_opinion_modifier = {
-					target = DON
-					modifier = actions_positive
-				}
-				add_opinion_modifier = {
-					target = LUG
-					modifier = actions_positive
-				}
-			}
-			DON = {
-				add_opinion_modifier = {
-					target = UKR
-					modifier = actions_positive
-				}
-			}
-			LUG = {
-				add_opinion_modifier = {
-					target = UKR
-					modifier = actions_positive
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_dont_fire
-		icon = GFX_goal_generic_military_sphere
-		cost = 40
-		prerequisite = {focus = BLR_ukrain_conflicte}
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-		}	
-		x = 90
-		y = 5
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
-	focus = {
-		id = BLR_belarusian_observers
-		icon = GFX_goal_generic_military_sphere
-		cost = 40
-		prerequisite = {focus = BLR_dont_fire}
-		available = {
-			has_country_leader = {
-				name = "Aleksandr Lukashenko"
-				ruling_only = yes
-			}
-		}	
-		x = 89
-		y = 6
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-		}
-		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
-	}
 	####
 	focus = {
 		id = BLR_vlyanie
@@ -9149,7 +9011,7 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_ideas = BLR_export_milk_production
+			country_event = { id = belarus.46 days = 3 }
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -9508,11 +9370,10 @@ focus_tree = {
 		y = 2
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			# add_popularity = {
-			# 	ideology = communism
-			# 	popularity = 0.1
-			# }
-			add_stability = -0.03
+		    add_popularity = {
+			 	ideology = communism
+				popularity = 0.05
+			}
 		}
 		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
@@ -15749,5 +15610,349 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_FOREIGN_POLICY }
+	}
+	focus = {
+		id = BLR_time_for_a_change
+		icon = GFX_goal_generic_military_sphere
+		cost = 30
+		available = {
+			has_government = neutrality
+		}	
+		x = 100
+		y = 2
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 150
+			country_event = { id = belarus.48 days = 3 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_opposition_organisation
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_time_for_a_change }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 100
+		y = 3
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_inner_strenght
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_opposition_organisation }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 97
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 250
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_eating_the_proletarian
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_inner_strenght }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 97
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = communism
+			   popularity = 0.05
+		   }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_influence_of_opposition_trade_unions
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_eating_the_proletarian }
+		cost = 50
+		available = {
+			has_government = neutrality
+			has_political_power > 100
+		}	
+		x = 97
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = communism
+			   popularity = 0.05
+		   }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_help_from_the_west
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_opposition_organisation }
+		cost = 50
+		available = {
+			has_government = neutrality
+			has_political_power > 100
+		}	
+		x = 102
+		y = 4
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = -100
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_support_of_the_army
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_inner_strenght }
+		cost = 30
+		available = {
+			has_government = neutrality
+		}	
+		x = 95
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = BLR_weakining_of_the_regime
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_support_for_law_enforcement_agencies
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_support_of_the_army }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 95
+		y = 7
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = BLR_weakining_of_the_regime
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_the_return_white_legion
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_inner_strenght }
+		cost = 50
+		available = {
+			has_government = neutrality
+			has_political_power > 100
+		}	
+		x = 99
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 100
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_radcialisation_of_the_white_legion
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_the_return_white_legion }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 99
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = BLR_white_legion_2
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_strikes_at_enterpries
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_radcialisation_of_the_white_legion }
+		prerequisite = { focus = BLR_influence_of_opposition_trade_unions }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 98
+		y = 7
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_attracton_of_European_powers
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_help_from_the_west }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 102
+		y = 5
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_appeal_to_the_European_court
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_attracton_of_European_powers }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 102
+		y = 6
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = BLR_weakining_of_the_regime
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_package_of_sanction
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BLR_appeal_to_the_European_court }
+		cost = 50
+		available = {
+			has_government = neutrality
+		}	
+		x = 102
+		y = 7
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = EU_sanctions_2
+			set_global_flag = Weakened_goverment
+            custom_effect_tooltip = BLR_weakining_of_the_regime
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_arming_position
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { 
+			focus = BLR_support_for_law_enforcement_agencies
+			focus = BLR_strikes_at_enterpries
+	    }
+		mutually_exclusive = {focus = BLR_attracting_private_military_companies}
+		cost = 50
+		available = {
+			has_government = neutrality
+			has_political_power > 300
+		}	
+		x = 96
+		y = 8
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = -300
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_attracting_private_military_companies
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { 
+			focus = BLR_support_for_law_enforcement_agencies
+			focus = BLR_strikes_at_enterpries
+	    }
+		mutually_exclusive = {focus = BLR_arming_position}
+		cost = 50
+		available = {
+			has_government = neutrality
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				custom_trigger_tooltip = {
+					tooltip = BLR_attracting_private_military_companies_1
+					check_variable = { budget_reserve > 1 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				custom_trigger_tooltip = {
+					tooltip = BLR_attracting_private_military_companies_1
+					check_variable = { budget_reserve > 0.1 }
+				}
+			}
+		}	
+		x = 98
+		y = 8
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = BLR_attracting_private_military_companies_1
+			subtract_from_variable = { budget_reserve = 1 }
+			if = {
+				limit = { NOT = { has_country_flag = money_trillions } }
+				subtract_from_variable = { budget_reserve = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = money_trillions }
+				subtract_from_variable = { budget_reserve = 0.01 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_storming_the_residance
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = {
+            focus = BLR_arming_position
+		    focus = BLR_attracting_private_military_companies
+        }
+		mutually_exclusive = {focus = BLR_Victory}
+		cost = 30
+		available = {
+			has_government = neutrality
+			has_global_flag = Weakened_goverment
+		}	
+		x = 96
+		y = 9
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = BLR_white_legion_2
+			country_event = { id = belarus.49 days = 3 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
+	}
+	focus = {
+		id = BLR_Victory
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = {focus = BLR_attracting_private_military_companies}
+		cost = 30
+		mutually_exclusive = {focus = BLR_storming_the_residance}
+		available = {
+			has_government = neutrality
+			has_global_flag = Weakened_goverment
+		}	
+		x = 98
+		y = 9
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			remove_ideas = BLR_white_legion_2
+			country_event = { id = belarus.49 days = 40 }
+		}
+		search_filters = { FOCUS_FILTER_DOMESTIC_POLICY }
 	}
 }

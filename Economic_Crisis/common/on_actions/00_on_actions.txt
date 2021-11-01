@@ -1,23 +1,23 @@
 on_actions = {
 	# country 
-	 on_new_term_election = {
-		 random_events = {
+	on_new_term_election = {
+		random_events = {
 			 100 = usa.18
 			 100 = usa.26
-		 }
-		 random_events = {
-			 100 = election.2
-			 100 = election.3
-			 100 = election.4
-			 100 = election.5
-			 100 = election.6
-			 100 = election.11
-			 100 = election.12
-			 100 = election.13
-			 100 = election.14
-			 100 = election.15
-		 }
-	 }
+		}
+		random_events = {
+			100 = election.2
+			100 = election.3
+			100 = election.4
+			100 = election.5
+			100 = election.6
+			100 = election.11
+			100 = election.12
+			100 = election.13
+			100 = election.14
+			100 = election.15
+		}
+	}
 
 	# Ace pilots
 	# country, FROM = ace
@@ -108,6 +108,7 @@ on_actions = {
 	on_nuke_drop = {
 
 		effect = {
+			set_global_flag = end_game
 			news_event = { id = nuke_dropped.2 days = 1}
 			news_event = { id = nuke_dropped.3 days = 1}
 			news_event = { id = nuke_dropped.4 days = 1}
@@ -222,6 +223,14 @@ on_actions = {
 					is_ai = yes
 				}
 				update_operation_ai = yes
+			}
+			if = {
+				limit = { threat > 0.99 }
+				set_global_flag = threat_crowded_bool
+			}
+			if = {
+				limit = { has_war = yes	}
+				set_civ_casualties_temp = yes
 			}
 		}
 	}
@@ -441,58 +450,7 @@ on_actions = {
 	
 	on_monthly = {
 		effect = {
-			if = {
-				limit = {
-					AZR = {
-						owns_state = 816
-						owns_state = 818
-					}
-					NKR = {
-						owns_state = 775
-					}
-					NOT = {
-						has_country_flag = cau_border_conflict
-					}
-					tag = NKR
-				}
-				start_border_war = {
-					change_state_after_war = no
-					attacker = {
-						state = 816
-						num_provinces = 2
-						on_win = cau_border_conflicts.1
-						on_lose = cau_border_conflicts.2
-					}
-					
-					defender = {
-						state = 775
-						num_provinces = 2
-						on_win = cau_border_conflicts.1
-						on_lose = cau_border_conflicts.2
-					}
-				}
-				start_border_war = {
-					change_state_after_war = no
-					attacker = {
-						state = 775
-						num_provinces = 2
-						on_win = cau_border_conflicts.1
-						on_lose = cau_border_conflicts.2
-					}
-					
-					defender = {
-						state = 818
-						num_provinces = 2
-						on_win = cau_border_conflicts.1
-						on_lose = cau_border_conflicts.2
-					}
-				}
-				set_country_flag = {
-					flag = cau_border_conflict
-					days = 10
-					value = 1
-				}
-			}
+			
 		}
 	}
 
@@ -500,6 +458,24 @@ on_actions = {
 	on_startup = {
 		effect = {
 			log = EC_version
+			add_to_variable = { global.defcon_level = 5 }
+			add_to_variable = { global.doomsday_clock_time = 55 }
+			add_to_variable = { global.doomsday_clock_second = 00 }
+			clamp_variable = {
+				var = global.defcon_level
+				min = 0
+				max = 5
+			}
+			clamp_variable = {
+				var = global.doomsday_clock_time
+				min = 0
+				max = 60
+			}
+			clamp_variable = {
+				var = global.doomsday_clock_second
+				min = 0
+				max = 60
+			}
 			if = {
 				limit = { has_dlc = "Waking the Tiger" }
 				log = "DLC active: Waking the Tiger"
@@ -532,14 +508,38 @@ on_actions = {
 				limit = { NOT = { has_dlc = "Death or Dishonor" } }
 				log = "DLC nope: Death or Dishonor"
 			}
+			if = {
+				limit = { has_any_custom_difficulty_setting = yes }
+				log = "Custom difficulty setting: Active"
+			}
+			else_if = {
+				limit = { has_any_custom_difficulty_setting = no }
+				log = "Custom difficulty setting: Deactivated"
+			}
+			if = {
+				limit = { is_ironman = yes }
+				log = "Ironman: Active"
+			}
+			else_if = {
+				limit = { is_ironman = no }
+				log = "Ironman: Deactivated"
+			}
+			if = {
+				limit = { is_historical_focus_on = yes }
+				log = "Historical focus: active"
+			}
+			else_if = {
+				limit = { is_historical_focus_on = no }
+				log = "Alternative history: active"
+			}
 
 			every_country = { NU_on_startup_settings = yes }
-			every_country = { start_fatigue = yes }
 			every_country = { add_ideas = naval_invasion_capacity }
+			every_country = { set_country_flag = select_bomb_mode_easy }
 
 			every_country = {
 				limit = { is_ai = yes }
-				add_timed_idea = { idea = AI_industry_hidden_buff days = 5 }
+				add_timed_idea = { idea = AI_industry_hidden_buff days = 1 }
 			}
 
 			set_global_flag = THAI_CANAL_BLOCKED #Это лишь обговариваемый проект
@@ -989,9 +989,10 @@ on_actions = {
 	#ROOT is winner #FROM is loser
 	on_peaceconference_ended = {
 		effect = {
-		if = {
-			limit = { has_navy_size = { size > 1 } }
-			FROM = { transfer_navy = { target = ROOT } }
-		}
-	}	
+			if = {
+				limit = { has_navy_size = { size > 1 } }
+				FROM = { transfer_navy = { target = ROOT } }
+			}
+		}	
+	}
 }

@@ -1,23 +1,28 @@
 #By Skoolz
+#Edit Secretary
 on_actions = {
 	on_startup = {
 		effect = {	}	
 	}
 
 	on_weekly = {
-		
 		effect = {
-		
-		
-		#if resource < 1
-		set_null_production_of_uran_factory = yes
-		set_null_production_of_steel_factory = yes
-		set_null_production_of_aluminium_factory = yes
-		set_null_production_of_alloy_steel_factory = yes
-		set_null_production_of_rare_earth_factory = yes
-		
-		set_native_resources = yes
-		
-  }
- }
+			#if resource < 1
+			set_null_production_of_uran_factory = yes
+			set_null_production_of_steel_factory = yes
+			set_null_production_of_aluminium_factory = yes
+			set_null_production_of_alloy_steel_factory = yes
+			set_null_production_of_rare_earth_factory = yes
+			
+			set_native_resources = yes
+			
+			#Визуальный подсчет необходимости ресурсов
+			status_energy_resource = yes
+			status_iron_ore = yes
+			status_bauxite = yes
+			status_alloy_ore = yes
+			status_earth_ore = yes
+			status_uran = yes
+		}
+	}
 }	

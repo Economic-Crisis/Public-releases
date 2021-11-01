@@ -1,0 +1,33 @@
+scripted_gui = {
+	defcon_clock = {
+		window_name = "defcon_clock"
+		parent_window_token = top_bar
+ 
+		context_type = player_context
+ 
+		visible = {
+			OR = {
+				threat > 0.99
+				has_global_flag = threat_crowded_bool
+			}
+			#is_debug = yes
+		}
+
+	}
+	
+	doomsdey_clock = {
+		window_name = "doomsdey_clock_gui"
+ 
+		context_type = player_context
+ 
+		visible = {
+			has_global_flag = set_doomsdey_clock
+		}
+
+		effects = {
+			button_option_click = {
+				clr_global_flag = set_doomsdey_clock
+			}
+		}
+	}
+}

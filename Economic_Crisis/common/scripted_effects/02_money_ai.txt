@@ -1,22 +1,31 @@
 #By Skoolz
 
 set_ai_current_budget = {
-add_to_variable = { current_budget = total_money }
-if = { limit = { check_variable = { all_inc < all_exp } }
-	if = { limit = { check_variable = { current_budget < budget_last_year } }
-		set_temp_variable = { ai_temp_var = current_budget }
-		divide_temp_variable = { ai_temp_var = budget_last_year }
-		if = { limit = { check_variable = { ai_temp_var < 0.6 } }
-			subtract_from_variable = { current_budget = total_money }
-			multiply_variable = { current_budget = 1.1 }
-			add_to_variable = { current_budget = 0.2 }
+	add_to_variable = { current_budget = total_money }
+	if = { limit = { check_variable = { all_inc < all_exp } }
+		if = { limit = { check_variable = { current_budget < budget_last_year } }
+			set_temp_variable = { ai_temp_var = current_budget }
+			divide_temp_variable = { ai_temp_var = budget_last_year }
+			if = { limit = { check_variable = { ai_temp_var < 0.6 } }
+				subtract_from_variable = { current_budget = total_money }
+				multiply_variable = { current_budget = 1.1 }
+				add_to_variable = { current_budget = 0.2 }
+			}
+		
 		}
-	
 	}
-}
 
-if = { limit = { check_variable = { current_budget < 0 } } multiply_variable = { current_budget = -1 } }
-if = { limit = { check_variable = { budget_reserve < 0 } } set_variable = { budget_reserve = 0 } clr_country_flag = has_2_credits clr_country_flag = has_3_credits set_variable = { budget_credit = 0 } }
+	if = {
+		limit = { check_variable = { current_budget < 0 }  }
+		multiply_variable = { current_budget = -1 }
+	}
+	if = {
+		limit = { check_variable = { budget_reserve < 0 } }
+		set_variable = { budget_reserve = 0 }
+		clr_country_flag = has_2_credits
+		clr_country_flag = has_3_credits
+		set_variable = { budget_credit = 0 }
+	}
 }
 
 
@@ -25,31 +34,34 @@ if = { limit = { check_variable = { budget_reserve < 0 } } set_variable = { budg
 
 set_ai_template = {
 
-	if = { limit = { check_variable = { def_prof_switch = 0 } } set_variable = { budget_percen = -5 } }
+	if = {
+		limit = { check_variable = { def_prof_switch = 0 } }
+		set_variable = { budget_percen = -5 }
+	}
 	else = { set_variable = { budget_percen = 2 } }
 	
 	random_list = {
-    25 = {
-        set_template_1 = yes
-        modifier = {
-            factor = 6
-            ai_millitary_template = yes
-        }
-    }
-    25 = {
-		set_template_2 = yes
-		modifier = {
-            factor = 4
-            ai_default_template = yes
-        }
-    }
-    25 = {
-        
-    }
-    25 = {
-       
-    }
-}
+		25 = {
+			set_template_1 = yes
+			modifier = {
+				factor = 6
+				ai_millitary_template = yes
+			}
+		}
+		25 = {
+			set_template_2 = yes
+			modifier = {
+				factor = 4
+				ai_default_template = yes
+			}
+		}
+		25 = {
+			
+		}
+		25 = {
+		
+		}
+	}
 	
 	
 	set_planned_budget = yes

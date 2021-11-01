@@ -529,11 +529,29 @@ guiTypes = {
 				clicksound = click_default
 			}
 		}
+		containerWindowType = {
+			name = "bottom_Window"
+			position = { x=20 y=20 }	
+			size = { width = 1000 height = 219 }
+			Orientation = UPPER_LEFT
+
+			gridBoxType = {
+				name = "options_grid"
+				position = { x = 140 y = 200 }
+				size = { width = 300 height = 30 }
+				slotsize = { width = 300 height = 47 }
+				max_slots_horizontal = 1
+				max_slots_vertical = 1
+				format = "UPPER_LEFT"
+			}
+
+			
+		}
 
 		containerWindowType = {
 			name = "midsection"
 			position = { x=0 y=121 }	
-			size = { width = 1000 height = 137 }
+			size = { width = 900 height = 137 }
 			Orientation = UPPER_LEFT
 
 			instantTextBoxType = {
@@ -545,27 +563,12 @@ guiTypes = {
 				maxWidth = 900
 				maxHeight = 230
 				format = left
+				#fixedsize = yes
 			}
 		}			
 
 
-		containerWindowType = {
-			name = "bottom_Window"
-			position = { x=20 y=120 }	
-			size = { width = 1000 height = 419 }
-			Orientation = UPPER_LEFT
-
-			gridBoxType = {
-				name = "options_grid"
-				position = { x = 140 y = 350 }
-				size = { width = 300 height = 30 }
-				slotsize = { width = 300 height = 47 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
-
-			
-		}
+		
 	}
 
 	containerWindowType = {

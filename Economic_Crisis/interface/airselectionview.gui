@@ -822,14 +822,14 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "air_selection_view"
-		position = {x=0 y=77}
+		position = {x=-4 y=157}
 		size = { width=502 height=430 } # height set in code, but initial value here is used for max allowed height
 		Orientation = upper_left
 		clipping = no
 		
 		containerWindowType = {
 			name = "header_window"
-			position = {x=2 y=5}
+			position = { x = 2 y = 30 }
 			size = { width=36 height=52 }
 			Orientation = upper_left
 			clipping = no
@@ -865,8 +865,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "strategic_air_priorities_window"
-				position = {x=4 y=-75}
-				size = { width=600 height=280 }
+				position = {x=4 y=-110}
+				size = { width=700 height=280 }
 				#animation_time = 300
 				#Orientation = center_down
 				#clipping = yes
@@ -877,7 +877,7 @@ guiTypes = {
 				background = {
 					name = "Background"
 					spriteType = "GFX_air_priorities_bg"
-					position = { x = 4 y = 2 }
+					position = { x = 4 y = 0 }
 				}
 				
 				instantTextboxType = {
@@ -893,7 +893,7 @@ guiTypes = {
 				
 				iconType = {
 					name = "selected_mission_overlay"
-					position = { x = 222 y = 65 }
+					position = { x = 222 y = 98 }
 					spriteType = "GFX_selected_air_priorities_overlay"
 					alwaystransparent = yes
 				}
@@ -903,7 +903,8 @@ guiTypes = {
 					position = { x = 20 y = 32 }
 					size = { width = 600 height = 280 }
 					slotsize = { width = 39 height = 35 }
-					max_slots_vertical = 1
+					max_slots_vertical = 2
+					max_slots_horizontal = 14
 					format = "UPPER_LEFT"
 				}
 			}
@@ -911,7 +912,7 @@ guiTypes = {
 		
 		gridBoxType = {
 			name = "air_selection_grid"
-			position = { x = 2 y = 60 }
+			position = { x = 2 y = 80 }
 			size = { width = 300 height = 100%% }
 			slotsize = { width = 300 height = 1 }
 			max_slots_horizontal = 1

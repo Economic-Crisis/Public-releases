@@ -4,10 +4,10 @@
 
 
 set_num_of_electricity_factroeis = {
- this.Owner = {
-	add_to_variable = { num_of_nuclear_reactor = PREV.building_level@nuclear_reactor }
-	add_to_variable = { num_of_thermal_power_plant = PREV.building_level@thermal_power_plant }
-	add_to_variable = { num_of_eco_power_plant = PREV.building_level@eco_power_plant }
+	this.Owner = {
+		add_to_variable = { num_of_nuclear_reactor = PREV.building_level@nuclear_reactor }
+		add_to_variable = { num_of_thermal_power_plant = PREV.building_level@thermal_power_plant }
+		add_to_variable = { num_of_eco_power_plant = PREV.building_level@eco_power_plant }
 	}
 }
 
@@ -20,10 +20,22 @@ clear_num_of_electricity_factories = {
 set_electricity_factories = {
 	set_variable = { nuclear_reactor_electricity = num_of_nuclear_reactor }
 	multiply_variable = { nuclear_reactor_electricity = 35.7 }
-	if = { limit = { check_variable = { resource@enr_uran < 1 } } set_variable = { nuclear_reactor_electricity = 0 } }
+	if = {
+		limit = {
+			check_variable = { resource@enr_uran < 1 }
+			is_ai = no
+		}
+		set_variable = { nuclear_reactor_electricity = 0 }
+	}
 	set_variable = { thermal_power_plant_electricity = num_of_thermal_power_plant }
 	multiply_variable = { thermal_power_plant_electricity = 8 }
-	if = { limit = { check_variable = { resource@energy_resource < 1 } } set_variable = { thermal_power_plant_electricity = 0 } }
+	if = {
+		limit = {
+			check_variable = { resource@energy_resource < 1 }
+			is_ai = no
+		}
+		set_variable = { thermal_power_plant_electricity = 0 }
+	}
 	set_variable = { eco_power_plant_electricity = num_of_eco_power_plant }
 	multiply_variable = { eco_power_plant_electricity = 1.5 }
 }
@@ -51,24 +63,24 @@ set_military_factories_electricity = {
 }
 
 set_electricity_inc_dec = {
-set_variable = { electricity_value_inc = 0 }
-set_variable = { electricity_value_dec = 0 }
+	set_variable = { electricity_value_inc = 0 }
+	set_variable = { electricity_value_dec = 0 }
 
 
-#INC
+	#INC
 
-add_to_variable = { electricity_value_inc = nuclear_reactor_electricity }
-add_to_variable = { electricity_value_inc = thermal_power_plant_electricity }
-add_to_variable = { electricity_value_inc = eco_power_plant_electricity }
-add_to_variable = { electricity_value_inc = electricity_value_inc_arr }
+	add_to_variable = { electricity_value_inc = nuclear_reactor_electricity }
+	add_to_variable = { electricity_value_inc = thermal_power_plant_electricity }
+	add_to_variable = { electricity_value_inc = eco_power_plant_electricity }
+	add_to_variable = { electricity_value_inc = electricity_value_inc_arr }
 
-#DEC
+	#DEC
 
-add_to_variable = { electricity_value_dec = country_population_electricity }
-add_to_variable = { electricity_value_dec = civilian_factories_electricity }
-add_to_variable = { electricity_value_dec = naval_factories_electricity }
-add_to_variable = { electricity_value_dec = military_factories_electricity }
-add_to_variable = { electricity_value_dec = electricity_value_dec_arr }
+	add_to_variable = { electricity_value_dec = country_population_electricity }
+	add_to_variable = { electricity_value_dec = civilian_factories_electricity }
+	add_to_variable = { electricity_value_dec = naval_factories_electricity }
+	add_to_variable = { electricity_value_dec = military_factories_electricity }
+	add_to_variable = { electricity_value_dec = electricity_value_dec_arr }
 }
 
 set_electricity_progress_bar_percen = {
@@ -98,44 +110,74 @@ set_electricity_idea = {
 
 clear_electricity_idea = {
 	remove_ideas = {
-	electricity_very_good
-	electricity_good
-	electricity_normal
-	electricity_bad
-	electricity_very_bad
-	
-	
-	
+		electricity_very_good
+		electricity_good
+		electricity_normal
+		electricity_bad
+		electricity_very_bad
 	}
 
 }
 
 set_electricity_ai = {
 
-if = { limit = { check_variable = { electricity_ratio = 0 } }
+	if = {
+		limit = {
+			check_variable = { electricity_ratio = 0 }
+		}
 
-	if = { limit = { any_owned_state = { OR = { is_on_continent = europe is_on_continent = north_america is_on_continent = south_america is_on_continent = australia is_on_continent = asia } } }
-	
-	set_variable = { electricity_ratio = budget_last_year }
-	if = { limit = { NOT = { has_country_flag = money_trillions } }
-	divide_variable = { electricity_ratio = 40000 } }
-	else = { divide_variable = { electricity_ratio = 40 }
-	multiply_variable = { electricity_ratio = 8 }
-	round_variable = electricity_ratio
-	
-	clamp_variable = {
-    var = electricity_ratio
-    min = 0
-    max = 1
+		if = { 
+			limit = {
+				any_owned_state = {
+					OR = {
+						is_on_continent = europe
+						is_on_continent = north_america
+						is_on_continent = south_america
+						is_on_continent = australia
+						is_on_continent = asia
+					}
+				}
+			}
+			set_variable = { electricity_ratio = budget_last_year }
+			if = {
+				limit = {
+					NOT = { has_country_flag = money_trillions }
+				}
+				divide_variable = { electricity_ratio = 40000 }
+			}
+			else = { divide_variable = { electricity_ratio = 40 }
+			multiply_variable = { electricity_ratio = 8 }
+			round_variable = electricity_ratio
+		
+			clamp_variable = {
+				var = electricity_ratio
+				min = 0
+				max = 1
+			}
+		}
 	}
- }
 }
-}
-	if = { limit = { check_variable = { electricity_ratio > 1 } } set_variable = { electricity_ratio_rest = electricity_ratio } subtract_from_variable = { electricity_ratio_rest = 1 } set_variable = { electricity_ratio = 1 } set_variable = { electricity_ratio_need = 0 } }
-	else = { set_variable = { electricity_ratio_need = 1 } subtract_from_variable = { electricity_ratio_need = electricity_ratio } set_variable = { electricity_ratio_rest = 0 } }
+	if = {
+		limit = {
+			check_variable = { electricity_ratio > 1 }
+		}
+		set_variable = { electricity_ratio_rest = electricity_ratio }
+		subtract_from_variable = { electricity_ratio_rest = 1 }
+		set_variable = { electricity_ratio = 1 }
+		set_variable = { electricity_ratio_need = 0 }
+	}
+	else = {
+		set_variable = { electricity_ratio_need = 1 }
+		subtract_from_variable = { electricity_ratio_need = electricity_ratio }
+		set_variable = { electricity_ratio_rest = 0 }
+	}
 	set_variable = { electricity_ratio_visible = electricity_ratio }
-	if = { limit = { check_variable = { electricity_ratio_rest > 1 } } set_variable = { electricity_ratio_rest = 1 } }
-
+	if = {
+		limit = {
+			check_variable = { electricity_ratio_rest > 1 }
+		}
+		set_variable = { electricity_ratio_rest = 1 }
+	}
 }
 
 
@@ -147,7 +189,10 @@ set_electricity_buy_ratio = {
 		multiply_variable = { ROOT.electricity_from_buy_ratio = electricity_value_inc }
 		divide_variable = { ROOT.electricity_from_buy_ratio = ROOT.electricity_value_dec }
 		
-		if = { limit = { check_variable = { ROOT.electricity_ratio_need < ROOT.electricity_from_buy_ratio } } set_variable = { ROOT.electricity_from_buy_ratio = ROOT.electricity_ratio_need } }
+		if = {
+			limit = { check_variable = { ROOT.electricity_ratio_need < ROOT.electricity_from_buy_ratio } }
+			set_variable = { ROOT.electricity_from_buy_ratio = ROOT.electricity_ratio_need }
+		}
 		
 		set_variable = { ROOT.electricity_ratio_trade_menu_recieve = ROOT.electricity_from_buy_ratio }
 		multiply_variable = { ROOT.electricity_ratio_trade_menu_recieve = ROOT.electricity_value_dec }
@@ -163,14 +208,14 @@ set_electricity_buy_ratio = {
 
 add_to_electricity_ratio_percen = {
 
-multiply_variable = { electricity_from_buy_ratio = electricity_value_dec }
+	multiply_variable = { electricity_from_buy_ratio = electricity_value_dec }
 
 	add_to_array = {
-	 array = electricity_arr_main
-	 value = electricity_from_buy_ratio
+		array = electricity_arr_main
+		value = electricity_from_buy_ratio
 	}
 	
-multiply_variable = { electricity_from_buy_ratio = 0.04 }
+	multiply_variable = { electricity_from_buy_ratio = 0.04 }
 	
 	var:electricity_buy_selected_country = { add_to_variable = { money_electricity_inc = PREV.electricity_from_buy_ratio } }
 	add_to_variable = { money_electricity_dec = electricity_from_buy_ratio }
@@ -262,24 +307,24 @@ check_electricity_rest = {
 check_electricity_rest_2 = {
 
 	remove_from_array = {
-				array = electricity_arr_time
-				index = i
-			}
-			remove_from_array = {
-				array = electricity_arr_main
-				index = i
-			}
-			remove_from_array = {
-				array = electricity_arr_country_name
-				index = i
-			}
-			
-			remove_from_array = {
-				array = electricity_arr_main_money
-				index = i
-			}
-			if = { limit = { check_variable = { electricity_arr_time^i > 1 } }
-			subtract_from_variable = { electricity_arr_time^i = 1 } check_electricity_rest = yes }
+		array = electricity_arr_time
+		index = i
+	}
+	remove_from_array = {
+		array = electricity_arr_main
+		index = i
+	}
+	remove_from_array = {
+		array = electricity_arr_country_name
+		index = i
+	}
+	
+	remove_from_array = {
+		array = electricity_arr_main_money
+		index = i
+	}
+	if = { limit = { check_variable = { electricity_arr_time^i > 1 } }
+	subtract_from_variable = { electricity_arr_time^i = 1 } check_electricity_rest = yes }
 }	
 
 set_inc_dec_from_electricity_arr_main_clear = {

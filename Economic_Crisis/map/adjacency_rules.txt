@@ -436,6 +436,14 @@ adjacency_rule
 	
 	required_provinces = { 3529 498 }
 	
+	is_disabled = {
+		OR = {
+			has_global_flag = VOLGA_CANAL_BLOCKED
+			has_country_flag = VOLGA_CANAL_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = volga_canal_blocked_tt
+	}
+	
 	icon = 3529
 	offset = { 0 0 0 }
 }

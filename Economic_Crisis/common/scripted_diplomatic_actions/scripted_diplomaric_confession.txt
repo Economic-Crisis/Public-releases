@@ -39,8 +39,14 @@ scripted_diplomatic_actions = {
 				original_tag = GEO
 				original_tag = SOS
 				
-				#has_idea = partially_recognized_country
-				#has_idea = not_recognized_country
+				has_idea = partially_recognized_country
+				has_idea = not_recognized_country
+			}
+			THIS = {
+				NOT = {
+					has_country_flag = confession_flag@ROOT
+				}
+			
 			}
 			
 		}
@@ -203,6 +209,7 @@ scripted_diplomatic_actions = {
 				}
 				NOT = {	ROOT = { has_country_flag = GEO.SOS.recognition	} }
 			}
+			#THIS = { NOT = { has_country_flag = confession_flag@ROOT } }
 		}
 
 		requires_acceptance = no # если true, действие потребует принятия целевой страны
@@ -363,6 +370,20 @@ scripted_diplomatic_actions = {
 				RUS = { add_opinion_modifier = { target = ROOT modifier = resist_ally } }
 				ROOT = { set_country_flag = GEO.SOS.recognition }
 			}
+			else = {
+				if = {
+					limit = { ROOT = { has_idea = unsc_member } }
+					#event
+				}
+				THIS = {
+					set_country_flag = confession_flag@ROOT
+				}
+			}
+			THIS = {
+				remove_claim_by = ROOT
+				remove_core_of = ROOT
+			}
+			
 		}
 
 		# запускается, когда действие правильно отправлено и отклонено

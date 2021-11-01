@@ -1117,55 +1117,55 @@ country_event = {
 }
 	
 	
-	country_event = {
-		id = usa.27
-		title = usa.27.t
-		desc = usa.27.d
-		picture = GFX_event_soleimani_kill
+country_event = {
+	id = usa.27
+	title = usa.27.t
+	desc = usa.27.d
+	picture = GFX_event_soleimani_kill
+
+	trigger = {
+		tag = USA
+		date > 2020.1.3
+		country_exists = IRN
+	}
 	
-		trigger = {
-			tag = USA
-			date > 2020.1.3
-			country_exists = IRN
+	fire_only_once = yes
+	option = {
+		news_event = { id = usa_news.20  days = 2 }
+		news_event = { id = news.80 days = 5 }
+		
+		add_named_threat = { 
+			threat = 2
+			name = threat_soleimani_kill
+		}
+		IRN = {
+			news_event = { id = iran.5 days = 2 }
+			add_opinion_modifier = {
+				target = USA
+				modifier = usa_killed_soleimani
+			}
+			set_country_flag = soleimani_killed
 		}
 		
-		fire_only_once = yes
-		option = {
-			news_event = { id = usa_news.20  days 2 }
-			news_event = { id = news.80 days 5 }
-			
-			add_named_threat = { 
-				threat = 2
-				name = threat_soleimani_kill
-			}
-			IRN = {
-				news_event = { id = iran.5 days 2 }
-				add_opinion_modifier = {
-					target = USA
-					modifier = usa_killed_soleimani
-				}
-				set_country_flag = soleimani_killed
-			}
-			
-			name = usa.27.a
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.27.a"
-			ai_chance = {
-				factor = 40
-				modifier = {
-					factor = 100000
-					is_historical_focus_on = yes
-				}
-			}
-		}
-		
-		option = {
-			name = usa.27.b
-			ai_chance = {
-				factor = 40
-				modifier = {
-					factor = -100000
-					is_historical_focus_on = yes
-				}
+		name = usa.27.a
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): usa.27.a"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 100000
+				is_historical_focus_on = yes
 			}
 		}
 	}
+	
+	option = {
+		name = usa.27.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = -100000
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}

@@ -285,6 +285,7 @@ country_event = { #Договор о создание ЕАЭС
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.10.a"
 		ai_chance = { factor = 90 }
 		add_ideas = eaeu_member
+		set_global_flag = RUS_creation_eaeu
 		mark_focus_tree_layout_dirty = yes
 		if = {
 			limit = { country_exists = ARM }
@@ -687,19 +688,25 @@ country_event = { #Падение Челябинского метеорита
 			factor = 60 
 		}
 		add_stability = -0.02
-	}
-	option = { 
-		name = russia.18.b #Не наши проблемы!
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.18.b"
-		ai_chance = { 
-			factor = 40
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+		572 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
 			}
 		}
-		add_stability = -0.04
 	}
+	#option = { 
+	#	name = russia.18.b #Не наши проблемы!
+	#	log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): russia.18.b"
+	#	ai_chance = { 
+	#		factor = 40
+	#		modifier = {
+	#			factor = 0
+	#			is_historical_focus_on = yes
+	#		}
+	#	}
+	#	add_stability = -0.04
+	#}
 }
 country_event = { #Пожар в Кемерово в ТЦ "Зимняя Вишня".
 	id = russia.19

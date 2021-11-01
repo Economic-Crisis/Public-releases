@@ -237,7 +237,7 @@ NCountry = {
 	TERRAIN_IMPORTANCE_FACTOR = 5.0,				-- Terrain base factor for state strategic value
 	VICTORY_POINTS_IMPORTANCE_FACTOR = 5.0,			-- State victory points importance factor for AI and calculations
 	BUILDING_IMPORTANCE_FACTOR = 3.0,				-- State building importance factor for AI and calculations
-	RESOURCE_IMPORTANCE_FACTOR = 0.1,				-- State resource importance factor for AI and calculations
+	RESOURCE_IMPORTANCE_FACTOR = 0.8,				-- EC edit; trate resource importance factor for AI and calculations
 	INTERPOLATED_FRONT_STEPS_SHORT = 2,				-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 	MIN_AIR_RESERVE_RATIO = 0.33,					-- Min manpower ratio to show air reserves alert
 	POLITICAL_POWER_CAP = 2000.0,					-- Max amount of political power country should have
@@ -2412,6 +2412,8 @@ NAI = {
 	MIN_NUM_CONQUERED_PROVINCES_TO_DEPRIO_NAVAL_INVADED_FRONTS = 30,	-- if you conquer this amount of provinces after a naval invasion, it will lose its prio status and will act as a regular front
 
 	BUILDING_TARGETS_BUILDING_PRIORITIES = {				-- EC edit; buildings in order of pirority when considering building targets strategies. First has the greatest priority, omitted has the lowest. NOTE: not all buildings are supported by building targets strategies.
+		'eco_power_plant',
+		'thermal_power_plant',
 		'industrial_complex',
 		'infrastructure',
 		'arms_factory',
@@ -2439,7 +2441,7 @@ NAI = {
 	OIL_WANT_AT_PEACE_PER_POTENTIAL_NAVY_CONSUMPTION_K = 0.0,   
 	OIL_WANT_AT_PEACE_PER_POTENTIAL_AIR_CONSUMPTION_K = 0.0,    
 	OIL_WANT_AT_PEACE_PER_POTENTIAL_MISC_CONSUMPTION_K = 0.1,   
-	RESOURCE_WANT_PER_MISSING_BALANCE = 0.2,					-- negative balance increases the desire on a resource
+	RESOURCE_WANT_PER_MISSING_BALANCE = 0.8,					-- negative balance increases the desire on a resource
 	RESOURCE_WANT_PER_CONSUMED = 0.05,							-- if resource is being used in production, increase the desire
 	-- ~end
 	

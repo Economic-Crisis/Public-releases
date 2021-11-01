@@ -905,6 +905,7 @@ ideas = {
 	mobilization_laws = { 
 		law = yes
 		use_list_view = yes
+
 		contract_army = { #volunteer_only = {
 			cost = 250
 			removal_cost = -1
@@ -912,6 +913,18 @@ ideas = {
 			cancel_if_invalid = no
 			
 			#picture = volunteer_only1
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = contract_army_tt
+					has_idea = cat_1_sec_1_good
+				}
+			}
+
+			on_remove = {
+				news_event = news_mobilization_laws.1
+				add_ideas = mixed_army
+			}
 			
 			modifier = {
 				conscription = 0.01
@@ -935,6 +948,21 @@ ideas = {
 			cancel_if_invalid = no
    
 			#picture = limited_conscription1
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = mixed_army_tt
+					NOT = {
+						has_idea = cat_1_sec_1_good
+						has_idea = cat_1_sec_1_bad
+					}
+				}
+			}
+
+			on_remove = {
+				news_event = news_mobilization_laws.2
+				add_ideas = mandatory_urgent_service
+			}
    
 			modifier = {
 				conscription = 0.01
@@ -959,6 +987,13 @@ ideas = {
 			level = 6
    
 			#picture = service_by_requirement1
+
+			available = {
+				# custom_trigger_tooltip = {
+				# 	tooltip = mandatory_urgent_service_tt
+				# 	has_idea = cat_1_sec_1_bad
+				# }
+			}
    
 			modifier = {
 				conscription = 0.01
@@ -966,7 +1001,6 @@ ideas = {
 				minimum_training_level = -0.1
 				army_core_defence_factor = 0.02
 				army_org = 0.5
-				experience_loss_factor = -0.1
 				experience_gain_army_factor = 0.05
 			}
    

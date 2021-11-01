@@ -1,0 +1,154 @@
+# Economic Crisis: By Secretary
+#Скрипт что заставляет ИИ строить энергостанции при нехватке электроэнергии и доступности ресурсов
+
+AI_build_max_priority_thermal_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 25 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 30 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = thermal_power_plant		
+		value = 5
+	}
+}
+
+AI_build_normal_priority_thermal_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 50 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 55 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = thermal_power_plant		
+		value = 5
+	}
+}
+
+AI_build_low_priority_thermal_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 80 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 90 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = thermal_power_plant		
+		value = 5
+	}
+}
+
+AI_build_max_priority_nuclear_reactor = {
+	enable = {
+		check_variable = { electricity_ratio > 25 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 30 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = nuclear_reactor
+		value = 5
+	}
+}
+
+AI_build_normal_priority_nuclear_reactor = {
+	enable = {
+		check_variable = { electricity_ratio > 50 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 55 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = nuclear_reactor		
+		value = 5
+	}
+}
+
+AI_build_low_priority_nuclear_reactor = {
+	enable = {
+		check_variable = { electricity_ratio > 80 }
+		check_variable = { resource@energy_resource > 4 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 90 }
+		check_variable = { resource@energy_resource < 4 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = nuclear_reactor		
+		value = 5
+	}
+}
+
+AI_build_max_priority_eco_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 20 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 25 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = eco_power_plant		
+		value = 5
+	}
+}
+
+AI_build_normal_priority_eco_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 50 }
+	}
+	
+	abort = {
+		check_variable = { electricity_ratio < 55 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = eco_power_plant		
+		value = 5
+	}
+}
+
+AI_build_low_priority_eco_power_plant = {
+	enable = {
+		check_variable = { electricity_ratio > 90 }
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = eco_power_plant		
+		value = 5
+	}
+}

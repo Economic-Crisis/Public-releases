@@ -1,0 +1,49 @@
+﻿######################
+### Economic Crisis 
+### Негатив. ивенты на бомбардировку
+
+add_namespace = civ_casualties
+
+news_event = {
+	id = civ_casualties.1
+	title = civ_casualties.1.t
+	desc = civ_casualties.1.d
+
+	fire_only_once = yes
+	mean_time_to_happen = { days = 62 }
+	
+	trigger = {
+		has_country_flag = select_bomb_mode_hard
+	}
+	
+	option = {
+		name = civ_casualties.1.a
+		decline_current_ruling_party_very_high = yes
+		every_owned_state = {
+			add_resistance = 7
+			add_resistance_target = 3
+		}
+	}
+}
+
+news_event = {
+	id = civ_casualties.2
+	title = civ_casualties.2.t
+	desc = civ_casualties.2.d
+
+	fire_only_once = yes
+	mean_time_to_happen = { days = 120 }
+	
+	trigger = {
+		has_country_flag = select_bomb_mode_medium
+	}
+	
+	option = {
+		name = civ_casualties.2.a
+		decline_current_ruling_party_very_high = yes
+		every_owned_state = {
+			add_resistance = 5
+			add_resistance_target = 1
+		}
+	}
+}

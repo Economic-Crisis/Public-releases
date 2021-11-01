@@ -1,0 +1,134 @@
+scripted_gui = {
+	civilian_casualties = {
+		window_name = "civilian_casualties_gui"
+		parent_window_name = "strategic_air_priorities_window"
+ 
+		context_type = player_context
+ 
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			bomb_mode_easy_click = {
+				if = {
+					limit = { NOT = { has_country_flag = select_bomb_mode_easy } }
+					set_country_flag = select_bomb_mode_easy
+					if = {
+						limit = { has_country_flag = select_bomb_mode_medium }
+						clr_country_flag = select_bomb_mode_medium
+					}
+					if = {
+						limit = { has_country_flag = select_bomb_mode_hard }
+						clr_country_flag = select_bomb_mode_hard
+					}
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_medium }
+					clr_country_flag = select_bomb_mode_medium
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_hard }
+					clr_country_flag = select_bomb_mode_hard
+				}
+				if = {
+					limit = { has_idea = select_bomb_mode_medium }
+					remove_ideas = select_bomb_mode_medium
+					add_ideas = select_bomb_mode_easy
+				}
+			}
+			bomb_mode_medium_click = {
+				if = {
+					limit = { NOT = { has_country_flag = select_bomb_mode_medium } }
+					set_country_flag = select_bomb_mode_medium
+					if = {
+						limit = { has_country_flag = select_bomb_mode_easy }
+						clr_country_flag = select_bomb_mode_easy
+					}
+					if = {
+						limit = { has_country_flag = select_bomb_mode_hard }
+						clr_country_flag = select_bomb_mode_hard
+					}
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_easy }
+					clr_country_flag = select_bomb_mode_easy
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_hard }
+					clr_country_flag = select_bomb_mode_hard
+				}
+				if = {
+					limit = { has_idea = select_bomb_mode_easy }
+					remove_ideas = select_bomb_mode_easy
+					add_ideas = select_bomb_mode_medium
+				}
+			}
+			bomb_mode_hard_click = {
+				if = {
+					limit = { NOT = { has_country_flag = select_bomb_mode_hard } }
+					set_country_flag = select_bomb_mode_hard
+					if = {
+						limit = { has_country_flag = select_bomb_mode_medium }
+						clr_country_flag = select_bomb_mode_medium
+					}
+					if = {
+						limit = { has_country_flag = select_bomb_mode_easy }
+						clr_country_flag = select_bomb_mode_easy
+					}
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_medium }
+					clr_country_flag = select_bomb_mode_medium
+				}
+				if = {
+					limit = { has_country_flag = select_bomb_mode_easy }
+					clr_country_flag = select_bomb_mode_easy
+				}
+				if = {
+					limit = { has_idea = select_bomb_mode_medium }
+					remove_ideas = select_bomb_mode_medium
+					add_ideas = select_bomb_mode_easy
+				}
+				if = {
+					limit = { has_idea = select_bomb_mode_easy }
+					remove_ideas = select_bomb_mode_easy
+					add_ideas = select_bomb_mode_medium
+				}
+			}
+		}
+
+		triggers = {
+			bomb_mode_easy_click_enabled = {
+				
+			}
+			bomb_mode_easy_bg_visible = {
+				has_country_flag = select_bomb_mode_easy
+			}
+			bomb_mode_medium_click_enabled = {
+				has_war_support > 0.6
+			}
+			bomb_mode_medium_bg_visible = {
+				has_country_flag = select_bomb_mode_medium
+			}
+			bomb_mode_hard_click_enabled = {
+				has_war_support > 0.8
+			}
+			bomb_mode_hard_bg_visible = {
+				has_country_flag = select_bomb_mode_hard
+			}
+		}
+
+	}
+
+	civilian_casualties = {
+		window_name = "civilian_casualties_waroverview_window_gui"
+		parent_window_name = "waroverview_window"
+ 
+		context_type = player_context
+ 
+		visible = {
+			always = yes
+		}
+	}
+}

@@ -3307,7 +3307,6 @@ country_event = {
     id = belarus.43
     title = belarus.43.t 
     desc = belarus.43.d
-    is_triggered_only = no
     fire_only_once = yes
     #picture = GFX_event_event_Lykashenko_dead
     trigger = {
@@ -3326,7 +3325,7 @@ country_event = {
             factor = 50
             modifier = {
                 factor = 0
-                is_historical_focus_on = yes
+                is_historical_focus_on = no
             }
         }
         kill_ideology_leader = neutrality
@@ -3564,3 +3563,56 @@ country_event = {
         add_stability = 0.1
     }
 }
+    country_event = { 
+        id = belarus.48
+        title = belarus.48.t 
+        desc = belarus.48.d
+        picture = GFX_repot_event_TUR_coup
+        is_triggered_only = yes
+        option = { 
+            name = belarus.48.a 
+            log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+            ai_chance = { 
+                factor = 25
+                modifier = {
+                    factor = 0
+                    is_historical_focus_on = yes
+                }
+            }
+            hidden_effect = {
+				news_event = { id = belarus_news.7 days = 18 }
+				news_event = { id = belarus_news.8 days = 24 }
+				news_event = { id = belarus_news.9 days = 32 }
+				news_event = { id = belarus_news.13 days = 35 }
+				news_event = { id = belarus_news.14 days = 40 }
+				news_event = { id = belarus_news.15 days = 52 }
+				news_event = { id = belarus_news.16 days = 68 }
+				news_event = { id = belarus_news.17 days = 69 }
+				news_event = { id = belarus_news.18 days = 74 }
+				news_event = { id = belarus_news.19 days = 80 }
+			}
+            set_global_flag = BLR_protests
+        }
+    }
+    country_event = { 
+        id = belarus.49
+        title = belarus.49.t 
+        desc = belarus.49.d
+        picture = GFX_repot_event_TUR_coup
+        is_triggered_only = yes
+        option = { 
+            name = belarus.49.a 
+            log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): belarus.50.a "
+            ai_chance = { 
+                factor = 25
+                modifier = {
+                    factor = 0
+                    is_historical_focus_on = yes
+                }
+            }
+            set_politics = {
+                ruling_party = liberalism
+                elections_allowed = yes
+            }
+        }
+    }

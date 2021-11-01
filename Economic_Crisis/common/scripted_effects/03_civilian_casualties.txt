@@ -1,0 +1,227 @@
+### Логика высчитывания потерь гражданского населения
+### свои потери+вражеские потери -прошлые(сохраненные) потери +использовано авиации*(умножено)+уничтожено построек(умножено)/(поделить) на статус бомбардировки все
+set_civ_casualties_temp = {
+	add_to_temp_variable = { civ_casualties = casualties@enemies }
+	every_enemy_country = {
+		add_to_temp_variable = { ROOT.civ_casualties = casualties@PREV }
+	}
+	add_to_variable = { s.casualties = casualties }
+	
+	subtract_from_temp_variable = { s.casualties = civ_casualties }
+
+	multiply_temp_variable = { civ_casualties = 3 }
+	
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@strike_fighter_equipment }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@nuclear_bomber_equipment }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@attack_bomber }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@strike_bomber }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@strategic_bomber }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@attack_drone }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@assault_helicopter }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@attack_helicopter }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@naval_attack_helicopter }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@naval_assault_helicopter }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@strike_fighter }
+	add_to_temp_variable = { temp_plane_casualties = num_deployed_planes_with_type@attack_aircraft }
+
+	multiply_temp_variable = { temp_plane_casualties = 8 }
+
+	every_controlled_state = {
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@infrastructure }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@arms_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@industrial_complex }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@air_base }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@naval_base }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@bunker }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@coastal_bunker }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@dockyard }
+		#add_to_temp_variable = { tROOT.emp_damaged_building = damaged_building_level@anti_air_building }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@synthetic_refinery }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@fuel_silo }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@radar_station }
+		#add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@rocket_site }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@thermal_power_plant }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@eco_power_plant }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@nuclear_reactor }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@steel_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@aluminium_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@alloy_steel_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@rare_earth_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building = damaged_building_level@uran_factory }
+	}
+
+	multiply_temp_variable = { temp_damaged_building = 31 }
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { temp_plane_casualties = 8 }
+		round_temp_variable = temp_plane_casualties
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { temp_plane_casualties = 5 }
+		round_temp_variable = temp_plane_casualties
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { temp_plane_casualties = 3 }
+		round_temp_variable = temp_plane_casualties
+	}
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { temp_damaged_building = 8 }
+		round_temp_variable = temp_damaged_building
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { temp_damaged_building = 5 }
+		round_temp_variable = temp_damaged_building
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { temp_damaged_building = 2 }
+		round_temp_variable = temp_damaged_building
+	}
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { civ_casualties = 12 }
+		round_temp_variable = civ_casualties
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { civ_casualties = 5 }
+		round_temp_variable = civ_casualties
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { civ_casualties = 2 }
+		round_temp_variable = civ_casualties
+	}
+
+	add_to_variable = { c_casualties = temp_damaged_building }
+	add_to_variable = { c_casualties = temp_plane_casualties }
+	add_to_variable = { c_casualties = civ_casualties }
+
+	add_to_temp_variable = { state_remove_ppl = c_casualties  }
+	add_to_temp_variable = { state_remove_ppl1 = 0  }
+	
+	add_to_temp_variable = { state_contrl = num_controlled_states }
+	subtract_from_temp_variable = { state_contrl = num_owned_controlled_states }
+	
+	divide_temp_variable = { state_remove_ppl = state_contrl }
+
+	subtract_from_temp_variable = { state_remove_ppl1 = state_remove_ppl  }
+	
+	if = {
+		limit = { all_state = { check_variable = { days_since_last_strategic_bombing < 1 } } }
+		every_enemy_country = {
+			every_state = { add_manpower = state_remove_ppl1 }
+		}
+	}
+
+	
+	add_to_temp_variable = { civ_casualties1 = casualties@enemies }
+	# every_enemy_country = {
+	# 	add_to_temp_variable = { ROOT.civ_casualties = casualties@PREV }
+	# }
+	add_to_variable = { s.casualties1 = casualties }
+	
+	subtract_from_temp_variable = { s.casualties1 = civ_casualties1 }
+
+	multiply_temp_variable = { civ_casualties1 = 3 }
+	
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@strike_fighter_equipment }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@nuclear_bomber_equipment }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@attack_bomber }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@strike_bomber }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@strategic_bomber }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@attack_drone }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@assault_helicopter }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@attack_helicopter }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@naval_attack_helicopter }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@naval_assault_helicopter }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@strike_fighter }
+	add_to_temp_variable = { temp_plane_casualties1 = num_deployed_planes_with_type@attack_aircraft }
+
+	multiply_temp_variable = { temp_plane_casualties1 = 8 }
+
+	every_controlled_state = {
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@infrastructure }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@arms_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@industrial_complex }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@air_base }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@naval_base }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@bunker }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@coastal_bunker }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@dockyard }
+		#add_to_temp_variable = { tROOT.emp_damaged_building1 = damaged_building_level@anti_air_building }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@synthetic_refinery }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@fuel_silo }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@radar_station }
+		#add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@rocket_site }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@thermal_power_plant }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@eco_power_plant }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@nuclear_reactor }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@steel_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@aluminium_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@alloy_steel_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@rare_earth_factory }
+		add_to_temp_variable = { ROOT.temp_damaged_building1 = damaged_building_level@uran_factory }
+	}
+
+	multiply_temp_variable = { temp_damaged_building1 = 31 }
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { temp_plane_casualties1 = 8 }
+		round_temp_variable = temp_plane_casualties1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { temp_plane_casualties1 = 5 }
+		round_temp_variable = temp_plane_casualties1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { temp_plane_casualties1 = 3 }
+		round_temp_variable = temp_plane_casualties1
+	}
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { temp_damaged_building1 = 8 }
+		round_temp_variable = temp_damaged_building1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { temp_damaged_building1 = 5 }
+		round_temp_variable = temp_damaged_building1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { temp_damaged_building1 = 2 }
+		round_temp_variable = temp_damaged_building1
+	}
+
+	if = {
+		limit = { has_country_flag = select_bomb_mode_easy }
+		divide_temp_variable = { civ_casualties1 = 12 }
+		round_temp_variable = civ_casualties1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_medium }
+		divide_temp_variable = { civ_casualties1 = 5 }
+		round_temp_variable = civ_casualties1
+	}
+	else_if = {
+		limit = { has_country_flag = select_bomb_mode_hard }
+		divide_temp_variable = { civ_casualties1 = 2 }
+		round_temp_variable = civ_casualties1
+	}
+
+	add_to_variable = { c_casualties_ROOT = temp_damaged_building }
+	add_to_variable = { c_casualties_ROOT = temp_plane_casualties }
+	add_to_variable = { c_casualties_ROOT = civ_casualties1 }
+}

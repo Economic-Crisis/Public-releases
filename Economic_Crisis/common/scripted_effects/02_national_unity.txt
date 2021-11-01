@@ -1,6 +1,6 @@
 NU_on_startup_settings = {
 	add_to_variable = { national_unity = 50 } #Стартовый
-	clamp_variable = {
+	clamp_variable = { #Ограние по макс/мин
 		var = national_unity
 		min = 0
 		max = 100
@@ -62,5 +62,14 @@ NU_on_startup_settings = {
 	if = { #Национальное государство
 		limit = { has_idea = mono_ethnic_country }
 		subtract_from_variable = { national_unity = -30 }
+	}
+
+	if = { #Нет стабильности
+		limit = { has_stability < 0.05 }
+		subtract_from_variable = { national_unity = 7 }
+	}
+	if = { #Слишком высокий милитаризм
+		limit = { has_war_support > 0.95 }
+		subtract_from_variable = { national_unity = 3 }
 	}
 }

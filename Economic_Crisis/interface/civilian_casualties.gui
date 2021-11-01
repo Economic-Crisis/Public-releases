@@ -1,0 +1,117 @@
+guiTypes = {
+	containerWindowType = {
+		name = "civilian_casualties_gui"
+		position = { x = 0 y = 0 }	
+		
+		iconType ={
+			name ="bg"
+			spriteType = "GFX_civ_casualties_bg"
+			position = { x = 214 y = 66 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		instantTextBoxType = {
+			name = "civ_casualties"
+			position = { x = 220 y = 70 }
+			font = "hoi_18mbs"
+			text = "civ_casualties"
+			format = left
+			maxWidth = 230
+			maxHeight = 24
+			#fixedsize = yes
+			pdx_tooltip = civ_casualties_t
+			pdx_tooltip_delayed = civ_casualties_tt
+		}
+		
+		iconType ={
+			name ="bomb_mode_easy_bg"
+			spriteType = "GFX_selected_air_priority"
+			position = { x = 448 y = 69 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+			frame = 1
+			scale = 0.84
+		}
+
+		iconType ={
+			name ="bomb_mode_easy"
+			spriteType = "GFX_bomb_mode_easy_icon"
+			position = { x = 450 y = 70 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = civ_casualties_t_bomb_mode_easy
+			pdx_tooltip_delayed = civ_casualties_t_bomb_mode_easy_t
+		}
+		
+
+		iconType ={
+			name ="bomb_mode_medium"
+			spriteType = "GFX_bomb_mode_medium_icon"
+			position = { x = 490 y = 70 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = civ_casualties_t_bomb_mode_medium
+			pdx_tooltip_delayed = civ_casualties_t_bomb_mode_medium_t
+		}
+
+		iconType ={
+			name ="bomb_mode_medium_bg"
+			spriteType = "GFX_selected_air_priority"
+			position = { x = 488 y = 69 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+			frame = 1
+			scale = 0.84
+		}
+
+		iconType ={
+			name ="bomb_mode_hard"
+			spriteType = "GFX_bomb_mode_hard_icon"
+			position = { x = 530 y = 70 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = civ_casualties_t_bomb_mode_hard
+			pdx_tooltip_delayed = civ_casualties_t_bomb_mode_hard_t
+		}
+
+		iconType ={
+			name ="bomb_mode_hard_bg"
+			spriteType = "GFX_selected_air_priority"
+			position = { x = 528 y = 69 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+			frame = 1
+			scale = 0.84
+		}
+
+	}
+
+	containerWindowType = {
+		name = "civilian_casualties_waroverview_window_gui"
+		position = { x = -150 y = 45 }
+
+		instantTextBoxType = {
+			name = "civ_casualties_ww"
+			position = { x = 190 y = 70 }
+			font = "hoi_18mbs"
+			text = "civ_casualties_ww"
+			format = left
+			maxWidth = 250
+			maxHeight = 24
+			#fixedsize = yes
+			pdx_tooltip = civ_casualties_ww_t
+			pdx_tooltip_delayed = civ_casualties_ww_tt
+		}
+
+		instantTextBoxType = {
+			name = "civ_casualties_ww1"
+			position = { x = 1010 y = 70 }
+			font = "hoi_18mbs"
+			text = "civ_casualties_ww1"
+			format = right
+			maxWidth = 290
+			maxHeight = 24
+			#fixedsize = yes
+			pdx_tooltip = civ_casualties_ww_t
+			pdx_tooltip_delayed = civ_casualties_ww_tt
+		}
+	}
+
+} 

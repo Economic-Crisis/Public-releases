@@ -33,6 +33,68 @@ news_event = {
 		name = cau_border_conflicts.2.a
 	}
 }
+news_event = {
+	id = cau_border_conflicts.3
+	title = cau_border_conflicts.3.t
+	desc = cau_border_conflicts.3.d
+	hidden = yes
+	major = yes
+	#fire_only_once = yes
+	trigger = {
+		AZR = {
+			owns_state = 816
+			owns_state = 818
+		}
+		NKR = {
+			owns_state = 775
+		}
+		NOT = {
+			has_country_flag = cau_border_conflict
+		}
+		tag = NKR
+	}
+	mean_time_to_happen = { days = 40 }
+	
+	immediate = {
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 816
+				num_provinces = 2
+				on_win = cau_border_conflicts.1
+				on_lose = cau_border_conflicts.2
+			}
+			
+			defender = {
+				state = 775
+				num_provinces = 2
+				on_win = cau_border_conflicts.1
+				on_lose = cau_border_conflicts.2
+			}
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 775
+				num_provinces = 2
+				on_win = cau_border_conflicts.1
+				on_lose = cau_border_conflicts.2
+			}
+			
+			defender = {
+				state = 818
+				num_provinces = 2
+				on_win = cau_border_conflicts.1
+				on_lose = cau_border_conflicts.2
+			}
+		}
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): cau_border_conflicts.3"
+	}
+
+	option = {
+		name = cau_border_conflicts.3.a
+	}
+}
 
 add_namespace = ind_border_conflicts
 

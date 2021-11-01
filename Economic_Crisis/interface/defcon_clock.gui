@@ -1,0 +1,122 @@
+guiTypes = {
+	containerWindowType = {
+		name = "defcon_clock"
+		position = { x = -110 y = 5 }
+		orientation = UPPER_RIGHT
+		
+		iconType ={
+			name = "bg"
+			spriteType = "GFX_defcon_clock"
+		}
+		
+		instantTextBoxType = {
+			name = "defcon"
+			position = { x = 10 y = 10 }
+			font = "ec-digital-regular22"
+			text = "defcon"
+			format = left
+			maxWidth = 62
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = defcon_info
+			pdx_tooltip_delayed = defcon_delayed
+		}
+		
+		instantTextBoxType = {
+			name = "doomsday_clock"
+			position = { x = 11 y = 43 }
+			font = "ec-digital-regular22"
+			text = "doomsday_clock"
+			format = left
+			maxWidth = 60
+			maxHeight = 24
+			fixedsize = yes
+			pdx_tooltip = doomsday_clock_info
+			pdx_tooltip_delayed = doomsday_clock_delayed
+		}
+
+	}
+	
+	containerWindowType = {
+		name = "doomsdey_clock_gui"
+		position = { x = 600 y = 300 }	
+		size = { width = 1000 height = 719 }
+		moveable = yes
+		#Orientation = CENTER
+		show_sound = sound_timer_clock
+		hide_sound = menu_close_window
+	
+		fade_time = 300
+		fade_type = linear
+
+		background = {
+			name = "Background"	
+			spriteType ="GFX_event_news_bg"
+		}
+
+		containerWindowType = {
+			name = "top_Window"
+			position = { x=0 y=0 }	
+			size = { width = 1000 height =163 }
+			Orientation = UPPER_LEFT
+
+			instantTextBoxType = {
+				name = "Title"
+				position = { x = 60 y = 70 }
+				font = "gilroy-bold36"
+				borderSize = {x = 0 y = 0}
+				text = "doomsday_clock_title"	
+				maxWidth = 900
+				maxHeight = 32
+				format = left
+			}
+			
+			iconType = {
+				name ="event_picture"
+				spriteType = "GFX_event_doomsday_clock"
+				position = { x = 38 y = 346 }
+				Orientation = "UPPER_LEFT"
+				allwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "midsection"
+			position = { x=0 y=121 }	
+			size = { width = 1000 height = 137 }
+			Orientation = UPPER_LEFT
+
+			instantTextBoxType = {
+				name = "Description"
+				position = { x = 60 y = 25 }
+				font = "gilroy-bold20"
+				borderSize = {x = 0 y = 0}
+				text = "[doomsday_clock_history_list]"
+				maxWidth = 900
+				maxHeight = 230
+				format = left
+			}
+		}			
+
+
+		ButtonType ={
+			name ="button_option"
+			spriteType = "GFX_event_option_entry"
+			position = { x = 40 y = 580 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		instantTextBoxType = {
+			name = "option_text"
+			position = { x = 60 y = 590 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "option_text"	
+			maxWidth = 200
+			maxHeight = 32
+			format = left
+			allwaystransparent = yes
+		}
+	}
+
+}

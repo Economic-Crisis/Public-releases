@@ -595,3 +595,22 @@ news_event = {
 		name = news.81.a
 	}
 }
+
+news_event = {
+	id = news.82   #Протесты в Беларуси
+	title = news.82.t
+	desc = news.82.d
+	picture = GFX_event_news_earthquake_in_Ecuadore
+
+	is_triggered_only = yes
+
+	trigger = {
+		BLR = { has_global_flag = BLR_protests }
+	}
+
+	major = yes
+
+	option = {
+    name = news.82.a
+	}
+}

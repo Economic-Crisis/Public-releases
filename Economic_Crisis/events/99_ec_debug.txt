@@ -66,7 +66,17 @@ country_event = {
 	
 	option = {  
 		name = debug.1.a
-		set_variable = { budget_timer = 0 }
+		#clear_variable = c_casualties
+		
+		#add_to_variable = { test1_casualties = casualties@THIS.enemies_of_allies }
+		#every_enemy_country = {
+		#	add_to_variable = { ROOT.c_casualties = casualties@PREV }
+		#}
+		#ROOT.controller = {
+		#	add_to_variable = { ROOT.c_casualties = damaged_building_level@infrastructure }
+		#}
+		226 = { add_to_variable = { c_casualties = days_since_last_strategic_bombing } }
+		
 	}
 	option = {  
 		name = debug.1.b
@@ -78,5 +88,6 @@ country_event = {
 	}
 	option = {  
 		name = debug.1.d
+		set_civ_casualties_temp = yes
 	}
 }

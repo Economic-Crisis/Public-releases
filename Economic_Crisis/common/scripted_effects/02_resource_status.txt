@@ -1,0 +1,64 @@
+status_energy_resource = {
+	clear_variable = energy_resource_status
+		every_controlled_state = {
+		add_to_temp_variable = { energy_resource_temp_status = building_level@thermal_power_plant }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@arms_factory }
+		add_to_temp_variable = { energy_resource_temp1_status = building_level@industrial_complex }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@steel_factory }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@aluminium_factory }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@alloy_steel_factory }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@rare_earth_factory }
+		add_to_temp_variable = { energy_resource_temp_status = building_level@uran_factory }
+	}
+	multiply_temp_variable = { energy_resource_temp1_status = 2 }
+	add_to_variable = { energy_resource_status = resource_consumed@energy_resource }
+	add_to_variable = { energy_resource_status = energy_resource_temp_status }
+}
+
+status_iron_ore = {
+	clear_variable = iron_ore_status
+	every_controlled_state = {
+		add_to_temp_variable = { iron_ore_temp_status = building_level@steel_factory }
+	}
+	multiply_temp_variable = { iron_ore_temp_status = 8 }
+	add_to_variable = { iron_ore_status = resource_consumed@iron_ore }
+	add_to_variable = { iron_ore_status = iron_ore_temp_status }
+}
+
+status_bauxite = {
+	clear_variable = bauxite_status
+	every_controlled_state = {
+		add_to_temp_variable = { bauxite_temp_status = building_level@aluminium_factory }
+	}
+	multiply_temp_variable = { bauxite_temp_status = 6 }
+	add_to_variable = { bauxite_status = resource_consumed@bauxite }
+	add_to_variable = { bauxite_status = bauxite_temp_status }
+}
+
+status_alloy_ore = {
+	clear_variable = alloy_ore_status
+	every_controlled_state = {
+		add_to_temp_variable = { alloy_ore_temp_status = building_level@alloy_steel_factory }
+	}
+	add_to_variable = { alloy_ore_status = resource_consumed@alloy_ore }
+	add_to_variable = { alloy_ore_status = alloy_ore_temp_status }
+}
+
+status_earth_ore = {
+	clear_variable = earth_ore_status
+	every_controlled_state = {
+		add_to_temp_variable = { earth_ore_temp_status = building_level@rare_earth_factory }
+	}
+	multiply_temp_variable = { earth_ore_temp_status = 4 }
+	add_to_variable = { earth_ore_status = resource_consumed@rare_earth_ore }
+	add_to_variable = { earth_ore_status = earth_ore_temp_status }
+}
+
+status_uran = {
+	clear_variable = uran_status
+	every_controlled_state = {
+		add_to_temp_variable = { uran_temp_status = building_level@rare_earth_factory }
+	}
+	add_to_variable = { uran_status = resource_consumed@uran }
+	add_to_variable = { uran_status = uran_temp_status }
+}

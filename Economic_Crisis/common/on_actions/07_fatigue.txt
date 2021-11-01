@@ -1,4 +1,54 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = { has_civil_war = yes }
+					add_to_variable = { var_fatigue = 24 }
+				}
+				if = {
+					limit = { has_idea = low_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 18 }
+				}
+				if = {
+					limit = { has_idea = partial_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = war_economy	}
+					add_to_variable = { var_fatigue = 19 }
+				}
+				if = {
+					limit = { has_idea = tot_economic_mobilisation	}
+					add_to_variable = { var_fatigue = 20 }
+				}
+				else = {
+					add_to_variable = { var_fatigue = 15 }
+				}
+				
+				if = { #Терроризм
+					limit = { has_idea = terrorism_discounted }
+					add_to_variable  = { var_fatigue = -2 }
+				}
+				if = {
+					limit = { has_idea = low_terrorism }
+					add_to_variable  = { var_fatigue = 2 }
+				}
+				if = {
+					limit = { has_idea = average_terrorism }
+					add_to_variable  = { var_fatigue = 7 }
+				}
+				if = {
+					limit = { has_idea = high_terrorism }
+					add_to_variable  = { var_fatigue = 11 }
+				}
+				if = {
+					limit = { has_idea = decaying_state }
+					add_to_variable  = { var_fatigue = 15 }
+				}
+			}
+		}
+	}
 	on_weekly = {
 		effect = {
 			if = {

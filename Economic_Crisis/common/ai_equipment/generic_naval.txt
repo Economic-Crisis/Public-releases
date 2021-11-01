@@ -600,7 +600,7 @@ naval_ship_hull_strike_cruiser = {
 	}
 }
 
-naval_cruiser_heavy = {
+naval_cruiser_strike = {
 	category = naval
 	
 	roles = {
@@ -621,7 +621,56 @@ naval_cruiser_heavy = {
 		target_variant = {
 			match_value = 1000.0
 			
-			type = ship_hull_cruiser
+			type = ship_hull_strike_cruiser
+			modules = {
+				fixed_ship_battery_slot = ship_rcc
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_engine_slot = cruiser_ship_engine
+				fixed_ship_armor_slot = {
+					any_of = { ship_medium_armor ship_heavy_armor ship_light_armor }
+				}
+				fixed_ship_secondaries_slot = ship_rcc
+				mid_1_custom_slot = {
+					any_of = { ship_anti_air ship_torpedo ship_rcc }
+				}
+				mid_2_custom_slot = {
+					any_of = { ship_airplane_launcher ship_anti_air ship_torpedo }
+				}
+				rear_1_custom_slot = ship_rcc
+			}
+		}
+		
+		allowed_modules = {
+			ship_anti_air
+			ship_rcc
+			ship_radar
+			ship_torpedo
+			ship_airplane_launcher
+		}
+	}
+}
+naval_cruiser_escort = {
+	category = naval
+	
+	roles = {
+		naval_cruiser_heavy
+	}
+	
+	priority = {
+		factor = 800
+	}
+	capital_cruiser_early = {
+	
+		priority = {
+			factor = 100
+		}
+
+		role_icon_index = 1
+		
+		target_variant = {
+			match_value = 1000.0
+			
+			type = ship_hull_escort_cruiser
 			modules = {
 				fixed_ship_battery_slot = ship_rcc
 				fixed_ship_fire_control_system_slot = ship_fire_control_system
@@ -898,7 +947,7 @@ naval_mine_sweeper = {
 		target_variant = {
 			match_value = 1000.0
 			
-			type = ship_hull_light_1
+			type = ship_hull_destroyer
 			modules = {
 				rear_1_custom_slot = ship_mine_sweeper_1
 				fixed_ship_battery_slot = ship_light_battery_1
@@ -957,7 +1006,7 @@ naval_mine_layer = {
 		target_variant = {
 			match_value = 1000.0
 			 
-			type = ship_hull_light
+			type = ship_hull_destroyer
 			modules = {
 				rear_1_custom_slot = ship_mine_layer_1 
 				fixed_ship_engine_slot = light_ship_engine_1
@@ -1001,7 +1050,7 @@ naval_mine_layer = {
 		target_variant = {
 			match_value = 2000.0
 			
-			type = ship_hull_cruiser
+			type = ship_hull_destroyer
 			modules = {
 				rear_1_custom_slot = ship_mine_layer_1 
 				mid_2_custom_slot = ship_mine_layer_1 

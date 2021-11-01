@@ -455,10 +455,10 @@ ideas = {
 			cost = 1000
 			available = {
 				has_country_flag = NATO_aspiring
-				OR = {
+				#OR = {
 					has_idea_with_trait = foreign_minister_addiction_USA
-					has_country_flag = aspiring_nato
-				}
+					#has_country_flag = aspiring_nato
+				#}
 				USA = { is_faction_leader = yes }
 				NOT = { has_country_flag = VETO_alliance_country.NATO }
 				OR = { 
@@ -531,7 +531,7 @@ ideas = {
 					has_idea_with_trait = foreign_minister_addiction_RUS
 					is_in_faction_with = RUS
 				}
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.CSTO }
 				RUS = { is_faction_leader = yes }
 				OR = { 
 					NOT = {
@@ -562,7 +562,7 @@ ideas = {
 		integration_in_rss = {
 			cost = 1000
 			available = {
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.RSS }
 				OR = {
 					original_tag = BAH
 					original_tag = CUB
@@ -608,7 +608,7 @@ ideas = {
 		integration_in_nordefco = {
 			cost = 1000
 			available = {
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.NORDEFCO }
 				OR = {
 					original_tag = FIN
 					original_tag = SWE
@@ -644,7 +644,7 @@ ideas = {
 		integration_in_ccasg = {
 			cost = 1000
 			available = {
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.CCASG }
 				has_government = democratic
 				#is_in_faction_with = SAU
 				OR = {
@@ -714,7 +714,7 @@ ideas = {
 					tag = JUB
 				}
 				
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.FGS }
 				OR = { 
 					NOT = {
 						has_idea = aspiring_nato
@@ -744,7 +744,7 @@ ideas = {
 		integration_in_dalasia = {
 			cost = 1000
 			available = {
-				#NOT = { has_country_flag = VETO_alliance_country }
+				#NOT = { has_country_flag = VETO_alliance_country.DALASIA }
 				OR = { 
 					NOT = {
 						has_idea = aspiring_nato
@@ -774,7 +774,7 @@ ideas = {
 		integration_in_intermarium = {
 			cost = 1000
 			available = {
-				#NOT = { has_country_flag = VETO_alliance_country }
+				#NOT = { has_country_flag = VETO_alliance_country.INTERMARIUM }
 				OR = { 
 					NOT = {
 						has_idea = aspiring_nato
@@ -808,7 +808,7 @@ ideas = {
 					has_idea_with_trait = foreign_minister_addiction_CHI
 					CHI = { is_faction_leader = yes }
 				}
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.CHINA_SPHERE }
 				OR = { 
 					NOT = {
 						has_idea = aspiring_nato
@@ -838,7 +838,7 @@ ideas = {
 		integration_in_commonwealth = {
 			cost = 1000
 			available = {
-				NOT = { has_country_flag = VETO_alliance_country }
+				NOT = { has_country_flag = VETO_alliance_country.COMMONWEALTH }
 				OR = { 
 					NOT = {
 						has_idea = aspiring_nato

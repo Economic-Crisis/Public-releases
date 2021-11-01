@@ -23,7 +23,45 @@
  ######   #######  ########  ######## 
 
 d_test_reset_all = {
-	ROOT = {
-		set_country_flag = test_reset_all
+	ROOT = { set_country_flag = test_reset_all }
+}
+d_version_mod = {
+	log = EC_version
+}
+d_mod_version = {
+	log = EC_version
+}
+d_dlc_check = {
+	if = {
+	limit = { has_dlc = "Waking the Tiger" }
+		log = "DLC active: Waking the Tiger"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Waking the Tiger" } }
+		log = "DLC nope: Waking the Tiger"
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		log = "DLC active: Man the Guns"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
+		log = "DLC nope: Man the Guns"
+	}
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		log = "DLC active: La Resistance"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "La Resistance" } }
+		log = "DLC nope: La Resistance"
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		log = "DLC active: Death or Dishonor"
+	}
+	else_if = {
+		limit = { NOT = { has_dlc = "Death or Dishonor" } }
+		log = "DLC nope: Death or Dishonor"
 	}
 }

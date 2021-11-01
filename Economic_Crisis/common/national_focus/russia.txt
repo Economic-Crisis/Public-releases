@@ -3737,6 +3737,7 @@ focus_tree = {
 		ai_will_do = { factor = 5 }
 		available = {
 			country_exists = CHI 
+			always = no
 			CHI = {
 				NOT = {
 					OR = {	
@@ -6012,15 +6013,17 @@ focus_tree = {
 		y = 13
 		ai_will_do = { factor = 3 }
 		bypass = {
-			OR = { BLR = { has_completed_focus = BLR_eaeu_economy }
-			CHI = { has_completed_focus = CHI_eaeu_economy }
-			IRN = { has_completed_focus = IRN_eaeu_economy }
-			JAP = { has_completed_focus = JAP_eaeu_economy }
-			TUR = { has_completed_focus = TUR_eaeu_economy }
-			any_country = {
-				has_completed_focus = generic_eaeu_economy
-				has_completed_focus = major_eaeu_economy
-			}}
+			OR = { 
+				BLR = { has_completed_focus = BLR_eaeu_economy }
+				CHI = { has_completed_focus = CHI_eaeu_economy }
+				IRN = { has_completed_focus = IRN_eaeu_economy }
+				JAP = { has_completed_focus = JAP_eaeu_economy }
+				TUR = { has_completed_focus = TUR_eaeu_economy }
+				any_country = {
+					has_completed_focus = generic_eaeu_economy
+					has_completed_focus = major_eaeu_economy
+				}
+			}
 		}
 		select_effect = {
 			add_timed_idea = { idea = select_focus_eaeu days = 150 }
@@ -6506,21 +6509,24 @@ focus_tree = {
 		y = 17
 		ai_will_do = {	factor = 3 }
 		bypass = {
-			OR = { BLR = { has_completed_focus = BLR_eaeu_economy5 }
-			CHI = { has_completed_focus = CHI_eaeu_economy5 }
-			JAP = { has_completed_focus = JAP_eaeu_economy5 }
-			IRN = { has_completed_focus = IRN_eaeu_economy5 }
-			TUR = { has_completed_focus = TUR_eaeu_economy5 }
-			any_country = {
-				has_completed_focus = generic_eaeu_economy5
-				has_completed_focus = major_eaeu_economy5
-			}}
+			OR = {
+				BLR = { has_completed_focus = BLR_eaeu_economy5 }
+				CHI = { has_completed_focus = CHI_eaeu_economy5 }
+				JAP = { has_completed_focus = JAP_eaeu_economy5 }
+				IRN = { has_completed_focus = IRN_eaeu_economy5 }
+				TUR = { has_completed_focus = TUR_eaeu_economy5 }
+				any_country = {
+					has_completed_focus = generic_eaeu_economy5
+					has_completed_focus = major_eaeu_economy5
+				}
+			}
 		}
 		select_effect = {
 			add_timed_idea = { idea = select_focus_eaeu days = 150 }
 		}
 		completion_reward = {
 			custom_effect_tooltip = eaeu_economy5_tt
+			set_global_flag = EAEU_pay_increase
 			if = {
 				limit = { NOT = { has_country_flag = money_trillions } }
 				subtract_from_variable = { budget_reserve = 1700 }

@@ -1,0 +1,998 @@
+guiTypes = {
+	containerWindowType = {
+		name = "puppet_laws_rip"
+		position = { x = 0 y = 0 }
+		size = { width = 545 height = 500 }
+		#verticalScrollbar = "right_vertical_slider"
+		#margin = { top = 14 bottom = 13}
+		clipping = yes
+		click_to_front = yes
+	
+		background = {
+			name = "Background"
+			#quadTextureSprite ="GFX_tiled_window_2b_border"
+			#quadTextureSprite ="GFX_tiled_window_1b_border"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name ="diplo_popup_header_bg"
+			spriteType = "GFX_diplo_popup_header_bg_large"
+			position = { x= 0 y = 8 }
+			alwaystransparent = yes
+		}	
+		
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 130 y = 30 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "puppet_laws_send"	
+			maxWidth = 336
+			maxHeight = 24
+			fixedsize = yes
+			format = centre
+			vertical_alignment = center			
+		}
+		
+		iconType ={
+			name = "status_header"
+			spriteType = "GFX_category_header"
+			position = { x=11 y=78 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "status"
+			position = { x = 60 y = 88 }
+			font = "hoi_20b"
+			text = "state_status"
+			maxWidth = 300
+			maxHeight = 20
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_state"
+			position = { x = 20 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_state_btn"
+				spriteType = "GFX_idea_superstate"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_state1_btn"
+				spriteType = "GFX_idea_major_country"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_state2_btn"
+				spriteType = "GFX_idea_regional_country"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_state3_btn"
+				spriteType = "GFX_idea_minor_country"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_state4_btn"
+				spriteType = "GFX_idea_partially_recognized_country"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_state5_btn"
+				spriteType = "GFX_idea_not_recognized_country"
+				position = { x = 0 y = 0 }
+				pdx_tooltip = puppet_laws_this_is_blocked
+			}
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_corruption"
+			position = { x = 80 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_corruption_btn"
+				spriteType = "GFX_idea_corruption_discounted"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_corruption1_btn"
+				spriteType = "GFX_idea_low_corruption"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_corruption2_btn"
+				spriteType = "GFX_idea_average_corruption"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_corruption3_btn"
+				spriteType = "GFX_idea_high_corruption"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_corruption4_btn"
+				spriteType = "GFX_idea_oligarchy"
+				position = { x = 0 y = 0 }
+			}
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_terrorism"
+			position = { x = 140 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_terrorism_btn"
+				spriteType = "GFX_idea_terrorism_discounted"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_terrorism1_btn"
+				spriteType = "GFX_idea_low_terrorism"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_terrorism2_btn"
+				spriteType = "GFX_idea_average_terrorism"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_terrorism3_btn"
+				spriteType = "GFX_idea_high_terrorism"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_terrorism4_btn"
+				spriteType = "GFX_idea_decaying_state"
+				position = { x = 0 y = 0 }
+			}
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_ecology"
+			position = { x = 200 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_ecology_btn"
+				spriteType = "GFX_idea_full_protect"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_ecology1_btn"
+				spriteType = "GFX_idea_big_protect"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_ecology2_btn"
+				spriteType = "GFX_idea_normal_protect"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_ecology3_btn"
+				spriteType = "GFX_idea_low_protect"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_ecology4_btn"
+				spriteType = "GFX_idea_no_protect"
+				position = { x = 0 y = 0 }
+			}
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_integration"
+			position = { x = 260 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_integration_btn"
+				spriteType = "GFX_idea_non_block_status"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration1_btn"
+				spriteType = "GFX_idea_aspiring_nato"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration2_btn"
+				spriteType = "GFX_idea_integration_in_nato"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration3_btn"
+				spriteType = "GFX_idea_integration_in_csto"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration4_btn"
+				spriteType = "GFX_idea_integration_in_rss"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_status_integration5_btn"
+				spriteType = "GFX_idea_integration_in_nordefco"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration6_btn"
+				spriteType = "GFX_idea_integration_in_ccasg"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration7_btn"
+				spriteType = "GFX_idea_integration_in_fgs"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_integration8_btn"
+				spriteType = "GFX_idea_own_way"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_status_eu"
+			position = { x = 325 y = 125 }
+
+			buttonType = {
+				name = "puppet_laws_status_eu_btn"
+				spriteType = "GFX_idea_fully_integrated_in_EU"
+				position = { x = 0 y = 0 }
+			}
+
+			
+
+			buttonType = {
+				name = "puppet_laws_status_eu2_btn"
+				spriteType = "GFX_idea_candidate_EU_membership"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_status_eu3_btn"
+				spriteType = "GFX_idea_EU_accession_negotiations"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		buttonType = {
+			name = "puppet_laws_status_eu1_btn"
+			spriteType = "GFX_idea_EU_membership"
+			position = { x = 425 y = 125 }
+		}
+
+		iconType = {
+			name = "state_laws_header"
+			spriteType = "GFX_category_header"
+			position = { x = 11 y = 197 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "state_laws_status"
+			position = { x = 60 y = 207 }
+			font = "hoi_20b"
+			text = "base_state_laws"
+			maxWidth = 300
+			maxHeight = 20
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_state"
+			position = { x = 20 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_state_btn"
+				spriteType = "GFX_idea_directorial_republic"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_state1_btn"
+				spriteType = "GFX_idea_presidential_republic"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_state2_btn"
+				spriteType = "GFX_idea_semi-presidential_republic"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_state3_btn"
+				spriteType = "GFX_idea_parliamentary_republic"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_state4_btn"
+				spriteType = "GFX_idea_parliamentary_monarchy"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_state5_btn"
+				spriteType = "GFX_idea_semi-parliamentary_monarchy"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_state6_btn"
+				spriteType = "GFX_idea_absolute_monarchy"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_admin_law"
+			position = { x = 80 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_admin_btn"
+				spriteType = "GFX_idea_confederation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_admin1_btn"
+				spriteType = "GFX_idea_federation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_admin2_btn"
+				spriteType = "GFX_idea_administrative_federation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_admin3_btn"
+				spriteType = "GFX_idea_national_federation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_admin4_btn"
+				spriteType = "GFX_idea_unitary_state_with_devolution"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_admin5_btn"
+				spriteType = "GFX_idea_unitary_state"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_religion_law"
+			position = { x = 140 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_religion_btn"
+				spriteType = "GFX_idea_state_atheism"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_religion1_btn"
+				spriteType = "GFX_idea_secular_state"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_religion2_btn"
+				spriteType = "GFX_idea_preference_religion"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_religion3_btn"
+				spriteType = "GFX_idea_state_religion"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_religion4_btn"
+				spriteType = "GFX_idea_theocracy"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_media"
+			position = { x = 200 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_media_btn"
+				spriteType = "GFX_idea_free_media"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_media1_btn"
+				spriteType = "GFX_idea_commercial_media"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_media2_btn"
+				spriteType = "GFX_idea_mixed_media"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_media3_btn"
+				spriteType = "GFX_idea_cencored_media"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_media4_btn"
+				spriteType = "GFX_idea_state_media_only"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_media5_btn"
+				spriteType = "GFX_idea_state_propaganda_media"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_civil_liberties"
+			position = { x = 260 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties_btn"
+				spriteType = "GFX_idea_fully_guranted_liberties"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties1_btn"
+				spriteType = "GFX_idea_respect_of_liberties"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties2_btn"
+				spriteType = "GFX_idea_suspended_liberties"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties3_btn"
+				spriteType = "GFX_idea_limitation_of_liberties"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties4_btn"
+				spriteType = "GFX_idea_lack_of_liberties"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties5_btn"
+				spriteType = "GFX_idea_emergency_law"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties6_btn"
+				spriteType = "GFX_idea_martial_law"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_civil_liberties7_btn"
+				spriteType = "GFX_idea_sharia_law"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+		containerWindowType = {
+			name = "puppet_laws_army"
+			position = { x = 320 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_army_btn"
+				spriteType = "GFX_idea_contract_army"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_army1_btn"
+				spriteType = "GFX_idea_mixed_army"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_army2_btn"
+				spriteType = "GFX_idea_mandatory_urgent_service"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_schools"
+			position = { x = 380 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_schools_btn"
+				spriteType = "GFX_idea_mixed_schools"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_schools1_btn"
+				spriteType = "GFX_idea_professional_schools"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_schools2_btn"
+				spriteType = "GFX_idea_religious_schools"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_schools3_btn"
+				spriteType = "GFX_idea_military_schools"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_schools4_btn"
+				spriteType = "GFX_idea_tech_schools"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_migration"
+			position = { x = 440 y = 245 }
+
+			buttonType = {
+				name = "puppet_laws_migration_btn"
+				spriteType = "GFX_idea_close_borders"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_migration1_btn"
+				spriteType = "GFX_idea_restricted_immigration"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_migration2_btn"
+				spriteType = "GFX_idea_open_immigration"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_migration3_btn"
+				spriteType = "GFX_idea_attract_immigrants"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_migration4_btn"
+				spriteType = "GFX_idea_schengen_area_immigration"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_migration5_btn"
+				spriteType = "GFX_idea_schengen_area_immigration"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		iconType ={
+			name = "economy_laws_header"
+			spriteType = "GFX_category_header"
+			position = { x = 11 y = 310 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "economy_laws_status"
+			position = { x = 60 y = 320 }
+			font = "hoi_20b"
+			text = "economy"
+			maxWidth = 300
+			maxHeight = 20
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_economy"
+			position = { x = 20 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_economy_btn"
+				spriteType = "GFX_idea_market_economy"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_economy1_btn"
+				spriteType = "GFX_idea_mixed_economic"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_economy2_btn"
+				spriteType = "GFX_idea_planned_economy"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_economy3_btn"
+				spriteType = "GFX_idea_traditional_economy"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_market"
+			position = { x = 80 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_market_btn"
+				spriteType = "GFX_idea_free_market"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_market1_btn"
+				spriteType = "GFX_idea_state-owned_enterprise"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_market2_btn"
+				spriteType = "GFX_idea_nationalization_of_extractive_industries"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_market3_btn"
+				spriteType = "GFX_idea_nationalization_of_heavy_industry"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_market4_btn"
+				spriteType = "GFX_idea_total_nationalization_of_industry"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_market5_btn"
+				spriteType = "GFX_idea_ban_on_private_enterprise"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_focus"
+			position = { x = 140 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_focus_btn"
+				spriteType = "GFX_idea_light_industry_focus"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_focus1_btn"
+				spriteType = "GFX_idea_electronics_industry_focus"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_focus2_btn"
+				spriteType = "GFX_idea_balanced_industry"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_focus3_btn"
+				spriteType = "GFX_idea_extractive_industries_focus"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_focus4_btn"
+				spriteType = "GFX_idea_heavy_industry_focus"
+				position = { x = 0 y = 0 }
+			}
+			
+			buttonType = {
+				name = "puppet_laws_focus5_btn"
+				spriteType = "GFX_idea_military_industry_focus"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_mobilisation"
+			position = { x = 200 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_mobilisation_btn"
+				spriteType = "GFX_idea_civilian_economy"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_mobilisation1_btn"
+				spriteType = "GFX_idea_low_economic_mobilisation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_mobilisation2_btn"
+				spriteType = "GFX_idea_partial_economic_mobilisation"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_mobilisation3_btn"
+				spriteType = "GFX_idea_war_economy"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_mobilisation4_btn"
+				spriteType = "GFX_idea_tot_economic_mobilisation"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_taxes"
+			position = { x = 260 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_taxes_btn"
+				spriteType = "GFX_idea_very_low_taxes"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_taxes1_btn"
+				spriteType = "GFX_idea_low_taxes"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_taxes2_btn"
+				spriteType = "GFX_idea_normal_taxes"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_taxes3_btn"
+				spriteType = "GFX_idea_high_taxes"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_taxes4_btn"
+				spriteType = "GFX_idea_very_high_taxes"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_security"
+			position = { x = 320 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_security_btn"
+				spriteType = "GFX_idea_total_social_security"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_security1_btn"
+				spriteType = "GFX_idea_national_social_security"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_security2_btn"
+				spriteType = "GFX_idea_middle_social_security"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_security3_btn"
+				spriteType = "GFX_idea_base_social_security"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_security4_btn"
+				spriteType = "GFX_idea_no_social_security"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_pensions"
+			position = { x = 380 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_pensions_btn"
+				spriteType = "GFX_idea_no_labor_rights_protection"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_pensions1_btn"
+				spriteType = "GFX_idea_prohibition_of_child_labor"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_pensions2_btn"
+				spriteType = "GFX_idea_prohibition_of_forced_labour"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_pensions3_btn"
+				spriteType = "GFX_idea_normal_working_time"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_pensions4_btn"
+				spriteType = "GFX_idea_minimum_wage"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_pensions5_btn"
+				spriteType = "GFX_idea_pensions"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+		containerWindowType = {
+			name = "puppet_laws_trade"
+			position = { x = 440 y = 355 }
+
+			buttonType = {
+				name = "puppet_laws_trade_btn"
+				spriteType = "GFX_idea_free_trade"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_trade1_btn"
+				spriteType = "GFX_idea_export_focus"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_trade2_btn"
+				spriteType = "GFX_idea_limited_exports"
+				position = { x = 0 y = 0 }
+			}
+
+			buttonType = {
+				name = "puppet_laws_trade3_btn"
+				spriteType = "GFX_idea_closed_economy"
+				position = { x = 0 y = 0 }
+			}
+
+		}
+
+
+	}
+
+	containerWindowType = {
+		name = "puppet_laws_status_state_gui"
+		position = { x = 0 y = 0 }
+		size = { width = 730 height = 546 }
+		moveable = yes
+
+		instantTextboxType = {
+			name = "title"
+			position = { x = 150 y = 4 }
+			font = "hoi_20b"
+			text = "puppet_laws_status_gui"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "switch"
+			position = { x = 150 y = 26 }
+			font = "hoi_18b"
+			text = "switcher_puppet_laws_status_state"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+
+		buttonType = {
+			name = "puppet_laws_one_btn"
+			spriteType = "GFX_idea_entry_bg_3"
+			position = { x = 15 y = 64 }
+		}
+		
+		background = {
+			name = "Background1"
+			#quadTextureSprite ="GFX_tiled_window_2b_border"
+			#quadTextureSprite ="GFX_tiled_window_1b_border"
+			quadTextureSprite ="GFX_tiled_plain_bg"
+			
+		}
+		background = {
+			name = "Background"
+			#quadTextureSprite ="GFX_tiled_window_2b_border"
+			#quadTextureSprite ="GFX_tiled_window_1b_border"
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+			position = { x = 0 y = 50 }
+		}
+	}
+}

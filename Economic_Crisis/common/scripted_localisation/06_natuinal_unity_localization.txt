@@ -137,3 +137,31 @@ defined_text = {
 		localization_key = ""
 	}
 }
+
+defined_text = { 
+	name = get_modicator_stability
+
+	text = {
+		trigger = {
+			has_stability < 0.05
+		}
+		localization_key = no_stability_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = get_modicator_war_support
+
+	text = {
+		trigger = {
+			has_war_support > 0.95
+		}
+		localization_key = max_militarization_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}

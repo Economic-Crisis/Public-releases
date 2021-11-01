@@ -251,15 +251,6 @@ ideas = {
 				production_speed_arms_factory_factor = 0.052
 			}
 		}
-		BLR_EU_sanctions = { 
-			allowed = {	always = yes }
-			removal_cost = -1
-			modifier = {
-            	stability_factor = -0.1
-				stability_weekly = -0.004
-				political_power_gain = -0.04
-			}
-		}
 		BLR_nadbavka = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
@@ -576,6 +567,7 @@ ideas = {
 				Resistance_growth = 0.01
 				POLITICAL_POWER_GAIN = -0.02
 				stability_weekly = 0.02
+				DRIFT_DEFENCE_FACTOR = 0.05
 			}
 			removal_cost = -1
 		}
@@ -591,6 +583,7 @@ ideas = {
 				Intelligence_agency_defense = 0.01
 				Resistance_growth = -0.02
 				stability_weekly = 0.04
+				DRIFT_DEFENCE_FACTOR = 0.05
 			}
 			removal_cost = -1
 		}
@@ -607,6 +600,7 @@ ideas = {
 				Resistance_growth = -0.03
 				POLITICAL_POWER_GAIN = 0.02
 				stability_weekly = 0.08
+				DRIFT_DEFENCE_FACTOR = 0.1
 			}
 			removal_cost = -1
 		}
@@ -1167,17 +1161,6 @@ ideas = {
 				POLITICAL_POWER_GAIN = 0.03
             }
         }
-		BLR_EU_sanctions_2 = { 
-			allowed = {	always = yes	}
-			removal_cost = -1
-			modifier = {
-				trade_opinion_factor = -0.15
-				industrial_capacity_factory = 0.03
-				min_export = -0.25
-				stability_factor = -0.1
-				stability_weekly = -0.004
-			}
-		}
 		BLR_milk_war = { 
 			allowed = {	always = yes	}
 			removal_cost = -1
@@ -1611,7 +1594,8 @@ ideas = {
 			}
             modifier = {
 			    trade_opinion_factor = 0.05
-            	local_resources_factor = 0.02
+				local_resources_factor = 0.02
+				political_power_gain = 0.03
             }
         }
 		BLR_improving_agriculture_1 = {
@@ -1784,6 +1768,7 @@ ideas = {
 				stability_weekly = 0.002
 				MONTHLY_POPULATION = 0.01
 				DRIFT_DEFENCE_FACTOR = 0.05
+				political_power_gain = 0.02
 			}
 		}
 		BLR_sov_culture = { 

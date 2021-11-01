@@ -28,6 +28,7 @@ ideas = {
 
 			traits = { party_leader_centrist
 						pm_centrist
+						regime_defender
 					}
 
 			on_add = {
@@ -38,7 +39,43 @@ ideas = {
 				factor = 1
 			}
 		}
-	}
+
+#		blr_andrey_kobyakov_hog = {
+#
+#			picture = GFX_idea_blr_mikhail_myasnikovich
+#
+#		cost = 1000
+#		#removal_cost = -1
+#
+#		available = {
+#			OR = {
+#				has_government = neutrality
+#				has_country_flag = coalition_with_neutrality
+#			}
+#			NOT = {
+#				has_completed_focus = BLR_lustracia
+#				has_completed_focus = BLR_lyastration_1
+#			}
+#		}
+#
+#		allowed = {
+#			original_tag = "BLR"
+#		}
+#
+#		traits = { party_leader_centrist
+#					pm_centrist
+#					regime_defender
+#				}
+#
+#		on_add = {
+#			news_event = head_of_government.1
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		}
+}
 	
 	defence_minister = {
 
@@ -56,7 +93,9 @@ ideas = {
 				original_tag = "BLR"
 			}
 
-			traits = { defence_minister_serve_and_protect }
+			traits = { defence_minister_serve_and_protect
+			           regime_defender
+		            }
 			
 			on_add = {
 				news_event = defence.minister.1
@@ -80,7 +119,9 @@ ideas = {
 				original_tag = "BLR"
 			}
 
-			traits = { defence_minister_distinguished_military }
+			traits = { defence_minister_distinguished_military
+			regime_defender
+		    }
 			
 			on_add = {
 				news_event = defence.minister.1
@@ -90,6 +131,8 @@ ideas = {
 			}
 		}
 	}
+
+
 	
 	foreign_minister = {
 
@@ -113,7 +156,9 @@ ideas = {
 				original_tag  = "BLR" 
 			}
 
-      		traits = { foreign_minister_policy_defender foreign_minister_addiction_RUS }
+			  traits = { foreign_minister_policy_defender foreign_minister_addiction_RUS
+		      regime_defender
+		   	}
 
  	    	on_add = { 
 				news_event = foreign.minister.1
@@ -126,7 +171,62 @@ ideas = {
 	
 	economic_minister = {
 	
-		blr_nikolay_snopkov_ecm = {
+#		blr_vladimir_zinovsky_ecm = {
+#		
+#		picture = GFX_idea_blr_nikolay_snopkov
+#		
+#			cost = 450
+#			#removal_cost = -1
+#			available = {	}
+#			
+#			allowed = {
+#				original_tag = "BLR"
+#			}
+#			
+#			traits = { economic_minister_public_administration_4
+#			regime_defender
+#		    }
+#			
+#			on_add = {
+#			
+	#			news_event = economic.minister.1
+#			
+#			}
+#		
+#			ai_will_do = {
+#				factor = 1
+#			}
+#		}
+#
+#	blr_dmitry_krutoy_ecm = {
+#		
+#		picture = GFX_idea_blr_nikolay_snopkov
+#		
+#			cost = 450
+#			#removal_cost = -1
+#			available = {	}
+#			
+#			allowed = {
+#				original_tag = "BLR"
+#			}
+#			
+#			traits = { economic_minister_public_administration_2
+#			regime_defender
+#		    }
+#			
+#			on_add = {
+#			
+#				news_event = economic.minister.1
+#			
+#			}
+#		
+#			ai_will_do = {
+#				factor = 1
+#			}
+#		}
+#		
+
+	blr_nikolay_snopkov_ecm = {
 		
 		picture = GFX_idea_blr_nikolay_snopkov
 		
@@ -138,7 +238,9 @@ ideas = {
 				original_tag = "BLR"
 			}
 			
-			traits = { economic_minister_public_administration }
+			traits = { economic_minister_public_administration_3
+			regime_defender
+		    }
 			
 			on_add = {
 			
@@ -149,9 +251,37 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 			}
-		}
-		
 	}
+
+#	blr_dmitry_babariko_ecm = {
+#		
+#		picture = GFX_idea_blr_nikolay_snopkov
+#		
+#			cost = 450
+#			#removal_cost = -1
+#			available = {	}
+#			
+#			allowed = {
+#				original_tag = "BLR"
+#			}
+#			
+#			traits = { economic_minister_public_administration_3
+#		regime_defender
+#		    }
+#			
+#			on_add = {
+#			
+#				news_event = economic.minister.1
+#			
+#			}
+#		
+#			ai_will_do = {
+			#	factor = 1
+#			#}
+#	}
+
+}
+		
 	
 	secret_service_chief = {
 	
@@ -174,10 +304,13 @@ ideas = {
 				original_tag = "BLR"
 			}
 			
-			traits = { secret_service_chief_executioner_1 }
+			traits = { secret_service_chief_executioner_1
+			regime_defender
+			secret_service_chief_spy_1
+		    }
 			
 			on_add = {
-			
+				
 				news_event = secret.service.chief.1
 			
 			}
@@ -186,5 +319,38 @@ ideas = {
 				factor = 1
 			}
 		}
-	}
+#		blr_ivan_tertel_ssch = {
+#		
+#			picture = GFX_idea_blr_valeri_vakulchik
+#		
+#			cost = 350
+#			#removal_cost = -1
+#			available = {
+#				NOT = {
+#					OR = {
+#						has_completed_focus = BLR_lustracia
+#						has_completed_focus = BLR_lyastration_1
+#					}
+#				}
+#			}
+#			
+#			allowed = {
+#				original_tag = "BLR"
+#			}
+#			
+#			traits = { secret_service_chief_executioner_2
+#		    regime_defender
+#		    }
+#			
+#			on_add = {
+#				
+#				news_event = secret.service.chief.1
+#			
+#			}
+#				
+#			ai_will_do = {
+#				factor = 1
+#			}
+#		}
+}
 }
