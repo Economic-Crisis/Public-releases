@@ -1,3 +1,75 @@
+# 0.7.6.9
+
+### Scripting Department
+
+- The system of civilian casualties.
+- Bombing modes
+- Mechanics of industry.
+- Updated the trading panel.
+- DEFCON
+- Doomsday clock.
+- There are requirements for satisfying requests for financing the military budget, for all types of army.
+- Fixed a script that does not allow Japan to declare war until the exclusion of the modifier of the 9th article of the Constitution.
+- Fixed the error of calling a non-existent event in the effects of the German event.
+- Removed the right of military passage from the United States to Cuba.
+- Fixed the effect of activation of increased funding from the EAEU.
+- Dynamic recognition of unrecognized countries has been implemented.
+- National fines have been implemented. unity for too high a level of militarism and too low a level of stability.
+- Various corrections have been made in the foci of the DPRK.
+- The initial purchase of resources from the Republic of China has been implemented.
+- Added the ability to check the version of the installed modification in the game by entering the mod_version and version_mod commands.
+- Added the ability to check the connected necessary DLC for modification, with the dlc_check command.
+- Fixed the starting law of the US army type.
+- Reduced the size of the US Army.
+- Template corrections have been carried out in the World Bank, the USA and Russia.
+- Fixed the starting stock of US mortars.
+
+### AI
+
+- A restriction has been introduced on sending electricity purchase offers from the same sender.
+- Factors of construction of buildings are prescribed depending on the level of electricity supply.
+- A legal cheat is prescribed to ignore the lack of resource for power plants.
+- Updating of various templates has been carried out.
+- The interest of the US AI in strengthening the border front has been reduced.
+
+### Technology Department
+
+- Fixed the name generator for the fleet by country.
+
+### 2D artists
+
+- Changed the logo to a new one in the background in "Authors".
+- Fixed font issues.
+- The General Staff of the People's Republic of China is drawn and spelled out.
+- 22 generals of India are drawn and registered.
+- Tokayev is drawn for Kazakhstan.
+- 7 generals of Belarus are drawn and registered.
+
+### Map Development Department
+
+- Added new supply zones in Europe, the Middle East and Asia.
+- Rebalance of supply zones has been made.
+- Fixed the population of Moscow and other regions.
+- Greenland, Iceland, Novaya Zemlya, part of Chukotka and part of Alaska are Arctic territories.
+- Fixed weather in strategic regions (Arctic seas and DV).
+- Fixed borders of some strategic regions.
+- A maximum-level naval base has been set up in Kaliningrad.
+- The power stations of the Republic of China have been set up.
+- The DPRK's power stations have been set up.
+- Increased the level of naval bases in the main ports of the United States.
+- Israel's power stations have been set up.
+- Brazil's power plants have been set up.
+
+### Localization Department
+
+- The localization of light tanks has been redesigned, as well as the localization of light tanks for Russia has been partially prescribed.
+- Fixed some bugs in Russian and English localization.
+- Fixed localization of Kiev in English at the beginning of the game.
+
+### Music
+
+- Added various compositions from East vs West, the cancelled PDX game.
+
 # 0.7.6.7.3
 
 ### Critical fixes:
