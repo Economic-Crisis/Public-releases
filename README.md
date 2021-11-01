@@ -8,7 +8,7 @@
  [![Reddit](https://img.shields.io/badge/-Reddit-FF5700?style=flat-square&logo=Reddit&logoColor=white)](https://www.reddit.com/r/EC2013/)
  [![Youtube](https://img.shields.io/badge/-Youtube-c4302b?style=flat-square&logo=Youtube&logoColor=white)](https://www.youtube.com/c/HeartsofIronIVEconomicCrisis)
  ![Version-Game](https://img.shields.io/badge/Version--Game--HOI4-1.10.8-green?style=flat-square)
- ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.6.8-red?style=flat-square)
+ ![Version-Mod](https://img.shields.io/badge/Version--Mod-0.7.6.9-red?style=flat-square)
 
 ### [Download Mod/Скачать мод](https://github.com/Economic-Crisis-2013/Public-releases/releases/latest) (Source Code.zip)
 
