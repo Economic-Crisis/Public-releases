@@ -1,3 +1,8 @@
+# 0.7.6.9.4
+
+- Fixed an incorrectly working resource penalty script 
+- For players who have already started a company and do not want to start a new one, the remove_insert_script_building command has been temporarily added to fix this problem. (!) The script causes a slack in execution (!)
+
 # 0.7.6.9
 
 ### Scripting Department
