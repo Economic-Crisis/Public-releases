@@ -65,3 +65,36 @@ d_dlc_check = {
 		log = "DLC nope: Death or Dishonor"
 	}
 }
+
+d_remove_inst_script_building = {
+	every_state = {
+		add_to_variable = { ROOT.cl_steel_factory_temp = building_level@cl_steel_factory }
+		add_to_variable = { ROOT.cl_aluminium_factory_temp = building_level@cl_aluminium_factory }
+		add_to_variable = { ROOT.cl_alloy_steel_factory_temp = building_level@cl_alloy_steel_factory }
+		add_to_variable = { ROOT.cl_rare_earth_factory_temp = building_level@cl_rare_earth_factory }
+		add_to_variable = { ROOT.cl_uran_factory_temp = building_level@cl_uran_factory }		
+	}
+	
+	log = "Activated dev console code: List forfeit resources in the world"
+	log = "Possible freeze even on strong systems!"
+	log = "Steel — [?cl_steel_factory_temp]"
+	log = "Aluminium — [?cl_aluminium_factory_temp]"
+	log = "Alloy steel — [?cl_alloy_steel_factory_temp]"
+	log = "Rare earth — [?cl_rare_earth_factory_temp]"
+	log = "Uran — [?cl_uran_factory_temp]"
+	log = "Clear forfeit!"
+
+	every_state = {
+		remove_building = { type = cl_steel_factory level = ROOT.cl_steel_factory_temp }
+		remove_building = { type = cl_aluminium_factory level = ROOT.cl_aluminium_factory_temp }
+		remove_building = { type = cl_alloy_steel_factory level = ROOT.cl_alloy_steel_factory_temp }
+		remove_building = { type = cl_rare_earth_factory level = ROOT.cl_rare_earth_factory_temp }
+		remove_building = { type = cl_uran_factory level = ROOT.cl_uran_factory_temp }
+	}
+
+	clear_variable = cl_steel_factory_temp
+	clear_variable = cl_aluminium_factory_temp
+	clear_variable = cl_alloy_steel_factory_temp
+	clear_variable = cl_rare_earth_factory_temp
+	clear_variable = cl_uran_factory_temp
+}
