@@ -25,6 +25,10 @@
 ### Public-releases<br>
 Репозиторий для публичных релизов. Здесь вы можете загрузить нашу модификацию и просмотреть файлы.<br>
 
+Если вы хотите предложить какое-либо изменение в нашем проекте, с радостью принимаем PR-реквесты или git-патчи (подробнее в Discord).<br>
+
+Логотип и прочие графические материалы принадлежат их владельцам, все остальные работы по **GPLv3**.
+
 ### Объявление для набора в команду:<br>
 **EC Dev TEAM** объявляет набор в команду.<br>
 Наша команда интернациональна, однако, в общении преобладает русский язык. Если вы не боитесь видеть иной язык в чате, а также, активное применение онлайн-переводчиков а также, комментарии кода на русском языке, то можете попытаться попасть в команду.<br>
@@ -60,6 +64,10 @@ ___
 # Section for English audience 
 ### Public-releases<br>
 Repository for public releases. Here you can download our modification and view the files.<br>
+
+If you want to propose any change in our project, we are happy to accept PR requests or git patches (for more information, see Discord).<br>
+
+The logo and other graphic materials belong to their owners, all other works are under **GPLv3**.
 
 ### Declaration for recruiting into the team:<br>
 **EC Dev TEAM** announces recruitment to the team.<br>
