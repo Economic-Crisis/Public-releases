@@ -14,7 +14,6 @@
 
 
 
-
 **Languages**
 - [RU - Русский](#Section-for-Russian-audience)
 - [EN - English](#Section-for-English-audience)
