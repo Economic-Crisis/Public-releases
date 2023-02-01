@@ -1,7 +1,7 @@
-<img align="center" src="https://github.com/Economic-Crisis-2013/Public-releases/blob/main/.github/logo-repo.png" alt="economic_crisic-github" border="0">
+<img align="center" src="https://github.com/Economic-Crisis/Public-releases/blob/main/.github/logo-repo.png" alt="economic_crisic-github" border="0">
 
 
- [![Github](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/Economic-Crisis-2013)
+ [![Github](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/Economic-Crisis)
  [![VK](https://img.shields.io/badge/-Steam-171a21?style=flat-square&logo=Steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2000532465)
  [![Steam](https://img.shields.io/badge/-VK-blue?style=flat-square&logo=VK&logoColor=white)](https://vk.com/ec_hoi_mod) 
  [![Discord](https://img.shields.io/badge/-Discord-2c2f33?style=flat-square&logo=Discord&logoColor=white)](https://discord.gg/jjbue3F)
